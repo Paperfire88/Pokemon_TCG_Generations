@@ -2899,3 +2899,6 @@ TextOffsets::
 	textpointer GamblerDescription
 	textpointer RecycleName
 	textpointer RecycleDescription
+	textpointer	NewIntroText1; 0x0cf4
+	textpointer	NewIntroText2; 0x0cf5
+	textpointer	NewIntroText3; 0x0cf6

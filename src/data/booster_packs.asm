@@ -2,10 +2,10 @@ BoosterSetRarityAmountsTable:
 ;	db energies, commons, uncommons, rares
 ; commons + uncommons + rares needs to be equal to 10 minus the number of energy cards
 ; defined in the pack's data below; otherwise, the number of cards in the pack won't be 10.
-	db 1, 5, 3, 1 ; COLOSSEUM
-	db 1, 5, 3, 1 ; EVOLUTION
-	db 0, 6, 3, 1 ; MYSTERY
-	db 0, 6, 3, 1 ; LABORATORY
+	db 1, 5, 3, 2 ; COLOSSEUM
+	db 1, 5, 3, 2 ; EVOLUTION
+	db 0, 6, 3, 2 ; MYSTERY
+	db 0, 6, 3, 2 ; LABORATORY
 
 MACRO booster_set
 	db \1 >> 4
