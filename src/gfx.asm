@@ -2063,3 +2063,22 @@ GamblerCardGfx::
 RecycleCardGfx::
 	INCBIN "gfx/cards/recycle.2bpp"
 	INCBIN "gfx/cards/recycle.pal"
+
+SECTION "Gfx 13", ROMX
+
+MintGfx::
+	dw 36
+	INCBIN "gfx/duelists/mint.2bpp"
+
+OWMintGfx::
+	dw $14
+	INCBIN "gfx/overworld_sprites/mint.2bpp"
+
+Palette161::
+	db 0
+	db 1
+
+	rgb 28, 28, 24
+	rgb 28, 16, 12
+	rgb  4,  8, 28
+	rgb  0,  0,  8

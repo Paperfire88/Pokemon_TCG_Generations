@@ -498,6 +498,7 @@ EventVarMasks:
 	event_def $1a, %00000011 ; EVENT_AARON_BOOSTER_REWARD
 	event_def $1b, %11110000 ; EVENT_SAM_MENU_CHOICE
 	event_def $1b, %00001111 ; EVENT_AARON_DECK_MENU_CHOICE
+	event_def $1d, %00000001 ; EVENT_PLAYER_GENDER
 	assert_table_length NUM_EVENT_FLAGS
 
 ; Used for basic level objects that just print text and quit

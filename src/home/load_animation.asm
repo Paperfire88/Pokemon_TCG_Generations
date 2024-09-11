@@ -241,7 +241,13 @@ LoadScene::
 
 ; draws player's portrait at b,c
 DrawPlayerPortrait::
-	ld a, PLAYER_PIC
+	ld a, EVENT_PLAYER_GENDER
+	farcall GetEventValue
+	or a
+ 	ld a, PLAYER_PIC
+	jr z, .got_pic
+	ld a, MINT_PIC
+.got_pic
 	ld [wCurPortrait], a
 	ld a, TILEMAP_PLAYER
 ;	fallthrough

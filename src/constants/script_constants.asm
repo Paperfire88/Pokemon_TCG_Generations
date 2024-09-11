@@ -117,6 +117,7 @@
 	const EVENT_AARON_BOOSTER_REWARD                   ; $73
 	const EVENT_SAM_MENU_CHOICE                        ; $74
 	const EVENT_AARON_DECK_MENU_CHOICE                 ; $75
+	const EVENT_PLAYER_GENDER                          ; $76
 DEF NUM_EVENT_FLAGS EQU const_value
 
 DEF EVENT_VAR_BYTES EQU $40

@@ -71,5 +71,5 @@
 	const TILESET_JESSICA                     ; $45
 	const TILESET_STEPHANIE                   ; $46
 	const TILESET_AARON                       ; $47
-
+	const TILESET_MINT                        ; $48
 DEF NUM_TILESETS EQU const_value

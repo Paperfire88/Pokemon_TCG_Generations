@@ -675,16 +675,34 @@ Func_c49c:
 	ret
 
 Func_c4b9:
-	xor a
+xor a
 	ld [wVRAMTileOffset], a
 	ld [wd4cb], a
 	ld a, PALETTE_29
 	farcall LoadPaletteData
-	ld a, SPRITE_ANIM_RED_NPC_UP
+	ld b, SPRITE_ANIM_LIGHT_NPC_UP
+	ld a, [wConsole]
+	cp CONSOLE_CGB
+	jr nz, .got_anim
+
+	ld a, EVENT_PLAYER_GENDER
+	farcall GetEventValue
+	or a
+	ld b, SPRITE_ANIM_RED_NPC_UP
+	jr z, .got_anim
+	ld b, SPRITE_ANIM_BLUE_NPC_UP
+.got_anim
+	ld a, b
 	ld [wPlayerSpriteBaseAnimation], a
 
 	; load Player's sprite for overworld
+	ld a, EVENT_PLAYER_GENDER
+	farcall GetEventValue
+	or a
 	ld a, SPRITE_OW_PLAYER
+	jr z, .got_player_ow_sprite
+	ld a, SPRITE_OW_MINT
+.got_player_ow_sprite
 	farcall CreateSpriteAndAnimBufferEntry
 	ld a, [wWhichSprite]
 	ld [wPlayerSpriteIndex], a
@@ -1105,7 +1123,7 @@ PauseMenu:
 	ldh a, [hCurMenuItem]
 	cp e
 	jr nz, .exit
-	cp $5
+	cp $6
 	jr z, .exit
 	call Func_c2a3
 	ld a, [wSelectedPauseMenuItem]
@@ -1128,6 +1146,7 @@ PauseMenuPointerTable:
 	dw PauseMenu_Diary
 	dw PauseMenu_Deck
 	dw PauseMenu_Card
+	dw PauseMenu_Mail
 	dw PauseMenu_Config
 	dw PauseMenu_Exit
 
@@ -1146,7 +1165,8 @@ PauseMenu_Deck:
 	call Set_OBJ_8x16
 	farcall SetDefaultPalettes
 	farcall DeckSelectionMenu
-	jp Set_OBJ_8x8
+	call Set_OBJ_8x8
+	ret
 
 PauseMenu_Card:
 	xor a
@@ -1154,8 +1174,19 @@ PauseMenu_Card:
 	ldh [hSCY], a
 	call Set_OBJ_8x16
 	farcall SetDefaultPalettes
-	farcall HandlePlayersCardsScreen
-	jp Set_OBJ_8x8
+	farcall HandleDeckSaveMachineMenu
+	call Set_OBJ_8x8
+	ret
+
+PauseMenu_Mail:
+	xor a
+	ldh [hSCX], a
+	ldh [hSCY], a
+	call Set_OBJ_8x16
+	farcall SetDefaultPalettes
+	farcall PCMenu_ReadMail
+	call Set_OBJ_8x8
+	ret
 
 PauseMenu_Config:
 	farcall _PauseMenu_Config

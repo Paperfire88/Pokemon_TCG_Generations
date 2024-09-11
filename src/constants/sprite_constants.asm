@@ -146,5 +146,6 @@ DEF SPRITE_FRAME_OFFSET_SIZE EQU 4
 	const SPRITE_LIGHTNING          ; $6c
 	const SPRITE_PSYCHIC            ; $6d
 	const SPRITE_FIGHTING           ; $6e
+	const SPRITE_OW_MINT            ; $6f
 
 DEF NUM_SPRITES EQU const_value

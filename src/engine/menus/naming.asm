@@ -18,9 +18,16 @@ DisplayPlayerNamingScreen:
 	ld a, [hl]
 	or a
 	; check if anything typed.
-	jr nz, .no_name
-	ld hl, .default_name
-.no_name
+	jr nz, .got_name
+
+	ld a, EVENT_PLAYER_GENDER
+	farcall GetEventValue
+	or a
+	ld hl, .default_name_male
+	jr z, .got_name
+	ld hl, .default_name_female
+
+.got_name
 	; set the default name.
 	ld de, sPlayerName
 	ld bc, NAME_BUFFER_LENGTH
@@ -33,7 +40,12 @@ DisplayPlayerNamingScreen:
 	ld [sPlayerName+$f], a
 	jp DisableSRAM
 
-.default_name
-	; "MARK": default player name.
+.default_name_male
+	; "MARK": default male player name.
 	textfw "MARK"
+	db TX_END, TX_END, TX_END, TX_END
+
+.default_name_female
+	; "MINT": default female player name.
+	textfw "MINT"
 	db TX_END, TX_END, TX_END, TX_END

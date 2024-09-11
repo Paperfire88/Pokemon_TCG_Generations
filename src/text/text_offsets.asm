@@ -2902,3 +2902,6 @@ TextOffsets::
 	textpointer	NewIntroText1; 0x0cf4
 	textpointer	NewIntroText2; 0x0cf5
 	textpointer	NewIntroText3; 0x0cf6
+	textpointer AreYouBoyOrGirlText; 0x0cff
+	textpointer BoyText; 0x0cff
+	textpointer GirlText; 0x0cff

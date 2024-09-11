@@ -141,6 +141,8 @@ ROMX $2d
 	"Palettes1"
 ROMX $2e
 	"Palettes2"
+ROMX $2f
+	"Gfx 13"		
 ROMX $31
 	"Card Gfx 1"
 ROMX $32

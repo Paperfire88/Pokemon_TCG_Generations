@@ -961,19 +961,14 @@ PauseMenuOptionsText:
 	text "Status"
 	line "Diary"
 	line "Deck"
-	line "Card"
+	line "Decklist"
+	line "Read Mail"
 	line "Config"
 	line "Exit"
 	done
 
 DebugPauseMenuOptionsText:
-	text "Status"
-	line "Diary"
-	line "Deck"
-	line "Card"
-	line "Config"
-	line "Debug"
-	line "Close"
+	text ""
 	done
 
 PlayerStatusNameText:
