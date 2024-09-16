@@ -1,7 +1,7 @@
 HorseaDescription:
-	text "Known to shoot down flying bugs with"
-	line "precision blasts of ink from the"
-	line "surface of the water."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Dragon Frontiers 50)"
+	line "OG illustrator: (Hisao Nakamura)"
 	done
 
 SeadraName:
@@ -9,32 +9,32 @@ SeadraName:
 	done
 
 SeadrasWaterGunDescription:
-	text "Does 20 damage plus 10 more damage"
-	line "for each <WATER> Energy attached to"
-	line "Seadra but not used to pay for this"
-	line "attack's Energy cost. You can't add"
-	line "more than 20 damage in this way."
+	text "Does damage +10 more damage for each"
+	line "<WATER> Energy attached to this PKMN"
+	line "but not used for this attack's"
+	line "Energy cost. You can't add more than"
+	line "20 damage. Then, ->"
 	done
 
 SeadrasAgilityDescription:
 	text "Flip a coin. If heads, during your"
 	line "opponent's next turn, prevent all "
 	line "effects of attacks, including"
-	line "damage, done to Seadra."
+	line "damage."
 	done
 
 SeadraDescription:
-	text "Capable of swimming backward by"
-	line "rapidly flapping its wing-like"
-	line "pectoral fins and stout tail."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Holon Phantoms 52)"
+	line "OG illustrator: (Kouki Saitou)"
 	done
 
 GoldeenName:
-	text "Goldeen"
+	text "Basculin"
 	done
 
 HornAttackName:
-	text "Horn Attack"
+	text "Strength"
 	done
 
 GoldfishName:
@@ -42,27 +42,27 @@ GoldfishName:
 	done
 
 GoldeenDescription:
-	text "Its tail fin billows like an elegant"
-	line "ballroom dress, giving it the"
-	line "nickname ”Water Queen.”"
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Emerging Powers 25)"
+	line "OG illustrator: (Akira Komayama)"
 	done
 
 SeakingName:
-	text "Seaking"
+	text "Basculegion"
 	done
 
 WaterfallName:
-	text "Waterfall"
+	text "Grudge Dive"
 	done
 
 SeakingDescription:
-	text "In the autumn spawning season, they"
-	line "can be seen swimming powerfully up"
-	line "rivers and creeks."
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Sword & Shield Promos 205)"
+	line "OG illustrator: (Pani Kobayashi)"
 	done
 
 StaryuName:
-	text "Staryu"
+	text "Dewpider"
 	done
 
 SlapName:
@@ -74,13 +74,13 @@ StarshapeName:
 	done
 
 StaryuDescription:
-	text "An enigmatic Pokémon that can"
-	line "effortlessly regenerate any"
-	line "appendage it loses in battle."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Cosmic Eclipse 64)"
+	line "OG illustrator: (Shibuzoh)"
 	done
 
 StarmieName:
-	text "Starmie"
+	text "Araquanid"
 	done
 
 RecoverName:
@@ -88,14 +88,14 @@ RecoverName:
 	done
 
 StarmiesRecoverDescription:
-	text "Discard 1 <WATER> Energy card attached to"
-	line "Starmie in order to use this attack."
+	text "Discard 1 <WATER> Energy attached to this"
+	line "card in order to use this attack."
 	line "Remove all damage counters from"
-	line "Starmie."
+	line "this card."
 	done
 
 StarFreezeName:
-	text "Star Freeze"
+	text "Powder Snow"
 	done
 
 MysteriousName:
@@ -103,13 +103,13 @@ MysteriousName:
 	done
 
 StarmieDescription:
-	text "Its central core glows with the"
-	line "seven colors of the rainbow. Some"
-	line "people value this core as a gem."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Silver Tempest 48)"
+	line "OG illustrator: (DOM)"
 	done
 
 MagikarpName:
-	text "Magikarp"
+	text "Sneasel"
 	done
 
 TackleName:
@@ -118,7 +118,7 @@ TackleName:
 
 MagikarpsFlailDescription:
 	text "Does 10 damage times the number of"
-	line "damage counters on Magikarp."
+	line "damage counters on This PKMN."
 	done
 
 FishName:
@@ -126,13 +126,13 @@ FishName:
 	done
 
 MagikarpDescription:
-	text "In the distant past, it was stronger"
-	line "than its horribly weak descendants"
-	line "that exist today."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Neo Genesis 25)"
+	line "OG illustrator: (KEN SUGIMORI)"
 	done
 
 GyaradosName:
-	text "Gyarados"
+	text "Weavile"
 	done
 
 DragonRageName:
@@ -140,7 +140,7 @@ DragonRageName:
 	done
 
 BubblebeamName:
-	text "Bubblebeam"
+	text "Liquidation"
 	done
 
 AtrociousName:
@@ -148,21 +148,21 @@ AtrociousName:
 	done
 
 GyaradosDescription:
-	text "Rarely seen in the wild. Huge and"
-	line "vicious, it is capable of destroying"
-	line "entire cities in a rage."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Secret Wonders 40)"
+	line "OG illustrator: (Kagemaru Himeno)"
 	done
 
 LaprasName:
-	text "Lapras"
+	text "Chewtle"
 	done
 
 LaprasWaterGunDescription:
-	text "Does 10 damage plus 10 more damage"
-	line "for each <WATER> Energy attached to"
-	line "Lapras but not used to pay for this"
-	line "attack's Energy cost. You can't add"
-	line "more than 20 damage in this way."
+	text "Does damage +10 more damage for"
+	line "each <WATER> Energy attached to this"
+	line "PKMN but not used for this attack's"
+	line "Energy cost. You can't add more than"
+	line "20 damage."
 	done
 
 TransportName:
@@ -170,9 +170,9 @@ TransportName:
 	done
 
 LaprasDescription:
-	text "A Pokémon that has been overhunted"
-	line "almost to extinction. It can ferry"
-	line "people across water."
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Vivid Voltage 38)"
+	line "OG illustrator: (kirisAki)"
 	done
 
 VaporeonName:
@@ -184,9 +184,8 @@ FocusEnergyName:
 	done
 
 FocusEnergyDescription:
-	text "During your next turn, Vaporeon's"
-	line "Bite attack's base damage is"
-	line "doubled."
+	text "During your next turn, Bite base"
+	line "damage is doubled."
 	done
 
 BubbleJetName:
@@ -194,23 +193,23 @@ BubbleJetName:
 	done
 
 VaporeonLv29Description:
-	text "Its cell structure is similar to"
-	line "water molecules. It will melt away"
-	line "and become invisible in water."
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Sword & Shield 61)"
+	line "OG illustrator: (Hitoshi Ariga)"
 	done
 
 VaporeonsWaterGunDescription:
 	text "Does 30 damage plus 10 more damage"
 	line "for each <WATER> Energy attached to"
-	line "Vaporeon but not used to pay for"
+	line "this PKMN but not used to pay for"
 	line "this attack's Energy cost. You can't"
 	line "add more than 20 damage in this way."
 	done
 
 VaporeonLv42Description:
-	text "Lives close to water. Its long tail"
-	line "is ridged with a fin that is often"
-	line "mistaken for a mermaid's."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Undaunted 41)"
+	line "OG illustrator: (sui)"
 	done
 
 OmanyteName:
@@ -245,9 +244,9 @@ SpiralName:
 	done
 
 OmanyteDescription:
-	text "Although long extinct, in rare"
-	line "cases, it can be genetically"
-	line "resurrected from fossils."
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Neo Destiny 37)"
+	line "OG illustrator: (Tomokazu Komiya)"
 	done
 
 OmastarName:
@@ -263,13 +262,13 @@ OmastarsWaterGunDescription:
 	done
 
 OmastarDescription:
-	text "A prehistoric Pokémon that died out"
-	line "when its heavy shell made it"
-	line "impossible for it to catch prey."
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Arceus 23)"
+	line "OG illustrator: (Hajime Kusajima)"
 	done
 
 ArticunoName:
-	text "Articuno"
+	text "Suicune"
 	done
 
 FreezeDryName:
@@ -283,11 +282,9 @@ BlizzardName:
 BlizzardDescription:
 	text "Flip a coin. If heads, this attack"
 	line "does 10 damage to each of your"
-	line "opponent's Benched Pokémon."
-	line "If tails, this attack does 10 damage"
-	line "to each of your own Benched Pokémon."
-	line "(Don't apply Weakness and Resistance"
-	line "for Benched Pokémon.)"
+	line "opponent's Benched Pkmn. (Don't"
+	line "apply Weakness and/or Resistance)"
+	line "If tails, Draw 1 card."
 	done
 
 FreezeName:
@@ -295,17 +292,17 @@ FreezeName:
 	done
 
 ArticunoLv35Description:
-	text "A legendary bird Pokémon that is"
-	line "said to appear to doomed people who"
-	line "are lost in icy mountains."
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Darkness Ablaze 40)"
+	line "OG illustrator: (MAHOU)"
 	done
 
 QuickfreezeName:
-	text "Quickfreeze"
+	text "Aurora Veil"
 	done
 
 QuickfreezeDescription:
-	text "When you put Articuno into play"
+	text "When you put this PKMN into play"
 	line "during your turn (not during"
 	line "set-up), flip a coin. If heads, the"
 	line "Defending Pokémon is now Paralyzed."
@@ -326,17 +323,17 @@ IceBreathDescription:
 	done
 
 ArticunoLv37Description:
-	text "A legendary bird Pokémon. It freezes"
-	line "water that is contained in winter"
-	line "air and makes it snow."
+	text "Booster Pack: (LEGENDARY Card)"
+	line "OG Set: (official art 245, Suicune)"
+	line "OG illustrator: (KEN SUGIMORI)"
 	done
 
 PikachuName:
-	text "Pikachu"
+	text "Blitzle"
 	done
 
 GnawName:
-	text "Gnaw"
+	text "Volt Switch"
 	done
 
 ThunderJoltName:
@@ -344,7 +341,7 @@ ThunderJoltName:
 	done
 
 ThunderJoltDescription:
-	text "Flip a coin. If tails, Pikachu does"
+	text "Flip a coin. If tails, does"
 	line "10 damage to itself."
 	done
 
@@ -353,9 +350,9 @@ MouseName:
 	done
 
 PikachuLv12Description:
-	text "When several of these Pokémon"
-	line "gather, their electricity can cause"
-	line "lightning storms."
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Team Up 44)"
+	line "OG illustrator: (Akira Komayama)"
 	done
 
 SparkName:
@@ -371,9 +368,9 @@ SparkDescription:
 	done
 
 PikachuLv14Description:
-	text "When several of these Pokémon"
-	line "gather, their electricity can build"
-	line "and cause lightning storms."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Dragons Exalted 45)"
+	line "OG illustrator: (Kanako Eo)"
 	done
 
 GrowlName:
@@ -395,13 +392,13 @@ ThundershockName:
 	done
 
 PikachuLv16Description:
-	text "When several of these Pokémon"
-	line "gather, their electricity could"
-	line "build and cause lightning storms."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Team Up 49)"
+	line "OG illustrator: (Ken SUGIMORI)"
 	done
 
 FlyingPikachuName:
-	text "Flying Pikachu"
+	text "Shinx"
 	done
 
 FlyName:
@@ -418,13 +415,13 @@ FlyDescription:
 	done
 
 FlyingPikachuDescription:
-	text "By learning how to fly, Pikachu"
-	line "overcame its weakness to Fighting"
-	line "Pokémon."
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Mysterious Treasures 98)"
+	line "OG illustrator: (Lee HyunJung)"
 	done
 
 SurfingPikachuName:
-	text "Surfing Pikachu"
+	text "Luxio"
 	done
 
 SurfName:
@@ -432,20 +429,20 @@ SurfName:
 	done
 
 SurfingPikachuDescription:
-	text "One summer, a group of Pikachu"
-	line "was found riding the waves at the"
-	line "local beach."
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Arceus 43)"
+	line "OG illustrator: (Suwama Chiaki)"
 	done
 
 RaichuName:
-	text "Raichu"
+	text "Zebstrika"
 	done
 
 RaichusAgilityDescription:
 	text "Flip a coin. If heads, during your"
 	line "opponent's next turn, prevent all"
 	line "effects of attacks, including"
-	line "damage, done to Raichu."
+	line "damage, done to This PKMN."
 	done
 
 ThunderName:
@@ -453,14 +450,14 @@ ThunderName:
 	done
 
 RaichusThunderDescription:
-	text "Flip a coin. If tails, Raichu does"
+	text "Flip a coin. If tails, does"
 	line "30 damage to itself."
 	done
 
 RaichuLv40Description:
-	text "Its long tail serves as a ground to"
-	line "protect itself from its own"
-	line "high-voltage power."
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (BREAKpoint 49)"
+	line "OG illustrator: (Hajime Kusajima)"
 	done
 
 GigashockName:
@@ -468,19 +465,16 @@ GigashockName:
 	done
 
 GigashockDescription:
-	text "Choose 3 of your opponent's Benched"
-	line "Pokémon and this attack does 10"
-	line "damage to each of them. (Don't apply"
-	line "Weakness and Resistance for Benched"
-	line "Pokémon.) If your opponent has fewer"
-	line "than 3 Benched Pokémon, do the"
-	line "damage to each of them."
+	text "This attack also does 10 damage to" 
+	line "up to 3 of your opponent's Benched" 
+	line "Pkmn. (Don't apply Weakness and/or"
+	line "Resistance for Benched Pokémon.)"
 	done
 
 RaichuLv45Description:
-	text "Its long tail serves as a ground to"
-	line "protect itself from its own high"
-	line "voltage power."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (XY Promos 47)"
+	line "OG illustrator: (kawayoo)"
 	done
 
 MagnemiteName:
@@ -504,9 +498,9 @@ MagnetName:
 	done
 
 MagnemiteLv13Description:
-	text "Uses anti-gravity to stay suspended."
-	line "Appears without warning and uses"
-	line "attacks like Thunder Wave."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Aquapolis 91)"
+	line "OG illustrator: (Hajime Kusajima)"
 	done
 
 MagneticStormName:
@@ -520,9 +514,9 @@ MagneticStormDescription:
 	done
 
 MagnemiteLv15Description:
-	text "It is born with the ability to defy"
-	line "gravity. Floats in air on powerful"
-	line "electromagnetic waves."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Sun & Moon 51)"
+	line "OG illustrator: (Naoki Saito)"
 	done
 
 MagnetonName:
@@ -538,9 +532,9 @@ MagnetonLv28sSelfdestructDescription:
 	done
 
 MagnetonLv28Description:
-	text "Formed by several Magnemites linked"
-	line "together. It frequently appears when"
-	line "sunspots flare up."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Forbidden Light 35)"
+	line "OG illustrator: (kirisAki)"
 	done
 
 SonicboomName:
@@ -559,18 +553,18 @@ MagnetonLv35sSelfdestructDescription:
 	text "Does 20 damage to each Pokémon on"
 	line "each player's Bench. (Don't apply"
 	line "Weakness and Resistance for Benched"
-	line "Pokémon.) Magneton does 100 damage"
+	line "Pokémon.) Magnezone does 100 damage"
 	line "to itself."
 	done
 
 MagnetonLv35Description:
-	text "Formed by several Magnemites linked"
-	line "together. They frequently appear"
-	line "when sunspots flare up."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (BREAKthrough 54)"
+	line "OG illustrator: (Hajime Kusajima)"
 	done
 
 VoltorbName:
-	text "Voltorb"
+	text "Toxel"
 	done
 
 BallName:
@@ -578,17 +572,17 @@ BallName:
 	done
 
 VoltorbDescription:
-	text "Usually found in power plants."
-	line "Easily mistaken for a Poke Ball, it"
-	line "has zapped many people."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Rebel Clash 68)"
+	line "OG illustrator: (nagimiso)"
 	done
 
 ElectrodeName:
-	text "Electrode"
+	text "Toxtricity"
 	done
 
 EnergySpikeName:
-	text "Energy Spike"
+	text "Energy Boost"
 	done
 
 EnergySpikeDescription:
@@ -599,13 +593,13 @@ EnergySpikeDescription:
 	done
 
 ElectrodeLv35Description:
-	text "Stores electrical energy inside its"
-	line "body. Even the slightest shock could"
-	line "trigger a huge explosion."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Fusion Strike 107)"
+	line "OG illustrator: (Ryuta Fuse)"
 	done
 
 ChainLightningName:
-	text "Chain Lightning"
+	text "Chain Reaction"
 	done
 
 ChainLightningDescription:
@@ -617,10 +611,9 @@ ChainLightningDescription:
 	done
 
 ElectrodeLv42Description:
-	text "It stores electrical energy under"
-	line "very high pressure. It often"
-	line "explodes with little or no"
-	line "provocation."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Fusion Strike 108)"
+	line "OG illustrator: (nagimiso)"
 	done
 
 ElectabuzzName:
@@ -633,11 +626,11 @@ LightScreenName:
 
 LightScreenDescription:
 	text "Whenever an attack does damage to"
-	line "Electabuzz (after applying Weakness"
+	line "this PKMN (after applying Weakness"
 	line "and Resistance) during your"
 	line "opponent's next turn, that attack"
 	line "only does half the damage to"
-	line "Electabuzz (rounded down to the"
+	line "PKMN (rounded down to the"
 	line "nearest 10)."
 	done
 
@@ -658,9 +651,9 @@ ElectricName:
 	done
 
 ElectabuzzLv20Description:
-	text "A wild Pokémon with a short temper."
-	line "It is able to distinguish colors"
-	line "and likes the color red."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Emerald 47)"
+	line "OG illustrator: (Kagemaru Himeno)"
 	done
 
 ThunderpunchName:
@@ -669,16 +662,14 @@ ThunderpunchName:
 
 ThunderpunchDescription:
 	text "Flip a coin. If heads, this attack"
-	line "does 30 damage plus 10 more damage;"
-	line "if tails, this attack does 30 damage"
-	line "and Electabuzz does 10 damage to"
-	line "itself."
+	line "does +10 more damage; if tails,"
+	line "it does 10 damage to itself."
 	done
 
 ElectabuzzLv35Description:
-	text "Normally found near power plants,"
-	line "it can wander away and cause major"
-	line "blackouts in cities."
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Gym HeroeS 6)"
+	line "OG illustrator: (kEN SUGIMORI)"
 	done
 
 JolteonName:
@@ -699,9 +690,9 @@ LightningName:
 	done
 
 JolteonLv24Description:
-	text "A sensitive Pokémon that easily"
-	line "becomes sad or angry. Every time"
-	line "its mood changes, it charges power."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Celestial Storm 52)"
+	line "OG illustrator: (Sanosuke Sakuma)"
 	done
 
 PinMissileName:
@@ -709,18 +700,18 @@ PinMissileName:
 	done
 
 QuadrupleAttackX20Description:
-	text "Flip 4 coins. This attack does 20"
+	text "Flip 4 coins. This attack does"
 	line "damage times the number of heads."
 	done
 
 JolteonLv29Description:
-	text "It accumulates negative ions from"
-	line "the atmosphere to blast out 10,000-"
-	line "volt lightning bolts."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Sword & Shield Promos 94)"
+	line "OG illustrator: (Yuu Nishida)"
 	done
 
 ZapdosName:
-	text "Zapdos"
+	text "Vikavolt"
 	done
 
 ThunderstormName:
@@ -733,15 +724,14 @@ ThunderstormDescription:
 	line "this attack does 20 damage to that"
 	line "Pokémon. (Don't apply Weakness and"
 	line "Resistance for Benched Pokémon.)"
-	line "Then, Zapdos does 10 damage times"
+	line "Then, Take 10 damage times"
 	line "the number of tails to itself."
 	done
 
 ZapdosLv40Description:
-	text "A legendary thunderbird Pokémon"
-	line "whose anger is said to cause storms."
-	line "Some say it has lived above the"
-	line "clouds for thousands of years."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Sun & Moon 52)"
+	line "OG illustrator: (Hitoshi Ariga)"
 	done
 
 ZapdosThunderDescription:
@@ -754,14 +744,16 @@ ThunderboltName:
 	done
 
 ThunderboltDescription:
-	text "Discard all Energy cards attached to"
-	line "Zapdos in order to use this attack."
+	text "Discard all Energy attached to This"
+	line "PKMN in order to use this attack."
+	line "Then, Flip a Coin. if heads,"
+	line "The Defending PKMN is Now Paralyzed"
 	done
 
 ZapdosLv64Description:
-	text "A legendary bird Pokémon said to"
-	line "appear from clouds while wielding"
-	line "enormous lightning bolts."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Silver Tempest 56)"
+	line "OG illustrator: (GOSSAN)"
 	done
 
 PealOfThunderName:
@@ -769,10 +761,10 @@ PealOfThunderName:
 	done
 
 PealOfThunderDescription:
-	text "When you put Zapdos into play during"
-	line "your turn (not during set-up), do"
-	line "30 damage to a Pokémon other than"
-	line "Zapdos chosen at random. (Don't"
+	text "When you put this PKMN into play"
+	line "during your turn (not during set-up)"
+	line "do 30 damage to a Pokémon other than"
+	line "This PKMN chosen at random. (Don't"
 	line "apply Weakness and Resistance.)"
 	done
 
@@ -781,8 +773,8 @@ BigThunderName:
 	done
 
 BigThunderDescription:
-	text "Choose a Pokémon other than Zapdos"
-	line "at random. This attack does 70"
+	text "Choose a Pokémon other than this"
+	line "One at random. This attack does 70"
 	line "damage to that Pokémon. Don't apply"
 	line "Weakness and Resistance for this"
 	line "attack. (Any other effects that"
@@ -791,9 +783,9 @@ BigThunderDescription:
 	done
 
 ZapdosLv68Description:
-	text "This legendary bird Pokémon is said"
-	line "to appear when the sky turns dark"
-	line "and lightning showers down."
+	text "Booster Pack: (LEGENDARY Card)"
+	line "OG Set: (BREAKthrough 55)"
+	line "OG illustrator: (Shin Nagasawa)"
 	done
 
 SandshrewName:
@@ -805,13 +797,13 @@ SandAttackName:
 	done
 
 SandshrewDescription:
-	text "Burrows deep underground in arid"
-	line "locations far from water. It only"
-	line "emerges to hunt for food."
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Crown Zenith 84)"
+	line "OG illustrator: (miki kudo)"
 	done
 
 SandslashName:
-	text "Sandslash"
+	text "Perrserker"
 	done
 
 TripleAttackX20Description:
@@ -820,17 +812,17 @@ TripleAttackX20Description:
 	done
 
 SandslashDescription:
-	text "Curls up into a spiny ball when"
-	line "threatened. It can roll while curled"
-	line "up to attack or escape."
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Rebel Clash 127)"
+	line "OG illustrator: (Naoki Saito)"
 	done
 
 DiglettName:
-	text "Diglett"
+	text "Silicobra"
 	done
 
 DigName:
-	text "Dig"
+	text "Bulldoze"
 	done
 
 MudSlapName:
@@ -842,13 +834,13 @@ MoleName:
 	done
 
 DiglettDescription:
-	text "Lives about three feet underground,"
-	line "where it feeds on plant roots. It"
-	line "sometimes appears above ground."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Sword & Shield 108)"
+	line "OG illustrator: (Hitoshi Ariga)"
 	done
 
 DugtrioName:
-	text "Dugtrio"
+	text "Sandaconda"
 	done
 
 EarthquakeName:
@@ -863,17 +855,17 @@ EarthquakeDescription:
 	done
 
 DugtrioDescription:
-	text "A team of Diglett triplets."
-	line "It triggers huge earthquakes by"
-	line "burrowing 60 miles underground."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Sword & Shield 110)"
+	line "OG illustrator: (nagimiso)"
 	done
 
 MankeyName:
-	text "Mankey"
+	text "Croagunk"
 	done
 
 PeekName:
-	text "Peek"
+	text "Prankster"
 	done
 
 PeekDescription:
@@ -886,7 +878,7 @@ PeekDescription:
 	done
 
 PeekDescriptionCont:
-	text "This power can't be used if Mankey"
+	text "This power can't be used if"
 	line "is Asleep, Confused, or Paralyzed."
 	done
 
@@ -895,13 +887,13 @@ PigMonkeyName:
 	done
 
 MankeyDescription:
-	text "Extremely quick to anger. It could"
-	line "be docile one moment, then thrashing"
-	line "away the next."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Sword & Shield Promos 245)"
+	line "OG illustrator: (Yuya Oka)"
 	done
 
 PrimeapeName:
-	text "Primeape"
+	text "Toxicroak"
 	done
 
 TantrumName:
@@ -909,19 +901,18 @@ TantrumName:
 	done
 
 TantrumDescription:
-	text "Flip a coin. If tails, Primeape is"
+	text "Flip a coin. If tails, is"
 	line "now Confused (after doing damage)."
 	done
 
 PrimeapeDescription:
-	text "Always furious and tenacious to"
-	line "boot. It will not abandon chasing"
-	line "its quarry until its quarry is"
-	line "caught."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Sword & Shield 124)"
+	line "OG illustrator: (Ryuta Fuse)"
 	done
 
 MachopName:
-	text "Machop"
+	text "Sandile"
 	done
 
 LowKickName:
@@ -933,22 +924,22 @@ SuperpowerName:
 	done
 
 MachopDescription:
-	text "Loves to build its muscles. It"
-	line "trains in all styles of martial arts"
-	line "to become even stronger."
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Plasma Freeze 68)"
+	line "OG illustrator: (sui)"
 	done
 
 MachokeName:
-	text "Machoke"
+	text "Krokorok"
 	done
 
 KarateChopName:
-	text "Karate Chop"
+	text "Burning Voice"
 	done
 
 KarateChopDescription:
-	text "Does 50 damage minus 10 damage for"
-	line "each damage counter on Machoke."
+	text "Does Damage minus 10 damage for"
+	line "each damage counter on this PKMN."
 	done
 
 SubmissionName:
@@ -956,26 +947,26 @@ SubmissionName:
 	done
 
 SubmissionDescription:
-	text "Machoke does 20 damage to itself."
+	text "Does 20 damage to itself."
 	done
 
 MachokeDescription:
-	text "Its muscular body is so powerful"
-	line "that it must wear a power-save belt"
-	line "to help regulate its motions."
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Flashfire 57)"
+	line "OG illustrator: (Naoki Saito)"
 	done
 
 MachampName:
-	text "Machamp"
+	text "Krookodile"
 	done
 
 StrikesBackName:
-	text "Strikes Back"
+	text "Bite's Back"
 	done
 
 StrikesBackDescription:
 	text "Whenever your opponent's attack"
-	line "damages Machamp (even if Machamp is"
+	line "damages This card (even if it is"
 	line "Knocked Out), this power does 10"
 	line "damage to the attacking Pokémon."
 	line "(Don't apply Weakness and"
@@ -983,7 +974,7 @@ StrikesBackDescription:
 	done
 
 StrikesBackDescriptionCont:
-	text "This power can't be used if Machamp"
+	text "This power can't be used if"
 	line "is already Asleep, Confused, or"
 	line "Paralyzed when your opponent"
 	line "attacks."
@@ -994,17 +985,17 @@ SeismicTossName:
 	done
 
 MachampDescription:
-	text "Using its amazing muscles, it throws"
-	line "powerful punches that can knock its"
-	line "victim clear over the horizon."
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Dark Explorers 66)"
+	line "OG illustrator: (5ban Graphics)"
 	done
 
 GeodudeName:
-	text "Geodude"
+	text "Trapinch"
 	done
 
 StoneBarrageName:
-	text "Stone Barrage"
+	text "Continous Tumble"
 	done
 
 StoneBarrageDescription:
@@ -1018,13 +1009,13 @@ RockName:
 	done
 
 GeodudeDescription:
-	text "Found in fields and mountains."
-	line "Mistaking them for boulders, people"
-	line "often step or trip on them."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Shining Fates 40)"
+	line "OG illustrator: (MAHOU)"
 	done
 
 GravelerName:
-	text "Graveler"
+	text "Vibrava"
 	done
 
 HardenName:
@@ -1034,10 +1025,9 @@ HardenName:
 GravelersHardenDescription:
 	text "During your opponent's next turn,"
 	line "whenever 30 or less damage is done"
-	line "to Graveler (after applying"
-	line "Weakness and Resistance), prevent"
-	line "that damage. (Any other effects of"
-	line "attacks still happen.)"
+	line "to this PKMN, prevent that damage."
+	line "(after applying Weakness and"
+	line "Resistance)"
 	done
 
 RockThrowName:
@@ -1045,17 +1035,17 @@ RockThrowName:
 	done
 
 GravelerDescription:
-	text "Rolls down slopes to move. It rolls"
-	line "over any obstacle without slowing"
-	line "or changing its direction."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Boundaries Crossed 98)"
+	line "OG illustrator: (Naoki Saito)"
 	done
 
 GolemName:
-	text "Golem"
+	text "Flygon"
 	done
 
 AvalancheName:
-	text "Avalanche"
+	text "Dragon Energy"
 	done
 
 GolemsSelfdestructDescription:
@@ -1071,13 +1061,13 @@ MegatonName:
 	done
 
 GolemDescription:
-	text "Its boulder-like body is extremely"
-	line "hard. It can easily withstand"
-	line "dynamite blasts without damage."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Nintendo Black Star Promos 25)"
+	line "OG illustrator: (Kouki Saitou)"
 	done
 
 OnixName:
-	text "Onix"
+	text "Hawlucha"
 	done
 
 OnixsHardenDescription:
@@ -1090,17 +1080,17 @@ OnixsHardenDescription:
 	done
 
 RockSnakeName:
-	text "Rock Snake"
+	text "Wrestling"
 	done
 
 OnixDescription:
-	text "As it grows, the stone portions of"
-	line "its body harden to become similar"
-	line "to a diamond, though colored black."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (BREAKthrough 87)"
+	line "OG illustrator: (match)"
 	done
 
 CuboneName:
-	text "Cubone"
+	text "Larvitar"
 	done
 
 SnivelName:
@@ -1127,13 +1117,13 @@ LonelyName:
 	done
 
 CuboneDescription:
-	text "Because it never removes its skull"
-	line "helmet, no one has ever seen this"
-	line "Pokémon's real face."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Unleashed 51)"
+	line "OG illustrator: (Kouki Saitou)"
 	done
 
 MarowakName:
-	text "Marowak"
+	text "Pupitar"
 	done
 
 BonemerangName:
@@ -1157,9 +1147,9 @@ BonekeeperName:
 	done
 
 MarowakLv26Description:
-	text "The bone it holds is its key weapon."
-	line "It throws the bone skillfully like"
-	line "a boomerang to K.O. targets."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (POP Series 1 17)"
+	line "OG illustrator: (Hisao Nakamura)"
 	done
 
 BoneAttackName:
@@ -1173,23 +1163,23 @@ BoneAttackDescription:
 	done
 
 WailName:
-	text "Wail"
+	text "Cry for Help"
 	done
 
 WailDescription:
-	text "Each player fills his or her Bench"
-	line "with Basic Pokémon chosen at random"
-	line "from his or her deck. If a player"
-	line "has fewer Basic Pokémon than that in"
-	line "his or deck, he or she chooses all"
-	line "of them. Each player shuffles his"
-	line "or her deck afterward."
+	text "Each player fills their Bench with"
+	line "Basic PKMN chosen at random from"
+	line "their deck. If a player has fewer"
+	line "Basic PKMN than that in their deck,"
+	line "that Player chooses all of them"
+	line "(If Any). Each Player shuffles"
+	line "their deck."
 	done
 
 MarowakLv32Description:
-	text "Small and weak, this Pokémon is"
-	line "adept with its bone club. It has"
-	line "grown more vicious over the ages."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Neo Discovery 45)"
+	line "OG illustrator: (Hironobu Yoshida)"
 	done
 
 HitmonleeName:
@@ -1217,9 +1207,9 @@ KickingName:
 	done
 
 HitmonleeDescription:
-	text "When in a hurry, its legs lengthen"
-	line "progressively. It runs smoothly with"
-	line "extra long, loping strides."
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Undaunted 52)"
+	line "OG illustrator: (Kouki Saitou)"
 	done
 
 HitmonchanName:
@@ -1227,11 +1217,11 @@ HitmonchanName:
 	done
 
 JabName:
-	text "Jab"
+	text "Mach Punch"
 	done
 
 SpecialPunch:
-	text "Special Punch"
+	text "Sky Uppercut"
 	done
 
 PunchingName:
@@ -1239,13 +1229,13 @@ PunchingName:
 	done
 
 HitmonchanDescription:
-	text "While seeming to do nothing, it"
-	line "fires punches in lightning-fast"
-	line "volleys that are impossible to see."
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Furious Fists 48)"
+	line "OG illustrator: (match)"
 	done
 
 RhyhornName:
-	text "Rhyhorn"
+	text "Cufant"
 	done
 
 LeerName:
@@ -1254,7 +1244,7 @@ LeerName:
 
 LeerDescription:
 	text "Flip a coin. If heads, the Defending"
-	line "Pokémon can't attack Rhyhorn during"
+	line "Pkmn can't attack this PKMN during"
 	line "your opponent's next turn."
 	line "(Benching or evolving either Pokémon"
 	line "ends this effect.)"
@@ -1265,21 +1255,21 @@ SpikeName:
 	done
 
 RhyhornDescription:
-	text "Its massive bones are 1,000 times"
-	line "harder than human bones. It can"
-	line "easily knock a trailer flying."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Shining Fates 49)"
+	line "OG illustrator: (0313)"
 	done
 
 RhydonName:
-	text "Rhydon"
+	text "Copperajah"
 	done
 
 RamName:
-	text "Ram"
+	text "High Horsepower"
 	done
 
 RamDescription:
-	text "Rhydon does 20 damage to itself."
+	text "Does 20 damage to itself."
 	line "If your opponent has any Benched"
 	line "Pokémon, he or she chooses 1 of them"
 	line "and switches it with the Defending"
@@ -1288,14 +1278,14 @@ RamDescription:
 	done
 
 RamDescriptionCont:
-	text "Switch the Pokémon even if Rhydon"
+	text "Switch the Pokémon even if"
 	line "is Knocked Out.)"
 	done
 
 RhydonDescription:
-	text "Protected by an armor-like hide, it"
-	line "is capable of living in molten lava"
-	line "of 3600 degrees."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Fusion Strike 192)"
+	line "OG illustrator: (KEIICHIRO ITO)"
 	done
 
 KabutoName:
@@ -1323,13 +1313,13 @@ KabutoArmorDescriptionCont:
 	done
 
 KabutoDescription:
-	text "A Pokémon that was resurrected from"
-	line "a fossil found in what was once the"
-	line "ocean floor eons ago."
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Power Keepers 51)"
+	line "OG illustrator: (Ken SUGIMORI)"
 	done
 
 KabutopsName:
-	text "Kabutops"
+	text "Delta Kabutops"
 	done
 
 SharpSickleName:
@@ -1342,7 +1332,7 @@ AbsorbName:
 
 AbsorbDescription:
 	text "Remove a number of damage counters"
-	line "from Kabutops equal to half the"
+	line "from this PKMN equal to half the"
 	line "damage done to the Defending"
 	line "Pokémon (after applying Weakness"
 	line "and Resistance)"
@@ -1350,30 +1340,30 @@ AbsorbDescription:
 	done
 
 AbsorbDescriptionCont:
-	text "If Kabutops has fewer damage"
+	text "If it has fewer damage"
 	line "counters than that, remove all of"
 	line "them."
 	done
 
 KabutopsDescription:
-	text "Its sleek shape is perfect for"
-	line "swimming. It slashes prey with its"
-	line "claws and drains the body fluids."
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Holon Phantoms 9)"
+	line "OG illustrator: (Masakazu Fukuda)"
 	done
 
 AerodactylName:
-	text "Aerodactyl"
+	text "Tyrantrum"
 	done
 
 PrehistoricPowerName:
-	text "Prehistoric Power"
+	text "Tyrannical Heart"
 	done
 
 PrehistoricPowerDescription:
 	text "No more Evolution cards can be"
 	line "played. This power stops working"
-	line "while Aerodactyl is Asleep,"
-	line "Confused, or Paralyzed."
+	line "while is Asleep, Confused,"
+	line "or Paralyzed."
 	done
 
 FossilName:
@@ -1381,13 +1371,13 @@ FossilName:
 	done
 
 AerodactylDescription:
-	text "A ferocious prehistoric Pokémon that"
-	line "goes for the enemy's throat with its"
-	line "serrated saw-like fangs."
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (XY Promos 70)"
+	line "OG illustrator: (Eske Yoshinob)"
 	done
 
 AbraName:
-	text "Abra"
+	text "Deino"
 	done
 
 PsiName:
@@ -1395,13 +1385,13 @@ PsiName:
 	done
 
 AbraDescription:
-	text "Using its ability to read minds, it"
-	line "will identify impending danger and"
-	line "teleport to safety."
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Dragons Exalted 93)"
+	line "OG illustrator: (kawayoo)"
 	done
 
 KadabraName:
-	text "Kadabra"
+	text "Zweilous"
 	done
 
 KadabrasRecoverDescription:
@@ -1416,15 +1406,15 @@ SuperPsiName:
 	done
 
 KadabraDescription:
-	text "It emits special alpha waves from"
-	line "its body that induce headaches even"
-	line "to those just nearby."
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Steam Siege 85)"
+	line "OG illustrator: (Ken SUGIMORI)"
 	done
 
 AlakazamName:
-	text "Alakazam"
+	text "Hydreigon"
 	done
 
 DamageSwapName:
-	text "Damage Swap"
+	text "Dark Impulse"
 	done

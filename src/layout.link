@@ -71,6 +71,8 @@ ROMX $07
 	"Booster Packs"
 ROMX $08
 	"AI Logic 2"
+ROMX $09
+	"Text Offsets"	
 ROMX $0a
 	"Card Pointers"
 	"Cards"

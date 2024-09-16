@@ -1233,14 +1233,10 @@ DoubleColorlessEnergyName:
 DoubleColorlessEnergyDescription:
 	text "Provides <COLORLESS><COLORLESS> Energy. (Doesn't"
 	line "count as a basic Energy card.) "
-	line "Colorless Energy can't be used to"
-	line "pay colored Energy costs. (Any type"
-	line "of Energy can be used to pay"
-	line "Colorless Energy costs.)"
 	done
 
 BulbasaurName:
-	text "Bulbasaur"
+	text "Chikorita"
 	done
 
 LeechSeedName:
@@ -1249,23 +1245,22 @@ LeechSeedName:
 
 BulbasaursLeechSeedDescription:
 	text "Unless all damage from this attack"
-	line "is prevented, you may remove 1"
-	line "damage counter from Bulbasaur."
+	line "is prevented, you may remove 3"
+	line "damage counters from this PKMN."
 	done
 
 SeedName:
-	text "Seed"
+	text "Leaf"
 	done
 
 BulbasaurDescription:
-	text "A strange seed was planted on its"
-	line "back at birth. Thus, a plant"
-	line "sprouted and now grows with this"
-	line "Pokémon."
+	text "Booster Pack: (COLOSSEUM)"
+	line "Base on: (Neo Genesis 53)"
+	line "OG Artist: (Naoyo Kimura)"
 	done
-
+ 
 IvysaurName:
-	text "Ivysaur"
+	text "Bayleef"
 	done
 
 VineWhipName:
@@ -1282,17 +1277,17 @@ InflictPoisonDescription:
 	done
 
 IvysaurDescription:
-	text "When the bulb on its back grows"
-	line "large, the Pokémon seems to lose the"
-	line "ability to stand on its hind legs."
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Neo Genesis 29)"
+	line "OG illustrator: (Ken Sugimori)"
 	done
 
 VenusaurName:
-	text "Venusaur"
+	text "Meganium"
 	done
 
 SolarPowerName:
-	text "Solar Power"
+	text "Natural Cure"
 	done
 
 SolarPowerDescription:
@@ -1306,33 +1301,34 @@ SolarPowerDescription:
 
 SolarPowerDescriptionCont:
 	text "This power can't be used if"
-	line "Venusaur is Asleep, Confused,"
+	line "is Asleep, Confused,"
 	line "or Paralyzed."
 	done
 
 MegaDrainName:
-	text "Mega Drain"
+	text "Giga Drain"
 	done
 
 VenusaursMegaDrainDescription:
-	text "Remove a number of damage counters"
-	line "from Venusaur equal to half the"
-	line "damage done to the Defending Pokémon"
-	line "(after applying Weakness and"
-	line "Resistance) (rounded up to the"
-	line "nearest 10)."
+	text "Heal damage from this card equal to"
+	line "half the damage done to the Defending"
+	line "Pkmn (after Weakness and Resistance)"
+	line "(rounded up to the nearest 10)."
+	line "If this Card has fewer damage"
 	done
 
 VenusaursMegaDrainDescriptionCont:
-	text "If Venusaur has fewer damage"
-	line "counters than that, remove all of"
-	line "them."
+	text "counters than that, remove all of"
+	line "them. During your opponent's next"
+	line "turn, this PKMN takes 30 less damage"
+	line "from attacks (after applying Weakness"
+	line "and Resistance)."
 	done
 
 VenusaurLv64Description:
-	text "The flower on its back catches"
-	line "the sun's rays. The sunlight is then"
-	line "absorbed and used for energy."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Neo Revelation 3)"
+	line "OG illustrator: (Hironobu Yoshida)"
 	done
 
 EnergyTransName:
@@ -1345,7 +1341,7 @@ EnergyTransDescription:
 	line "take 1 <GRASS> Energy card attached to 1"
 	line "of your Pokémon and attach it to a"
 	line "different one. This power can't be"
-	line "used if Venusaur is Asleep,"
+	line "used if is Asleep,"
 	line "Confused, or Paralyzed."
 	done
 
@@ -1354,13 +1350,13 @@ SolarBeamName:
 	done
 
 VenusaurLv67Description:
-	text "This plant blooms when it is"
-	line "absorbing solar energy. It stays on"
-	line "the move to seek sunlight."
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Neo Genesis 10)"
+	line "OG illustrator: (Ken Sugimori)"
 	done
 
 CaterpieName:
-	text "Caterpie"
+	text "Wurmple"
 	done
 
 StringShotName:
@@ -1373,17 +1369,17 @@ MayInflictParalysisDescription:
 	done
 
 WormName:
-	text "Worm"
+	text "Catepillar"
 	done
 
 CaterpieDescription:
-	text "Its short feet are tipped with"
-	line "suction pads that enable it to"
-	line "tirelessly climb slopes and walls."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Ruby & Sapphire 78)"
+	line "OG illustrator: (Hajime Kusajima)"
 	done
 
 MetapodName:
-	text "Metapod"
+	text "Silcoon"
 	done
 
 StiffenName:
@@ -1392,9 +1388,10 @@ StiffenName:
 
 MetapodsStiffenDescription:
 	text "Flip a coin. If heads, prevent all"
-	line "damage done to Metapod during your"
-	line "opponent's next turn. (Any other"
-	line "effects of attacks still happen.)"
+	line "damage done during your opponent's"
+	line "next turn. (Any other effects of"
+	line "attacks still happen.) Either Way,"
+	line "Draw a card from your Deck."
 	done
 
 StunSporeName:
@@ -1402,17 +1399,17 @@ StunSporeName:
 	done
 
 CocoonName:
-	text "Cocoon"
+	text "Chrysalis"
 	done
 
 MetapodDescription:
-	text "It is vulnerable to attack because"
-	line "its shell is soft, exposing its weak"
-	line "and tender body."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Deoxys 46)"
+	line "OG illustrator: (Kagemaru Himeno)"
 	done
 
 ButterfreeName:
-	text "Butterfree"
+	text "Beautifly"
 	done
 
 WhirlwindName:
@@ -1420,24 +1417,21 @@ WhirlwindName:
 	done
 
 WhirlwindDescription:
-	text "If your opponent has any Benched"
-	line "Pokémon, he or she chooses 1 of them"
-	line "and switches it with the Defending"
-	line "Pokémon. (Do the damage before"
-	line "switching the Pokémon.)"
+	text "Switch out your opponent's Active "
+	line "Pkmn to the Bench. (Your opponent "
+	line "chooses the new Active Pkmn.)"
 	done
 
 ButterfreesMegaDrainDescription:
-	text "Remove a number of damage counters"
-	line "from Butterfree equal to half the"
-	line "damage done to the Defending Pokémon"
-	line "(after applying Weakness and"
-	line "Resistance) (rounded up to the"
-	line "nearest 10)."
+	text "Heal damage from this card equal to"
+	line "half the damage done to the"
+	line "Defending Pkmn (after applying"
+	line "Weakness and Resistance) (rounded up"
+	line "to the nearest 10)."
 	done
 
 ButterfreesMegaDrainDescriptionCont:
-	text "If Butterfree has fewer damage"
+	text "If it has fewer damage"
 	line "counters than that, remove all of"
 	line "them."
 	done
@@ -1447,13 +1441,13 @@ ButterflyName:
 	done
 
 ButterfreeDescription:
-	text "In battle, it flaps its wings at"
-	line "high speed to release highly toxic"
-	line "dust into the air."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Lost Origin 8)"
+	line "OG illustrator: (Yuu Nishida)"
 	done
 
 WeedleName:
-	text "Weedle"
+	text "Cascoon"
 	done
 
 PoisonStingName:
@@ -1470,18 +1464,19 @@ HairyBugName:
 	done
 
 WeedleDescription:
-	text "Often found in forests, eating"
-	line "leaves. It has a sharp, venomous"
-	line "stinger on its head."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Roaring Skies 6)"
+	line "OG illustrator: (MAHOU)"
 	done
 
 KakunaName:
-	text "Kakuna"
+	text "Dustox"
 	done
 
 KakunasStiffenDescription:
 	text "Flip a coin. If heads, prevent all"
-	line "damage done to Kakuna during your"
+	line "damage done during your"
 	line "opponent's next turn. (Any other"
 	line "effects of attacks still happen.)"
 	done
+

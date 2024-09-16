@@ -293,12 +293,6 @@ WeezingSelfdestructEffectCommands:
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, WeezingSelfdestructEffect
 	db  $00
 
-VenomothShiftEffectCommands:
-	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, Shift_OncePerTurnCheck
-	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Shift_ChangeColorEffect
-	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, Shift_PlayerSelectEffect
-	db  $00
-
 VenomothVenomPowderEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, VenomPowder_PoisonConfusion50PercentEffect
 	dbw EFFECTCMDTYPE_AI, VenomPowder_AIEffect
@@ -825,7 +819,7 @@ MewtwoAltLV60EnergyAbsorptionEffectCommands:
 	dbw EFFECTCMDTYPE_AI_SELECTION, EnergyAbsorption_AISelectEffect
 	db  $00
 
-MewtwoLv60EnergyAbsorptionEffectCommands:
+EnergyAbsorptionEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, EnergyAbsorption_CheckDiscardPile
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, EnergyAbsorption_AddToHandEffect
 	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, EnergyAbsorption_PlayerSelectEffect
@@ -1617,3 +1611,446 @@ GustOfWindEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, GustOfWind_PlayerSelection
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, GustOfWind_SwitchEffect
 	db  $00
+
+GrassKnotEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, GrassKnot_DamageBoostEffect
+	dbw EFFECTCMDTYPE_AI, GrassKnot_AIEffect
+	db  $00
+
+LowKickEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Low_DamageBoostEffect
+	dbw EFFECTCMDTYPE_AI, Low_AIEffect
+	db  $00
+
+IntimidatingManeEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, IntimidatingManeEffect
+	db  $00
+
+PunkRockEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, PunkRock_PoisonOrConfusionEffect
+	dbw EFFECTCMDTYPE_AI, PunkRock_AIEffect
+	db  $00	
+
+VibrationToxicEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, ToxicVibration_PoisonOrSleepEffect
+	dbw EFFECTCMDTYPE_AI, PunkRock_AIEffect
+	db  $00	
+
+ChatoicNoiseEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, ChaoticNoise_ConfusionOrSleepEffect
+	dbw EFFECTCMDTYPE_AI, PunkRock_AIEffect
+	db  $00	
+
+AquaStreamEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, AquaStream_DamageBoostEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, EnergyConversion_AddToHandEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, EnergyConversion_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, EnergyConversion_AISelectEffect
+	dbw EFFECTCMDTYPE_AI, AquaStream_AIEffect
+	db  $00
+
+NuzzleEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Paralysis50PercentEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, FetchEffect
+	db  $00
+
+LockonEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, AcidEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, FetchEffect
+	db  $00	
+
+LastRespectsEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, LastRespects_DamageBoostEffect
+	dbw EFFECTCMDTYPE_AI, LastRespects_AIEffect
+	db  $00
+
+Do30moreIfDFPStatusedEffectCommands:	; 
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, CriticalStrikeEffect
+	dbw EFFECTCMDTYPE_AI, CriticalStrikeEffectAIEffect ; Define damage for AI here (20+30)
+	db  $00
+
+Mills3EffectCommands:			;When this poke enters the field, mill 5 from the opponent's deck. Unused. 
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Quickfreeze_InitialEffect
+	dbw EFFECTCMDTYPE_PKMN_POWER_TRIGGER, KakunaStiffenEffect
+	db  $00
+
+MillAtkOppCardsEffectCommands:	; If attack is successful, mill 3 from opp's deck.
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, KakunaStiffenEffect
+	db  $00
+
+NoOppTrainersEffectCommands:		; Upon entering the field, Opp can't use trainers next turn.
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Quickfreeze_InitialEffect
+	dbw EFFECTCMDTYPE_PKMN_POWER_TRIGGER, HeadacheEffect
+	db  $00	
+
+LightningHasteEffectCommands:
+  dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, LightningHaste_OncePerTurnCheck
+  dbw EFFECTCMDTYPE_BEFORE_DAMAGE, LightningHaste_AttachEnergyEffect
+  db  $00
+
+ShinyFeatherEffectCommands:		; Enters the field to trigger the pokepower. Gets a trainer card from discard. Modified Itemfinder effect. Ai doesn't understand this?
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Quickfreeze_InitialEffect
+	dbw EFFECTCMDTYPE_PKMN_POWER_TRIGGER, ShinyFeatherEffect
+	db  $00
+
+DriveOffEffectCommands:
+    dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, LureAbility_AssertPokemonInBench
+    dbw EFFECTCMDTYPE_BEFORE_DAMAGE, LureAbility_SwitchDefendingPokemon
+    dbw EFFECTCMDTYPE_REQUIRE_SELECTION, VictreebelLure_SwitchDefendingPokemon
+	dbw EFFECTCMDTYPE_AI_SELECTION, VictreebelLure_GetBenchPokemonWithLowestHP
+    db  $00
+
+SleepLureEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, VictreebelLure_AssertPokemonInBench
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, SleepingGasEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, VictreebelLure_SwitchDefendingPokemon
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, VictreebelLure_SwitchDefendingPokemon
+	dbw EFFECTCMDTYPE_AI_SELECTION, VictreebelLure_GetBenchPokemonWithLowestHP
+	db  $00	
+
+DeepSleepEffectCommands:		; Used for Gengars Deep Sleep. This command is just flavor, Deep Sleep code is found in Duel -> Core.
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, EnergyBurnEffect
+	db  $00	
+
+BattleBlastEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, BattleblastEffect
+	dbw EFFECTCMDTYPE_AI, BattleblastEffect
+	db  $00	
+
+PoisonLureEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, VictreebelLure_AssertPokemonInBench
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Poison50PercentEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, VictreebelLure_SwitchDefendingPokemon
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, VictreebelLure_SwitchDefendingPokemon
+	dbw EFFECTCMDTYPE_AI_SELECTION, VictreebelLure_GetBenchPokemonWithLowestHP
+	db  $00	
+
+PoisonHalfEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, SuperFang_HalfHPEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Poison50PercentEffect
+	dbw EFFECTCMDTYPE_AI, SuperFang_AIEffect
+	db  $00	
+
+UltravisionEffectCommands:
+    dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, CheckDeckIsNotEmpty
+    dbw EFFECTCMDTYPE_AFTER_DAMAGE, SelectedCard_AddToHandFromDeckEffect
+    dbw EFFECTCMDTYPE_REQUIRE_SELECTION, Ultravision_PlayerSelectEffect
+    dbw EFFECTCMDTYPE_AI_SELECTION, Ultravision_AISelectEffect
+    db  $00
+
+SleepTeleportEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, SleepEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Teleport_SwitchEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, Teleport_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, Teleport_AISelectEffect
+	db  $00
+
+BugbuzzEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, BugbuzzEffect
+	dbw EFFECTCMDTYPE_AI, BugbuzzEffect
+	db  $00	
+
+EeveelutionEffectCommands:		; Searches deck for an eeveelution, adds to hand.
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, EeveelutionCheckDeckEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, EeveelutionAddToHandEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, EeveelutionPlayerSelectEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, EeveelutionAISelectEffect
+	db  $00
+
+FlameSurgeEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, EnergyAbsorption_CheckDiscardPile
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EnergyAbsorption_AddToHandEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, KakunaStiffenEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, EnergyAbsorption_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, EnergyAbsorption_AISelectEffect
+	db  $00	
+
+BurstinginfernoEffectCommands:		; Modified Burstinginferno code. Discard any number of fire energy (min 1) then +20 per discard. 
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Burstinginferno_CheckEnergy
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, Burstinginferno_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Burstinginferno_DiscardDeckEffect
+	dbw EFFECTCMDTYPE_DISCARD_ENERGY, Burstinginferno_DiscardEnergyEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, Burstinginferno_AISelectEffect
+	dbw EFFECTCMDTYPE_AI, Burstinginferno_AIEffect
+	db  $00	
+
+PlasmaFistEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, FireSpin_CheckEnergy
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, FireSpin_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Paralysis50PercentEffect
+	dbw EFFECTCMDTYPE_DISCARD_ENERGY, FireSpin_DiscardEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, FireSpin_AISelectEffect
+	db  $00
+
+SmogScreenAttackEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, SandAttackEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, PoisonEffect
+	db  $00	
+
+SprintEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Sprint_Check
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, SprintEffect
+	db  $00
+
+Do10MorePerInjuredPokesEffectCommands:		;Does +10 per injured pokemon on your side of the field.
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, adsEffect
+	dbw EFFECTCMDTYPE_AI, asd_AIEffect
+	db  $00
+
+DigDrainEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, HardenEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, ButterfreeMegaDrainEffect
+	db  $00
+
+DraconicEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, DraconicCheckEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, DraconicPlayerSelectEffect
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, DraconicSearchEffect
+	db  $00
+
+SharpshootingEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, StretchKick_CheckBench
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, VaporeonWaterGunEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, StretchKick_BenchDamageEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, StretchKick_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_AI, VaporeonWaterGunEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, StretchKick_AISelectEffect
+	db  $00
+
+HazardousEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, FireSpin_CheckEnergy
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, FireSpin_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, ParalysisEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, PoisonEffect
+	dbw EFFECTCMDTYPE_DISCARD_ENERGY, FireSpin_DiscardEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, FireSpin_AISelectEffect
+	db  $00
+
+HydroDrainEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, OmastarWaterGunEffect
+	dbw EFFECTCMDTYPE_AI, OmastarWaterGunEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, ButterfreeMegaDrainEffect
+	db  $00
+
+CornerEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, TEsffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, IncreaseRetreatCostEffect
+	dbw EFFECTCMDTYPE_AI, Toxic_AIEffect
+	db  $00
+
+IncreaseRetreatCostCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, IncreaseRetreatCostEffect
+	db $00
+
+AquaticRescueEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, EnergyConversion_CheckEnergy
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, EnergyConversion_AddToHandEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, EnergyConversion_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, EnergyConversion_AISelectEffect
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, PoliwagWaterGunEffect
+	dbw EFFECTCMDTYPE_AI, PoliwagWaterGunEffect
+	db  $00
+
+WrackdownCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, OpportunistDamagedEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, IncreaseRetreatCostEffect
+	db $00	
+
+CoordinatedShurikenEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, HydroPumpEffect
+	dbw EFFECTCMDTYPE_AI, HydroPumpEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Gigashock_BenchDamageEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, Gigashock_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, Gigashock_AISelectEffect
+	db  $00
+
+DowndrawCommnads:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Teleport_CheckBench
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, BillEffect
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Teleport_SwitchEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, Teleport_PlayerSelectEffect2
+	dbw EFFECTCMDTYPE_AI_SELECTION, Teleport_AISelectEffect
+	db  $00
+
+MachPunchEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, MachPunch_DamageBoostEffect
+	dbw EFFECTCMDTYPE_AI, MachPunch_AIEffect
+	db  $00
+
+FlipTurnEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Teleport_SwitchEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, Teleport_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, Teleport_AISelectEffect
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, FlipTurnEffect
+	dbw EFFECTCMDTYPE_AI, FlipTurnEffect
+	db  $00
+
+TeraSparkEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, FireSpin_CheckEnergy
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, FireSpin_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_DISCARD_ENERGY, FireSpin_DiscardEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, FireSpin_AISelectEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, TeraSpark_BenchDamageEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, Spark_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, Spark_AISelectEffect
+	db  $00
+
+TreasureRushEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, TreasureRush_DamageBoostEffect
+	dbw EFFECTCMDTYPE_AI, TreasureRush_AIEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, SubmissionEffect
+	db  $00
+
+SuctionHealCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, IncreaseRetreatCostEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, GolbatLeechLifeEffect
+	db $00
+
+SnapEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Quickfreeze_InitialEffect
+	dbw EFFECTCMDTYPE_PKMN_POWER_TRIGGER, RandomSnipeEffect
+	db  $00
+
+Snap2EffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Quickfreeze_InitialEffect
+	dbw EFFECTCMDTYPE_PKMN_POWER_TRIGGER, CatPunchEffect
+	db  $00	
+
+ShuffleHandThenDraw4EffectCommands:		;Shuffles hand into deck, then draws 7.
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, DataRetrievalEffect
+	db  $00
+
+HealingWindEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, HealingWind_PlayAreaHealEffect
+	db  $00	
+
+VoltswitchEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Teleport_SwitchEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, Teleport_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, Teleport_AISelectEffect
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, MachPunch_DamageBoostEffect
+	dbw EFFECTCMDTYPE_AI, MachPunch_AIEffect
+	db  $00
+
+DragonRageEffectCommands:
+    dbw EFFECTCMDTYPE_BEFORE_DAMAGE, DragonRage_DamageBoostEffect
+    dbw EFFECTCMDTYPE_AI, DragonRage_AIEffect
+    db  $00	
+
+EnergyCrushEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Teleport_SwitchEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, Teleport_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, Teleport_AISelectEffect
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Psychic_DamageBoostEffect
+	dbw EFFECTCMDTYPE_AI, Psychic_AIEffect
+	db  $00
+
+HuntingArrowEffectCommands:		; Does extra damage if a T energy is attached, also mills 3 cards from opp.
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, StretchKick_BenchDamageEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, Spark_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, Spark_AISelectEffect
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, ExtraDamageIfTEnergiesEffect
+	dbw EFFECTCMDTYPE_AI, ExtraDamageIfTEnergiesAIEffect
+	db  $00
+
+ButterflyEdgeEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, CriticalStrikeEffect
+	dbw EFFECTCMDTYPE_AI, CriticalStrikeEffectAIEffect ; Define damage for AI here (20+30)
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Whirlwind_SwitchEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, Whirlwind_SelectEffect
+	dbw EFFECTCMDTYPE_AI_SWITCH_DEFENDING_PKMN, Whirlwind_SelectEffect
+	db  $00	
+
+ShadowClawEffectCommands:		; Does extra damage if a T energy is attached, also mills 3 cards from opp.
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, ExtraDamageIfTEnergiesEffect
+	dbw EFFECTCMDTYPE_AI, ExtraDamageIfTEnergiesAIEffect
+	db  $00
+
+TwineedleEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, DoubleKick30_MultiplierEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, ExtraEffectIfTEnergiesEffect
+	dbw EFFECTCMDTYPE_AI, DoubleKick30_AIEffect
+	db  $00
+
+ApplefallEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, ExtraDamageIfFEnergiesEffect
+	dbw EFFECTCMDTYPE_AI, ExtraDamageIfFEnergiesAIEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, FoulOdorEffect
+	db  $00	
+
+SweetImpactEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, ExtraDamageIfFEnergiesEffect
+	dbw EFFECTCMDTYPE_AI, ExtraDamageIfFEnergiesAIEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, ExeggcuteLeechSeedEffect
+	db  $00	
+
+ViseBiteEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Low_DamageBoostEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, ViseBiteEffect
+	dbw EFFECTCMDTYPE_AI, GrassKnot_AIEffect
+	db  $00	
+
+DustyPillareEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, GrassKnot_DamageBoostEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, DustyEffect
+	dbw EFFECTCMDTYPE_AI, GrassKnot_AIEffect
+	db  $00		
+
+KabitopsEffectCommands:		; Does extra damage if a T energy is attached, also mills 3 cards from opp.
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, ExtraDamageIfLEnergiesEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, GolbatLeechLifeEffect
+	dbw EFFECTCMDTYPE_AI, ExtraDamageIfLEnergiesAIEffect
+	db  $00	
+
+RiotEffectCommands:		; Does extra damage if a T energy is attached, also mills 3 cards from opp.
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, ExtraDamageIfGEnergiesEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, RiotEffect
+	dbw EFFECTCMDTYPE_AI, ExtraDamageIfGEnergiesAIEffect
+	db  $00	
+
+CinderCannonEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, ExtraDamageIfFTEnergiesEffect
+	dbw EFFECTCMDTYPE_AI, ExtraDamageIfTEnergiesAIEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, ExtraEffectIfTEnergieesEffect
+	db  $00		
+
+ShellTrapEffectCommands:	; 
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, ShellTrapEffect
+	dbw EFFECTCMDTYPE_AI, CriticalStrikeEffectAIEffect ; Define damage for AI here (20+30)
+	db  $00	
+
+FlareUpEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, FlareUp_DamageBoostEffect
+	dbw EFFECTCMDTYPE_AI, FlareUp_AIEffect
+	db  $00	
+
+MoreDamageifDFPInjuredEffectCommands:		;Does 20 less damage if the DFP already has damage counters on it. 
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, LessDamageifDFPDamagedEffect
+	dbw EFFECTCMDTYPE_AI, WeedlePoisonSting_AIEffect
+	db  $00	
+
+OpportunistEffectCommands:		;Does 20 less damage if the DFP already has damage counters on it. 
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, OpportunistDamagedEffect
+	db  $00		
+
+CounterpunchEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Counterpunch_DamageBoostEffect
+	dbw EFFECTCMDTYPE_AI, Counterpunch_AIEffect
+	db  $00	
+
+IcyWindEffectCommands:		; Does extra damage if a T energy is attached, also mills 3 cards from opp.
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Sleep50PercentEffect
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, ExtraDamageIfTEnergiesEffect
+	dbw EFFECTCMDTYPE_AI, ExtraDamageIfTEnergiesAIEffect
+	db  $00	
+
+EntrapEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EntrapDamagedEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, AcidEffect
+	db  $00		
+
+GiantBloomEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, GaintBloomEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, ButterfreeMegaDrainEffect
+	db  $00
+	

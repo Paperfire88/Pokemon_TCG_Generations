@@ -1,11 +1,11 @@
 KakunaDescription:
-	text "Almost incapable of moving, this"
-	line "Pokémon can only harden its shell to"
-	line "protect itself from predators."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Roaring Skies 7)"
+	line "OG illustrator: (Akira Komayama)"
 	done
 
 BeedrillName:
-	text "Beedrill"
+	text "Rowlet"
 	done
 
 TwineedleName:
@@ -22,13 +22,13 @@ PoisonBeeName:
 	done
 
 BeedrillDescription:
-	text "Flies at high speed and attacks"
-	line "using the large, venomous stingers"
-	line "on its forelegs and tail."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Sword & Shield Promos 220)"
+	line "OG illustrator: (sowsow)"
 	done
 
 EkansName:
-	text "Ekans"
+	text "Dartrix"
 	done
 
 SpitPoisonName:
@@ -44,17 +44,18 @@ SnakeName:
 	done
 
 EkansDescription:
-	text "Moves silently and stealthily. Eats"
-	line "the eggs of birds, such as Pidgey"
-	line "and Spearow, whole."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Sun & Moon 10)"
+	line "OG illustrator: (Mizue)"
+	
 	done
 
 ArbokName:
-	text "Arbok"
+	text "Decidueye"
 	done
 
 TerrorStrikeName:
-	text "Terror Strike"
+	text "Luring Glow"
 	done
 
 TerrorStrikeDescription:
@@ -76,13 +77,14 @@ CobraName:
 	done
 
 ArbokDescription:
-	text "It is rumored that the ferocious"
-	line "warning markings on its belly differ"
-	line "from area to area."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Sword & Shield Promos 35)"
+	line "OG illustrator: (Souichirou Gunjima)"
+	
 	done
 
 NidoranFName:
-	text "Nidoran♀"
+	text "Shelmet"
 	done
 
 FurySwipesName:
@@ -100,7 +102,7 @@ CallForFamilyName:
 
 NidoranFsCallForFamilyDescription:
 	text "Search your deck for a Basic Pokémon"
-	line "named Nidoran♀ or Nidoran♂ and put"
+	line "named Shelmet or Karrablast and put"
 	line "it onto your Bench. Shuffle your"
 	line "deck afterward. (You can't use this"
 	line "attack if your Bench is full.)"
@@ -111,17 +113,18 @@ PoisonPinName:
 	done
 
 NidoranFDescription:
-	text "Although small, its venomous barbs"
-	line "make this Pokémon dangerous."
-	line "The female has smaller horns."
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Darkness Ablaze 9)"
+	line "OG illustrator: (Megumi Mizutani)"
+	
 	done
 
 NidorinaName:
-	text "Nidorina"
+	text "Accelgor"
 	done
 
 SupersonicName:
-	text "Supersonic"
+	text "Pester"
 	done
 
 MayInflictConfusionDescription:
@@ -130,17 +133,18 @@ MayInflictConfusionDescription:
 	done
 
 DoubleKickName:
-	text "Double Kick"
+	text "Double Hit"
 	done
 
 NidorinaDescription:
-	text "The female's horn develops slowly."
-	line "Prefers physical attacks such as"
-	line "clawing and biting."
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Darkness Ablaze 10)"
+	line "OG illustrator: (Shigenori Negishi)"
+	
 	done
 
 NidoqueenName:
-	text "Nidoqueen"
+	text "Illumise"
 	done
 
 BoyfriendsName:
@@ -148,8 +152,8 @@ BoyfriendsName:
 	done
 
 BoyfriendsDescription:
-	text "Does 20 damage plus 20 more damage"
-	line "for each Nidoking you have in play."
+	text "Does damage +20 more damage"
+	line "for each Volbeat you have in play."
 	done
 
 MegaPunchName:
@@ -161,17 +165,18 @@ DrillName:
 	done
 
 NidoqueenDescription:
-	text "Its hard scales provide strong"
-	line "protection. It uses its hefty bulk"
-	line "to execute powerful moves."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (XY 8)"
+	line "OG illustrator: (Kanako Eo)"
+	
 	done
 
 NidoranMName:
-	text "Nidoran♂"
+	text "Karrablast"
 	done
 
 HornHazardName:
-	text "Horn Hazard"
+	text "Suprise Attack"
 	done
 
 MayDoNothingDescription:
@@ -180,27 +185,29 @@ MayDoNothingDescription:
 	done
 
 NidoranMDescription:
-	text "Stiffens its ears to sense danger."
-	line "The larger, more powerful of its"
-	line "horns secretes venom."
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Phantom Forces 8)"
+	line "OG illustrator: (Sanosuke Sakuma)"
+	
 	done
 
 NidorinoName:
-	text "Nidorino"
+	text "Escavalier"
 	done
 
 HornDrillName:
-	text "Horn Drill"
+	text "Iron Tackle"
 	done
 
 NidorinoDescription:
-	text "An aggressive Pokémon that is quick"
-	line "to attack. The horn on its head"
-	line "secretes a powerful venom."
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Noble Victories 80)"
+	line "OG illustrator: (Kouki Saitou)"
+	
 	done
 
 NidokingName:
-	text "Nidoking"
+	text "Volbeat"
 	done
 
 ThrashName:
@@ -228,9 +235,10 @@ ToxicDescription:
 	done
 
 NidokingDescription:
-	text "Uses its powerful tail in battle to"
-	line "smash, constrict, then break its"
-	line "prey's bones."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (XY 9)"
+	line "OG illustrator: (Kanako Eo)"
+	
 	done
 
 ZubatName:
@@ -242,12 +250,9 @@ LeechLifeName:
 	done
 
 ZubatsLeechLifeDescription:
-	text "Remove a number of damage counters"
-	line "from Zubat equal to the damage done"
-	line "to the Defending Pokémon (after"
-	line "applying Weakness and Resistance)."
-	line "If Zubat has fewer damage counters"
-	line "than that, remove all of them."
+	text "Heal from this PKMN the same amount"
+	line "of damage you did to your opponent"
+	line "Active Pokémon."
 	done
 
 BatName:
@@ -255,9 +260,10 @@ BatName:
 	done
 
 ZubatDescription:
-	text "Forms colonies in perpetually dark"
-	line "places. Uses ultrasonic waves to"
-	line "identify and approach targets."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Gym Heroes 24)"
+	line "OG illustrator: (Ken Sugimori)"
+	
 	done
 
 GolbatName:
@@ -269,22 +275,20 @@ WingAttackName:
 	done
 
 GolbatsLeechLifeDescription:
-	text "Remove a number of damage counters"
-	line "from Golbat equal to the damage done"
-	line "to the Defending Pokémon (after"
-	line "applying Weakness and Resistance)."
-	line "If Golbat has fewer damage counters"
-	line "than that, remove all of them."
+	text "Heal from this PKMN the same amount"
+	line "of damage you did to your opponent"
+	line "Active Pokémon."
 	done
 
 GolbatDescription:
-	text "Once it strikes, it will not stop"
-	line "draining energy from the victim even"
-	line "if it gets too heavy to fly."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Generations 31)"
+	line "OG illustrator: (Kanako Eo)"
+	
 	done
 
 OddishName:
-	text "Oddish"
+	text "Applin"
 	done
 
 SproutName:
@@ -293,7 +297,7 @@ SproutName:
 
 SproutDescription:
 	text "Search your deck for a Basic Pokémon"
-	line "named Oddish and put it onto your"
+	line "named Applin and put it onto your"
 	line "Bench. Shuffle your deck afterward."
 	line "(You can't use this attack if your"
 	line "Bench is full.)"
@@ -304,37 +308,39 @@ WeedName:
 	done
 
 OddishDescription:
-	text "During the day, it keeps its face"
-	line "buried in the ground. At night, it"
-	line "wanders around sowing its seeds."
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Rebel Clash 21)"
+	line "OG illustrator: (Kagemaru Himeno)"
+	
 	done
 
 GloomName:
-	text "Gloom"
+	text "Flapple"
 	done
 
 FoulOdorName:
-	text "Foul Odor"
+	text "Apple Fall"
 	done
 
 FoulOdorDescription:
 	text "Both the Defending Pokémon and"
-	line "Gloom are now Confused (after doing"
-	line "damage)."
+	line "this PKMN are now Confused"
+	line "(after doing damage)."
 	done
 
 GloomDescription:
-	text "The fluid that oozes from its mouth"
-	line "isn't drool; it is a nectar that is"
-	line "used to attract prey."
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Sword & Shield Promos 189)"
+	line "OG illustrator: (nagimiso)"
+	
 	done
 
 VileplumeName:
-	text "Vileplume"
+	text "Appletun"
 	done
 
 HealName:
-	text "Heal"
+	text "Delicious Aroma"
 	done
 
 HealDescription:
@@ -342,19 +348,21 @@ HealDescription:
 	line "attack), you may flip a coin. If"
 	line "heads, remove 1 damage counter from"
 	line "1 of your Pokémon. This power can't"
-	line "be used if Vileplume is Asleep,"
+	line "be used if is Asleep,"
 	line "Confused, or Paralyzed."
 	done
 
 PetalDanceName:
-	text "Petal Dance"
+	text "SweeT Impact"
 	done
 
 PetalDanceDescription:
-	text "Flip 3 coins. This attack does 40"
+	text "Flip 3 coins. This attack does"
 	line "damage times the number of heads."
-	line "Vileplume is now Confused (after"
-	line "doing damage)."
+	line "This PKMN is now Confused (after"
+	line "doing damage). then, Heal Damage"
+	line "from this PKMN equal to hald of"
+	line "the damage inflicted. (Round Up.)"
 	done
 
 FlowerName:
@@ -362,13 +370,14 @@ FlowerName:
 	done
 
 VileplumeDescription:
-	text "The larger its petals, the more"
-	line "toxic pollen it contains. Its big"
-	line "head is heavy and hard to hold up."
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Evolving Skies 121)"
+	line "OG illustrator: (Yuya Oka)"
+	
 	done
 
 ParasName:
-	text "Paras"
+	text "Shroomish"
 	done
 
 ScratchName:
@@ -380,7 +389,7 @@ SporeName:
 	done
 
 InflictSleepDescription:
-	text "The Defending Pokémon is now Asleep."
+	text "The Defending Pokémon is now Sleep."
 	done
 
 MushroomName:
@@ -388,36 +397,33 @@ MushroomName:
 	done
 
 ParasDescription:
-	text "Burrows to suck tree roots."
-	line "The mushrooms on its back grow by"
-	line "drawing nutrients from the bug host."
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Scarlet & Violet 3)"
+	line "OG illustrator: (kurumitsu)"
+	
 	done
 
 ParasectName:
-	text "Parasect"
+	text "Breloom"
 	done
 
 SlashName:
-	text "Slash"
+	text "Meteor Mash"
 	done
 
 ParasectDescription:
-	text "A host-parasite pair in which the"
-	line "parasite mushroom has taken over"
-	line "the host bug. Prefers damp places."
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Scarlet & Violet 4)"
+	line "OG illustrator: (Ryuta Fuse)"
+	
 	done
 
 VenonatName:
-	text "Venonat"
+	text "Yanma"
 	done
 
 VenonatLeechLifeDescription:
-	text "Remove a number of damage counters"
-	line "from Venonat equal to the damage"
-	line "done to the Defending Pokémon (after"
-	line "applying Weakness and Resistance)."
-	line "If Venonat has fewer damage counters"
-	line "than that, remove all of them."
+	text ""
 	done
 
 InsectName:
@@ -425,27 +431,22 @@ InsectName:
 	done
 
 VenonatDescription:
-	text "Lives in the shadows of tall trees"
-	line "where it eats insects."
-	line "It is attracted by light at night."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Vivid Voltage 6)"
+	line "OG illustrator: (MAHOU)"
+	
 	done
 
 VenomothName:
-	text "Venomoth"
+	text "Yanmega"
 	done
 
 ShiftName:
-	text "Shift"
+	text "Adaptability"
 	done
 
 ShiftDescription:
-	text "Once during your turn (before your"
-	line "attack), you may change the type of"
-	line "Venomoth to the type of any other"
-	line "Pokémon in play other than"
-	line "Colorless."
-	line "This power can't be used if Venomoth"
-	line "is Asleep, Confused, or Paralyzed."
+	text ""
 	done
 
 VenomPowderName:
@@ -463,31 +464,29 @@ PoisonmothName:
 	done
 
 VenomothDescription:
-	text "The dust-like scales covering its"
-	line "wings are color coded to indicate"
-	line "the kinds of poison it has."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Supreme Victors 14)"
+	line "OG illustrator: (Masakazu Fukuda)"
+	
 	done
 
 BellsproutName:
-	text "Bellsprout"
+	text "Bounsweet"
 	done
 
 BellsproutsCallForFamilyDescription:
-	text "Search your deck for a Basic Pokémon"
-	line "named Bellsprout and put it onto"
-	line "your Bench. Shuffle your deck"
-	line "afterward. (You can't use this"
-	line "attack if your Bench is full.)"
+	text ""
 	done
 
 BellsproutDescription:
-	text "A carnivorous Pokémon that traps and"
-	line "eats bugs. It uses its root feet to"
-	line "soak up needed moisture."
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Chilling Reign 13)"
+	line "OG illustrator: (MAHOU)"
+	
 	done
 
 WeepinbellName:
-	text "Weepinbell"
+	text "Steenee"
 	done
 
 RazorLeafName:
@@ -499,24 +498,26 @@ FlycatcherName:
 	done
 
 WeepinbellDescription:
-	text "It spits out poisonpowder to"
-	line "immobilize the enemy, and then"
-	line "finishes the enemy with a spray of"
-	line "acid."
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Sun & Moon 19)"
+	line "OG illustrator: (Mizue)"
+	
 	done
 
 VictreebelName:
-	text "Victreebel"
+	text "Tsareena"
 	done
 
 LureName:
-	text "Lure"
+	text "Attract"
 	done
 
 VictreebelsLureDescription:
-	text "If your opponent has any Benched"
-	line "Pokémon, choose 1 of them and switch"
-	line "it with his or her Active Pokémon."
+	text "After doing damage, switch 1 of"
+	line "your opponent's Benched Pokémon"
+	line "with the Defending Pokémon. Then,"
+	line "flip a coin. If heads, the new"
+	line "Active Pokémon is now Confused."
 	done
 
 AcidName:
@@ -530,13 +531,14 @@ VictreebelsAcidDescription:
 	done
 
 VictreebelDescription:
-	text "Said to live in huge colonies deep"
-	line "in jungles, although no one has ever"
-	line "returned from there."
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Chilling Reign 15)"
+	line "OG illustrator: (Yuu Nishida)"
+	
 	done
 
 GrimerName:
-	text "Grimer"
+	text "Phantump"
 	done
 
 NastyGooName:
@@ -544,49 +546,51 @@ NastyGooName:
 	done
 
 MinimizeName:
-	text "Minimize"
+	text "Vanish"
 	done
 
 GrimersMinimizeDescription:
-	text "All damage done by attacks to Grimer"
-	line "during your opponent's next turn is"
-	line "reduced by 20 (after applying"
+	text "All damage done to this PKMN"
+	line "during your opponent's next turn"
+	line "is reduced by 20 (after applying"
 	line "Weakness and Resistance)."
 	done
 
 SludgeName:
-	text "Sludge"
+	text "Shadow Claw"
 	done
 
 GrimerDescription:
-	text "Appears in filthy areas. Thrives by"
-	line "sucking up polluted sludge that is"
-	line "pumped out of factories."
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Fusion Strike 16)"
+	line "OG illustrator: (OKACHEKE)"
+	
 	done
 
 MukName:
-	text "Muk"
+	text "Trevenant"
 	done
 
 ToxicGasName:
-	text "Toxic Gas"
+	text "Forest's Curse"
 	done
 
 ToxicGasDescription:
 	text "Ignore all Pokémon Powers other"
-	line "than Toxic Gases. This power stops"
-	line "working while Muk is Asleep,"
+	line "than This one. This power stops"
+	line "working while is Asleep,"
 	line "Confused, or Paralyzed."
 	done
 
 MukDescription:
-	text "Thickly covered with a filthy, vile"
-	line "sludge. It is so toxic, even its"
-	line "footprints contain poison."
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (XY Promos 14)"
+	line "OG illustrator: (Kouki Saitou)"
+	
 	done
 
 ExeggcuteName:
-	text "Exeggcute"
+	text "Snover"
 	done
 
 HypnosisName:
@@ -596,7 +600,7 @@ HypnosisName:
 ExeggcutesLeechSeedDescription:
 	text "Unless all damage from this attack"
 	line "is prevented, you may remove 1"
-	line "damage counter from Exeggcute."
+	line "damage counter from This PKMN."
 	done
 
 EggName:
@@ -604,33 +608,34 @@ EggName:
 	done
 
 ExeggcuteDescription:
-	text "Often mistaken for eggs."
-	line "When disturbed, they quickly gather"
-	line "and attack in swarms."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Chilling Reign 9)"
+	line "OG illustrator: (Naoki Saito)"
+	
 	done
 
 ExeggutorName:
-	text "Exeggutor"
+	text "Abomasnow"
 	done
 
 TeleportName:
-	text "Teleport"
+	text "U-Turn"
 	done
 
 TeleportDescription:
-	text "Switch Exeggutor with 1 of your"
-	line "Benched Pokémon."
+	text "You can Switch this Pkmn with 1 of"
+	line "your Benched Pokémon."
 	done
 
 BigEggsplosionName:
-	text "Big Eggsplosion"
+	text "Power Whip"
 	done
 
 BigEggsplosionDescription:
 	text "Flip a number of coins equal to the"
 	line "number of Energy attached to"
-	line "Exeggutor. This attack does 20"
-	line "damage times the number of heads."
+	line "this PKMN. This attack does DAMAGE"
+	line "times the number of heads."
 	done
 
 CoconutName:
@@ -638,18 +643,18 @@ CoconutName:
 	done
 
 ExeggutorDescription:
-	text "Legend has it that on rare"
-	line "occasions, one of its heads will"
-	line "drop off and continue on as an"
-	line "Exeggcute."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Paldea Evolved 11)"
+	line "OG illustrator: (Ryuta Fuse)"
+	
 	done
 
 KoffingName:
-	text "Koffing"
+	text "Ferroseed"
 	done
 
 FoulGasName:
-	text "Foul Gas"
+	text "Dangerous Claw"
 	done
 
 FoulGasDescription:
@@ -663,13 +668,14 @@ PoisonGasName:
 	done
 
 KoffingDescription:
-	text "Because it stores several kinds of"
-	line "toxic gases in its body, it is prone"
-	line "to exploding without warning."
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Emerging Powers 70)"
+	line "OG illustrator: (Midori Harada)"
+	
 	done
 
 WeezingName:
-	text "Weezing"
+	text "Ferrothorn"
 	done
 
 SmogName:
@@ -684,18 +690,19 @@ WeezingsSelfdestructDescription:
 	text "Does 10 damage to each Pokémon on"
 	line "each player's Bench. (Don't apply"
 	line "Weakness and Resistance for Benched"
-	line "Pokémon.) Weezing does 60 damage to"
+	line "Pokémon.) does 60 damage to"
 	line "itself."
 	done
 
 WeezingDescription:
-	text "Where two kinds of poison gases"
-	line "meet, two Koffings can fuse into a"
-	line "Weezing over many years."
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Emerging Powers 72)"
+	line "OG illustrator: (Shin Nagasawa)"
+	
 	done
 
 TangelaName:
-	text "Tangela"
+	text "Grubbin"
 	done
 
 BindName:
@@ -707,9 +714,10 @@ VineName:
 	done
 
 TangelaLv8Description:
-	text "Its whole body is swathed with wide"
-	line "vines that are similar to seaweed."
-	line "These vines shake as it walks."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Sun & Moon 13)"
+	line "OG illustrator: (Akira Komayama)"
+	
 	done
 
 PoisonWhipName:
@@ -717,13 +725,14 @@ PoisonWhipName:
 	done
 
 TangelaLv12Description:
-	text "Its identity is obscured by masses"
-	line "of thick, blue vines. The vines are"
-	line "said to never stop growing."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (BREAKpoint 53)"
+	line "OG illustrator: (Kyoko Umemoto)"
+	
 	done
 
 ScytherName:
-	text "Scyther"
+	text "Blipbug"
 	done
 
 SwordsDanceName:
@@ -741,13 +750,14 @@ MantisName:
 	done
 
 ScytherDescription:
-	text "With ninja-like agility and speed,"
-	line "it can create the illusion that"
-	line "there is more than one of it."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Sword & Shield 16)"
+	line "OG illustrator: (nagimiso)"
+	
 	done
 
 PinsirName:
-	text "Pinsir"
+	text "Crobat"
 	done
 
 IronGripName:
@@ -763,13 +773,14 @@ StagbeetleName:
 	done
 
 PinsirDescription:
-	text "If it fails to crush the victim in"
-	line "its pincers, it will swing its"
-	line "victim around and toss it hard."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Skyridge 147)"
+	line "OG illustrator: (Atsuko Nishida)"
+	
 	done
 
 CharmanderName:
-	text "Charmander"
+	text "Tepig"
 	done
 
 EmberName:
@@ -778,7 +789,7 @@ EmberName:
 
 EmberDescription:
 	text "Discard 1 <FIRE> Energy card attached to"
-	line "Charmander in order to use this"
+	line "This PKMN in order to use this"
 	line "attack."
 	done
 
@@ -787,14 +798,14 @@ LizardName:
 	done
 
 CharmanderDescription:
-	text "Obviously prefers hot places. If it"
-	line "gets caught in the rain, steam is"
-	line "said to spout from the tip of its"
-	line "tail."
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Boundaries Crossed 24)"
+	line "OG illustrator: (Shin Nagasawa)"
+	
 	done
 
 CharmeleonName:
-	text "Charmeleon"
+	text "Pignite"
 	done
 
 FlamethrowerName:
@@ -803,7 +814,7 @@ FlamethrowerName:
 
 CharmeleonsFlamethrowerDescription:
 	text "Discard 1 <FIRE> Energy card attached to"
-	line "Charmeleon in order to use this"
+	line "this PKMN in order to use this"
 	line "attack."
 	done
 
@@ -812,26 +823,27 @@ FlameName:
 	done
 
 CharmeleonDescription:
-	text "When it swings its burning tail, it"
-	line "raises the temperature to unbearably"
-	line "high levels."
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Boundaries Crossed 25)"
+	line "OG illustrator: (Shin Nagasawa)"
+	
 	done
 
 CharizardName:
-	text "Charizard"
+	text "Emboar"
 	done
 
 EnergyBurnName:
-	text "Energy Burn"
+	text "Burning Soul"
 	done
 
 EnergyBurnDescription:
 	text "As often as you like during your"
 	line "turn (before your attack), you may"
 	line "turn all Energy attached to"
-	line "Charizard into <FIRE> Energy for the"
+	line "this PKMN into <FIRE> Energy for the"
 	line "rest of the turn. This power can't"
-	line "be used if Charizard is Asleep,"
+	line "be used if is Asleep,"
 	line "Confused, or Paralyzed."
 	done
 
@@ -841,18 +853,19 @@ FireSpinName:
 
 FireSpinDescription:
 	text "Discard 2 Energy cards attached to"
-	line "Charizard in order to use this"
+	line "this PKMN in order to use this"
 	line "attack."
 	done
 
 CharizardDescription:
-	text "Spits fire that is hot enough to"
-	line "melt boulders. Known to"
-	line "unintentionally cause forest fires."
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Black & White 19)"
+	line "OG illustrator: (Kouki Saitou)"
+	
 	done
 
 VulpixName:
-	text "Vulpix"
+	text "Houndour"
 	done
 
 ConfuseRayName:
@@ -860,23 +873,27 @@ ConfuseRayName:
 	done
 
 FoxName:
-	text "Fox"
+	text "Dark"
 	done
 
 VulpixDescription:
-	text "At the time of birth, it has just"
-	line "one tail. Its tail splits from the"
-	line "tip as it grows older."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Neo Discovery 39)"
+	line "OG illustrator: (Shin-ichi Yoshida)"
+	
 	done
 
 NinetalesName:
-	text "Ninetails"
+	text "Houndoom"
 	done
 
 NinetalesLureDescription:
 	text "If your opponent has any Benched"
 	line "Pokémon, choose 1 of them and switch"
 	line "it with the Defending Pokémon."
+	line "If this PKMN has any <PSYCHIC> energy "
+	line "attached to it, this attack does +20"
+	line "more damage."
 	done
 
 FireBlastName:
@@ -885,34 +902,32 @@ FireBlastName:
 
 FireBlastDescription:
 	text "Discard 1 <FIRE> Energy card attached"
-	line "to Ninetales in order to use this"
+	line "to this PKMN in order to use this"
 	line "attack."
 	done
 
 NinetalesLv32Description:
-	text "Very smart and very vengeful."
-	line "Grabbing one of its many tails could"
-	line "result in a 1,000-year curse."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Scarlet & Violet 34)"
+	line "OG illustrator: (hncl)"
+	
 	done
 
 MixUpName:
-	text "Mix-Up"
+	text "Fast Attack"
 	done
 
 MixUpDescription:
-	text "If your opponent has any Basic"
-	line "Pokémon or Evolution cards in his"
-	line "or her hand, your opponent shuffles"
-	line "them into his or her deck. Then,"
-	line "your opponent puts an equal number"
-	line "of Basic Pokémon or Evolution cards"
-	line "chosen at random from his or"
+	text "If your opponent has any PKMN cards"
+	line "in their hand, your opponent"
+	line "shuffles them into the deck. Then,"
+	line "your opponent Adds an equal number"
+	line "of PKMN chosen at random from their"
+	line "deck into their hand. Then,"
 	done
 
 MixUpDescriptionCont:
-	text "her deck into his or her hand. Your"
-	line "opponent shuffles his or her deck"
-	line "afterward."
+	text "Your opponent shuffles their deck."
 	done
 
 DancingEmbersName:
@@ -925,13 +940,14 @@ DancingEmbersDescription:
 	done
 
 NinetalesLv35Description:
-	text "According to an enduring legend,"
-	line "9 noble heroes were united and"
-	line "reincarnated as this."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Holon Phantoms 10)"
+	line "OG illustrator: (Masakazu Fukuda)"
+	
 	done
 
 GrowlitheName:
-	text "Growlithe"
+	text "Sizzlipede"
 	done
 
 FlareName:
@@ -943,13 +959,14 @@ PuppyName:
 	done
 
 GrowlitheDescription:
-	text "Very protective of its territory."
-	line "It will bark and bite to repel"
-	line "intruders from its space."
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Fusion Strike 46)"
+	line "OG illustrator: (miki kudo)"
+	
 	done
 
 ArcanineName:
-	text "Arcanine"
+	text "Centiskorch"
 	done
 
 QuickAttackName:
@@ -958,36 +975,35 @@ QuickAttackName:
 
 QuickAttackDescription:
 	text "Flip a coin. If heads, this attack"
-	line "does 10 damage plus 20 more damage;"
-	line "if tails, this attack does 10"
-	line "damage."
+	line "does 20 more damage;"
 	done
 
 FlamesOfRageName:
-	text "Flames of Rage"
+	text "Flareblitz"
 	done
 
 FlamesOfRageDescription:
-	text "Discard 2 <FIRE> Energy cards attached"
-	line "to Arcanine in order to use this"
-	line "attack. This attack does 40 damage"
-	line "plus 10 more damage for each damage"
-	line "counter on Arcanine."
+	text "Discard 1 Energy card attached"
+	line "to this PKMN in order to use this"
+	line "attack. This attack does damage +10"
+	line "more damage for each damage counter"
+	line "on This PKMN."
 	done
 
 LegendaryName:
-	text "Legendary"
+	text "Radiator"
 	done
 
 ArcanineLv34Description:
-	text "A legendary Pokémon famous for its"
-	line "beauty. It looks almost as if it"
-	line "flies when it runs."
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Boundaries Crossed 22)"
+	line "OG illustrator: (Akira Komayama)"
+	
 	done
 
 ArcaninesFlamethrowerDescription:
 	text "Discard 1 <FIRE> Energy card attached to"
-	line "Arcanine in order to use this"
+	line "this PKMN in order to use this"
 	line "attack."
 	done
 
@@ -996,17 +1012,18 @@ TakeDownName:
 	done
 
 TakeDownDescription:
-	text "Arcanine does 30 damage to itself."
+	text "It does 30 damage to itself."
 	done
 
 ArcanineLv45Description:
-	text "A Pokémon that has been long admired"
-	line "for its beauty. It runs gracefully,"
-	line "as if on wings."
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Battle Styles 30)"
+	line "OG illustrator: (Souichirou Gunjima)"
+	
 	done
 
 PonytaName:
-	text "Ponyta"
+	text "Darumaka"
 	done
 
 SmashKickName:
@@ -1014,7 +1031,7 @@ SmashKickName:
 	done
 
 FlameTailName:
-	text "Flame Tail"
+	text "Reckles Charge"
 	done
 
 FireHorseName:
@@ -1022,13 +1039,14 @@ FireHorseName:
 	done
 
 PonytaDescription:
-	text "Its hooves are 10 times harder than"
-	line "diamonds. It can trample anything"
-	line "flat in moments."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Next Destinies 17)"
+	line "OG illustrator: (Atsuko Nishida)"
+	
 	done
 
 RapidashName:
-	text "Rapidash"
+	text "Darmanitan"
 	done
 
 StompName:
@@ -1050,17 +1068,18 @@ RapidashsAgilityDescription:
 	text "Flip a coin. If heads, during your"
 	line "opponent's next turn, prevent all"
 	line "effects of attacks, including"
-	line "damage, done to Rapidash."
+	line "damage, done to this PKMN."
 	done
 
 RapidashDescription:
-	text "Very competitive, this Pokémon will"
-	line "chase anything that moves fast in"
-	line "the hopes of racing it."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Black & White 25)"
+	line "OG illustrator: (Naoki Saito)"
+	
 	done
 
 MagmarName:
-	text "Magmar"
+	text "Litleo"
 	done
 
 FirePunchName:
@@ -1077,9 +1096,10 @@ SpitfireName:
 	done
 
 MagmarLv24Description:
-	text "Its body always burns with an orange"
-	line "glow that enables it to hide"
-	line "perfectly among flames."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Cosmic Eclipse 36)"
+	line "OG illustrator: (HYOGONOSUKE)"
+	
 	done
 
 SmokescreenName:
@@ -1094,10 +1114,10 @@ MagmarsSmokescreenDescription:
 	done
 
 MagmarLv31Description:
-	text "Found at the mouths of volcanoes and"
-	line "extremely hard to spot. There are"
-	line "very few instances of capturing this"
-	line "Pokémon."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Phantom Forces 12)"
+	line "OG illustrator: (Naoki Saito)"
+	
 	done
 
 FlareonName:
@@ -1117,14 +1137,15 @@ RageName:
 	done
 
 FlareonsRageDescription:
-	text "Does 10 damage plus 10 more damage"
-	line "for each damage counter on Flareon."
+	text "Does damage plus 10 more damage"
+	line "for each damage counter."
 	done
 
 FlareonLv22Description:
-	text "It has a flame chamber inside its"
-	line "body. It inhales, then blows out"
-	line "fire that is over 3,000 degrees."
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Legends Awakened 110)"
+	line "OG illustrator: (Kouki Saitou)"
+	
 	done
 
 FlareonsFlamethrowerDescription:
@@ -1133,13 +1154,14 @@ FlareonsFlamethrowerDescription:
 	done
 
 FlareonLv28Description:
-	text "When storing thermal energy in its"
-	line "body, its temperature could soar to"
-	line "over 1,600 degrees."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Sword & Shield Promos 41)"
+	line "OG illustrator: (You Iribi)"
+	
 	done
 
 MoltresName:
-	text "Moltres"
+	text "Entei"
 	done
 
 WildfireName:
@@ -1147,29 +1169,30 @@ WildfireName:
 	done
 
 WildfireDescription:
-	text "You may discard any number of <FIRE>"
-	line "Energy cards attached to Moltres"
+	text "You must discard 1 or more <FIRE>"
+	line "Energy cards attached to this PKMN"
 	line "when you use this attack. If you do,"
 	line "discard that many cards from the top"
 	line "of your opponent's deck."
 	done
 
 DiveBombName:
-	text "Dive Bomb"
+	text "Skill Dive"
 	done
 
 MoltresLv35Description:
-	text "Known as the legendary bird of fire."
-	line "Every flap of its wings creates a"
-	line "dazzling flash of flames."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Sword & Shield Promos 29)"
+	line "OG illustrator: (KEIICHIRO ITO)"
+	
 	done
 
 FiregiverName:
-	text "Firegiver"
+	text "Volcanic Eruption"
 	done
 
 FiregiverDescription:
-	text "When you put Moltres into play"
+	text "When you put this PKMN into play"
 	line "during your turn (not during"
 	line "set-up), put from 1 to 4 (chosen at"
 	line "random) <FIRE> Energy cards from your"
@@ -1178,13 +1201,14 @@ FiregiverDescription:
 	done
 
 MoltresLv37Description:
-	text "A legendary bird Pokémon. As it"
-	line "flaps its flaming wings, even the"
-	line "night sky will turn red."
+	text "Booster Pack: (LEGENDARY Card)"
+	line "OG Set: (Crown Zenith 21)"
+	line "OG illustrator: (Nisota Niso)"
+	
 	done
 
 SquirtleName:
-	text "Squirtle"
+	text "Froakie"
 	done
 
 BubbleName:
@@ -1207,13 +1231,14 @@ TinyTurtleName:
 	done
 
 SquirtleDescription:
-	text "After birth, its back swells and"
-	line "hardens into a shell. It powerfully"
-	line "sprays foam from its mouth."
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Kalos Starter Set 12)"
+	line "OG illustrator: (5ban Graphics)"
+	
 	done
 
 WartortleName:
-	text "Wartortle"
+	text "Frogadier"
 	done
 
 WartortlesWithdrawDescription:
@@ -1228,13 +1253,14 @@ TurtleName:
 	done
 
 WartortleDescription:
-	text "Often hides in water to stalk unwary"
-	line "prey. When swimming quickly, it"
-	line "moves its ears to maintain balance."
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Kalos Starter Set 13)"
+	line "OG illustrator: (5ban Graphics)"
+	
 	done
 
 BlastoiseName:
-	text "Blastoise"
+	text "Greninja"
 	done
 
 RainDanceName:
@@ -1243,16 +1269,16 @@ RainDanceName:
 
 RainDanceDescription:
 	text "As often as you like during your"
-	line "turn (before your attack), you may"
-	line "attach 1 <WATER> Energy card to 1 of"
-	line "your <WATER> Pokémon. (This doesn't use"
-	line "up your 1 Energy card attachment"
-	line "for the turn.)"
+	line "turn, you may attach 1<WATER>Energy card"
+	line "to 1 of your <WATER> Pkmn. (This"
+	line "doesn't use up your 1 Energy attach"
+	line "for the turn.) This power can't be"
+	line "used if is Affected by an Status."
 	done
 
 RainDanceDescriptionCont:
 	text "This power can't be used if"
-	line "Blastoise is Asleep, Confused, or"
+	line "is Asleep, Confused, or"
 	line "Paralyzed."
 	done
 
@@ -1261,9 +1287,9 @@ HydroPumpName:
 	done
 
 HydroPumpDescription:
-	text "Does 40 damage plus 10 more damage"
+	text "Does damage plus 10 more damage"
 	line "for each <WATER> Energy attached to"
-	line "Blastoise but not used to pay for"
+	line "this PKMN but not used to pay for"
 	line "this attack's Energy cost. You can't"
 	line "add more than 20 damage in this way."
 	done
@@ -1273,22 +1299,24 @@ ShellfishName:
 	done
 
 BlastoiseDescription:
-	text "A brutal Pokémon with pressurized"
-	line "water jets on its shell. They are"
-	line "used for high-speed tackles."
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (XY 41)"
+	line "OG illustrator: (5ban Graphics)"
+	
 	done
 
 PsyduckName:
-	text "Psyduck"
+	text "Buizel"
 	done
 
 HeadacheName:
-	text "Headache"
+	text "Knock Off"
 	done
 
 HeadacheDescription:
-	text "Your opponent can't play Trainer"
-	line "cards during his or her next turn."
+	text "Does 10 damage to itself."
+	line "Your opponent can't play Trainer"
+	line "cards during their next turn."
 	done
 
 DuckName:
@@ -1296,17 +1324,18 @@ DuckName:
 	done
 
 PsyduckDescription:
-	text "While lulling its enemies with its"
-	line "vacant look, this wily Pokémon will"
-	line "use psychokinetic powers."
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Scarlet & Violet 46)"
+	line "OG illustrator: (Mizue)"
+	
 	done
 
 GolduckName:
-	text "Golduck"
+	text "Floatzel"
 	done
 
 PsyshockName:
-	text "Psyshock"
+	text "Deep Growl"
 	done
 
 HyperBeamName:
@@ -1320,13 +1349,14 @@ Discard1EnergyFromTargetDescription:
 	done
 
 GolduckDescription:
-	text "Often seen swimming elegantly by"
-	line "lake shores. It is often mistaken"
-	line "for the Japanese monster, Kappa."
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Flashfire 29)"
+	line "OG illustrator: (Kanako Eo)"
+	
 	done
 
 PoliwagName:
-	text "Poliwag"
+	text "Tympole"
 	done
 
 WaterGunName:
@@ -1336,7 +1366,7 @@ WaterGunName:
 PoliwagsWaterGunDescription:
 	text "Does 10 damage plus 10 more damage"
 	line "for each <WATER> Energy attached to"
-	line "Poliwag but not used to pay for"
+	line "This PKMN but not used to pay for"
 	line "this attack's Energy cost. You can't"
 	line "add more than 20 damage in this way."
 	done
@@ -1346,13 +1376,14 @@ TadpoleName:
 	done
 
 PoliwagDescription:
-	text "Its newly grown legs prevent it"
-	line "from running. It appears to prefer"
-	line "swimming over trying to stand."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Plasma Freeze 24)"
+	line "OG illustrator: (MAHOU)"
+	
 	done
 
 PoliwhirlName:
-	text "Poliwhirl"
+	text "Palpitoad"
 	done
 
 AmnesiaName:
@@ -1367,17 +1398,18 @@ PoliwhirlsAmnesiaDescription:
 	done
 
 DoubleslapName:
-	text "Doubleslap"
+	text "Double Drainslap"
 	done
 
 PoliwhirlsDescription:
-	text "Capable of living in or out of"
-	line "water. When out of water, it sweats"
-	line "to keep its body slimy."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Rebel Clash 45)"
+	line "OG illustrator: (MAHOU)"
+	
 	done
 
 PoliwrathName:
-	text "Poliwrath"
+	text "Seismitoad"
 	done
 
 PoliwrathsWaterGunDescription:
@@ -1394,13 +1426,14 @@ WhirlpoolName:
 	done
 
 PoliwrathDescription:
-	text "An adept swimmer at both the front"
-	line "crawl and breaststroke. Easily"
-	line "overtakes the best human swimmers."
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (BREAKpoint 35)"
+	line "OG illustrator: (Kanako Eo)"
+	
 	done
 
 TentacoolName:
-	text "Tentacool"
+	text "Skrelp"
 	done
 
 CowardiceName:
@@ -1410,10 +1443,10 @@ CowardiceName:
 CowardiceDescription:
 	text "At any time during your turn"
 	line "(before your attack), you may return"
-	line "Tentacool to your hand. (Discard all"
-	line "cards attached to Tentacool.) This"
+	line "This Card to your hand. (Discard all"
+	line "cards attached to this Card.) This"
 	line "power can't be used the turn you put"
-	line "Tentacool into play or if Tentacool"
+	line "it into play or if"
 	line "is Asleep, Confused, or Paralyzed."
 	done
 
@@ -1422,23 +1455,25 @@ JellyfishName:
 	done
 
 TentacoolDescription:
-	text "Drifts in shallow seas. Anglers who"
-	line "hook them by accident are often"
-	line "punished by its stinging acid."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Forbidden Light 52)"
+	line "OG illustrator: (Mina Nakai)"
+	
 	done
 
 TentacruelName:
-	text "Tentacruel"
+	text "Dragalge"
 	done
 
 JellyfishStingName:
-	text "Jellyfish Sting"
+	text "Sludge Bomb"
 	done
 
 TentacruelDescription:
-	text "The tentacles are normally kept"
-	line "short. On hunts, they are extended"
-	line "to ensnare and immobilize prey."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (BREAKpoint 86)"
+	line "OG illustrator: (Shin Nagasawa)"
+	
 	done
 
 SeelName:
@@ -1454,9 +1489,10 @@ SeaLionName:
 	done
 
 SeelDescription:
-	text "The protruding horn on its head is"
-	line "very hard. This horn is used for"
-	line "bashing through thick ice."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Lost Origin 33)"
+	line "OG illustrator: (GIDORA)"
+	
 	done
 
 DewgongName:
@@ -1464,7 +1500,7 @@ DewgongName:
 	done
 
 AuroraBeamName:
-	text "Aurora Beam"
+	text "Crushing Ice"
 	done
 
 IceBeamName:
@@ -1472,22 +1508,23 @@ IceBeamName:
 	done
 
 DewgongDescription:
-	text "Stores thermal energy in its body."
-	line "Swims at a steady 8 knots even in"
-	line "intensely cold waters."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Supreme Victors 24)"
+	line "OG illustrator: (Kanako Eo)"
+	
 	done
 
 ShellderName:
-	text "Shellder"
+	text "Wingull"
 	done
 
 HideInShellName:
-	text "Hide in Shell"
+	text "Dive"
 	done
 
 HideInShellDescription:
 	text "Flip a coin. If heads, prevent all"
-	line "damage done to Shellder during your"
+	line "damage done during your"
 	line "opponent's next turn. (Any other"
 	line "effects of attacks still happen.)"
 	done
@@ -1497,13 +1534,14 @@ BivalveName:
 	done
 
 ShellderDescription:
-	text "Its hard shell repels any kind of"
-	line "attack. It is vulnerable only when"
-	line "its shell is open."
+	text "Booster Pack: (Evolution)"
+	line "OG Set: (Celestial Storm 111)"
+	line "OG illustrator: (Ken Sugimori)"
+	
 	done
 
 CloysterName:
-	text "Cloyster"
+	text "Pelipper"
 	done
 
 ClampName:
@@ -1522,18 +1560,19 @@ SpikeCannonName:
 	done
 
 CloysterDescription:
-	text "When attacked, it launches its horns"
-	line "in quick volleys. Its innards have"
-	line "never been seen."
+	text "Booster Pack: (Evolution)"
+	line "OG Set: (Ruby & Sapphire 19)"
+	line "OG illustrator: (Kouki Saitou)"
+	
 	done
 
 KrabbyName:
-	text "Krabby"
+	text "Clauncher"
 	done
 
 KrabbysCallForFamilyDescription:
 	text "Search your deck for a Basic Pokémon"
-	line "named Krabby and put it onto your"
+	line "named Clauncher and put it onto your"
 	line "Bench. Shuffle your deck afterward."
 	line "(You can't use this attack if your"
 	line "Bench is full.)"
@@ -1544,13 +1583,14 @@ RiverCrabName:
 	done
 
 KrabbyDescription:
-	text "Its pincers are not only powerful"
-	line "weapons, they are used for balance"
-	line "when walking sideways."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Furious Fists 23)"
+	line "OG illustrator: (5ban Graphics)"
+	
 	done
 
 KinglerName:
-	text "Kingler"
+	text "Clawitzer"
 	done
 
 FlailName:
@@ -1559,7 +1599,7 @@ FlailName:
 
 KinglersFlailDescription:
 	text "Does 10 damage times the number of"
-	line "damage counters on Kingler."
+	line "damage counters on this PKMN."
 	done
 
 CrabhammerName:
@@ -1571,10 +1611,10 @@ PincerName:
 	done
 
 KinglerDescription:
-	text "The large pincer has 10,000"
-	line "horsepower of crushing power."
-	line "However, its huge size makes it"
-	line "unwieldy to use."
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Furious Fists 24)"
+	line "OG illustrator: (5ban Graphics)"
+	
 	done
 
 HorseaName:

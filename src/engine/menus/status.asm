@@ -24,13 +24,13 @@ _PauseMenu_Status:
 	ret
 
 StatusScreenLabels:
-	db 7, 2
+	db 8, 2
 	tx PlayerStatusNameText
 
-	db 7, 4
+	db 8, 4
 	tx PlayerStatusAlbumText
 
-	db 7, 6
+	db 8, 6
 	tx PlayerStatusPlayTimeText
 
 	db $ff

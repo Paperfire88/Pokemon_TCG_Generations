@@ -1,7 +1,7 @@
-	const_def 1
+	const_def
 
 TextOffsets::
-	dwb $0000, $00
+	textpointer NullText                                           ; 0x0000
 	textpointer HandText
 	textpointer CheckText
 	textpointer AttackText
@@ -2696,10 +2696,10 @@ TextOffsets::
 	textpointer SlicingWildDescription
 	textpointer GaleName
 	textpointer GaleDescription
-	textpointer PidgeotLv38Description
+	textpointer Pidgeot1Description
 	textpointer HurricaneName
 	textpointer HurricaneDescription
-	textpointer PidgeotLv40Description
+	textpointer Pidgeot2Description
 	textpointer RattataName
 	textpointer RatName
 	textpointer RattataDescription
@@ -2905,3 +2905,462 @@ TextOffsets::
 	textpointer AreYouBoyOrGirlText; 0x0cff
 	textpointer BoyText; 0x0cff
 	textpointer GirlText; 0x0cff
+	textpointer AttackSuccessCheckText; 0x0cda
+	textpointer ChooseAndDiscardanyFireEnergyCardsText; 0x0cf3
+	textpointer GenericAttachedEnergyToPokemonText; 0xc5f
+	textpointer ParalyzedIfHeadsAsleepIfTailsText		
+	textpointer ConfusedIfHeadsAsleepIfTailsText; 0x0ce4	
+	textpointer PoisonedIfHeadsAsleepIfTailsText; 0x0ce1
+	textpointer PoisonedIfHeadsParalysedIfTailsText		; 0x0c3c
+	textpointer Eeveelutiontext; 0x0cb1
+	textpointer	ChooseAnEeveelutionText; 0x0cb2
+	textpointer	ChooseEeveelutionFromDeckText; 0x0cb3		
+	textpointer YesOrNoTextNEOtext; 0x0cf7
+	textpointer	FoundCardText; 0xc85
+	textpointer DucklettName                                       ; 0x0bae
+	textpointer FlapName                                           ; 0x0baf
+	textpointer DucklettDescription                                ; 0x0bb0
+	textpointer TynamoName                                         ; 0x0bb1
+	textpointer TyranitarName									   ; 0x0bb2
+	textpointer EelektrossName                                     ; 0x0bb3
+	textpointer EelektrikName                                     ; 0x0bb4
+	textpointer EmolgaName										   ; 0x0bb5
+	textpointer DrapionName										   ; 0x0bb6
+	textpointer TurtonatorName										   ; 0x0bb7
+	textpointer HelioliskName										   ; 0x0bb8
+	textpointer LugiaName										   ; 0x0bb9
+	textpointer MagnezoneName										   ; 0x0bba
+	textpointer LimtiName											; 0x0bbb
+	textpointer TyruntName											; 0x0bbc
+	textpointer SkorupiName											; 0x0bbd
+	textpointer BidoofName											; 0x0bbe
+	textpointer ElectrikeName											; 0x0bbf
+	textpointer ManectricName											; 0x0bc1
+	textpointer MisdreavusName											; 0x0bc2
+	textpointer MismagiusName											; 0x0bc3
+	textpointer HelioptileName											; 0x0bc4
+	textpointer LuxrayName											; 0x0bc5
+	textpointer CharjabugName											; 0x0bc6
+	textpointer CelebiName											; 0x0bc7
+	textpointer MimikyuName											; 0x0bc8
+	textpointer PincurchinName											; 0x0bc9
+	textpointer NumelName											; 0x0bca
+	textpointer CameruptName											; 0x0bcb
+	textpointer DottlerName											; 0x0bcc
+	textpointer OrbeetleName											; 0x0bcd
+	textpointer TogekissName 										; 0x0bce
+	textpointer Porygon2Name 										; 0x0bcf
+	textpointer PorygonZName 										; 0x0bd1
+	textpointer PyroarName 										; 0x0bd2
+	textpointer ZeraoraName 										; 0x0bd3
+	textpointer RelicanthName 										; 0x0bd4
+	textpointer DrednawName 										; 0x0bd5
+	textpointer BruxishName 										; 0x0bd6
+	textpointer ComfeyName 										; 0x0bd7
+	textpointer CresseliaName 										; 0x0bd8
+	textpointer ShootThroughName								; 0x0bd9
+	textpointer	CollectFireName									; 0x0bda
+	textpointer	RoarName										; 0x0bdb
+	textpointer	DestructiveFlameName										; 0x0bdc
+	textpointer	MessengerName										; 0x0bdd
+	textpointer	WaterPulseName										; 0x0bde
+	textpointer	RescueName										; 0x0bdf
+	textpointer StikcyWedName									; 0x0be1
+	textpointer BeatUpName								; 0x0be2
+	textpointer ParabolicName								; 0x0be3
+	textpointer CrunchName								; 0x0be4
+	textpointer PlasmafName									; 0x0be5
+	textpointer DischargeName									; 0x0be6
+	textpointer TormentName									; 0x0be7
+	textpointer DragonbreathName							; 0x0be8
+	textpointer DreadMountainName							; 0x0be9
+	textpointer RevenegeName							; 0x0bea
+	textpointer TeamAssemblyName							; 0x0beb
+	textpointer ConfusionWaveName						; 0x0bec
+	textpointer	PsychicFangsName						; 0x0bed
+	textpointer DarkRevivalName							; 0x0bee
+	textpointer RevivalBlessName						; 0x0bef
+	textpointer ConversionZname							; 0x0bf1
+	textpointer SageOrderName							; 0x0bf2
+	textpointer	FlashfireName							; 0x0bf3
+	textpointer	FlashfireDescription					; 0x0bf4
+	textpointer	RaikouName					; 0x0bf5
+	textpointer AeroblastName								; 0x0bf6
+	textpointer	AquaJetName								; 0x0bf7
+	textpointer	ShadowBallName							; 0x0bf8
+	textpointer	EnergyConnectName						; 0x0bf9
+	textpointer EnergyConnectDescription				; 0x0bfa
+	textpointer FuecocoName								; 0x0bfb
+	textpointer CrocalorName								; 0x0bfc
+	textpointer SkeledirgeName								; 0x0bfd
+	textpointer VitalitySongName						; 0x0bfe
+	textpointer ConfusionSong							; 0x0bff
+	textpointer BeldumName								; 0x0c11
+	textpointer MetangName								; 0x0c12
+	textpointer MetagrossName								; 0x0c13
+	textpointer BulletPunchName							; 0x0c14
+	textpointer MeteorMashName							; 0x0c15
+	textpointer MeteorMashDescription						; 0x0c16
+	textpointer BagonName						; 0x0c17
+	textpointer ShelgonName						; 0x0c18
+	textpointer SalamenceName					; 0x0c19
+	textpointer	ProtectChargeName				; 0x0c1a
+	textpointer WoobatName						; 0x0c1b
+	textpointer SwoobatName						; 0x0c1c
+	textpointer TreasureRushName					; 0x0c1d
+	textpointer DraconicDreamsName					; 0x0c1e
+	textpointer SlashingName					; 0x0c1f
+	textpointer	CinderCannonName					; 0x0c21
+	textpointer	HealerName						; 0x0c22
+	textpointer	RockruffName					; 0x0c23
+	textpointer LycanrocName					; 0x0c24
+	textpointer AccelRockName					; 0x0c25
+	textpointer BloodThirstyClawsName			; 0x0c26
+	textpointer DangerousRougueName				; 0x0c27
+	textpointer DangerousRougueDescription		; 0x0c28
+	textpointer	RegielekiName					; 0x0c29
+	textpointer ElectromagneticSonarName		; 0x0c2a
+	textpointer DruddigonName					; 0x0c2b
+	textpointer	DragonClawName					; 0x0c2c
+	textpointer CoordinatedShurikenDescriptionCont					; 0x0c2d
+	textpointer	MagbyName						; 0x0c2e
+	textpointer Mag2Name						; 0x0c2f
+	textpointer MagmortarName					; 0x0c21
+	textpointer SmokeBombName					; 0x0c22
+	textpointer FireballBazookaName				; 0x0c23
+	textpointer	HoohName						; 0x0c24
+	textpointer RaibowBurnName					; 0x0c25
+	textpointer DustyPillarName					; 0x0c26
+	textpointer DustyPillarDescription				; 0x0c27
+	textpointer LowSweepName					; 0x0c26
+	textpointer IntimidatingManeName					; 0x0c27
+	textpointer IntimidatingManeDescription					; 0x0c28
+	textpointer HuntingArrowName				; 0x0c29
+	textpointer PunkRockName				; 0x0c3a
+	textpointer PunkRockDescription				; 0x0c3b
+	textpointer AquaStreamName	; 0x0c3d
+	textpointer AquaStreamDescription		; 0x0c3e
+	textpointer PrimalAuraName		; 0x0c3f
+	textpointer CantRetreatAbilityText	; 0x0c31
+	textpointer LockOnName	; 0x0c32
+	textpointer SharpshootingName	; 0x0c33
+	textpointer LastRespectsName	; 0x0c34
+	textpointer LowKickDescription	; 0x0c35
+	textpointer NuzzleName	; 0x0c36
+	textpointer LockOnDescription	; 0x0c37
+	textpointer LastRespectsDescription		; 0x0c38
+	textpointer DarkRevivalDescription	; 0x0c39 
+	textpointer NinjaTornadoName	; 0x0c4a 
+	textpointer DarkMistName	; 0x0c4b 
+	textpointer WindReturnName	; 0x0c4c 
+	textpointer ViseBiteName	; 0x0c4d
+	textpointer	JawLockName	; 0x0c4e
+	textpointer ThunderFangName; 0x0c4f
+	textpointer EnergyCrushName; 0x0c41
+	textpointer AdHocShockName; 0x0c42
+	textpointer	AdHocShockDescription; 0x0c43
+	textpointer MagneticReleaseName; 0x0c44
+	textpointer ElectricalRendName; 0x0c45
+	textpointer ElectricalRendDescription; 0x0c46
+	textpointer SandPitName; 0x0c47
+	textpointer SandPitDescription; 0x0c48
+	textpointer	BigSandCannonName; 0x0c49
+	textpointer DredgeUpName; 0xc5a
+	textpointer DredgeUpDescription; 0xc5b
+	textpointer	ObsidianFangsName; 0xc5c
+	textpointer PrimalAuraDesription; 0xc5d
+	textpointer	DowngradingBeamName; 0xc5e
+	textpointer MagneticCircuitName; 0xc51
+	textpointer	MagneticCircuitDescription; 0xc52
+	textpointer WildchargeName; 0xc53
+	textpointer DisconnectName; 0xc54
+	textpointer PrimalGuidanceName; 0xc55
+	textpointer PrimalGuidanceDescription; 0xc56
+	textpointer TimeSpiralName; 0xc57
+	textpointer SignsOfEvolutionName; 0xc58
+	textpointer BurningDownName; 0xc59
+	textpointer HydratingDropsName; 0xc6a
+	textpointer LeadName; 0xc6b
+	textpointer	JumpingSideKickName; 0xc6c
+	textpointer DriveOffName; 0xc6d
+	textpointer	DriveOffDescription; 0xc6e
+	textpointer MystifyingHornsName; 0xc6f
+	textpointer	SleepingMagicName; 0xc71
+	textpointer	SleepingMagicDescription; 0xc72
+	textpointer	DeepSleepName; 0xc73
+	textpointer	DeepSleepDesc; 0xc74
+	textpointer	DeepSleepText; 0xc75
+	textpointer	SleepInducerName; 0xc76
+	textpointer	BattleBlastName; 0xc77
+	textpointer	BattleBlastDescription; 0xc78
+	textpointer	PoisonHuntName; 0xc79
+	textpointer	PoisonHuntDescription; 0xc8a
+	textpointer	ForewarnName; 0xc8b
+	textpointer	ForewarnDescription; 0xc8c
+	textpointer	DreamWaltzName; 0xc8d
+	textpointer	DreamWaltzDescription; 0xc8e
+	textpointer	BugsRadarName; 0xc8f
+	textpointer	BugbuzzName; 0xc81
+	textpointer	BugbuzzDescription; 0xc82
+	textpointer VengeanceName; 0xc83
+	textpointer DrainSlapName; 0xc84
+	textpointer SignsOfEvolutionDescription; 0xc86
+	textpointer	FlameSurgeName; 0xc87
+	textpointer	FlameSurgeDescription; 0xc88
+	textpointer	BurstinginfernoName; 0xc89
+	textpointer	BurstinginfernoDescription; 0xc9a
+	textpointer	Choose1BasicEnergyCardFromHandText; 0xc9b
+	textpointer	SandSlammerName; 0xc9c
+	textpointer	SneakAttackDescription; 0xc9d
+	textpointer SlimyroomName; 0xc9e
+	textpointer SlimyroomDescription; 0xc9f
+	textpointer	PlasmafDescription; 0xc91
+	textpointer	SmogScreenName; 0xc92
+	textpointer	SmogScreenDescription; 0xc93
+	textpointer	TremulousFistName; 0xc94
+	textpointer	TremulousFistDescription; 0xc95
+	textpointer	QuakingPunchName; 0xc96
+	textpointer	SprintName; 0xc97
+	textpointer	SprintDescription; 0xc98
+	textpointer	BurstofLightningName; 0xc99
+	textpointer	LeafGuardName; 0xcaa
+	textpointer	DoubleDrainSlapDescription; 0xcab
+	textpointer	PetalDanceHealDescription; 0xcac
+	textpointer	ToxicRendName; oxcad
+	textpointer	DigDrainName; oxcae
+	textpointer DraconicDreamsDescription					; 0x0caf
+	textpointer SharpshootingDescription					; 0x0ca1
+	textpointer SharpshootingDescriptionCont				; 0x0ca2
+	textpointer HazardousClawsName					; 0x0ca3
+	textpointer HazardousClawsDescription					; 0x0ca4	
+	textpointer LiquidationDescription					; 0x0ca4	
+	textpointer HydroDrainName					; 0x0ca5
+	textpointer HydroDrainDescription					; 0x0ca6	
+	textpointer HydroDrainDescriptionCont					; 0x0ca7
+	textpointer CornerName					; 0x0ca8
+	textpointer CornerDescription					; 0x0ca9	
+	textpointer StickyWebDescription					; 0x0cba	
+	textpointer	AquaticRescueName; 0x0cbb	
+	textpointer	PushAsideName; 0x0cbc	
+	textpointer	WrackdownName; 0x0cbd	
+	textpointer	WrackdownDescription; 0x0cbe
+	textpointer CoordinatedShurikenName				; 0x0cbf
+	textpointer CoordinatedShurikenDescription					; 0x0cb4
+	textpointer DownDrawDescription				; 0x0cb5	
+	textpointer MachPunchDescription				; 0x0cb6	
+	textpointer FlipTurnName				; 0x0cb7
+	textpointer FlipTurnDescription				; 0x0cb8	
+	textpointer	TerasparkDescription; 0x0cb9
+	textpointer	TreasureRushDescription; 0x0cca
+	textpointer	SuctionHealName; 0x0ccb
+	textpointer	SuctionHealDescription; 0x0ccc
+	textpointer	GooeyName; 0x0ccd
+	textpointer	SlimyWaterName; 0x0cce
+	textpointer SneakAttackName; 0x0ccf
+	textpointer SurpriseBiteName; 0x0cc1
+	textpointer SurpriseBiteDescription; 0x0cc2
+	textpointer DataRetrievalName; 0x0cc3
+	textpointer EeeekDescription; 0x0cc4
+	textpointer	VitalitySongDescription; 0x0cc5
+	textpointer	VoltswitchDescription; 0x0cc6
+	textpointer NuzzleDescription; 0x0cc7
+	textpointer	RainbowBurnDescription; 0x0cc8
+	textpointer EnergyCrushDescription; 0x0cc9
+	textpointer HealingLightName; 0x0cdb
+	textpointer	ScoutName; 0x0cdc
+	textpointer	DragonImpactName; 0x0cdd
+	textpointer	MeanLookName; 0x0cdd
+	textpointer AquaticRescueDescription; 0x0cde
+	textpointer AquaStreamKingDescription; 0x0cdf
+	textpointer HuntingArrowDescription; 0x0ce0
+	textpointer	ToxicVibrationName; 0x0ce2
+	textpointer ToxicVibrationDescription; 0x0ce3
+	textpointer	ChaoticNoiseName; 0x0ce5
+	textpointer ChaoticNoiseDescription; 0x0ce6
+	textpointer	ButterflyEdgeName; 0x0ce7
+	textpointer ButterflyEdgeDescription; 0x0ce8
+	textpointer ShadowClawDescription; 0x0ce9
+	textpointer TwinnedleDescription; 0x0cea
+	textpointer ApplefallDescription; 0x0ceb
+	textpointer SweetImpactDescription; 0x0cec
+	textpointer	HuntingName; 0x0ced
+	textpointer ViseBiteDescription; 0x0cee
+	textpointer	LoudMixName; 0x0cef
+	textpointer	KabutiDescription; 0x0cf0
+	textpointer	ElectricalRiotDescription; 0x0cf1
+	textpointer	CinderCannonDescription; 0x0cf2
+	textpointer	FlareUpName; 0x0cf8
+	textpointer	FlareUpDescription; 0x0cf9
+	textpointer	ExploJetName; 0x0cfa
+	textpointer	SpitShotName; 0x0cfb
+	textpointer	OpportunistName; 0x0cfc
+	textpointer	OpportunistDescription; 0x0cfd
+	textpointer	SwarmtheWoundName; 0x0cfe	
+	textpointer	CounterPunchName; 0x0cff	
+	textpointer	DamageCounterDescription; 0x0cff	
+	textpointer	ClawRendName; 0x0cff	
+	textpointer	ClawRendDescription; 0x0cff	
+	textpointer	CutDownName; 0x0cff	
+	textpointer	GaintBloomName; 0x0cff
+	textpointer GiantBloomDescription; 0x0cff
+	textpointer FuecocoDescription; 0x0cff
+	textpointer CrocalorDescription; 0x0cff
+	textpointer SkeledirgeDescription; 0x0cff
+	textpointer BagonDescription; 0x0cff
+	textpointer ShelgonDescription; 0x0cff
+	textpointer SalamanceDescription; 0x0cff
+	textpointer MagbyDescription; 0x0cff
+	textpointer MagmmarDescription; 0x0cff
+	textpointer MagmortarDescription; 0x0cff
+	textpointer HoohDescription; 0x0cff
+	textpointer LuxrayDescription; 0x0cff
+	textpointer PincurchinDescription; 0x0cff
+	textpointer TynamoDescription; 0x0cff
+	textpointer EelektrikDescription; 0x0cff
+	textpointer EelektrossDescription; 0x0cff
+	textpointer RegielekiDescription; 0x0cff
+	textpointer TyruntDescription; 0x0cff
+	textpointer RockruffDescription; 0x0cff
+	textpointer LycanrocDescription; 0x0cff
+	textpointer LycanrocMDescription; 0x0cff
+	textpointer InkayDescription; 0x0cff
+	textpointer MismagiusDescription; 0x0cff
+	textpointer OrbeetleDescription; 0x0cff
+	textpointer MewDescription; 0x0cff
+	textpointer BeldumDescription; 0x0cff
+	textpointer MetangDescription; 0x0cff
+	textpointer MetagrossDescription; 0x0cff
+	textpointer MunnaDescription; 0x0cff
+	textpointer MusharnaDescription; 0x0cff
+	textpointer DunsparceDescription; 0x0cff
+	textpointer CelebiTradeCardName; 0x0cff
+	textpointer HoohTradeCardName; 0x0cff
+	textpointer KrookodileTradeCardName; 0x0cff
+	textpointer OrbeetleTradeCardName; 0x0cff
+	textpointer HerbName; 0x0cff
+	textpointer TimeTravelName; 0x0cff
+	textpointer GrassQuillName; 0x0cff
+	textpointer BladeQuillName; 0x0cff
+	textpointer ArrowQuillName; 0x0cff
+	textpointer SnailName; 0x0cff
+	textpointer ShellOutName; 0x0cff
+	textpointer FireflyName; 0x0cff
+	textpointer ClampingName; 0x0cff
+	textpointer CavalryName; 0x0cff
+	textpointer AppleCoreName; 0x0cff
+	textpointer AppleWingName; 0x0cff
+	textpointer AppleNectarName; 0x0cff
+	textpointer ThinWingName; 0x0cff
+	textpointer OgreDarnerName; 0x0cff
+	textpointer FruitName; 0x0cff
+	textpointer StumpName; 0x0cff
+	textpointer ElderTreeName; 0x0cff	
+	textpointer FrostTreeName; 0x0cff	
+	textpointer ThornPodName; 0x0cff	
+	textpointer ThornSeedName; 0x0cff	
+	textpointer ScorpionName; 0x0cff	
+	textpointer OgreScorpionName; 0x0cff	
+	textpointer LarvaName; 0x0cff	
+	textpointer FirePigName; 0x0cff	
+	textpointer MegaFirePigName; 0x0cff	
+	textpointer DarkName; 0x0cff		
+	textpointer ZenCharmName; 0x0cff	
+	textpointer BlazingName; 0x0cff		
+	textpointer LionCubName; 0x0cff	
+	textpointer RoyalName; 0x0cff		
+	textpointer EruptionName; 0x0cff		
+	textpointer NumbName; 0x0cff		
+	textpointer BlastTurtleName; 0x0cff		
+	textpointer VolcanoName; 0x0cff		
+	textpointer BubbleFrogName; 0x0cff		
+	textpointer NinjaName; 0x0cff			
+	textpointer CaveName; 0x0cff	
+	textpointer	FireCrocName; 0x0cff
+	textpointer SingerName; 0x0cff		
+	textpointer SeaWeaselName; 0x0cff		
+	textpointer VibrationName; 0x0cff		
+	textpointer MockKelpName; 0x0cff			
+	textpointer SeagullName; 0x0cff		
+	textpointer WaterBirdName; 0x0cff			
+	textpointer HowlitzerName; 0x0cff	
+	textpointer HostileName; 0x0cff			
+	textpointer BigFishName; 0x0cff				
+	textpointer WaterBubbleName; 0x0cff		
+	textpointer SharpClawName; 0x0cff					
+	textpointer SnappingName; 0x0cff						
+	textpointer LongevityName; 0x0cff						
+	textpointer AuroraName; 0x0cff						
+	textpointer ElectroCannonName; 0x0cff						
+	textpointer ElectrifiedName; 0x0cff						
+	textpointer GeneratorName; 0x0cff						
+	textpointer SeaUrchinName; 0x0cff						
+	textpointer FlashName; 0x0cff	
+	textpointer GleamEyesName; 0x0cff		
+	textpointer SkySquirrelName; 0x0cff							
+	textpointer BabyName; 0x0cff							
+	textpointer PunkName; 0x0cff							
+	textpointer BatteryName; 0x0cff	
+	textpointer ThunderclapName; 0x0cff	
+	textpointer EleFishName; 0x0cff	
+	textpointer VikingName; 0x0cff	
+	textpointer SandSnakeName; 0x0cff	
+	textpointer ToxicMouthName; 0x0cff	
+	textpointer DesertCrocName; 0x0cff	
+	textpointer IntimidationName; 0x0cff	
+	textpointer AntPitName; 0x0cff	
+	textpointer MysticName; 0x0cff
+	textpointer WrestlingName; 0x0cff	
+	textpointer ArmorName; 0x0cff	
+	textpointer HardShellName; 0x0cff	
+	textpointer RockSkinName; 0x0cff
+	textpointer CopperdermName; 0x0cff	
+	textpointer DespotName; 0x0cff	
+	textpointer IrateName; 0x0cff	
+	textpointer BrutalName; 0x0cff	
+	textpointer GnashTeethName; 0x0cff	
+	textpointer RevolvingName; 0x0cff	
+	textpointer OverturningName; 0x0cff	
+	textpointer RequiemName; 0x0cff	
+	textpointer BeckonName; 0x0cff	
+	textpointer GripperName; 0x0cff	
+	textpointer ScreechName; 0x0cff	
+	textpointer MagicalName; 0x0cff	
+	textpointer BigBossName; 0x0cff	
+	textpointer ForbiddenName; 0x0cff	
+	textpointer SunName; 0x0cff	
+	textpointer MoonlightName; 0x0cff	
+	textpointer RadomeName; 0x0cff	
+	textpointer SevenSpotName; 0x0cff	
+	textpointer DisguiseName; 0x0cff		
+	textpointer LunarName; 0x0cff			
+	textpointer RavenName; 0x0cff	
+	textpointer TinyRacconName; 0x0cff	
+	textpointer RushingName; 0x0cff				
+	textpointer SpikeBallName; 0x0cff					
+	textpointer HappinessName; 0x0cff					
+	textpointer JubileeName; 0x0cff	
+	textpointer FlailingName; 0x0cff	
+	textpointer StrongArmName; 0x0cff	
+	textpointer PlumpMouseName; 0x0cff	
+	textpointer BeaverName; 0x0cff	
+	textpointer HearingName; 0x0cff	
+	textpointer EagletName; 0x0cff	
+	textpointer ValiantName; 0x0cff	
+	textpointer PlacidName; 0x0cff	
+	textpointer SageName; 0x0cff	
+	textpointer MusicNoteName; 0x0cff	
+	textpointer BigHornName; 0x0cff	
+	textpointer MountName; 0x0cff	
+	textpointer SoftTissueName; 0x0cff	
+	textpointer LandSnakeName; 0x0cff	
+	textpointer IronBallName; 0x0cff	
+	textpointer IronClawName; 0x0cff	
+	textpointer IronLegName; 0x0cff	
+	textpointer RockHeadName; 0x0cff	
+	textpointer EnduranceName; 0x0cff		
+	textpointer WolfName; 0x0cff	
+	textpointer ElectronName; 0x0cff	
+	textpointer LiveCoalName; 0x0cff	
+	textpointer BlastName; 0x0cff	
+	textpointer RainbowName; 0x0cff			
+	textpointer DrowsingName; 0x0cff		

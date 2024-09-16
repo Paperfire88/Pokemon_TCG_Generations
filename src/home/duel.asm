@@ -2252,11 +2252,23 @@ PrintFailedEffectText::
 ; return in a the retreat cost of the turn holder's arena or bench Pokemon
 ; given the PLAY_AREA_* value in hTempPlayAreaLocation_ff9d
 GetPlayAreaCardRetreatCost::
-	ldh a, [hTempPlayAreaLocation_ff9d]
-	add DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
-	call LoadCardDataToBuffer1_FromDeckIndex
-	jp GetLoadedCard1RetreatCost
+    ldh a, [hTempPlayAreaLocation_ff9d]
+    add DUELVARS_ARENA_CARD
+    call GetTurnDuelistVariable
+    call LoadCardDataToBuffer1_FromDeckIndex  ; preserves hl
+; apply Retreat Cost penalties before discounts
+    ldh a, [hTempPlayAreaLocation_ff9d]
+    or a
+    jp nz, GetLoadedCard1RetreatCost  ; exit, not arena
+; increased Retreat Cost substatus
+    ld a, DUELVARS_ARENA_CARD_SUBSTATUS2
+    call GetTurnDuelistVariable
+    cp SUBSTATUS2_RETREAT_PLUS_1
+    jp nz, GetLoadedCard1RetreatCost  ; exit, no substatus
+; add to default Retreat Cost
+    ld hl, wLoadedCard1RetreatCost
+    inc [hl]
+    jp GetLoadedCard1RetreatCost
 
 ; move the turn holder's card with ID at de to the discard pile
 ; if it's currently in the arena.

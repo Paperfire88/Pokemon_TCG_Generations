@@ -1,8 +1,10 @@
 INCLUDE "macros.asm"
 INCLUDE "constants.asm"
 
-SECTION "Text 1", ROMX
+SECTION "Text Offsets", ROMX
 INCLUDE "text/text_offsets.asm"
+
+SECTION "Text 1", ROMX
 INCLUDE "text/text1.asm"
 
 SECTION "Text 2", ROMX
@@ -40,3 +42,9 @@ INCLUDE "text/text12.asm"
 
 SECTION "Text 13", ROMX
 INCLUDE "text/text13.asm"
+
+SECTION "Text 14", ROMX
+INCLUDE "text/text14.asm"
+
+SECTION "Text 15", ROMX
+INCLUDE "text/text15.asm"

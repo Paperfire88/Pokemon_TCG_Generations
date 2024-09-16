@@ -100,7 +100,7 @@ PotionName:
 	done
 
 PotionDescription:
-	text "Remove 2 damage counters from 1 of"
+	text "Remove 3 damage counters from 1 of"
 	line "your Pokémon. If that Pokémon has"
 	line "fewer damage counters than that,"
 	line "remove all of them."
@@ -113,7 +113,7 @@ SuperPotionName:
 SuperPotionDescription:
 	text "Discard 1 Energy card attached to 1"
 	line "of your own Pokémon in order to"
-	line "remove 4 damage counters from that"
+	line "remove 6 damage counters from that"
 	line "Pokémon. If the Pokémon has fewer"
 	line "damage counters than that, remove"
 	line "all of them."
@@ -126,7 +126,7 @@ FullHealName:
 FullHealDescription:
 	text "Your Active Pokémon is no longer"
 	line "Asleep, Confused, Paralyzed, or"
-	line "Poisoned."
+	line "Poisoned. then, Draw 1 card."
 	done
 
 ReviveName:
@@ -138,8 +138,8 @@ ReviveDescription:
 	line "discard pile onto your Bench."
 	line "Put damage counters on that Pokémon"
 	line "equal to half its HP (rounded down"
-	line "to the nearest 10). (You can't play"
-	line "Revive if your Bench is full.)"
+	line "to the nearest 10). (You can't use"
+	line "this effect if your Bench is full.)"
 	done
 
 MaintenanceName:
@@ -149,7 +149,7 @@ MaintenanceName:
 MaintenanceDescription:
 	text "Shuffle 2 of the other cards from"
 	line "your hand into your deck in order"
-	line "to draw a card."
+	line "to draw 1 cards."
 	done
 
 PokemonFluteName:
@@ -160,8 +160,8 @@ PokemonFluteDescription:
 	text "Choose 1 Basic Pokémon card from"
 	line "your opponent's discard pile and put"
 	line "it onto his or her Bench. (You can't"
-	line "play Pokémon Flute if your"
-	line "opponent's Bench is full.)"
+	line "play a PKMN if your opponent's Bench"
+	line "is full.)"
 	done
 
 GamblerName:
@@ -171,7 +171,7 @@ GamblerName:
 GamblerDescription:
 	text "Shuffle your hand into your deck."
 	line "Flip a coin. If heads, draw 8 cards."
-	line "If tails, draw 1 card."
+	line "If tails, draw 3 cards."
 	done
 
 RecycleName:
@@ -181,43 +181,5 @@ RecycleName:
 RecycleDescription:
 	text "Flip a coin. If heads, put a card"
 	line "in your discard pile on top of your"
-	line "deck."
+	line "deck. If Tails, Draw 1 card."
 	done
-
-NewIntroText1:
-	text "Oh! Why the rush, <RAMNAME>?"
-	line "What? "
-	line "So you're interested in playing"
-	line "the Pokémon Trading Card Game?"
-	line "Well, playing is certainly more fun"
-	line "than simply collecting the cards!"
-	done
-
-NewIntroText2:
-	text "Do you want to try a practice game?"
-	line ""
-	done
-
-NewIntroText3:
-	text "Well, if you change your mind,"
-	line "Sam would be happy to help you."
-	line "He can answer a lot of questions"
-	line "that you might have about the game,"
-	line "and he's always up for a match  "
-	line "using the practice decks.          "
-	line "Sam can usually be found near "
-	line "the card table to your left."
-	done	
-
-AreYouBoyOrGirlText:
-	text "Are you a boy"
-	line "or a girl?"
-	done
-
-BoyText:
-	text "Boy"
-	done
-
-GirlText:
-	text "Girl"
-	done	

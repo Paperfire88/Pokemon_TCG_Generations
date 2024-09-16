@@ -1,3 +1,6 @@
+NullText:
+	done
+
 HandText:
 	text "Hand"
 	done
@@ -950,14 +953,4 @@ CardCheckIfHeads8CardsIfTails1CardText:
 IfHeadsNoDamageNextTurnText:
 	text "If Heads, you will not receive"
 	line "damage during opponent's next turn!"
-	done
-
-DamageCheckIfHeadsPlusDamageText:
-	text "Damage check!"
-	line "If Heads, +<RAMNUM> damage!!"
-	done
-
-DamageCheckIfHeadsXDamageText:
-	text "Damage check!"
-	line "If Heads, x <RAMNUM> damage!!"
 	done

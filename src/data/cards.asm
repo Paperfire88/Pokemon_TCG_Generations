@@ -1316,7 +1316,7 @@ VenomothCard:
 	dw NONE ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
-	dw VenomothShiftEffectCommands ; effect commands
+	dw NONE ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -7516,7 +7516,7 @@ MewtwoLv60Card:
 	dw NONE ; description (cont)
 	db 0 ; damage
 	db RESIDUAL ; category
-	dw MewtwoLv60EnergyAbsorptionEffectCommands ; effect commands
+	dw EnergyAbsorptionEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db SPECIAL_AI_HANDLING ; flags 3
@@ -7895,7 +7895,7 @@ PidgeotLv38Card:
 	db 38 ; level
 	db 4, 11 ; length
 	dw 87 * 10 ; weight
-	tx PidgeotLv38Description ; description
+	tx Pidgeot1Description ; description
 	db 0
 
 PidgeotLv40Card:
@@ -7945,7 +7945,7 @@ PidgeotLv40Card:
 	db 40 ; level
 	db 4, 11 ; length
 	dw 87 * 10 ; weight
-	tx PidgeotLv40Description ; description
+	tx Pidgeot2Description ; description
 	db 0
 
 RattataCard:
