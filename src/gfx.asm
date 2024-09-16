@@ -1212,10 +1212,6 @@ NidorinoCardGfx::
 	INCBIN "gfx/cards/nidorino.2bpp"
 	INCBIN "gfx/cards/nidorino.pal"
 
-NidokingCardGfx::
-	INCBIN "gfx/cards/nidoking.2bpp"
-	INCBIN "gfx/cards/nidoking.pal"
-
 ZubatCardGfx::
 	INCBIN "gfx/cards/zubat.2bpp"
 	INCBIN "gfx/cards/zubat.pal"
@@ -1376,10 +1372,6 @@ MoltresLv35CardGfx::
 
 SECTION "Card Gfx 4", ROMX
 
-MoltresLv37CardGfx::
-	INCBIN "gfx/cards/moltres2.2bpp"
-	INCBIN "gfx/cards/moltres2.pal"
-
 SquirtleCardGfx::
 	INCBIN "gfx/cards/squirtle.2bpp"
 	INCBIN "gfx/cards/squirtle.pal"
@@ -1471,14 +1463,6 @@ StaryuCardGfx::
 StarmieCardGfx::
 	INCBIN "gfx/cards/starmie.2bpp"
 	INCBIN "gfx/cards/starmie.pal"
-
-MagikarpCardGfx::
-	INCBIN "gfx/cards/magikarp.2bpp"
-	INCBIN "gfx/cards/magikarp.pal"
-
-GyaradosCardGfx::
-	INCBIN "gfx/cards/gyarados.2bpp"
-	INCBIN "gfx/cards/gyarados.pal"
 
 LaprasCardGfx::
 	INCBIN "gfx/cards/lapras.2bpp"
@@ -1760,10 +1744,6 @@ MrMimeCardGfx::
 	INCBIN "gfx/cards/mrmime.2bpp"
 	INCBIN "gfx/cards/mrmime.pal"
 
-JynxCardGfx::
-	INCBIN "gfx/cards/jynx.2bpp"
-	INCBIN "gfx/cards/jynx.pal"
-
 MewtwoLv53CardGfx::
 	INCBIN "gfx/cards/mewtwo1.2bpp"
 	INCBIN "gfx/cards/mewtwo1.pal"
@@ -1903,10 +1883,6 @@ PorygonCardGfx::
 	ds $58
 
 SECTION "Card Gfx 10", ROMX
-
-SnorlaxCardGfx::
-	INCBIN "gfx/cards/snorlax.2bpp"
-	INCBIN "gfx/cards/snorlax.pal"
 
 DratiniCardGfx::
 	INCBIN "gfx/cards/dratini.2bpp"
@@ -2063,7 +2039,19 @@ GamblerCardGfx::
 RecycleCardGfx::
 	INCBIN "gfx/cards/recycle.2bpp"
 	INCBIN "gfx/cards/recycle.pal"
+	
+MoltresLv37CardGfx::
+	INCBIN "gfx/cards/moltres2.2bpp"
+	INCBIN "gfx/cards/moltres2.pal"
 
+MagikarpCardGfx::
+	INCBIN "gfx/cards/magikarp.2bpp"
+	INCBIN "gfx/cards/magikarp.pal"
+
+GyaradosCardGfx::
+	INCBIN "gfx/cards/gyarados.2bpp"
+	INCBIN "gfx/cards/gyarados.pal"
+ 
 SECTION "Gfx 13", ROMX
 
 MintGfx::
@@ -2073,6 +2061,18 @@ MintGfx::
 OWMintGfx::
 	dw $14
 	INCBIN "gfx/overworld_sprites/mint.2bpp"
+
+JynxCardGfx::
+	INCBIN "gfx/cards/jynx.2bpp"
+	INCBIN "gfx/cards/jynx.pal"
+
+NidokingCardGfx::
+	INCBIN "gfx/cards/nidoking.2bpp"
+	INCBIN "gfx/cards/nidoking.pal"	
+
+SnorlaxCardGfx::
+	INCBIN "gfx/cards/snorlax.2bpp"
+	INCBIN "gfx/cards/snorlax.pal"		
 
 Palette161::
 	db 0
