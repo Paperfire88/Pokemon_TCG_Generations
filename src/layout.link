@@ -173,6 +173,10 @@ ROMX $3e
 	"Audio 2"
 ROMX $3f
 	"Audio 3"
+ROMX $44
+	"Custom Gfx"
+ROMX $45
+	"Custom Gfx2"		
 WRAM0
 	"WRAM0"
 	"WRAM0 Duels 1"

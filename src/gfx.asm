@@ -2060,19 +2060,7 @@ MintGfx::
 
 OWMintGfx::
 	dw $14
-	INCBIN "gfx/overworld_sprites/mint.2bpp"
-
-JynxCardGfx::
-	INCBIN "gfx/cards/jynx.2bpp"
-	INCBIN "gfx/cards/jynx.pal"
-
-NidokingCardGfx::
-	INCBIN "gfx/cards/nidoking.2bpp"
-	INCBIN "gfx/cards/nidoking.pal"	
-
-SnorlaxCardGfx::
-	INCBIN "gfx/cards/snorlax.2bpp"
-	INCBIN "gfx/cards/snorlax.pal"		
+	INCBIN "gfx/overworld_sprites/mint.2bpp"	
 
 Palette161::
 	db 0

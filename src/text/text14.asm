@@ -933,7 +933,7 @@ ForewarnName:
 	done
 
 ForewarnDescription:
-	text "Look at the top 3 cards of your Deck,"
+	text "Look at the top 3 cards of your Deck"
 	line "Choose 1 of them, and add it to your"
 	line "Hand. Shuffle your Deck afterwards."
 	done
@@ -943,9 +943,9 @@ DreamWaltzName:
 	done
 
 DreamWaltzDescription:
-	text "You can Switch this Pkmn with 1 of your"
-	line "Benched Pokémon. Then, The Opponent"
-	line "Active PKMN is Now Sleep."
+	text "You can Switch this Pkmn with 1 of"
+	line "your Benched Pkmn. Eitherway, your"
+	line "Opponent Active PKMN is Now Asleep."
 	done
 
 BugsRadarName:
@@ -1070,7 +1070,7 @@ DoubleDrainSlapDescription:
 	text "Flip 2 coins. This attack does 30"
 	line "damage times the number of heads."
 	line "Heal damage from this card equal to"
-	line "half the damage done to the Defending"
+	line "half the damage done to the opponent"
 	line "PKMN (rounded up to the nearest 10)."
 	done
 
@@ -1078,12 +1078,12 @@ PetalDanceHealDescription:
 	text "Flip 3 coins. This attack does"
 	line "damage times the number of heads."
 	line "Heal damage from this card equal to"
-	line "half the damage done to the Defending"
+	line "half the damage done to the opponent"
 	line "PKMN (rounded up to the nearest 10)."
 	line "This PKMN is now Confused (after"
 	line "doing damage)."
-	done	
-
+	done
+	
 ToxicRendName:
 	text "Toxic Rend"
 	done

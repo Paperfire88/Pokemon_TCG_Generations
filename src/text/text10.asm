@@ -1137,8 +1137,8 @@ RageName:
 	done
 
 FlareonsRageDescription:
-	text "Does damage plus 10 more damage"
-	line "for each damage counter."
+	text "Does damage +10 more damage for each"
+	line "damage counter on this pkmn."
 	done
 
 FlareonLv22Description:

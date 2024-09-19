@@ -154,6 +154,12 @@ INCLUDE "data/cards.asm"
 SECTION "Bank 20", ROMX
 INCLUDE "engine/bank20.asm"
 
+SECTION "Custom Gfx", ROMX
+INCLUDE "custom/gfx.asm"
+
+SECTION "Custom Gfx2", ROMX
+INCLUDE "custom/gfx2.asm"
+
 SECTION "Gfx", ROMX
 INCLUDE "engine/gfx/gfx_table_pointers.asm"
 INCLUDE "engine/gfx/tilemaps.asm"

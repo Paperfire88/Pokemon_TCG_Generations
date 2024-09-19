@@ -3,7 +3,7 @@ BulbasaurCard:
 	gfx BulbasaurCardGfx ; gfx
 	tx BulbasaurName ; name
 	db CIRCLE ; rarity
-	db EVOLUTION | NONE ; sets
+	db COLOSSEUM | NONE ; sets
 	dw BULBASAUR
 	db 50 ; hp
 	db BASIC ; stage
@@ -53,43 +53,43 @@ IvysaurCard:
 	gfx IvysaurCardGfx ; gfx
 	tx IvysaurName ; name
 	db DIAMOND ; rarity
-	db EVOLUTION | NONE ; sets
+	db COLOSSEUM | NONE ; sets
 	dw IVYSAUR
-	db 60 ; hp
+	db 70 ; hp
 	db STAGE1 ; stage
 	tx BulbasaurName ; pre-evo name
 
 	; attack 1
-	energy GRASS, 1, COLORLESS, 2 ; energies
-	tx VineWhipName ; name
-	dw NONE ; description
-	dw NONE ; description (cont)
-	db 30 ; damage
-	db DAMAGE_NORMAL ; category
-	dw NONE ; effect commands
-	db NONE ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_WHIP ; animation
-
-	; attack 2
-	energy GRASS, 3 ; energies
-	tx PoisonPowderName ; name
-	tx InflictPoisonDescription ; description
+	energy GRASS, 2 ; energies
+	tx SleepingGasName ; name
+	tx MayInflictSleepDescription ; description
 	dw NONE ; description (cont)
 	db 20 ; damage
 	db DAMAGE_NORMAL ; category
-	dw IvysaurPoisonPowderEffectCommands ; effect commands
-	db INFLICT_POISON ; flags 1
+	dw GastlySleepingGasEffectCommands ; effect commands
+	db INFLICT_SLEEP ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_POWDER_HIT_POISON ; animation
+	db ATK_ANIM_SLEEPING_GAS ; animation
+
+	; attack 2
+	energy GRASS, 2, COLORLESS, 1 ; energies
+	tx AbsorbName ; name
+	tx ButterfreesMegaDrainDescription ; description
+	tx ButterfreesMegaDrainDescriptionCont ; description (cont)
+	db 30 ; damage
+	db DAMAGE_NORMAL ; category
+	dw ButterfreeMegaDrainEffectCommands ; effect commands
+	db NONE ; flags 1
+	db HEAL_USER ; flags 2
+	db NONE ; flags 3
+	db 2
+	db ATK_ANIM_DRAIN ; animation
 
 	db 1 ; retreat cost
 	db WR_FIRE ; weakness
-	db NONE ; resistance
+	db WR_WATER ; resistance
 	tx SeedName ; category
 	db 2 ; Pokedex number
 	db 20 ; level
@@ -97,6 +97,56 @@ IvysaurCard:
 	dw 29 * 10 ; weight
 	tx IvysaurDescription ; description
 	db 16
+
+VenusaurLv67Card:
+	db TYPE_PKMN_GRASS ; type
+	gfx VenusaurLv67CardGfx ; gfx
+	tx VenusaurName ; name
+	db STAR ; rarity
+	db COLOSSEUM | NONE ; sets
+	dw VENUSAUR_LV67
+	db 100 ; hp
+	db STAGE2 ; stage
+	tx IvysaurName ; pre-evo name
+
+	; attack 1
+	energy 0 ; energies
+	tx EnergyTransName ; name
+	tx EnergyTransDescription ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db POKEMON_POWER ; category
+	dw VenusaurEnergyTransEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_PKMN_POWER_1 ; animation
+
+	; attack 2
+	energy GRASS, 3 ; energies
+	tx GaintBloomName ; name
+	tx GiantBloomDescription ; description
+	dw NONE ; description (cont)
+	db 50 ; damage
+	db DAMAGE_NORMAL ; category
+	dw GiantBloomEffectCommands ; effect commands
+	db NONE ; flags 1
+	db HEAL_USER ; flags 2
+	db INFLICT_PARALYSIS/INFLICT_SLEEP ; flags 3
+	db 2
+	db ATK_ANIM_DRAIN ; animation
+
+	db 2 ; retreat cost
+	db WR_FIRE ; weakness
+	db WR_WATER ; resistance
+	tx HerbName ; category
+	db 3 ; Pokedex number
+	db 67 ; level
+	db 6, 7 ; length
+	dw 221 * 10 ; weight
+	tx VenusaurLv67Description ; description
+	db 0
 
 VenusaurLv64Card:
 	db TYPE_PKMN_GRASS ; type
@@ -124,78 +174,28 @@ VenusaurLv64Card:
 	db ATK_ANIM_SOLAR_POWER ; animation
 
 	; attack 2
-	energy GRASS, 4 ; energies
-	tx MegaDrainName ; name
-	tx VenusaursMegaDrainDescription ; description
-	tx VenusaursMegaDrainDescriptionCont ; description (cont)
-	db 40 ; damage
-	db DAMAGE_NORMAL ; category
-	dw VenusaurMegaDrainEffectCommands ; effect commands
+	energy GRASS, 1, COLORLESS, 1 ; energies
+	tx PsychicName ; name
+	tx PsychicDescription ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_PLUS ; category
+	dw MewtwoPsychicEffectCommands ; effect commands
 	db NONE ; flags 1
-	db HEAL_USER ; flags 2
+	db NONE ; flags 2
 	db NONE ; flags 3
-	db 2
-	db ATK_ANIM_DRAIN ; animation
+	db 0
+	db ATK_ANIM_PSYCHIC_HIT ; animation
 
-	db 2 ; retreat cost
-	db WR_FIRE ; weakness
-	db NONE ; resistance
-	tx SeedName ; category
-	db 3 ; Pokedex number
+	db 1 ; retreat cost
+	db WR_PSYCHIC ; weakness
+	db WR_LIGHTNING ; resistance
+	tx TimeTravelName ; category
+	db 4 ; Pokedex number
 	db 64 ; level
 	db 6, 7 ; length
 	dw 221 * 10 ; weight
 	tx VenusaurLv64Description ; description
-	db 0
-
-VenusaurLv67Card:
-	db TYPE_PKMN_GRASS ; type
-	gfx VenusaurLv67CardGfx ; gfx
-	tx VenusaurName ; name
-	db STAR ; rarity
-	db EVOLUTION | NONE ; sets
-	dw VENUSAUR_LV67
-	db 100 ; hp
-	db STAGE2 ; stage
-	tx IvysaurName ; pre-evo name
-
-	; attack 1
-	energy 0 ; energies
-	tx EnergyTransName ; name
-	tx EnergyTransDescription ; description
-	dw NONE ; description (cont)
-	db 0 ; damage
-	db POKEMON_POWER ; category
-	dw VenusaurEnergyTransEffectCommands ; effect commands
-	db NONE ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_PKMN_POWER_1 ; animation
-
-	; attack 2
-	energy GRASS, 4 ; energies
-	tx SolarBeamName ; name
-	dw NONE ; description
-	dw NONE ; description (cont)
-	db 60 ; damage
-	db DAMAGE_NORMAL ; category
-	dw NONE ; effect commands
-	db NONE ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_BEAM ; animation
-
-	db 2 ; retreat cost
-	db WR_FIRE ; weakness
-	db NONE ; resistance
-	tx SeedName ; category
-	db 3 ; Pokedex number
-	db 67 ; level
-	db 6, 7 ; length
-	dw 221 * 10 ; weight
-	tx VenusaurLv67Description ; description
 	db 0
 
 CaterpieCard:
@@ -211,37 +211,37 @@ CaterpieCard:
 
 	; attack 1
 	energy GRASS, 1 ; energies
-	tx StringShotName ; name
-	tx MayInflictParalysisDescription ; description
+	tx PoisonStingName ; name
+	tx MayInflictPoisonDescription ; description
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw CaterpieStringShotEffectCommands ; effect commands
-	db INFLICT_PARALYSIS ; flags 1
+	dw WeedlePoisonStingEffectCommands ; effect commands
+	db INFLICT_POISON ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_STRING_SHOT ; animation
+	db ATK_ANIM_NEEDLES ; animation
 
 	; attack 2
-	energy 0 ; energies
-	dw NONE ; name
-	dw NONE ; description
+	energy GRASS, 1, COLORLESS, 2 ; energies
+	tx WailName ; name
+	tx WailDescription ; description
 	dw NONE ; description (cont)
 	db 0 ; damage
-	db DAMAGE_NORMAL ; category
-	dw NONE ; effect commands
+	db RESIDUAL ; category
+	dw MarowakWailEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
-	db NONE ; flags 3
+	db SPECIAL_AI_HANDLING ; flags 3
 	db 0
-	db ATK_ANIM_NONE ; animation
+	db ATK_ANIM_CRY ; animation
 
 	db 1 ; retreat cost
 	db WR_FIRE ; weakness
 	db NONE ; resistance
 	tx WormName ; category
-	db 10 ; Pokedex number
+	db 5 ; Pokedex number
 	db 13 ; level
 	db 1, 0 ; length
 	dw 6 * 10 ; weight

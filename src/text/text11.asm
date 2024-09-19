@@ -1062,7 +1062,7 @@ MegatonName:
 
 GolemDescription:
 	text "Booster Pack: (EVOLUTION)"
-	line "OG Set: (Nintendo Black Star Promos 25)"
+	line "OG Set: (Nintendo Black Star 25)"
 	line "OG illustrator: (Kouki Saitou)"
 	done
 
