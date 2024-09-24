@@ -1580,7 +1580,7 @@ FoulGas_PoisonOrConfusionEffect:
 
 ; returns carry if no cards in Deck or if
 ; Play Area is full already.
-Sprout_CheckDeckAndPlayArea:
+CheckDeckAndPlayArea:
 	call CheckIfDeckIsEmpty
 	ret c ; return if no cards in deck
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
@@ -1827,16 +1827,6 @@ FurySwipes10_MultiplierEffect:
 	call TossCoinATimes_BankB
 	call ATimes10
 	jp SetDefiniteDamage
-
-NidoranFCallForFamily_CheckDeckAndPlayArea:
-	call CheckIfDeckIsEmpty
-	ret c ; return if no cards in deck
-	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-	call GetTurnDuelistVariable
-	ldtx hl, NoSpaceOnTheBenchText
-	cp MAX_PLAY_AREA_POKEMON
-	ccf
-	ret
 
 NidoranFCallForFamily_PlayerSelectEffect:
 	ld a, $ff
@@ -2201,18 +2191,6 @@ Sludge_AIEffect:
 	ld a, 5
 	lb de, 0, 10
 	jp UpdateExpectedAIDamage_AccountForPoison
-
-; returns carry if no cards in Deck
-; or if Play Area is full already.
-BellsproutCallForFamily_CheckDeckAndPlayArea:
-	call CheckIfDeckIsEmpty
-	ret c ; return if no cards in deck
-	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-	call GetTurnDuelistVariable
-	ldtx hl, NoSpaceOnTheBenchText
-	cp MAX_PLAY_AREA_POKEMON
-	ccf
-	ret
 
 BellsproutCallForFamily_PlayerSelectEffect:
 	ld a, $ff
@@ -2621,18 +2599,6 @@ Flail_HPCheck:
 	ld e, PLAY_AREA_ARENA
 	call GetCardDamageAndMaxHP
 	jp SetDefiniteDamage
-
-; returns carry if no cards in Deck
-; or if Play Area is full already.
-KrabbyCallForFamily_CheckDeckAndPlayArea:
-	call CheckIfDeckIsEmpty
-	ret c ; return if no cards in deck
-	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-	call GetTurnDuelistVariable
-	ldtx hl, NoSpaceOnTheBenchText
-	cp MAX_PLAY_AREA_POKEMON
-	ccf
-	ret
 
 KrabbyCallForFamily_PlayerSelectEffect:
 	ld a, $ff
@@ -3080,7 +3046,7 @@ AIPickFireEnergyCardToDiscard:
 	ret
 
 ; returns carry if Arena card has no Fire Energy cards
-Flamethrower_CheckEnergy:
+Fire_CheckEnergy:
 	ld e, PLAY_AREA_ARENA
 	call GetPlayAreaCardAttachedEnergies
 	ld a, [wAttachedEnergies]
@@ -3103,7 +3069,7 @@ TakeDownEffect:
 	jp DealRecoilDamageToSelf
 
 ; return carry if has less than 2 Fire Energy cards
-FlamesOfRage_CheckEnergy:
+Fire_CheckEnergyx2:
 	ld e, PLAY_AREA_ARENA
 	call GetPlayAreaCardAttachedEnergies
 	ld a, [wAttachedEnergies]
@@ -3169,7 +3135,7 @@ RapidashStomp_DamageBoostEffect:
 	jp AddToDamage
 
 ; returns carry if Opponent has no Pokemon in bench
-NinetalesLure_CheckBench:
+Opp_CheckBench:
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
 	call GetNonTurnDuelistVariable
 	ldtx hl, EffectNoPokemonOnTheBenchText
@@ -3204,15 +3170,6 @@ NinetalesLure_SwitchEffect:
 	ld [wDuelDisplayedScreen], a
 	ret
 
-; return carry if no Fire energy cards
-FireBlast_CheckEnergy:
-	ld e, PLAY_AREA_ARENA
-	call GetPlayAreaCardAttachedEnergies
-	ldtx hl, NotEnoughFireEnergyText
-	ld a, [wAttachedEnergies]
-	cp 1
-	ret
-
 FireBlast_PlayerSelectEffect:
 	jp PlayerPickFireEnergyCardToDiscard
 
@@ -3223,15 +3180,6 @@ FireBlast_DiscardEffect:
 	ldh a, [hTempList]
 	jp PutCardInDiscardPile
 
-; return carry if no Fire energy cards
-Ember_CheckEnergy:
-	ld e, PLAY_AREA_ARENA
-	call GetPlayAreaCardAttachedEnergies
-	ldtx hl, NotEnoughFireEnergyText
-	ld a, [wAttachedEnergies]
-	cp 1
-	ret
-
 Ember_PlayerSelectEffect:
 	jp PlayerPickFireEnergyCardToDiscard
 
@@ -3241,15 +3189,6 @@ Ember_AISelectEffect:
 Ember_DiscardEffect:
 	ldh a, [hTempList]
 	jp PutCardInDiscardPile
-
-; return carry if no Fire energy cards
-Wildfire_CheckEnergy:
-	ld e, PLAY_AREA_ARENA
-	call GetPlayAreaCardAttachedEnergies
-	ldtx hl, NotEnoughFireEnergyText
-	ld a, [wAttachedEnergies]
-	cp 1
-	ret
 
 Wildfire_PlayerSelectEffect:
 	ldtx hl, DiscardOppDeckAsManyFireEnergyCardsText
@@ -3981,7 +3920,7 @@ SleepingGasEffect:
 	call nc, SetNoEffectFromStatus
 	ret
 
-DestinyBond_CheckEnergy:
+Psychic_CheckEnergy:
 	ld e, PLAY_AREA_ARENA
 	call GetPlayAreaCardAttachedEnergies
 	ld a, [wAttachedEnergies + PSYCHIC]
@@ -4712,15 +4651,6 @@ Psychic_DamageBoostEffect:
 	ld [hl], a
 	ret
 
-; return carry if no Psychic Energy attached
-Barrier_CheckEnergy:
-	ld e, PLAY_AREA_ARENA
-	call GetPlayAreaCardAttachedEnergies
-	ld a, [wAttachedEnergies + PSYCHIC]
-	ldtx hl, NotEnoughPsychicEnergyText
-	cp 1
-	ret
-
 Barrier_PlayerSelectEffect:
 	ld a, TYPE_ENERGY_PSYCHIC
 	call CreateListOfEnergyAttachedToArena
@@ -5233,17 +5163,6 @@ Bonemerang_MultiplierEffect:
 	call ATimes10
 	jp SetDefiniteDamage
 
-; returns carry if can't add Pokemon from deck
-MarowakCallForFamily_CheckDeckAndPlayArea:
-	call CheckIfDeckIsEmpty
-	ret c ; no cards in deck
-	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-	call GetTurnDuelistVariable
-	ldtx hl, NoSpaceOnTheBenchText
-	cp MAX_PLAY_AREA_POKEMON
-	ccf
-	ret
-
 MarowakCallForFamily_PlayerSelectEffect:
 	ld a, $ff
 	ldh [hTemp_ffa0], a
@@ -5412,14 +5331,6 @@ LeerEffect:
 	ld [wLoadedAttackAnimation], a
 	ld a, SUBSTATUS2_CANNOT_ATTACK
 	jp ApplySubstatus2ToDefendingCard
-
-; return carry if opponent has no Bench Pokemon.
-StretchKick_CheckBench:
-	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-	call GetNonTurnDuelistVariable
-	ldtx hl, EffectNoPokemonOnTheBenchText
-	cp 2
-	ret
 
 StretchKick_PlayerSelectEffect:
 	ldtx hl, ChoosePkmnInTheBenchToGiveDamageText
@@ -6386,10 +6297,6 @@ MagneticStormEffect:
 	xor a
 	jp Func_2c10b
 
-; return carry if no cards in Deck
-EnergySpike_DeckCheck:
-	jp CheckIfDeckIsEmpty
-
 EnergySpike_PlayerSelectEffect:
 	ld a, $ff
 	ldh [hTemp_ffa0], a
@@ -6799,7 +6706,7 @@ LeekSlap_AIEffect:
 	jp SetExpectedAIDamage
 
 ; return carry if already used attack in this duel
-LeekSlap_OncePerDuelCheck:
+OncePerDuelCheck:
 ; can only use attack if it was never used before this duel
 	ld a, DUELVARS_ARENA_CARD_FLAGS
 	call GetTurnDuelistVariable
@@ -6986,12 +6893,12 @@ HandleEnergyDiscardEffectSelection:
 	ret
 
 ; return carry if Defending Pokemon has no attacks
-ClefableMetronome_CheckAttacks:
+Metronome_CheckAttacks:
 	call CheckIfDefendingPokemonHasAnyAttack
 	ldtx hl, NoAttackMayBeChoosenText
 	ret
 
-ClefableMetronome_AISelectEffect:
+Metronome_AISelectEffect:
 	jp HandleAIMetronomeEffect
 
 ClefableMetronome_UseAttackEffect:
@@ -7047,15 +6954,6 @@ SingEffect:
 	call Sleep50PercentEffect
 	call nc, SetNoEffectFromStatus
 	ret
-
-; return carry if Defending Pokemon has no attacks
-ClefairyMetronome_CheckAttacks:
-	call CheckIfDefendingPokemonHasAnyAttack
-	ldtx hl, NoAttackMayBeChoosenText
-	ret
-
-ClefairyMetronome_AISelectEffect:
-	jp HandleAIMetronomeEffect
 
 ClefairyMetronome_UseAttackEffect:
 	ld a, 3 ; energy cost of this attack
@@ -7696,15 +7594,6 @@ Gale_SwitchEffect:
 	ld [wDuelDisplayedScreen], a
 	ret
 
-; return carry if Bench is full
-FriendshipSong_BenchCheck:
-	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-	call GetTurnDuelistVariable
-	ldtx hl, NoSpaceOnTheBenchText
-	cp MAX_PLAY_AREA_POKEMON
-	ccf
-	ret
-
 FriendshipSong_AddToBench50PercentEffect:
 	ldtx de, SuccessCheckIfHeadsAttackIsSuccessfulText
 	call TossCoin_BankB
@@ -8018,15 +7907,6 @@ EnergyRetrieval_DiscardAndAddToHandEffect:
 	bank1call Func_4b38
 	ret
 
-; return carry if no cards left in Deck.
-EnergySearch_DeckCheck:
-	ld a, DUELVARS_NUMBER_OF_CARDS_NOT_IN_DECK
-	call GetTurnDuelistVariable
-	cp DECK_SIZE
-	ccf
-	ldtx hl, NoCardsLeftInTheDeckText
-	ret
-
 EnergySearch_PlayerSelection:
 	ld a, $ff
 	ldh [hTemp_ffa0], a
@@ -8126,11 +8006,6 @@ ProfessorOakEffect:
 	dec c
 	jr nz, .draw_loop
 .done
-	ret
-
-Potion_DamageCheck:
-	call CheckIfPlayAreaHasAnyDamage
-	ldtx hl, NoPokemonWithDamageCountersText
 	ret
 
 Potion_PlayerSelection:
@@ -8279,7 +8154,7 @@ Defender_AttachDefenderEffect:
 	jp Func_2c10b
 
 ; return carry if Bench is full.
-MysteriousFossil_BenchCheck:
+Max_BenchCheck:
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
 	call GetTurnDuelistVariable
 	cp MAX_PLAY_AREA_POKEMON
@@ -8342,7 +8217,7 @@ ImposterProfessorOakEffect:
 
 ; return carry if not enough cards in hand to discard
 ; or if there are no cards left in the deck.
-ComputerSearch_HandDeckCheck:
+HandDeckCheck:
 	ld a, DUELVARS_NUMBER_OF_CARDS_IN_HAND
 	call GetTurnDuelistVariable
 	ldtx hl, NotEnoughCardsInHandText
@@ -8386,26 +8261,9 @@ ComputerSearch_DiscardAddToHandEffect:
 	call AddCardToHand
 	jp Func_2c0bd
 
-; return carry if Bench is full.
-ClefairyDoll_BenchCheck:
-	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-	call GetTurnDuelistVariable
-	ldtx hl, NoSpaceOnTheBenchText
-	cp MAX_PLAY_AREA_POKEMON
-	ccf
-	ret
-
 ClefairyDoll_PlaceInPlayAreaEffect:
 	ldh a, [hTempCardIndex_ff9f]
 	jp PutHandPokemonCardInPlayArea
-
-; return carry if no Pokemon in the Bench.
-MrFuji_BenchCheck:
-	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-	call GetTurnDuelistVariable
-	ldtx hl, EffectNoPokemonOnTheBenchText
-	cp 2
-	ret
 
 MrFuji_PlayerSelection:
 	ldtx hl, ChoosePokemonToReturnToTheDeckText
@@ -8485,7 +8343,7 @@ PlusPowerEffect:
 	ret
 
 ; return carry if no Pokemon in the Bench.
-Switch_BenchCheck:
+Your_BenchCheck:
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
 	call GetTurnDuelistVariable
 	ldtx hl, EffectNoPokemonOnTheBenchText
@@ -8506,7 +8364,7 @@ Switch_SwitchEffect:
 	ld e, a
 	jp SwapArenaWithBenchPokemon
 
-PokemonCenter_DamageCheck:
+PlayArea_DamageCheck:
 	call CheckIfPlayAreaHasAnyDamage
 	ldtx hl, NoPokemonWithDamageCountersText
 	ret
@@ -8784,14 +8642,6 @@ CreatePlayableStage2PokemonCardListFromHand:
 	scf
 	ret
 
-; return carry if no cards in the Bench.
-ScoopUp_BenchCheck:
-	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-	call GetTurnDuelistVariable
-	ldtx hl, EffectNoPokemonOnTheBenchText
-	cp 2
-	ret
-
 ScoopUp_PlayerSelection:
 ; print text box
 	ldtx hl, ChoosePokemonToScoopUpText
@@ -8890,18 +8740,6 @@ ScoopUp_ReturnToHandEffect:
 	ld e, PLAY_AREA_ARENA
 	call SwapPlayAreaPokemon
 	jp ShiftAllPokemonToFirstPlayAreaSlots
-
-; return carry if no other cards in hand,
-; or if there are no Pokemon cards in hand.
-PokemonTrader_HandDeckCheck:
-	ld a, DUELVARS_NUMBER_OF_CARDS_IN_HAND
-	call GetTurnDuelistVariable
-	ldtx hl, ThereAreNoCardsInHandThatYouCanChangeText
-	cp 2
-	ret c ; return if no other cards in hand
-	call CreatePokemonCardListFromHand
-	ldtx hl, ThereAreNoCardsInHandThatYouCanChangeText
-	ret
 
 PokemonTrader_PlayerHandSelection:
 ; print text box
@@ -9009,15 +8847,6 @@ CreatePokemonCardListFromHand:
 	ret
 .set_carry
 	scf
-	ret
-
-; return carry if no cards in deck
-Pokedex_DeckCheck:
-	ld a, DUELVARS_NUMBER_OF_CARDS_NOT_IN_DECK
-	call GetTurnDuelistVariable
-	ldtx hl, NoCardsLeftInTheDeckText
-	cp DECK_SIZE
-	ccf
 	ret
 
 Pokedex_PlayerSelection:
@@ -9320,7 +9149,7 @@ Maintenance_ReturnToDeckAndDrawEffect:
 	ret
 
 ; return carry if no cards in deck
-PokeBall_DeckCheck:
+DeckCheck:
 	ld a, DUELVARS_NUMBER_OF_CARDS_NOT_IN_DECK
 	call GetTurnDuelistVariable
 	ldtx hl, NoCardsLeftInTheDeckText
@@ -9984,14 +9813,6 @@ HandlePlayerSelection2HandCards:
 	scf
 	ret
 
-; return carry if non-turn duelist has no benched Pokemon
-GustOfWind_BenchCheck:
-	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-	call GetNonTurnDuelistVariable
-	ldtx hl, EffectNoPokemonOnTheBenchText
-	cp 2
-	ret
-
 GustOfWind_PlayerSelection:
 	ldtx hl, ChooseAPokemonToSwitchWithActivePokemonText
 	call DrawWideTextBox_WaitForInput
@@ -10591,14 +10412,6 @@ Ultravision_PlayerSelectEffect:
     ldh [hTemp_ffa0], a
     ret
 
-CheckDeckIsNotEmpty:
-    ld a, DUELVARS_NUMBER_OF_CARDS_NOT_IN_DECK
-    call GetTurnDuelistVariable
-    ldtx hl, NoCardsLeftInTheDeckText
-    cp DECK_SIZE
-    ccf
-    ret
-
 CreateDeckCardListTopNCards:
     ld a, DUELVARS_NUMBER_OF_CARDS_NOT_IN_DECK
     call GetTurnDuelistVariable
@@ -10735,14 +10548,6 @@ EeveelutionAISelectEffect:
 EeveelutionAddToHandEffect:
 	farcall EeveelutionAddToHandEffect2
 	ret
-	
-Burstinginferno_CheckEnergy:
-	ld e, PLAY_AREA_ARENA
-	call GetPlayAreaCardAttachedEnergies
-	ldtx hl, NotEnoughFireEnergyText
-	ld a, [wAttachedEnergies]
-	cp 1
-	ret
 
 Burstinginferno_PlayerSelectEffect:
 	ldtx hl, ChooseAndDiscardanyFireEnergyCardsText
@@ -10816,7 +10621,7 @@ SprintEffect:
 	done
 
 Sprint_Check:
-  call CheckDeckIsNotEmpty
+  call DeckCheck
   ret c
   jp CheckPokemonPowerCanBeUsed
 
