@@ -1152,17 +1152,20 @@ Mail15Text:
 
 NewGameText:
 	text "NEW GAME"
+	line "Current Version: 1.7"
 	done
 
 ContinueDiaryNewGameText:
 	text "CONTINUE FROM DIARY"
 	line "NEW GAME"
+	line "Current Version: 1.7"
 	done
 
 ContinueDiaryNewGameContinueDuelText:
 	text "CONTINUE FROM DIARY"
 	line "New Game"
 	line "CONTINUE DUEL"
+	line "Current Version: 1.7"
 	done
 
 ContinueFromDiarySummaryText:
@@ -1753,7 +1756,7 @@ SquirtleAndFriendsDeckChoiceText:
 	done
 
 BulbasaurAndFriendsDeckChoiceText:
-	text "BULBASAUR & Friends Deck"
+	text "CHIKORITA & Friends Deck"
 	done
 
 SelectDeckToTakeText:

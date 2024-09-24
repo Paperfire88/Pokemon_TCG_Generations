@@ -7,8 +7,8 @@ DeckAIPointerTable::
 	dw AIActionTable_GeneralDecks        ; CHARMANDER_EXTRA_DECK
 	dw AIActionTable_GeneralDecks        ; SQUIRTLE_AND_FRIENDS_DECK
 	dw AIActionTable_GeneralDecks        ; SQUIRTLE_EXTRA_DECK
-	dw AIActionTable_GeneralDecks        ; BULBASAUR_AND_FRIENDS_DECK
-	dw AIActionTable_GeneralDecks        ; BULBASAUR_EXTRA_DECK
+	dw AIActionTable_GeneralDecks        ; CHIKORITA_AND_FRIENDS_DECK
+	dw AIActionTable_GeneralDecks        ; CHIKORITA_EXTRA_DECK
 	dw AIActionTable_GeneralDecks        ; LIGHTNING_AND_FIRE_DECK
 	dw AIActionTable_GeneralDecks        ; WATER_AND_FIGHTING_DECK
 	dw AIActionTable_GeneralDecks        ; GRASS_AND_PSYCHIC_DECK

@@ -519,7 +519,7 @@ FlowerGardenCardList:
 	deck_list_start
 	card_item GRASS_ENERGY,            24
 	card_item DOUBLE_COLORLESS_ENERGY,  2
-	card_item BULBASAUR,                3
+	card_item CHIKORITA,                3
 	card_item IVYSAUR,                  2
 	card_item VENUSAUR_LV67,            2
 	card_item ODDISH,                   3
@@ -568,7 +568,7 @@ FlowerPowerCardList:
 	deck_list_start
 	card_item GRASS_ENERGY,     18
 	card_item PSYCHIC_ENERGY,    4
-	card_item BULBASAUR,         4
+	card_item CHIKORITA,         4
 	card_item IVYSAUR,           3
 	card_item VENUSAUR_LV67,     2
 	card_item ODDISH,            4
@@ -838,7 +838,7 @@ ChariSaurCardList:
 	deck_list_start
 	card_item GRASS_ENERGY,     12
 	card_item FIRE_ENERGY,      10
-	card_item BULBASAUR,         4
+	card_item CHIKORITA,         4
 	card_item IVYSAUR,           3
 	card_item VENUSAUR_LV67,     2
 	card_item CHARMANDER,        4
@@ -1006,7 +1006,7 @@ BulbasaurAndFriendsCardList:
 	card_item GRASS_ENERGY,     9
 	card_item LIGHTNING_ENERGY, 8
 	card_item PSYCHIC_ENERGY,   6
-	card_item BULBASAUR,        2
+	card_item CHIKORITA,        2
 	card_item IVYSAUR,          1
 	card_item VENUSAUR_LV67,    1
 	card_item NIDORANF,         2
@@ -1191,7 +1191,7 @@ MysteriousPokemonCardList:
 	deck_list_start
 	card_item GRASS_ENERGY,    12
 	card_item PSYCHIC_ENERGY,  14
-	card_item BULBASAUR,        4
+	card_item CHIKORITA,        4
 	card_item IVYSAUR,          3
 	card_item VENUSAUR_LV64,    2
 	card_item SCYTHER,          2

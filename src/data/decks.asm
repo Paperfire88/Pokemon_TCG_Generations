@@ -86,7 +86,7 @@ UnnamedDeck2:
 	card_item FIRE_ENERGY,              4
 	card_item GRASS_ENERGY,            20
 	card_item KANGASKHAN,               4
-	card_item BULBASAUR,                4
+	card_item CHIKORITA,                4
 	card_item IVYSAUR,                  3
 	card_item VENUSAUR_LV67,            2
 	card_item CHARMANDER,               4
@@ -260,7 +260,7 @@ CharmanderExtraDeck:
 	card_item GRASS_ENERGY,    4
 	card_item WATER_ENERGY,    4
 	card_item PSYCHIC_ENERGY,  3
-	card_item BULBASAUR,       1
+	card_item CHIKORITA,       1
 	card_item IVYSAUR,         1
 	card_item NIDORANF,        2
 	card_item CATERPIE,        2
@@ -345,7 +345,7 @@ BulbasaurAndFriendsDeck:
 	card_item GRASS_ENERGY,    11
 	card_item FIRE_ENERGY,      3
 	card_item WATER_ENERGY,     9
-	card_item BULBASAUR,        2
+	card_item CHIKORITA,        2
 	card_item IVYSAUR,          1
 	card_item VENUSAUR_LV67,    1
 	card_item CATERPIE,         2
@@ -669,7 +669,7 @@ FlowerPowerDeck:
 	deck_list_start
 	card_item GRASS_ENERGY,     18
 	card_item PSYCHIC_ENERGY,    4
-	card_item BULBASAUR,         4
+	card_item CHIKORITA,         4
 	card_item IVYSAUR,           3
 	card_item VENUSAUR_LV67,     2
 	card_item ODDISH,            4
@@ -1171,7 +1171,7 @@ FlowerGardenDeck:
 	deck_list_start
 	card_item GRASS_ENERGY,            24
 	card_item DOUBLE_COLORLESS_ENERGY,  2
-	card_item BULBASAUR,                3
+	card_item CHIKORITA,                3
 	card_item IVYSAUR,                  2
 	card_item VENUSAUR_LV67,            2
 	card_item ODDISH,                   3

@@ -1492,7 +1492,7 @@ StiffenEffect:
 	jp nc, SetWasUnsuccessful
 	ld a, ATK_ANIM_PROTECT
 	ld [wLoadedAttackAnimation], a
-	ld a, SUBSTATUS1_NO_DAMAGE_STIFFEN
+	ld a, SUBSTATUS1_NO_DAMAGE
 	jp ApplySubstatus1ToDefendingCard
 
 KakunaPoisonPowder_AIEffect:
@@ -2019,7 +2019,7 @@ BulbasaurLeechSeedEffect:
 	ld a, [hli]
 	or [hl]
 	ret z ; return if no damage dealt
-	lb de, 0, 10
+	lb de, 0, 30
 	jp ApplyAndAnimateHPRecovery
 
 ; returns carry if no Grass Energy in Play Area
@@ -2602,7 +2602,7 @@ WithdrawEffect:
 	jp nc, SetWasUnsuccessful
 	ld a, ATK_ANIM_PROTECT
 	ld [wLoadedAttackAnimation], a
-	ld a, SUBSTATUS1_NO_DAMAGE_10
+	ld a, SUBSTATUS1_NO_DAMAGE
 	jp ApplySubstatus1ToDefendingCard
 
 RainDanceEffect:
@@ -2738,7 +2738,7 @@ AgilityEffect:
 	ret nc ; return if tails
 	ld a, ATK_ANIM_AGILITY_PROTECT
 	ld [wLoadedAttackAnimation], a
-	ld a, SUBSTATUS1_AGILITY
+	ld a, SUBSTATUS1_IMMUNITY
 	jp ApplySubstatus1ToDefendingCard
 
 HideInShellEffect:
@@ -2747,7 +2747,7 @@ HideInShellEffect:
 	jp nc, SetWasUnsuccessful
 	ld a, ATK_ANIM_PROTECT
 	ld [wLoadedAttackAnimation], a
-	ld a, SUBSTATUS1_NO_DAMAGE_11
+	ld a, SUBSTATUS1_NO_DAMAGE
 	jp ApplySubstatus1ToDefendingCard
 
 QuickAttack_AIEffect:
@@ -4745,7 +4745,7 @@ Barrier_DiscardEffect:
 	jp PutCardInDiscardPile
 
 Barrier_BarrierEffect:
-	ld a, SUBSTATUS1_BARRIER
+	ld a, SUBSTATUS1_IMMUNITY
 	jp ApplySubstatus1ToDefendingCard
 
 EnergyAbsorption_CheckDiscardPile:
@@ -5410,7 +5410,7 @@ LeerEffect:
 	jp nc, SetWasUnsuccessful
 	ld a, ATK_ANIM_LEER
 	ld [wLoadedAttackAnimation], a
-	ld a, SUBSTATUS2_LEER
+	ld a, SUBSTATUS2_CANNOT_ATTACK
 	jp ApplySubstatus2ToDefendingCard
 
 ; return carry if opponent has no Bench Pokemon.
@@ -5448,8 +5448,8 @@ StretchKick_BenchDamageEffect:
 	jp SwapTurn
 
 SandAttackEffect:
-	ld a, SUBSTATUS2_SAND_ATTACK
-	jp ApplySubstatus2ToDefendingCard
+	ld a, SUBSTATUS2_CANNOT_ATTACK
+	jp SUBSTATUS2_SMOKESCREEN
 
 EarthquakeEffect:
 	ld a, $01
@@ -5531,7 +5531,7 @@ BoneAttackEffect:
 	ldtx de, IfHeadsOpponentCannotAttackText
 	call TossCoin_BankB
 	ret nc
-	ld a, SUBSTATUS2_BONE_ATTACK
+	ld a, SUBSTATUS2_CANNOT_ATTACK
 	jp ApplySubstatus2ToDefendingCard
 
 ; return carry if neither Play Area
@@ -5808,7 +5808,7 @@ Fly_Success50PercentEffect:
 .heads
 	ld a, ATK_ANIM_AGILITY_PROTECT
 	ld [wLoadedAttackAnimation], a
-	ld a, SUBSTATUS1_FLY
+	ld a, SUBSTATUS1_IMMUNITY
 	jp ApplySubstatus1ToDefendingCard
 
 ThunderJolt_Recoil50PercentEffect:
@@ -5877,7 +5877,7 @@ Spark_BenchDamageEffect:
 	jp SwapTurn
 
 GrowlEffect:
-	ld a, SUBSTATUS2_GROWL
+	ld a, SUBSTATUS2_REDUCE_BY_10
 	jp ApplySubstatus2ToDefendingCard
 
 ChainLightningEffect:
@@ -6526,7 +6526,7 @@ TailWagEffect:
 	jp nc, SetWasUnsuccessful
 	ld a, ATK_ANIM_LURE
 	ld [wLoadedAttackAnimation], a
-	ld a, SUBSTATUS2_TAIL_WAG
+	ld a, SUBSTATUS2_CANNOT_ATTACK_THIS
 	jp ApplySubstatus2ToDefendingCard
 
 ; these are effect commands that Mirror Move uses
@@ -7162,7 +7162,7 @@ JigglypuffDoubleEdgeEffect:
 	jp DealRecoilDamageToSelf
 
 PounceEffect:
-	ld a, SUBSTATUS2_POUNCE
+	ld a, SUBSTATUS2_REDUCE_BY_10
 	jp ApplySubstatus2ToDefendingCard
 
 ; return carry if Defending card has no weakness
@@ -7361,7 +7361,7 @@ ScrunchEffect:
 	jp nc, SetWasUnsuccessful
 	ld a, ATK_ANIM_SCRUNCH
 	ld [wLoadedAttackAnimation], a
-	ld a, SUBSTATUS1_NO_DAMAGE_17
+	ld a, SUBSTATUS1_NO_DAMAGE
 	jp ApplySubstatus1ToDefendingCard
 
 ChanseyDoubleEdgeEffect:
@@ -10864,6 +10864,11 @@ IncreaseRetreatCostEffect:
     jp ApplySubstatus2ToDefendingCard
 	ret
 
+UnableRetreatEffect:
+    ld a, SUBSTATUS2_UNABLE_RETREAT
+    jp ApplySubstatus2ToDefendingCard
+	ret	
+
 DamageincreseretreatcostEffect:
 	call IncreaseRetreatCostEffect
 	jp Low_DamageBoostEffect
@@ -11151,6 +11156,14 @@ GaintBloomEffect:
 	ret c ; no T attached
 	jp Bloom_ParalyzedOrSleepEffect	
 
+StickandAbsorbEffect:
+	ld e, PLAY_AREA_ARENA
+	call GetPlayAreaCardAttachedEnergies
+	ld a, [wAttachedEnergies + GRASS]
+	cp 4
+	ret c ; no T attached
+	jp BulbasaurLeechSeedEffect	
+
 ExtraDamageIfFTEnergiesEffect:
 	ld e, PLAY_AREA_ARENA
 	call GetPlayAreaCardAttachedEnergies
@@ -11171,3 +11184,28 @@ FlipTurnEffect:
 Teleport_PlayerSelectEffect2:
 	farcall Teleport_PlayerSelectEffect3
 	ret		
+
+LashesEffect:
+	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
+	call GetTurnDuelistVariable
+	ld d, a
+	ld e, PLAY_AREA_BENCH_1
+
+; go through every Pokemon in the Play Area, add 10 per injured mon.
+.loop_play_area
+; check its damage
+	ld a, e
+	ldh [hTempPlayAreaLocation_ff9d - 1], a
+	call GetPlayAreaCardAttachedEnergies
+	or a
+	jr z, .next_pkmn ; if no damage, skip Pokemon
+
+; add to damage
+	ld a, 10
+	call AddToDamage
+
+.next_pkmn
+	inc e
+	dec d
+	jr nz, .loop_play_area
+	ret 

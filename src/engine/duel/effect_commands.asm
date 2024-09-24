@@ -1422,6 +1422,9 @@ FireEnergyEffectCommands:
 GrassEnergyEffectCommands:
 	db  $00
 
+DarknessEnergyEffectCommands:
+	db  $00	
+
 SuperPotionEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, SuperPotion_DamageEnergyCheck
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, SuperPotion_PlayerSelectEffect
@@ -1797,6 +1800,11 @@ Do10MorePerInjuredPokesEffectCommands:		;Does +10 per injured pokemon on your si
 	dbw EFFECTCMDTYPE_AI, asd_AIEffect
 	db  $00
 
+HundredFuriousLashesEffectCommands:		;Does +10 per injured pokemon on your side of the field.
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, LashesEffect
+	dbw EFFECTCMDTYPE_AI, BigEggsplosion_AIEffect
+	db  $00
+
 DigDrainEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, HardenEffect
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, ButterfreeMegaDrainEffect
@@ -2053,4 +2061,8 @@ GiantBloomEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, GaintBloomEffect
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, ButterfreeMegaDrainEffect
 	db  $00
-	
+
+StickandAbsorbEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, UnableRetreatEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, StickandAbsorbEffect
+	db  $00	

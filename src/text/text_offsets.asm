@@ -2917,8 +2917,8 @@ TextOffsets::
 	textpointer	ChooseEeveelutionFromDeckText; 0x0cb3		
 	textpointer YesOrNoTextNEOtext; 0x0cf7
 	textpointer	FoundCardText; 0xc85
-	textpointer DucklettName                                       ; 0x0bae
-	textpointer FlapName                                           ; 0x0baf
+	textpointer DunsparceName                                       ; 0x0bae
+	textpointer DownDrawName                                           ; 0x0baf
 	textpointer DucklettDescription                                ; 0x0bb0
 	textpointer TynamoName                                         ; 0x0bb1
 	textpointer TyranitarName									   ; 0x0bb2
@@ -3364,3 +3364,18 @@ TextOffsets::
 	textpointer BlastName; 0x0cff	
 	textpointer RainbowName; 0x0cff			
 	textpointer DrowsingName; 0x0cff		
+	textpointer GrubbinName
+	textpointer TangrowthName
+	textpointer LashesName
+	textpointer	LashesDescription
+	textpointer	StickandAbsorbDescription
+	textpointer	StickandAbsorbName
+	textpointer	DarknessEnergyName
+	textpointer	DarknessEnergyDescription
+	textpointer BasicPokemonText                                   ; 0x0bae
+	textpointer ChooseBasicPokemonText                             ; 0x0baf
+	textpointer ChooseBasicPokemonFromDeckText                     ; 0x0bb0
+	textpointer EvolutionPokemonText                               ; 0x0bb1
+	textpointer ChooseEvolutionPokemonText                         ; 0x0bb2
+	textpointer ChooseEvolutionPokemonFromDeckText                 ; 0x0bb3
+	textpointer UnableToAttackText

@@ -5,8 +5,9 @@
 	const LIGHTNING_ENERGY            ; $04
 	const FIGHTING_ENERGY             ; $05
 	const PSYCHIC_ENERGY              ; $06
+	const DARKNESS_ENERGY              ; $06
 	const DOUBLE_COLORLESS_ENERGY     ; $07
-	const BULBASAUR                   ; $08
+	const CHIKORITA                   ; $08
 	const IVYSAUR                     ; $09
 	const VENUSAUR_LV64               ; $0a
 	const VENUSAUR_LV67               ; $0b
@@ -43,6 +44,7 @@
 	const KOFFING                     ; $2a
 	const WEEZING                     ; $2b
 	const TANGELA_LV8                 ; $2c
+	const TANGROWTH                ; $2d
 	const TANGELA_LV12                ; $2d
 	const SCYTHER                     ; $2e
 	const PINSIR                      ; $2f
@@ -117,6 +119,9 @@
 	const ZAPDOS_LV40                 ; $74
 	const ZAPDOS_LV64                 ; $75
 	const ZAPDOS_LV68                 ; $76
+	const TYNAMO                      ; $e6
+	const EELEKTROSS				  ; $e7
+	const EELEKTRIK				      ; $e8
 	const SANDSHREW                   ; $77
 	const SANDSLASH                   ; $78
 	const DIGLETT                     ; $79
@@ -193,6 +198,7 @@
 	const DRAGONAIR                   ; $c0
 	const DRAGONITE_LV41              ; $c1
 	const DRAGONITE_LV45              ; $c2
+	const DUNSPARCE
 	const PROFESSOR_OAK               ; $c3
 	const IMPOSTER_PROFESSOR_OAK      ; $c4
 	const BILL                        ; $c5

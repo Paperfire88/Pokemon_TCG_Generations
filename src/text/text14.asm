@@ -93,12 +93,8 @@ ChooseEeveelutionFromDeckText:
 	line "from Eevee in the deck."
 	done
 
-DucklettName:
+DunsparceName:
 	text "Dunsparce"
-	done
-
-FlapName:
-	text "Down Draw"
 	done
 	
 ;         01234567890123456789012345678901234
@@ -1493,4 +1489,12 @@ OpportunistDescription:
 	line "any damage counters on it, Your"
 	line "Opponent Can't play trainer cards"
 	line "during their next turn."
+	done	
+
+DownDrawName:
+	text "Down Draw"
+	done
+
+GrubbinName:
+	text "Grubbin"
 	done	

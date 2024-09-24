@@ -1,10 +1,10 @@
-BulbasaurCard:
+ChikoritaCard:
 	db TYPE_PKMN_GRASS ; type
-	gfx BulbasaurCardGfx ; gfx
+	gfx ChikoritaCardGfx ; gfx
 	tx BulbasaurName ; name
 	db CIRCLE ; rarity
 	db COLOSSEUM | NONE ; sets
-	dw BULBASAUR
+	dw CHIKORITA
 	db 50 ; hp
 	db BASIC ; stage
 	dw NONE ; pre-evo name
@@ -1810,7 +1810,7 @@ TangelaLv8Card:
 	dw NONE ; pre-evo name
 
 	; attack 1
-	energy GRASS, 1, COLORLESS, 1 ; energies
+	energy GRASS, 1 ; energies
 	tx BindName ; name
 	tx MayInflictParalysisDescription ; description
 	dw NONE ; description (cont)
@@ -1843,6 +1843,56 @@ TangelaLv8Card:
 	tx VineName ; category
 	db 114 ; Pokedex number
 	db 8 ; level
+	db 3, 3 ; length
+	dw 77 * 10 ; weight
+	tx TangelaLv8Description ; description
+	db 0
+
+TangrowthCard:
+	db TYPE_PKMN_GRASS ; type
+	gfx TangrowthCardGfx ; gfx
+	tx TangrowthName ; name
+	db DIAMOND ; rarity
+	db LABORATORY | NONE ; sets
+	dw TANGELA_LV8
+	db 100 ; hp
+	db STAGE1 ; stage
+	tx TangelaName ; pre-evo name
+
+	; attack 1
+	energy GRASS, 1 ; energies
+	tx LashesName ; name
+	tx LashesDescription ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_PLUS ; category
+	dw HundredFuriousLashesEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_WHIP ; animation
+
+	; attack 2
+	energy GRASS, 3 ; energies
+	tx StickandAbsorbName ; name
+	tx StickandAbsorbDescription ; description
+	dw NONE ; description (cont)
+	db 40 ; damage
+	db DAMAGE_NORMAL ; category
+	dw StickandAbsorbEffectCommands ; effect commands
+	db NONE ; flags 1
+	db HEAL_USER ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT_EFFECT ; animation
+
+	db 4 ; retreat cost
+	db WR_FIRE ; weakness
+	db WR_WATER ; resistance
+	tx VineName ; category
+	db 114 ; Pokedex number
+	db 82 ; level
 	db 3, 3 ; length
 	dw 77 * 10 ; weight
 	tx TangelaLv8Description ; description
@@ -9348,6 +9398,206 @@ DragoniteLv45Card:
 	tx DragoniteDescription ; description
 	db 0
 
+DunsparceCard:
+	db TYPE_PKMN_COLORLESS ; type
+	gfx DunsparceCardGfx ; gfx
+	tx DunsparceName ; name
+	db DIAMOND ; rarity
+	db MYSTERY | NONE ; sets
+	dw DRATINI
+	db 50 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx DownDrawName ; name
+	tx DownDrawDescription ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw DowndrawCommnads ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	; attack 2
+	energy 0 ; energies
+	dw NONE ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_NONE ; animation
+
+	db 1 ; retreat cost
+	db NONE ; weakness
+	db WR_PSYCHIC ; resistance
+	tx DragonName ; category
+	db 147 ; Pokedex number
+	db 10 ; level
+	db 5, 11 ; length
+	dw 7 * 10 ; weight
+	tx DratiniDescription ; description
+	db 18
+
+TynamoCard:
+	db TYPE_PKMN_LIGHTNING ; type
+	gfx TynamoCardGfx ; gfx
+	tx TynamoName ; name
+	db CIRCLE ; rarity
+	db COLOSSEUM | NONE ; sets
+	dw TYNAMO
+	db 40 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx GnawName ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	; attack 2
+	energy LIGHTNING, 1, COLORLESS, 1 ; energies
+	tx ThunderJoltName ; name
+	tx ThunderJoltDescription ; description
+	dw NONE ; description (cont)
+	db 30 ; damage
+	db DAMAGE_NORMAL ; category
+	dw PikachuThunderJoltEffectCommands ; effect commands
+	db LOW_RECOIL ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_THUNDERSHOCK ; animation
+
+	db 1 ; retreat cost
+	db WR_FIGHTING ; weakness
+	db NONE ; resistance
+	tx MouseName ; category
+	db 25 ; Pokedex number
+	db 12 ; level
+	db 1, 4 ; length
+	dw 13 * 10 ; weight
+	tx PikachuLv12Description ; description
+	db 19
+
+EelektrikCard:
+	db TYPE_PKMN_LIGHTNING ; type
+	gfx EelektrikCardGfx ; gfx
+	tx EelektrikName ; name
+	db CIRCLE ; rarity
+	db COLOSSEUM | NONE ; sets
+	dw EELEKTRIK
+	db 40 ; hp
+	db STAGE1 ; stage
+	tx TynamoName ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx GnawName ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	; attack 2
+	energy LIGHTNING, 1, COLORLESS, 1 ; energies
+	tx ThunderJoltName ; name
+	tx ThunderJoltDescription ; description
+	dw NONE ; description (cont)
+	db 30 ; damage
+	db DAMAGE_NORMAL ; category
+	dw PikachuThunderJoltEffectCommands ; effect commands
+	db LOW_RECOIL ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_THUNDERSHOCK ; animation
+
+	db 1 ; retreat cost
+	db WR_FIGHTING ; weakness
+	db NONE ; resistance
+	tx MouseName ; category
+	db 25 ; Pokedex number
+	db 12 ; level
+	db 1, 4 ; length
+	dw 13 * 10 ; weight
+	tx PikachuLv12Description ; description
+	db 19
+
+EelektrossCard:
+	db TYPE_PKMN_LIGHTNING ; type
+	gfx EelektrossCardGfx ; gfx
+	tx EelektrossName ; name
+	db CIRCLE ; rarity
+	db COLOSSEUM | NONE ; sets
+	dw EELEKTROSS
+	db 40 ; hp
+	db STAGE2 ; stage
+	tx EelektrikName ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx GnawName ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	; attack 2
+	energy LIGHTNING, 1, COLORLESS, 1 ; energies
+	tx ThunderJoltName ; name
+	tx ThunderJoltDescription ; description
+	dw NONE ; description (cont)
+	db 30 ; damage
+	db DAMAGE_NORMAL ; category
+	dw PikachuThunderJoltEffectCommands ; effect commands
+	db LOW_RECOIL ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_THUNDERSHOCK ; animation
+
+	db 1 ; retreat cost
+	db WR_FIGHTING ; weakness
+	db NONE ; resistance
+	tx MouseName ; category
+	db 25 ; Pokedex number
+	db 12 ; level
+	db 1, 4 ; length
+	dw 13 * 10 ; weight
+	tx PikachuLv12Description ; description
+	db 19
+
 GrassEnergyCard:
 	db TYPE_ENERGY_GRASS ; type
 	gfx GrassEnergyCardGfx ; gfx
@@ -9412,6 +9662,17 @@ PsychicEnergyCard:
 	dw PSYCHIC_ENERGY
 	dw PsychicEnergyEffectCommands ; effect commands
 	tx PsychicEnergyDescription ; description
+	dw NONE ; description (cont)
+
+DarknessEnergyCard:
+	db TYPE_ENERGY_DARKNESS ; type
+	gfx DarknessCardGfx ; gfx
+	tx DarknessEnergyName ; name
+	db CIRCLE ; rarity
+	db ENERGY | NONE ; sets
+	dw DARKNESS_ENERGY
+	dw DarknessEnergyEffectCommands ; effect commands
+	tx DarknessEnergyDescription ; description
 	dw NONE ; description (cont)
 
 DoubleColorlessEnergyCard:

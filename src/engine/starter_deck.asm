@@ -70,7 +70,7 @@ _AddStarterDeck:
 	; main deck, extra cards
 	db CHARMANDER_AND_FRIENDS_DECK_ID, CHARMANDER_EXTRA_DECK_ID
 	db SQUIRTLE_AND_FRIENDS_DECK_ID,   SQUIRTLE_EXTRA_DECK_ID
-	db BULBASAUR_AND_FRIENDS_DECK_ID,  BULBASAUR_EXTRA_DECK_ID
+	db CHIKORITA_AND_FRIENDS_DECK_ID,  CHIKORITA_EXTRA_DECK_ID
 
 ; clears saved data (card Collection/saved decks/etc)
 ; then adds the starter decks as saved decks
@@ -97,7 +97,7 @@ InitSaveData:
 	ld a, SQUIRTLE_AND_FRIENDS_DECK
 	ld hl, sSavedDeck2
 	call StoreDeckIDInSRAM
-	ld a, BULBASAUR_AND_FRIENDS_DECK
+	ld a, CHIKORITA_AND_FRIENDS_DECK
 	ld hl, sSavedDeck3
 	call StoreDeckIDInSRAM
 

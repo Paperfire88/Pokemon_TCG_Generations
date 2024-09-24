@@ -753,3 +753,65 @@ RainbowName:
 DrowsingName:
 	text "Drowsing"
 	done	
+
+TangrowthName:
+	text "Tangrowth"
+	done		
+
+LashesName:
+	text "Hundred Furious Lashes"
+	done
+
+LashesDescription:
+	text "This attack does 10 more damage for"
+	line "each of your Benched PKMN with any"
+	line "amount of Energies atached on it."
+	done	
+
+StickandAbsorbName:
+	text "Stick and Absorb"
+	done
+
+StickandAbsorbDescription:
+	text "The Defending Pkmn can't retreat" 
+	line "during your opponent's next turn."
+	line "If this pkmn has 4 or more <GRASS>"
+	line "energies attached and this attack" 
+	line "deals damage, remove 3 damage"
+	line "counters from this Pkmn."
+	done		
+
+DarknessEnergyName:
+	text "Darkness Energy"
+	done	
+
+DarknessEnergyDescription:
+	text "Provides Energy =D."	
+
+BasicPokemonText:
+	text "Basic Pokémon"
+	done
+ChooseBasicPokemonText:
+	text "Choose a"
+	line "Basic Pokémon."
+	done
+ChooseBasicPokemonFromDeckText:
+	text "Choose a Basic Pokémon"
+	line "from your deck."
+	done
+EvolutionPokemonText:
+	text "Evolution Pokémon"
+	done
+ChooseEvolutionPokemonText:
+	text "Choose an"
+	line "Evolution Pokémon."
+	done
+ChooseEvolutionPokemonFromDeckText:
+	text "Choose an Evolution Pokémon"
+	line "from your deck."
+	done
+
+UnableToAttackText:
+	text "This Pokémon cannot attack"
+	line "until your next turn."
+	done		

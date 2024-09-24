@@ -7,8 +7,9 @@ CardPointers::
 	dab LightningEnergyCard
 	dab FightingEnergyCard
 	dab PsychicEnergyCard
+	dab DarknessEnergyCard
 	dab DoubleColorlessEnergyCard
-	dab BulbasaurCard
+	dab ChikoritaCard
 	dab IvysaurCard
 	dab VenusaurLv64Card
 	dab VenusaurLv67Card
@@ -45,6 +46,7 @@ CardPointers::
 	dab KoffingCard
 	dab WeezingCard
 	dab TangelaLv8Card
+	dab TangrowthCard	
 	dab TangelaLv12Card
 	dab ScytherCard
 	dab PinsirCard
@@ -119,6 +121,9 @@ CardPointers::
 	dab ZapdosLv40Card
 	dab ZapdosLv64Card
 	dab ZapdosLv68Card
+	dab TynamoCard
+	dab EelektrikCard
+	dab EelektrossCard
 	dab SandshrewCard
 	dab SandslashCard
 	dab DiglettCard
@@ -195,6 +200,7 @@ CardPointers::
 	dab DragonairCard
 	dab DragoniteLv41Card
 	dab DragoniteLv45Card
+	dab DunsparceCard
 	dab ProfessorOakCard
 	dab ImposterProfessorOakCard
 	dab BillCard

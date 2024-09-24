@@ -1244,9 +1244,8 @@ LeechSeedName:
 	done
 
 BulbasaursLeechSeedDescription:
-	text "Unless all damage from this attack"
-	line "is prevented, you may remove 3"
-	line "damage counters from this PKMN."
+	text "If this attack deals damage, remove"
+	line "3 damage counters from this Pkmn."
 	done
 
 SeedName:

@@ -29,11 +29,11 @@ AIActionTable_FlowerPower:
 .list_arena
 	dw ODDISH
 	dw EXEGGCUTE
-	dw BULBASAUR
+	dw CHIKORITA
 	dw NULL
 
 .list_bench
-	dw BULBASAUR
+	dw CHIKORITA
 	dw EXEGGCUTE
 	dw ODDISH
 	dw NULL
@@ -41,12 +41,12 @@ AIActionTable_FlowerPower:
 .list_retreat
 	ai_retreat GLOOM,     -2
 	ai_retreat VILEPLUME, -2
-	ai_retreat BULBASAUR, -2
+	ai_retreat CHIKORITA, -2
 	ai_retreat IVYSAUR,   -2
 	dw NULL
 
 .list_energy
-	ai_energy BULBASAUR,      3, +0
+	ai_energy CHIKORITA,      3, +0
 	ai_energy IVYSAUR,        4, +0
 	ai_energy VENUSAUR_LV67,  4, +0
 	ai_energy ODDISH,         2, +0

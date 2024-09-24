@@ -1140,7 +1140,7 @@ DoubleColorlessEnergyCardGfx::
 	INCBIN "gfx/cards/doublecolorlessenergy.2bpp"
 	INCBIN "gfx/cards/doublecolorlessenergy.pal"
 
-BulbasaurCardGfx::
+ChikoritaCardGfx::
 	INCBIN "gfx/cards/bulbasaur.2bpp"
 	INCBIN "gfx/cards/bulbasaur.pal"
 

@@ -702,7 +702,7 @@ WeezingDescription:
 	done
 
 TangelaName:
-	text "Grubbin"
+	text "Tangela"
 	done
 
 BindName:

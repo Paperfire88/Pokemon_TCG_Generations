@@ -98,7 +98,7 @@ CreateCardSetList:
 	ld de, 0
 .loop_find_double_colorless
 	inc e
-	cp16 BULBASAUR
+	cp16 CHIKORITA
 	jr z, .skip_energy_cards
 	cp16 DOUBLE_COLORLESS_ENERGY
 	jr nz, .loop_find_double_colorless
