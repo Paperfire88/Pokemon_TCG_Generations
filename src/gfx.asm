@@ -1352,9 +1352,9 @@ MagmarLv24CardGfx::
 	INCBIN "gfx/cards/magmar1.2bpp"
 	INCBIN "gfx/cards/magmar1.pal"
 
-MagmarLv31CardGfx::
-	INCBIN "gfx/cards/magmar2.2bpp"
-	INCBIN "gfx/cards/magmar2.pal"
+MagmortarCardGfx::
+	INCBIN "gfx/cards/magmortar.2bpp"
+	INCBIN "gfx/cards/magmortar.pal"
 
 FlareonLv22CardGfx::
 	INCBIN "gfx/cards/flareon1.2bpp"

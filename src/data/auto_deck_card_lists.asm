@@ -890,7 +890,7 @@ FirePokemonCardList:
 	card_item PONYTA,                   2
 	card_item RAPIDASH,                 1
 	card_item MAGMAR_LV24,              1
-	card_item MAGMAR_LV31,              1
+	card_item MAGMORTAR,              1
 	card_item FLAREON_LV22,             1
 	card_item FLAREON_LV28,             1
 	card_item MOLTRES_LV35,             1
@@ -1113,7 +1113,7 @@ LegendaryMoltresCardList:
 	card_item GROWLITHE,               4
 	card_item ARCANINE_LV45,           2
 	card_item MAGMAR_LV24,             2
-	card_item MAGMAR_LV31,             2
+	card_item MAGMORTAR,             2
 	card_item MOLTRES_LV35,            2
 	card_item MOLTRES_LV37,            2
 	card_item BILL,                    3

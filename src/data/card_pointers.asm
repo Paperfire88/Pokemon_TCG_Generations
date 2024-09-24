@@ -62,11 +62,19 @@ CardPointers::
 	dab PonytaCard
 	dab RapidashCard
 	dab MagmarLv24Card
-	dab MagmarLv31Card
+	dab MagmortarCard
 	dab FlareonLv22Card
 	dab FlareonLv28Card
 	dab MoltresLv35Card
 	dab MoltresLv37Card
+	dab FuecocoCard
+	dab CrocalorCard
+	dab SkeledirgeCard
+	dab BagonCard
+	dab ShelgonCard
+	dab SalamenceCard
+	dab DruddigonCard
+	dab HoohCard
 	dab SquirtleCard
 	dab WartortleCard
 	dab BlastoiseCard
@@ -124,6 +132,7 @@ CardPointers::
 	dab TynamoCard
 	dab EelektrikCard
 	dab EelektrossCard
+	dab RegielekiCard
 	dab SandshrewCard
 	dab SandslashCard
 	dab DiglettCard
@@ -146,7 +155,11 @@ CardPointers::
 	dab RhydonCard
 	dab KabutoCard
 	dab KabutopsCard
+	dab TyruntCard
 	dab AerodactylCard
+	dab RockruffCard
+	dab LycanrocCard
+	dab LycanrocMCard
 	dab AbraCard
 	dab KadabraCard
 	dab AlakazamCard
@@ -168,6 +181,14 @@ CardPointers::
 	dab MewLv8Card
 	dab MewLv15Card
 	dab MewLv23Card
+	dab CarbinkCard
+	dab SkorupiCard
+	dab DrapionCard
+	dab BeldumCard
+	dab MetangCard
+	dab MetagrossCard
+	dab MunnaCard
+	dab MusharnaCard
 	dab PidgeyCard
 	dab PidgeottoCard
 	dab PidgeotLv38Card
@@ -195,6 +216,8 @@ CardPointers::
 	dab DittoCard
 	dab EeveeCard
 	dab PorygonCard
+	dab Porygon2Card
+	dab PorygonZCard
 	dab SnorlaxCard
 	dab DratiniCard
 	dab DragonairCard

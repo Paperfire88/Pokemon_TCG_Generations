@@ -456,11 +456,11 @@ ProtectChargeName:
 	text "Protect Charge"	
 	done
 
-WoobatName:
+MunnaName:
 	text "Munna"
 	done
 
-SwoobatName:
+MusharnaName:
 	text "Musharna"
 	done
 

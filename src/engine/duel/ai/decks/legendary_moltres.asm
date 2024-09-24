@@ -27,7 +27,7 @@ AIActionTable_LegendaryMoltres:
 	jp AIPickPrizeCards
 
 .list_arena
-	dw MAGMAR_LV31
+	dw MAGMORTAR
 	dw GROWLITHE
 	dw VULPIX
 	dw MAGMAR_LV24
@@ -39,7 +39,7 @@ AIActionTable_LegendaryMoltres:
 	dw MOLTRES_LV35
 	dw VULPIX
 	dw GROWLITHE
-	dw MAGMAR_LV31
+	dw MAGMORTAR
 	dw MAGMAR_LV24
 	dw NULL
 
@@ -48,7 +48,7 @@ AIActionTable_LegendaryMoltres:
 	dw MOLTRES_LV35
 	dw VULPIX
 	dw GROWLITHE
-	dw MAGMAR_LV31
+	dw MAGMORTAR
 	dw MAGMAR_LV24
 	dw NULL
 
@@ -63,7 +63,7 @@ AIActionTable_LegendaryMoltres:
 	ai_energy GROWLITHE,      3, +1
 	ai_energy ARCANINE_LV45,  4, +1
 	ai_energy MAGMAR_LV24,    4, -1
-	ai_energy MAGMAR_LV31,    1, -1
+	ai_energy MAGMORTAR,    1, -1
 	ai_energy MOLTRES_LV37,   3, +2
 	ai_energy MOLTRES_LV35,   4, +2
 	dw NULL
@@ -137,7 +137,7 @@ AIDoTurn_LegendaryMoltres:
 	ld a, DUELVARS_ARENA_CARD
 	call GetTurnDuelistVariable
 	call GetCardIDFromDeckIndex
-	cp16 MAGMAR_LV31
+	cp16 MAGMORTAR
 	jr nz, .attach_normally
 	; MagmarLv31 is the Arena card
 	call CreateEnergyCardListFromHand

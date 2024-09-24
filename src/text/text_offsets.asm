@@ -3005,8 +3005,8 @@ TextOffsets::
 	textpointer ShelgonName						; 0x0c18
 	textpointer SalamenceName					; 0x0c19
 	textpointer	ProtectChargeName				; 0x0c1a
-	textpointer WoobatName						; 0x0c1b
-	textpointer SwoobatName						; 0x0c1c
+	textpointer MunnaName						; 0x0c1b
+	textpointer MusharnaName						; 0x0c1c
 	textpointer TreasureRushName					; 0x0c1d
 	textpointer DraconicDreamsName					; 0x0c1e
 	textpointer SlashingName					; 0x0c1f
@@ -3380,3 +3380,4 @@ TextOffsets::
 	textpointer ChooseEvolutionPokemonFromDeckText                 ; 0x0bb3
 	textpointer UnableToAttackText
 	textpointer ConversionZDescription
+	textpointer CarbinkName

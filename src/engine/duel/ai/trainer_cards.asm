@@ -4940,14 +4940,14 @@ AIDecide_Pokeball:
 	ld de, CHARMANDER
 	call LookForCardIDInHandList_Bank8
 	jr c, .lightning
-	ld de, MAGMAR_LV31
+	ld de, MAGMAR_LV24
 	call LookForCardIDInHandList_Bank8
 	jr c, .lightning
 	ld de, CHARMANDER
 	ld a, CARD_LOCATION_DECK
 	call LookForCardIDInLocation
 	ret c
-	ld de, MAGMAR_LV31
+	ld de, MAGMAR_LV24
 	ld a, CARD_LOCATION_DECK
 	call LookForCardIDInLocation
 	ret c

@@ -1079,7 +1079,7 @@ RapidashDescription:
 	done
 
 MagmarName:
-	text "Litleo"
+	text "Magmar"
 	done
 
 FirePunchName:

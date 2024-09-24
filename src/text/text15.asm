@@ -824,3 +824,7 @@ ConversionZDescription:
 	line "used if your Active PKMN is Asleep,"
 	line "Confused, Or Paralyzed."
 	done	
+
+CarbinkName:
+	text "Carbink"
+	done	

@@ -60,11 +60,19 @@
 	const PONYTA                      ; $39
 	const RAPIDASH                    ; $3a
 	const MAGMAR_LV24                 ; $3b
-	const MAGMAR_LV31                 ; $3c
+	const MAGMORTAR                 ; $3c
 	const FLAREON_LV22                ; $3d
 	const FLAREON_LV28                ; $3e
 	const MOLTRES_LV35                ; $3f
 	const MOLTRES_LV37                ; $40
+	const FUECOCO                ; $3e
+	const CROCALOR                ; $3f
+	const SKELEDIRGE                ; $40
+	const BAGON                ; $3e
+	const SHELGON                ; $3f
+	const SALAMENCE                ; $40
+	const DRUDDIGON
+	const HOOH
 	const SQUIRTLE                    ; $41
 	const WARTORTLE                   ; $42
 	const BLASTOISE                   ; $43
@@ -122,6 +130,7 @@
 	const TYNAMO                      ; $e6
 	const EELEKTROSS				  ; $e7
 	const EELEKTRIK				      ; $e8
+	const REGIELEKI
 	const SANDSHREW                   ; $77
 	const SANDSLASH                   ; $78
 	const DIGLETT                     ; $79
@@ -144,7 +153,11 @@
 	const RHYDON                      ; $8a
 	const KABUTO                      ; $8b
 	const KABUTOPS                    ; $8c
+	const TYRUNT
 	const AERODACTYL                  ; $8d
+	const ROCKRUFF                      ; $8b
+	const LYCANROC                    ; $8c
+	const LYCANROCM                  ; $8d
 	const ABRA                        ; $8e
 	const KADABRA                     ; $8f
 	const ALAKAZAM                    ; $90
@@ -166,6 +179,14 @@
 	const MEW_LV8                     ; $a0
 	const MEW_LV15                    ; $a1
 	const MEW_LV23                    ; $a2
+	const CARBINK
+	const SKORUPI
+	const DRAPION
+	const BELDUM
+	const METANG
+	const METAGROSS
+	const MUNNA
+	const MUSHARNA
 	const PIDGEY                      ; $a3
 	const PIDGEOTTO                   ; $a4
 	const PIDGEOT_LV38                ; $a5
@@ -193,6 +214,8 @@
 	const DITTO                       ; $bb
 	const EEVEE                       ; $bc
 	const PORYGON                     ; $bd
+	const PORYGON2                     ; $bd
+	const PORYGONZ                     ; $bd
 	const SNORLAX                     ; $be
 	const DRATINI                     ; $bf
 	const DRAGONAIR                   ; $c0
