@@ -815,3 +815,12 @@ UnableToAttackText:
 	text "This Pokémon cannot attack"
 	line "until your next turn."
 	done		
+
+ConversionZDescription:
+	text "Once per turn, Search your deck for" 
+	line "a basic Energy card and attach it to" 
+	line "1 of your Pkmn. Shuffle your deck"
+	line "afterward. This PKMN Power can't be" 
+	line "used if your Active PKMN is Asleep,"
+	line "Confused, Or Paralyzed."
+	done	

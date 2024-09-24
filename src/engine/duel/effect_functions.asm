@@ -130,6 +130,25 @@ IsPlayerTurn:
 	scf
 	ret
 
+; preserves bc
+Toxic_AIEffect:
+	ld a, 20
+	lb de, 20, 20
+	jr UpdateExpectedAIDamage_AccountForPoison
+
+; preserves bc
+InflictPoison_AIEffect:
+	ld a, 10
+	lb de, 10, 10
+	jr UpdateExpectedAIDamage_AccountForPoison
+
+
+; preserves bc
+MayInflictPoison_AIEffect:
+	ld a, 5
+	lb de, 0, 10
+;	fallthrough
+
 ; Stores information about the attack damage for AI purposes
 ; taking into account poison damage between turns.
 ; if target poisoned
@@ -1413,16 +1432,6 @@ TerrorStrike_SwitchDefendingPokemon:
 	ldh a, [hTempPlayAreaLocation_ffa1]
 	jp HandleSwitchDefendingPokemonEffect
 
-PoisonFang_AIEffect:
-	ld a, 10
-	lb de, 10, 10
-	jp UpdateExpectedAIDamage_AccountForPoison
-
-WeepinbellPoisonPowder_AIEffect:
-	ld a, 5
-	lb de, 0, 10
-	jp UpdateExpectedAIDamage_AccountForPoison
-
 ; return carry if there are no Pokemon cards in the non-turn holder's bench
 VictreebelLure_AssertPokemonInBench:
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
@@ -1473,11 +1482,6 @@ AcidEffect:
 	ld a, SUBSTATUS2_UNABLE_RETREAT
 	jp ApplySubstatus2ToDefendingCard
 
-GloomPoisonPowder_AIEffect:
-	ld a, 10
-	lb de, 10, 10
-	jp UpdateExpectedAIDamage_AccountForPoison
-
 ; Defending Pokemon and user become confused
 FoulOdorEffect:
 	call ConfusionEffect
@@ -1495,25 +1499,6 @@ StiffenEffect:
 	ld a, SUBSTATUS1_NO_DAMAGE
 	jp ApplySubstatus1ToDefendingCard
 
-KakunaPoisonPowder_AIEffect:
-	ld a, 5
-	lb de, 0, 10
-	jp UpdateExpectedAIDamage_AccountForPoison
-
-GolbatLeechLifeEffect:
-	ld hl, wDealtDamage
-	ld e, [hl]
-	inc hl ; wDamageEffectiveness
-	ld d, [hl]
-	jp ApplyAndAnimateHPRecovery
-
-VenonatLeechLifeEffect:
-	ld hl, wDealtDamage
-	ld e, [hl]
-	inc hl ; wDamageEffectiveness
-	ld d, [hl]
-	jp ApplyAndAnimateHPRecovery
-
 ; During your next turn, double damage
 SwordsDanceEffect:
 	ld hl, wTempTurnDuelistCardID + 1
@@ -1528,7 +1513,7 @@ SupersonicEffect:
 	call nc, SetNoEffectFromStatus
 	ret
 
-ZubatLeechLifeEffect:
+LeechLifeEffect:
 	ld hl, wDealtDamage
 	ld e, [hl]
 	inc hl
@@ -1552,11 +1537,6 @@ Twineedle_MultiplierEffect:
 	add e
 	call ATimes10
 	jp SetDefiniteDamage
-
-BeedrillPoisonSting_AIEffect:
-	ld a, 5
-	lb de, 0, 10
-	jp UpdateExpectedAIDamage_AccountForPoison
 
 ExeggcuteLeechSeedEffect:
 	ld hl, wDealtDamage
@@ -1782,11 +1762,6 @@ Thrash_RecoilEffect:
 	ld a, 10
 	jp DealRecoilDamageToSelf
 
-Toxic_AIEffect:
-	ld a, 20
-	lb de, 20, 20
-	jp UpdateExpectedAIDamage
-
 ; Defending Pokémon becomes double poisoned (takes 20 damage per turn rather than 10)
 Toxic_DoublePoisonEffect:
 	jp DoublePoisonEffect
@@ -1994,16 +1969,6 @@ ButterfreeMegaDrainEffect:
 	ld d, h
 	jp ApplyAndAnimateHPRecovery
 
-WeedlePoisonSting_AIEffect:
-	ld a, 5
-	lb de, 0, 10
-	jp UpdateExpectedAIDamage_AccountForPoison
-
-IvysaurPoisonPowder_AIEffect:
-	ld a, 10
-	lb de, 10, 10
-	jp UpdateExpectedAIDamage_AccountForPoison
-
 BulbasaurLeechSeedEffect:
 	ld hl, wDealtDamage
 	ld a, [hli]
@@ -2187,11 +2152,6 @@ ToxicGasEffect:
 	scf
 	ret
 
-Sludge_AIEffect:
-	ld a, 5
-	lb de, 0, 10
-	jp UpdateExpectedAIDamage_AccountForPoison
-
 BellsproutCallForFamily_PlayerSelectEffect:
 	ld a, $ff
 	ldh [hTemp_ffa0], a
@@ -2280,11 +2240,6 @@ BellsproutCallForFamily_PutInPlayAreaEffect:
 .shuffle
 	jp Func_2c0bd
 
-WeezingSmog_AIEffect:
-	ld a, 5
-	lb de, 0, 10
-	jp UpdateExpectedAIDamage_AccountForPoison
-
 WeezingSelfdestructEffect:
 	ld a, 60
 	call DealRecoilDamageToSelf
@@ -2316,11 +2271,6 @@ VenomPowder_PoisonConfusion50PercentEffect:
 	ld a, CONFUSED | POISONED
 	ld [wNoEffectFromWhichStatus], a
 	ret
-
-TangelaPoisonPowder_AIEffect:
-	ld a, 5
-	lb de, 0, 10
-	jp UpdateExpectedAIDamage_AccountForPoison
 
 Heal_OncePerTurnCheck:
 	ldh a, [hTempPlayAreaLocation_ff9d]
@@ -2404,11 +2354,6 @@ PetalDance_MultiplierEffect:
 	call SwapTurn
 	call ConfusionEffect
 	jp SwapTurn
-
-PoisonWhip_AIEffect:
-	ld a, 10
-	lb de, 10, 10
-	jp UpdateExpectedAIDamage_AccountForPoison
 
 SolarPower_CheckUse:
 	ldh a, [hTempPlayAreaLocation_ff9d]
@@ -2781,11 +2726,6 @@ StarmieRecover_HealEffect:
 SmokescreenEffect:
 	ld a, SUBSTATUS2_SMOKESCREEN
 	jp ApplySubstatus2ToDefendingCard
-
-JellyfishSting_AIEffect:
-	ld a, 10
-	lb de, 10, 10
-	jp UpdateExpectedAIDamage_AccountForPoison
 
 PlayerPickAttackForAmnesia:
 	ldtx hl, ChooseAttackOpponentWillNotBeAbleToUseText
@@ -3303,11 +3243,6 @@ MoltresLv35DiveBomb_Success50PercentEffect:
 	ld a, ATK_ANIM_DIVE_BOMB
 	ld [wLoadedAttackAnimation], a
 	ret
-
-MagmarSmog_AIEffect:
-	ld a, 5
-	lb de, 0, 10
-	jp UpdateExpectedAIDamage_AccountForPoison
 
 EnergyBurnEffect:
 	scf
@@ -10199,7 +10134,7 @@ CreateEnergyCardListFromDiscardPile_OnlyLightning:
   scf
   ret
 
- LightningHaste_AttachEnergyEffect:
+LightningHaste_AttachEnergyEffect:
 ; attach an energy to the Active Pokémon
   xor a  ; PLAY_AREA_ARENA
   ldh [hTempPlayAreaLocation_ffa1], a
@@ -10651,7 +10586,7 @@ adsEffect:
 	ret 
 
 asd_AIEffect:
-	call ZubatLeechLifeEffect
+	call LeechLifeEffect
 	jp SetDefiniteAIDamage
 
 DraconicCheckEffect:
@@ -11014,3 +10949,78 @@ LashesEffect:
 	dec d
 	jr nz, .loop_play_area
 	ret 
+
+
+ConversionZ_PlayerSelectEffect:
+	ld a, $ff
+	ldh [hTemp_ffa0], a
+
+; search cards in Deck
+	call CreateDeckCardList
+	ldtx hl, Choose1BasicEnergyCardFromDeckText
+	ldtx bc, BasicEnergyText
+	ld d, SEARCHEFFECT_BASIC_ENERGY
+	call LookForCardsInDeck
+	ret c
+
+	bank1call Func_5591
+	ldtx hl, ChooseBasicEnergyCardText
+	ldtx de, DuelistDeckText
+	bank1call SetCardListHeaderText
+.select_card
+	bank1call DisplayCardList
+	jr c, .try_cancel
+	call GetCardIDFromDeckIndex
+	call GetCardType
+	cp TYPE_ENERGY_DOUBLE_COLORLESS
+	jr nc, .select_card ; not a Basic Energy card
+	and TYPE_ENERGY
+	jr z, .select_card ; not a Basic Energy card
+	; Energy card selected
+	farcall SetUsedPokemonPowerThisTurn
+	ldh a, [hTempCardIndex_ff98]
+	ldh [hTemp_ffa0], a
+	call EmptyScreen
+	ldtx hl, ChoosePokemonToAttachEnergyCardText
+	call DrawWideTextBox_WaitForInput
+
+; choose a Pokemon in Play Area to attach card
+	bank1call HasAlivePokemonInPlayArea
+.loop_input
+	bank1call OpenPlayAreaScreenForSelection
+	jr c, .loop_input
+	ldh a, [hTempPlayAreaLocation_ff9d]
+	ldh [hTempPlayAreaLocation_ffa1], a
+	ret
+
+.play_sfx
+	call Func_3794
+	jr .select_card
+
+.try_cancel
+; Player tried exiting screen, if there are
+; any Basic Energy cards, Player is forced to select them.
+; otherwise, they can safely exit.
+	ld a, DUELVARS_CARD_LOCATIONS
+	call GetTurnDuelistVariable
+.loop_deck
+	ld a, [hl]
+	cp CARD_LOCATION_DECK
+	jr nz, .next_card
+	ld a, l
+	call GetCardIDFromDeckIndex
+	call GetCardType
+	and TYPE_ENERGY
+	jr z, .next_card
+	cp TYPE_ENERGY_DOUBLE_COLORLESS
+	jr c, .play_sfx
+.next_card
+	inc l
+	ld a, l
+	cp DECK_SIZE
+	jr c, .loop_deck
+	; can exit
+
+	ld a, $ff
+	ldh [hTemp_ffa0], a
+	ret

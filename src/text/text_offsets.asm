@@ -3379,3 +3379,4 @@ TextOffsets::
 	textpointer ChooseEvolutionPokemonText                         ; 0x0bb2
 	textpointer ChooseEvolutionPokemonFromDeckText                 ; 0x0bb3
 	textpointer UnableToAttackText
+	textpointer ConversionZDescription
