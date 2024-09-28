@@ -25,8 +25,6 @@
 	const NIDORANM                    ; $17
 	const NIDORINO                    ; $18
 	const NIDOKING                    ; $19
-	const ZUBAT                       ; $1a
-	const GOLBAT                      ; $1b
 	const ODDISH                      ; $1c
 	const GLOOM                       ; $1d
 	const VILEPLUME                   ; $1e
@@ -95,8 +93,6 @@
 	const SEAKING                     ; $54
 	const STARYU                      ; $55
 	const STARMIE                     ; $56
-	const MAGIKARP                    ; $57
-	const GYARADOS                    ; $58
 	const LAPRAS                      ; $59
 	const VAPOREON_LV29               ; $5a
 	const VAPOREON_LV42               ; $5b
@@ -158,9 +154,6 @@
 	const ROCKRUFF                      ; $8b
 	const LYCANROC                    ; $8c
 	const LYCANROCM                  ; $8d
-	const ABRA                        ; $8e
-	const KADABRA                     ; $8f
-	const ALAKAZAM                    ; $90
 	const SLOWPOKE_LV9                ; $91
 	const SLOWPOKE_LV18               ; $92
 	const SLOWBRO                     ; $93
@@ -169,8 +162,6 @@
 	const HAUNTER_LV17                ; $96
 	const HAUNTER_LV22                ; $97
 	const GENGAR                      ; $98
-	const DROWZEE                     ; $99
-	const HYPNO                       ; $9a
 	const MR_MIME                     ; $9b
 	const JYNX                        ; $9c
 	const MEWTWO_LV53                 ; $9d
@@ -180,13 +171,24 @@
 	const MEW_LV15                    ; $a1
 	const MEW_LV23                    ; $a2
 	const CARBINK
-	const SKORUPI
-	const DRAPION
 	const BELDUM
 	const METANG
 	const METAGROSS
 	const MUNNA
 	const MUSHARNA
+	const ABRA                        ; $8e
+	const KADABRA                     ; $8f
+	const ALAKAZAM                    ; $90
+	const DROWZEE                     ; $99
+	const HYPNO                       ; $9a
+	const ZUBAT                       ; $1a
+	const GOLBAT                      ; $1b
+	const CROBAT					  ;
+	const SKORUPI
+	const DRAPION
+	const MAGIKARP                    ; $57
+	const GYARADOS                    ; $58
+	const UMBREON
 	const PIDGEY                      ; $a3
 	const PIDGEOTTO                   ; $a4
 	const PIDGEOT_LV38                ; $a5

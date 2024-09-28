@@ -324,7 +324,7 @@ JynxDescription:
 	done
 
 MewtwoName:
-	text "Umbreon"
+	text "Mewtwo"
 	done
 
 PsychicName:

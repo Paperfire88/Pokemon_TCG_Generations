@@ -27,8 +27,6 @@ CardPointers::
 	dab NidoranMCard
 	dab NidorinoCard
 	dab NidokingCard
-	dab ZubatCard
-	dab GolbatCard
 	dab OddishCard
 	dab GloomCard
 	dab VileplumeCard
@@ -97,8 +95,6 @@ CardPointers::
 	dab SeakingCard
 	dab StaryuCard
 	dab StarmieCard
-	dab MagikarpCard
-	dab GyaradosCard
 	dab LaprasCard
 	dab VaporeonLv29Card
 	dab VaporeonLv42Card
@@ -160,9 +156,6 @@ CardPointers::
 	dab RockruffCard
 	dab LycanrocCard
 	dab LycanrocMCard
-	dab AbraCard
-	dab KadabraCard
-	dab AlakazamCard
 	dab SlowpokeLv9Card
 	dab SlowpokeLv18Card
 	dab SlowbroCard
@@ -171,8 +164,6 @@ CardPointers::
 	dab HaunterLv17Card
 	dab HaunterLv22Card
 	dab GengarCard
-	dab DrowzeeCard
-	dab HypnoCard
 	dab MrMimeCard
 	dab JynxCard
 	dab MewtwoLv53Card
@@ -182,13 +173,24 @@ CardPointers::
 	dab MewLv15Card
 	dab MewLv23Card
 	dab CarbinkCard
-	dab SkorupiCard
-	dab DrapionCard
 	dab BeldumCard
 	dab MetangCard
 	dab MetagrossCard
 	dab MunnaCard
 	dab MusharnaCard
+	dab AbraCard
+	dab KadabraCard
+	dab AlakazamCard
+	dab DrowzeeCard
+	dab HypnoCard
+	dab ZubatCard
+	dab GolbatCard
+	dab CrobatCard
+	dab SkorupiCard
+	dab DrapionCard
+	dab MagikarpCard
+	dab GyaradosCard
+	dab UmbreonCard
 	dab PidgeyCard
 	dab PidgeottoCard
 	dab PidgeotLv38Card

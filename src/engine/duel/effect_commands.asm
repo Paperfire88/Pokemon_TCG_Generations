@@ -146,7 +146,7 @@ OddishStunSporeEffectCommands:
 
 OddishSproutEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, CheckDeckAndPlayArea
-	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Sprout_PutInPlayAreaEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, PutInPlayAreaEffect
 	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, Sprout_PlayerSelectEffect
 	dbw EFFECTCMDTYPE_AI_SELECTION, Sprout_AISelectEffect
 	db  $00
@@ -180,7 +180,7 @@ NidoqueenBoyfriendsEffectCommands:
 
 NidoranFCallForFamilyEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, CheckDeckAndPlayArea
-	dbw EFFECTCMDTYPE_AFTER_DAMAGE, NidoranFCallForFamily_PutInPlayAreaEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, PutInPlayAreaEffect
 	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, NidoranFCallForFamily_PlayerSelectEffect
 	dbw EFFECTCMDTYPE_AI_SELECTION, NidoranFCallForFamily_AISelectEffect
 	db  $00
@@ -254,7 +254,7 @@ MukSludgeEffectCommands:
 
 BellsproutCallForFamilyEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, CheckDeckAndPlayArea
-	dbw EFFECTCMDTYPE_AFTER_DAMAGE, BellsproutCallForFamily_PutInPlayAreaEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, PutInPlayAreaEffect
 	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, BellsproutCallForFamily_PlayerSelectEffect
 	dbw EFFECTCMDTYPE_AI_SELECTION, BellsproutCallForFamily_AISelectEffect
 	db  $00
@@ -353,7 +353,7 @@ FlailEffectCommands:
 
 KrabbyCallForFamilyEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, CheckDeckAndPlayArea
-	dbw EFFECTCMDTYPE_AFTER_DAMAGE, KrabbyCallForFamily_PutInPlayAreaEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, PutInPlayAreaEffect
 	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, KrabbyCallForFamily_PlayerSelectEffect
 	dbw EFFECTCMDTYPE_AI_SELECTION, KrabbyCallForFamily_AISelectEffect
 	db  $00
@@ -847,9 +847,9 @@ MarowakBonemerangEffectCommands:
 
 MarowakCallforFriendEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, CheckDeckAndPlayArea
-	dbw EFFECTCMDTYPE_AFTER_DAMAGE, MarowakCallForFamily_PutInPlayAreaEffect
-	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, MarowakCallForFamily_PlayerSelectEffect
-	dbw EFFECTCMDTYPE_AI_SELECTION, MarowakCallForFamily_AISelectEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, PutInPlayAreaEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, CallForFamilyFighting_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, CallForFamilyFighting_AISelectEffect
 	db  $00
 
 MachokeKarateChopEffectCommands:
@@ -1328,6 +1328,13 @@ EnergySearchEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, DeckCheck
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EnergySearch_AddToHandEffect
 	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, EnergySearch_PlayerSelection
+	db  $00
+
+TrainerSearchEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, DeckCheck
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EnergySearch_AddToHandEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, TrainerSearch_PlayerSelection
+	dbw EFFECTCMDTYPE_AI_SELECTION, TrainerSearch_AISelection
 	db  $00
 
 ProfessorOakEffectCommands:

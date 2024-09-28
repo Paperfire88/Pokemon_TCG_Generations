@@ -33,13 +33,13 @@ InitPromotionalCardAndDeckCounterSaveData:
 
 ; loads the Hard Cards icon gfx to v0Tiles2
 LoadHandCardsIcon:
-	ld hl, HandCardsGfx
+	ld hl, DeckBoxGfx
+	ld bc, 64
 	ld de, v0Tiles2 + $38 tiles
-	jp CopyListFromHLToDE
+	jp CopyDataHLtoDE
 
-HandCardsGfx:
+DeckBoxGfx:
 	INCBIN "gfx/hand_cards.2bpp"
-	db $00 ; end of data
 
 EmptyScreenAndLoadFontDuelAndHandCardsIcons:
 	xor a

@@ -176,7 +176,9 @@ ROMX $3f
 ROMX $44
 	"Custom Gfx"
 ROMX $45
-	"Custom Gfx2"		
+	"Custom Gfx2"
+ROMX $46
+	"Effect Functions2"				
 WRAM0
 	"WRAM0"
 	"WRAM0 Duels 1"

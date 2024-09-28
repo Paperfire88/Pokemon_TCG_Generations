@@ -430,6 +430,9 @@ CheckEnergyNeededForAttack:
 	inc de
 	dec c
 	jr nz, .loop
+	ld a, [de]
+	swap a
+	call CheckIfEnoughParticularAttachedEnergy
 
 ; running CheckIfEnoughParticularAttachedEnergy back to back like this
 ; overwrites the results of a previous call of this function,
@@ -443,8 +446,9 @@ CheckEnergyNeededForAttack:
 
 	; colorless
 	ld a, [de]
+	ld a, [de]
 	swap a
-	and %00001111
+	call CheckIfEnoughParticularAttachedEnergy
 	ld b, a ; colorless energy still needed
 	ld a, [wTempLoadedAttackEnergyCost]
 	ld hl, wTempLoadedAttackEnergyNeededAmount
@@ -532,6 +536,7 @@ ConvertColorToEnergyCardID:
 	dw FIGHTING_ENERGY
 	dw PSYCHIC_ENERGY
 	dw DOUBLE_COLORLESS_ENERGY
+	dw DARKNESS_ENERGY
 
 ; return carry depending on card index in a:
 ;	- if energy card, return carry if no energy card has been played yet
@@ -1499,9 +1504,14 @@ CheckEnergyFlagsNeededInList:
 	jr .check_energy
 .psychic
 	cp16 PSYCHIC_ENERGY
-	jr nz, .colorless
+	jr nz, .darkness
 	ld a, PSYCHIC_F
 	jr .check_energy
+.darkness
+	cp16 DARKNESS_ENERGY
+	jr nz, .colorless
+	ld a, DARKNESS_f
+	jr .check_energy	
 .colorless
 	cp16 DOUBLE_COLORLESS_ENERGY
 	jr nz, .next_card
@@ -1588,8 +1598,15 @@ GetEnergyCostBits:
 .psychic
 	ld a, b
 	and $0f
-	jr z, .colorless
+	jr z, .darkness
 	ld a, PSYCHIC_F
+	or c
+	ld c, a
+.darkness
+	ld a, b
+	and $0f
+	jr z, .colorless
+	ld a, DARKNESS_f
 	or c
 	ld c, a
 .colorless
@@ -2075,6 +2092,15 @@ CheckIfNoSurplusEnergyForAttack:
 	inc de
 	dec c
 	jr nz, .loop
+
+	; darkness
+  	ld a, [de]
+  	swap a
+  	call CalculateParticularAttachedEnergyNeeded
+	; colorless
+  	ld a, [de]
+  	and %00001111
+  	ld b, a
 
 	; colorless
 	ld a, [de]

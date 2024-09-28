@@ -662,8 +662,8 @@ CardSymbolTable::
 	db $ec, $02 ; TYPE_ENERGY_WATER
 	db $f0, $03 ; TYPE_ENERGY_PSYCHIC
 	db $f4, $03 ; TYPE_ENERGY_FIGHTING
-	db $f8, $00 ; TYPE_ENERGY_DOUBLE_COLORLESS
-	db $fc, $02 ; TYPE_ENERGY_UNUSED
+	db $f8, $00 ; TYPE_ENERGY_DARKNESS
+	db $fc, $02 ; TYPE_ENERGY_DOUBLE_COLORLESS
 	db $d0, $02 ; TYPE_PKMN_*, Basic
 	db $d4, $02 ; TYPE_PKMN_*, Stage 1
 	db $d8, $01 ; TYPE_PKMN_*, Stage 2

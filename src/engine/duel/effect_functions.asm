@@ -700,6 +700,7 @@ LookForCardsInDeck:
 	dw .SearchDeckForNidoran
 	dw .SearchDeckForBasicFighting
 	dw .SearchDeckForBasicEnergy
+	dw .SearchDeckForTrainer
 
 .set_carry
 	scf
@@ -782,6 +783,19 @@ LookForCardsInDeck:
 	jr nc, .loop_deck_pkmn
 	or a
 	ret
+
+.SearchDeckForTrainer
+    ld hl, wDuelTempList
+.loop_deck_trainer
+    ld a, [hli]
+    cp $ff
+    jp z, .set_carry
+    call GetCardIDFromDeckIndex
+    call GetCardType
+    cp TYPE_TRAINER
+    jr nz, .loop_deck_trainer ; skip if not a Trainer
+    or a
+    ret
 
 ; handles the Player selection of attack
 ; to use, i.e. Amnesia or Metronome on.
@@ -1643,7 +1657,7 @@ Sprout_AISelectEffect:
 	jr nz, .loop_deck
 	ret ; Oddish found
 
-Sprout_PutInPlayAreaEffect:
+PutInPlayAreaEffect:
 	ldh a, [hTemp_ffa0]
 	cp $ff
 	jr z, .shuffle
@@ -1882,22 +1896,6 @@ NidoranFCallForFamily_AISelectEffect:
 	jr nz, .loop_deck
 .found
 	ret
-
-NidoranFCallForFamily_PutInPlayAreaEffect:
-	ldh a, [hTemp_ffa0]
-	cp $ff
-	jr z, .shuffle
-	call SearchCardInDeckAndAddToHand
-	call AddCardToHand
-	call PutHandPokemonCardInPlayArea
-	call IsPlayerTurn
-	jr c, .shuffle
-	; display card on screen
-	ldh a, [hTemp_ffa0]
-	ldtx hl, PlacedOnTheBenchText
-	bank1call DisplayCardDetailScreen
-.shuffle
-	jp Func_2c0bd
 
 HornHazard_AIEffect:
 	ld a, 30 / 2
@@ -2224,21 +2222,6 @@ BellsproutCallForFamily_AISelectEffect:
 	cp16 BELLSPROUT
 	jr nz, .loop_deck
 	ret ; Bellsprout found
-
-BellsproutCallForFamily_PutInPlayAreaEffect:
-	ldh a, [hTemp_ffa0]
-	cp $ff
-	jr z, .shuffle
-	call SearchCardInDeckAndAddToHand
-	call AddCardToHand
-	call PutHandPokemonCardInPlayArea
-	call IsPlayerTurn
-	jr c, .shuffle
-	ldh a, [hTemp_ffa0]
-	ldtx hl, PlacedOnTheBenchText
-	bank1call DisplayCardDetailScreen
-.shuffle
-	jp Func_2c0bd
 
 WeezingSelfdestructEffect:
 	ld a, 60
@@ -2617,21 +2600,6 @@ KrabbyCallForFamily_AISelectEffect:
 	cp16 KRABBY
 	jr nz, .loop_deck
 	ret ; Krabby found
-
-KrabbyCallForFamily_PutInPlayAreaEffect:
-	ldh a, [hTemp_ffa0]
-	cp $ff
-	jr z, .shuffle
-	call SearchCardInDeckAndAddToHand
-	call AddCardToHand
-	call PutHandPokemonCardInPlayArea
-	call IsPlayerTurn
-	jr c, .shuffle
-	ldh a, [hTemp_ffa0]
-	ldtx hl, PlacedOnTheBenchText
-	bank1call DisplayCardDetailScreen
-.shuffle
-	jp Func_2c0bd
 
 HeadacheEffect:
 	ld a, DUELVARS_ARENA_CARD_SUBSTATUS3
@@ -5098,106 +5066,13 @@ Bonemerang_MultiplierEffect:
 	call ATimes10
 	jp SetDefiniteDamage
 
-MarowakCallForFamily_PlayerSelectEffect:
-	ld a, $ff
-	ldh [hTemp_ffa0], a
-
-	call CreateDeckCardList
-	ldtx hl, ChooseBasicFightingPokemonFromDeckText
-	ldtx bc, FightingPokemonDeckText
-	ld d, SEARCHEFFECT_BASIC_FIGHTING
-	call LookForCardsInDeck
-	ret c
-
-; draw Deck list interface and print text
-	bank1call Func_5591
-	ldtx hl, ChooseBasicFightingPokemonText
-	ldtx de, DuelistDeckText
-	bank1call SetCardListHeaderText
-
-.loop
-	bank1call DisplayCardList
-	jr c, .pressed_b
-
-	call LoadCardDataToBuffer2_FromDeckIndex
-	ld a, [wLoadedCard2Type]
-	cp FIGHTING
-	jr nz, .play_sfx ; is Fighting?
-	ld a, [wLoadedCard2Stage]
-	or a
-	jr nz, .play_sfx ; is Basic?
-	ldh a, [hTempCardIndex_ff98]
-	ldh [hTemp_ffa0], a
-	or a
+CallForFamilyFighting_PlayerSelectEffect:
+	farcall MarowakCallForFamily_PlayerSelectEffect2
 	ret
 
-.play_sfx
-	; play SFX and loop back
-	call Func_3794
-	jr .loop
-
-.pressed_b
-; figure if Player can exit the screen without selecting,
-; that is, if the Deck has no Basic Fighting Pokemon.
-	ld a, DUELVARS_CARD_LOCATIONS
-	call GetTurnDuelistVariable
-.loop_b_press
-	ld a, [hl]
-	cp CARD_LOCATION_DECK
-	jr nz, .next
-	ld a, l
-	call LoadCardDataToBuffer2_FromDeckIndex
-	ld a, [wLoadedCard1Type]
-	cp FIGHTING
-	jr nz, .next ; found, go back to top loop
-	ld a, [wLoadedCard1Stage]
-	or a
-	jr z, .play_sfx ; found, go back to top loop
-.next
-	inc l
-	ld a, l
-	cp DECK_SIZE
-	jr c, .loop_b_press
-
-; no valid card in Deck, can safely exit screen
-	ld a, $ff
-	ldh [hTemp_ffa0], a
-	or a
+CallForFamilyFighting_AISelectEffect:
+	farcall MarowakCallForFamily_AISelectEffect
 	ret
-
-MarowakCallForFamily_AISelectEffect:
-	call CreateDeckCardList
-	ld hl, wDuelTempList
-.loop_deck
-	ld a, [hli]
-	ldh [hTemp_ffa0], a
-	cp $ff
-	ret z ; none found
-	call LoadCardDataToBuffer2_FromDeckIndex
-	ld a, [wLoadedCard2Type]
-	cp FIGHTING
-	jr nz, .loop_deck
-	ld a, [wLoadedCard2Stage]
-	or a
-	jr nz, .loop_deck
-; found
-	ret
-
-MarowakCallForFamily_PutInPlayAreaEffect:
-	ldh a, [hTemp_ffa0]
-	cp $ff
-	jr z, .shuffle
-	call SearchCardInDeckAndAddToHand
-	call AddCardToHand
-	call PutHandPokemonCardInPlayArea
-	call IsPlayerTurn
-	jr c, .shuffle
-	; display card on screen
-	ldh a, [hTemp_ffa0]
-	ldtx hl, PlacedOnTheBenchText
-	bank1call DisplayCardDetailScreen
-.shuffle
-	jp Func_2c0bd
 
 KarateChop_AIEffect:
 	call KarateChop_DamageSubtractionEffect
@@ -7843,46 +7718,7 @@ EnergyRetrieval_DiscardAndAddToHandEffect:
 	ret
 
 EnergySearch_PlayerSelection:
-	ld a, $ff
-	ldh [hTemp_ffa0], a
-	call CreateDeckCardList
-	ldtx hl, Choose1BasicEnergyCardFromDeckText
-	ld d, SEARCHEFFECT_BASIC_ENERGY
-	ldtx bc, BasicEnergyText
-	call LookForCardsInDeck
-	ret c ; skip showing deck
-
-	bank1call Func_5591
-	ldtx hl, ChooseBasicEnergyCardText
-	ldtx de, DuelistDeckText
-	bank1call SetCardListHeaderText
-.read_input
-	bank1call DisplayCardList
-	jr c, .try_exit ; B pressed?
-	ldh a, [hTempCardIndex_ff98]
-	ldh [hTemp_ffa0], a
-	call CheckIfCardIsBasicEnergy
-	jr c, .play_sfx
-	or a
-	ret
-.play_sfx
-	call Func_3794
-	jr .read_input
-
-.try_exit
-; check if Player can exit without selecting anything
-	ld hl, wDuelTempList
-.next_card
-	ld a, [hli]
-	cp $ff
-	jr z, .exit
-	call CheckIfCardIsBasicEnergy
-	jr c, .next_card
-	jr .read_input ; no, has to select Energy card
-.exit
-	ld a, $ff
-	ldh [hTemp_ffa0], a
-	or a
+	farcall EnergySearch_PlayerSelection2
 	ret
 
 EnergySearch_AddToHandEffect:
@@ -7916,6 +7752,14 @@ CheckIfCardIsBasicEnergy:
 .not_basic_energy
 	scf
 	ret
+
+TrainerSearch_PlayerSelection:
+	farcall FindTrainer
+	ret
+
+TrainerSearch_AISelection:
+	farcall AIFindTrainer
+	ret	
 
 ProfessorOakEffect:
 ; discard hand

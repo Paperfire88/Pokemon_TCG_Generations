@@ -41,3 +41,11 @@ MusharnaCardGfx:
 TyruntCardGfx:
 	INCBIN "gfx/cards/tyrunt.2bpp"
 	INCBIN "gfx/cards/tyrunt.pal"    
+
+CrobatCardGfx:
+	INCBIN "gfx/cards/crobat.2bpp"
+	INCBIN "gfx/cards/crobat.pal"  
+
+UmbreonCardGfx:
+	INCBIN "gfx/cards/umbreon.2bpp"
+	INCBIN "gfx/cards/umbreon.pal"  		

@@ -828,3 +828,21 @@ ConversionZDescription:
 CarbinkName:
 	text "Carbink"
 	done	
+
+ChooseTrainerCardText:
+	text "Choose a"
+	line "Trainer card."
+	done
+
+ChooseTrainerCardFromDeckText:
+	text "Choose a Trainer card from"
+	line "your deck."
+	done	
+
+CrobatName:
+	text "Crobat"
+	done	
+
+UmbreonName:
+	text "Umbreon"
+	done	

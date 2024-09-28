@@ -1255,10 +1255,13 @@ _CheckIfEnoughEnergiesToAttack:
 	inc de
 	dec c
 	jr nz, .next_energy_type_pair
-	ld a, [de] ; colorless energy
-	swap a
-	and $f
-	ld b, a
+  	ld a, [de]  ; darkness and colorless pair
+  	swap a
+  	call CheckIfEnoughEnergiesOfType
+  	jr c, .not_usable_or_not_enough_energies
+  	ld a, [de] ; colorless energy
+  	and $f
+  	ld b, a  ; colorless energy cost
 	ld a, [wAttachedEnergiesAccum]
 	ld c, a
 	ld a, [wTotalAttachedEnergies]
@@ -4154,7 +4157,7 @@ CardPageLvHPNoTextTileData:
 ;	continues to CardPageNoTextTileData
 
 CardPageNoTextTileData:
-	db 15, 16, SYM_No, 0
+	db 15, 16, SYM_POKEMON, 0
 	db $ff
 
 DisplayCardPage_PokemonAttack1Page1:

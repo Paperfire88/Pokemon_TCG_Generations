@@ -433,6 +433,7 @@ ENDM
 	txsymbol WATER      ; $04
 	txsymbol FIGHTING   ; $05
 	txsymbol PSYCHIC    ; $06
+	txsymbol DARKNESS
 	txsymbol COLORLESS  ; $07
 	txsymbol POISONED   ; $08
 	txsymbol ASLEEP     ; $09
@@ -445,7 +446,6 @@ ENDM
 	txsymbol HP         ; $10
 	txsymbol Lv         ; $11
 	txsymbol E          ; $12
-	txsymbol No         ; $13
 	txsymbol PLUSPOWER  ; $14
 	txsymbol DEFENDER   ; $15
 	txsymbol HP_OK      ; $16
@@ -475,3 +475,4 @@ ENDM
 	txsymbol SLASH      ; $2e
 	txsymbol CURSOR_D   ; $2f
 	txsymbol PRIZE      ; $30
+	

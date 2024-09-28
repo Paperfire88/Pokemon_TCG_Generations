@@ -3381,3 +3381,7 @@ TextOffsets::
 	textpointer UnableToAttackText
 	textpointer ConversionZDescription
 	textpointer CarbinkName
+	textpointer ChooseTrainerCardText                              ; 0x0bb5
+	textpointer ChooseTrainerCardFromDeckText                      ; 0x0bb6
+	textpointer CrobatName
+	textpointer	UmbreonName	

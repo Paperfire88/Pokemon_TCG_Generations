@@ -94,7 +94,7 @@ InputPlayerName:
 	ld [wNamingScreenNumColumns], a
 	ld a, $06
 	ld [wNamingScreenKeyboardHeight], a
-	ld a, $0f
+	ld a, SYM_CURSOR_R
 	ld [wVisibleCursorTile], a
 	ld a, $00
 	ld [wInvisibleCursorTile], a
@@ -892,14 +892,14 @@ PlayerNamingScreen_KeyboardData:
 	kbitem $06, $0e, $30, $00, TX_FULLWIDTH3,   "P"
 	kbitem $08, $0e, $31, $00, TX_FULLWIDTH3,   "Y"
 	kbitem $0a, $0e, $32, $00, TX_FULLWIDTH0,   "1"
-	kbitem $0c, $0e, $33, $00, TX_SYMBOL,       SYM_No
+	kbitem $0c, $0e, $33, $00, TX_SYMBOL,       SYM_Lv
 	kbitem $10, $0f, $01, $09, $0000
 
 	kbitem $04, $10, $34, $00, TX_FULLWIDTH3,   "H"
 	kbitem $06, $10, $35, $00, TX_FULLWIDTH3,   "Q"
 	kbitem $08, $10, $36, $00, TX_FULLWIDTH3,   "Z"
 	kbitem $0a, $10, $3c, $00, TX_FULLWIDTH0,   "2"
-	kbitem $0c, $10, $3d, $00, TX_SYMBOL,       SYM_Lv
+	kbitem $0c, $10, $3d, $00, TX_FULLWIDTH0,   " "
 	kbitem $10, $0f, $01, $09, $0000
 
 	kbitem $04, $12, $37, $00, TX_FULLWIDTH3,   "I"
@@ -1006,7 +1006,7 @@ InputDeckName:
 	ld [wNamingScreenNumColumns], a
 	ld a, $07
 	ld [wNamingScreenKeyboardHeight], a
-	ld a, $0f
+	ld a, SYM_CURSOR_R
 	ld [wVisibleCursorTile], a
 	ld a, $00
 	ld [wInvisibleCursorTile], a

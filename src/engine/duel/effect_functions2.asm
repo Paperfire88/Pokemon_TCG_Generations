@@ -378,3 +378,203 @@ Teleport_PlayerSelectEffect3:
 	ldh a, [hTempPlayAreaLocation_ff9d]
 	ldh [hTemp_ffa0], a
 	ret		
+
+EnergySearch_PlayerSelection2:
+	ld a, $ff
+	ldh [hTemp_ffa0], a
+	farcall CreateDeckCardList
+	ldtx hl, Choose1BasicEnergyCardFromDeckText
+	ld d, SEARCHEFFECT_BASIC_ENERGY
+	ldtx bc, BasicEnergyText
+	farcall LookForCardsInDeck
+	ret c ; skip showing deck
+
+	bank1call Func_5591
+	ldtx hl, ChooseBasicEnergyCardText
+	ldtx de, DuelistDeckText
+	bank1call SetCardListHeaderText
+.read_input
+	bank1call DisplayCardList
+	jr c, .try_exit ; B pressed?
+	ldh a, [hTempCardIndex_ff98]
+	ldh [hTemp_ffa0], a
+	farcall CheckIfCardIsBasicEnergy
+	jr c, .play_sfx
+	or a
+	ret
+.play_sfx
+	farcall Func_3794
+	jr .read_input
+
+.try_exit
+; check if Player can exit without selecting anything
+	ld hl, wDuelTempList
+.next_card
+	ld a, [hli]
+	cp $ff
+	jr z, .exit
+	farcall CheckIfCardIsBasicEnergy
+	jr c, .next_card
+	jr .read_input ; no, has to select Energy card
+.exit
+	ld a, $ff
+	ldh [hTemp_ffa0], a
+	or a
+	ret
+
+FindTrainer:
+	call CreateDeckCardList
+	ldtx hl, ChooseTrainerCardFromDeckText
+	ldtx bc, TrainerCardText
+	lb de, SEARCHEFFECT_TRAINER, 0
+	farcall LookForCardsInDeck
+	jr c, .exit ; no Trainer cards in the deck
+
+; draw deck list interface and print text
+	bank1call Func_5591
+	ldtx hl, ChooseTrainerCardText
+	ldtx de, DuelistDeckText
+	farcall SetCardListHeaderText
+
+.read_input
+	bank1call DisplayCardList
+	jr c, .attempt_to_cancel ; the B button was pressed
+	farcall LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Type]
+	cp TYPE_TRAINER
+	jr nz, .play_sfx ; not a Trainer card
+
+; a Trainer card was selected
+	ldh a, [hTempCardIndex_ff98]
+	ldh [hTemp_ffa0], a
+	or a
+	ret
+
+; play SFX and loop back
+.play_sfx
+	call Func_3794
+	jr .read_input
+
+; see if the Player can exit the screen without selecting a card,
+; that is, if the deck contains no Trainer cards.
+.attempt_to_cancel
+	ld hl, wDuelTempList
+.next_card
+	ld a, [hli]
+	cp $ff
+	jr z, .exit
+	farcall LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Type]
+	cp TYPE_TRAINER
+	jr nz, .next_card
+	jr .play_sfx ; found a Trainer card, return to selection process
+
+; no Trainer cards in the deck, can safely exit screen
+.exit
+	ld a, $ff
+	ldh [hTemp_ffa0], a
+	or a
+	ret
+
+
+; finds the first Trainer card in the deck
+; output:
+;	[hTemp_ffa0] = deck index of the chosen card ($ff if no card was chosen)
+AIFindTrainer:
+	farcall CreateDeckCardList
+	ld hl, wDuelTempList
+.loop_deck
+	ld a, [hli]
+	ldh [hTemp_ffa0], a
+	cp $ff
+	ret z ; reached the end of the list
+	farcall GetCardIDFromDeckIndex
+	farcall GetCardType
+	cp TYPE_TRAINER
+	jr nz, .loop_deck ; card isn't a Trainer card
+	ret ; Trainer card found
+
+MarowakCallForFamily_PlayerSelectEffect2:
+	ld a, $ff
+	ldh [hTemp_ffa0], a
+
+	farcall CreateDeckCardList
+	ldtx hl, ChooseBasicFightingPokemonFromDeckText
+	ldtx bc, FightingPokemonDeckText
+	ld d, SEARCHEFFECT_BASIC_FIGHTING
+	farcall LookForCardsInDeck
+	ret c
+
+; draw Deck list interface and print text
+	bank1call Func_5591
+	ldtx hl, ChooseBasicFightingPokemonText
+	ldtx de, DuelistDeckText
+	bank1call SetCardListHeaderText
+
+.loop
+	bank1call DisplayCardList
+	jr c, .pressed_b
+
+	farcall LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Type]
+	cp FIGHTING
+	jr nz, .play_sfx ; is Fighting?
+	ld a, [wLoadedCard2Stage]
+	or a
+	jr nz, .play_sfx ; is Basic?
+	ldh a, [hTempCardIndex_ff98]
+	ldh [hTemp_ffa0], a
+	or a
+	ret
+
+.play_sfx
+	; play SFX and loop back
+	farcall Func_3794
+	jr .loop
+
+.pressed_b
+; figure if Player can exit the screen without selecting,
+; that is, if the Deck has no Basic Fighting Pokemon.
+	ld a, DUELVARS_CARD_LOCATIONS
+	farcall GetTurnDuelistVariable
+.loop_b_press
+	ld a, [hl]
+	cp CARD_LOCATION_DECK
+	jr nz, .next
+	ld a, l
+	farcall LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard1Type]
+	cp FIGHTING
+	jr nz, .next ; found, go back to top loop
+	ld a, [wLoadedCard1Stage]
+	or a
+	jr z, .play_sfx ; found, go back to top loop
+.next
+	inc l
+	ld a, l
+	cp DECK_SIZE
+	jr c, .loop_b_press
+
+; no valid card in Deck, can safely exit screen
+	ld a, $ff
+	ldh [hTemp_ffa0], a
+	or a
+	ret
+
+MarowakCallForFamily_AISelectEffect:
+	farcall CreateDeckCardList
+	ld hl, wDuelTempList
+.loop_deck
+	ld a, [hli]
+	ldh [hTemp_ffa0], a
+	cp $ff
+	ret z ; none found
+	farcall LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Type]
+	cp FIGHTING
+	jr nz, .loop_deck
+	ld a, [wLoadedCard2Stage]
+	or a
+	jr nz, .loop_deck
+; found
+	ret
