@@ -1446,7 +1446,7 @@ ButterfreeDescription:
 	done
 
 WeedleName:
-	text "Cascoon"
+	text "Rowlet"
 	done
 
 PoisonStingName:
@@ -1463,13 +1463,13 @@ HairyBugName:
 	done
 
 WeedleDescription:
-	text "Booster Pack: (EVOLUTION)"
-	line "OG Set: (Roaring Skies 6)"
-	line "OG illustrator: (MAHOU)"
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Sword & Shield Promos 220)"
+	line "OG illustrator: (sowsow)"
 	done
 
 KakunaName:
-	text "Dustox"
+	text "Dartrix"
 	done
 
 KakunasStiffenDescription:

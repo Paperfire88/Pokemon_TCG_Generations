@@ -1544,7 +1544,7 @@ MagnetonLv28CardGfx::
 	INCBIN "gfx/cards/magneton1.2bpp"
 	INCBIN "gfx/cards/magneton1.pal"
 
-MagnetonLv35CardGfx::
+MagnezoneCardGfx::
 	INCBIN "gfx/cards/magneton2.2bpp"
 	INCBIN "gfx/cards/magneton2.pal"
 

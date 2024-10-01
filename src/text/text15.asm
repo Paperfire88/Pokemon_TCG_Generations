@@ -846,3 +846,17 @@ CrobatName:
 UmbreonName:
 	text "Umbreon"
 	done	
+
+GigaMagnetName:
+	text "Giga Magnet"
+	done	
+
+GigaMagnetDescription:
+	text "Once per turn, Look at the top 7"
+	line "cards of your Deck and Attach 1"
+	line "Basic Energy you find to 1 of your" 
+	line "pkmn. Shuffle your Deck afterwards."
+	line "This PKMN Power can't be used if"
+	line "your Active PKMN is Asleep,Confused,"
+	line "Or Paralyzed."
+	done		

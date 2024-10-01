@@ -402,7 +402,7 @@ YellowFlashCardList:
 	card_item MAGNEMITE_LV13,    2
 	card_item MAGNEMITE_LV15,    1
 	card_item MAGNETON_LV28,     1
-	card_item MAGNETON_LV35,     1
+	card_item MAGNEZONE,     1
 	card_item VOLTORB,           3
 	card_item ELECTRODE_LV35,    1
 	card_item ELECTRODE_LV42,    1

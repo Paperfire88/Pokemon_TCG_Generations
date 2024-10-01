@@ -1416,5 +1416,5 @@ AlakazamName:
 	done
 
 DamageSwapName:
-	text "Dark Impulse"
+	text "Damage Swap"
 	done

@@ -791,14 +791,14 @@ DowngradingBeamName:
 	text "Downgrading Beam"
 	done
 
-MagneticCircuitName:
-	text "Magnetic Circuit"
+DarkImpulseName:
+	text "Dark Impulse"
 	done
 
-MagneticCircuitDescription:
+DarkImpulseDescription:
 	text "Once During your Turn, you may put"
 	line "1 Damage counter on your active"
-	line "PKMN and Attach a <LIGHTNING> Energy"
+	line "PKMN and Attach a <DARKNESS> Energy"
 	line "From your Discard pile to it. This"
 	line "PKMN Power can't be used if your"
 	line "Active PKMN is Asleep, Confused,"

@@ -151,7 +151,7 @@ VenusaurLv67Card:
 VenusaurLv64Card:
 	db TYPE_PKMN_GRASS ; type
 	gfx VenusaurLv64CardGfx ; gfx
-	tx VenusaurName ; name
+	tx CelebiName ; name
 	db STAR ; rarity
 	db PROMOTIONAL | GB ; sets
 	dw VENUSAUR_LV64
@@ -305,7 +305,7 @@ ButterfreeCard:
 	db DIAMOND ; rarity
 	db EVOLUTION | JUNGLE ; sets
 	dw BUTTERFREE
-	db 70 ; hp
+	db 90 ; hp
 	db STAGE2 ; stage
 	tx MetapodName ; pre-evo name
 
@@ -348,12 +348,112 @@ ButterfreeCard:
 	tx ButterfreeDescription ; description
 	db 0
 
+EkansCard:
+	db TYPE_PKMN_GRASS ; type
+	gfx EkansCardGfx ; gfx
+	tx EkansName ; name
+	db CIRCLE ; rarity
+	db EVOLUTION | FOSSIL ; sets
+	dw EKANS
+	db 70 ; hp
+	db STAGE1 ; stage
+	tx CaterpieName ; pre-evo name
+
+	; attack 1
+	energy GRASS, 1 ; energies
+	tx SpitPoisonName ; name
+	tx MayInflictPoisonDescription ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db DAMAGE_NORMAL ; category
+	dw EkansSpitPoisonEffectCommands ; effect commands
+	db INFLICT_POISON ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_SPIT_POISON ; animation
+
+	; attack 2
+	energy GRASS, 1, COLORLESS, 1 ; energies
+	tx WrapName ; name
+	tx MayInflictParalysisDescription ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw EkansWrapEffectCommands ; effect commands
+	db INFLICT_PARALYSIS ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	db 1 ; retreat cost
+	db WR_PSYCHIC ; weakness
+	db NONE ; resistance
+	tx SnakeName ; category
+	db 23 ; Pokedex number
+	db 10 ; level
+	db 6, 7 ; length
+	dw 15 * 10 ; weight
+	tx EkansDescription ; description
+	db 19
+
+ArbokCard:
+	db TYPE_PKMN_GRASS ; type
+	gfx ArbokCardGfx ; gfx
+	tx ArbokName ; name
+	db DIAMOND ; rarity
+	db EVOLUTION | FOSSIL ; sets
+	dw ARBOK
+	db 80 ; hp
+	db STAGE2 ; stage
+	tx EkansName ; pre-evo name
+
+	; attack 1
+	energy GRASS, 1 ; energies
+	tx TerrorStrikeName ; name
+	tx TerrorStrikeDescription ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_NORMAL ; category
+	dw ArbokTerrorStrikeEffectCommands ; effect commands
+	db NONE ; flags 1
+	db SWITCH_OPPONENT_POKEMON ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	; attack 2
+	energy GRASS, 2, COLORLESS, 1 ; energies
+	tx PoisonFangName ; name
+	tx InflictPoisonDescription ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw ArbokPoisonFangEffectCommands ; effect commands
+	db INFLICT_POISON ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_POISON_FANG ; animation
+
+	db 2 ; retreat cost
+	db WR_PSYCHIC ; weakness
+	db NONE ; resistance
+	tx CobraName ; category
+	db 24 ; Pokedex number
+	db 27 ; level
+	db 11, 6 ; length
+	dw 143 * 10 ; weight
+	tx ArbokDescription ; description
+	db 0
+
 WeedleCard:
 	db TYPE_PKMN_GRASS ; type
 	gfx WeedleCardGfx ; gfx
 	tx WeedleName ; name
 	db CIRCLE ; rarity
-	db EVOLUTION | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw WEEDLE
 	db 40 ; hp
 	db BASIC ; stage
@@ -403,7 +503,7 @@ KakunaCard:
 	gfx KakunaCardGfx ; gfx
 	tx KakunaName ; name
 	db DIAMOND ; rarity
-	db EVOLUTION | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw KAKUNA
 	db 80 ; hp
 	db STAGE1 ; stage
@@ -453,7 +553,7 @@ BeedrillCard:
 	gfx BeedrillCardGfx ; gfx
 	tx BeedrillName ; name
 	db STAR ; rarity
-	db EVOLUTION | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw BEEDRILL
 	db 80 ; hp
 	db STAGE2 ; stage
@@ -496,106 +596,6 @@ BeedrillCard:
 	db 3, 3 ; length
 	dw 65 * 10 ; weight
 	tx BeedrillDescription ; description
-	db 0
-
-EkansCard:
-	db TYPE_PKMN_GRASS ; type
-	gfx EkansCardGfx ; gfx
-	tx EkansName ; name
-	db CIRCLE ; rarity
-	db LABORATORY | FOSSIL ; sets
-	dw EKANS
-	db 40 ; hp
-	db BASIC ; stage
-	dw NONE ; pre-evo name
-
-	; attack 1
-	energy GRASS, 1 ; energies
-	tx SpitPoisonName ; name
-	tx MayInflictPoisonDescription ; description
-	dw NONE ; description (cont)
-	db 0 ; damage
-	db DAMAGE_NORMAL ; category
-	dw EkansSpitPoisonEffectCommands ; effect commands
-	db INFLICT_POISON ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_SPIT_POISON ; animation
-
-	; attack 2
-	energy GRASS, 1, COLORLESS, 1 ; energies
-	tx WrapName ; name
-	tx MayInflictParalysisDescription ; description
-	dw NONE ; description (cont)
-	db 20 ; damage
-	db DAMAGE_NORMAL ; category
-	dw EkansWrapEffectCommands ; effect commands
-	db INFLICT_PARALYSIS ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_HIT ; animation
-
-	db 1 ; retreat cost
-	db WR_PSYCHIC ; weakness
-	db NONE ; resistance
-	tx SnakeName ; category
-	db 23 ; Pokedex number
-	db 10 ; level
-	db 6, 7 ; length
-	dw 15 * 10 ; weight
-	tx EkansDescription ; description
-	db 19
-
-ArbokCard:
-	db TYPE_PKMN_GRASS ; type
-	gfx ArbokCardGfx ; gfx
-	tx ArbokName ; name
-	db DIAMOND ; rarity
-	db LABORATORY | FOSSIL ; sets
-	dw ARBOK
-	db 60 ; hp
-	db STAGE1 ; stage
-	tx EkansName ; pre-evo name
-
-	; attack 1
-	energy GRASS, 1 ; energies
-	tx TerrorStrikeName ; name
-	tx TerrorStrikeDescription ; description
-	dw NONE ; description (cont)
-	db 10 ; damage
-	db DAMAGE_NORMAL ; category
-	dw ArbokTerrorStrikeEffectCommands ; effect commands
-	db NONE ; flags 1
-	db SWITCH_OPPONENT_POKEMON ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_HIT ; animation
-
-	; attack 2
-	energy GRASS, 2, COLORLESS, 1 ; energies
-	tx PoisonFangName ; name
-	tx InflictPoisonDescription ; description
-	dw NONE ; description (cont)
-	db 20 ; damage
-	db DAMAGE_NORMAL ; category
-	dw ArbokPoisonFangEffectCommands ; effect commands
-	db INFLICT_POISON ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_POISON_FANG ; animation
-
-	db 2 ; retreat cost
-	db WR_PSYCHIC ; weakness
-	db NONE ; resistance
-	tx CobraName ; category
-	db 24 ; Pokedex number
-	db 27 ; level
-	db 11, 6 ; length
-	dw 143 * 10 ; weight
-	tx ArbokDescription ; description
 	db 0
 
 NidoranFCard:
@@ -5148,30 +5148,30 @@ MagnetonLv28Card:
 	tx MagnetonLv28Description ; description
 	db 0
 
-MagnetonLv35Card:
+MagnezoneCard:
 	db TYPE_PKMN_LIGHTNING ; type
-	gfx MagnetonLv35CardGfx ; gfx
-	tx MagnetonName ; name
+	gfx MagnezoneCardGfx ; gfx
+	tx MagnezoneName ; name
 	db STAR ; rarity
 	db LABORATORY | FOSSIL ; sets
-	dw MAGNETON_LV35
-	db 80 ; hp
-	db STAGE1 ; stage
-	tx MagnemiteName ; pre-evo name
+	dw MAGNEZONE
+	db 110 ; hp
+	db STAGE2 ; stage
+	tx MagnetonName ; pre-evo name
 
 	; attack 1
-	energy LIGHTNING, 1, COLORLESS, 1 ; energies
-	tx SonicboomName ; name
-	tx SonicboomDescription ; description
+	energy 0 ; energies
+	tx GigaMagnetName ; name
+	tx GigaMagnetDescription ; description
 	dw NONE ; description (cont)
-	db 20 ; damage
-	db DAMAGE_NORMAL ; category
-	dw MagnetonSonicboomEffectCommands ; effect commands
+	db 0 ; damage
+	db POKEMON_POWER ; category
+	dw GigaMagnetEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_SONICBOOM ; animation
+	db ATK_ANIM_PKMN_POWER_1 ; animation
 
 	; attack 2
 	energy LIGHTNING, 4 ; energies
@@ -7660,18 +7660,18 @@ MewtwoLv60Card:
 	dw NONE ; pre-evo name
 
 	; attack 1
-	energy PSYCHIC, 1 ; energies
-	tx EnergyAbsorptionName ; name
-	tx EnergyAbsorptionDescription ; description
+	energy 0 ; energies
+	tx DamageSwapName ; name
+	tx DamageSwapDescription ; description
 	dw NONE ; description (cont)
 	db 0 ; damage
-	db RESIDUAL ; category
-	dw EnergyAbsorptionEffectCommands ; effect commands
+	db POKEMON_POWER ; category
+	dw AlakazamDamageSwapEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
-	db SPECIAL_AI_HANDLING ; flags 3
+	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_GLOW_EFFECT ; animation
+	db ATK_ANIM_PKMN_POWER_1 ; animation
 
 	; attack 2
 	energy PSYCHIC, 2, COLORLESS, 1 ; energies
@@ -8311,12 +8311,12 @@ AlakazamCard:
 
 	; attack 1
 	energy 0 ; energies
-	tx DamageSwapName ; name
-	tx DamageSwapDescription ; description
+	tx DarkImpulseName ; name
+	tx DarkImpulseDescription ; description
 	dw NONE ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
-	dw AlakazamDamageSwapEffectCommands ; effect commands
+	dw LightningHasteEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -8710,18 +8710,18 @@ SkorupiCard:
 	dw NONE ; pre-evo name
 
 	; attack 1
-	energy PSYCHIC, 1 ; energies
-	tx PsywaveName ; name
-	tx PsywaveDescription ; description
+	energy 0 ; energies
+	tx GigaMagnetName ; name
+	tx GigaMagnetDescription ; description
 	dw NONE ; description (cont)
-	db 10 ; damage
-	db DAMAGE_X ; category
-	dw MewPsywaveEffectCommands ; effect commands
+	db 0 ; damage
+	db POKEMON_POWER ; category
+	dw GigaMagnetEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_PSYCHIC_HIT ; animation
+	db ATK_ANIM_PKMN_POWER_1 ; animation
 
 	; attack 2
 	energy PSYCHIC, 2 ; energies

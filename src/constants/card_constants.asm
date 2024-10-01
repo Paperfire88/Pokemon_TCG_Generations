@@ -14,11 +14,11 @@
 	const CATERPIE                    ; $0c
 	const METAPOD                     ; $0d
 	const BUTTERFREE                  ; $0e
+	const EKANS                       ; $12
+	const ARBOK                       ; $13
 	const WEEDLE                      ; $0f
 	const KAKUNA                      ; $10
 	const BEEDRILL                    ; $11
-	const EKANS                       ; $12
-	const ARBOK                       ; $13
 	const NIDORANF                    ; $14
 	const NIDORINA                    ; $15
 	const NIDOQUEEN                   ; $16
@@ -112,7 +112,7 @@
 	const MAGNEMITE_LV13              ; $69
 	const MAGNEMITE_LV15              ; $6a
 	const MAGNETON_LV28               ; $6b
-	const MAGNETON_LV35               ; $6c
+	const MAGNEZONE               ; $6c
 	const VOLTORB                     ; $6d
 	const ELECTRODE_LV35              ; $6e
 	const ELECTRODE_LV42              ; $6f

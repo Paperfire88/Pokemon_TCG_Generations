@@ -468,7 +468,7 @@ UnnamedDeck2:
 	deck_list_start
 	card_item RAICHU_LV45,    4
 	card_item MAGNETON_LV28,  4
-	card_item MAGNETON_LV35,  4
+	card_item MAGNEZONE,  4
 	card_item WATER_ENERGY,  24
 	card_item SEAKING,        4
 	card_item OMASTAR,        4
@@ -1074,7 +1074,7 @@ ZappingSelfdestructDeck:
 	card_item LIGHTNING_ENERGY,        16
 	card_item MAGNEMITE_LV13,           4
 	card_item MAGNETON_LV28,            2
-	card_item MAGNETON_LV35,                  4
+	card_item MAGNEZONE,                  4
 	card_item PIKACHU_LV12,           4
 	card_item RAICHU_LV40,           2
 	card_item ELECTABUZZ_LV35,          4
@@ -1536,7 +1536,7 @@ BoomBoomSelfdestructDeck:
 	card_item WEEZING,           3
 	card_item MAGNEMITE_LV15,    4
 	card_item MAGNETON_LV28,     3
-	card_item MAGNETON_LV35,     2
+	card_item MAGNEZONE,     2
 	card_item TYNAMO,			 4
 	card_item EELEKTRIK,		 3
 	card_item EELEKTROSS,		 2

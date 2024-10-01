@@ -5915,11 +5915,11 @@ AIDecide_PokemonTrader_PowerGenerator:
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
 	ld bc, MAGNEMITE_LV13
-	ld de, MAGNETON_LV35
+	ld de, MAGNEZONE
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
 	ld bc, MAGNEMITE_LV15
-	ld de, MAGNETON_LV35
+	ld de, MAGNEZONE
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
 	ld bc, MAGNEMITE_LV13
@@ -5931,11 +5931,11 @@ AIDecide_PokemonTrader_PowerGenerator:
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
 	ld de, MAGNEMITE_LV15
-	ld bc, MAGNETON_LV35
+	ld bc, MAGNEZONE
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
 	ld de, MAGNEMITE_LV13
-	ld bc, MAGNETON_LV35
+	ld bc, MAGNEZONE
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
 	ld de, MAGNEMITE_LV15

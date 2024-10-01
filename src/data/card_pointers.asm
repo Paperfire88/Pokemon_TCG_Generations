@@ -16,11 +16,11 @@ CardPointers::
 	dab CaterpieCard
 	dab MetapodCard
 	dab ButterfreeCard
+	dab EkansCard
+	dab ArbokCard
 	dab WeedleCard
 	dab KakunaCard
 	dab BeedrillCard
-	dab EkansCard
-	dab ArbokCard
 	dab NidoranFCard
 	dab NidorinaCard
 	dab NidoqueenCard
@@ -114,7 +114,7 @@ CardPointers::
 	dab MagnemiteLv13Card
 	dab MagnemiteLv15Card
 	dab MagnetonLv28Card
-	dab MagnetonLv35Card
+	dab MagnezoneCard
 	dab VoltorbCard
 	dab ElectrodeLv35Card
 	dab ElectrodeLv42Card

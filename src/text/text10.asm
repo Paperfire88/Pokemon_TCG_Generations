@@ -1,11 +1,11 @@
 KakunaDescription:
-	text "Booster Pack: (EVOLUTION)"
-	line "OG Set: (Roaring Skies 7)"
-	line "OG illustrator: (Akira Komayama)"
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Sun & Moon 10)"
+	line "OG illustrator: (Mizue)"
 	done
 
 BeedrillName:
-	text "Rowlet"
+	text "Dedicdueye"
 	done
 
 TwineedleName:
@@ -23,12 +23,12 @@ PoisonBeeName:
 
 BeedrillDescription:
 	text "Booster Pack: (MYSTERY)"
-	line "OG Set: (Sword & Shield Promos 220)"
-	line "OG illustrator: (sowsow)"
+	line "OG Set: (Sword & Shield Promos 35)"
+	line "OG illustrator: (Souichirou Gunjima)"
 	done
 
 EkansName:
-	text "Dartrix"
+	text "Cascoon"
 	done
 
 SpitPoisonName:
@@ -44,14 +44,13 @@ SnakeName:
 	done
 
 EkansDescription:
-	text "Booster Pack: (MYSTERY)"
-	line "OG Set: (Sun & Moon 10)"
-	line "OG illustrator: (Mizue)"
-	
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Roaring Skies 6)"
+	line "OG illustrator: (MAHOU)"
 	done
 
 ArbokName:
-	text "Decidueye"
+	text "Dustox"
 	done
 
 TerrorStrikeName:
@@ -60,12 +59,11 @@ TerrorStrikeName:
 
 TerrorStrikeDescription:
 	text "Flip a coin. If heads and if your"
-	line "opponent has any Benched Pokémon,"
+	line "opponent has any Benched Pkmn,"
 	line "he or she chooses 1 of them and"
 	line "switches it with the Defending"
-	line "Pokémon."
-	line "(Do the damage before switching"
-	line "the Pokémon.)"
+	line "Pkmn. (Do the damage before" 
+	line "switching the Pkmn.)"
 	done
 
 PoisonFangName:
@@ -77,10 +75,9 @@ CobraName:
 	done
 
 ArbokDescription:
-	text "Booster Pack: (MYSTERY)"
-	line "OG Set: (Sword & Shield Promos 35)"
-	line "OG illustrator: (Souichirou Gunjima)"
-	
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Roaring Skies 7)"
+	line "OG illustrator: (Akira Komayama)"
 	done
 
 NidoranFName:

@@ -1955,3 +1955,10 @@ ConversionZEffectCommands:
 	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, ConversionZ_PlayerSelectEffect
 	dbw EFFECTCMDTYPE_AI_SELECTION, EnergySpike_AISelectEffect
 	db  $00 
+
+GigaMagnetEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, Sprint_Check
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EnergySpike_AttachEnergyEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, GigaMagnet_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, EnergySpike_AISelectEffect
+	db  $00 

@@ -9916,7 +9916,7 @@ CheckPokemonPowerCanBeUsed:
  ; makes a list in wDuelTempList with the deck indices
 ; of all Lightning energy cards found in Turn Duelist's Discard Pile.
 CreateEnergyCardListFromDiscardPile_OnlyLightning:
-  ld c, TYPE_ENERGY_LIGHTNING
+  ld c, TYPE_ENERGY_DARKNESS
   ld de, wDuelTempList
   ld a, DUELVARS_NUMBER_OF_CARDS_IN_DISCARD_PILE
   call GetTurnDuelistVariable
@@ -10241,6 +10241,7 @@ CreateDeckCardList_EF:
     ld a, $ff
     ld [wDuelTempList], a
     scf
+	jp ShuffleDeck
     ret    
 
 HandlePlayerSelectionAnyCardFromDeckListToHand:
@@ -10863,6 +10864,81 @@ ConversionZ_PlayerSelectEffect:
 	ld a, l
 	cp DECK_SIZE
 	jr c, .loop_deck
+	; can exit
+
+	ld a, $ff
+	ldh [hTemp_ffa0], a
+	ret
+
+GigaMagnet_PlayerSelectEffect:
+	ld a, $ff
+	ldh [hTemp_ffa0], a
+
+; search cards in Deck
+	ld b, 7
+    call CreateDeckCardListTopNCards
+	ldtx hl, Choose1BasicEnergyCardFromDeckText
+	ldtx bc, BasicEnergyText
+	ld d, SEARCHEFFECT_BASIC_ENERGY
+	call LookForCardsInDeck
+	farcall SetUsedPokemonPowerThisTurn
+	ret c
+
+	bank1call Func_5591
+	ldtx hl, ChooseBasicEnergyCardText
+	ldtx de, DuelistDeckText
+	bank1call SetCardListHeaderText
+.select_card
+	bank1call DisplayCardList
+	jr c, .try_cancel
+	call GetCardIDFromDeckIndex
+	call GetCardType
+	cp TYPE_ENERGY_DOUBLE_COLORLESS
+	jr nc, .select_card ; not a Basic Energy card
+	and TYPE_ENERGY
+	jr z, .select_card ; not a Basic Energy card
+	; Energy card selected
+	ldh a, [hTempCardIndex_ff98]
+	ldh [hTemp_ffa0], a
+	call EmptyScreen
+	ldtx hl, ChoosePokemonToAttachEnergyCardText
+	call DrawWideTextBox_WaitForInput
+
+; choose a Pokemon in Play Area to attach card
+	bank1call HasAlivePokemonInPlayArea
+.loop_input
+	bank1call OpenPlayAreaScreenForSelection
+	jr c, .loop_input
+	ldh a, [hTempPlayAreaLocation_ff9d]
+	ldh [hTempPlayAreaLocation_ffa1], a
+	ret
+
+.play_sfx
+	call Func_3794
+	jr .select_card
+
+.try_cancel
+; Player tried exiting screen, if there are
+; any Basic Energy cards, Player is forced to select them.
+; otherwise, they can safely exit.
+	ld a, DUELVARS_CARD_LOCATIONS
+	call GetTurnDuelistVariable
+.loop_deck
+	ld a, [hl]
+	cp CARD_LOCATION_DECK
+	jr nz, .next_card
+	ld a, l
+	call GetCardIDFromDeckIndex
+	call GetCardType
+	and TYPE_ENERGY
+	jr z, .next_card
+	cp TYPE_ENERGY_DOUBLE_COLORLESS
+	jr c, .play_sfx
+.next_card
+	inc l
+	ld a, l
+	cp DECK_SIZE
+	jp c, CreateDeckCardList_EF.no_cards_left_in_deck
 	; can exit
 
 	ld a, $ff

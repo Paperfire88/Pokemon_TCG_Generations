@@ -3070,8 +3070,8 @@ TextOffsets::
 	textpointer	ObsidianFangsName; 0xc5c
 	textpointer PrimalAuraDesription; 0xc5d
 	textpointer	DowngradingBeamName; 0xc5e
-	textpointer MagneticCircuitName; 0xc51
-	textpointer	MagneticCircuitDescription; 0xc52
+	textpointer DarkImpulseName; 0xc51
+	textpointer	DarkImpulseDescription; 0xc52
 	textpointer WildchargeName; 0xc53
 	textpointer DisconnectName; 0xc54
 	textpointer PrimalGuidanceName; 0xc55
@@ -3385,3 +3385,5 @@ TextOffsets::
 	textpointer ChooseTrainerCardFromDeckText                      ; 0x0bb6
 	textpointer CrobatName
 	textpointer	UmbreonName	
+	textpointer GigaMagnetName
+	textpointer GigaMagnetDescription
