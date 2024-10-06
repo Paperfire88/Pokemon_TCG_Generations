@@ -146,7 +146,7 @@ HandleAIEnergyTrans:
 	ld a, DUELVARS_ARENA_CARD
 	call GetTurnDuelistVariable
 	call GetCardIDFromDeckIndex
-	cp16 EXEGGUTOR
+	cp16 WEEZING
 	jr z, .is_exeggutor
 
 	xor a ; PLAY_AREA_ARENA

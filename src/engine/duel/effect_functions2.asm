@@ -578,3 +578,75 @@ MarowakCallForFamily_AISelectEffect:
 	jr nz, .loop_deck
 ; found
 	ret
+
+FindGrass:
+	call CreateDeckCardList
+	ldtx hl, ChooseTrainerCardFromDeckText
+	ldtx bc, TrainerCardText
+	lb de, SEARCHEFFECT_GRASS, 0
+	farcall LookForCardsInDeck
+	jr c, .exit ; no Trainer cards in the deck
+
+; draw deck list interface and print text
+	bank1call Func_5591
+	ldtx hl, ChooseGrassText
+	ldtx de, DuelistDeckText
+	farcall SetCardListHeaderText
+
+.read_input
+	bank1call DisplayCardList
+	jr c, .attempt_to_cancel ; the B button was pressed
+	farcall LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Type]
+	cp TYPE_PKMN_GRASS
+	jr nz, .play_sfx ; not a Trainer card
+
+; a Trainer card was selected
+	ldh a, [hTempCardIndex_ff98]
+	ldh [hTemp_ffa0], a
+	or a
+	ret
+
+; play SFX and loop back
+.play_sfx
+	call Func_3794
+	jr .read_input
+
+; see if the Player can exit the screen without selecting a card,
+; that is, if the deck contains no Trainer cards.
+.attempt_to_cancel
+	ld hl, wDuelTempList
+.next_card
+	ld a, [hli]
+	cp $ff
+	jr z, .exit
+	farcall LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Type]
+	cp TYPE_PKMN_GRASS
+	jr nz, .next_card
+	jr .play_sfx ; found a Trainer card, return to selection process
+
+; no Trainer cards in the deck, can safely exit screen
+.exit
+	ld a, $ff
+	ldh [hTemp_ffa0], a
+	or a
+	ret
+
+
+; finds the first Trainer card in the deck
+; output:
+;	[hTemp_ffa0] = deck index of the chosen card ($ff if no card was chosen)
+AIFindGrass:
+	farcall CreateDeckCardList
+	ld hl, wDuelTempList
+.loop_deck
+	ld a, [hli]
+	ldh [hTemp_ffa0], a
+	cp $ff
+	ret z ; reached the end of the list
+	farcall GetCardIDFromDeckIndex
+	farcall GetCardType
+	cp TYPE_PKMN_GRASS
+	jr nz, .loop_deck ; card isn't a Trainer card
+	ret ; Trainer card found	

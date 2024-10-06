@@ -78,7 +78,7 @@ Script_Tech1:
 	ld c, EnergyCardList.end - EnergyCardList
 	ld hl, EnergyCardList
 .next_energy_card
-	ld b, 10
+	ld b, 20
 	ld a, [hli]
 .add_loop
 	push af
@@ -105,6 +105,7 @@ EnergyCardList:
 	db LIGHTNING_ENERGY
 	db FIGHTING_ENERGY
 	db PSYCHIC_ENERGY
+	db DARKNESS_ENERGY
 .end
 
 Script_Tech2:

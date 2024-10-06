@@ -43,7 +43,7 @@
 	const WEEZING                     ; $2b
 	const TANGELA_LV8                 ; $2c
 	const TANGROWTH                ; $2d
-	const TANGELA_LV12                ; $2d
+	const GRUBBIN                ; $2d
 	const SCYTHER                     ; $2e
 	const PINSIR                      ; $2f
 	const CHARMANDER                  ; $30
@@ -110,7 +110,7 @@
 	const RAICHU_LV40                 ; $67
 	const RAICHU_LV45                 ; $68
 	const MAGNEMITE_LV13              ; $69
-	const MAGNEMITE_LV15              ; $6a
+	const CHARJABUG              ; $6a
 	const MAGNETON_LV28               ; $6b
 	const MAGNEZONE               ; $6c
 	const VOLTORB                     ; $6d
@@ -176,6 +176,8 @@
 	const METAGROSS
 	const MUNNA
 	const MUSHARNA
+	const MORELULL
+	const SHIINOTIC
 	const ABRA                        ; $8e
 	const KADABRA                     ; $8f
 	const ALAKAZAM                    ; $90

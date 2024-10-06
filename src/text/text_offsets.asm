@@ -3387,3 +3387,8 @@ TextOffsets::
 	textpointer	UmbreonName	
 	textpointer GigaMagnetName
 	textpointer GigaMagnetDescription
+	textpointer IceShardName
+	textpointer IceShardDescription
+	textpointer	MorelullName
+	textpointer ShiinoticName
+	textpointer ChooseGrassText	

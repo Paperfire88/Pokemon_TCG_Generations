@@ -49,3 +49,11 @@ CrobatCardGfx:
 UmbreonCardGfx:
 	INCBIN "gfx/cards/umbreon.2bpp"
 	INCBIN "gfx/cards/umbreon.pal"  		
+
+MorelullCardGfx:
+	INCBIN "gfx/cards/morelull.2bpp"
+	INCBIN "gfx/cards/morelull.pal"	
+
+ShiinoticCardGfx:
+	INCBIN "gfx/cards/shiinotic.2bpp"
+	INCBIN "gfx/cards/shiinotic.pal"    

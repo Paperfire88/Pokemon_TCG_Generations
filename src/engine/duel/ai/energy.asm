@@ -714,7 +714,7 @@ GetEnergyCardForDiscardOrEnergyBoostAttack:
 	jr z, .zapdos2
 	cphl CHARIZARD
 	jr z, .charizard_or_exeggutor
-	cphl EXEGGUTOR
+	cphl WEEZING
 	jr z, .charizard_or_exeggutor
 	ld hl, wLoadedCard2Atk2EnergyCost
 	jr .fire

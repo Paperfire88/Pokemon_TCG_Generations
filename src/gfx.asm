@@ -1292,7 +1292,7 @@ TangelaLv8CardGfx::
 	INCBIN "gfx/cards/tangela1.2bpp"
 	INCBIN "gfx/cards/tangela1.pal"
 
-TangelaLv12CardGfx::
+GrubbinCardGfx::
 	INCBIN "gfx/cards/tangela2.2bpp"
 	INCBIN "gfx/cards/tangela2.pal"
 
@@ -1536,7 +1536,7 @@ MagnemiteLv13CardGfx::
 
 SECTION "Card Gfx 6", ROMX
 
-MagnemiteLv15CardGfx::
+CharjabugCardGfx::
 	INCBIN "gfx/cards/magnemite2.2bpp"
 	INCBIN "gfx/cards/magnemite2.pal"
 

@@ -1271,8 +1271,7 @@ PoisonPowderName:
 	done
 
 InflictPoisonDescription:
-	text "The Defending Pokémon is now"
-	line "Poisoned."
+	text "The Defending pkmn is now Poisoned."
 	done
 
 IvysaurDescription:
@@ -1292,16 +1291,15 @@ SolarPowerName:
 SolarPowerDescription:
 	text "Once during your turn (before your"
 	line "attack), you may use this power."
-	line "Your Active Pokémon and the"
-	line "Defending Pokémon are no longer"
-	line "Asleep, Confused, Paralyzed, or"
-	line "Poisoned."
+	line "Your Active pkmn and the Defending"
+	line "pkmn are no longer Asleep, Confused," 
+	line "Paralyzed, or Poisoned."
 	done
 
 SolarPowerDescriptionCont:
-	text "This power can't be used if"
-	line "is Asleep, Confused,"
-	line "or Paralyzed."
+	text "This PKMN power can't be used if" 
+	line "this PKMN is affected by a" 
+	line "Special Condition."
 	done
 
 MegaDrainName:
@@ -1336,12 +1334,12 @@ EnergyTransName:
 
 EnergyTransDescription:
 	text "As often as you like during your"
-	line "turn (before your attack), you may"
-	line "take 1 <GRASS> Energy card attached to 1"
-	line "of your Pokémon and attach it to a"
-	line "different one. This power can't be"
-	line "used if is Asleep,"
-	line "Confused, or Paralyzed."
+	line "turn (before your attack), move"
+	line "1 <GRASS> Energy card attached to 1"
+	line "of your PKMN and attach it to a"
+	line "different one. This PKMN power can't"
+	line "be used if this PKMN is affected by" 
+	line "a Special Condition."
 	done
 
 SolarBeamName:
@@ -1364,7 +1362,7 @@ StringShotName:
 
 MayInflictParalysisDescription:
 	text "Flip a coin. If heads, the Defending"
-	line "Pokémon is now Paralyzed."
+	line "PKMN is now Paralyzed."
 	done
 
 WormName:
@@ -1455,7 +1453,7 @@ PoisonStingName:
 
 MayInflictPoisonDescription:
 	text "Flip a coin. If heads, the Defending"
-	line "Pokémon is now Poisoned."
+	line "PKMN is now Poisoned."
 	done
 
 HairyBugName:

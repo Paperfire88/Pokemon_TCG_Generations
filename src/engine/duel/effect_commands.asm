@@ -1962,3 +1962,30 @@ GigaMagnetEffectCommands:
 	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, GigaMagnet_PlayerSelectEffect
 	dbw EFFECTCMDTYPE_AI_SELECTION, EnergySpike_AISelectEffect
 	db  $00 
+
+IceShardEffectCommands:	; 
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, IceShardEffect
+	dbw EFFECTCMDTYPE_AI, IceShardEffectAIEffect ; Define damage for AI here (20+30)
+	db  $00	
+
+MailSeekerEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, Sprint_Check
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Pokepower_AddToHandEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, TrainerSearch_PlayerSelection
+	dbw EFFECTCMDTYPE_AI_SELECTION, TrainerSearch_AISelection
+	db  $00 
+
+JewelseekersEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Quickfreeze_InitialEffect
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, Sprint_Check
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Pokepower_AddToHandEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, TrainerSearch_PlayerSelection
+	dbw EFFECTCMDTYPE_AI_SELECTION, TrainerSearch_AISelection
+	db  $00
+
+GrassPkmnSearchEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, DeckCheck
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EnergySearch_AddToHandEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, GrassPkmnSearch_PlayerSelection
+	dbw EFFECTCMDTYPE_AI_SELECTION, GrassPkmnSearch_AISelection
+	db  $00	

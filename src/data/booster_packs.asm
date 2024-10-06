@@ -115,14 +115,14 @@ BoosterPack_ColosseumTrainer::
 	dw GenerateRandomEnergy ; energy generation function
 
 ; Card Type Chances
-	db 16 ; Grass Type Chance
-	db 16 ; Fire Type Chance
-	db 16 ; Water Type Chance
-	db 16 ; Lightning Type Chance
-	db 16 ; Fighting Type Chance
-	db 16 ; Psychic Type Chance
-	db 16 ; Colorless Type Chance
-	db 48 ; Trainer Card Chance
+	db 0 ; Grass Type Chance
+	db 0 ; Fire Type Chance
+	db 0 ; Water Type Chance
+	db 0 ; Lightning Type Chance
+	db 0 ; Fighting Type Chance
+	db 0 ; Psychic Type Chance
+	db 0 ; Colorless Type Chance
+	db 100 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
 
 BoosterPack_EvolutionNeutral::

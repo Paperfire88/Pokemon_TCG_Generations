@@ -58,12 +58,10 @@ TerrorStrikeName:
 	done
 
 TerrorStrikeDescription:
-	text "Flip a coin. If heads and if your"
-	line "opponent has any Benched Pkmn,"
-	line "he or she chooses 1 of them and"
-	line "switches it with the Defending"
-	line "Pkmn. (Do the damage before" 
-	line "switching the Pkmn.)"
+	text "Flip a coin. If heads your opponent" 
+	line "switches their Active Pkmn with 1 of" 
+	line "their Benched Pkmn. (Do the damage" 
+	line "before switching the Pkmn.)"
 	done
 
 PoisonFangName:
@@ -98,7 +96,7 @@ CallForFamilyName:
 	done
 
 NidoranFsCallForFamilyDescription:
-	text "Search your deck for a Basic Pokémon"
+	text "Search your deck for a Basic PKMN"
 	line "named Shelmet or Karrablast and put"
 	line "it onto your Bench. Shuffle your"
 	line "deck afterward. (You can't use this"
@@ -126,7 +124,7 @@ SupersonicName:
 
 MayInflictConfusionDescription:
 	text "Flip a coin. If heads, the Defending"
-	line "Pokémon is now Confused."
+	line "PKMN is now Confused."
 	done
 
 DoubleKickName:
@@ -224,7 +222,7 @@ ToxicName:
 	done
 
 ToxicDescription:
-	text "The Defending Pokémon is now"
+	text "The Defending PKMN is now"
 	line "Poisoned. It now takes 20 Poison"
 	line "damage instead of 10 after each"
 	line "player's turn (even if it was"
@@ -249,7 +247,7 @@ LeechLifeName:
 ZubatsLeechLifeDescription:
 	text "Heal from this PKMN the same amount"
 	line "of damage you did to your opponent"
-	line "Active Pokémon."
+	line "Active PKMN."
 	done
 
 BatName:
@@ -274,7 +272,7 @@ WingAttackName:
 GolbatsLeechLifeDescription:
 	text "Heal from this PKMN the same amount"
 	line "of damage you did to your opponent"
-	line "Active Pokémon."
+	line "Active PKMN."
 	done
 
 GolbatDescription:
@@ -293,7 +291,7 @@ SproutName:
 	done
 
 SproutDescription:
-	text "Search your deck for a Basic Pokémon"
+	text "Search your deck for a Basic PKMN"
 	line "named Applin and put it onto your"
 	line "Bench. Shuffle your deck afterward."
 	line "(You can't use this attack if your"
@@ -320,7 +318,7 @@ FoulOdorName:
 	done
 
 FoulOdorDescription:
-	text "Both the Defending Pokémon and"
+	text "Both the Defending PKMN and"
 	line "this PKMN are now Confused"
 	line "(after doing damage)."
 	done
@@ -344,9 +342,9 @@ HealDescription:
 	text "Once during your turn (before your"
 	line "attack), you may flip a coin. If"
 	line "heads, remove 1 damage counter from"
-	line "1 of your Pokémon. This power can't"
-	line "be used if is Asleep,"
-	line "Confused, or Paralyzed."
+	line "1 of your PKMN. This PKMN power" 
+	line "can't be used if this PKMN is"
+	line "affected by a Special Condition."
 	done
 
 PetalDanceName:
@@ -386,7 +384,7 @@ SporeName:
 	done
 
 InflictSleepDescription:
-	text "The Defending Pokémon is now Sleep."
+	text "The Defending PKMN is now Sleep."
 	done
 
 MushroomName:
@@ -452,7 +450,7 @@ VenomPowderName:
 
 VenomPowderDescription:
 	text "Flip a coin. If heads, the Defending"
-	line "Pokémon is now Confused and"
+	line "PKMN is now Confused and"
 	line "Poisoned."
 	done
 
@@ -511,10 +509,10 @@ LureName:
 
 VictreebelsLureDescription:
 	text "After doing damage, switch 1 of"
-	line "your opponent's Benched Pokémon"
-	line "with the Defending Pokémon. Then,"
+	line "your opponent's Benched PKMN"
+	line "with the Defending PKMN. Then,"
 	line "flip a coin. If heads, the new"
-	line "Active Pokémon is now Confused."
+	line "Active PKMN is now Confused."
 	done
 
 AcidName:
@@ -523,7 +521,7 @@ AcidName:
 
 VictreebelsAcidDescription:
 	text "Flip a coin. If heads, the Defending"
-	line "Pokémon can't retreat during your"
+	line "PKMN can't retreat during your"
 	line "opponent's next turn."
 	done
 
@@ -560,8 +558,7 @@ SludgeName:
 GrimerDescription:
 	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Fusion Strike 16)"
-	line "OG illustrator: (OKACHEKE)"
-	
+	line "OG illustrator: (OKACHEKE)"	
 	done
 
 MukName:
@@ -573,17 +570,16 @@ ToxicGasName:
 	done
 
 ToxicGasDescription:
-	text "Ignore all Pokémon Powers other"
-	line "than This one. This power stops"
-	line "working while is Asleep,"
-	line "Confused, or Paralyzed."
+	text "Ignore all PKMN Powers other than"
+	line "This one. This PKMN power can't be" 
+	line "used if this PKMN is affected by" 
+	line "a Special Condition."
 	done
 
 MukDescription:
 	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (XY Promos 14)"
 	line "OG illustrator: (Kouki Saitou)"
-	
 	done
 
 ExeggcuteName:
@@ -621,7 +617,7 @@ TeleportName:
 
 TeleportDescription:
 	text "You can Switch this Pkmn with 1 of"
-	line "your Benched Pokémon."
+	line "your Benched PKMN."
 	done
 
 BigEggsplosionName:
@@ -656,7 +652,7 @@ FoulGasName:
 
 FoulGasDescription:
 	text "Flip a coin. If heads, the Defending"
-	line "Pokémon is now Poisoned; if tails,"
+	line "PKMN is now Poisoned; if tails,"
 	line "it is now Confused."
 	done
 
@@ -684,10 +680,10 @@ SelfdestructName:
 	done
 
 WeezingsSelfdestructDescription:
-	text "Does 10 damage to each Pokémon on"
+	text "Does 10 damage to each PKMN on"
 	line "each player's Bench. (Don't apply"
 	line "Weakness and Resistance for Benched"
-	line "Pokémon.) does 60 damage to"
+	line "PKMN.) does 60 damage to"
 	line "itself."
 	done
 
@@ -886,8 +882,8 @@ NinetalesName:
 
 NinetalesLureDescription:
 	text "If your opponent has any Benched"
-	line "Pokémon, choose 1 of them and switch"
-	line "it with the Defending Pokémon."
+	line "PKMN, choose 1 of them and switch"
+	line "it with the Defending PKMN."
 	line "If this PKMN has any <PSYCHIC> energy "
 	line "attached to it, this attack does +20"
 	line "more damage."
@@ -1104,7 +1100,7 @@ SmokescreenName:
 	done
 
 MagmarsSmokescreenDescription:
-	text "If the Defending Pokémon tries to"
+	text "If the Defending PKMN tries to"
 	line "attack during your opponent's next"
 	line "turn, your opponent flips a coin. If"
 	line "tails, that attack does nothing."
@@ -1340,7 +1336,7 @@ HyperBeamName:
 	done
 
 Discard1EnergyFromTargetDescription:
-	text "If the Defending Pokémon has any"
+	text "If the Defending PKMN has any"
 	line "Energy cards attached to it, choose"
 	line "1 of them and discard it."
 	done
@@ -1388,8 +1384,8 @@ AmnesiaName:
 	done
 
 PoliwhirlsAmnesiaDescription:
-	text "Choose 1 of the Defending Pokémon's"
-	line "attacks. That Pokémon can't use that"
+	text "Choose 1 of the Defending PKMN's"
+	line "attacks. That PKMN can't use that"
 	line "attack during your opponent's next"
 	line "turn."
 	done
@@ -1547,7 +1543,7 @@ ClampName:
 
 ClampDescription:
 	text "Flip a coin. If heads, the Defending"
-	line "Pokémon is now Paralyzed. If tails,"
+	line "PKMN is now Paralyzed. If tails,"
 	line "this attack does nothing (not even"
 	line "damage)."
 	done
@@ -1568,7 +1564,7 @@ KrabbyName:
 	done
 
 KrabbysCallForFamilyDescription:
-	text "Search your deck for a Basic Pokémon"
+	text "Search your deck for a Basic PKMN"
 	line "named Clauncher and put it onto your"
 	line "Bench. Shuffle your deck afterward."
 	line "(You can't use this attack if your"
@@ -1619,7 +1615,7 @@ HorseaName:
 	done
 
 OpponentAttackMayDoNothingDescription:
-	text "If the Defending Pokémon tries to"
+	text "If the Defending PKMN tries to"
 	line "attack during your opponent's next"
 	line "turn, your opponent flips a coin."
 	line "If tails, that attack does nothing."

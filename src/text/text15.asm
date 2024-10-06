@@ -860,3 +860,26 @@ GigaMagnetDescription:
 	line "your Active PKMN is Asleep,Confused,"
 	line "Or Paralyzed."
 	done		
+
+IceShardName:
+	text "Ice Shard"
+	done	
+
+IceShardDescription:
+	text "If your opponent's Active Pkmn is"
+	line "a <FIGHTING> Pkmn, this attack does" 
+	line "+20 more damage."
+	done	
+
+MorelullName:
+	text "Morelull"
+	done	
+
+ShiinoticName:
+	text "Shiinotic"
+	done	
+
+ChooseGrassText:
+	text "Choose a"
+	line "Grass Pokémon."
+	done

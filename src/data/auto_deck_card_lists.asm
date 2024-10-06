@@ -400,7 +400,7 @@ YellowFlashCardList:
 	card_item RAICHU_LV40,       1
 	card_item RAICHU_LV45,       1
 	card_item MAGNEMITE_LV13,    2
-	card_item MAGNEMITE_LV15,    1
+	card_item CHARJABUG,    1
 	card_item MAGNETON_LV28,     1
 	card_item MAGNEZONE,     1
 	card_item VOLTORB,           3
@@ -430,7 +430,7 @@ ElectricShockCardList:
 	card_item PIKACHU_ALT_LV16,         1
 	card_item RAICHU_LV40,              2
 	card_item MAGNEMITE_LV13,           2
-	card_item MAGNEMITE_LV15,           2
+	card_item CHARJABUG,           2
 	card_item MAGNETON_LV28,            2
 	card_item VOLTORB,                  4
 	card_item ELECTRODE_LV42,           3
@@ -529,7 +529,7 @@ FlowerGardenCardList:
 	card_item WEEPINBELL,               1
 	card_item VICTREEBEL,               1
 	card_item TANGELA_LV8,              2
-	card_item TANGELA_LV12,             1
+	card_item GRUBBIN,             1
 	card_item LICKITUNG,                2
 	card_item POKEMON_TRADER,           2
 	card_item POKEMON_BREEDER,          3
@@ -1012,7 +1012,7 @@ BulbasaurAndFriendsCardList:
 	card_item NIDORANF,         2
 	card_item NIDORANM,         2
 	card_item NIDORINO,         1
-	card_item TANGELA_LV12,     1
+	card_item GRUBBIN,     1
 	card_item PIKACHU_LV12,     2
 	card_item RAICHU_LV40,      1
 	card_item MAGNEMITE_LV13,   1

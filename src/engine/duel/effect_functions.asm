@@ -701,6 +701,7 @@ LookForCardsInDeck:
 	dw .SearchDeckForBasicFighting
 	dw .SearchDeckForBasicEnergy
 	dw .SearchDeckForTrainer
+	dw .SearchDeckForGrass
 
 .set_carry
 	scf
@@ -794,6 +795,19 @@ LookForCardsInDeck:
     call GetCardType
     cp TYPE_TRAINER
     jr nz, .loop_deck_trainer ; skip if not a Trainer
+    or a
+    ret
+
+.SearchDeckForGrass
+    ld hl, wDuelTempList
+.loop_deck_grass
+    ld a, [hli]
+    cp $ff
+    jp z, .set_carry
+    call GetCardIDFromDeckIndex
+    call GetCardType
+    cp TYPE_PKMN_GRASS
+    jr nz, .loop_deck_grass ; skip if not a Trainer
     or a
     ret
 
@@ -7721,6 +7735,23 @@ EnergySearch_PlayerSelection:
 	farcall EnergySearch_PlayerSelection2
 	ret
 
+Pokepower_AddToHandEffect:
+	ldh a, [hTemp_ffa0]
+	cp $ff
+	jr z, .done
+; add to hand
+	call SearchCardInDeckAndAddToHand
+	call AddCardToHand
+	call IsPlayerTurn
+	jr c, .done ; done if Player played card
+; display card in screen
+	ldh a, [hTemp_ffa0]
+	ldtx hl, WasPlacedInTheHandText
+	bank1call DisplayCardDetailScreen
+.done
+	call SetUsedPokemonPowerThisTurn
+	jp Func_2c0bd
+
 EnergySearch_AddToHandEffect:
 	ldh a, [hTemp_ffa0]
 	cp $ff
@@ -7759,6 +7790,14 @@ TrainerSearch_PlayerSelection:
 
 TrainerSearch_AISelection:
 	farcall AIFindTrainer
+	ret	
+
+GrassPkmnSearch_PlayerSelection:
+	farcall FindGrass
+	ret
+
+GrassPkmnSearch_AISelection:
+	farcall AIFindGrass
 	ret	
 
 ProfessorOakEffect:
@@ -9850,6 +9889,25 @@ CriticalStrikeEffectAIEffect:
 	call CriticalStrikeEffect
 	jp SetExpectedAIDamage
 
+IceShardEffect:
+	call LoadCardDataToBuffer2_FromCardID
+	ld a, [wLoadedCard2Type]
+	cp TYPE_PKMN_FIGHTING
+	call GetNonTurnDuelistVariable
+	or a
+	jr nz, .has_status
+	jr z, .no_status
+.has_status
+	ld a, 20
+	call AddToDamage
+	ret
+.no_status
+	ret
+
+IceShardEffectAIEffect:
+	call CriticalStrikeEffect
+	jp SetExpectedAIDamage
+
 KakunaStiffenEffect:
 	ld a, 3
 	ld c, a
@@ -10928,7 +10986,7 @@ GigaMagnet_PlayerSelectEffect:
 	cp CARD_LOCATION_DECK
 	jr nz, .next_card
 	ld a, l
-	call GetCardIDFromDeckIndex
+	call CreateDeckCardListTopNCards
 	call GetCardType
 	and TYPE_ENERGY
 	jr z, .next_card

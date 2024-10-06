@@ -45,7 +45,7 @@ CardPointers::
 	dab WeezingCard
 	dab TangelaLv8Card
 	dab TangrowthCard	
-	dab TangelaLv12Card
+	dab GrubbinCard
 	dab ScytherCard
 	dab PinsirCard
 	dab CharmanderCard
@@ -112,7 +112,7 @@ CardPointers::
 	dab RaichuLv40Card
 	dab RaichuLv45Card
 	dab MagnemiteLv13Card
-	dab MagnemiteLv15Card
+	dab CharjabugCard
 	dab MagnetonLv28Card
 	dab MagnezoneCard
 	dab VoltorbCard
@@ -178,6 +178,8 @@ CardPointers::
 	dab MetagrossCard
 	dab MunnaCard
 	dab MusharnaCard
+	dab MorelullCard
+	dab ShiinoticCard
 	dab AbraCard
 	dab KadabraCard
 	dab AlakazamCard

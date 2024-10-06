@@ -85,12 +85,12 @@ UnnamedDeck:
 	card_item LIGHTNING_ENERGY, 8
 	card_item GRASS_ENERGY,     8
 	card_item ZAPDOS_LV68,      4
-	card_item MAGNEMITE_LV15,   4
+	card_item CHARJABUG,   4
 	card_item ELECTRODE_LV42,   4
 	card_item JOLTEON_LV24,     4
 	card_item VOLTORB,          4
 	card_item EEVEE,            4
-	card_item TANGELA_LV12,     4
+	card_item GRUBBIN,     4
 	card_item VENUSAUR_LV64,    4
 	card_item CHIKORITA,        4
 	card_item IVYSAUR,          4
@@ -357,12 +357,12 @@ UnnamedDeck2:
 	card_item LIGHTNING_ENERGY, 8
 	card_item GRASS_ENERGY,     8
 	card_item ZAPDOS_LV68,      4
-	card_item MAGNEMITE_LV15,   4
+	card_item CHARJABUG,   4
 	card_item ELECTRODE_LV35,   4
 	card_item JOLTEON_LV24,     4
 	card_item VOLTORB,          4
 	card_item EEVEE,            4
-	card_item TANGELA_LV12,     4
+	card_item GRUBBIN,     4
 	card_item VENUSAUR_LV64,    4
 	card_item CHIKORITA,        4
 	card_item IVYSAUR,          4
@@ -752,7 +752,7 @@ BulbasaurAndFriendsDeck:
 	card_item METAPOD,          1
 	card_item NIDORANF,         1
 	card_item NIDORANM,         1
-	card_item TANGELA_LV12,     2
+	card_item GRUBBIN,     2
 	card_item NIDOKING,     2
 	card_item VOLTORB,             3
 	card_item ELECTRODE_LV35,          1
@@ -1534,7 +1534,7 @@ BoomBoomSelfdestructDeck:
 	card_item LIGHTNING_ENERGY, 15
 	card_item KOFFING,           4
 	card_item WEEZING,           3
-	card_item MAGNEMITE_LV15,    4
+	card_item CHARJABUG,    4
 	card_item MAGNETON_LV28,     3
 	card_item MAGNEZONE,     2
 	card_item TYNAMO,			 4
@@ -1577,7 +1577,7 @@ EtceteraDeck:
 	card_item WEEDLE,           1
 	card_item NIDORANF,         2
 	card_item ODDISH,           2
-	card_item TANGELA_LV12,     2
+	card_item GRUBBIN,     2
 	card_item CHARMANDER,       2
 	card_item MAGMAR_LV24,      1
 	card_item PIKACHU_LV12,     2
@@ -1609,7 +1609,7 @@ FlowerGardenDeck:
 	card_item WEEPINBELL,               2
 	card_item VICTREEBEL,               1
 	card_item TANGELA_LV8,              2
-	card_item TANGELA_LV12,             2
+	card_item GRUBBIN,             2
 	card_item POKEMON_TRADER,           2
 	card_item POKEMON_BREEDER,          3
 	card_item ENERGY_SEARCH,            4
