@@ -53,8 +53,8 @@ Script_Gal1:
 	print_npc_text Gal1LetsTradeText
 	print_text Gal1TradeCompleteText
 	take_card LAPRAS
-	give_card ARCANINE_LV34
-	show_card_received_screen ARCANINE_LV34
+	give_card CAMERUPT
+	show_card_received_screen CAMERUPT
 	print_npc_text Gal1ThanksText
 	quit_script_fully
 

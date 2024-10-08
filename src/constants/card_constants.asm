@@ -44,6 +44,7 @@
 	const TANGELA_LV8                 ; $2c
 	const TANGROWTH                ; $2d
 	const GRUBBIN                ; $2d
+	const BLIPBUG
 	const SCYTHER                     ; $2e
 	const PINSIR                      ; $2f
 	const CHARMANDER                  ; $30
@@ -51,10 +52,10 @@
 	const CHARIZARD                   ; $32
 	const VULPIX                      ; $33
 	const NINETALES_LV32              ; $34
-	const NINETALES_LV35              ; $35
+	const DELTA_KINGDRA              ; $35
 	const GROWLITHE                   ; $36
-	const ARCANINE_LV34               ; $37
 	const ARCANINE_LV45               ; $38
+	const CAMERUPT               ; $37
 	const PONYTA                      ; $39
 	const RAPIDASH                    ; $3a
 	const MAGMAR_LV24                 ; $3b
@@ -120,7 +121,7 @@
 	const ELECTABUZZ_LV35             ; $71
 	const JOLTEON_LV24                ; $72
 	const JOLTEON_LV29                ; $73
-	const ZAPDOS_LV40                 ; $74
+	const VIKAVOLT                 ; $74
 	const ZAPDOS_LV64                 ; $75
 	const ZAPDOS_LV68                 ; $76
 	const TYNAMO                      ; $e6
@@ -178,6 +179,11 @@
 	const MUSHARNA
 	const MORELULL
 	const SHIINOTIC
+	const DOTTLER
+	const ORBEETLE
+	const RALTS
+	const KIRLIA
+	const GARDEVOIR
 	const ABRA                        ; $8e
 	const KADABRA                     ; $8f
 	const ALAKAZAM                    ; $90

@@ -254,7 +254,7 @@ UnnamedDeck:
 	card_item ELECTABUZZ_LV20,   4
 	card_item MAGNEMITE_LV13,    4
 	card_item EEVEE,             4
-	card_item ZAPDOS_LV40,       4
+	card_item VIKAVOLT,       4
 	card_item JOLTEON_LV29,      4
 	card_item FLYING_PIKACHU,    4
 	card_item PIKACHU_LV16,      4
@@ -372,7 +372,7 @@ UnnamedDeck2:
 	deck_list_start
 	card_item FIRE_ENERGY,     24
 	card_item FLAREON_LV22,     4
-	card_item NINETALES_LV35,   4
+	card_item DELTA_KINGDRA,   4
 	card_item MOLTRES_LV37,     4
 	card_item EEVEE,            4
 	card_item CHARMANDER,       4
@@ -455,7 +455,7 @@ UnnamedDeck2:
 	card_item ELECTABUZZ_LV20,   4
 	card_item MAGNEMITE_LV13,    4
 	card_item EEVEE,             4
-	card_item ZAPDOS_LV40,       4
+	card_item VIKAVOLT,       4
 	card_item JOLTEON_LV29,      4
 	card_item FLYING_PIKACHU,    4
 	card_item PIKACHU_LV16,      4
@@ -1181,7 +1181,7 @@ FireChargeDeck:
 	card_item NINETALES_LV32,            3
 	card_item MOLTRES_LV35,              1
 	card_item FLAREON_LV22,              3
-	card_item ARCANINE_LV34,              3
+	card_item CAMERUPT,              3
 	card_item LICKITUNG,              3
 	card_item PROFESSOR_OAK,     3
 	card_item BILL,              4
@@ -1402,7 +1402,7 @@ BlisteringPokemonDeck:
 	card_item FIGHTING_ENERGY,         12
 	card_item DOUBLE_COLORLESS_ENERGY, 2
 	card_item FLAREON_LV22,                  4
-	card_item ARCANINE_LV34,                2
+	card_item CAMERUPT,                2
 	card_item ONIX,                    4
 	card_item DIGLETT,                 4
 	card_item DUGTRIO,                  3
@@ -1774,7 +1774,7 @@ AngerDeck:
 	card_item WATER_ENERGY,          8
 	card_item DOUBLE_COLORLESS_ENERGY,  4
 	card_item GROWLITHE,                3
-	card_item ARCANINE_LV34,            2
+	card_item CAMERUPT,            2
 	card_item PONYTA,                   3
 	card_item RATTATA,                  3
 	card_item RAPIDASH,                 2

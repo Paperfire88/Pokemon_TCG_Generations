@@ -38,7 +38,7 @@ HandleSpecialAIAttacks:
 	jp z, .EnergyAbsorption
 	cp16 MEWTWO_LV60
 	jp z, .EnergyAbsorption
-	cp16 NINETALES_LV35
+	cp16 DELTA_KINGDRA
 	jp z, .MixUp
 	cp16 ZAPDOS_LV68
 	jp z, .BigThunder

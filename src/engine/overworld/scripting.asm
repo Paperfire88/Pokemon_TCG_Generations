@@ -1464,7 +1464,7 @@ ChallengeCupPrizeCards:
 	dw MEW_LV8
 	tx MewTradeCardName
 
-	dw ARCANINE_LV34
+	dw CAMERUPT
 	tx ArcanineTradeCardName
 
 	dw PIKACHU_LV16

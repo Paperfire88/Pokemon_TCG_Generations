@@ -710,7 +710,7 @@ JolteonLv29Description:
 	line "OG illustrator: (Yuu Nishida)"
 	done
 
-ZapdosName:
+VikavoltName:
 	text "Vikavolt"
 	done
 

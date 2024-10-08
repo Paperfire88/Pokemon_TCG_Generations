@@ -62,7 +62,7 @@ LbsText:
 	done
 
 PromostarRarityText:
-	textfw " "
+	textfw "☆"
 	done
 
 CircleRarityText:
@@ -953,4 +953,8 @@ CardCheckIfHeads8CardsIfTails1CardText:
 IfHeadsNoDamageNextTurnText:
 	text "If Heads, you will not receive"
 	line "damage during opponent's next turn!"
+	done
+
+EmptySpaceText:
+	text "<SPACE>"
 	done

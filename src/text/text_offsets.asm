@@ -2465,7 +2465,7 @@ TextOffsets::
 	textpointer PinMissileName
 	textpointer QuadrupleAttackX20Description
 	textpointer JolteonLv29Description
-	textpointer ZapdosName
+	textpointer VikavoltName
 	textpointer ThunderstormName
 	textpointer ThunderstormDescription
 	textpointer ZapdosLv40Description
@@ -3392,3 +3392,8 @@ TextOffsets::
 	textpointer	MorelullName
 	textpointer ShiinoticName
 	textpointer ChooseGrassText	
+	textpointer RaltsName
+	textpointer	KirliaName
+	textpointer GardevoirName
+	textpointer	BlipbugName
+	textpointer	EmptySpaceText

@@ -67,15 +67,15 @@ Script_BeatAaron:
 	print_npc_text Text0603
 	jump_if_event_equal EVENT_AARON_BOOSTER_REWARD, 1, .ows_d920
 	jump_if_event_equal EVENT_AARON_BOOSTER_REWARD, 2, .ows_d927
-	give_booster_packs BOOSTER_ENERGY_RANDOM, BOOSTER_COLOSSEUM_TRAINER, NO_BOOSTER
+	give_booster_packs BOOSTER_ENERGY_RANDOM, BOOSTER_ENERGY_RANDOM, NO_BOOSTER
 	script_jump Script_LostToAaron.ows_d92f
 
 .ows_d920
-	give_booster_packs BOOSTER_ENERGY_RANDOM, BOOSTER_COLOSSEUM_TRAINER, NO_BOOSTER
+	give_booster_packs BOOSTER_ENERGY_RANDOM, BOOSTER_ENERGY_RANDOM, NO_BOOSTER
 	script_jump Script_LostToAaron.ows_d92f
 
 .ows_d927
-	give_booster_packs BOOSTER_ENERGY_RANDOM, BOOSTER_COLOSSEUM_TRAINER, NO_BOOSTER
+	give_booster_packs BOOSTER_ENERGY_RANDOM, BOOSTER_ENERGY_RANDOM, NO_BOOSTER
 	script_jump Script_LostToAaron.ows_d92f
 
 Script_LostToAaron:

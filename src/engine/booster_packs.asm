@@ -184,8 +184,8 @@ CardTypeTable:
 	db BOOSTER_CARD_TYPE_ENERGY    ; TYPE_ENERGY_WATER
 	db BOOSTER_CARD_TYPE_ENERGY    ; TYPE_ENERGY_FIGHTING
 	db BOOSTER_CARD_TYPE_ENERGY    ; TYPE_ENERGY_PSYCHIC
-	db BOOSTER_CARD_TYPE_ENERGY    ; TYPE_ENERGY_COLORLESS
 	db BOOSTER_CARD_TYPE_ENERGY   ; TYPE_ENERGY_DARKNESS
+	db BOOSTER_CARD_TYPE_ENERGY    ; TYPE_ENERGY_COLORLESS
 	db BOOSTER_CARD_TYPE_TRAINER   ; TYPE_TRAINER
 	assert_table_length NUM_CARD_TYPES
 
@@ -377,6 +377,11 @@ GenerateFightingEnergy:
 ; generates a psychic energy card
 GeneratePsychicEnergy:
 	ld de, PSYCHIC_ENERGY
+	jr AddBoosterEnergyToDrawnEnergies
+
+; generates a darkness energy card
+GenerateDarknessEnergy:
+	ld de, DARKNESS_ENERGY
 	jr AddBoosterEnergyToDrawnEnergies
 
 ; generates a booster with 10 random energies

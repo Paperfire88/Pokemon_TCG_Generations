@@ -35,7 +35,7 @@ BenchAttackCardList:
 	card_item FIGHTING_ENERGY,  14
 	card_item VOLTORB,           4
 	card_item ELECTRODE_LV42,    2
-	card_item ZAPDOS_LV40,       2
+	card_item VIKAVOLT,       2
 	card_item HITMONLEE,         4
 	card_item HITMONCHAN,        2
 	card_item MEOWTH_LV14,       4
@@ -410,7 +410,7 @@ YellowFlashCardList:
 	card_item ELECTABUZZ_LV35,   1
 	card_item JOLTEON_LV24,      1
 	card_item JOLTEON_LV29,      1
-	card_item ZAPDOS_LV40,       1
+	card_item VIKAVOLT,       1
 	card_item ZAPDOS_LV64,       1
 	card_item EEVEE,             3
 	card_item ENERGY_RETRIEVAL,  1
@@ -818,9 +818,9 @@ ReplaceEmAllCardList:
 	card_item FIRE_ENERGY,            24
 	card_item VULPIX,                  4
 	card_item NINETALES_LV32,          2
-	card_item NINETALES_LV35,          1
+	card_item DELTA_KINGDRA,          1
 	card_item GROWLITHE,               4
-	card_item ARCANINE_LV34,           1
+	card_item CAMERUPT,           1
 	card_item ARCANINE_LV45,           1
 	card_item PIDGEY,                  4
 	card_item PIDGEOTTO,               3
@@ -884,7 +884,7 @@ FirePokemonCardList:
 	card_item CHARIZARD,                1
 	card_item VULPIX,                   3
 	card_item NINETALES_LV32,           1
-	card_item NINETALES_LV35,           1
+	card_item DELTA_KINGDRA,           1
 	card_item GROWLITHE,                2
 	card_item ARCANINE_LV45,            1
 	card_item PONYTA,                   2
@@ -1109,7 +1109,7 @@ LegendaryMoltresCardList:
 	deck_list_start
 	card_item FIRE_ENERGY,            25
 	card_item VULPIX,                  4
-	card_item NINETALES_LV35,          3
+	card_item DELTA_KINGDRA,          3
 	card_item GROWLITHE,               4
 	card_item ARCANINE_LV45,           2
 	card_item MAGMAR_LV24,             2
@@ -1134,7 +1134,7 @@ LegendaryZapdosCardList:
 	card_item ELECTRODE_LV35,    3
 	card_item ELECTABUZZ_LV35,   4
 	card_item JOLTEON_LV29,      2
-	card_item ZAPDOS_LV40,       1
+	card_item VIKAVOLT,       1
 	card_item ZAPDOS_LV64,       1
 	card_item ZAPDOS_LV68,       2
 	card_item EEVEE,             3

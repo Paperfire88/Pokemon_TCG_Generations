@@ -725,7 +725,7 @@ TangelaLv12Description:
 	done
 
 ScytherName:
-	text "Blipbug"
+	text "Scyther"
 	done
 
 SwordsDanceName:
@@ -750,7 +750,7 @@ ScytherDescription:
 	done
 
 PinsirName:
-	text "Crobat"
+	text "Pinsir"
 	done
 
 IronGripName:

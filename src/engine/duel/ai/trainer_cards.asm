@@ -5434,11 +5434,11 @@ AIDecide_ComputerSearch_Anger:
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_discard_cards
 	ld bc, GROWLITHE
-	ld de, ARCANINE_LV34
+	ld de, CAMERUPT
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_discard_cards
 	ld de, GROWLITHE
-	ld bc, ARCANINE_LV34
+	ld bc, CAMERUPT
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_discard_cards
 	ld bc, DODUO

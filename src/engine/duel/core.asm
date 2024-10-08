@@ -4290,7 +4290,7 @@ DrawCardPageSet2AndRarityIcons:
 	lb de, 18, 9
 	ld hl, CardRarityTextIDs
 	ld a, [wLoadedCard1Rarity]
-	cp PROMOSTAR
+	cp NO_RARITY
 	call nz, PrintCardPageRarityIcon
 	ret
 
@@ -4305,10 +4305,11 @@ CardPageLvHPTextTileData:
 	db $ff
 
 CardRarityTextIDs:
-	tx PromostarRarityText ; PROMOSTAR (unused)
+	tx EmptySpaceText      ; SPACE (NO_RARITY)
 	tx CircleRarityText    ; CIRCLE
 	tx DiamondRarityText   ; DIAMOND
 	tx StarRarityText      ; STAR
+	tx PromostarRarityText ; PROMOSTAR
 
 DisplayCardPage_TrainerPage1:
 	xor a ; HEADER_TRAINER

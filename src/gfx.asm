@@ -1324,7 +1324,7 @@ NinetalesLv32CardGfx::
 	INCBIN "gfx/cards/ninetales1.2bpp"
 	INCBIN "gfx/cards/ninetales1.pal"
 
-NinetalesLv35CardGfx::
+DeltaKingdraGfx::
 	INCBIN "gfx/cards/ninetales2.2bpp"
 	INCBIN "gfx/cards/ninetales2.pal"
 
@@ -1332,7 +1332,7 @@ GrowlitheCardGfx::
 	INCBIN "gfx/cards/growlithe.2bpp"
 	INCBIN "gfx/cards/growlithe.pal"
 
-ArcanineLv34CardGfx::
+CameruptCardGfx::
 	INCBIN "gfx/cards/arcanine1.2bpp"
 	INCBIN "gfx/cards/arcanine1.pal"
 
@@ -1576,7 +1576,7 @@ JolteonLv29CardGfx::
 	INCBIN "gfx/cards/jolteon2.2bpp"
 	INCBIN "gfx/cards/jolteon2.pal"
 
-ZapdosLv40CardGfx::
+VikavoltCardGfx::
 	INCBIN "gfx/cards/zapdos1.2bpp"
 	INCBIN "gfx/cards/zapdos1.pal"
 
@@ -2070,3 +2070,16 @@ Palette161::
 	rgb 28, 16, 12
 	rgb  4,  8, 28
 	rgb  0,  0,  8
+
+Palette162::
+	db 0
+	db 1
+
+	rgb 28, 28, 24
+	rgb 28, 28, 24
+	rgb  14, 11, 24
+	rgb  1,  0,  5
+
+DarknessGfx::
+	dw $a2
+	INCBIN "gfx/titlescreen/energies/darkness.2bpp"	

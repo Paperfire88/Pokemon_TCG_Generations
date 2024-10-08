@@ -883,3 +883,19 @@ ChooseGrassText:
 	text "Choose a"
 	line "Grass Pokémon."
 	done
+
+RaltsName:
+	text "Ralts"
+	done	
+
+KirliaName:
+	text "Kirlia"
+	done	
+
+GardevoirName:
+	text "Gardevoir"
+	done
+	
+BlipbugName:
+	text "Blipbug"
+	done

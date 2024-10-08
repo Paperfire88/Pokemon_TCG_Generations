@@ -57,3 +57,27 @@ MorelullCardGfx:
 ShiinoticCardGfx:
 	INCBIN "gfx/cards/shiinotic.2bpp"
 	INCBIN "gfx/cards/shiinotic.pal"    
+
+RaltsCardGfx:
+	INCBIN "gfx/cards/ralts.2bpp"
+	INCBIN "gfx/cards/ralts.pal"  		
+
+KirliaCardGfx:
+	INCBIN "gfx/cards/kirlia.2bpp"
+	INCBIN "gfx/cards/kirlia.pal"	
+
+GardevoirCardGfx:
+	INCBIN "gfx/cards/gardevoir.2bpp"
+	INCBIN "gfx/cards/gardevoir.pal"   
+
+BlipbugCardGfx:
+	INCBIN "gfx/cards/blipbug.2bpp"
+	INCBIN "gfx/cards/blipbug.pal"  		
+
+DottlerCardGfx:
+	INCBIN "gfx/cards/dottler.2bpp"
+	INCBIN "gfx/cards/dottler.pal"	
+
+OrbeetleCardGfx:
+	INCBIN "gfx/cards/orbeetle.2bpp"
+	INCBIN "gfx/cards/orbeetle.pal"   

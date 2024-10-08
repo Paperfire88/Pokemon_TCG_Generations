@@ -59,7 +59,7 @@ AIActionTable_LegendaryMoltres:
 
 .list_energy
 	ai_energy VULPIX,         3, +0
-	ai_energy NINETALES_LV35, 3, +1
+	ai_energy DELTA_KINGDRA, 3, +1
 	ai_energy GROWLITHE,      3, +1
 	ai_energy ARCANINE_LV45,  4, +1
 	ai_energy MAGMAR_LV24,    4, -1

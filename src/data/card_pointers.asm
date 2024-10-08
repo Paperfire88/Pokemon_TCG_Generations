@@ -46,6 +46,7 @@ CardPointers::
 	dab TangelaLv8Card
 	dab TangrowthCard	
 	dab GrubbinCard
+	dab BlipbugCard
 	dab ScytherCard
 	dab PinsirCard
 	dab CharmanderCard
@@ -53,10 +54,10 @@ CardPointers::
 	dab CharizardCard
 	dab VulpixCard
 	dab NinetalesLv32Card
-	dab NinetalesLv35Card
+	dab DeltaKingdra
 	dab GrowlitheCard
-	dab ArcanineLv34Card
 	dab ArcanineLv45Card
+	dab CameruptCard
 	dab PonytaCard
 	dab RapidashCard
 	dab MagmarLv24Card
@@ -122,7 +123,7 @@ CardPointers::
 	dab ElectabuzzLv35Card
 	dab JolteonLv24Card
 	dab JolteonLv29Card
-	dab ZapdosLv40Card
+	dab VikavoltCard
 	dab ZapdosLv64Card
 	dab ZapdosLv68Card
 	dab TynamoCard
@@ -178,8 +179,13 @@ CardPointers::
 	dab MetagrossCard
 	dab MunnaCard
 	dab MusharnaCard
+	dab DottlerCard
+	dab OrbeetleCard
 	dab MorelullCard
 	dab ShiinoticCard
+	dab RaltsCard
+	dab KirliaCard
+	dab GardevoirCard
 	dab AbraCard
 	dab KadabraCard
 	dab AlakazamCard
