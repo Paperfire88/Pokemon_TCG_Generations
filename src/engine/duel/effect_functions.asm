@@ -643,328 +643,6 @@ CheckIfDeckIsEmpty:
 	ccf
 	ret
 
-; searches through Deck in wDuelTempList looking for
-; a certain card or cards, and prints text depending
-; on whether at least one was found.
-; if none were found, asks the Player whether to look
-; in the Deck anyway, and returns carry if No is selected.
-; uses SEARCHEFFECT_* as input which determines what to search for:
-;	no search effect = search for card ID in e
-;	SEARCHEFFECT_NIDORAN = search for either NidoranM or NidoranF
-;	SEARCHEFFECT_BASIC_FIGHTING = search for any Basic Fighting Pokemon
-;	SEARCHEFFECT_BASIC_ENERGY = search for any Basic Energy
-;	SEARCHEFFECT_POKEMON = search for any Pokemon card
-; input:
-;	d = SEARCHEFFECT_* constant
-;	de = (optional) card ID to search for in deck
-;	hl = text to print if Deck has card(s)
-; output:
-;	carry set if refused to look at deck
-LookForCardsInDeck:
-	push hl
-	push bc
-	ld a, [wDuelTempList]
-	cp $ff
-	jr z, .none_in_deck
-	ld a, d
-	bit 7, a
-	jr nz, .not_card_id
-	call .SearchDeckForCardID
-	jr c, .none_in_deck
-	jr .exists_in_deck
-
-.not_card_id
-	res 7, a
-	ld hl, .search_table
-	call JumpToFunctionInTable
-	jr c, .none_in_deck
-
-.exists_in_deck
-	pop bc
-	pop hl
-	call DrawWideTextBox_WaitForInput
-	or a
-	ret
-
-.none_in_deck
-	pop hl
-	call LoadTxRam2
-	pop hl
-	ldtx hl, ThereIsNoInTheDeckText
-	call DrawWideTextBox_WaitForInput
-	ldtx hl, WouldYouLikeToCheckTheDeckText
-	jp YesOrNoMenuWithText_SetCursorToYes
-
-.search_table
-	dw .SearchDeckForPokemon
-	dw .SearchDeckForNidoran
-	dw .SearchDeckForBasicFighting
-	dw .SearchDeckForBasicEnergy
-	dw .SearchDeckForTrainer
-	dw .SearchDeckForGrass
-	dw .SearchDeckForGrassEnergy
-	dw .SearchDeckForFire
-	dw .SearchDeckForFireEnergy
-	dw .SearchDeckForLightning
-	dw .SearchDeckForLightningEnergy
-	dw .SearchDeckForFighting
-	dw .SearchDeckForFightingEnergy
-	dw .SearchDeckForPsychic
-	dw .SearchDeckForPsychicEnergy
-
-
-.set_carry
-	scf
-	ret
-
-; returns carry if no card with
-; same card ID as de is found in Deck
-.SearchDeckForCardID
-	ld b, d
-	ld c, e
-	ld hl, wDuelTempList
-.loop_deck_e
-	ld a, [hli]
-	cp $ff
-	jr z, .set_carry
-	call GetCardIDFromDeckIndex
-	call CompareDEtoBC
-	jr nz, .loop_deck_e
-	or a
-	ret
-
-; returns carry if no NidoranM or NidoranF card is found in Deck
-.SearchDeckForNidoran
-	ld hl, wDuelTempList
-.loop_deck_nidoran
-	ld a, [hli]
-	cp $ff
-	jr z, .set_carry
-	call GetCardIDFromDeckIndex
-	cp16 NIDORANF
-	jr z, .found_nidoran
-	cp16 NIDORANM
-	jr nz, .loop_deck_nidoran
-.found_nidoran
-	or a
-	ret
-
-; returns carry if no Basic Fighting Pokemon is found in Deck
-.SearchDeckForBasicFighting
-	ld hl, wDuelTempList
-.loop_deck_fighting
-	ld a, [hli]
-	cp $ff
-	jr z, .set_carry
-	call LoadCardDataToBuffer2_FromDeckIndex
-	ld a, [wLoadedCard2Type]
-	cp TYPE_PKMN_FIGHTING
-	jr nz, .loop_deck_fighting
-	ld a, [wLoadedCard2Stage]
-	or a ; BASIC
-	jr nz, .loop_deck_fighting
-	ret
-
-; returns carry if no Basic Energy cards are found in Deck
-.SearchDeckForBasicEnergy
-	ld hl, wDuelTempList
-.loop_deck_energy
-	ld a, [hli]
-	cp $ff
-	jr z, .set_carry
-	call GetCardIDFromDeckIndex
-	call GetCardType
-	cp TYPE_ENERGY_DOUBLE_COLORLESS
-	jr z, .loop_deck_energy
-	and TYPE_ENERGY
-	jr z, .loop_deck_energy
-	or a
-	ret
-
-; returns carry if no Pokemon cards are found in Deck
-.SearchDeckForPokemon
-	ld hl, wDuelTempList
-.loop_deck_pkmn
-	ld a, [hli]
-	cp $ff
-	jr z, .set_carry
-	call GetCardIDFromDeckIndex
-	call GetCardType
-	cp TYPE_ENERGY
-	jr nc, .loop_deck_pkmn
-	or a
-	ret
-
-.SearchDeckForTrainer
-    ld hl, wDuelTempList
-.loop_deck_trainer
-    ld a, [hli]
-    cp $ff
-    jp z, .set_carry
-    call GetCardIDFromDeckIndex
-    call GetCardType
-    cp TYPE_TRAINER
-    jr nz, .loop_deck_trainer ; skip if not a Trainer
-    or a
-    ret
-
-.SearchDeckForGrass
-    ld hl, wDuelTempList
-.loop_deck_grass
-    ld a, [hli]
-    cp $ff
-    jp z, .set_carry
-    call GetCardIDFromDeckIndex
-    call GetCardType
-    cp TYPE_PKMN_GRASS
-    jr nz, .loop_deck_grass ; skip if not a Trainer
-    or a
-    ret
-	
-.SearchDeckForGrassEnergy
-    ld hl, wDuelTempList
-.loop_deck_grassEnergy
-    ld a, [hli]
-    cp $ff
-    jp z, .set_carry
-    call GetCardIDFromDeckIndex
-    call GetCardType
-    cp TYPE_ENERGY_GRASS
-    jr nz, .loop_deck_grassEnergy ; skip if not a Trainer
-    or a
-    ret
-
-.SearchDeckForFire
-    ld hl, wDuelTempList
-.loop_deck_Fire
-    ld a, [hli]
-    cp $ff
-    jp z, .set_carry
-    call GetCardIDFromDeckIndex
-    call GetCardType
-    cp TYPE_PKMN_FIRE
-    jr nz, .loop_deck_Fire ; skip if not a Trainer
-    or a
-    ret
-	
-.SearchDeckForFireEnergy
-    ld hl, wDuelTempList
-.loop_deck_FireEnergy
-    ld a, [hli]
-    cp $ff
-    jp z, .set_carry
-    call GetCardIDFromDeckIndex
-    call GetCardType
-    cp TYPE_ENERGY_FIRE
-    jr nz, .loop_deck_FireEnergy ; skip if not a Trainer
-    or a
-    ret
-
-.SearchDeckForWater
-    ld hl, wDuelTempList
-.loop_deck_Water
-    ld a, [hli]
-    cp $ff
-    jp z, .set_carry
-    call GetCardIDFromDeckIndex
-    call GetCardType
-    cp TYPE_PKMN_WATER
-    jr nz, .loop_deck_Water ; skip if not a Trainer
-    or a
-    ret
-	
-.SearchDeckForWaterEnergy
-    ld hl, wDuelTempList
-.loop_deck_WaterEnergy
-    ld a, [hli]
-    cp $ff
-    jp z, .set_carry
-    call GetCardIDFromDeckIndex
-    call GetCardType
-    cp TYPE_ENERGY_WATER
-    jr nz, .loop_deck_WaterEnergy ; skip if not a Trainer
-    or a
-    ret
-
-.SearchDeckForLightning
-    ld hl, wDuelTempList
-.loop_deck_Lightning
-    ld a, [hli]
-    cp $ff
-    jp z, .set_carry
-    call GetCardIDFromDeckIndex
-    call GetCardType
-    cp TYPE_PKMN_LIGHTNING
-    jr nz, .loop_deck_Lightning ; skip if not a Trainer
-    or a
-    ret
-	
-.SearchDeckForLightningEnergy
-    ld hl, wDuelTempList
-.loop_deck_LightningEnergy
-    ld a, [hli]
-    cp $ff
-    jp z, .set_carry
-    call GetCardIDFromDeckIndex
-    call GetCardType
-    cp TYPE_ENERGY_LIGHTNING
-    jr nz, .loop_deck_LightningEnergy ; skip if not a Trainer
-    or a
-    ret
-
-.SearchDeckForFighting
-    ld hl, wDuelTempList
-.loop_deck_Fighting
-    ld a, [hli]
-    cp $ff
-    jp z, .set_carry
-    call GetCardIDFromDeckIndex
-    call GetCardType
-    cp TYPE_PKMN_FIGHTING
-    jr nz, .loop_deck_Fighting ; skip if not a Trainer
-    or a
-    ret
-	
-.SearchDeckForFightingEnergy
-    ld hl, wDuelTempList
-.loop_deck_FightingEnergy
-    ld a, [hli]
-    cp $ff
-    jp z, .set_carry
-    call GetCardIDFromDeckIndex
-    call GetCardType
-    cp TYPE_ENERGY_FIGHTING
-    jr nz, .loop_deck_FightingEnergy ; skip if not a Trainer
-    or a
-    ret
-
-.SearchDeckForPsychic
-    ld hl, wDuelTempList
-.loop_deck_Psychic
-    ld a, [hli]
-    cp $ff
-    jp z, .set_carry
-    call GetCardIDFromDeckIndex
-    call GetCardType
-    cp TYPE_PKMN_PSYCHIC
-    jr nz, .loop_deck_Psychic ; skip if not a Trainer
-    or a
-    ret
-	
-.SearchDeckForPsychicEnergy
-    ld hl, wDuelTempList
-.loop_deck_PsychicEnergy
-    ld a, [hli]
-    cp $ff
-    jp z, .set_carry
-    call GetCardIDFromDeckIndex
-    call GetCardType
-    cp TYPE_ENERGY_PSYCHIC
-    jr nz, .loop_deck_PsychicEnergy ; skip if not a Trainer
-    or a
-    ret
-
-
 ; handles the Player selection of attack
 ; to use, i.e. Amnesia or Metronome on.
 ; returns carry if none selected.
@@ -1920,7 +1598,7 @@ NidoranFCallForFamily_PlayerSelectEffect:
 	ldtx hl, ChooseNidoranFromDeckText
 	ldtx bc, NidoranMNidoranFText
 	ld d, SEARCHEFFECT_NIDORAN
-	call LookForCardsInDeck
+	farcall LookForCardsInDeck
 	ret c
 
 ; draw Deck list interface and print text
@@ -2253,7 +1931,7 @@ BellsproutCallForFamily_PlayerSelectEffect:
 	ldtx hl, ChooseABellsproutFromDeckText
 	ldtx bc, BellsproutText
 	ld de, BELLSPROUT
-	call LookForCardsInDeck
+	farcall LookForCardsInDeck
 	ret c
 
 ; draw Deck list interface and print text
@@ -2631,7 +2309,7 @@ KrabbyCallForFamily_PlayerSelectEffect:
 	ldtx hl, ChooseAKrabbyFromDeckText
 	ldtx bc, KrabbyText
 	ld de, KRABBY
-	call LookForCardsInDeck
+	farcall LookForCardsInDeck
 	ret c
 
 ; draw Deck list interface and print text
@@ -6134,7 +5812,7 @@ EnergySpike_PlayerSelectEffect:
 	ldtx hl, Choose1BasicEnergyCardFromDeckText
 	ldtx bc, BasicEnergyText
 	ld d, SEARCHEFFECT_BASIC_ENERGY
-	call LookForCardsInDeck
+	farcall LookForCardsInDeck
 	ret c
 
 	bank1call Func_5591
@@ -9079,7 +8757,7 @@ PokeBall_PlayerSelection:
 	ldtx hl, ChooseBasicOrEvolutionPokemonCardFromDeckText
 	ldtx bc, EvolutionCardText
 	ld d, SEARCHEFFECT_POKEMON
-	call LookForCardsInDeck
+	farcall LookForCardsInDeck
 	jr c, .no_pkmn ; return if Player chose not to check deck
 
 ; handle input
@@ -10956,7 +10634,7 @@ ConversionZ_PlayerSelectEffect:
 	ldtx hl, Choose1BasicEnergyCardFromDeckText
 	ldtx bc, BasicEnergyText
 	ld d, SEARCHEFFECT_BASIC_ENERGY
-	call LookForCardsInDeck
+	farcall LookForCardsInDeck
 	ret c
 
 	bank1call Func_5591
@@ -11031,7 +10709,7 @@ GigaMagnet_PlayerSelectEffect:
 	ldtx hl, Choose1BasicEnergyCardFromDeckText
 	ldtx bc, BasicEnergyText
 	ld d, SEARCHEFFECT_BASIC_ENERGY
-	call LookForCardsInDeck
+	farcall LookForCardsInDeck
 	farcall SetUsedPokemonPowerThisTurn
 	ret c
 
