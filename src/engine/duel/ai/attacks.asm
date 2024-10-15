@@ -400,7 +400,7 @@ GetAIScoreOfAttack:
 	ld a, DUELVARS_ARENA_CARD
 	call GetTurnDuelistVariable
 	call GetCardIDFromDeckIndex
-	cp16 CHANSEY
+	cp16 AUDINO
 	jr z, .chansey
 	cp16 MAGNEMITE_LV13
 	jr z, .magnemite1_or_weezing
@@ -604,7 +604,7 @@ GetAIScoreOfAttack:
 	call GetCardIDFromDeckIndex
 	call SwapTurn
 	; skip if player has Snorlax
-	cp16 SNORLAX
+	cp16 REGIDRAGO
 	jp z, .handle_special_atks
 
 	ld a, DUELVARS_ARENA_CARD_STATUS

@@ -9,11 +9,12 @@ SeadraName:
 	done
 
 SeadrasWaterGunDescription:
-	text "Does damage +10 more damage for each"
-	line "<WATER> Energy attached to this PKMN"
-	line "but not used for this attack's"
-	line "Energy cost. You can't add more than"
-	line "20 damage. Then, ->"
+	text "Does +10 more damage for each <WATER>"
+	line "Energy attached to this PKMN but not"
+	line "used for this attack's cost." 
+	line "You can't add more than 20 damage."
+	line "Flip a coin. If heads, the Defending"
+	line "PKMN is now Asleep."
 	done
 
 SeadrasAgilityDescription:
@@ -153,7 +154,7 @@ GyaradosDescription:
 	line "OG illustrator: (Kagemaru Himeno)"
 	done
 
-LaprasName:
+ChewtleName:
 	text "Chewtle"
 	done
 
@@ -305,7 +306,7 @@ QuickfreezeDescription:
 	text "When you put this PKMN into play"
 	line "during your turn (not during"
 	line "set-up), flip a coin. If heads, the"
-	line "Defending Pokémon is now Paralyzed."
+	line "Defending PKMN is now Paralyzed."
 	done
 
 IceBreathName:
@@ -314,7 +315,7 @@ IceBreathName:
 
 IceBreathDescription:
 	text "Does 40 damage to 1 of your"
-	line "opponent's Pokémon chosen at random."
+	line "opponent's PKMN chosen at random."
 	line "Don't apply Weakness and Resistance"
 	line "for this attack. (Any other effects"
 	line "that would happen after applying"
@@ -328,7 +329,7 @@ ArticunoLv37Description:
 	line "OG illustrator: (KEN SUGIMORI)"
 	done
 
-PikachuName:
+BlitzleName:
 	text "Blitzle"
 	done
 
@@ -361,10 +362,10 @@ SparkName:
 
 SparkDescription:
 	text "If your opponent has any Benched"
-	line "Pokémon, choose 1 of them and this"
+	line "PKMN, choose 1 of them and this"
 	line "attack does 10 damage to it. (Don't"
 	line "apply Weakness and Resistance for"
-	line "Benched Pokémon.)"
+	line "Benched PKMN.)"
 	done
 
 PikachuLv14Description:
@@ -378,12 +379,12 @@ GrowlName:
 	done
 
 GrowlDescription:
-	text "If the Defending Pokémon attacks"
+	text "If the Defending PKMN attacks"
 	line "Pikachu during your opponent's next"
 	line "turn, any damage done by the attack"
 	line "is reduced by 10 (after applying"
 	line "Weakness and Resistance). "
-	line "(Benching or evolving either Pokémon"
+	line "(Benching or evolving either PKMN"
 	line "ends this effect.)"
 	done
 
@@ -397,7 +398,7 @@ PikachuLv16Description:
 	line "OG illustrator: (Ken SUGIMORI)"
 	done
 
-FlyingPikachuName:
+ShinxName:
 	text "Shinx"
 	done
 
@@ -420,7 +421,7 @@ FlyingPikachuDescription:
 	line "OG illustrator: (Lee HyunJung)"
 	done
 
-SurfingPikachuName:
+LuxioName:
 	text "Luxio"
 	done
 
@@ -468,7 +469,7 @@ GigashockDescription:
 	text "This attack also does 10 damage to" 
 	line "up to 3 of your opponent's Benched" 
 	line "Pkmn. (Don't apply Weakness and/or"
-	line "Resistance for Benched Pokémon.)"
+	line "Resistance for Benched PKMN.)"
 	done
 
 RaichuLv45Description:
@@ -486,10 +487,10 @@ ThunderWaveName:
 	done
 
 MagnemitesSelfdestructDescription:
-	text "Does 10 damage to each Pokémon on"
+	text "Does 10 damage to each PKMN on"
 	line "each player's Bench. (Don't apply"
 	line "Weakness and Resistance for Benched"
-	line "Pokémon.) Magnemite does 40 damage"
+	line "PKMN.) Magnemite does 40 damage"
 	line "to itself."
 	done
 
@@ -509,7 +510,7 @@ MagneticStormName:
 
 MagneticStormDescription:
 	text "Remove all Energy cards attached to"
-	line "all of your Pokémon, then randomly"
+	line "all of your PKMN, then randomly"
 	line "reattach each of them."
 	done
 
@@ -524,10 +525,10 @@ MagnetonName:
 	done
 
 MagnetonLv28sSelfdestructDescription:
-	text "Does 20 damage to each Pokémon on"
+	text "Does 20 damage to each PKMN on"
 	line "each player's Bench. (Don't apply"
 	line "Weakness and Resistance for Benched"
-	line "Pokémon.)"
+	line "PKMN.)"
 	line "Magneton does 80 damage to itself."
 	done
 
@@ -550,10 +551,10 @@ SonicboomDescription:
 	done
 
 MagnetonLv35sSelfdestructDescription:
-	text "Does 20 damage to each Pokémon on"
+	text "Does 20 damage to each PKMN on"
 	line "each player's Bench. (Don't apply"
 	line "Weakness and Resistance for Benched"
-	line "Pokémon.) Magnezone does 100 damage"
+	line "PKMN.) Magnezone does 100 damage"
 	line "to itself."
 	done
 
@@ -588,8 +589,7 @@ EnergySpikeName:
 EnergySpikeDescription:
 	text "Search your deck for a basic Energy"
 	line "card and attach it to 1 of your"
-	line "Pokémon. Shuffle your deck"
-	line "afterward."
+	line "PKMN. Shuffle your deck afterward."
 	done
 
 ElectrodeLv35Description:
@@ -603,11 +603,10 @@ ChainLightningName:
 	done
 
 ChainLightningDescription:
-	text "If the Defending Pokémon isn't"
-	line "Colorless, this attack does 10"
-	line "damage to each Benched Pokémon of"
-	line "the same type as the Defending"
-	line "Pokémon (including your own)."
+	text "If the Defending PKMN isn't <COLORLESS>,"
+	line "this attack does 10 damage to each"
+	line "Benched PKMN of the same type as the" 
+	line "Defending PKMN (including your own)."
 	done
 
 ElectrodeLv42Description:
@@ -720,10 +719,10 @@ ThunderstormName:
 
 ThunderstormDescription:
 	text "For each of your opponent's Benched"
-	line "Pokémon, flip a coin. If heads,"
+	line "PKMN, flip a coin. If heads,"
 	line "this attack does 20 damage to that"
-	line "Pokémon. (Don't apply Weakness and"
-	line "Resistance for Benched Pokémon.)"
+	line "PKMN. (Don't apply Weakness and"
+	line "Resistance for Benched PKMN.)"
 	line "Then, Take 10 damage times"
 	line "the number of tails to itself."
 	done
@@ -763,7 +762,7 @@ PealOfThunderName:
 PealOfThunderDescription:
 	text "When you put this PKMN into play"
 	line "during your turn (not during set-up)"
-	line "do 30 damage to a Pokémon other than"
+	line "do 30 damage to a PKMN other than"
 	line "This PKMN chosen at random. (Don't"
 	line "apply Weakness and Resistance.)"
 	done
@@ -773,9 +772,9 @@ BigThunderName:
 	done
 
 BigThunderDescription:
-	text "Choose a Pokémon other than this"
+	text "Choose a PKMN other than this"
 	line "One at random. This attack does 70"
-	line "damage to that Pokémon. Don't apply"
+	line "damage to that PKMN. Don't apply"
 	line "Weakness and Resistance for this"
 	line "attack. (Any other effects that"
 	line "would happen after applying Weakness"
@@ -817,7 +816,7 @@ SandslashDescription:
 	line "OG illustrator: (Naoki Saito)"
 	done
 
-DiglettName:
+SilicobraName:
 	text "Silicobra"
 	done
 
@@ -839,7 +838,7 @@ DiglettDescription:
 	line "OG illustrator: (Hitoshi Ariga)"
 	done
 
-DugtrioName:
+SandacondaName:
 	text "Sandaconda"
 	done
 
@@ -849,9 +848,8 @@ EarthquakeName:
 
 EarthquakeDescription:
 	text "Does 10 damage to each of your own"
-	line "Benched Pokémon. (Don't apply"
-	line "Weakness and Resistance for Benched"
-	line "Pokémon.)"
+	line "Benched PKMN. (Don't apply Weakness"
+	line "and Resistance for Benched PKMN.)"
 	done
 
 DugtrioDescription:
@@ -860,7 +858,7 @@ DugtrioDescription:
 	line "OG illustrator: (nagimiso)"
 	done
 
-MankeyName:
+CroagunkName:
 	text "Croagunk"
 	done
 
@@ -878,8 +876,9 @@ PeekDescription:
 	done
 
 PeekDescriptionCont:
-	text "This power can't be used if"
-	line "is Asleep, Confused, or Paralyzed."
+	text "This PKMN power can't be used if" 
+	line "this PKMN is affected by a" 
+	line "Special Condition."
 	done
 
 PigMonkeyName:
@@ -892,7 +891,7 @@ MankeyDescription:
 	line "OG illustrator: (Yuya Oka)"
 	done
 
-PrimeapeName:
+ToxicroakName:
 	text "Toxicroak"
 	done
 
@@ -911,7 +910,7 @@ PrimeapeDescription:
 	line "OG illustrator: (Ryuta Fuse)"
 	done
 
-MachopName:
+SandileName:
 	text "Sandile"
 	done
 
@@ -929,7 +928,7 @@ MachopDescription:
 	line "OG illustrator: (sui)"
 	done
 
-MachokeName:
+KrokorokName:
 	text "Krokorok"
 	done
 
@@ -956,7 +955,7 @@ MachokeDescription:
 	line "OG illustrator: (Naoki Saito)"
 	done
 
-MachampName:
+KrookodileName:
 	text "Krookodile"
 	done
 
@@ -965,19 +964,16 @@ StrikesBackName:
 	done
 
 StrikesBackDescription:
-	text "Whenever your opponent's attack"
-	line "damages This card (even if it is"
-	line "Knocked Out), this power does 10"
-	line "damage to the attacking Pokémon."
-	line "(Don't apply Weakness and"
-	line "Resistance.) "
+	text "If this PKMN is damaged by an"
+	line "opponent's attack (even if this" 
+	line "PKMN is Knocked Out), put 1 damage" 
+	line "counter on the Attacking PKMN."
 	done
 
 StrikesBackDescriptionCont:
-	text "This power can't be used if"
-	line "is already Asleep, Confused, or"
-	line "Paralyzed when your opponent"
-	line "attacks."
+	text "This PKMN power can't be used if" 
+	line "this PKMN is affected by a Special" 
+	line "Condition when your opponent attacks"
 	done
 
 SeismicTossName:
@@ -990,7 +986,7 @@ MachampDescription:
 	line "OG illustrator: (5ban Graphics)"
 	done
 
-GeodudeName:
+TrapinchName:
 	text "Trapinch"
 	done
 
@@ -1014,7 +1010,7 @@ GeodudeDescription:
 	line "OG illustrator: (MAHOU)"
 	done
 
-GravelerName:
+VibravaName:
 	text "Vibrava"
 	done
 
@@ -1040,7 +1036,7 @@ GravelerDescription:
 	line "OG illustrator: (Naoki Saito)"
 	done
 
-GolemName:
+FlygonName:
 	text "Flygon"
 	done
 
@@ -1049,10 +1045,10 @@ AvalancheName:
 	done
 
 GolemsSelfdestructDescription:
-	text "Does 20 damage to each Pokémon on"
+	text "Does 20 damage to each PKMN on"
 	line "each player's Bench. (Don't apply"
 	line "Weakness and Resistance for Benched"
-	line "Pokémon.) Golem does 100 damage to"
+	line "PKMN.) Golem does 100 damage to"
 	line "itself."
 	done
 
@@ -1066,7 +1062,7 @@ GolemDescription:
 	line "OG illustrator: (Kouki Saitou)"
 	done
 
-OnixName:
+HawluchaName:
 	text "Hawlucha"
 	done
 
@@ -1089,7 +1085,7 @@ OnixDescription:
 	line "OG illustrator: (match)"
 	done
 
-CuboneName:
+LarvitarName:
 	text "Larvitar"
 	done
 
@@ -1098,12 +1094,12 @@ SnivelName:
 	done
 
 SnivelDescription:
-	text "If the Defending Pokémon attacks"
+	text "If the Defending PKMN attacks"
 	line "Cubone during your opponent's next"
 	line "turn, any damage done by the attack"
 	line "is reduced by 20 (after applying"
 	line "Weakness and Resistance). (Benching"
-	line "or evolving either Pokémon ends this"
+	line "or evolving either PKMN ends this"
 	line "effect.)"
 	done
 
@@ -1122,7 +1118,7 @@ CuboneDescription:
 	line "OG illustrator: (Kouki Saitou)"
 	done
 
-MarowakName:
+PupitarName:
 	text "Pupitar"
 	done
 
@@ -1136,7 +1132,7 @@ CallforFriendName:
 
 CallforFriendDescription:
 	text "Search your deck for a <FIGHTING> Basic"
-	line "Pokémon card and put it onto your"
+	line "PKMN card and put it onto your"
 	line "Bench. Shuffle your deck afterward."
 	line "(You can't use this attack if your"
 	line "Bench is full.)"
@@ -1158,7 +1154,7 @@ BoneAttackName:
 
 BoneAttackDescription:
 	text "Flip a coin. If heads, the Defending"
-	line "Pokémon can't attack during your"
+	line "PKMN can't attack during your"
 	line "opponent's next turn."
 	done
 
@@ -1192,10 +1188,10 @@ StretchKickName:
 
 StretchKickDescription:
 	text "If your opponent has any Benched"
-	line "Pokémon, choose 1 of them and this"
+	line "PKMN, choose 1 of them and this"
 	line "attack does 20 damage to it."
 	line "(Don't apply Weakness and"
-	line "Resistance for Benched Pokémon.)"
+	line "Resistance for Benched PKMN.)"
 	done
 
 HighJumpKickName:
@@ -1234,7 +1230,7 @@ HitmonchanDescription:
 	line "OG illustrator: (match)"
 	done
 
-RhyhornName:
+CufantName:
 	text "Cufant"
 	done
 
@@ -1246,7 +1242,7 @@ LeerDescription:
 	text "Flip a coin. If heads, the Defending"
 	line "Pkmn can't attack this PKMN during"
 	line "your opponent's next turn."
-	line "(Benching or evolving either Pokémon"
+	line "(Benching or evolving either PKMN"
 	line "ends this effect.)"
 	done
 
@@ -1260,7 +1256,7 @@ RhyhornDescription:
 	line "OG illustrator: (0313)"
 	done
 
-RhydonName:
+CopperajahName:
 	text "Copperajah"
 	done
 
@@ -1271,14 +1267,14 @@ RamName:
 RamDescription:
 	text "Does 20 damage to itself."
 	line "If your opponent has any Benched"
-	line "Pokémon, he or she chooses 1 of them"
-	line "and switches it with the Defending"
-	line "Pokémon.(Do the damage before"
-	line "switching the Pokémon."
+	line "PKMN, they choose 1 of them and"
+	line "switches it with the Defending"
+	line "PKMN."
+	line "(Do the damage before switching the"
 	done
 
 RamDescriptionCont:
-	text "Switch the Pokémon even if"
+	text "PKMN. Switch the PKMN even if"
 	line "is Knocked Out.)"
 	done
 
@@ -1334,7 +1330,7 @@ AbsorbDescription:
 	text "Remove a number of damage counters"
 	line "from this PKMN equal to half the"
 	line "damage done to the Defending"
-	line "Pokémon (after applying Weakness"
+	line "PKMN (after applying Weakness"
 	line "and Resistance)"
 	line "(rounded up to the nearest 10)."
 	done
@@ -1351,7 +1347,7 @@ KabutopsDescription:
 	line "OG illustrator: (Masakazu Fukuda)"
 	done
 
-AerodactylName:
+TyrantrumName:
 	text "Tyrantrum"
 	done
 
@@ -1376,7 +1372,7 @@ AerodactylDescription:
 	line "OG illustrator: (Eske Yoshinob)"
 	done
 
-AbraName:
+DeinoName:
 	text "Deino"
 	done
 
@@ -1390,7 +1386,7 @@ AbraDescription:
 	line "OG illustrator: (kawayoo)"
 	done
 
-KadabraName:
+ZweilousName:
 	text "Zweilous"
 	done
 

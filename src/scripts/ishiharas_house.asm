@@ -120,11 +120,11 @@ Script_Ishihara:
 	print_text_quit_fully Text072c
 
 .check_if_clefable_owned
-	jump_if_card_owned CLEFABLE, .check_if_clefable_in_collection
+	jump_if_card_owned TOGETIC, .check_if_clefable_in_collection
 	print_text_quit_fully Text072d
 
 .check_if_clefable_in_collection
-	jump_if_card_in_collection CLEFABLE, .do_clefable_trade
+	jump_if_card_in_collection TOGETIC, .do_clefable_trade
 	print_text_quit_fully Text072e
 
 .do_clefable_trade
@@ -133,9 +133,9 @@ Script_Ishihara:
 	zero_out_event_value EVENT_ISHIHARA_WANTS_TO_TRADE
 	print_npc_text Text072f
 	print_text Text0730
-	take_card CLEFABLE
-	give_card SURFING_PIKACHU_LV13
-	show_card_received_screen SURFING_PIKACHU_LV13
+	take_card TOGETIC
+	give_card LUXIO
+	show_card_received_screen LUXIO
 	print_text_quit_fully Text0731
 
 .ows_dbcc
@@ -160,8 +160,8 @@ Script_Ishihara:
 	print_npc_text Text072f
 	print_text Text0736
 	take_card DITTO
-	give_card FLYING_PIKACHU
-	show_card_received_screen FLYING_PIKACHU
+	give_card SHINX
+	show_card_received_screen SHINX
 	print_text_quit_fully Text0737
 
 .ows_dc05
@@ -172,11 +172,11 @@ Script_Ishihara:
 	print_text_quit_fully Text072c
 
 .check_if_chansey_owned
-	jump_if_card_owned CHANSEY, .check_if_chansey_in_collection
+	jump_if_card_owned AUDINO, .check_if_chansey_in_collection
 	print_text_quit_fully Text073a
 
 .check_if_chansey_in_collection
-	jump_if_card_in_collection CHANSEY, .do_chansey_trade
+	jump_if_card_in_collection AUDINO, .do_chansey_trade
 	print_text_quit_fully Text073b
 
 .do_chansey_trade
@@ -185,9 +185,9 @@ Script_Ishihara:
 	zero_out_event_value EVENT_ISHIHARA_WANTS_TO_TRADE
 	print_npc_text Text072f
 	print_text Text073c
-	take_card CHANSEY
-	give_card SURFING_PIKACHU_ALT_LV13
-	show_card_received_screen SURFING_PIKACHU_ALT_LV13
+	take_card AUDINO
+	give_card LUXRAY
+	show_card_received_screen LUXRAY
 	print_text_quit_fully Text073d
 
 .ows_dc3e

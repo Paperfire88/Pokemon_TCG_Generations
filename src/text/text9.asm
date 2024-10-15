@@ -1258,7 +1258,7 @@ BulbasaurDescription:
 	line "OG Artist: (Naoyo Kimura)"
 	done
  
-IvysaurName:
+BayleefName:
 	text "Bayleef"
 	done
 
@@ -1306,20 +1306,19 @@ MegaDrainName:
 	text "Giga Drain"
 	done
 
-VenusaursMegaDrainDescription:
+DigDrainDescription:
 	text "Heal damage from this card equal to"
-	line "half the damage done to the Defending"
-	line "Pkmn (after Weakness and Resistance)"
-	line "(rounded up to the nearest 10)."
-	line "If this Card has fewer damage"
+	line "half the damage done to the"
+	line "Defending Pkmn (after applying"
+	line "Weakness and Resistance)."
+	line "During your opponent's next turn,"
+	line "whenever 30 or less damage is done"
 	done
 
-VenusaursMegaDrainDescriptionCont:
-	text "counters than that, remove all of"
-	line "them. During your opponent's next"
-	line "turn, this PKMN takes 30 less damage"
-	line "from attacks (after applying Weakness"
-	line "and Resistance)."
+DigDrainDescriptionCont:
+	text "to this PKMN, prevent that damage."
+	line "from attacks (after applying"
+	line "Weakness and Resistance)."
 	done
 
 VenusaurLv64Description:

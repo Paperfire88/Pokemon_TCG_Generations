@@ -43,7 +43,7 @@
 	const TILEMAP_LABORATORY                       ; $29
 	const TILEMAP_CHARIZARD_INTRO                  ; $2a
 	const TILEMAP_SCYTHER_INTRO                    ; $2b
-	const TILEMAP_AERODACTYL_INTRO                 ; $2c
+	const TILEMAP_TYRANTRUM_INTRO                 ; $2c
 	const TILEMAP_SOLID_TILES_1                    ; $2d
 	const TILEMAP_SOLID_TILES_2                    ; $2e
 	const TILEMAP_SOLID_TILES_3                    ; $2f

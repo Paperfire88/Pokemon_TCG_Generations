@@ -144,13 +144,6 @@ OddishStunSporeEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Paralysis50PercentEffect
 	db  $00
 
-OddishSproutEffectCommands:
-	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, CheckDeckAndPlayArea
-	dbw EFFECTCMDTYPE_AFTER_DAMAGE, PutInPlayAreaEffect
-	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, Sprout_PlayerSelectEffect
-	dbw EFFECTCMDTYPE_AI_SELECTION, Sprout_AISelectEffect
-	db  $00
-
 ExeggutorTeleportEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Teleport_CheckBench
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Teleport_SwitchEffect
@@ -1988,4 +1981,81 @@ GrassPkmnSearchEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EnergySearch_AddToHandEffect
 	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, GrassPkmnSearch_PlayerSelection
 	dbw EFFECTCMDTYPE_AI_SELECTION, GrassPkmnSearch_AISelection
+	db  $00	
+
+GrassEnergySearchEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, DeckCheck
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EnergySearch_AddToHandEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, GrassEnergySearch_PlayerSelection
+	dbw EFFECTCMDTYPE_AI_SELECTION, GrassEnergySearch_AISelection
+	db  $00	
+
+FirePkmnSearchEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, DeckCheck
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EnergySearch_AddToHandEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, FirePkmnSearch_PlayerSelection
+	dbw EFFECTCMDTYPE_AI_SELECTION, FirePkmnSearch_AISelection
+	db  $00	
+
+FireEnergySearchEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, DeckCheck
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EnergySearch_AddToHandEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, FireEnergySearch_PlayerSelection
+	dbw EFFECTCMDTYPE_AI_SELECTION, FireEnergySearch_AISelection
+	db  $00	
+
+WaterPkmnSearchEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, DeckCheck
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EnergySearch_AddToHandEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, WaterPkmnSearch_PlayerSelection
+	dbw EFFECTCMDTYPE_AI_SELECTION, WaterPkmnSearch_AISelection
+	db  $00	
+
+WaterEnergySearchEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, DeckCheck
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EnergySearch_AddToHandEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, WaterEnergySearch_PlayerSelection
+	dbw EFFECTCMDTYPE_AI_SELECTION, WaterEnergySearch_AISelection
+	db  $00	
+
+LightningPkmnSearchEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, DeckCheck
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EnergySearch_AddToHandEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, LightningPkmnSearch_PlayerSelection
+	dbw EFFECTCMDTYPE_AI_SELECTION, LightningPkmnSearch_AISelection
+	db  $00	
+
+LightningEnergySearchEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, DeckCheck
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EnergySearch_AddToHandEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, LightningEnergySearch_PlayerSelection
+	dbw EFFECTCMDTYPE_AI_SELECTION, LightningEnergySearch_AISelection
+	db  $00	
+
+FightingPkmnSearchEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, DeckCheck
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EnergySearch_AddToHandEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, FightingPkmnSearch_PlayerSelection
+	dbw EFFECTCMDTYPE_AI_SELECTION, FightingPkmnSearch_AISelection
+	db  $00	
+
+FightingEnergySearchEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, DeckCheck
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EnergySearch_AddToHandEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, FightingEnergySearch_PlayerSelection
+	dbw EFFECTCMDTYPE_AI_SELECTION, FightingEnergySearch_AISelection
+	db  $00	
+
+PsychicPkmnSearchEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, DeckCheck
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EnergySearch_AddToHandEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, PsychicPkmnSearch_PlayerSelection
+	dbw EFFECTCMDTYPE_AI_SELECTION, PsychicPkmnSearch_AISelection
+	db  $00	
+
+PsychicEnergySearchEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, DeckCheck
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EnergySearch_AddToHandEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, PsychicEnergySearch_PlayerSelection
+	dbw EFFECTCMDTYPE_AI_SELECTION, PsychicEnergySearch_AISelection
 	db  $00	

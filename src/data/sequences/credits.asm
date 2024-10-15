@@ -149,7 +149,7 @@ CreditsSequence:
 	credits_seq_transform_overlay 0, 0, 144, 0
 	credits_seq_fade_out
 
-	credits_seq_load_booster 6, 3, SCENE_AERODACTYL_INTRO
+	credits_seq_load_booster 6, 3, SCENE_TYRANTRUM_INTRO
 	credits_seq_init_overlay 0, 0, 144, 0
 	credits_seq_draw_rectangle 0, 5
 	credits_seq_print_text 0, 0, CardGameCreator3Text

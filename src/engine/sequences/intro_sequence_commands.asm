@@ -283,7 +283,7 @@ IntroSequenceCmd_LoadScytherScene:
 
 IntroSequenceCmd_LoadAerodactylScene:
 	lb bc, 6, 3
-	ld a, SCENE_AERODACTYL_INTRO
+	ld a, SCENE_TYRANTRUM_INTRO
 	jp LoadOpeningScene
 
 IntroSequenceCmd_LoadTitleScreenScene:

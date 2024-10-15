@@ -272,7 +272,7 @@ AIDecideWhetherToRetreat:
 	call CheckIfSelectedAttackIsUnusable
 	jp nc, .check_defending_id
 .active_cant_ko_2
-	ld a, 40
+	ld a, 50
 	call AddToAIScore
 	ld a, $01
 	ld [wAIPlayEnergyCardForRetreat], a
@@ -283,7 +283,7 @@ AIDecideWhetherToRetreat:
 	call SwapTurn
 	call GetCardIDFromDeckIndex
 	call SwapTurn
-	cp16 MR_MIME
+	cp16 SPIRITOMB
 	jr z, .mr_mime_or_hitmonlee
 	cp16 HITMONLEE ; ??
 	jr nz, .check_retreat_cost
@@ -377,10 +377,10 @@ AIDecideWhetherToRetreat:
 
 .not_mysterious_fossil
 	ld a, [wLoadedCard2ID + 0]
-	cp LOW(CLEFAIRY_DOLL)
+	cp LOW(TOGEPI_DOLL)
 	jr nz, .not_clefairy_doll
 	ld a, [wLoadedCard2ID + 1]
-	cp HIGH(CLEFAIRY_DOLL)
+	cp HIGH(TOGEPI_DOLL)
 	jr z, .loop_ko_2
 
 .not_clefairy_doll
@@ -403,7 +403,7 @@ AIDecideWhetherToRetreat:
 	call GetCardIDFromDeckIndex
 	cp16 MYSTERIOUS_FOSSIL
 	jr z, .mysterious_fossil_or_clefairy_doll
-	cp16 CLEFAIRY_DOLL
+	cp16 TOGEPI_DOLL
 	jr z, .mysterious_fossil_or_clefairy_doll
 
 ; if wAIScore is at least 131, set carry
@@ -574,7 +574,7 @@ AIDecideBenchPokemonToSwitchTo:
 	call LoadCardDataToBuffer2_FromDeckIndex
 	call SwapTurn
 	ld hl, wLoadedCard2ID + 1
-	cphl MR_MIME
+	cphl SPIRITOMB
 	jr nz, .check_defending_weak
 	xor a
 	call EstimateDamage_VersusDefendingCard
@@ -691,9 +691,9 @@ AIDecideBenchPokemonToSwitchTo:
 	call GetTurnDuelistVariable
 	call LoadCardDataToBuffer1_FromDeckIndex
 	ld hl, wLoadedCard1ID + 1
-	cphl MR_MIME
+	cphl SPIRITOMB
 	jr z, .raise_score
-	cphl MEW_LV8
+	cphl MIMIKYU
 	jr nz, .asm_15cf0
 	ld a, DUELVARS_ARENA_CARD
 	call GetNonTurnDuelistVariable
@@ -719,7 +719,7 @@ AIDecideBenchPokemonToSwitchTo:
 	ld hl, wLoadedCard1ID + 1
 	cphl MYSTERIOUS_FOSSIL
 	jr z, .lower_score_2
-	cphl CLEFAIRY_DOLL
+	cphl TOGEPI_DOLL
 	jr nz, .ai_score_bonus
 .lower_score_2
 	ld a, 10
@@ -840,7 +840,7 @@ AITryToRetreat:
 	call GetCardIDFromDeckIndex
 	cp16 MYSTERIOUS_FOSSIL
 	jp z, .mysterious_fossil_or_clefairy_doll
-	cp16 CLEFAIRY_DOLL
+	cp16 TOGEPI_DOLL
 	jp z, .mysterious_fossil_or_clefairy_doll
 
 ; if card is Asleep or Paralyzed, set carry and exit

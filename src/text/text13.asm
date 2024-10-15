@@ -1,6 +1,6 @@
 ScoopUpDescription:
-	text "Choose 1 of your Pokémon in play"
-	line "and return its Basic Pokémon card to"
+	text "Choose 1 of your PKMN in play and"
+	line "return its Basic PKMN card to"
 	line "your hand. (Discard all cards"
 	line "attached to that card.)"
 	done
@@ -33,12 +33,12 @@ PlusPowerName:
 
 PlusPowerDescription:
 	text "Attach PlusPower to your Active"
-	line "Pokémon. At the end of your turn,"
-	line "discard PlusPower. If this Pokémon's"
+	line "PKMN. At the end of your turn,"
+	line "discard PlusPower. If this PKMN's"
 	line "attack does damage to any Active"
-	line "Pokémon (after applying Weakness and"
+	line "PKMN (after applying Weakness and"
 	line "Resistance), the attack does 10 more"
-	line "damage to that Active Pokémon."
+	line "damage to that Active PKMN."
 	done
 
 DefenderName:
@@ -47,10 +47,10 @@ DefenderName:
 
 DefenderDescription:
 	text "Attach Defender to 1 of your"
-	line "Pokémon. At the end of your"
+	line "PKMN. At the end of your"
 	line "opponent's next turn, discard"
 	line "Defender. Damage done to that"
-	line "Pokémon by attacks is reduced by 20"
+	line "PKMN by attacks is reduced by 20"
 	line "(after applying Weakness and"
 	line "Resistance)."
 	done
@@ -72,8 +72,8 @@ GustOfWindName:
 
 GustOfWindDescription:
 	text "Choose 1 of your opponent's Benched"
-	line "Pokémon and switch it with his or"
-	line "her Active Pokémon."
+	line "PKMN and switch it with their Active"
+	line "PKMN."
 	done
 
 DevolutionSprayName:
@@ -81,14 +81,14 @@ DevolutionSprayName:
 	done
 
 DevolutionSprayDescription:
-	text "Choose 1 of your own Pokémon in play"
+	text "Choose 1 of your own PKMN in play"
 	line "and a Stage of Evolution. Discard"
 	line "all Evolution cards of that Stage or"
-	line "higher attached to that Pokémon."
+	line "higher attached to that PKMN."
 	done
 
 DevolutionSprayDescriptionCont:
-	text "That Pokémon is no longer Asleep,"
+	text "That PKMN is no longer Asleep,"
 	line "Confused, Paralyzed, Poisoned, or"
 	line "anything else that might be the"
 	line "result of an attack (just as if you"
@@ -101,7 +101,7 @@ PotionName:
 
 PotionDescription:
 	text "Remove 3 damage counters from 1 of"
-	line "your Pokémon. If that Pokémon has"
+	line "your PKMN. If that PKMN has"
 	line "fewer damage counters than that,"
 	line "remove all of them."
 	done
@@ -112,9 +112,9 @@ SuperPotionName:
 
 SuperPotionDescription:
 	text "Discard 1 Energy card attached to 1"
-	line "of your own Pokémon in order to"
+	line "of your own PKMN in order to"
 	line "remove 6 damage counters from that"
-	line "Pokémon. If the Pokémon has fewer"
+	line "PKMN. If the PKMN has fewer"
 	line "damage counters than that, remove"
 	line "all of them."
 	done
@@ -124,7 +124,7 @@ FullHealName:
 	done
 
 FullHealDescription:
-	text "Your Active Pokémon is no longer"
+	text "Your Active PKMN is no longer"
 	line "Asleep, Confused, Paralyzed, or"
 	line "Poisoned. then, Draw 1 card."
 	done
@@ -134,9 +134,9 @@ ReviveName:
 	done
 
 ReviveDescription:
-	text "Put 1 Basic Pokémon card from your"
+	text "Put 1 Basic PKMN card from your"
 	line "discard pile onto your Bench."
-	line "Put damage counters on that Pokémon"
+	line "Put damage counters on that PKMN"
 	line "equal to half its HP (rounded down"
 	line "to the nearest 10). (You can't use"
 	line "this effect if your Bench is full.)"
@@ -157,7 +157,7 @@ PokemonFluteName:
 	done
 
 PokemonFluteDescription:
-	text "Choose 1 Basic Pokémon card from"
+	text "Choose 1 Basic PKMN card from"
 	line "your opponent's discard pile and put"
 	line "it onto his or her Bench. (You can't"
 	line "play a PKMN if your opponent's Bench"

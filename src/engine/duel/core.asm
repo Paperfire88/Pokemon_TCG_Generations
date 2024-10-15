@@ -1942,17 +1942,17 @@ ShuffleDeckAndDrawSevenCards:
 	ret
 
 ; return nc if the card at wLoadedCard1 is a basic Pokemon card
-; MYSTERIOUS_FOSSIL and CLEFAIRY_DOLL do count as basic Pokemon cards
+; MYSTERIOUS_FOSSIL and TOGEPI_DOLL do count as basic Pokemon cards
 IsLoadedCard1BasicPokemon:
 	ld hl, wLoadedCard1ID + 1
 	cphl MYSTERIOUS_FOSSIL
 	jr z, .basic
-	cphl CLEFAIRY_DOLL
+	cphl TOGEPI_DOLL
 	jr z, .basic
 ;	fallthrough
 
 ; return nc if the card at wLoadedCard1 is a basic Pokemon card
-; MYSTERIOUS_FOSSIL and CLEFAIRY_DOLL do NOT count unless already checked
+; MYSTERIOUS_FOSSIL and TOGEPI_DOLL do NOT count unless already checked
 .skip_mysterious_fossil_clefairy_doll
 	ld a, [wLoadedCard1Type]
 	cp TYPE_ENERGY
@@ -1970,7 +1970,7 @@ IsLoadedCard1BasicPokemon:
 	scf
 	ret
 
-.basic ; MYSTERIOUS_FOSSIL or CLEFAIRY_DOLL
+.basic ; MYSTERIOUS_FOSSIL or TOGEPI_DOLL
 	ld a, $01
 	or a
 	ret ; nz
@@ -6566,7 +6566,7 @@ ConvertSpecialTrainerCardToPokemon::
 	ret z ; return if the card is not in the arena or bench
 	cp16 MYSTERIOUS_FOSSIL
 	jr z, .start_ram_data_overwrite
-	cp16 CLEFAIRY_DOLL
+	cp16 TOGEPI_DOLL
 	ret nz
 .start_ram_data_overwrite
 	push de

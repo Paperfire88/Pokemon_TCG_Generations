@@ -27,7 +27,7 @@ AIActionTable_GoGoRainDance:
 	jp AIPickPrizeCards
 
 .list_arena
-	dw LAPRAS
+	dw CHEWTLE
 	dw HORSEA
 	dw GOLDEEN
 	dw SQUIRTLE
@@ -37,7 +37,7 @@ AIActionTable_GoGoRainDance:
 	dw SQUIRTLE
 	dw HORSEA
 	dw GOLDEEN
-	dw LAPRAS
+	dw CHEWTLE
 	dw NULL
 
 .list_retreat
@@ -54,7 +54,7 @@ AIActionTable_GoGoRainDance:
 	ai_energy SEAKING,   2, +0
 	ai_energy HORSEA,    2, +0
 	ai_energy SEADRA,    3, +0
-	ai_energy LAPRAS,    3, +0
+	ai_energy CHEWTLE,    3, +0
 	dw NULL
 
 .list_prize

@@ -28,7 +28,7 @@ CutDownName:
 
 CutDownDescription:
 	text "Flip a coin. If heads, the Defending"
-	line "Pokémon can't retreat during your"
+	line "PKMN can't retreat during your"
 	line "opponent's next turn. If the "
 	line "Defending Pkmn already has any" 
 	line "damage counters on it, During your" 
@@ -786,33 +786,34 @@ DarknessEnergyName:
 	done	
 
 DarknessEnergyDescription:
-	text "Provides Energy =D."	
+	text "Provides 1 <DARKNESS> Energy."	
+	done
 
 BasicPokemonText:
-	text "Basic Pokémon"
+	text "Basic PKMN"
 	done
 ChooseBasicPokemonText:
 	text "Choose a"
-	line "Basic Pokémon."
+	line "Basic PKMN."
 	done
 ChooseBasicPokemonFromDeckText:
-	text "Choose a Basic Pokémon"
+	text "Choose a Basic PKMN"
 	line "from your deck."
 	done
 EvolutionPokemonText:
-	text "Evolution Pokémon"
+	text "Evolution PKMN"
 	done
 ChooseEvolutionPokemonText:
 	text "Choose an"
-	line "Evolution Pokémon."
+	line "Evolution PKMN."
 	done
 ChooseEvolutionPokemonFromDeckText:
-	text "Choose an Evolution Pokémon"
+	text "Choose an Evolution PKMN"
 	line "from your deck."
 	done
 
 UnableToAttackText:
-	text "This Pokémon cannot attack"
+	text "This PKMN cannot attack"
 	line "until your next turn."
 	done		
 
@@ -881,7 +882,7 @@ ShiinoticName:
 
 ChooseGrassText:
 	text "Choose a"
-	line "Grass Pokémon."
+	line "Grass PKMN."
 	done
 
 RaltsName:
@@ -899,3 +900,150 @@ GardevoirName:
 BlipbugName:
 	text "Blipbug"
 	done
+
+LitleoName:
+	text "Litleo"
+	done
+
+GalladeName:
+	text "Gallade"
+	done
+
+ChooseGrassEnergyText:
+	text "Choose a"
+	line "Grass Energy."
+	done
+
+ChooseGrassPKMNCardFromDeckText:
+	text "Choose a <GRASS> PKMN card from"
+	line "your deck."
+	done	
+
+ChooseGrassEnergyCardFromDeckText:
+	text "Choose a <GRASS> Energy card from"
+	line "your deck."
+	done	
+
+GrassEnergyText:
+	text "Grass Energy"
+	done
+
+FireEnergyText:
+	text "Fire Energy"
+	done
+
+ChooseFireText:
+	text "Choose a"
+	line "Fire PKMN."
+	done
+
+ChooseFireEnergyText:
+	text "Choose a"
+	line "Fire Energy."
+	done
+
+ChooseFirePKMNCardFromDeckText:
+	text "Choose a <FIRE> PKMN card from"
+	line "your deck."
+	done	
+
+ChooseFireEnergyCardFromDeckText:
+	text "Choose a <FIRE> Energy card from"
+	line "your deck."
+	done	
+
+WaterEnergyText:
+	text "Water Energy"
+	done
+
+ChooseWaterText:
+	text "Choose a"
+	line "Water PKMN."
+	done
+
+ChooseWaterEnergyText:
+	text "Choose a"
+	line "Water Energy."
+	done
+
+ChooseWaterPKMNCardFromDeckText:
+	text "Choose a <WATER> PKMN card from"
+	line "your deck."
+	done	
+
+ChooseWaterEnergyCardFromDeckText:
+	text "Choose a <WATER> Energy card from"
+	line "your deck."
+	done
+
+LightningEnergyText:
+	text "Lightning Energy"
+	done
+
+ChooseLightningText:
+	text "Choose a"
+	line "Lightning PKMN."
+	done
+
+ChooseLightningEnergyText:
+	text "Choose a"
+	line "Lightning Energy."
+	done
+
+ChooseLightningPKMNCardFromDeckText:
+	text "Choose a <LIGHTNING> PKMN card from"
+	line "your deck."
+	done	
+
+ChooseLightningEnergyCardFromDeckText:
+	text "Choose a <LIGHTNING> Energy card from"
+	line "your deck."
+	done	
+
+FightingEnergyText:
+	text "Fighting Energy"
+	done
+
+ChooseFightingText:
+	text "Choose a"
+	line "Fighting PKMN."
+	done
+
+ChooseFightingEnergyText:
+	text "Choose a"
+	line "Fighting Energy."
+	done
+
+ChooseFightingPKMNCardFromDeckText:
+	text "Choose a <FIGHTING> PKMN card from"
+	line "your deck."
+	done	
+
+ChooseFightingEnergyCardFromDeckText:
+	text "Choose a <FIGHTING> Energy card from"
+	line "your deck."
+	done	
+
+PsychicEnergyText:
+	text "Psychic Energy"
+	done
+
+ChoosePsychicText:
+	text "Choose a"
+	line "Psychic PKMN."
+	done
+
+ChoosePsychicEnergyText:
+	text "Choose a"
+	line "Psychic Energy."
+	done
+
+ChoosePsychicPKMNCardFromDeckText:
+	text "Choose a <PSYCHIC> PKMN card from"
+	line "your deck."
+	done	
+
+ChoosePsychicEnergyCardFromDeckText:
+	text "Choose a <PSYCHIC> Energy card from"
+	line "your deck."
+	done	

@@ -45,12 +45,12 @@ QueueStatusCondition:
 	cp [hl]
 	jr nz, .can_induce_status
 	ld hl, wTempNonTurnDuelistCardID + 1
-	cphl CLEFAIRY_DOLL
+	cphl TOGEPI_DOLL
 	jr z, .cant_induce_status
 	cphl MYSTERIOUS_FOSSIL
 	jr z, .cant_induce_status
 	; Snorlax's Thick Skinned prevents it from being statused...
-	cphl SNORLAX
+	cphl REGIDRAGO
 	jr nz, .can_induce_status
 	call SwapTurn
 	xor a
@@ -702,6 +702,16 @@ LookForCardsInDeck:
 	dw .SearchDeckForBasicEnergy
 	dw .SearchDeckForTrainer
 	dw .SearchDeckForGrass
+	dw .SearchDeckForGrassEnergy
+	dw .SearchDeckForFire
+	dw .SearchDeckForFireEnergy
+	dw .SearchDeckForLightning
+	dw .SearchDeckForLightningEnergy
+	dw .SearchDeckForFighting
+	dw .SearchDeckForFightingEnergy
+	dw .SearchDeckForPsychic
+	dw .SearchDeckForPsychicEnergy
+
 
 .set_carry
 	scf
@@ -810,6 +820,150 @@ LookForCardsInDeck:
     jr nz, .loop_deck_grass ; skip if not a Trainer
     or a
     ret
+	
+.SearchDeckForGrassEnergy
+    ld hl, wDuelTempList
+.loop_deck_grassEnergy
+    ld a, [hli]
+    cp $ff
+    jp z, .set_carry
+    call GetCardIDFromDeckIndex
+    call GetCardType
+    cp TYPE_ENERGY_GRASS
+    jr nz, .loop_deck_grassEnergy ; skip if not a Trainer
+    or a
+    ret
+
+.SearchDeckForFire
+    ld hl, wDuelTempList
+.loop_deck_Fire
+    ld a, [hli]
+    cp $ff
+    jp z, .set_carry
+    call GetCardIDFromDeckIndex
+    call GetCardType
+    cp TYPE_PKMN_FIRE
+    jr nz, .loop_deck_Fire ; skip if not a Trainer
+    or a
+    ret
+	
+.SearchDeckForFireEnergy
+    ld hl, wDuelTempList
+.loop_deck_FireEnergy
+    ld a, [hli]
+    cp $ff
+    jp z, .set_carry
+    call GetCardIDFromDeckIndex
+    call GetCardType
+    cp TYPE_ENERGY_FIRE
+    jr nz, .loop_deck_FireEnergy ; skip if not a Trainer
+    or a
+    ret
+
+.SearchDeckForWater
+    ld hl, wDuelTempList
+.loop_deck_Water
+    ld a, [hli]
+    cp $ff
+    jp z, .set_carry
+    call GetCardIDFromDeckIndex
+    call GetCardType
+    cp TYPE_PKMN_WATER
+    jr nz, .loop_deck_Water ; skip if not a Trainer
+    or a
+    ret
+	
+.SearchDeckForWaterEnergy
+    ld hl, wDuelTempList
+.loop_deck_WaterEnergy
+    ld a, [hli]
+    cp $ff
+    jp z, .set_carry
+    call GetCardIDFromDeckIndex
+    call GetCardType
+    cp TYPE_ENERGY_WATER
+    jr nz, .loop_deck_WaterEnergy ; skip if not a Trainer
+    or a
+    ret
+
+.SearchDeckForLightning
+    ld hl, wDuelTempList
+.loop_deck_Lightning
+    ld a, [hli]
+    cp $ff
+    jp z, .set_carry
+    call GetCardIDFromDeckIndex
+    call GetCardType
+    cp TYPE_PKMN_LIGHTNING
+    jr nz, .loop_deck_Lightning ; skip if not a Trainer
+    or a
+    ret
+	
+.SearchDeckForLightningEnergy
+    ld hl, wDuelTempList
+.loop_deck_LightningEnergy
+    ld a, [hli]
+    cp $ff
+    jp z, .set_carry
+    call GetCardIDFromDeckIndex
+    call GetCardType
+    cp TYPE_ENERGY_LIGHTNING
+    jr nz, .loop_deck_LightningEnergy ; skip if not a Trainer
+    or a
+    ret
+
+.SearchDeckForFighting
+    ld hl, wDuelTempList
+.loop_deck_Fighting
+    ld a, [hli]
+    cp $ff
+    jp z, .set_carry
+    call GetCardIDFromDeckIndex
+    call GetCardType
+    cp TYPE_PKMN_FIGHTING
+    jr nz, .loop_deck_Fighting ; skip if not a Trainer
+    or a
+    ret
+	
+.SearchDeckForFightingEnergy
+    ld hl, wDuelTempList
+.loop_deck_FightingEnergy
+    ld a, [hli]
+    cp $ff
+    jp z, .set_carry
+    call GetCardIDFromDeckIndex
+    call GetCardType
+    cp TYPE_ENERGY_FIGHTING
+    jr nz, .loop_deck_FightingEnergy ; skip if not a Trainer
+    or a
+    ret
+
+.SearchDeckForPsychic
+    ld hl, wDuelTempList
+.loop_deck_Psychic
+    ld a, [hli]
+    cp $ff
+    jp z, .set_carry
+    call GetCardIDFromDeckIndex
+    call GetCardType
+    cp TYPE_PKMN_PSYCHIC
+    jr nz, .loop_deck_Psychic ; skip if not a Trainer
+    or a
+    ret
+	
+.SearchDeckForPsychicEnergy
+    ld hl, wDuelTempList
+.loop_deck_PsychicEnergy
+    ld a, [hli]
+    cp $ff
+    jp z, .set_carry
+    call GetCardIDFromDeckIndex
+    call GetCardType
+    cp TYPE_ENERGY_PSYCHIC
+    jr nz, .loop_deck_PsychicEnergy ; skip if not a Trainer
+    or a
+    ret
+
 
 ; handles the Player selection of attack
 ; to use, i.e. Amnesia or Metronome on.
@@ -1597,79 +1751,6 @@ CheckDeckAndPlayArea:
 	cp MAX_PLAY_AREA_POKEMON
 	ccf
 	ret
-
-Sprout_PlayerSelectEffect:
-	ld a, $ff
-	ldh [hTemp_ffa0], a
-
-	call CreateDeckCardList
-	ldtx hl, ChooseAnOddishFromDeckText
-	ldtx bc, OddishText
-	ld de, ODDISH
-	call LookForCardsInDeck
-	ret c
-
-; draw Deck list interface and print text
-	bank1call Func_5591
-	ldtx hl, ChooseAnOddishText
-	ldtx de, DuelistDeckText
-	bank1call SetCardListHeaderText
-
-.loop
-	bank1call DisplayCardList
-	jr c, .pressed_b
-	call GetCardIDFromDeckIndex
-	cp16 ODDISH
-	jr nz, .play_sfx
-
-; Oddish was selected
-	ldh a, [hTempCardIndex_ff98]
-	ldh [hTemp_ffa0], a
-	or a
-	ret
-
-.play_sfx
-	; play SFX and loop back
-	call Func_3794
-	jr .loop
-
-.pressed_b
-; figure if Player can exit the screen without selecting,
-; that is, if the Deck has no Oddish card.
-	ld a, DUELVARS_CARD_LOCATIONS
-	call GetTurnDuelistVariable
-.loop_b_press
-	ld a, [hl]
-	cp CARD_LOCATION_DECK
-	jr nz, .next
-	ld a, l
-	call GetCardIDFromDeckIndex
-	cp16 ODDISH
-	jr z, .play_sfx ; found Oddish, go back to top loop
-.next
-	inc l
-	ld a, l
-	cp DECK_SIZE
-	jr c, .loop_b_press
-
-; no Oddish in Deck, can safely exit screen
-	ld a, $ff
-	ldh [hTemp_ffa0], a
-	or a
-	ret
-
-Sprout_AISelectEffect:
-	call CreateDeckCardList
-	ld hl, wDuelTempList
-.loop_deck
-	ld a, [hli]
-	ldh [hTemp_ffa0], a
-	cp $ff
-	ret z ; no Oddish
-	call GetCardIDFromDeckIndex
-	cp16 ODDISH
-	jr nz, .loop_deck
-	ret ; Oddish found
 
 PutInPlayAreaEffect:
 	ldh a, [hTemp_ffa0]
@@ -2947,7 +3028,7 @@ IceBreath_RandomPokemonDamageEffect:
 
 FocusEnergyEffect:
 	ld hl, wTempTurnDuelistCardID + 1
-	cphl VAPOREON_LV29
+	cphl DREDNAW
 	ret nz ; return if no VaporeonLv29
 	ld a, SUBSTATUS1_NEXT_TURN_DOUBLE_DAMAGE
 	jp ApplySubstatus1ToDefendingCard
@@ -4931,37 +5012,7 @@ MysteryAttack_AIEffect:
 	jp SetExpectedAIDamage
 
 MysteryAttack_RandomEffect:
-	ld a, 10
-	call SetDefiniteDamage
-
-; chooses a random effect from 8 possible options.
-	call UpdateRNGSources
-	and %111
-	ldh [hTemp_ffa0], a
-	ld hl, .random_effect
-	jp JumpToFunctionInTable
-
-.random_effect
-	dw ParalysisEffect
-	dw PoisonEffect
-	dw SleepEffect
-	dw ConfusionEffect
-	dw .no_effect ; this will actually activate recovery effect afterwards
-	dw .no_effect
-	dw .more_damage
-	dw .no_damage
-
-.more_damage
-	ld a, 20
-	jp SetDefiniteDamage
-
-.no_damage
-	ld a, ATK_ANIM_GLOW_EFFECT
-	ld [wLoadedAttackAnimation], a
-	xor a
-	call SetDefiniteDamage
-	call SetNoEffectFromStatus
-.no_effect
+	farcall	MysteryAttack_RandomEffect2
 	ret
 
 MysteryAttack_RecoverEffect:
@@ -5212,55 +5263,8 @@ Peek_OncePerTurnCheck:
 	ret
 
 Peek_SelectEffect:
-; set Pkmn Power used flag
-	ldh a, [hTemp_ffa0]
-	add DUELVARS_ARENA_CARD_FLAGS
-	call GetTurnDuelistVariable
-	set USED_PKMN_POWER_THIS_TURN_F, [hl]
-
-	ld a, DUELVARS_DUELIST_TYPE
-	call GetTurnDuelistVariable
-	and DUELIST_TYPE_AI_OPP
-	jr nz, .ai_opp
-
-; player
-	call FinishQueuedAnimations
-	call HandlePeekSelection
-	ldh [hAIPkmnPowerEffectParam], a
+	farcall Peek_SelectEffect2
 	ret
-
-.ai_opp
-	ldh a, [hAIPkmnPowerEffectParam]
-	bit AI_PEEK_TARGET_HAND_F, a
-	jr z, .prize_or_deck
-	and (~AI_PEEK_TARGET_HAND & $ff) ; unset bit to get deck index
-; if masked value is higher than $40, then it means
-; that AI chose to look at Player's deck.
-; all deck indices will be smaller than $40.
-	cp $40
-	jr c, .hand
-	ldh a, [hAIPkmnPowerEffectParam]
-	jr .prize_or_deck
-
-.hand
-; AI chose to look at random card in hand,
-; so display it to the Player on screen.
-	call SwapTurn
-	ldtx hl, PeekWasUsedToLookInYourHandText
-	bank1call DisplayCardDetailScreen
-	jp SwapTurn
-
-.prize_or_deck
-; AI chose either a prize card or Player's top deck card,
-; so show Play Area and draw cursor appropriately.
-	call FinishQueuedAnimations
-	call SwapTurn
-	ldh a, [hAIPkmnPowerEffectParam]
-	xor $80
-	call DrawAIPeekScreen
-	call SwapTurn
-	ldtx hl, CardPeekWasUsedOnText
-	jp DrawWideTextBox_WaitForInput
 
 BoneAttackEffect:
 	ldtx de, IfHeadsOpponentCannotAttackText
@@ -7587,13 +7591,13 @@ ImakuniEffect:
 	ld hl, wLoadedCard1ID + 1
 
 ; cannot confuse Clefairy Doll and Mysterious Fossil
-	cphl CLEFAIRY_DOLL
+	cphl TOGEPI_DOLL
 	jr z, .failed
 	cphl MYSTERIOUS_FOSSIL
 	jr z, .failed
 
 ; cannot confuse Snorlax if its Pkmn Power is active
-	cphl SNORLAX
+	cphl REGIDRAGO
 	jr nz, .success
 	xor a
 	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
@@ -7799,6 +7803,95 @@ GrassPkmnSearch_PlayerSelection:
 GrassPkmnSearch_AISelection:
 	farcall AIFindGrass
 	ret	
+
+GrassEnergySearch_PlayerSelection:
+	farcall FindGrassEnergy
+	ret
+
+GrassEnergySearch_AISelection:
+	farcall AIFindGrassEnergy
+	ret	
+
+FirePkmnSearch_PlayerSelection:
+	farcall FindFire
+	ret
+
+FirePkmnSearch_AISelection:
+	farcall AIFindFire
+	ret	
+
+FireEnergySearch_PlayerSelection:
+	farcall FindFireEnergy
+	ret
+
+FireEnergySearch_AISelection:
+	farcall AIFindFireEnergy
+	ret	
+
+WaterPkmnSearch_PlayerSelection:
+	farcall FindWater
+	ret
+
+WaterPkmnSearch_AISelection:
+	farcall AIFindWater
+	ret	
+
+WaterEnergySearch_PlayerSelection:
+	farcall FindWaterEnergy
+	ret
+
+WaterEnergySearch_AISelection:
+	farcall AIFindWaterEnergy
+	ret	
+
+LightningPkmnSearch_PlayerSelection:
+	farcall FindLightning
+	ret
+
+LightningPkmnSearch_AISelection:
+	farcall AIFindLightning
+	ret	
+
+LightningEnergySearch_PlayerSelection:
+	farcall FindLightningEnergy
+	ret
+
+LightningEnergySearch_AISelection:
+	farcall AIFindLightningEnergy
+	ret	
+
+FightingPkmnSearch_PlayerSelection:
+	farcall FindFighting
+	ret
+
+FightingPkmnSearch_AISelection:
+	farcall AIFindFighting
+	ret	
+
+FightingEnergySearch_PlayerSelection:
+	farcall FindFightingEnergy
+	ret
+
+FightingEnergySearch_AISelection:
+	farcall AIFindFightingEnergy
+	ret	
+
+PsychicPkmnSearch_PlayerSelection:
+	farcall FindPsychic
+	ret
+
+PsychicPkmnSearch_AISelection:
+	farcall AIFindPsychic
+	ret	
+
+PsychicEnergySearch_PlayerSelection:
+	farcall FindPsychicEnergy
+	ret
+
+PsychicEnergySearch_AISelection:
+	farcall AIFindPsychicEnergy
+	ret	
+
 
 ProfessorOakEffect:
 ; discard hand

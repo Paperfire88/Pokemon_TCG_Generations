@@ -1177,7 +1177,7 @@ ScriptCommand_PickNextMan1RequestedCard:
 	jp IncreaseScriptPointerBy1
 
 Man1RequestedCardsList:
-	dw GRAVELER
+	dw VIBRAVA
 	dw OMASTAR
 	dw PARASECT
 	dw RAPIDASH
@@ -1461,28 +1461,28 @@ ChallengeCupPrizeCards:
 	dw MEWTWO_LV60
 	tx MewtwoTradeCardName
 
-	dw MEW_LV8
+	dw MIMIKYU
 	tx MewTradeCardName
 
 	dw CAMERUPT
 	tx ArcanineTradeCardName
 
-	dw PIKACHU_LV16
+	dw EMOLGA
 	tx PikachuTradeCardName
 
-	dw PIKACHU_ALT_LV16
+	dw PINCURCHIN
 	tx PikachuTradeCardName
 
-	dw SURFING_PIKACHU_LV13
+	dw LUXIO
 	tx SurfingPikachuTradeCardName
 
-	dw SURFING_PIKACHU_ALT_LV13
+	dw LUXRAY
 	tx SurfingPikachuTradeCardName
 
-	dw ELECTABUZZ_LV20
+	dw ELECTRIKE
 	tx ElectabuzzTradeCardName
 
-	dw SLOWPOKE_LV9
+	dw CRESSELIA
 	tx SlowpokeTradeCardName
 
 	dw MEWTWO_ALT_LV60
@@ -1491,16 +1491,16 @@ ChallengeCupPrizeCards:
 	dw MEWTWO_LV60
 	tx MewtwoTradeCardName
 
-	dw MEW_LV8
+	dw MIMIKYU
 	tx MewTradeCardName
 
-	dw JIGGLYPUFF_LV12
+	dw TOGEKISS
 	tx JigglypuffTradeCardName
 
 	dw SUPER_ENERGY_RETRIEVAL
 	tx SuperEnergyRetrievalTradeCardName
 
-	dw FLYING_PIKACHU
+	dw SHINX
 	tx FlyingPikachuTradeCardName
 .end
 
@@ -1543,7 +1543,7 @@ LegendaryCards:
 	dw ARTICUNO_LV37
 	tx ArticunoLegendaryCardName
 
-	dw DRAGONITE_LV41
+	dw LUGIA
 	tx DragoniteLegendaryCardName
 
 LegendaryCardEvents:

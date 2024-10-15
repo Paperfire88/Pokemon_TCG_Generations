@@ -84,7 +84,7 @@ HandleDamageReductionExceptSubstatus2::
 	cp POKEMON_POWER
 	ret z
 	ld hl, wTempNonTurnDuelistCardID + 1
-	cphl MR_MIME
+	cphl SPIRITOMB
 	jr z, .prevent_less_than_30_damage ; invisible wall
 	cphl KABUTO
 	jr z, .halve_damage2 ; kabuto armor
@@ -163,7 +163,7 @@ HandleDamageReductionOrNoDamageFromPkmnPowerEffects::
 	ld de, 0
 	ret
 
-; when MACHAMP is damaged, if its Strikes Back is active, the
+; when KROOKODILE is damaged, if its Strikes Back is active, the
 ; attacking Pokemon (turn holder's arena Pokemon) takes 10 damage.
 ; ignore if damage taken at de is 0.
 ; used to bounce back a damaging attack.
@@ -175,7 +175,7 @@ HandleStrikesBack_AgainstDamagingAttack::
 	or a
 	ret nz
 	ld hl, wTempNonTurnDuelistCardID + 1 ; ID of defending Pokemon
-	cphl MACHAMP
+	cphl KROOKODILE
 	ret nz
 	ld de, MUK
 	call CountPokemonIDInBothPlayAreas
@@ -227,7 +227,7 @@ HandleStrikesBack_AgainstDamagingAttack::
 	pop hl
 	ret
 
-; return carry if NShield or Transparency activate (if MEW_LV8 or HAUNTER_LV17 is
+; return carry if NShield or Transparency activate (if MIMIKYU or DUSCLOPS is
 ; the turn holder's arena Pokemon), and print their corresponding text if so
 HandleNShieldAndTransparency::
 	push de
@@ -235,9 +235,9 @@ HandleNShieldAndTransparency::
 	add e
 	call GetTurnDuelistVariable
 	call GetCardIDFromDeckIndex
-	cp16 MEW_LV8
+	cp16 MIMIKYU
 	jr z, .nshield
-	cp16 HAUNTER_LV17
+	cp16 DUSCLOPS
 	jr z, .transparency
 .done
 	pop de
@@ -369,7 +369,7 @@ HandleNoDamageOrEffectSubstatus::
 	ret nc
 .pkmn_power
 	ld hl, wTempNonTurnDuelistCardID + 1
-	cphl MEW_LV8
+	cphl MIMIKYU
 	jr z, .neutralizing_shield
 	or a
 	ret
@@ -395,12 +395,12 @@ HandleNoDamageOrEffectSubstatus::
 	ldtx hl, NoDamageOrEffectDueToNShieldText
 	jr .no_damage_or_effect
 
-; if the Pokemon being attacked is HAUNTER_LV17, and its Transparency is active,
+; if the Pokemon being attacked is DUSCLOPS, and its Transparency is active,
 ; there is a 50% chance that any damage or effect is prevented
 ; return carry if damage is prevented
 HandleTransparency::
 	ld hl, wTempNonTurnDuelistCardID + 1
-	cphl HAUNTER_LV17
+	cphl DUSCLOPS
 	jr z, .transparency
 .done
 	or a
@@ -589,7 +589,7 @@ GetLoadedCard1RetreatCost::
 	cp -1
 	jr z, .no_more_bench
 	call GetCardIDFromDeckIndex
-	cp16 DODRIO
+	cp16 BRAVIARY
 	jr nz, .not_dodrio
 	inc c
 .not_dodrio
@@ -639,7 +639,7 @@ CheckCantUseTrainerDueToHeadache::
 
 ; return carry if any duelist has Aerodactyl and its Prehistoric Power Pkmn Power is active
 IsPrehistoricPowerActive::
-	ld de, AERODACTYL
+	ld de, TYRANTRUM
 	call CountPokemonIDInBothPlayAreas
 	ret nc
 	ld de, MUK
@@ -765,12 +765,12 @@ HandleDestinyBondSubstatus::
 	ldtx hl, KnockedOutDueToDestinyBondText
 	jp DrawWideTextBox_WaitForInput
 
-; when MACHAMP is damaged, if its Strikes Back is active, the
+; when KROOKODILE is damaged, if its Strikes Back is active, the
 ; attacking Pokemon (turn holder's arena Pokemon) takes 10 damage.
 ; used to bounce back an attack of the RESIDUAL category
 HandleStrikesBack_AgainstResidualAttack::
 	ld hl, wTempNonTurnDuelistCardID + 1
-	cphl MACHAMP
+	cphl KROOKODILE
 	jr z, .strikes_back
 	ret
 .strikes_back

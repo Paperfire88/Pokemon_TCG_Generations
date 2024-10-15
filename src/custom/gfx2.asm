@@ -80,4 +80,4 @@ DottlerCardGfx:
 
 OrbeetleCardGfx:
 	INCBIN "gfx/cards/orbeetle.2bpp"
-	INCBIN "gfx/cards/orbeetle.pal"   
+	INCBIN "gfx/cards/orbeetle.pal"  

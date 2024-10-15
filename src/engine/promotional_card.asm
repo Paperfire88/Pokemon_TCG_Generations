@@ -16,7 +16,7 @@ _ShowPromotionalCardScreen:
 	call .legendary_card_text
 	ld de, ZAPDOS_LV68
 	call .legendary_card_text
-	ld de, DRAGONITE_LV41
+	ld de, LUGIA
 .legendary_card_text
 	ldtx hl, ReceivedLegendaryCardText
 	jr .print_text
@@ -27,12 +27,12 @@ _ShowPromotionalCardScreen:
 	cp16 BLASTOISE
 	jr z, .print_text
 	ldtx hl, ReceivedPromotionalFlyingPikachuText
-	cp16 FLYING_PIKACHU
+	cp16 SHINX
 	jr z, .print_text
 	ldtx hl, ReceivedPromotionalSurfingPikachuText
-	cp16 SURFING_PIKACHU_LV13
+	cp16 LUXIO
 	jr z, .print_text
-	cp16 SURFING_PIKACHU_ALT_LV13
+	cp16 LUXRAY
 	jr z, .print_text
 	ldtx hl, ReceivedPromotionalCardText
 .print_text

@@ -347,13 +347,13 @@ AIDecideEvolution:
 	cp PIKACHU_DECK_ID
 	jr nz, .check_score
 	ld hl, wLoadedCard1ID + 1
-	cphl PIKACHU_LV12
+	cphl BLITZLE
 	jr z, .pikachu
-	cphl PIKACHU_LV14
+	cphl HELIOPTILE
 	jr z, .pikachu
-	cphl PIKACHU_LV16
+	cphl EMOLGA
 	jr z, .pikachu
-	cphl PIKACHU_ALT_LV16
+	cphl PINCURCHIN
 	jr nz, .check_score
 .pikachu
 	ld a, 3
@@ -403,9 +403,9 @@ AIDecideSpecialEvolutions:
 	ld hl, wLoadedCard2ID + 1
 	cphl CHARMELEON
 	jr z, .charmeleon
-	cphl MAGIKARP
+	cphl SNEASEL
 	jr z, .magikarp
-	cphl DRAGONAIR
+	cphl SLIGGOO
 	jr z, .dragonair
 	ret
 
@@ -458,7 +458,7 @@ AIDecideSpecialEvolutions:
 
 .legendary_ronald
 	ld hl, wLoadedCard2ID + 1
-	cphl DRAGONAIR
+	cphl SLIGGOO
 	jr z, .dragonair
 	ret
 
@@ -592,7 +592,7 @@ AIDecidePlayLegendaryBirds:
 	call SwapTurn
 	call GetCardIDFromDeckIndex
 	call SwapTurn
-	cp16 SNORLAX
+	cp16 REGIDRAGO
 	jr z, .subtract
 
 ; add

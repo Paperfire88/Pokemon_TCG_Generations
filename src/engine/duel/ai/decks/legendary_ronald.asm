@@ -27,8 +27,8 @@ AIActionTable_LegendaryRonald:
 	jp AIPickPrizeCards
 
 .list_arena
-	dw KANGASKHAN
-	dw DRATINI
+	dw CHATOT
+	dw GOOMY
 	dw EEVEE
 	dw ZAPDOS_LV68
 	dw ARTICUNO_LV37
@@ -36,16 +36,16 @@ AIActionTable_LegendaryRonald:
 	dw NULL
 
 .list_bench
-	dw KANGASKHAN
-	dw DRATINI
+	dw CHATOT
+	dw GOOMY
 	dw EEVEE
 	dw NULL
 
 .list_play_hand
 	dw MOLTRES_LV37
 	dw ZAPDOS_LV68
-	dw KANGASKHAN
-	dw DRATINI
+	dw CHATOT
+	dw GOOMY
 	dw EEVEE
 	dw ARTICUNO_LV37
 	dw NULL
@@ -55,24 +55,24 @@ AIActionTable_LegendaryRonald:
 	dw NULL
 
 .list_energy
-	ai_energy FLAREON_LV22,   3, +0
+	ai_energy NUMEL,   3, +0
 	ai_energy MOLTRES_LV37,   3, +0
-	ai_energy VAPOREON_LV29,  3, +0
+	ai_energy DREDNAW,  3, +0
 	ai_energy ARTICUNO_LV37,  0, -8
-	ai_energy JOLTEON_LV24,   4, +0
+	ai_energy MANECTRIC,   4, +0
 	ai_energy ZAPDOS_LV68,    0, -8
-	ai_energy KANGASKHAN,     4, -1
+	ai_energy CHATOT,     4, -1
 	ai_energy EEVEE,          3, +0
-	ai_energy DRATINI,        3, +0
-	ai_energy DRAGONAIR,      4, +0
-	ai_energy DRAGONITE_LV41, 3, +0
+	ai_energy GOOMY,        3, +0
+	ai_energy SLIGGOO,      4, +0
+	ai_energy LUGIA, 3, +0
 	dw NULL
 
 .list_prize
 	dw MOLTRES_LV37
 	dw ARTICUNO_LV37
 	dw ZAPDOS_LV68
-	dw DRAGONITE_LV41
+	dw LUGIA
 	dw GAMBLER
 	dw NULL
 

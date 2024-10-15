@@ -28,7 +28,7 @@ CreateCardSetList:
 	jr nz, .loop_all_cards
 
 ; it's same set as input
-	cp16 VENUSAUR_LV64
+	cp16 CELEBI
 	jp z, .SetVenusaurLv64OwnedFlag
 	cp16 MEW_LV15
 	jp z, .SetMewLv15OwnedFlag
@@ -191,7 +191,7 @@ CreateCardSetList:
 .PlaceVenusaurLv64InList
 	push af
 	push hl
-	ld de, VENUSAUR_LV64
+	ld de, CELEBI
 ;	fallthrough
 
 ; places card in register de directly in the list
@@ -406,7 +406,7 @@ PrintCardSetListEntries:
 	ld d, [hl]
 	cp16 DOUBLE_COLORLESS_ENERGY + 1
 	jr c, .energy_card
-	cp16 VENUSAUR_LV64
+	cp16 CELEBI
 	jr z, .phantom_card
 	cp16 MEW_LV15
 	jr z, .phantom_card

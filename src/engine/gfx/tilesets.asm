@@ -31,7 +31,7 @@ Tilesets:
 	tileset LaboratoryGfx,                  86 ; TILESET_LABORATORY
 	tileset CharizardIntroGfx,              96 ; TILESET_CHARIZARD_INTRO
 	tileset ScytherIntroGfx,                96 ; TILESET_SCYTHER_INTRO
-	tileset AerodactylIntroGfx,             96 ; TILESET_AERODACTYL_INTRO
+	tileset AerodactylIntroGfx,             96 ; TILESET_TYRANTRUM_INTRO
 	tileset SolidTiles1,                     4 ; TILESET_SOLID_TILES_1
 	tileset SolidTiles2,                     4 ; TILESET_SOLID_TILES_2
 	tileset PlayerGfx,                      36 ; TILESET_PLAYER

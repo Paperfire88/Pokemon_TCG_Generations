@@ -31,12 +31,12 @@ AIActionTable_LegendaryZapdos:
 	dw VOLTORB
 	dw EEVEE
 	dw VIKAVOLT
-	dw ZAPDOS_LV64
+	dw ZERAORA
 	dw ZAPDOS_LV68
 	dw NULL
 
 .list_bench
-	dw ZAPDOS_LV64
+	dw ZERAORA
 	dw VIKAVOLT
 	dw EEVEE
 	dw VOLTORB
@@ -55,7 +55,7 @@ AIActionTable_LegendaryZapdos:
 	ai_energy ELECTABUZZ_LV35, 2, -1
 	ai_energy JOLTEON_LV29,    3, +1
 	ai_energy VIKAVOLT,     4, +2
-	ai_energy ZAPDOS_LV64,     4, +2
+	ai_energy ZERAORA,     4, +2
 	ai_energy ZAPDOS_LV68,     3, +1
 	ai_energy EEVEE,           3, +0
 	dw NULL

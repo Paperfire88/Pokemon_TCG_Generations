@@ -27,49 +27,49 @@ AIActionTable_PowerfulRonald:
 	jp AIPickPrizeCards
 
 .list_arena
-	dw KANGASKHAN
+	dw CHATOT
 	dw ELECTABUZZ_LV35
 	dw HITMONCHAN
-	dw MR_MIME
+	dw SPIRITOMB
 	dw LICKITUNG
 	dw HITMONLEE
-	dw TAUROS
-	dw JYNX
+	dw STANTLER
+	dw ESPEON
 	dw MEWTWO_LV53
-	dw DODUO
+	dw RUFFLET
 	dw NULL
 
 .list_bench
-	dw KANGASKHAN
+	dw CHATOT
 	dw HITMONLEE
 	dw HITMONCHAN
-	dw TAUROS
-	dw DODUO
-	dw JYNX
+	dw STANTLER
+	dw RUFFLET
+	dw ESPEON
 	dw MEWTWO_LV53
 	dw ELECTABUZZ_LV35
-	dw MR_MIME
+	dw SPIRITOMB
 	dw LICKITUNG
 	dw NULL
 
 .list_retreat
-	ai_retreat KANGASKHAN, -1
-	ai_retreat DODUO,      -1
-	ai_retreat DODRIO,     -1
+	ai_retreat CHATOT, -1
+	ai_retreat RUFFLET,      -1
+	ai_retreat BRAVIARY,     -1
 	dw NULL
 
 .list_energy
 	ai_energy ELECTABUZZ_LV35, 2, +1
 	ai_energy HITMONLEE,       3, +1
 	ai_energy HITMONCHAN,      3, +1
-	ai_energy MR_MIME,         2, +0
-	ai_energy JYNX,            3, +0
+	ai_energy SPIRITOMB,         2, +0
+	ai_energy ESPEON,            3, +0
 	ai_energy MEWTWO_LV53,     2, +0
-	ai_energy DODUO,           3, -1
-	ai_energy DODRIO,          3, -1
+	ai_energy RUFFLET,           3, -1
+	ai_energy BRAVIARY,          3, -1
 	ai_energy LICKITUNG,       2, +0
-	ai_energy KANGASKHAN,      4, -1
-	ai_energy TAUROS,          3, +0
+	ai_energy CHATOT,      4, -1
+	ai_energy STANTLER,          3, +0
 	dw NULL
 
 .list_prize

@@ -27,9 +27,9 @@ AIActionTable_ZappingSelfdestruct:
 	jp AIPickPrizeCards
 
 .list_arena
-	dw KANGASKHAN
+	dw CHATOT
 	dw ELECTABUZZ_LV35
-	dw TAUROS
+	dw STANTLER
 	dw MAGNEMITE_LV13
 	dw VOLTORB
 	dw NULL
@@ -38,8 +38,8 @@ AIActionTable_ZappingSelfdestruct:
 	dw MAGNEMITE_LV13
 	dw VOLTORB
 	dw ELECTABUZZ_LV35
-	dw TAUROS
-	dw KANGASKHAN
+	dw STANTLER
+	dw CHATOT
 	dw NULL
 
 .list_retreat
@@ -52,12 +52,12 @@ AIActionTable_ZappingSelfdestruct:
 	ai_energy VOLTORB,         3, +1
 	ai_energy ELECTRODE_LV35,  3, +0
 	ai_energy ELECTABUZZ_LV35, 1, +0
-	ai_energy KANGASKHAN,      2, -2
-	ai_energy TAUROS,          3, +0
+	ai_energy CHATOT,      2, -2
+	ai_energy STANTLER,          3, +0
 	dw NULL
 
 .list_prize
-	dw KANGASKHAN
+	dw CHATOT
 	dw NULL
 
 .store_list_pointers

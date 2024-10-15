@@ -1,4 +1,4 @@
-JynxCardGfx::
+EspeonCardGfx::
 	INCBIN "gfx/cards/jynx.2bpp"
 	INCBIN "gfx/cards/jynx.pal"
 
@@ -6,7 +6,7 @@ NidokingCardGfx::
 	INCBIN "gfx/cards/nidoking.2bpp"
 	INCBIN "gfx/cards/nidoking.pal"	
 
-SnorlaxCardGfx::
+RegidragoCardGfx::
 	INCBIN "gfx/cards/snorlax.2bpp"
 	INCBIN "gfx/cards/snorlax.pal"	
 

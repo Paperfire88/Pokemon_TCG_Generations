@@ -160,6 +160,9 @@ INCLUDE "custom/gfx.asm"
 SECTION "Custom Gfx2", ROMX
 INCLUDE "custom/gfx2.asm"
 
+SECTION "Custom Gfx3", ROMX
+INCLUDE "custom/gfx3.asm"
+
 SECTION "Gfx", ROMX
 INCLUDE "engine/gfx/gfx_table_pointers.asm"
 INCLUDE "engine/gfx/tilemaps.asm"

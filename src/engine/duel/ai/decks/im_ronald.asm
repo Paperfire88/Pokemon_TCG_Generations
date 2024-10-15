@@ -27,10 +27,10 @@ AIActionTable_ImRonald:
 	jp AIPickPrizeCards
 
 .list_arena
-	dw LAPRAS
+	dw CHEWTLE
 	dw SEEL
 	dw CHARMANDER
-	dw CUBONE
+	dw LARVITAR
 	dw SQUIRTLE
 	dw GROWLITHE
 	dw NULL
@@ -39,9 +39,9 @@ AIActionTable_ImRonald:
 	dw CHARMANDER
 	dw SQUIRTLE
 	dw SEEL
-	dw CUBONE
+	dw LARVITAR
 	dw GROWLITHE
-	dw LAPRAS
+	dw CHEWTLE
 	dw NULL
 
 .list_retreat
@@ -56,13 +56,13 @@ AIActionTable_ImRonald:
 	ai_energy WARTORTLE,      3, +0
 	ai_energy SEEL,           3, +0
 	ai_energy DEWGONG,        4, +0
-	ai_energy LAPRAS,         3, +0
-	ai_energy CUBONE,         3, +0
-	ai_energy MAROWAK_LV26,   3, +0
+	ai_energy CHEWTLE,         3, +0
+	ai_energy LARVITAR,         3, +0
+	ai_energy TYRANITAR,   3, +0
 	dw NULL
 
 .list_prize
-	dw LAPRAS
+	dw CHEWTLE
 	dw NULL
 
 .store_list_pointers

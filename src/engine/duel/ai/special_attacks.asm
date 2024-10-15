@@ -22,15 +22,15 @@ HandleSpecialAIAttacks:
 	jp z, .SwordsDanceAndFocusEnergy
 	cp16 KRABBY
 	jp z, .CallForFamily
-	cp16 VAPOREON_LV29
+	cp16 DREDNAW
 	jp z, .SwordsDanceAndFocusEnergy
 	cp16 ELECTRODE_LV42
 	jp z, .ChainLightning
-	cp16 MAROWAK_LV26
+	cp16 TYRANITAR
 	jp z, .CallForFriend
 	cp16 MEW_LV23
 	jp z, .DevolutionBeam
-	cp16 JIGGLYPUFF_LV13
+	cp16 STUFFUL
 	jp z, .FriendshipSong
 	cp16 PORYGON
 	jp z, .Conversion
@@ -42,15 +42,15 @@ HandleSpecialAIAttacks:
 	jp z, .MixUp
 	cp16 ZAPDOS_LV68
 	jp z, .BigThunder
-	cp16 KANGASKHAN
+	cp16 CHATOT
 	jp z, .Fetch
-	cp16 DUGTRIO
+	cp16 SANDACONDA
 	jp z, .Earthquake
 	cp16 ELECTRODE_LV35
 	jp z, .EnergySpike
 	cp16 GOLDUCK
 	jp z, .HyperBeam
-	cp16 DRAGONAIR
+	cp16 SLIGGOO
 	jp z, .HyperBeam
 
 ; return zero score.
@@ -100,19 +100,19 @@ HandleSpecialAIAttacks:
 ; if any of them are found, return a score of
 ; $80 + slots available in bench.
 .CallForFriend:
-	ld de, GEODUDE
+	ld de, TRAPINCH
 	ld a, CARD_LOCATION_DECK
 	call CheckIfAnyCardIDinLocation
 	jr c, .found_fighting_card
-	ld de, ONIX
+	ld de, HAWLUCHA
 	ld a, CARD_LOCATION_DECK
 	call CheckIfAnyCardIDinLocation
 	jr c, .found_fighting_card
-	ld de, CUBONE
+	ld de, LARVITAR
 	ld a, CARD_LOCATION_DECK
 	call CheckIfAnyCardIDinLocation
 	jr c, .found_fighting_card
-	ld de, RHYHORN
+	ld de, CUFANT
 	ld a, CARD_LOCATION_DECK
 	call CheckIfAnyCardIDinLocation
 	jr c, .found_fighting_card

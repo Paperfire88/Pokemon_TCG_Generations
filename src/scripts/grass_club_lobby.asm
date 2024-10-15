@@ -83,11 +83,11 @@ Script_Lass2:
 	print_text_quit_fully Text06f6
 
 .ows_e67f
-	jump_if_card_owned CLEFAIRY, .ows_e686
+	jump_if_card_owned TOGEPI, .ows_e686
 	print_text_quit_fully Text06f7
 
 .ows_e686
-	jump_if_card_in_collection CLEFAIRY, .ows_e68d
+	jump_if_card_in_collection TOGEPI, .ows_e68d
 	print_text_quit_fully Text06f8
 
 .ows_e68d
@@ -95,9 +95,9 @@ Script_Lass2:
 	set_event EVENT_LASS2_TRADE_STATE, LASS2_TRADE_3_AVAILABLE
 	print_npc_text Text06f9
 	print_text Text06fa
-	take_card CLEFAIRY
-	give_card PIKACHU_LV16
-	show_card_received_screen PIKACHU_LV16
+	take_card TOGEPI
+	give_card EMOLGA
+	show_card_received_screen EMOLGA
 	print_text_quit_fully Text06f3
 
 .ows_e6a1

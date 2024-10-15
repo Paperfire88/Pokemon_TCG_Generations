@@ -28,32 +28,32 @@ AIActionTable_FirstStrike:
 
 .list_arena
 	dw HITMONCHAN
-	dw MACHOP
+	dw SANDILE
 	dw HITMONLEE
-	dw MANKEY
+	dw CROAGUNK
 	dw NULL
 
 .list_bench
-	dw MACHOP
+	dw SANDILE
 	dw HITMONLEE
 	dw HITMONCHAN
-	dw MANKEY
+	dw CROAGUNK
 	dw NULL
 
 .list_retreat
-	ai_retreat MACHOP,  -1
-	ai_retreat MACHOKE, -1
-	ai_retreat MANKEY,  -2
+	ai_retreat SANDILE,  -1
+	ai_retreat KROKOROK, -1
+	ai_retreat CROAGUNK,  -2
 	dw NULL
 
 .list_energy
-	ai_energy MACHOP,     3, +0
-	ai_energy MACHOKE,    4, +0
-	ai_energy MACHAMP,    4, -1
+	ai_energy SANDILE,     3, +0
+	ai_energy KROKOROK,    4, +0
+	ai_energy KROOKODILE,    4, -1
 	ai_energy HITMONCHAN, 3, +0
 	ai_energy HITMONLEE,  3, +0
-	ai_energy MANKEY,     2, -1
-	ai_energy PRIMEAPE,   3, -1
+	ai_energy CROAGUNK,     2, -1
+	ai_energy TOXICROAK,   3, -1
 	dw NULL
 
 .list_prize

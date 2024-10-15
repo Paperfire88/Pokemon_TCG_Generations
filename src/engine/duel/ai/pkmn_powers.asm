@@ -463,7 +463,7 @@ HandleAIPkmnPowers:
 	call HandleAIShift
 	jr .next_1
 .check_peek
-	cp16 MANKEY
+	cp16 DROWZEE
 	jr nz, .check_strange_behavior
 	call HandleAIPeek
 	jr .next_1
@@ -473,7 +473,7 @@ HandleAIPkmnPowers:
 	call HandleAIStrangeBehavior
 	jr .next_1
 .check_curse
-	cp16 GENGAR
+	cp16 DUSKNOIR
 	jr nz, .next_1
 	call z, HandleAICurse
 	jr c, .done
@@ -1044,11 +1044,11 @@ HandleAIDamageSwap:
 	call GetCardIDFromDeckIndex
 	cp16 ALAKAZAM
 	jr z, .ok
-	cp16 KADABRA
+	cp16 ZWEILOUS
 	jr z, .ok
-	cp16 ABRA
+	cp16 DEINO
 	jr z, .ok
-	cp16 MR_MIME
+	cp16 SPIRITOMB
 	ret nz
 
 .ok
@@ -1137,13 +1137,13 @@ HandleAIDamageSwap:
 	call GetTurnDuelistVariable
 	push de
 	call GetCardIDFromDeckIndex
-	cp16 CHANSEY
+	cp16 AUDINO
 	jr z, .found_candidate
-	cp16 KANGASKHAN
+	cp16 CHATOT
 	jr z, .found_candidate
-	cp16 SNORLAX
+	cp16 REGIDRAGO
 	jr z, .found_candidate
-	cp16 MR_MIME
+	cp16 SPIRITOMB
 	jr z, .found_candidate
 	pop de
 .next_play_area

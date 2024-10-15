@@ -2,10 +2,10 @@ DamageSwapDescription:
 	text "As often as you like during your"
 	line "turn (before your attack), you may"
 	line "move 1 damage counter from 1 of your"
-	line "Pokémon to another as long as you"
-	line "don't Knock Out that Pokémon."
-	line "This power can't be used if"
-	line "is Asleep, Confused, or Paralyzed."
+	line "PKMN to another as long as you"
+	line "don't Knock Out that PKMN. This PKMN"
+	line "power can't be used if this PKMN is" 
+	line "affected by a Special Condition."
 	done
 
 AlakazamDescription:
@@ -19,8 +19,8 @@ SlowpokeName:
 	done
 
 SlowpokesAmnesiaDescription:
-	text "Choose 1 of the Defending Pokémon's"
-	line "attacks. That Pokémon can't use"
+	text "Choose 1 of the Defending PKMN's"
+	line "attacks. That PKMN can't use"
 	line "that attack during your opponent's"
 	line "next turn."
 	done
@@ -69,7 +69,7 @@ StrangeBehaviorDescription:
 	text "As often as you like during your"
 	line "turn (before your attack), you may"
 	line "move 1 damage counter from 1 of your"
-	line "Pokémon to this PKMN as long as you"
+	line "PKMN to this PKMN as long as you"
 	line "don't Knock Out it. This power"
 	line "can't be used if is Asleep,"
 	line "Confused, or Paralyzed."
@@ -85,7 +85,7 @@ SlowbroDescription:
 	line "OG illustrator: (You Iribi)"
 	done
 
-GastlyName:
+DuskullName:
 	text "Duskull"
 	done
 
@@ -95,7 +95,7 @@ SleepingGasName:
 
 MayInflictSleepDescription:
 	text "Flip a coin. If heads, the Defending"
-	line "Pokémon is now Asleep."
+	line "PKMN is now Asleep."
 	done
 
 DestinyBondName:
@@ -105,9 +105,9 @@ DestinyBondName:
 DestinyBondDescription:
 	text "Discard 1 <PSYCHIC> Energy attached to this"
 	line "PKMN in order to use this attack"
-	line "If a Pokémon Knocks Out THIS PKMN"
+	line "If a PKMN Knocks Out THIS PKMN"
 	line "during your opponent's next turn,"
-	line "Knock Out that Pokémon."
+	line "Knock Out that PKMN."
 	done
 
 GasName:
@@ -141,7 +141,7 @@ GastlyLv17Description:
 	line "OG illustrator: (Ken Sugimori)"
 	done
 
-HaunterName:
+DusclopsName:
 	text "Dusclops"
 	done
 
@@ -178,10 +178,10 @@ DreamEaterDescription:
 	line "is prevented, you may remove 1"
 	line "damage counter from This PKMN."
 	line "You can't use this attack unless"
-	line "the Defending Pokémon is Asleep."
+	line "the Defending PKMN is Asleep."
 	done
 
-GengarName:
+DusknoirName:
 	text "Dusknoir"
 	done
 
@@ -193,10 +193,11 @@ CurseDescription:
 	text "Once during your turn (before your"
 	line "attack), you may move 1 damage"
 	line "counter from 1 of your opponent's"
-	line "Pokémon to another (even if it would"
-	line "Knock Out the other Pokémon)."
-	line "This power can't be used if"
-	line "is Asleep, Confused, or Paralyzed."
+	line "PKMN to another (even if it would"
+	line "Knock Out the other PKMN)."
+	line "This PKMN power can't be used if" 
+	line "this PKMN is affected by a" 
+	line "Special Condition."
 	done
 
 DarkMindName:
@@ -205,10 +206,10 @@ DarkMindName:
 
 DarkMindDescription:
 	text "If your opponent has any Benched"
-	line "Pokémon, choose 1 of them and this"
+	line "PKMN, choose 1 of them and this"
 	line "attack does 10 damage to it."
 	line "(Don't apply Weakness and Resistance"
-	line "for Benched Pokémon.)"
+	line "for Benched PKMN.)"
 	done
 
 ShadowName:
@@ -256,7 +257,7 @@ HypnoDescription:
 	line "OG illustrator: (Hitoshi Ariga)"
 	done
 
-MrMimeName:
+SpiritombName:
 	text "Spiritomb"
 	done
 
@@ -274,8 +275,9 @@ InvisibleWallDescription:
 	done
 
 InvisibleWallDescriptionCont:
-	text "This power can't be used if"
-	line "is Asleep, Confused, or Paralyzed."
+	text "This PKMN power can't be used if" 
+	line "this PKMN is affected by a" 
+	line "Special Condition."
 	done
 
 MeditateName:
@@ -285,7 +287,7 @@ MeditateName:
 MrMimesMeditateDescription:
 	text "Does 10 damage plus 10 more damage"
 	line "for each damage counter on the"
-	line "Defending Pokémon."
+	line "Defending PKMN."
 	done
 
 BarrierName:
@@ -298,7 +300,7 @@ MrMimeDescription:
 	line "OG illustrator: (HYOGONOSUKE)"
 	done
 
-JynxName:
+EspeonName:
 	text "Espeon"
 	done
 
@@ -310,7 +312,7 @@ DoubleAttackX10Description:
 JynxsMeditateDescription:
 	text "Does damage plus 10 more damage"
 	line "for each damage counter on the"
-	line "Defending Pokémon."
+	line "Defending PKMN."
 	done
 
 HumanShapeName:
@@ -334,7 +336,7 @@ PsychicName:
 PsychicDescription:
 	text "Does damage plus 10 more damage"
 	line "for each Energy card attached to the"
-	line "Defending Pokémon."
+	line "Defending PKMN."
 	done
 
 BarrierDescription:
@@ -386,7 +388,7 @@ NeutralizingShieldName:
 NeutralizingShieldDescription:
 	text "Prevent all effects of attacks,"
 	line "including damage, done by"
-	line "evolved Pokémon (excluding your"
+	line "evolved PKMN (excluding your"
 	line "own). This power stops working while"
 	line "this PKMN is Asleep, Confused, or"
 	line "Paralyzed."
@@ -408,7 +410,7 @@ MysteryAttackName:
 
 MysteryAttackDescription:
 	text "Does a random amount of damage to"
-	line "the Defending Pokémon. Flip a coin."
+	line "the Defending PKMN. Flip a coin."
 	line "If heads, apply a random effect to"
 	line "the defending pokemon."
 	done
@@ -426,7 +428,7 @@ PsywaveName:
 PsywaveDescription:
 	text "Does 10 damage times the number of"
 	line "Energy cards attached to the"
-	line "Defending Pokémon."
+	line "Defending PKMN."
 	done
 
 DevolutionBeamName:
@@ -434,10 +436,10 @@ DevolutionBeamName:
 	done
 
 DevolutionBeamDescription:
-	text "Choose an evolved Pokémon (Your"
+	text "Choose an evolved PKMN (Your"
 	line "own or your opponent's). Return"
 	line "the highest stage evolution card"
-	line "on that Pokémon to Its player's"
+	line "on that PKMN to Its player's"
 	line "hand."
 	done
 
@@ -466,7 +468,7 @@ MirrorMoveName:
 PidgeottosMirrorMoveDescription:
 	text "If this card was attacked last turn,"
 	line "do the final result of that attack"
-	line "on the Defending Pokémon."
+	line "on the Defending PKMN."
 	done
 
 BirdName:
@@ -489,7 +491,7 @@ SlicingWindName:
 
 SlicingWildDescription:
 	text "Does 30 damage to 1 of your"
-	line "opponent's Pokémon chosen at random."
+	line "opponent's PKMN chosen at random."
 	line "Don't apply Weakness and Resistance"
 	line "for this attack. (Any other effects"
 	line "that would happen after applying"
@@ -522,8 +524,8 @@ HurricaneName:
 
 HurricaneDescription:
 	text "Unless this attack Knocks Out the"
-	line "Defending Pokémon, return the"
-	line "Defending Pokémon and all cards"
+	line "Defending PKMN, return the"
+	line "Defending PKMN and all cards"
 	line "attached to it to your opponent's"
 	line "hand."
 	done
@@ -534,7 +536,7 @@ Pidgeot2Description:
 	line "OG illustrator: (Kent Kanetsuna)"
 	done
 
-RattataName:
+ZigzagoonName:
 	text "Zigzagoon"
 	done
 
@@ -548,7 +550,7 @@ RattataDescription:
 	line "OG illustrator: (Sumiyoshi Kizuki)"
 	done
 
-RaticateName:
+LinooneName:
 	text "Linoone"
 	done
 
@@ -557,7 +559,7 @@ SuperFangName:
 	done
 
 SuperFangDescription:
-	text "Does damage to the Defending Pokémon"
+	text "Does damage to the Defending PKMN"
 	line "equal to half the Defending"
 	line "PKMN remaining HP (rounded up to the"
 	line "nearest 10). Then, Flip a coin."
@@ -581,7 +583,7 @@ PeckName:
 SpearowsMirrorMoveDescription:
 	text "If this card was attacked last turn,"
 	line "do the final result of that attack"
-	line "on the Defending Pokémon."
+	line "on the Defending PKMN."
 	done
 
 SpearowDescription:
@@ -601,7 +603,7 @@ FearowsAgilityDescription:
 	line "damage, done to this PKMN."
 	done
 
-DrillPeckName:
+BraveBirdName:
 	text "Brave Bird"
 	done
 
@@ -615,7 +617,7 @@ FearowDescription:
 	line "OG illustrator: (Sanosuke Sakuma)"
 	done
 
-ClefairyName:
+TogepiName:
 	text "Togepi"
 	done
 
@@ -628,7 +630,7 @@ MetronomeName:
 	done
 
 ClefairysMetronomeDescription:
-	text "Choose 1 of the Defending Pokémon's"
+	text "Choose 1 of the Defending PKMN's"
 	line "attacks. Metronome copies that"
 	line "attack except for its Energy costs."
 	line "(No matter what type the Defending"
@@ -646,12 +648,12 @@ ClefairyDescription:
 	line "OG illustrator: (Naoyo Kimura)"
 	done
 
-ClefableName:
+TogeticName:
 	text "Togetic"
 	done
 
 ClefablesMetronomeDescription:
-	text "Choose 1 of the Defending Pokémon's"
+	text "Choose 1 of the Defending PKMN's"
 	line "attacks. Metronome copies that"
 	line "attack except for its Energy costs."
 	line "(No matter what type the Defending"
@@ -672,7 +674,7 @@ ClefableDescription:
 	line "OG illustrator: (Kanako Eo)"
 	done
 
-JigglypuffName:
+StuffulName:
 	text "Stufful"
 	done
 
@@ -709,7 +711,7 @@ FriendshipSongName:
 
 FriendshipSongDescription:
 	text "Flip a coin. If heads, put a Basic"
-	line "Pokémon card chosen at random from"
+	line "PKMN card chosen at random from"
 	line "your deck onto your Bench. (You"
 	line "can't use this attack if your Bench"
 	line "is full.)"
@@ -742,7 +744,7 @@ JigglypuffLv14Description:
 	line "OG illustrator: (Sanosuke Sakuma)"
 	done
 
-WigglytuffName:
+BewearName:
 	text "Bewear"
 	done
 
@@ -752,7 +754,7 @@ DoTheWaveName:
 
 DoTheWaveDescription:
 	text "Does 10 more damage for each"
-	line "of your Benched Pokémon."
+	line "of your Benched PKMN."
 	done
 
 WigglytuffDescription:
@@ -771,7 +773,7 @@ CatPunchName:
 
 CatPunchDescription:
 	text "Does 20 damage to 1 of your"
-	line "opponent's Pokémon chosen at random."
+	line "opponent's PKMN chosen at random."
 	line "Don't apply Weakness and Resistance"
 	line "for this attack. (Any other effects"
 	line "that would happen after applying"
@@ -803,7 +805,7 @@ MeowthLv15Description:
 	line "OG illustrator: (Ken Sugimori)"
 	done
 
-PersianName:
+BibarelName:
 	text "Bibarel"
 	done
 
@@ -812,7 +814,7 @@ PounceName:
 	done
 
 PounceDescription:
-	text "If the Defending Pokémon attacks"
+	text "If the Defending PKMN attacks"
 	line "this PKMN during your opponent's"
 	line "next turn, any damage done by the"
 	line "attack is reduced by 10 (after "
@@ -831,7 +833,7 @@ PersianDescription:
 	line "OG illustrator: (Kouki Saitou)"
 	done
 
-FarfetchdName:
+AudinoName:
 	text "Audino"
 	done
 
@@ -862,7 +864,7 @@ FarfetchdDescription:
 	line "OG illustrator: (Naoki Saito)"
 	done
 
-DoduoName:
+RuffletName:
 	text "Rufflet"
 	done
 
@@ -880,7 +882,7 @@ DoduoDescription:
 	line "OG illustrator: (kurumitsu)"
 	done
 
-DodrioName:
+BraviaryName:
 	text "Braviary"
 	done
 
@@ -891,7 +893,7 @@ RetreatAidName:
 RetreatAidDescription:
 	text "As long as this PKMN is Benched, pay"
 	line "<COLORLESS> less to retreat your Active"
-	line "Pokémon."
+	line "PKMN."
 	done
 
 DodriosRageDescription:
@@ -909,7 +911,7 @@ DodrioDescription:
 	line "OG illustrator: (match)"
 	done
 
-LickitungName:
+DrampaName:
 	text "Drampa"
 	done
 
@@ -927,7 +929,7 @@ LickitungDescription:
 	line "OG illustrator: (tetsuya koizumi)"
 	done
 
-ChanseyName:
+OranguruName:
 	text "Oranguru"
 	done
 
@@ -952,7 +954,7 @@ ChanseyDescription:
 	line "OG illustrator: (Naoki Saito)"
 	done
 
-KangaskhanName:
+ChatotName:
 	text "Chatot"
 	done
 
@@ -978,7 +980,7 @@ KangaskhanDescription:
 	line "OG illustrator: (0313)"
 	done
 
-TaurosName:
+StantlerName:
 	text "Stantler"
 	done
 
@@ -1015,7 +1017,7 @@ MorphDescription:
 	text "Remove all damage counters from"
 	line "Ditto. For the rest of the game,"
 	line "replace Ditto with a copy of a Basic"
-	line "Pokémon card (other than Ditto)"
+	line "PKMN card (other than Ditto)"
 	line "chosen at random from your deck."
 	done
 
@@ -1033,7 +1035,7 @@ TransformName:
 
 DittoDescription:
 	text "Booster Pack: (MYSTERY)"
-	line "OG Set: (Pokémon GO 53)"
+	line "OG Set: (PKMN GO 53)"
 	line "OG illustrator: (Misa Tsutsui)"
 	done
 
@@ -1043,9 +1045,9 @@ TailWagName:
 
 TailWagDescription:
 	text "Flip a coin. If heads, the Defending"
-	line "Pokémon can't attack Eevee during"
+	line "PKMN can't attack Eevee during"
 	line "your opponent's next turn. (Benching"
-	line "or evolving either Pokémon ends this"
+	line "or evolving either PKMN ends this"
 	line "effect.)"
 	done
 
@@ -1068,7 +1070,7 @@ Conversion1Name:
 	done
 
 Conversion1Description:
-	text "If the Defending Pokémon has a"
+	text "If the Defending PKMN has a"
 	line "Weakness, you may change it to a"
 	line "type of your choice other than"
 	line "Colorless."
@@ -1094,7 +1096,7 @@ PorygonDescription:
 	line "OG illustrator: (GIDORA)"
 	done
 
-SnorlaxName:
+RegidragoName:
 	text "Regidrago"
 	done
 
@@ -1121,7 +1123,7 @@ SnorlaxDescription:
 	line "OG illustrator: (DOM)"
 	done
 
-DratiniName:
+GoomyName:
 	text "Goomy"
 	done
 
@@ -1131,7 +1133,7 @@ DratiniDescription:
 	line "OG illustrator: (sui)"
 	done
 
-DragonairName:
+SliggooName:
 	text "Sliggoo"
 	done
 
@@ -1145,7 +1147,7 @@ DragonairDescription:
 	line "OG illustrator: (Saya Tsuruta)"
 	done
 
-DragoniteName:
+GoodraName:
 	text "Goodra"
 	done
 
@@ -1156,10 +1158,10 @@ HealingWindName:
 HealingWindDescription:
 	text "When you put this PKMN into play,"
 	line "remove 2 damage counters from each"
-	line "of your Pokémon. If a Pokémon has "
+	line "of your PKMN. If a PKMN has "
 	line "fewer damage counters than that,"
 	line "remove all of them from that"
-	line "Pokémon."
+	line "PKMN."
 	done
 
 DragoniteLv41Description:
@@ -1176,7 +1178,7 @@ StepInDescription:
 	text "Once during your turn (before your"
 	line "attack), if this card is on your"
 	line "Bench, you may switch it with your"
-	line "Active Pokémon."
+	line "Active PKMN."
 	done
 
 DoubleAttackX40Description:
@@ -1222,7 +1224,7 @@ MrFujiName:
 	done
 
 MrFujiDescription:
-	text "Choose a Pokémon on your Bench."
+	text "Choose a PKMN on your Bench."
 	line "Shuffle it and any cards attached"
 	line "to it into your deck."
 	done
@@ -1243,9 +1245,9 @@ ImakuniName:
 	done
 
 ImakuniDescription:
-	text "Your Active Pokémon is now Confused."
+	text "Your Active PKMN is now Confused."
 	line "Imakuni wants you to play him as a"
-	line "Basic Pokémon, but you can't."
+	line "Basic PKMN, but you can't."
 	line "A mysterious creature not listed in"
 	line "the Pokédex. He asks kids around the"
 	line "world,”Who is cuter-Pikachu or me?”"
@@ -1256,9 +1258,9 @@ PokemonTraderName:
 	done
 
 PokemonTraderDescription:
-	text "Reveal a Pokémon from your hand and" 
-	line "put it into your deck. If you do,"
-	line "search your deck for a Pokémon,"
+	text "Reveal a PKMN from your hand and put" 
+	line "it into your deck. If you do,"
+	line "search your deck for a PKMN,"
 	line "reveal it,and put it into your hand." 
 	line "Then, shuffle your deck."
 	done
@@ -1281,8 +1283,8 @@ ClefairyDollName:
 
 ClefairyDollDescription:
 	text "Play Clefairy Doll as if it were a"
-	line "Basic Pokémon. While in play,"
-	line "Clefairy Doll counts as a Pokémon"
+	line "Basic PKMN. While in play,"
+	line "Clefairy Doll counts as a PKMN"
 	line "(instead of a Trainer card)."
 	line "Clefairy Doll has no attacks, can't"
 	line "retreat, and can't be Asleep,"
@@ -1292,18 +1294,18 @@ ClefairyDollDescription:
 ClefairyDollDescriptionCont:
 	text "If Clefairy Doll is Knocked Out, it"
 	line "doesn't count as a Knocked Out"
-	line "Pokémon. At any time during your"
+	line "PKMN. At any time during your"
 	line "turn before your attack, you may"
 	line "discard Clefairy Doll."
-	line "(Use GameBoy Pokémon Power menu"
+	line "(Use GameBoy PKMN Power menu"
 	line "option to do this.)"
 	done
 
 MysteriousFossilDescription:
 	text "Play Mysterious Fossil as if it were"
-	line "a Basic Pokémon. While in play,"
+	line "a Basic PKMN. While in play,"
 	line "Mysterious Fossil counts as a"
-	line "Pokémon (instead of a Trainer card)."
+	line "PKMN (instead of a Trainer card)."
 	line "Mysterious Fossil has no attacks,"
 	line "can't retreat, and can't be Asleep,"
 	line "Confused, Paralyzed, or Poisoned."
@@ -1312,7 +1314,7 @@ MysteriousFossilDescription:
 MysteriousFossilDescriptionCont:
 	text "If Mysterious Fossil is Knocked Out,"
 	line "it doesn't count as a Knocked Out"
-	line "Pokémon. (Discard it anyway.) At any"
+	line "PKMN. (Discard it anyway.) At any"
 	line "time during your turn before your"
 	line "attack, you may discard Mysterious"
 	line "Fossil from play. (Use GameBoy Poké-"
@@ -1355,7 +1357,7 @@ EnergyRemovalName:
 
 EnergyRemovalDescription:
 	text "Choose 1 Energy card attached to 1"
-	line "of your opponent's Pokémon and"
+	line "of your opponent's PKMN and"
 	line "discard it."
 	done
 
@@ -1365,8 +1367,8 @@ SuperEnergyRemovalName:
 
 SuperEnergyRemovalDescription:
 	text "Discard 1 Energy card attached to 1"
-	line "of your own Pokémon in order to"
-	line "choose 1 of your opponent's Pokémon"
+	line "of your own PKMN in order to"
+	line "choose 1 of your opponent's PKMN"
 	line "and up to 2 Energy cards attached"
 	line "to it. Discard those Energy cards."
 	done
@@ -1376,8 +1378,8 @@ SwitchName:
 	done
 
 SwitchDescription:
-	text "Switch 1 of your Benched Pokémon"
-	line "with your Active Pokémon."
+	text "Switch 1 of your Benched PKMN with"
+	line "your Active PKMN."
 	done
 
 PokemonCenterName:
@@ -1386,10 +1388,10 @@ PokemonCenterName:
 
 PokemonCenterDescription:
 	text "Remove all damage counters from all"
-	line "of your own Pokémon with damage"
+	line "of your own PKMN with damage"
 	line "counters on them, then discard all"
 	line "Energy cards attached to those"
-	line "Pokémon."
+	line "PKMN."
 	done
 
 PokeBallName:
@@ -1399,7 +1401,7 @@ PokeBallName:
 PokeBallDescription:
 	text "Flip a coin. If heads, you may"
 	line "search your deck for any Basic"
-	line "Pokémon or Evolution card. Show that"
+	line "PKMN or Evolution card. Show that"
 	line "card to your opponent, then put it"
 	line "into your hand. Shuffle your deck"
 	line "afterward."

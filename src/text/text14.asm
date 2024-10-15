@@ -2,7 +2,7 @@ NewIntroText1:
 	text "Oh! Why the rush, <RAMNAME>?"
 	line "What? "
 	line "So you're interested in playing"
-	line "the Pokémon Trading Card Game?"
+	line "the PKMN Trading Card Game?"
 	line "Well, playing is certainly more fun"
 	line "than simply collecting the cards!"
 	done
@@ -360,7 +360,7 @@ FlashfireDescription:
 	text "As often as you like during your"
 	line "turn (before your attack), you may"
 	line "take 1 <FIRE> Energy card attached to 1"
-	line "of your Pokémon and attach it to a"
+	line "of your PKMN and attach it to a"
 	line "different one. This power can't be"
 	line "used if is Asleep,"
 	line "Confused, or Paralyzed."
@@ -435,7 +435,7 @@ MeteorMashName:
 MeteorMashDescription:
 	text "Before Doing Damage, Choose 1 of "
 	line "your opponent's Benched Pkmn and"
-	line "switch it with his Active Pokémon."
+	line "switch it with his Active PKMN."
 	line "Your Opponet Must have a PKMN in his"
 	line "Bench in Order to use this Attack."
 	done
@@ -474,7 +474,7 @@ DraconicDreamsName:
 
 DraconicDreamsDescription:
 	text "Search your deck for any Basic"
-	line "Pokémon or Evolution card. Show that"
+	line "PKMN or Evolution card. Show that"
 	line "card to your opponent, then put it"
 	line "into your hand. Shuffle your deck"
 	line "afterward."
@@ -514,7 +514,7 @@ DangerousRougueName:
 
 DangerousRougueDescription:
 	text "In order to Use this Attack you"
-	line "Must Choose a Pokémon on your Bench."
+	line "Must Choose a PKMN on your Bench."
 	line "Shuffle it and any cards attached"
 	line "to it into your deck."
 	done	
@@ -605,7 +605,7 @@ HuntingArrowDescription:
 	line "has any Benched Pkmn, choose 1 of"
 	line "them and this attack does 20 damage"
 	line "to it (Don't apply Weakness and/or"
-	line "Resistance for Benched Pokémon.)"
+	line "Resistance for Benched PKMN.)"
 	done
 
 PunkRockName:
@@ -877,10 +877,10 @@ SleepingMagicName:
 
 SleepingMagicDescription:
 	text "After doing damage, switch 1 of"
-	line "your opponent's Benched Pokémon"
-	line "with the Defending Pokémon. Then,"
+	line "your opponent's Benched PKMN"
+	line "with the Defending PKMN. Then,"
 	line "flip a coin. If heads, the new"
-	line "Active Pokémon is now Asleep."
+	line "Active PKMN is now Asleep."
 	done
 
 DeepSleepName:
@@ -918,10 +918,10 @@ PoisonHuntName:
 
 PoisonHuntDescription:
 	text "After doing damage, switch 1 of"
-	line "your opponent's Benched Pokémon"
-	line "with the Defending Pokémon. Then,"
+	line "your opponent's Benched PKMN"
+	line "with the Defending PKMN. Then,"
 	line "flip a coin. If heads, the new"
-	line "Active Pokémon is now Poisoned."
+	line "Active PKMN is now Poisoned."
 	done
 
 ForewarnName:
@@ -1089,19 +1089,18 @@ DigDrainName:
 	done	
 
 SharpshootingDescription:
-	text "Does damage +10 more base damage for"
-	line "each<WATER> Energy attached to this PKMN"
-	line "but not used for this attack's"
-	line "Energy cost. You can't add more than"
-	line "20 damage." 
+	text "Do +10 more base damage for each<WATER>"
+	line "Energy attached to this PKMN but not"
+	line "used for this attack's Energy cost."
+	line "You can't add more than 20 damage." 
 	line "If your opponent has any Benched"
+	line "Pkmn, choose 1 of them and"
 	done
 
 SharpshootingDescriptionCont:
-	text "Pkmn, choose 1 of them and"
-	line "this attack does 20 damage to it."
+	text "this attack does 20 damage to it."
 	line "(Don't apply Weakness and Resistance"
-	line "for Benched Pokémon.)"
+	line "for Benched PKMN.)"
 	done
 
 HazardousClawsName:
@@ -1127,17 +1126,16 @@ HydroDrainName:
 	done
 
 HydroDrainDescription:
-	text "Does damage +10 more damage for each"
-	line "<WATER> Energy attached to this PKMN"
-	line "but not used for this attack's"
-	line "Energy cost. You can't add more than"
-	line "20 damage."
+	text "Does +10 more damage for each <WATER>"
+	line "Energy attached to this PKMN but not"
+	line "used for this attack's cost." 
+	line "You can't add more than 20 damage."
 	line "Heal from this PKMN half the amount"
+	line "of damage you did to your opponent"
 	done
 
 HydroDrainDescriptionCont:
-	text "of damage you did to your opponent"
-	line "Active Pokémon. (rounded up to the"
+	text "Active PKMN. (rounded up to the"
 	line "nearest 10)."
 	done
 
@@ -1200,7 +1198,7 @@ CoordinatedShurikenDescription:
 	text "This attack also does 10 damage to" 
 	line "up to 3 of your opponent's Benched" 
 	line "Pkmn. (Don't apply Weakness and/or"
-	line "Resistance for Benched Pokémon.)"
+	line "Resistance for Benched PKMN.)"
 	line "Also, This Attack Does +10 more"
 	done	
 
@@ -1279,7 +1277,7 @@ SneakAttackName:
 SneakAttackDescription:
 	text "When you play this PKMN from your"
 	line "hand, Do 10 damage to 1 of your"
-	line "opponent's Pokémon chosen at random."
+	line "opponent's PKMN chosen at random."
 	line "(Weakness and/or Resistance are not" 
 	line "applied)."
 	done
@@ -1291,7 +1289,7 @@ SurpriseBiteName:
 SurpriseBiteDescription:
 	text "When you play this PKMN from your"
 	line "hand, Do 20 damage to 1 of your"
-	line "opponent's Pokémon chosen at random."
+	line "opponent's PKMN chosen at random."
 	line "(Weakness and/or Resistance are not"
 	line "applied)."
 	done		
@@ -1319,14 +1317,14 @@ VoltswitchDescription:
 	
 NuzzleDescription:
 	text "Flip a coin. If heads, the Defending"
-	line "Pokémon is now Paralyzed.Either Way,"
+	line "PKMN is now Paralyzed.Either Way,"
 	line "Draw a Card."
 	done
 
 RainbowBurnDescription:
 	text "This attack does +10 damage for each" 
 	line "different type of Energy attached"
-	line "to this Pkmn.(<WATER><FIRE><GRASS><LIGHTNING><FIGHTING><PSYCHIC>)"
+	line "to this Pkmn.(<WATER><FIRE><GRASS><LIGHTNING><FIGHTING><PSYCHIC><DARKNESS>)"
 	done		
 
 EnergyCrushDescription:
@@ -1401,7 +1399,7 @@ TwinnedleDescription:
 	done
 
 ApplefallDescription:
-	text "Both the Defending Pokémon and"
+	text "Both the Defending PKMN and"
 	line "this PKMN are now Confused"
 	line "(after doing damage)."
 	line "If this PKMN has any <FIRE> energy "

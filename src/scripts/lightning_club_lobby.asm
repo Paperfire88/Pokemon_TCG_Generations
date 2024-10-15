@@ -52,8 +52,8 @@ Script_Chap2:
 	set_event EVENT_CHAP2_TRADE_STATE, CHAP2_TRADE_COMPLETED
 	print_npc_text Text0615
 	take_card ELECTABUZZ_LV35
-	give_card ELECTABUZZ_LV20
-	show_card_received_screen ELECTABUZZ_LV20
+	give_card ELECTRIKE
+	show_card_received_screen ELECTRIKE
 	print_npc_text Text0616
 	quit_script_fully
 

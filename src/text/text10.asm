@@ -749,8 +749,8 @@ ScytherDescription:
 	
 	done
 
-PinsirName:
-	text "Pinsir"
+ScizorName:
+	text "Scizor"
 	done
 
 IronGripName:
@@ -1270,9 +1270,9 @@ RainDanceDescription:
 	done
 
 RainDanceDescriptionCont:
-	text "This power can't be used if"
-	line "is Asleep, Confused, or"
-	line "Paralyzed."
+	text "This PKMN power can't be used if" 
+	line "this PKMN is affected by a" 
+	line "Special Condition."
 	done
 
 HydroPumpName:

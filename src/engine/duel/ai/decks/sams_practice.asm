@@ -62,7 +62,7 @@ SetSamsStartingPlayArea:
 	ld e, a
 	ld a, [wLoadedCard1ID + 1]
 	ld d, a
-	cp16 MACHOP
+	cp16 SANDILE
 	jr nz, .loop_hand
 	ldh a, [hTempCardIndex_ff98]
 	call PutHandPokemonCardInPlayArea
@@ -73,12 +73,12 @@ SetSamsStartingPlayArea:
 ; outputs in a Play Area location of Raticate or Rattata
 ; in the Bench. If neither is found, just output PLAY_AREA_BENCH_1.
 GetPlayAreaLocationOfRaticateOrRattata:
-	ld de, RATICATE
+	ld de, LINOONE
 	ld b, PLAY_AREA_BENCH_1
 	call LookForCardIDInPlayArea_Bank5
 	cp $ff
 	jr nz, .found
-	ld de, RATTATA
+	ld de, ZIGZAGOON
 	ld b, PLAY_AREA_BENCH_1
 	call LookForCardIDInPlayArea_Bank5
 	cp $ff
@@ -119,53 +119,53 @@ AIPerformScriptedTurn:
 	dw .turn_7
 
 .turn_1
-	ld bc, MACHOP
+	ld bc, SANDILE
 	ld de, FIGHTING_ENERGY
 	call AIAttachEnergyInHandToCardInPlayArea
 	jp AIAttachEnergyInHandToCardInPlayArea
 
 .turn_2
-	ld de, RATTATA
+	ld de, ZIGZAGOON
 	call LookForCardIDInHandList_Bank5
 	ldh [hTemp_ffa0], a
 	ld a, OPPACTION_PLAY_BASIC_PKMN
 	bank1call AIMakeDecision
-	ld bc, RATTATA
+	ld bc, ZIGZAGOON
 	ld de, FIGHTING_ENERGY
 	jp AIAttachEnergyInHandToCardInPlayArea
 
 .turn_3
-	ld de, RATTATA
+	ld de, ZIGZAGOON
 	ld b, PLAY_AREA_ARENA
 	call LookForCardIDInPlayArea_Bank5
 	ldh [hTempPlayAreaLocation_ffa1], a
-	ld de, RATICATE
+	ld de, LINOONE
 	call LookForCardIDInHandList_Bank5
 	ldh [hTemp_ffa0], a
 	ld a, OPPACTION_EVOLVE_PKMN
 	bank1call AIMakeDecision
-	ld bc, RATICATE
+	ld bc, LINOONE
 	ld de, LIGHTNING_ENERGY
 	jp AIAttachEnergyInHandToCardInPlayArea
 
 .turn_4
-	ld bc, RATICATE
+	ld bc, LINOONE
 	ld de, LIGHTNING_ENERGY
 	jp AIAttachEnergyInHandToCardInPlayArea
 
 .turn_5
-	ld de, MACHOP
+	ld de, SANDILE
 	call LookForCardIDInHandList_Bank5
 	ldh [hTemp_ffa0], a
 	ld a, OPPACTION_PLAY_BASIC_PKMN
 	bank1call AIMakeDecision
-	ld bc, MACHOP
+	ld bc, SANDILE
 	ld de, FIGHTING_ENERGY
 	call AIAttachEnergyInHandToCardInBench
 
 	ld a, DUELVARS_ARENA_CARD
 	call GetTurnDuelistVariable
-	cp16 MACHOP ; wrong
+	cp16 SANDILE ; wrong
 	ld a, PLAY_AREA_BENCH_1
 	jr nz, .retreat
 	inc a ; PLAY_AREA_BENCH_2
@@ -174,11 +174,11 @@ AIPerformScriptedTurn:
 	jp AITryToRetreat
 
 .turn_6
-	ld bc, MACHOP
+	ld bc, SANDILE
 	ld de, FIGHTING_ENERGY
 	jp AIAttachEnergyInHandToCardInPlayArea
 
 .turn_7
-	ld bc, MACHOP
+	ld bc, SANDILE
 	ld de, FIGHTING_ENERGY
 	jp AIAttachEnergyInHandToCardInPlayArea

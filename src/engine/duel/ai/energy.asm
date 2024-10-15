@@ -458,7 +458,7 @@ DetermineAIScoreOfAttackEnergyRequirement:
 ; if there is no surplus energy, encourage playing energy.
 .discard_energy
 	ld hl, wLoadedCard1ID + 1
-	cphl ZAPDOS_LV64
+	cphl ZERAORA
 	jr z, .check_evolution
 	call CheckIfNoSurplusEnergyForAttack
 	jr c, .asm_166cd
@@ -710,7 +710,7 @@ GetEnergyCardForDiscardOrEnergyBoostAttack:
 ; for these to be treated differently.
 ; for both attacks, load its energy cost.
 	ld hl, wLoadedCard2ID + 1
-	cphl ZAPDOS_LV64
+	cphl ZERAORA
 	jr z, .zapdos2
 	cphl CHARIZARD
 	jr z, .charizard_or_exeggutor
@@ -982,7 +982,7 @@ CheckSpecificDecksToAttachDoubleColorless:
 	call .GetArenaCardID
 	cp16 CHARMANDER
 	jr z, .check_colorless_attached
-	cp16 DRATINI
+	cp16 GOOMY
 	jr z, .check_colorless_attached
 	jr .no_carry
 
@@ -998,7 +998,7 @@ CheckSpecificDecksToAttachDoubleColorless:
 ; check for Dratini.
 .legendary_ronald_deck
 	call .GetArenaCardID
-	cp16 DRATINI
+	cp16 GOOMY
 	jr z, .check_colorless_attached
 	jr .no_carry
 

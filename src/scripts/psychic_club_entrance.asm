@@ -144,8 +144,8 @@ Script_FirstRonaldDuel:
 Script_BeatFirstRonaldDuel:
 	start_script
 	print_npc_text Text064c
-	give_card JIGGLYPUFF_LV12
-	show_card_received_screen JIGGLYPUFF_LV12
+	give_card TOGEKISS
+	show_card_received_screen TOGEKISS
 	print_npc_text Text064d
 	script_jump Script_LostToFirstRonaldDuel.ows_e8fb
 

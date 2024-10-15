@@ -1972,7 +1972,7 @@ TextOffsets::
 	textpointer BulbasaursLeechSeedDescription
 	textpointer SeedName
 	textpointer BulbasaurDescription
-	textpointer IvysaurName
+	textpointer BayleefName
 	textpointer VineWhipName
 	textpointer PoisonPowderName
 	textpointer InflictPoisonDescription
@@ -1982,8 +1982,8 @@ TextOffsets::
 	textpointer SolarPowerDescription
 	textpointer SolarPowerDescriptionCont
 	textpointer MegaDrainName
-	textpointer VenusaursMegaDrainDescription
-	textpointer VenusaursMegaDrainDescriptionCont
+	textpointer DigDrainDescription
+	textpointer DigDrainDescriptionCont
 	textpointer VenusaurLv64Description
 	textpointer EnergyTransName
 	textpointer EnergyTransDescription
@@ -2163,7 +2163,7 @@ TextOffsets::
 	textpointer SwordsDanceDescription
 	textpointer MantisName
 	textpointer ScytherDescription
-	textpointer PinsirName
+	textpointer ScizorName
 	textpointer IronGripName
 	textpointer GuillotineName
 	textpointer StagbeetleName
@@ -2362,7 +2362,7 @@ TextOffsets::
 	textpointer BubblebeamName
 	textpointer AtrociousName
 	textpointer GyaradosDescription
-	textpointer LaprasName
+	textpointer ChewtleName
 	textpointer LaprasWaterGunDescription
 	textpointer TransportName
 	textpointer LaprasDescription
@@ -2394,7 +2394,7 @@ TextOffsets::
 	textpointer IceBreathName
 	textpointer IceBreathDescription
 	textpointer ArticunoLv37Description
-	textpointer PikachuName
+	textpointer BlitzleName
 	textpointer GnawName
 	textpointer ThunderJoltName
 	textpointer ThunderJoltDescription
@@ -2407,11 +2407,11 @@ TextOffsets::
 	textpointer GrowlDescription
 	textpointer ThundershockName
 	textpointer PikachuLv16Description
-	textpointer FlyingPikachuName
+	textpointer ShinxName
 	textpointer FlyName
 	textpointer FlyDescription
 	textpointer FlyingPikachuDescription
-	textpointer SurfingPikachuName
+	textpointer LuxioName
 	textpointer SurfName
 	textpointer SurfingPikachuDescription
 	textpointer RaichuName
@@ -2484,67 +2484,67 @@ TextOffsets::
 	textpointer SandslashName
 	textpointer TripleAttackX20Description
 	textpointer SandslashDescription
-	textpointer DiglettName
+	textpointer SilicobraName
 	textpointer DigName
 	textpointer MudSlapName
 	textpointer MoleName
 	textpointer DiglettDescription
-	textpointer DugtrioName
+	textpointer SandacondaName
 	textpointer EarthquakeName
 	textpointer EarthquakeDescription
 	textpointer DugtrioDescription
-	textpointer MankeyName
+	textpointer CroagunkName
 	textpointer PeekName
 	textpointer PeekDescription
 	textpointer PeekDescriptionCont
 	textpointer PigMonkeyName
 	textpointer MankeyDescription
-	textpointer PrimeapeName
+	textpointer ToxicroakName
 	textpointer TantrumName
 	textpointer TantrumDescription
 	textpointer PrimeapeDescription
-	textpointer MachopName
+	textpointer SandileName
 	textpointer LowKickName
 	textpointer SuperpowerName
 	textpointer MachopDescription
-	textpointer MachokeName
+	textpointer KrokorokName
 	textpointer KarateChopName
 	textpointer KarateChopDescription
 	textpointer SubmissionName
 	textpointer SubmissionDescription
 	textpointer MachokeDescription
-	textpointer MachampName
+	textpointer KrookodileName
 	textpointer StrikesBackName
 	textpointer StrikesBackDescription
 	textpointer StrikesBackDescriptionCont
 	textpointer SeismicTossName
 	textpointer MachampDescription
-	textpointer GeodudeName
+	textpointer TrapinchName
 	textpointer StoneBarrageName
 	textpointer StoneBarrageDescription
 	textpointer RockName
 	textpointer GeodudeDescription
-	textpointer GravelerName
+	textpointer VibravaName
 	textpointer HardenName
 	textpointer GravelersHardenDescription
 	textpointer RockThrowName
 	textpointer GravelerDescription
-	textpointer GolemName
+	textpointer FlygonName
 	textpointer AvalancheName
 	textpointer GolemsSelfdestructDescription
 	textpointer MegatonName
 	textpointer GolemDescription
-	textpointer OnixName
+	textpointer HawluchaName
 	textpointer OnixsHardenDescription
 	textpointer RockSnakeName
 	textpointer OnixDescription
-	textpointer CuboneName
+	textpointer LarvitarName
 	textpointer SnivelName
 	textpointer SnivelDescription
 	textpointer CubonesRageDescription
 	textpointer LonelyName
 	textpointer CuboneDescription
-	textpointer MarowakName
+	textpointer PupitarName
 	textpointer BonemerangName
 	textpointer CallforFriendName
 	textpointer CallforFriendDescription
@@ -2566,12 +2566,12 @@ TextOffsets::
 	textpointer SpecialPunch
 	textpointer PunchingName
 	textpointer HitmonchanDescription
-	textpointer RhyhornName
+	textpointer CufantName
 	textpointer LeerName
 	textpointer LeerDescription
 	textpointer SpikeName
 	textpointer RhyhornDescription
-	textpointer RhydonName
+	textpointer CopperajahName
 	textpointer RamName
 	textpointer RamDescription
 	textpointer RamDescriptionCont
@@ -2587,15 +2587,15 @@ TextOffsets::
 	textpointer AbsorbDescription
 	textpointer AbsorbDescriptionCont
 	textpointer KabutopsDescription
-	textpointer AerodactylName
+	textpointer TyrantrumName
 	textpointer PrehistoricPowerName
 	textpointer PrehistoricPowerDescription
 	textpointer FossilName
 	textpointer AerodactylDescription
-	textpointer AbraName
+	textpointer DeinoName
 	textpointer PsiName
 	textpointer AbraDescription
-	textpointer KadabraName
+	textpointer ZweilousName
 	textpointer KadabrasRecoverDescription
 	textpointer SuperPsiName
 	textpointer KadabraDescription
@@ -2616,7 +2616,7 @@ TextOffsets::
 	textpointer StrangeBehaviorDescription
 	textpointer HermitcrabName
 	textpointer SlowbroDescription
-	textpointer GastlyName
+	textpointer DuskullName
 	textpointer SleepingGasName
 	textpointer MayInflictSleepDescription
 	textpointer DestinyBondName
@@ -2627,14 +2627,14 @@ TextOffsets::
 	textpointer EnergyConversionName
 	textpointer EnergyConversionDescription
 	textpointer GastlyLv17Description
-	textpointer HaunterName
+	textpointer DusclopsName
 	textpointer TransparencyName
 	textpointer TransparencyDescription
 	textpointer NightmareName
 	textpointer HaunterDescription
 	textpointer DreamEaterName
 	textpointer DreamEaterDescription
-	textpointer GengarName
+	textpointer DusknoirName
 	textpointer CurseName
 	textpointer CurseDescription
 	textpointer DarkMindName
@@ -2648,7 +2648,7 @@ TextOffsets::
 	textpointer ProphecyName
 	textpointer ProphecyDescription
 	textpointer HypnoDescription
-	textpointer MrMimeName
+	textpointer SpiritombName
 	textpointer InvisibleWallName
 	textpointer InvisibleWallDescription
 	textpointer InvisibleWallDescriptionCont
@@ -2656,7 +2656,7 @@ TextOffsets::
 	textpointer MrMimesMeditateDescription
 	textpointer BarrierName
 	textpointer MrMimeDescription
-	textpointer JynxName
+	textpointer EspeonName
 	textpointer DoubleAttackX10Description
 	textpointer JynxsMeditateDescription
 	textpointer HumanShapeName
@@ -2700,10 +2700,10 @@ TextOffsets::
 	textpointer HurricaneName
 	textpointer HurricaneDescription
 	textpointer Pidgeot2Description
-	textpointer RattataName
+	textpointer ZigzagoonName
 	textpointer RatName
 	textpointer RattataDescription
-	textpointer RaticateName
+	textpointer LinooneName
 	textpointer SuperFangName
 	textpointer SuperFangDescription
 	textpointer RaticateDescription
@@ -2713,20 +2713,20 @@ TextOffsets::
 	textpointer SpearowDescription
 	textpointer FearowName
 	textpointer FearowsAgilityDescription
-	textpointer DrillPeckName
+	textpointer BraveBirdName
 	textpointer BeakName
 	textpointer FearowDescription
-	textpointer ClefairyName
+	textpointer TogepiName
 	textpointer SingName
 	textpointer MetronomeName
 	textpointer ClefairysMetronomeDescription
 	textpointer FairyName
 	textpointer ClefairyDescription
-	textpointer ClefableName
+	textpointer TogeticName
 	textpointer ClefablesMetronomeDescription
 	textpointer ClefablesMinimizeDescription
 	textpointer ClefableDescription
-	textpointer JigglypuffName
+	textpointer StuffulName
 	textpointer FirstAidName
 	textpointer FirstAidDescription
 	textpointer DoubleEdgeName
@@ -2740,7 +2740,7 @@ TextOffsets::
 	textpointer JigglypuffLv13Description
 	textpointer LullabyName
 	textpointer JigglypuffLv14Description
-	textpointer WigglytuffName
+	textpointer BewearName
 	textpointer DoTheWaveName
 	textpointer DoTheWaveDescription
 	textpointer WigglytuffDescription
@@ -2752,43 +2752,43 @@ TextOffsets::
 	textpointer PayDayName
 	textpointer PayDayDescription
 	textpointer MeowthLv15Description
-	textpointer PersianName
+	textpointer BibarelName
 	textpointer PounceName
 	textpointer PounceDescription
 	textpointer ClassyCatName
 	textpointer PersianDescription
-	textpointer FarfetchdName
+	textpointer AudinoName
 	textpointer LeekSlapName
 	textpointer LeekSlapDescription
 	textpointer PotSmashName
 	textpointer WildDuckName
 	textpointer FarfetchdDescription
-	textpointer DoduoName
+	textpointer RuffletName
 	textpointer FuryAttackName
 	textpointer TwinBirdName
 	textpointer DoduoDescription
-	textpointer DodrioName
+	textpointer BraviaryName
 	textpointer RetreatAidName
 	textpointer RetreatAidDescription
 	textpointer DodriosRageDescription
 	textpointer TriplebirdName
 	textpointer DodrioDescription
-	textpointer LickitungName
+	textpointer DrampaName
 	textpointer TongueWrapName
 	textpointer LickingName
 	textpointer LickitungDescription
-	textpointer ChanseyName
+	textpointer OranguruName
 	textpointer ScrunchName
 	textpointer ScrunchDescription
 	textpointer ChanseysDoubleEdgeDescription
 	textpointer ChanseyDescription
-	textpointer KangaskhanName
+	textpointer ChatotName
 	textpointer FetchName
 	textpointer FetchDescription
 	textpointer CometPunchName
 	textpointer ParentName
 	textpointer KangaskhanDescription
-	textpointer TaurosName
+	textpointer StantlerName
 	textpointer RampageName
 	textpointer RampageDescription
 	textpointer WildBullName
@@ -2810,18 +2810,18 @@ TextOffsets::
 	textpointer Conversion2Description
 	textpointer VirtualName
 	textpointer PorygonDescription
-	textpointer SnorlaxName
+	textpointer RegidragoName
 	textpointer ThickSkinnedName
 	textpointer ThickSkinnedDescription
 	textpointer BodySlamName
 	textpointer SleepingName
 	textpointer SnorlaxDescription
-	textpointer DratiniName
+	textpointer GoomyName
 	textpointer DratiniDescription
-	textpointer DragonairName
+	textpointer SliggooName
 	textpointer SlamName
 	textpointer DragonairDescription
-	textpointer DragoniteName
+	textpointer GoodraName
 	textpointer HealingWindName
 	textpointer HealingWindDescription
 	textpointer DragoniteLv41Description
@@ -3397,3 +3397,34 @@ TextOffsets::
 	textpointer GardevoirName
 	textpointer	BlipbugName
 	textpointer	EmptySpaceText
+	textpointer LitleoName
+	textpointer	GalladeName
+	textpointer	GrassEnergyText
+	textpointer	ChooseGrassEnergyText
+	textpointer	ChooseGrassPKMNCardFromDeckText
+	textpointer	ChooseGrassEnergyCardFromDeckText
+	textpointer	FireEnergyText
+	textpointer	ChooseFireText	
+	textpointer	ChooseFireEnergyText
+	textpointer	ChooseFirePKMNCardFromDeckText
+	textpointer	ChooseFireEnergyCardFromDeckText
+	textpointer	WaterEnergyText
+	textpointer	ChooseWaterText	
+	textpointer	ChooseWaterEnergyText
+	textpointer	ChooseWaterPKMNCardFromDeckText
+	textpointer	ChooseWaterEnergyCardFromDeckText
+	textpointer	LightningEnergyText
+	textpointer	ChooseLightningText	
+	textpointer	ChooseLightningEnergyText
+	textpointer	ChooseLightningPKMNCardFromDeckText
+	textpointer	ChooseLightningEnergyCardFromDeckText
+	textpointer	FightingEnergyText
+	textpointer	ChooseFightingText	
+	textpointer	ChooseFightingEnergyText
+	textpointer	ChooseFightingPKMNCardFromDeckText
+	textpointer	ChooseFightingEnergyCardFromDeckText
+	textpointer	PsychicEnergyText
+	textpointer	ChoosePsychicText	
+	textpointer	ChoosePsychicEnergyText
+	textpointer	ChoosePsychicPKMNCardFromDeckText
+	textpointer	ChoosePsychicEnergyCardFromDeckText

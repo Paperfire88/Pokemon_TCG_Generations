@@ -21,7 +21,7 @@ Script_fbf1:
 	give_card ZAPDOS_LV68
 	give_card MOLTRES_LV37
 	give_card ARTICUNO_LV37
-	give_card DRAGONITE_LV41
+	give_card LUGIA
 	show_card_received_screen $ffff
 .ows_fc05
 	flash_screen 0

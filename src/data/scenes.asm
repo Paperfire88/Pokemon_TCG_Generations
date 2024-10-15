@@ -79,7 +79,7 @@ Scene_ScytherIntro:
 
 Scene_AerodactylIntro:
 	db PALETTE_107, $01
-	db TILEMAP_AERODACTYL_INTRO, $80, $00
+	db TILEMAP_TYRANTRUM_INTRO, $80, $00
 	db $00
 
 Scene_GradientBlackAndRed:

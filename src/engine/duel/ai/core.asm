@@ -189,23 +189,27 @@ CheckIfEnergyIsUseful:
 	jp z, .set_carry
 	ld a, [wTempCardType]
 	cp TYPE_ENERGY_DOUBLE_COLORLESS
-	jr z, .set_carry
+	jp z, .set_carry
 	ld hl, wTempCardID + 1
 
 	ld bc, PSYCHIC_ENERGY
 	cphl EXEGGCUTE
-	jr z, .check_energy
+	jp z, .check_energy
 	cphl EXEGGUTOR
-	jr z, .check_energy
-	cphl PSYDUCK
-	jr z, .check_energy
-	cphl GOLDUCK
-	jr z, .check_energy
+	jp z, .check_energy
+	cphl VOLTORB
+	jp z, .check_energy
+	cphl POLIWAG
+	jp z, .check_energy
+	cphl POLIWHIRL
+	jp z, .check_energy
+	cphl POLIWRATH
+	jp z, .check_energy
 
 	ld bc, WATER_ENERGY
-	cphl SURFING_PIKACHU_LV13
+	cphl LUXIO
 	jr z, .check_energy
-	cphl SURFING_PIKACHU_ALT_LV13
+	cphl LUXRAY
 	jr z, .check_energy
 
 	cphl EEVEE
@@ -217,6 +221,15 @@ CheckIfEnergyIsUseful:
 	call CompareDEtoBC
 	jr z, .set_carry
 	ld bc, LIGHTNING_ENERGY
+	call CompareDEtoBC
+	jr z, .set_carry
+	ld bc, GRASS_ENERGY
+	call CompareDEtoBC
+	jr z, .set_carry
+	ld bc, PSYCHIC_ENERGY
+	call CompareDEtoBC
+	jr z, .set_carry
+	ld bc, DARKNESS_ENERGY
 	call CompareDEtoBC
 	jr z, .set_carry
 
@@ -1233,7 +1246,7 @@ CheckDamageToMrMime:
 	call SwapTurn
 	call GetCardIDFromDeckIndex
 	call SwapTurn
-	cp16 MR_MIME
+	cp16 SPIRITOMB
 	pop bc
 	jr nz, .set_carry
 	ld a, b

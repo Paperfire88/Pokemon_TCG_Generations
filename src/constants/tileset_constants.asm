@@ -23,7 +23,7 @@
 	const TILESET_LABORATORY                  ; $15
 	const TILESET_CHARIZARD_INTRO             ; $16
 	const TILESET_SCYTHER_INTRO               ; $17
-	const TILESET_AERODACTYL_INTRO            ; $18
+	const TILESET_TYRANTRUM_INTRO            ; $18
 	const TILESET_SOLID_TILES_1               ; $19
 	const TILESET_SOLID_TILES_2               ; $1a
 	const TILESET_PLAYER                      ; $1b

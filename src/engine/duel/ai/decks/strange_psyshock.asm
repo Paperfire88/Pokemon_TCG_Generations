@@ -27,41 +27,41 @@ AIActionTable_StrangePsyshock:
 	jp AIPickPrizeCards
 
 .list_arena
-	dw KANGASKHAN
-	dw CHANSEY
-	dw SNORLAX
-	dw MR_MIME
-	dw ABRA
+	dw CHATOT
+	dw AUDINO
+	dw REGIDRAGO
+	dw SPIRITOMB
+	dw DEINO
 	dw NULL
 
 .list_bench
-	dw ABRA
-	dw MR_MIME
-	dw KANGASKHAN
-	dw SNORLAX
-	dw CHANSEY
+	dw DEINO
+	dw SPIRITOMB
+	dw CHATOT
+	dw REGIDRAGO
+	dw AUDINO
 	dw NULL
 
 .list_retreat
-	ai_retreat ABRA,       -3
-	ai_retreat SNORLAX,    -3
-	ai_retreat KANGASKHAN, -1
-	ai_retreat CHANSEY,    -1
+	ai_retreat DEINO,       -3
+	ai_retreat REGIDRAGO,    -3
+	ai_retreat CHATOT, -1
+	ai_retreat AUDINO,    -1
 	dw NULL
 
 .list_energy
-	ai_energy ABRA,       3, +1
-	ai_energy KADABRA,    3, +0
+	ai_energy DEINO,       3, +1
+	ai_energy ZWEILOUS,    3, +0
 	ai_energy ALAKAZAM,   3, +0
-	ai_energy MR_MIME,    2, +0
-	ai_energy CHANSEY,    2, -2
-	ai_energy KANGASKHAN, 4, -2
-	ai_energy SNORLAX,    0, -8
+	ai_energy SPIRITOMB,    2, +0
+	ai_energy AUDINO,    2, -2
+	ai_energy CHATOT, 4, -2
+	ai_energy REGIDRAGO,    0, -8
 	dw NULL
 
 .list_prize
 	dw GAMBLER
-	dw MR_MIME
+	dw SPIRITOMB
 	dw ALAKAZAM
 	dw SWITCH
 	dw NULL

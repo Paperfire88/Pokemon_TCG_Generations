@@ -27,19 +27,19 @@ AIActionTable_LegendaryArticuno:
 	jp AIPickPrizeCards
 
 .list_arena
-	dw CHANSEY
-	dw LAPRAS
+	dw AUDINO
+	dw CHEWTLE
 	dw DITTO
 	dw SEEL
-	dw ARTICUNO_LV35
+	dw RELICANTH
 	dw ARTICUNO_LV37
 	dw NULL
 
 .list_bench
-	dw ARTICUNO_LV35
+	dw RELICANTH
 	dw SEEL
-	dw LAPRAS
-	dw CHANSEY
+	dw CHEWTLE
+	dw AUDINO
 	dw DITTO
 	dw NULL
 
@@ -51,10 +51,10 @@ AIActionTable_LegendaryArticuno:
 .list_energy
 	ai_energy SEEL,          3, +1
 	ai_energy DEWGONG,       4, +0
-	ai_energy LAPRAS,        3, +0
-	ai_energy ARTICUNO_LV35, 4, +1
+	ai_energy CHEWTLE,        3, +0
+	ai_energy RELICANTH, 4, +1
 	ai_energy ARTICUNO_LV37, 3, +0
-	ai_energy CHANSEY,       0, -8
+	ai_energy AUDINO,       0, -8
 	ai_energy DITTO,         3, +0
 	dw NULL
 
@@ -90,10 +90,10 @@ ScoreLegendaryArticunoCards:
 ; otherwise, check if Articuno or Dewgong
 ; have more than half HP and can use second attack
 ; and if so, the next Pokémon to check is Lapras
-	ld de, LAPRAS
+	ld de, CHEWTLE
 	call CheckForBenchIDAtHalfHPAndCanUseSecondAttack
 	jr c, .articuno
-	ld de, ARTICUNO_LV35
+	ld de, RELICANTH
 	call CheckForBenchIDAtHalfHPAndCanUseSecondAttack
 	jr c, .lapras
 	ld de, DEWGONG
@@ -107,7 +107,7 @@ ScoreLegendaryArticunoCards:
 ; attached energy count, which skips calling the routine
 ; if this count is >= 3
 .lapras
-	ld de, LAPRAS
+	ld de, CHEWTLE
 	ld b, PLAY_AREA_BENCH_1
 	call LookForCardIDInPlayArea_Bank5
 	jr nc, .articuno
@@ -115,15 +115,15 @@ ScoreLegendaryArticunoCards:
 	call CountNumberOfEnergyCardsAttached
 	cp 3
 	jr nc, .articuno
-	ld bc, LAPRAS
+	ld bc, CHEWTLE
 	jp RaiseAIScoreToAllMatchingIDsInBench
 
 .articuno
-	ld de, ARTICUNO_LV35
+	ld de, RELICANTH
 	ld b, PLAY_AREA_BENCH_1
 	call LookForCardIDInPlayArea_Bank5
 	jr nc, .dewgong
-	ld bc, ARTICUNO_LV35
+	ld bc, RELICANTH
 	jp RaiseAIScoreToAllMatchingIDsInBench
 
 .dewgong

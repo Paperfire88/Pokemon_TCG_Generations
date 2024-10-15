@@ -6,7 +6,7 @@
 	const SCENE_LABORATORY_BOOSTER            ; $04
 	const SCENE_CHARIZARD_INTRO               ; $05
 	const SCENE_SCYTHER_INTRO                 ; $06
-	const SCENE_AERODACTYL_INTRO              ; $07
+	const SCENE_TYRANTRUM_INTRO              ; $07
 	const SCENE_GRADIENT_BLACK_AND_RED        ; $08
 	const SCENE_GRADIENT_WHITE_AND_RED        ; $09
 	const SCENE_GRADIENT_BLACK_AND_GREEN      ; $0a

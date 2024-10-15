@@ -27,43 +27,43 @@ AIActionTable_LegendaryDragonite:
 	jp AIPickPrizeCards
 
 .list_arena
-	dw KANGASKHAN
-	dw LAPRAS
+	dw CHATOT
+	dw CHEWTLE
 	dw CHARMANDER
-	dw DRATINI
-	dw MAGIKARP
+	dw GOOMY
+	dw SNEASEL
 	dw NULL
 
 .list_bench
 	dw CHARMANDER
-	dw MAGIKARP
-	dw DRATINI
-	dw LAPRAS
-	dw KANGASKHAN
+	dw SNEASEL
+	dw GOOMY
+	dw CHEWTLE
+	dw CHATOT
 	dw NULL
 
 .list_retreat
 	ai_retreat CHARMANDER, -1
-	ai_retreat MAGIKARP,   -5
+	ai_retreat SNEASEL,   -5
 	dw NULL
 
 .list_energy
 	ai_energy CHARMANDER,     3, +1
 	ai_energy CHARMELEON,     4, +1
 	ai_energy CHARIZARD,      5, +0
-	ai_energy MAGIKARP,       3, +1
-	ai_energy GYARADOS,       4, -1
-	ai_energy DRATINI,        2, +0
-	ai_energy DRAGONAIR,      4, +0
-	ai_energy DRAGONITE_LV41, 3, -1
-	ai_energy KANGASKHAN,     2, -2
-	ai_energy LAPRAS,         3, +0
+	ai_energy SNEASEL,       3, +1
+	ai_energy WEAVILE,       4, -1
+	ai_energy GOOMY,        2, +0
+	ai_energy SLIGGOO,      4, +0
+	ai_energy LUGIA, 3, -1
+	ai_energy CHATOT,     2, -2
+	ai_energy CHEWTLE,         3, +0
 	dw NULL
 
 .list_prize
 	dw GAMBLER
-	dw DRAGONITE_LV41
-	dw KANGASKHAN
+	dw LUGIA
+	dw CHATOT
 	dw NULL
 
 .store_list_pointers
@@ -106,7 +106,7 @@ AIDoTurn_LegendaryDragonite:
 	ld a, DUELVARS_ARENA_CARD
 	call GetTurnDuelistVariable
 	call GetCardIDFromDeckIndex
-	cp16 KANGASKHAN
+	cp16 CHATOT
 	jr nz, .attach_normally
 	call CreateEnergyCardListFromHand
 	jr c, .skip_energy_attach_1

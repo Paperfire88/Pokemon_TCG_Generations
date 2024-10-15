@@ -27,26 +27,26 @@ AIActionTable_FireCharge:
 	jp AIPickPrizeCards
 
 .list_arena
-	dw JIGGLYPUFF_LV14
-	dw CHANSEY
-	dw TAUROS
+	dw STUFFUL
+	dw AUDINO
+	dw STANTLER
 	dw MAGMAR_LV24
-	dw JIGGLYPUFF_LV12
+	dw TOGEKISS
 	dw GROWLITHE
 	dw NULL
 
 .list_bench
-	dw JIGGLYPUFF_LV14
-	dw CHANSEY
+	dw STUFFUL
+	dw AUDINO
 	dw GROWLITHE
 	dw MAGMAR_LV24
-	dw JIGGLYPUFF_LV12
-	dw TAUROS
+	dw TOGEKISS
+	dw STANTLER
 	dw NULL
 
 .list_retreat
-	ai_retreat JIGGLYPUFF_LV12, -1
-	ai_retreat CHANSEY,         -1
+	ai_retreat TOGEKISS, -1
+	ai_retreat AUDINO,         -1
 	ai_retreat GROWLITHE,       -1
 	dw NULL
 
@@ -54,11 +54,11 @@ AIActionTable_FireCharge:
 	ai_energy GROWLITHE,       3, +0
 	ai_energy ARCANINE_LV45,   4, +0
 	ai_energy MAGMAR_LV24,     3, +0
-	ai_energy JIGGLYPUFF_LV12, 3, +0
-	ai_energy JIGGLYPUFF_LV14, 2, +0
-	ai_energy WIGGLYTUFF,      3, +0
-	ai_energy CHANSEY,         4, +0
-	ai_energy TAUROS,          3, +0
+	ai_energy TOGEKISS, 3, +0
+	ai_energy STUFFUL, 2, +0
+	ai_energy BEWEAR,      3, +0
+	ai_energy AUDINO,         4, +0
+	ai_energy STANTLER,          3, +0
 	dw NULL
 
 .list_prize

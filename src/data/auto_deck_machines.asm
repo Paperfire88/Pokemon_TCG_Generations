@@ -72,7 +72,7 @@ AutoDeckMachineEntries:
 	auto_deck CharmanderAndFriendsCardList, CharmanderAndFriendsText, CharmanderAndFriendsDescriptionText
 	auto_deck SquirtleAndFriendsCardList,   SquirtleAndFriendsText,   SquirtleAndFriendsDescriptionText
 	auto_deck BulbasaurAndFriendsCardList,  BulbasaurAndFriendsText,  BulbasaurAndFriendsDescriptionText
-	auto_deck PsychicMachampCardList,       PsychicMachampText,       PsychicMachampDescriptionText
+	auto_deck PsychicKrookodileCardList,       PsychicMachampText,       PsychicMachampDescriptionText
 	auto_deck WaterBeetleCardList,          WaterBeetleText,          WaterBeetleDescriptionText
 
 ; Legendary Auto Deck Machine

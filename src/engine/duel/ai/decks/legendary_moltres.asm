@@ -31,12 +31,12 @@ AIActionTable_LegendaryMoltres:
 	dw GROWLITHE
 	dw VULPIX
 	dw MAGMAR_LV24
-	dw MOLTRES_LV35
+	dw TORTUNATOR
 	dw MOLTRES_LV37
 	dw NULL
 
 .list_bench
-	dw MOLTRES_LV35
+	dw TORTUNATOR
 	dw VULPIX
 	dw GROWLITHE
 	dw MAGMORTAR
@@ -45,7 +45,7 @@ AIActionTable_LegendaryMoltres:
 
 .list_play_hand
 	dw MOLTRES_LV37
-	dw MOLTRES_LV35
+	dw TORTUNATOR
 	dw VULPIX
 	dw GROWLITHE
 	dw MAGMORTAR
@@ -65,7 +65,7 @@ AIActionTable_LegendaryMoltres:
 	ai_energy MAGMAR_LV24,    4, -1
 	ai_energy MAGMORTAR,    1, -1
 	ai_energy MOLTRES_LV37,   3, +2
-	ai_energy MOLTRES_LV35,   4, +2
+	ai_energy TORTUNATOR,   4, +2
 	dw NULL
 
 .list_prize
