@@ -660,7 +660,7 @@ ChooseTheCardToDiscardText:
 	done
 
 DiscardedCardsFromDeckText:
-	text "Discarded <RAMNUM> cards"
+	text "Discard <RAMNUM> cards"
 	line "from <RAMNAME>'s Deck."
 	done
 

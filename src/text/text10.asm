@@ -27,7 +27,7 @@ BeedrillDescription:
 	line "OG illustrator: (Souichirou Gunjima)"
 	done
 
-EkansName:
+CascoonName:
 	text "Cascoon"
 	done
 
@@ -49,7 +49,7 @@ EkansDescription:
 	line "OG illustrator: (MAHOU)"
 	done
 
-ArbokName:
+DustoxName:
 	text "Dustox"
 	done
 
@@ -561,7 +561,7 @@ GrimerDescription:
 	line "OG illustrator: (OKACHEKE)"	
 	done
 
-MukName:
+TrevenantName:
 	text "Trevenant"
 	done
 
@@ -691,7 +691,6 @@ WeezingDescription:
 	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Emerging Powers 72)"
 	line "OG illustrator: (Shin Nagasawa)"
-	
 	done
 
 TangelaName:
@@ -710,7 +709,6 @@ TangelaLv8Description:
 	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Sun & Moon 13)"
 	line "OG illustrator: (Akira Komayama)"
-	
 	done
 
 PoisonWhipName:
@@ -721,7 +719,6 @@ TangelaLv12Description:
 	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (BREAKpoint 53)"
 	line "OG illustrator: (Kyoko Umemoto)"
-	
 	done
 
 ScytherName:
@@ -746,7 +743,6 @@ ScytherDescription:
 	text "Booster Pack: (EVOLUTION)"
 	line "OG Set: (Sword & Shield 16)"
 	line "OG illustrator: (nagimiso)"
-	
 	done
 
 ScizorName:
@@ -769,7 +765,6 @@ PinsirDescription:
 	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Skyridge 147)"
 	line "OG illustrator: (Atsuko Nishida)"
-	
 	done
 
 CharmanderName:
@@ -794,7 +789,6 @@ CharmanderDescription:
 	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (Boundaries Crossed 24)"
 	line "OG illustrator: (Shin Nagasawa)"
-	
 	done
 
 CharmeleonName:
@@ -854,7 +848,6 @@ CharizardDescription:
 	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (Black & White 19)"
 	line "OG illustrator: (Kouki Saitou)"
-	
 	done
 
 VulpixName:
@@ -903,7 +896,6 @@ NinetalesLv32Description:
 	text "Booster Pack: (EVOLUTION)"
 	line "OG Set: (Scarlet & Violet 34)"
 	line "OG illustrator: (hncl)"
-	
 	done
 
 MixUpName:
@@ -936,7 +928,6 @@ NinetalesLv35Description:
 	text "Booster Pack: (EVOLUTION)"
 	line "OG Set: (Holon Phantoms 10)"
 	line "OG illustrator: (Masakazu Fukuda)"
-	
 	done
 
 GrowlitheName:
@@ -955,7 +946,6 @@ GrowlitheDescription:
 	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (Fusion Strike 46)"
 	line "OG illustrator: (miki kudo)"
-	
 	done
 
 ArcanineName:
@@ -991,7 +981,6 @@ ArcanineLv34Description:
 	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Boundaries Crossed 22)"
 	line "OG illustrator: (Akira Komayama)"
-	
 	done
 
 ArcaninesFlamethrowerDescription:
@@ -1012,15 +1001,14 @@ ArcanineLv45Description:
 	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (Battle Styles 30)"
 	line "OG illustrator: (Souichirou Gunjima)"
-	
 	done
 
 PonytaName:
 	text "Darumaka"
 	done
 
-SmashKickName:
-	text "Smash Kick"
+GnawOffName:
+	text "Gnaw Off"
 	done
 
 FlameTailName:
@@ -1425,7 +1413,7 @@ PoliwrathDescription:
 	
 	done
 
-TentacoolName:
+SkrelpName:
 	text "Skrelp"
 	done
 
@@ -1454,7 +1442,7 @@ TentacoolDescription:
 	
 	done
 
-TentacruelName:
+DragalgeName:
 	text "Dragalge"
 	done
 

@@ -49,7 +49,7 @@ Tilemaps:
 	tilemap EvolutionTilemap,                  TILESET_EVOLUTION                   ; TILEMAP_EVOLUTION
 	tilemap MysteryTilemap,                    TILESET_MYSTERY                     ; TILEMAP_MYSTERY
 	tilemap LaboratoryTilemap,                 TILESET_LABORATORY                  ; TILEMAP_LABORATORY
-	tilemap CharizardIntroTilemap,             TILESET_CHARIZARD_INTRO             ; TILEMAP_CHARIZARD_INTRO
+	tilemap CharizardIntroTilemap,             TILESET_EMBOAR_INTRO             ; TILEMAP_EMBOAR_INTRO
 	tilemap ScytherIntroTilemap,               TILESET_SCYTHER_INTRO               ; TILEMAP_SCYTHER_INTRO
 	tilemap AerodactylIntroTilemap,            TILESET_TYRANTRUM_INTRO            ; TILEMAP_TYRANTRUM_INTRO
 	tilemap SolidTiles1Tilemap,                TILESET_SOLID_TILES_1               ; TILEMAP_SOLID_TILES_1

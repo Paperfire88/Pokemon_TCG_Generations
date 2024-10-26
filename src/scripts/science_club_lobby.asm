@@ -88,7 +88,7 @@ Script_Specs2:
 Data_ebe7:
 	dw PORYGON
 	dw DITTO
-	dw MUK
+	dw TREVENANT
 	dw WEEZING
 
 NPCMovement_ebeb:

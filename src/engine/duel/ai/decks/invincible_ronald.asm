@@ -50,7 +50,7 @@ AIActionTable_InvincibleRonald:
 
 .list_energy
 	ai_energy GRIMER,         1, -1
-	ai_energy MUK,            3, -1
+	ai_energy TREVENANT,            3, -1
 	ai_energy SCYTHER,        4, +1
 	ai_energy MAGMORTAR,    2, +0
 	ai_energy TRAPINCH,        2, +0

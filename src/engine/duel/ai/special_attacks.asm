@@ -478,3 +478,39 @@ CheckIfAnyBasicPokemonInDeck:
 .set_carry
 	scf
 	ret
+
+; dismiss the attack if there are more than 10 cards left in the Player's deck and the
+; Defending Pokémon can't KO the AI's Active Pokémon with its current amount of Energy.
+; also dismiss the attack if there are no cards left in the Player's deck.
+; if the AI's Active Pokémon can be KO'd, then increase the score by 5.
+; also increase the score depending on how many cards are left in the Player's deck.
+; (e.g. +0 if 10 cards left, +1 if 9 cards left, +2 if 8 cards left, ... +9 if 1 card left)
+.Wildfire:
+    call CheckIfDefendingPokemonCanKnockOut
+    ld c, 0 ; initial score modifier if not KO'd next turn
+    jr nc, .no_ko
+    ld c, 5 ; add 5 to the score if the Active Pokémon will be KO'd
+.no_ko
+    ld a, DUELVARS_NUMBER_OF_CARDS_NOT_IN_DECK
+    call GetNonTurnDuelistVariable
+    ld b, a
+    ld a, DECK_SIZE
+    sub b
+    or a
+    jr z, .zero_score ; don't use if there are no cards in the Player's deck to discard
+    ld b, a ; number of cards left in the Player's deck
+    ld a, 20
+    sub b
+    jr c, .return_score ; don't adjust score further if there are more than 10 cards in the deck
+    add c
+    ld c, a
+.return_score
+    ld a, c
+    or a
+    ret z
+    add $80
+    ret
+
+.zero_score
+	xor a
+	ret

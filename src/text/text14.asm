@@ -71,8 +71,8 @@ PoisonedIfHeadsParalysedIfTailsText:
 	done	
 
 YesOrNoTextNEOtext:
-    text "Change PKMN?:"
-    line "            Yes     No"
+    text "Which PKMN?:"
+    line "            Horsea  Seadra"
     done 
 
 FoundCardText:
@@ -623,7 +623,7 @@ AquaStreamName:
 	done
 
 AquaStreamDescription:
-	text "Put up to 2 Basic Energies from"
+	text "Put up to 2 Basic energy from"
 	line "your Discard Pile to your hand."
 	line "This attack does 20 more damage for"
 	line "each card returned this way. this"
@@ -631,7 +631,7 @@ AquaStreamDescription:
 	done
 
 AquaStreamKingDescription:
-	text "Put up to 2 Basic Energies from"
+	text "Put up to 2 Basic energy from"
 	line "your Discard Pile to your hand."
 	line "This attack does 20 more damage for"
 	line "each card returned this way."
@@ -666,7 +666,7 @@ LastRespectsDescription:
 LowKickDescription:
 	text "This Attack does 10 more damage"
 	line "for each <COLORLESS> in the"
-	line "Defending Pokemon's Retreat Cost."
+	line "Defending PKMN Retreat Cost."
 	done	
 
 NuzzleName:
@@ -983,7 +983,7 @@ BurstinginfernoName:
 	done
 
 BurstinginfernoDescription:
-	text "Discard any number of <FIRE> energies"
+	text "Discard any number of <FIRE> energy"
 	line "from this PKMN (Min 1). This attack"
 	line "does 20 more damage for each"
 	line "<FIRE> Enegy Discarded in this way."
@@ -1487,12 +1487,4 @@ OpportunistDescription:
 	line "any damage counters on it, Your"
 	line "Opponent Can't play trainer cards"
 	line "during their next turn."
-	done	
-
-DownDrawName:
-	text "Down Draw"
-	done
-
-GrubbinName:
-	text "Grubbin"
 	done	

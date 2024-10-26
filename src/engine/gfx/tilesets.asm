@@ -29,7 +29,7 @@ Tilesets:
 	tileset EvolutionGfx,                   86 ; TILESET_EVOLUTION
 	tileset MysteryGfx,                     86 ; TILESET_MYSTERY
 	tileset LaboratoryGfx,                  86 ; TILESET_LABORATORY
-	tileset CharizardIntroGfx,              96 ; TILESET_CHARIZARD_INTRO
+	tileset CharizardIntroGfx,              96 ; TILESET_EMBOAR_INTRO
 	tileset ScytherIntroGfx,                96 ; TILESET_SCYTHER_INTRO
 	tileset AerodactylIntroGfx,             96 ; TILESET_TYRANTRUM_INTRO
 	tileset SolidTiles1,                     4 ; TILESET_SOLID_TILES_1

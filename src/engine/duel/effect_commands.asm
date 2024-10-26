@@ -28,7 +28,7 @@ EffectCommands::
 ; Function name examples
 ;	PoisonEffect                     ; generic effect shared by multiple attacks.
 ;	Paralysis50PercentEffect         ;
-;	KakunaStiffenEffect              ; unique effect from an attack known by multiple cards.
+;	Discardtop3ffect              ; unique effect from an attack known by multiple cards.
 ;	MetapodStiffenEffect             ;
 ;	AcidEffect                       ; unique effect from an attack known by a single card
 ;	FoulOdorEffect                   ;
@@ -88,7 +88,7 @@ GloomFoulOdorEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, FoulOdorEffect
 	db  $00
 
-KakunaStiffenEffectCommands:
+Discardtop3ffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, StiffenEffect
 	db  $00
 
@@ -227,6 +227,7 @@ VenusaurEnergyTransEffectCommands:
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, EnergyTrans_AIEffect
 	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, EnergyTrans_PrintProcedure
 	db  $00
+
 
 GrimerNastyGooEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Paralysis50PercentEffect
@@ -1038,11 +1039,11 @@ ElectrodeSonicboomEffectCommands:
 	dbw EFFECTCMDTYPE_AI, Sonicboom_UnaffectedByColorEffect
 	db  $00
 
-ElectrodeEnergySpikeEffectCommands:
+EnergyBoostEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, DeckCheck
-	dbw EFFECTCMDTYPE_AFTER_DAMAGE, EnergySpike_AttachEnergyEffect
-	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, EnergySpike_PlayerSelectEffect
-	dbw EFFECTCMDTYPE_AI_SELECTION, EnergySpike_AISelectEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, EnergyBoost_AttachEnergyEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, EnergyBoost_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, EnergyBoost_AISelectEffect
 	db  $00
 
 JolteonDoubleKickEffectCommands:
@@ -1500,10 +1501,6 @@ LowKickEffectCommands:
 	dbw EFFECTCMDTYPE_AI, Low_AIEffect
 	db  $00
 
-IntimidatingManeEffectCommands:
-	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, IntimidatingManeEffect
-	db  $00
-
 PunkRockEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, PunkRock_PoisonOrConfusionEffect
 	dbw EFFECTCMDTYPE_AI, PunkRock_AIEffect
@@ -1549,11 +1546,11 @@ Do30moreIfDFPStatusedEffectCommands:	;
 
 Mills3EffectCommands:			;When this poke enters the field, mill 5 from the opponent's deck. Unused. 
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Quickfreeze_InitialEffect
-	dbw EFFECTCMDTYPE_PKMN_POWER_TRIGGER, KakunaStiffenEffect
+	dbw EFFECTCMDTYPE_PKMN_POWER_TRIGGER, Discardtop3ffect
 	db  $00
 
 MillAtkOppCardsEffectCommands:	; If attack is successful, mill 3 from opp's deck.
-	dbw EFFECTCMDTYPE_AFTER_DAMAGE, KakunaStiffenEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Discardtop3ffect
 	db  $00
 
 NoOppTrainersEffectCommands:		; Upon entering the field, Opp can't use trainers next turn.
@@ -1626,17 +1623,10 @@ BugbuzzEffectCommands:
 	dbw EFFECTCMDTYPE_AI, BugbuzzEffect
 	db  $00	
 
-EeveelutionEffectCommands:		; Searches deck for an eeveelution, adds to hand.
-	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, EeveelutionCheckDeckEffect
-	dbw EFFECTCMDTYPE_AFTER_DAMAGE, EeveelutionAddToHandEffect
-	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, EeveelutionPlayerSelectEffect
-	dbw EFFECTCMDTYPE_AI_SELECTION, EeveelutionAISelectEffect
-	db  $00
-
 FlameSurgeEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, EnergyAbsorption_CheckDiscardPile
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EnergyAbsorption_AddToHandEffect
-	dbw EFFECTCMDTYPE_AFTER_DAMAGE, KakunaStiffenEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Discardtop3ffect
 	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, EnergyAbsorption_PlayerSelectEffect
 	dbw EFFECTCMDTYPE_AI_SELECTION, EnergyAbsorption_AISelectEffect
 	db  $00	
@@ -1781,7 +1771,7 @@ TeraSparkEffectCommands:
 TreasureRushEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, TreasureRush_DamageBoostEffect
 	dbw EFFECTCMDTYPE_AI, TreasureRush_AIEffect
-	dbw EFFECTCMDTYPE_AFTER_DAMAGE, SubmissionEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, JigglypuffDoubleEdgeEffect
 	db  $00
 
 SuctionHealCommands:
@@ -1942,18 +1932,18 @@ StickandAbsorbEffectCommands:
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, StickandAbsorbEffect
 	db  $00	
 
-ConversionZEffectCommands:
+PsyShadowEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, Sprint_Check
-	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EnergySpike_AttachEnergyEffect
-	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, ConversionZ_PlayerSelectEffect
-	dbw EFFECTCMDTYPE_AI_SELECTION, EnergySpike_AISelectEffect
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, PsyShadow_AttachEnergyEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, PsyShadow_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, EnergyBoost_AISelectEffect
 	db  $00 
 
 GigaMagnetEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, Sprint_Check
-	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EnergySpike_AttachEnergyEffect
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EnergyBoost_AttachEnergyEffect
 	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, GigaMagnet_PlayerSelectEffect
-	dbw EFFECTCMDTYPE_AI_SELECTION, EnergySpike_AISelectEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, EnergyBoost_AISelectEffect
 	db  $00 
 
 IceShardEffectCommands:	; 
@@ -1969,11 +1959,10 @@ MailSeekerEffectCommands:
 	db  $00 
 
 JewelseekersEffectCommands:
-	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Quickfreeze_InitialEffect
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, Sprint_Check
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Pokepower_AddToHandEffect
-	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, TrainerSearch_PlayerSelection
-	dbw EFFECTCMDTYPE_AI_SELECTION, TrainerSearch_AISelection
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, PsychicPkmnSearch_PlayerSelection
+	dbw EFFECTCMDTYPE_AI_SELECTION, PsychicPkmnSearch_AISelection
 	db  $00
 
 GrassPkmnSearchEffectCommands:
@@ -2059,3 +2048,73 @@ PsychicEnergySearchEffectCommands:
 	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, PsychicEnergySearch_PlayerSelection
 	dbw EFFECTCMDTYPE_AI_SELECTION, PsychicEnergySearch_AISelection
 	db  $00	
+
+DarknessPkmnSearchEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, DeckCheck
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EnergySearch_AddToHandEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, DarknessPkmnSearch_PlayerSelection
+	dbw EFFECTCMDTYPE_AI_SELECTION, DarknessPkmnSearch_AISelection
+	db  $00	
+
+DarknessEnergySearchEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, DeckCheck
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EnergySearch_AddToHandEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, DarknessEnergySearch_PlayerSelection
+	dbw EFFECTCMDTYPE_AI_SELECTION, DarknessEnergySearch_AISelection
+	db  $00	
+
+ColorlessPkmnSearchEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, DeckCheck
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EnergySearch_AddToHandEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, ColorlessPkmnSearch_PlayerSelection
+	dbw EFFECTCMDTYPE_AI_SELECTION, ColorlessPkmnSearch_AISelection
+	db  $00	
+
+EvolutionPkmnSearchEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, DeckCheck
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EnergySearch_AddToHandEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, EvolutionSearch_PlayerSelection
+	dbw EFFECTCMDTYPE_AI_SELECTION, EvolutionSearch_AISelection
+	db  $00	
+
+PowerLariatEffectCommands:		;Does +10 per injured pokemon on your side of the field.
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, PowerLariatEffect
+	dbw EFFECTCMDTYPE_AI, PowerLariat_AIEffect
+	db  $00
+
+EnergyBurstfectCommands:		;Does 10x per your and opponent's energy.
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EnergyBurst_MultiplierEffect
+	dbw EFFECTCMDTYPE_AI, EnergyBurst_AIEffect
+	db  $00
+
+SonicBladeEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, SuperFang_HalfHPEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE,	DrawACard_DamagedEffect
+	dbw EFFECTCMDTYPE_AI, SuperFang_AIEffect
+	db  $00
+
+Exp_EvolutionEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, DeckCheck
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, ExplosiveEvolutionEffect2
+	db  $00
+
+StompOffEffectCommands:	; If attack is successful, mill 3 from opp's deck.
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, DiscardEachtop2ffect
+	db  $00
+
+DarkDestructionEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Rage_DamageBoostEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, DarkDestructionEffect
+	dbw EFFECTCMDTYPE_AI, Rage_AIEffect
+	db  $00
+
+GnawOffEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, ThunderJolt_Recoil50PercentEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, GnawOffEffect
+	db  $00	
+
+RiptideEffectCommands:
+  dbw EFFECTCMDTYPE_BEFORE_DAMAGE, AquaStream_DamageBoostEffect
+  dbw EFFECTCMDTYPE_AFTER_DAMAGE, SelectedDiscardPileCards_ShuffleIntoDeckEffect
+  dbw EFFECTCMDTYPE_REQUIRE_SELECTION, Riptide_PlayerSelectEffect
+  db  $00

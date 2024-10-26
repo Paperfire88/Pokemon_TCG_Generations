@@ -48,7 +48,7 @@ AIActionTable_FlowerPower:
 .list_energy
 	ai_energy CHIKORITA,      3, +0
 	ai_energy BAYLEEF,        4, +0
-	ai_energy VENUSAUR_LV67,  4, +0
+	ai_energy MEGANIUM,  4, +0
 	ai_energy ODDISH,         2, +0
 	ai_energy GLOOM,          3, -1
 	ai_energy VILEPLUME,      3, -1
@@ -57,7 +57,7 @@ AIActionTable_FlowerPower:
 	dw NULL
 
 .list_prize
-	dw VENUSAUR_LV67
+	dw MEGANIUM
 	dw NULL
 
 .store_list_pointers

@@ -9,3 +9,15 @@ PyroarCardGfx:
 GalladeCardGfx:
 	INCBIN "gfx/cards/gallade.2bpp"
 	INCBIN "gfx/cards/gallade.pal"      
+
+ImpidimpCardGfx:
+	INCBIN "gfx/cards/impidimp.2bpp"
+	INCBIN "gfx/cards/impidimp.pal"
+
+MorgremCardGfx:
+	INCBIN "gfx/cards/morgrem.2bpp"
+	INCBIN "gfx/cards/morgrem.pal"	
+
+GrimmsnarlCardGfx:
+	INCBIN "gfx/cards/grimmsnarl.2bpp"
+	INCBIN "gfx/cards/grimmsnarl.pal"	

@@ -1374,8 +1374,8 @@ ProcessPlayedPokemonCard::
 	call LoadTxRam2
 	ldtx hl, HavePokemonPowerText
 	call DrawWideTextBox_WaitForInput
-	ld hl, wLoadedCard1ID + 1
-	cphl MUK
+	ld hl, wLoadedCard1ID
+	cphl TREVENANT
 	jr z, .use_pokemon_power
 	ld a, $01 ; check only Muk
 	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0

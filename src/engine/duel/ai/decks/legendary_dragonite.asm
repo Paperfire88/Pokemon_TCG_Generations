@@ -50,7 +50,7 @@ AIActionTable_LegendaryDragonite:
 .list_energy
 	ai_energy CHARMANDER,     3, +1
 	ai_energy CHARMELEON,     4, +1
-	ai_energy CHARIZARD,      5, +0
+	ai_energy EMBOAR,      5, +0
 	ai_energy SNEASEL,       3, +1
 	ai_energy WEAVILE,       4, -1
 	ai_energy GOOMY,        2, +0

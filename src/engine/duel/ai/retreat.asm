@@ -573,7 +573,7 @@ AIDecideBenchPokemonToSwitchTo:
 	call SwapTurn
 	call LoadCardDataToBuffer2_FromDeckIndex
 	call SwapTurn
-	ld hl, wLoadedCard2ID + 1
+	ld hl, wLoadedCard2ID
 	cphl SPIRITOMB
 	jr nz, .check_defending_weak
 	xor a
@@ -690,7 +690,7 @@ AIDecideBenchPokemonToSwitchTo:
 	add DUELVARS_ARENA_CARD
 	call GetTurnDuelistVariable
 	call LoadCardDataToBuffer1_FromDeckIndex
-	ld hl, wLoadedCard1ID + 1
+	ld hl, wLoadedCard1ID
 	cphl SPIRITOMB
 	jr z, .raise_score
 	cphl MIMIKYU
@@ -716,7 +716,7 @@ AIDecideBenchPokemonToSwitchTo:
 ; if card is Mysterious Fossil or Clefairy Doll,
 ; lower AI score
 .mysterious_fossil_or_clefairy_doll
-	ld hl, wLoadedCard1ID + 1
+	ld hl, wLoadedCard1ID
 	cphl MYSTERIOUS_FOSSIL
 	jr z, .lower_score_2
 	cphl TOGEPI_DOLL

@@ -273,7 +273,7 @@ IntroSequenceCmd_FadeOut:
 
 IntroSequenceCmd_LoadCharizardScene:
 	lb bc, 6, 3
-	ld a, SCENE_CHARIZARD_INTRO
+	ld a, SCENE_EMBOAR_INTRO
 	jp LoadOpeningScene
 
 IntroSequenceCmd_LoadScytherScene:

@@ -49,7 +49,7 @@ AIActionTable_WondersOfScience:
 
 .list_energy
 	ai_energy GRIMER,          3, +0
-	ai_energy MUK,             4, +0
+	ai_energy TREVENANT,             4, +0
 	ai_energy KOFFING,         2, +0
 	ai_energy WEEZING,         3, +0
 	ai_energy MEWTWO_LV53,     2, -1
@@ -59,7 +59,7 @@ AIActionTable_WondersOfScience:
 	dw NULL
 
 .list_prize
-	dw MUK
+	dw TREVENANT
 	dw NULL
 
 .store_list_pointers

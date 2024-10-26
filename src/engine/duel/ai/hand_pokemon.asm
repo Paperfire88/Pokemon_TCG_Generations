@@ -327,7 +327,7 @@ AIDecideEvolution:
 	add DUELVARS_ARENA_CARD
 	call GetTurnDuelistVariable
 	call LoadCardDataToBuffer1_FromDeckIndex
-	ld hl, wLoadedCard1ID + 1
+	ld hl, wLoadedCard1ID
 	cphl MYSTERIOUS_FOSSIL
 	jr z, .mysterious_fossil
 	ld a, [wLoadedCard1Unknown2]
@@ -346,7 +346,7 @@ AIDecideEvolution:
 	ld a, [wOpponentDeckID]
 	cp PIKACHU_DECK_ID
 	jr nz, .check_score
-	ld hl, wLoadedCard1ID + 1
+	ld hl, wLoadedCard1ID 
 	cphl BLITZLE
 	jr z, .pikachu
 	cphl HELIOPTILE
@@ -400,7 +400,7 @@ AIDecideSpecialEvolutions:
 	ret
 
 .legendary_dragonite
-	ld hl, wLoadedCard2ID + 1
+	ld hl, wLoadedCard2ID
 	cphl CHARMELEON
 	jr z, .charmeleon
 	cphl SNEASEL
@@ -443,7 +443,7 @@ AIDecideSpecialEvolutions:
 	jp AddToAIScore
 
 .invincible_ronald
-	ld hl, wLoadedCard2ID + 1
+	ld hl, wLoadedCard2ID
 	cphl GRIMER
 	jr z, .grimer
 	ret
@@ -457,7 +457,7 @@ AIDecideSpecialEvolutions:
 	jp AddToAIScore
 
 .legendary_ronald
-	ld hl, wLoadedCard2ID + 1
+	ld hl, wLoadedCard2ID
 	cphl SLIGGOO
 	jr z, .dragonair
 	ret
@@ -495,7 +495,7 @@ AIDecideSpecialEvolutions:
 
 ; if there's no Muk, raise score
 .check_muk
-	ld de, MUK
+	ld de, TREVENANT
 	call CountPokemonIDInBothPlayAreas
 	jr c, .lower_score
 	ld a, 10
@@ -532,7 +532,7 @@ AIDecidePlayLegendaryBirds:
 
 ; check if card applies
 .begin
-	ld hl, wLoadedCard1ID + 1
+	ld hl, wLoadedCard1ID
 	cphl ARTICUNO_LV37
 	jr z, .articuno
 	cphl MOLTRES_LV37
@@ -583,7 +583,7 @@ AIDecidePlayLegendaryBirds:
 
 .check_muk_and_snorlax
 	; checks for Muk in both Play Areas
-	ld de, MUK
+	ld de, TREVENANT
 	call CountPokemonIDInBothPlayAreas
 	jr c, .subtract
 	; checks if player's active card is Snorlax
@@ -612,7 +612,7 @@ AIDecidePlayLegendaryBirds:
 
 .zapdos
 	; checks for Muk in both Play Areas
-	ld de, MUK
+	ld de, TREVENANT
 	call CountPokemonIDInBothPlayAreas
 	jr c, .subtract
 	ret

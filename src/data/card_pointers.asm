@@ -12,12 +12,11 @@ CardPointers::
 	dab ChikoritaCard
 	dab BayleefCard
 	dab CelebiCard
-	dab VenusaurLv67Card
-	dab CaterpieCard
-	dab MetapodCard
-	dab ButterfreeCard
-	dab EkansCard
-	dab ArbokCard
+	dab MeganiumCard
+	dab WurmpleCard
+	dab SilcoonCard
+	dab BeautiflyCard
+	dab CascoonCard
 	dab WeedleCard
 	dab KakunaCard
 	dab BeedrillCard
@@ -38,7 +37,7 @@ CardPointers::
 	dab WeepinbellCard
 	dab VictreebelCard
 	dab GrimerCard
-	dab MukCard
+	dab TrevenantCard
 	dab ExeggcuteCard
 	dab ExeggutorCard
 	dab KoffingCard
@@ -83,8 +82,6 @@ CardPointers::
 	dab PoliwagCard
 	dab PoliwhirlCard
 	dab PoliwrathCard
-	dab TentacoolCard
-	dab TentacruelCard
 	dab SeelCard
 	dab DewgongCard
 	dab WingullCard
@@ -194,11 +191,17 @@ CardPointers::
 	dab AlakazamCard
 	dab DrowzeeCard
 	dab HypnoCard
+	dab SkrelpCard
+	dab DragalgeCard
 	dab ZubatCard
 	dab GolbatCard
 	dab CrobatCard
+	dab DustoxCard
 	dab SkorupiCard
 	dab DrapionCard
+	dab ImpidimpCard
+	dab	MorgremCard
+	dab	GrimmsnarlCard
 	dab SneaselCard
 	dab WeavileCard
 	dab UmbreonCard

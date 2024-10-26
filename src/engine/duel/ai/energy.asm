@@ -148,10 +148,10 @@ AIProcessEnergyCards:
 ; and there's VenusaurLv67 in own Play Area,
 ; add to AI score
 .check_venusaur
-	ld de, MUK
+	ld de, TREVENANT
 	call CountPokemonIDInBothPlayAreas
 	jr c, .check_if_active
-	ld de, VENUSAUR_LV67
+	ld de, MEGANIUM
 	call CountPokemonIDInPlayArea
 	jr nc, .check_if_active
 	ld a, 1
@@ -457,7 +457,7 @@ DetermineAIScoreOfAttackEnergyRequirement:
 ; if current card is ZapdosLv64, don't add to score.
 ; if there is no surplus energy, encourage playing energy.
 .discard_energy
-	ld hl, wLoadedCard1ID + 1
+	ld hl, wLoadedCard1ID 
 	cphl ZERAORA
 	jr z, .check_evolution
 	call CheckIfNoSurplusEnergyForAttack
@@ -709,10 +709,10 @@ GetEnergyCardForDiscardOrEnergyBoostAttack:
 ; Charizard's Fire Spin or Exeggutor's Big Eggsplosion,
 ; for these to be treated differently.
 ; for both attacks, load its energy cost.
-	ld hl, wLoadedCard2ID + 1
+	ld hl, wLoadedCard2ID 
 	cphl ZERAORA
 	jr z, .zapdos2
-	cphl CHARIZARD
+	cphl EMBOAR
 	jr z, .charizard_or_exeggutor
 	cphl WEEZING
 	jr z, .charizard_or_exeggutor

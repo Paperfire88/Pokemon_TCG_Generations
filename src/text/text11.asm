@@ -1414,3 +1414,11 @@ AlakazamName:
 DamageSwapName:
 	text "Damage Swap"
 	done
+
+DownDrawName:
+	text "Down Draw"
+	done
+
+GrubbinName:
+	text "Grubbin"
+	done	

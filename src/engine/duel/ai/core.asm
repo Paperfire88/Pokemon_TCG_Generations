@@ -190,7 +190,7 @@ CheckIfEnergyIsUseful:
 	ld a, [wTempCardType]
 	cp TYPE_ENERGY_DOUBLE_COLORLESS
 	jp z, .set_carry
-	ld hl, wTempCardID + 1
+	ld hl, wTempCardID 
 
 	ld bc, PSYCHIC_ENERGY
 	cphl EXEGGCUTE
@@ -459,9 +459,8 @@ CheckEnergyNeededForAttack:
 
 	; colorless
 	ld a, [de]
-	ld a, [de]
 	swap a
-	call CheckIfEnoughParticularAttachedEnergy
+	and %00001111
 	ld b, a ; colorless energy still needed
 	ld a, [wTempLoadedAttackEnergyCost]
 	ld hl, wTempLoadedAttackEnergyNeededAmount
@@ -487,6 +486,8 @@ CheckEnergyNeededForAttack:
 	ld b, a ; basic energy still needed
 	ld a, [wTempLoadedAttackEnergyNeededType]
 	call ConvertColorToEnergyCardID
+	ld e, a
+  	ld d, 0
 	scf
 	ret
 
@@ -857,7 +858,7 @@ CheckEnergyNeededForAttackAfterDiscard:
 	ldh a, [hTempPlayAreaLocation_ff9d]
 	farcall AIPickEnergyCardToDiscard
 	call LoadCardDataToBuffer1_FromDeckIndex
-	ld hl, wLoadedCard1ID + 1
+	ld hl, wLoadedCard1ID
 	cphl DOUBLE_COLORLESS_ENERGY
 	jr z, .colorless
 
@@ -2110,11 +2111,6 @@ CheckIfNoSurplusEnergyForAttack:
   	ld a, [de]
   	swap a
   	call CalculateParticularAttachedEnergyNeeded
-	; colorless
-  	ld a, [de]
-  	and %00001111
-  	ld b, a
-
 	; colorless
 	ld a, [de]
 	swap a

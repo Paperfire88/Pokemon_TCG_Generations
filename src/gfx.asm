@@ -1152,19 +1152,19 @@ CelebiCardGfx::
 	INCBIN "gfx/cards/venusaur1.2bpp"
 	INCBIN "gfx/cards/venusaur1.pal"
 
-VenusaurLv67CardGfx::
+MeganiumCardGfx::
 	INCBIN "gfx/cards/venusaur2.2bpp"
 	INCBIN "gfx/cards/venusaur2.pal"
 
-CaterpieCardGfx::
+WurmpleCardGfx::
 	INCBIN "gfx/cards/caterpie.2bpp"
 	INCBIN "gfx/cards/caterpie.pal"
 
-MetapodCardGfx::
+SilcoonCardGfx::
 	INCBIN "gfx/cards/metapod.2bpp"
 	INCBIN "gfx/cards/metapod.pal"
 
-ButterfreeCardGfx::
+BeautiflyCardGfx::
 	INCBIN "gfx/cards/butterfree.2bpp"
 	INCBIN "gfx/cards/butterfree.pal"
 
@@ -1180,11 +1180,11 @@ BeedrillCardGfx::
 	INCBIN "gfx/cards/beedrill.2bpp"
 	INCBIN "gfx/cards/beedrill.pal"
 
-EkansCardGfx::
+CascoonCardGfx::
 	INCBIN "gfx/cards/ekans.2bpp"
 	INCBIN "gfx/cards/ekans.pal"
 
-ArbokCardGfx::
+DustoxCardGfx::
 	INCBIN "gfx/cards/arbok.2bpp"
 	INCBIN "gfx/cards/arbok.pal"
 
@@ -1264,7 +1264,7 @@ GrimerCardGfx::
 	INCBIN "gfx/cards/grimer.2bpp"
 	INCBIN "gfx/cards/grimer.pal"
 
-MukCardGfx::
+TrevenantCardGfx::
 	INCBIN "gfx/cards/muk.2bpp"
 	INCBIN "gfx/cards/muk.pal"
 
@@ -1404,11 +1404,11 @@ PoliwrathCardGfx::
 	INCBIN "gfx/cards/poliwrath.2bpp"
 	INCBIN "gfx/cards/poliwrath.pal"
 
-TentacoolCardGfx::
+SkrelpCardGfx::
 	INCBIN "gfx/cards/tentacool.2bpp"
 	INCBIN "gfx/cards/tentacool.pal"
 
-TentacruelCardGfx::
+DragalgeCardGfx::
 	INCBIN "gfx/cards/tentacruel.2bpp"
 	INCBIN "gfx/cards/tentacruel.pal"
 

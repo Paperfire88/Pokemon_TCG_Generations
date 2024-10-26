@@ -1280,7 +1280,7 @@ IvysaurDescription:
 	line "OG illustrator: (Ken Sugimori)"
 	done
 
-VenusaurName:
+MeganiumName:
 	text "Meganium"
 	done
 
@@ -1351,7 +1351,7 @@ VenusaurLv67Description:
 	line "OG illustrator: (Ken Sugimori)"
 	done
 
-CaterpieName:
+WurmpleName:
 	text "Wurmple"
 	done
 
@@ -1374,7 +1374,7 @@ CaterpieDescription:
 	line "OG illustrator: (Hajime Kusajima)"
 	done
 
-MetapodName:
+SilcoonName:
 	text "Silcoon"
 	done
 
@@ -1404,7 +1404,7 @@ MetapodDescription:
 	line "OG illustrator: (Kagemaru Himeno)"
 	done
 
-ButterfreeName:
+BeautiflyName:
 	text "Beautifly"
 	done
 

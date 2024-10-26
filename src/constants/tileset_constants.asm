@@ -21,7 +21,7 @@
 	const TILESET_EVOLUTION                   ; $13
 	const TILESET_MYSTERY                     ; $14
 	const TILESET_LABORATORY                  ; $15
-	const TILESET_CHARIZARD_INTRO             ; $16
+	const TILESET_EMBOAR_INTRO             ; $16
 	const TILESET_SCYTHER_INTRO               ; $17
 	const TILESET_TYRANTRUM_INTRO            ; $18
 	const TILESET_SOLID_TILES_1               ; $19

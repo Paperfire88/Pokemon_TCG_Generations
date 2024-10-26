@@ -38,7 +38,7 @@ _AIProcessHandTrainerCards:
 	ld a, [wAITrainerCardToPlay]
 	call LoadCardDataToBuffer1_FromDeckIndex
 	push hl
-	ld hl, wLoadedCard1ID + 1
+	ld hl, wLoadedCard1ID
 	cphl SWITCH
 	pop hl
 	jr nz, .skip_switch_check
@@ -1695,7 +1695,7 @@ AIDecide_SuperEnergyRemoval:
 	cp $ff
 	ret z
 	call LoadCardDataToBuffer1_FromDeckIndex
-	ld hl, wLoadedCard1ID + 1
+	ld hl, wLoadedCard1ID
 	cphl DOUBLE_COLORLESS_ENERGY
 	; any basic energy card
 	; will set carry flag here
@@ -1970,7 +1970,7 @@ AIDecide_PokemonBreeder:
 	ld d, a
 	cp16 CELEBI
 	jr z, .found
-	cp16 VENUSAUR_LV67
+	cp16 MEGANIUM
 	jr z, .found
 	cp16 BLASTOISE
 	jr z, .found
@@ -2356,7 +2356,7 @@ AIDecide_ProfessorOak:
 	ld [wce06], a
 
 .handle_blastoise
-	ld de, MUK
+	ld de, TREVENANT
 	call CountPokemonIDInBothPlayAreas
 	jr c, .check_hand
 
@@ -2595,7 +2595,7 @@ AIDecide_ProfessorOak:
 	ld de, GRIMER
 	call LookForCardIDInHandList_Bank8
 	jr c, .found_grimer_or_muk
-	ld de, MUK
+	ld de, TREVENANT
 	call LookForCardIDInHandList_Bank8
 	jr c, .found_grimer_or_muk
 
@@ -2643,7 +2643,7 @@ AIDecide_EnergyRetrieval:
 	ld a, [wOpponentDeckID]
 	cp GO_GO_RAIN_DANCE_DECK_ID
 	jr nz, .start
-	ld de, MUK
+	ld de, TREVENANT
 	call CountPokemonIDInBothPlayAreas
 	jr c, .start
 	ld de, BLASTOISE
@@ -2908,7 +2908,7 @@ AIDecide_SuperEnergyRetrieval:
 	ld a, [wOpponentDeckID]
 	cp GO_GO_RAIN_DANCE_DECK_ID
 	jr nz, .start
-	ld de, MUK
+	ld de, TREVENANT
 	call CountPokemonIDInBothPlayAreas
 	jr c, .start
 	ld de, BLASTOISE
@@ -4436,7 +4436,7 @@ AIDecide_Lass:
 	ld b, a
 	call LoadCardDataToBuffer1_FromDeckIndex
 	push hl
-	ld hl, wLoadedCard1ID + 1
+	ld hl, wLoadedCard1ID
 	cphl LASS
 	pop hl
 	jr z, .loop
@@ -5304,7 +5304,7 @@ AIDecide_ComputerSearch_WondersOfScience:
 	ld de, GRIMER
 	call LookForCardIDInHandList_Bank8
 	jr nc, .target_grimer
-	ld de, MUK
+	ld de, TREVENANT
 	call LookForCardIDInHandList_Bank8
 	jr nc, .target_muk
 
@@ -5325,7 +5325,7 @@ AIDecide_ComputerSearch_WondersOfScience:
 ; first check Muk
 ; if in deck, check cards to discard.
 .target_muk
-	ld de, MUK
+	ld de, TREVENANT
 	ld a, CARD_LOCATION_DECK
 	call LookForCardIDInLocation
 	jp nc, .no_carry ; can be a jr
@@ -5635,7 +5635,7 @@ AIDecide_PokemonTrader_LegendaryDragonite:
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .choose_hand
 	ld bc, CHARMELEON
-	ld de, CHARIZARD
+	ld de, EMBOAR
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .choose_hand
 	ld de, CHARMANDER
@@ -5643,7 +5643,7 @@ AIDecide_PokemonTrader_LegendaryDragonite:
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .choose_hand
 	ld de, CHARMELEON
-	ld bc, CHARIZARD
+	ld bc, EMBOAR
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .choose_hand
 	jr .no_carry
@@ -5838,12 +5838,12 @@ AIDecide_PokemonTrader_SoundOfTheWaves:
 	ld bc, SEADRA
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .choose_hand
-	ld bc, TENTACOOL
-	ld de, TENTACRUEL
+	ld bc, SKRELP
+	ld de, DRAGALGE
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .choose_hand
-	ld de, TENTACOOL
-	ld bc, TENTACRUEL
+	ld de, SKRELP
+	ld bc, DRAGALGE
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .choose_hand
 	jr .no_carry
@@ -5864,7 +5864,7 @@ AIDecide_PokemonTrader_SoundOfTheWaves:
 	ld de, WINGULL
 	call CheckIfHasCardIDInHand
 	jr c, .set_carry
-	ld de, TENTACOOL
+	ld de, SKRELP
 	call CheckIfHasCardIDInHand
 	jr c, .set_carry
 	; none found
@@ -5955,7 +5955,7 @@ AIDecide_PokemonTrader_FlowerGarden:
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
 	ld bc, BAYLEEF
-	ld de, VENUSAUR_LV67
+	ld de, MEGANIUM
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
 	ld de, CHIKORITA
@@ -5963,7 +5963,7 @@ AIDecide_PokemonTrader_FlowerGarden:
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
 	ld de, BAYLEEF
-	ld bc, VENUSAUR_LV67
+	ld bc, MEGANIUM
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
 	ld bc, BELLSPROUT
@@ -6041,7 +6041,7 @@ AIDecide_PokemonTrader_Flamethrower:
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
 	ld bc, CHARMELEON
-	ld de, CHARIZARD
+	ld de, EMBOAR
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
 	ld de, CHARMANDER
@@ -6049,7 +6049,7 @@ AIDecide_PokemonTrader_Flamethrower:
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
 	ld de, CHARMELEON
-	ld bc, CHARIZARD
+	ld bc, EMBOAR
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
 	ld bc, VULPIX

@@ -104,7 +104,7 @@ AIDoTurn_LegendaryMoltres:
 	call GetTurnDuelistVariable
 	cp DECK_SIZE - 9
 	jr nc, .skip_moltres ; skip if cards in deck <= 9
-	ld de, MUK
+	ld de, TREVENANT
 	call CountPokemonIDInBothPlayAreas
 	jr c, .skip_moltres ; skip if Muk in play
 	ld de, MOLTRES_LV37

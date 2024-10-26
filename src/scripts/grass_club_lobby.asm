@@ -108,11 +108,11 @@ Script_Lass2:
 	print_text_quit_fully Text06fd
 
 .ows_e6b6
-	jump_if_card_owned CHARIZARD, .ows_e6bd
+	jump_if_card_owned EMBOAR, .ows_e6bd
 	print_text_quit_fully Text06fe
 
 .ows_e6bd
-	jump_if_card_in_collection CHARIZARD, .ows_e6c4
+	jump_if_card_in_collection EMBOAR, .ows_e6c4
 	print_text_quit_fully Text06ff
 
 .ows_e6c4
@@ -120,7 +120,7 @@ Script_Lass2:
 	set_event EVENT_LASS2_TRADE_STATE, LASS2_TRADES_COMPLETE
 	print_npc_text Text0700
 	print_text Text0701
-	take_card CHARIZARD
+	take_card EMBOAR
 	give_card BLASTOISE
 	show_card_received_screen BLASTOISE
 	print_text_quit_fully Text06f3

@@ -18,11 +18,11 @@ HandleAIEnergyTrans:
 	dec a
 	ret z ; return if no Bench cards
 
-	ld de, VENUSAUR_LV67
+	ld de, MEGANIUM
 	call CountPokemonIDInPlayArea
 	ret nc ; return if no VenusaurLv67 found in own Play Area
 
-	ld de, MUK
+	ld de, TREVENANT
 	call CountPokemonIDInBothPlayAreas
 	ret c ; return if Muk found in any Play Area
 
@@ -59,7 +59,7 @@ HandleAIEnergyTrans:
 	call GetTurnDuelistVariable
 	ldh [hTempCardIndex_ff9f], a
 	call GetCardIDFromDeckIndex
-	cp16 VENUSAUR_LV67
+	cp16 MEGANIUM
 	jr z, .use_pkmn_power
 
 	ld a, b
@@ -297,7 +297,7 @@ AIEnergyTransTransferEnergyToBench:
 	ldh [hTempCardIndex_ff9f], a
 	ld [wAIVenusaurLv67DeckIndex], a
 	call GetCardIDFromDeckIndex
-	cp16 VENUSAUR_LV67
+	cp16 MEGANIUM
 	jr z, .use_pkmn_power
 
 	ld a, b
@@ -403,7 +403,7 @@ AIEnergyTransTransferEnergyToBench:
 ;	- Curse.
 ; returns carry if turn ended.
 HandleAIPkmnPowers:
-	ld de, MUK
+	ld de, TREVENANT
 	call CountPokemonIDInBothPlayAreas
 	ccf
 	ret nc ; return no carry if Muk is in play
@@ -935,7 +935,7 @@ HandleAICurse:
 
 ; handles AI logic for Cowardice
 HandleAICowardice:
-	ld de, MUK
+	ld de, TREVENANT
 	call CountPokemonIDInBothPlayAreas
 	ret c ; return if there's Muk in play
 
@@ -960,7 +960,7 @@ HandleAICowardice:
 	ld [wce08], a
 	call GetCardIDFromDeckIndex
 	push bc
-	cp16 TENTACOOL
+	cp16 SKRELP
 	call z, .CheckWhetherToUseCowardice
 	pop bc
 	jr nc, .next
@@ -1034,7 +1034,7 @@ HandleAIDamageSwap:
 	ld de, ALAKAZAM
 	call CountPokemonIDInPlayArea
 	ret nc ; return if no Alakazam
-	ld de, MUK
+	ld de, TREVENANT
 	call CountPokemonIDInBothPlayAreas
 	ret c ; return if there's Muk in play
 
@@ -1198,7 +1198,7 @@ HandleAIGoGoRainDanceEnergy:
 	ld de, BLASTOISE
 	call CountPokemonIDInPlayArea
 	ret nc ; return if no Blastoise
-	ld de, MUK
+	ld de, TREVENANT
 	call CountPokemonIDInBothPlayAreas
 	ret c ; return if there's Muk in play
 

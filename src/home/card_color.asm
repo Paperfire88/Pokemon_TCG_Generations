@@ -88,13 +88,13 @@ GetCardResistance::
 	ld a, [wLoadedCard2Resistance]
 	ret
 
-; this function checks if turn holder's CHARIZARD energy burn is active, and if so, turns
+; this function checks if turn holder's EMBOAR energy burn is active, and if so, turns
 ; all energies at wAttachedEnergies except double colorless energies into fire energies
 HandleEnergyBurn::
 	ld a, DUELVARS_ARENA_CARD
 	call GetTurnDuelistVariable
 	call GetCardIDFromDeckIndex
-	cp16 CHARIZARD
+	cp16 EMBOAR
 	ret nz
 	xor a
 	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0

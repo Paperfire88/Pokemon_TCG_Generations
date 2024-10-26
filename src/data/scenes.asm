@@ -69,7 +69,7 @@ Scene_LaboratoryBooster:
 
 Scene_CharizardIntro:
 	db PALETTE_105, $01
-	db TILEMAP_CHARIZARD_INTRO, $80, $00
+	db TILEMAP_EMBOAR_INTRO, $80, $00
 	db $00
 
 Scene_ScytherIntro:

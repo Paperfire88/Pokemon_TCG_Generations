@@ -44,7 +44,7 @@ GiantBloomDescription:
 	text "Heal from this Pkmn half the amount"
 	line "of damage you did to your opponent's"
 	line "Pkmn. If this pkmn has 4 or more <GRASS>"
-	line "energies attached, Flip a coin." 
+	line "energy attached, Flip a coin." 
 	line "If heads, the Defending Pkmn is now" 
 	line "Paralyzed. If tails, the Defending" 
 	line "Pkmn is now Asleep."
@@ -765,7 +765,7 @@ LashesName:
 LashesDescription:
 	text "This attack does 10 more damage for"
 	line "each of your Benched PKMN with any"
-	line "amount of Energies atached on it."
+	line "amount of energy atached on it."
 	done	
 
 StickandAbsorbName:
@@ -776,7 +776,7 @@ StickandAbsorbDescription:
 	text "The Defending Pkmn can't retreat" 
 	line "during your opponent's next turn."
 	line "If this pkmn has 4 or more <GRASS>"
-	line "energies attached and this attack" 
+	line "energy attached and this attack" 
 	line "deals damage, remove 3 damage"
 	line "counters from this Pkmn."
 	done		
@@ -1047,3 +1047,215 @@ ChoosePsychicEnergyCardFromDeckText:
 	text "Choose a <PSYCHIC> Energy card from"
 	line "your deck."
 	done	
+
+DarknessEnergyText:
+	text "Darkness Energy"
+	done
+
+ChooseDarknessText:
+	text "Choose a"
+	line "Darkness PKMN."
+	done
+
+ChooseDarknessEnergyText:
+	text "Choose a"
+	line "Darkness Energy."
+	done
+
+ChooseDarknessPKMNCardFromDeckText:
+	text "Choose a <DARKNESS> PKMN card from"
+	line "your deck."
+	done	
+
+ChooseDarknessEnergyCardFromDeckText:
+	text "Choose a <DARKNESS> Energy card from"
+	line "your deck."
+	done	
+
+DarknessPokemonText:
+	text "Darkness Pokémon"
+	done
+
+ChooseColorlessText:
+	text "Choose a"
+	line "Colorless PKMN."
+	done
+
+ChooseColorlessPKMNCardFromDeckText:
+	text "Choose a <COLORLESS> PKMN card from"
+	line "your deck."
+	done	
+
+PsyShadowName:
+	text "Psy Shadow"
+	done
+
+PsyShadowDescription:
+	text "Once per your turn, search your deck" 
+	line "for a <PSYCHIC> Energy card and attach it" 
+	line "to 1 of your PKMN. then," 
+	line "Put 2 damage counters on that PKMN."
+	line "Shuffle your deck afterward."
+	done	
+
+PKMNPowerCondition:
+	text "This PKMN power can't be used if" 
+	line "your active PKMN is affected by a"
+	line "Special Condition."
+	done
+
+CuttoSizeName:
+	text "Cut to Size"
+	done
+
+CuttoSizeDescription:		
+	text "Does +10 more damage for each" 
+	line "Evolved PKMN you have in play."
+	done
+
+SonicBladeName:
+	text "Sonic Blade"
+	done
+
+SonicBladeDescription:		
+	text "Does damage to the Defending PKMN"
+	line "equal to half the Defending"
+	line "PKMN remaining HP (rounded up to the"
+	line "nearest 10). If this Pkmn has any"
+	line "damage counters on it, Draw a Card."
+	done	
+
+ChooseEvolutionCardText:
+	text "Choose an"
+	line "Evolution PKMN."
+	done
+
+ChooseEvolutionCardFromDeckText:
+	text "Choose a Evolution PKMN card from"
+	line "your deck."
+	done	
+
+PsychicResearchName:
+	text "Psychic Research"
+	done
+
+PsychicResearchDescription:
+	text "Search your deck for a Evolution"
+	line "PKMN and put it into your hand."
+	line "Shuffle your deck afterward."
+	done
+
+EnergyBurstName:
+	text "Energy Burst"
+	done
+
+EnergyBurstDescription:
+	text "Does 10 damage times the total" 
+	line "amount of Energy attached to this" 
+	line "and the Defending PKMN."
+	done
+
+LuckyFindName:
+	text "Lucky Find"
+	done
+
+LuckyFindDescription:
+	text "Search your deck for a Trainer"
+	line "Card and put it into your hand."
+	line "Shuffle your deck afterward."
+	done	
+
+PowerGemName:
+	text "Power Gem"
+	done
+
+IlluminateName:
+	text "Illuminate"
+	done
+
+IlluminateDescription:
+	text "Once per your turn, search your deck" 
+	line "for a <PSYCHIC> PKMN card and put it"
+	line "into your hand. Shuffle your"
+	line "deck afterward."
+	done	
+
+ImpidimpName:
+	text "Impidimp"
+	done
+
+MorgremName:
+	text "Morgrem"
+	done
+
+GrimmsnarlName:
+	text "Grimmsnarl"
+	done
+
+ExplosiveEvolutionName:
+	text "Explosive Evolution"
+	done
+
+ExplosiveEvolutionDescription:
+	text "This attack does 10 damage to each"
+	line "of your opponent's Pkmn. (Don't" 
+	line "apply Weakness and Resistance.)"
+	line "Then, search your deck for an"
+	line "Tyranitar and put it on Pupitar."
+	done
+
+ExplosiveEvolutionDescription2:
+	text "(This counts as evolving Pupitar.)" 
+	line "Shuffle your deck afterward."
+	done
+
+ChooseATyranitarFromDeckText:
+	text "Choose a Tyranitar"
+	line "from the Deck."
+	done
+
+ChooseATyranitarText:
+	text "Choose a Tyranitar."
+	done
+
+PokemonEvolvedIntoTyranitarText:
+	text "Your actived PKMN evolved"
+	line "into Tyranitar."
+	done
+
+ForWHATText:
+	text "To..."
+	done
+
+StompOffName:
+	text "Stomp Off"
+	done
+
+StompOffDescription:
+	text "Discard the top 2 cards of each" 
+	line "player's deck. Then,"
+	line "This card does 10 damage to itself"
+	done
+
+DarkDestructionName:
+	text "Dark Destruction"
+	done
+
+DarkDestructionDescription:
+	text "Does +10 more damage for each damage"
+	line "counter on this pkmn." 
+	line "If this pkmn has 4 or more <DARKNESS>energy"
+	line "attached to it; Discard the"
+	line "top 3 cards of each player's deck."
+	done
+
+GnawOffDescription:
+	text "Flip a coin. If tails, does"
+	line "10 damage to itself. If this Pkmn" 
+	line "has any damage counters on it,"
+	line "Draw a card."
+	done
+
+WaterArrowName:
+	text "Water Arrow"
+	done

@@ -276,8 +276,8 @@ ParalyzeCardList:
 	card_item GRASS_ENERGY,             8
 	card_item WATER_ENERGY,            14
 	card_item DOUBLE_COLORLESS_ENERGY,  4
-	card_item CATERPIE,                 3
-	card_item METAPOD,                  2
+	card_item WURMPLE,                 3
+	card_item SILCOON,                  2
 	card_item SQUIRTLE,                 3
 	card_item WARTORTLE,                2
 	card_item WINGULL,                 3
@@ -465,9 +465,9 @@ ZappingSelfdestructCardList:
 InsectCollectionCardList:
 	deck_list_start
 	card_item GRASS_ENERGY,    24
-	card_item CATERPIE,         3
-	card_item METAPOD,          2
-	card_item BUTTERFREE,       1
+	card_item WURMPLE,         3
+	card_item SILCOON,          2
+	card_item BEAUTIFLY,       1
 	card_item WEEDLE,           3
 	card_item KAKUNA,           2
 	card_item BEEDRILL,         1
@@ -489,8 +489,8 @@ JungleCardList:
 	deck_list_start
 	card_item GRASS_ENERGY,            25
 	card_item DOUBLE_COLORLESS_ENERGY,  1
-	card_item EKANS,                    2
-	card_item ARBOK,                    1
+	card_item CASCOON,                    2
+	card_item DUSTOX,                    1
 	card_item ZUBAT,                    2
 	card_item GOLBAT,                   1
 	card_item ODDISH,                   2
@@ -521,7 +521,7 @@ FlowerGardenCardList:
 	card_item DOUBLE_COLORLESS_ENERGY,  2
 	card_item CHIKORITA,                3
 	card_item BAYLEEF,                  2
-	card_item VENUSAUR_LV67,            2
+	card_item MEGANIUM,            2
 	card_item ODDISH,                   3
 	card_item GLOOM,                    2
 	card_item VILEPLUME,                2
@@ -570,7 +570,7 @@ FlowerPowerCardList:
 	card_item PSYCHIC_ENERGY,    4
 	card_item CHIKORITA,         4
 	card_item BAYLEEF,           3
-	card_item VENUSAUR_LV67,     2
+	card_item MEGANIUM,     2
 	card_item ODDISH,            4
 	card_item GLOOM,             3
 	card_item VILEPLUME,         2
@@ -722,8 +722,8 @@ LovelyNidoranCardList:
 ScienceCorpsCardList:
 	deck_list_start
 	card_item GRASS_ENERGY,    26
-	card_item EKANS,            2
-	card_item ARBOK,            1
+	card_item CASCOON,            2
+	card_item DUSTOX,            1
 	card_item NIDORANF,         2
 	card_item NIDORINA,         1
 	card_item NIDOQUEEN,        1
@@ -733,7 +733,7 @@ ScienceCorpsCardList:
 	card_item ZUBAT,            2
 	card_item GOLBAT,           1
 	card_item GRIMER,           2
-	card_item MUK,              1
+	card_item TREVENANT,              1
 	card_item KOFFING,          2
 	card_item WEEZING,          1
 	card_item BIDOOF,      2
@@ -775,8 +775,8 @@ PoisonCardList:
 	card_item WEEDLE,                  3
 	card_item KAKUNA,                  2
 	card_item BEEDRILL,                1
-	card_item EKANS,                   4
-	card_item ARBOK,                   3
+	card_item CASCOON,                   4
+	card_item DUSTOX,                   3
 	card_item NIDORANM,                4
 	card_item NIDORINO,                3
 	card_item NIDOKING,                2
@@ -795,7 +795,7 @@ WondersOfScienceCardList:
 	card_item GRASS_ENERGY,           15
 	card_item PSYCHIC_ENERGY,          8
 	card_item GRIMER,                  4
-	card_item MUK,                     3
+	card_item TREVENANT,                     3
 	card_item KOFFING,                 4
 	card_item WEEZING,                 3
 	card_item MEWTWO_LV53,             2
@@ -840,10 +840,10 @@ ChariSaurCardList:
 	card_item FIRE_ENERGY,      10
 	card_item CHIKORITA,         4
 	card_item BAYLEEF,           3
-	card_item VENUSAUR_LV67,     2
+	card_item MEGANIUM,     2
 	card_item CHARMANDER,        4
 	card_item CHARMELEON,        3
-	card_item CHARIZARD,         2
+	card_item EMBOAR,         2
 	card_item NUMEL,      3
 	card_item EEVEE,             4
 	card_item BILL,              2
@@ -881,7 +881,7 @@ FirePokemonCardList:
 	card_item DOUBLE_COLORLESS_ENERGY,  2
 	card_item CHARMANDER,               3
 	card_item CHARMELEON,               2
-	card_item CHARIZARD,                1
+	card_item EMBOAR,                1
 	card_item VULPIX,                   3
 	card_item NINETALES_LV32,           1
 	card_item DELTA_KINGDRA,           1
@@ -934,14 +934,14 @@ CharmanderAndFriendsCardList:
 	card_item GRASS_ENERGY,     8
 	card_item FIRE_ENERGY,     10
 	card_item WATER_ENERGY,     6
-	card_item CATERPIE,         2
-	card_item METAPOD,          1
+	card_item WURMPLE,         2
+	card_item SILCOON,          1
 	card_item NIDORANF,         2
 	card_item NIDORANM,         1
 	card_item SCIZOR,           1
 	card_item CHARMANDER,       2
 	card_item CHARMELEON,       1
-	card_item CHARIZARD,        1
+	card_item EMBOAR,        1
 	card_item GROWLITHE,        2
 	card_item ARCANINE_LV45,    1
 	card_item PONYTA,           2
@@ -1008,7 +1008,7 @@ BulbasaurAndFriendsCardList:
 	card_item PSYCHIC_ENERGY,   6
 	card_item CHIKORITA,        2
 	card_item BAYLEEF,          1
-	card_item VENUSAUR_LV67,    1
+	card_item MEGANIUM,    1
 	card_item NIDORANF,         2
 	card_item NIDORANM,         2
 	card_item NIDORINO,         1
@@ -1170,7 +1170,7 @@ LegendaryDragoniteCardList:
 	card_item DOUBLE_COLORLESS_ENERGY,  4
 	card_item CHARMANDER,               3
 	card_item CHARMELEON,               2
-	card_item CHARIZARD,                2
+	card_item EMBOAR,                2
 	card_item SNEASEL,                 3
 	card_item WEAVILE,                 2
 	card_item CHEWTLE,                   2

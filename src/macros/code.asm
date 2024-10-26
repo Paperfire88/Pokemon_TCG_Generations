@@ -81,7 +81,7 @@ MACRO cphl
 	ld a, [hld]
 	cp HIGH(\1)
 	jr nz, :+
-	ld a, [hli]
+	ld a, [hl]
 	cp LOW(\1)
 :
 ENDM

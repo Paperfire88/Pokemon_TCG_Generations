@@ -41,7 +41,7 @@
 	const TILEMAP_EVOLUTION                        ; $27
 	const TILEMAP_MYSTERY                          ; $28
 	const TILEMAP_LABORATORY                       ; $29
-	const TILEMAP_CHARIZARD_INTRO                  ; $2a
+	const TILEMAP_EMBOAR_INTRO                  ; $2a
 	const TILEMAP_SCYTHER_INTRO                    ; $2b
 	const TILEMAP_TYRANTRUM_INTRO                 ; $2c
 	const TILEMAP_SOLID_TILES_1                    ; $2d

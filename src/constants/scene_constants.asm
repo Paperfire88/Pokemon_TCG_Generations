@@ -4,7 +4,7 @@
 	const SCENE_EVOLUTION_BOOSTER             ; $02
 	const SCENE_MYSTERY_BOOSTER               ; $03
 	const SCENE_LABORATORY_BOOSTER            ; $04
-	const SCENE_CHARIZARD_INTRO               ; $05
+	const SCENE_EMBOAR_INTRO               ; $05
 	const SCENE_SCYTHER_INTRO                 ; $06
 	const SCENE_TYRANTRUM_INTRO              ; $07
 	const SCENE_GRADIENT_BLACK_AND_RED        ; $08

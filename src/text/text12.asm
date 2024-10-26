@@ -896,11 +896,6 @@ RetreatAidDescription:
 	line "PKMN."
 	done
 
-DodriosRageDescription:
-	text "Does damage plus 10 more damage"
-	line "for each damage counter."
-	done
-
 TriplebirdName:
 	text "Valiant"
 	done

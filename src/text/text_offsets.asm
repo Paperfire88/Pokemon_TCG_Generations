@@ -1977,7 +1977,7 @@ TextOffsets::
 	textpointer PoisonPowderName
 	textpointer InflictPoisonDescription
 	textpointer IvysaurDescription
-	textpointer VenusaurName
+	textpointer MeganiumName
 	textpointer SolarPowerName
 	textpointer SolarPowerDescription
 	textpointer SolarPowerDescriptionCont
@@ -1989,18 +1989,18 @@ TextOffsets::
 	textpointer EnergyTransDescription
 	textpointer SolarBeamName
 	textpointer VenusaurLv67Description
-	textpointer CaterpieName
+	textpointer WurmpleName
 	textpointer StringShotName
 	textpointer MayInflictParalysisDescription
 	textpointer WormName
 	textpointer CaterpieDescription
-	textpointer MetapodName
+	textpointer SilcoonName
 	textpointer StiffenName
 	textpointer MetapodsStiffenDescription
 	textpointer StunSporeName
 	textpointer CocoonName
 	textpointer MetapodDescription
-	textpointer ButterfreeName
+	textpointer BeautiflyName
 	textpointer WhirlwindName
 	textpointer WhirlwindDescription
 	textpointer ButterfreesMegaDrainDescription
@@ -2020,12 +2020,12 @@ TextOffsets::
 	textpointer DoubleAttackX30Description
 	textpointer PoisonBeeName
 	textpointer BeedrillDescription
-	textpointer EkansName
+	textpointer CascoonName
 	textpointer SpitPoisonName
 	textpointer WrapName
 	textpointer SnakeName
 	textpointer EkansDescription
-	textpointer ArbokName
+	textpointer DustoxName
 	textpointer TerrorStrikeName
 	textpointer TerrorStrikeDescription
 	textpointer PoisonFangName
@@ -2126,7 +2126,7 @@ TextOffsets::
 	textpointer GrimersMinimizeDescription
 	textpointer SludgeName
 	textpointer GrimerDescription
-	textpointer MukName
+	textpointer TrevenantName
 	textpointer ToxicGasName
 	textpointer ToxicGasDescription
 	textpointer MukDescription
@@ -2215,7 +2215,7 @@ TextOffsets::
 	textpointer TakeDownDescription
 	textpointer ArcanineLv45Description
 	textpointer PonytaName
-	textpointer SmashKickName
+	textpointer GnawOffName
 	textpointer FlameTailName
 	textpointer FireHorseName
 	textpointer PonytaDescription
@@ -2291,12 +2291,12 @@ TextOffsets::
 	textpointer PoliwrathsWaterGunDescription
 	textpointer WhirlpoolName
 	textpointer PoliwrathDescription
-	textpointer TentacoolName
+	textpointer SkrelpName
 	textpointer CowardiceName
 	textpointer CowardiceDescription
 	textpointer JellyfishName
 	textpointer TentacoolDescription
-	textpointer TentacruelName
+	textpointer DragalgeName
 	textpointer JellyfishStingName
 	textpointer TentacruelDescription
 	textpointer SeelName
@@ -2770,7 +2770,7 @@ TextOffsets::
 	textpointer BraviaryName
 	textpointer RetreatAidName
 	textpointer RetreatAidDescription
-	textpointer DodriosRageDescription
+	textpointer DarkDestructionDescription
 	textpointer TriplebirdName
 	textpointer DodrioDescription
 	textpointer DrampaName
@@ -3428,3 +3428,44 @@ TextOffsets::
 	textpointer	ChoosePsychicEnergyText
 	textpointer	ChoosePsychicPKMNCardFromDeckText
 	textpointer	ChoosePsychicEnergyCardFromDeckText
+	textpointer	DarknessEnergyText
+	textpointer	ChooseDarknessText	
+	textpointer	ChooseDarknessEnergyText
+	textpointer	ChooseDarknessPKMNCardFromDeckText
+	textpointer	ChooseDarknessEnergyCardFromDeckText
+	textpointer	DarknessPokemonText
+	textpointer	ChooseColorlessText	
+	textpointer	ChooseColorlessPKMNCardFromDeckText
+	textpointer	PsyShadowName
+	textpointer	PsyShadowDescription
+	textpointer	PKMNPowerCondition	
+	textpointer	CuttoSizeName
+	textpointer	CuttoSizeDescription
+	textpointer	SonicBladeName
+	textpointer	SonicBladeDescription
+	textpointer	ChooseEvolutionCardFromDeckText
+	textpointer	ChooseEvolutionCardText
+	textpointer	PsychicResearchName
+	textpointer	PsychicResearchDescription
+	textpointer	EnergyBurstName
+	textpointer	EnergyBurstDescription
+	textpointer	LuckyFindName
+	textpointer	LuckyFindDescription
+	textpointer	PowerGemName
+	textpointer	IlluminateName
+	textpointer	IlluminateDescription
+	textpointer	ImpidimpName
+	textpointer	MorgremName
+	textpointer	GrimmsnarlName
+	textpointer	ExplosiveEvolutionDescription
+	textpointer	ExplosiveEvolutionDescription2
+	textpointer	ChooseATyranitarFromDeckText
+	textpointer	ChooseATyranitarText
+	textpointer	ExplosiveEvolutionName
+	textpointer	PokemonEvolvedIntoTyranitarText
+	textpointer	ForWHATText
+	textpointer	StompOffName
+	textpointer StompOffDescription
+	textpointer	DarkDestructionName
+	textpointer	GnawOffDescription
+	textpointer	WaterArrowName

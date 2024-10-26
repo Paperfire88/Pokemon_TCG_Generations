@@ -10,12 +10,11 @@
 	const CHIKORITA                   ; $08
 	const BAYLEEF                     ; $09
 	const CELEBI               ; $0a
-	const VENUSAUR_LV67               ; $0b
-	const CATERPIE                    ; $0c
-	const METAPOD                     ; $0d
-	const BUTTERFREE                  ; $0e
-	const EKANS                       ; $12
-	const ARBOK                       ; $13
+	const MEGANIUM               ; $0b
+	const WURMPLE                    ; $0c
+	const SILCOON                     ; $0d
+	const BEAUTIFLY                  ; $0e
+	const CASCOON                       ; $12
 	const WEEDLE                      ; $0f
 	const KAKUNA                      ; $10
 	const BEEDRILL                    ; $11
@@ -36,7 +35,7 @@
 	const WEEPINBELL                  ; $24
 	const VICTREEBEL                  ; $25
 	const GRIMER                      ; $26
-	const MUK                         ; $27
+	const TREVENANT                         ; $27
 	const EXEGGCUTE                   ; $28
 	const EXEGGUTOR                   ; $29
 	const KOFFING                     ; $2a
@@ -48,7 +47,7 @@
 	const SCYTHER                     ; $2e
 	const CHARMANDER                  ; $30
 	const CHARMELEON                  ; $31
-	const CHARIZARD                   ; $32
+	const EMBOAR                   ; $32
 	const VULPIX                      ; $33
 	const NINETALES_LV32              ; $34
 	const DELTA_KINGDRA              ; $35
@@ -81,8 +80,6 @@
 	const POLIWAG                     ; $46
 	const POLIWHIRL                   ; $47
 	const POLIWRATH                   ; $48
-	const TENTACOOL                   ; $49
-	const TENTACRUEL                  ; $4a
 	const SEEL                        ; $4b
 	const DEWGONG                     ; $4c
 	const WINGULL                    ; $4d
@@ -192,11 +189,17 @@
 	const ALAKAZAM                    ; $90
 	const DROWZEE                     ; $99
 	const HYPNO                       ; $9a
+	const SKRELP                   ; $49
+	const DRAGALGE                  ; $4a
 	const ZUBAT                       ; $1a
 	const GOLBAT                      ; $1b
 	const CROBAT					  ;
+	const DUSTOX                       ; $13
 	const SKORUPI
 	const DRAPION
+	const IMPIDIMP
+	const MORGREM
+	const GRIMMSNARL
 	const SNEASEL                    ; $57
 	const WEAVILE                    ; $58
 	const UMBREON

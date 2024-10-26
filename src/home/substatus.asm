@@ -83,7 +83,7 @@ HandleDamageReductionExceptSubstatus2::
 	ld a, [wLoadedAttackCategory]
 	cp POKEMON_POWER
 	ret z
-	ld hl, wTempNonTurnDuelistCardID + 1
+	ld hl, wTempNonTurnDuelistCardID
 	cphl SPIRITOMB
 	jr z, .prevent_less_than_30_damage ; invisible wall
 	cphl KABUTO
@@ -147,7 +147,7 @@ HandleDamageReductionOrNoDamageFromPkmnPowerEffects::
 	cp POKEMON_POWER
 	ret z
 	push de
-	ld de, MUK
+	ld de, TREVENANT
 	call CountPokemonIDInBothPlayAreas
 	pop de
 	ret c
@@ -174,10 +174,10 @@ HandleStrikesBack_AgainstDamagingAttack::
 	ld a, [wIsDamageToSelf]
 	or a
 	ret nz
-	ld hl, wTempNonTurnDuelistCardID + 1 ; ID of defending Pokemon
+	ld hl, wTempNonTurnDuelistCardID ; ID of defending Pokemon
 	cphl KROOKODILE
 	ret nz
-	ld de, MUK
+	ld de, TREVENANT
 	call CountPokemonIDInBothPlayAreas
 	ret c
 	ld a, [wLoadedAttackCategory] ; category of attack used
@@ -368,7 +368,7 @@ HandleNoDamageOrEffectSubstatus::
 	ccf
 	ret nc
 .pkmn_power
-	ld hl, wTempNonTurnDuelistCardID + 1
+	ld hl, wTempNonTurnDuelistCardID
 	cphl MIMIKYU
 	jr z, .neutralizing_shield
 	or a
@@ -399,7 +399,7 @@ HandleNoDamageOrEffectSubstatus::
 ; there is a 50% chance that any damage or effect is prevented
 ; return carry if damage is prevented
 HandleTransparency::
-	ld hl, wTempNonTurnDuelistCardID + 1
+	ld hl, wTempNonTurnDuelistCardID
 	cphl DUSCLOPS
 	jr z, .transparency
 .done
@@ -460,7 +460,7 @@ NoDamageOrEffectTextIDTable::
 
 ; return carry if turn holder has Omanyte and its Clairvoyance Pkmn Power is active
 IsClairvoyanceActive::
-	ld de, MUK
+	ld de, TREVENANT
 	call CountPokemonIDInBothPlayAreas
 	ccf
 	ret nc
@@ -484,7 +484,7 @@ CheckCannotUseDueToStatus_OnlyToxicGasIfANon0::
 	jr nz, .done ; return carry
 .check_toxic_gas
 	push de
-	ld de, MUK
+	ld de, TREVENANT
 	call CountPokemonIDInBothPlayAreas
 	pop de
 	ldtx hl, UnableDueToToxicGasText
@@ -602,7 +602,7 @@ GetLoadedCard1RetreatCost::
 	ld a, [wLoadedCard1RetreatCost] ; return regular retreat cost
 	ret
 .dodrio_found
-	ld de, MUK
+	ld de, TREVENANT
 	call CountPokemonIDInBothPlayAreas
 	jr c, .muk_found
 	ld a, [wLoadedCard1RetreatCost]
@@ -642,7 +642,7 @@ IsPrehistoricPowerActive::
 	ld de, TYRANTRUM
 	call CountPokemonIDInBothPlayAreas
 	ret nc
-	ld de, MUK
+	ld de, TREVENANT
 	call CountPokemonIDInBothPlayAreas
 	ldtx hl, UnableToEvolveDueToPrehistoricPowerText
 	ccf
@@ -704,7 +704,7 @@ IsRainDanceActive::
 	ld de, BLASTOISE
 	call CountPokemonIDInPlayArea
 	ret nc ; return if no Pkmn Power-capable Blastoise found in turn holder's play area
-	ld de, MUK
+	ld de, TREVENANT
 	call CountPokemonIDInBothPlayAreas
 	ccf
 	ret
@@ -769,7 +769,7 @@ HandleDestinyBondSubstatus::
 ; attacking Pokemon (turn holder's arena Pokemon) takes 10 damage.
 ; used to bounce back an attack of the RESIDUAL category
 HandleStrikesBack_AgainstResidualAttack::
-	ld hl, wTempNonTurnDuelistCardID + 1
+	ld hl, wTempNonTurnDuelistCardID
 	cphl KROOKODILE
 	jr z, .strikes_back
 	ret
@@ -821,11 +821,11 @@ ApplyStrikesBack_AgainstResidualAttack::
 	scf
 	ret
 
-; if the id of the card provided in register a as a deck index is MUK,
+; if the id of the card provided in register a as a deck index is TREVENANT,
 ; clear the changed type of all arena and bench Pokemon
 ClearChangedTypesIfMuk::
 	call GetCardIDFromDeckIndex
-	cp16 MUK
+	cp16 TREVENANT
 	ret nz
 	call SwapTurn
 	call .zero_changed_types

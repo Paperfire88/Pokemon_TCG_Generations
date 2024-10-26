@@ -66,6 +66,10 @@ LookForCardsInDeck:
 	dw .SearchDeckForFightingEnergy
 	dw .SearchDeckForPsychic
 	dw .SearchDeckForPsychicEnergy
+	dw .SearchDeckForDarkness
+	dw .SearchDeckForDarknessEnergy
+	dw .SearchDeckForColorless
+	dw .SearchDeckForEvolution
 
 .set_carry
 	scf
@@ -318,6 +322,56 @@ LookForCardsInDeck:
     or a
     ret
 
+.SearchDeckForDarkness
+    ld hl, wDuelTempList
+.loop_deck_Darkness
+    ld a, [hli]
+    cp $ff
+    jp z, .set_carry
+    call GetCardIDFromDeckIndex
+    call GetCardType
+    cp TYPE_PKMN_DARKNESS
+    jr nz, .loop_deck_Darkness ; skip if not a Trainer
+    or a
+    ret
+	
+.SearchDeckForDarknessEnergy
+    ld hl, wDuelTempList
+.loop_deck_DarknessEnergy
+    ld a, [hli]
+    cp $ff
+    jp z, .set_carry
+    call GetCardIDFromDeckIndex
+    call GetCardType
+    cp TYPE_ENERGY_DARKNESS
+    jr nz, .loop_deck_DarknessEnergy ; skip if not a Trainer
+    or a
+    ret
+
+.SearchDeckForColorless
+    ld hl, wDuelTempList
+.loop_deck_Colorless
+    ld a, [hli]
+    cp $ff
+    jp z, .set_carry
+    call GetCardIDFromDeckIndex
+    call GetCardType
+    cp TYPE_PKMN_COLORLESS
+    jr nz, .loop_deck_Colorless ; skip if not a Trainer
+    or a
+    ret
+
+.SearchDeckForEvolution
+	ld hl, wDuelTempList
+.loop_deck_evolution
+	ld a, [hli]
+	cp $ff
+	jp z, .set_carry
+	call CheckDeckIndexForStage1OrStage2Pokemon
+	jr nc, .loop_deck_evolution ; skip if not a Stage 1/2 Pokemon
+	or a
+	ret
+
 MysteryAttack_RandomEffect2:
 	ld a, 10
 	farcall SetDefiniteDamage
@@ -404,50 +458,31 @@ Peek_SelectEffect2:
 	jp DrawWideTextBox_WaitForInput
 
 
-EeveelutionCheckDeckEffect2:
-	farcall CheckIfDeckIsEmpty
-	ret nc ; return if no cards in deck
-	ccf
-	ret
-
-EeveelutionPlayerSelectEffect2:
+TYRANITAR_PlayerSelectEffect:
 	ld a, $ff
 	ldh [hTemp_ffa0], a
-	farcall CreateDeckCardList
-	ldtx hl, ChooseEeveelutionFromDeckText
-	ldtx bc, Eeveelutiontext
-	lb de, SEARCHEFFECT_POKEMON, $00
+
+	call CreateDeckCardList
+	ldtx hl, ChooseATyranitarFromDeckText
+	ldtx bc, TyranitarName
+	ld de, TYRANITAR
 	farcall LookForCardsInDeck
 	ret c
 
 ; draw Deck list interface and print text
 	bank1call Func_5591
-	ldtx hl, ChooseAnEeveelutionText
+	ldtx hl, ChooseATyranitarText
 	ldtx de, DuelistDeckText
 	bank1call SetCardListHeaderText
 
 .loop
 	bank1call DisplayCardList
 	jr c, .pressed_b
-	farcall GetCardIDFromDeckIndex
-	ld bc, FLAREON_LV28
-	farcall CompareDEtoBC
-	jr z, .selected_nidoran
-	ld bc, JOLTEON_LV29
-	farcall CompareDEtoBC
-	jr z, .selected_nidoran
-	ld bc, VAPOREON_LV42
-	farcall CompareDEtoBC
-	jr z, .selected_nidoran
-	ld bc, ESPEON
-	farcall CompareDEtoBC
-	jr z, .selected_nidoran
-	ld bc, MEWTWO_LV53
-	farcall CompareDEtoBC
-	jr z, .selected_nidoran
-	jr nz, .loop ; .play_sfx would be more appropriate here
+	call GetCardIDFromDeckIndex
+	cp16 TYRANITAR
+	jr nz, .play_sfx
 
-.selected_nidoran
+; Krabby was selected
 	ldh a, [hTempCardIndex_ff98]
 	ldh [hTemp_ffa0], a
 	or a
@@ -460,75 +495,27 @@ EeveelutionPlayerSelectEffect2:
 
 .pressed_b
 ; figure if Player can exit the screen without selecting,
-; that is, if the Deck has no NidoranF or NidoranM card.
+; that is, if the Deck has no Krabby card.
 	ld a, DUELVARS_CARD_LOCATIONS
-	farcall GetTurnDuelistVariable
+	call GetTurnDuelistVariable
 .loop_b_press
 	ld a, [hl]
 	cp CARD_LOCATION_DECK
 	jr nz, .next
 	ld a, l
-	farcall GetCardIDFromDeckIndex
-	ld bc, FLAREON_LV28
-	farcall CompareDEtoBC
-	ld bc, VAPOREON_LV42
-	farcall CompareDEtoBC
-	ld bc, ESPEON
-	farcall CompareDEtoBC
-	ld bc, MEWTWO_LV53
-	farcall CompareDEtoBC
-	jr z, .play_sfx ; found, go back to top loop
-	ld bc, JOLTEON_LV29
-	jr z, .play_sfx ; found, go back to top loop
+	call GetCardIDFromDeckIndex
+	cp16 TYRANITAR
+	jr z, .play_sfx ; found Krabby, go back to top loop
 .next
 	inc l
 	ld a, l
 	cp DECK_SIZE
 	jr c, .loop_b_press
 
-; no Nidoran in Deck, can safely exit screen
+; no Krabby in Deck, can safely exit screen
 	ld a, $ff
 	ldh [hTemp_ffa0], a
 	or a
-	ret
-
-EeveelutionAISelectEffect2:
-	farcall CreateDeckCardList
-	ld hl, wDuelTempList
-.loop_deck
-	ld a, [hli]
-	ldh [hTemp_ffa0], a
-	cp $ff
-	ret z ; none found
-	farcall GetCardIDFromDeckIndex
-	ld a, e
-	cp FLAREON_LV28
-	jr z, .found
-	cp VAPOREON_LV42
-	jr z, .found
-	cp ESPEON
-	jr z, .found
-	cp MEWTWO_LV53
-	jr z, .found
-	cp JOLTEON_LV29
-	jr nz, .loop_deck
-.found
-	ret
-
-EeveelutionAddToHandEffect2:
-	ldh a, [hTemp_ffa0]
-	cp $ff
-	jr z, .shuffle
-	farcall SearchCardInDeckAndAddToHand
-	farcall AddCardToHand
-	farcall IsPlayerTurn
-	jr c, .shuffle
-	; display card on screen
-	ldh a, [hTemp_ffa0]
-	ldtx hl, FoundCardText
-	bank1call DisplayCardDetailScreen
-.shuffle
-	farcall Func_2c0bd
 	ret
 
 Burstinginferno_DiscardDeckEffect1:
@@ -1709,7 +1696,7 @@ FindPsychic:
 	call CreateDeckCardList
 	ldtx hl, ChoosePsychicPKMNCardFromDeckText
 	ldtx bc, PsychicPokemonText
-	lb de, SEARCHEFFECT_PSYCHIC, 0
+	lb de, SEARCHEFFECT_POKEMON, 0
 	farcall LookForCardsInDeck
 	jr c, .exit ; no Trainer cards in the deck
 
@@ -1848,3 +1835,462 @@ AIFindPsychicEnergy:
 	cp TYPE_ENERGY_PSYCHIC
 	jr nz, .loop_deck ; card isn't a Trainer card
 	ret ; Trainer card found	
+
+FindDarkness:
+	call CreateDeckCardList
+	ldtx hl, ChooseDarknessPKMNCardFromDeckText
+	ldtx bc, DarknessPokemonText
+	lb de, SEARCHEFFECT_DARKNESS, 0
+	farcall LookForCardsInDeck
+	jr c, .exit ; no Trainer cards in the deck
+
+; draw deck list interface and print text
+	bank1call Func_5591
+	ldtx hl, ChooseDarknessText
+	ldtx de, DuelistDeckText
+	farcall SetCardListHeaderText
+
+.read_input
+	bank1call DisplayCardList
+	jr c, .attempt_to_cancel ; the B button was pressed
+	farcall LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Type]
+	cp TYPE_PKMN_DARKNESS
+	jr nz, .play_sfx ; not a Trainer card
+
+; a Trainer card was selected
+	ldh a, [hTempCardIndex_ff98]
+	ldh [hTemp_ffa0], a
+	or a
+	ret
+
+; play SFX and loop back
+.play_sfx
+	call Func_3794
+	jr .read_input
+
+; see if the Player can exit the screen without selecting a card,
+; that is, if the deck contains no Trainer cards.
+.attempt_to_cancel
+	ld hl, wDuelTempList
+.next_card
+	ld a, [hli]
+	cp $ff
+	jr z, .exit
+	farcall LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Type]
+	cp TYPE_PKMN_DARKNESS
+	jr nz, .next_card
+	jr .play_sfx ; found a Trainer card, return to selection process
+
+; no Trainer cards in the deck, can safely exit screen
+.exit
+	ld a, $ff
+	ldh [hTemp_ffa0], a
+	or a
+	ret
+
+
+; finds the first Trainer card in the deck
+; output:
+;	[hTemp_ffa0] = deck index of the chosen card ($ff if no card was chosen)
+AIFindDarkness:
+	farcall CreateDeckCardList
+	ld hl, wDuelTempList
+.loop_deck
+	ld a, [hli]
+	ldh [hTemp_ffa0], a
+	cp $ff
+	ret z ; reached the end of the list
+	farcall GetCardIDFromDeckIndex
+	farcall GetCardType
+	cp TYPE_PKMN_DARKNESS
+	jr nz, .loop_deck ; card isn't a Trainer card
+	ret ; Trainer card found	
+
+FindDarknessEnergy:
+	call CreateDeckCardList
+	ldtx hl, ChooseDarknessEnergyCardFromDeckText
+	ldtx bc, DarknessEnergyText
+	lb de, SEARCHEFFECT_DARKNESSENERGY, 0
+	farcall LookForCardsInDeck
+	jr c, .exit ; no Trainer cards in the deck
+
+; draw deck list interface and print text
+	bank1call Func_5591
+	ldtx hl, ChooseDarknessEnergyText
+	ldtx de, DuelistDeckText
+	farcall SetCardListHeaderText
+
+.read_input
+	bank1call DisplayCardList
+	jr c, .attempt_to_cancel ; the B button was pressed
+	farcall LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Type]
+	cp TYPE_ENERGY_DARKNESS
+	jr nz, .play_sfx ; not a Trainer card
+
+; a Trainer card was selected
+	ldh a, [hTempCardIndex_ff98]
+	ldh [hTemp_ffa0], a
+	or a
+	ret
+
+; play SFX and loop back
+.play_sfx
+	call Func_3794
+	jr .read_input
+
+; see if the Player can exit the screen without selecting a card,
+; that is, if the deck contains no Trainer cards.
+.attempt_to_cancel
+	ld hl, wDuelTempList
+.next_card
+	ld a, [hli]
+	cp $ff
+	jr z, .exit
+	farcall LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Type]
+	cp TYPE_ENERGY_DARKNESS
+	jr nz, .next_card
+	jr .play_sfx ; found a Trainer card, return to selection process
+
+; no Trainer cards in the deck, can safely exit screen
+.exit
+	ld a, $ff
+	ldh [hTemp_ffa0], a
+	or a
+	ret
+
+
+; finds the first Trainer card in the deck
+; output:
+;	[hTemp_ffa0] = deck index of the chosen card ($ff if no card was chosen)
+AIFindDarknessEnergy:
+	farcall CreateDeckCardList
+	ld hl, wDuelTempList
+.loop_deck
+	ld a, [hli]
+	ldh [hTemp_ffa0], a
+	cp $ff
+	ret z ; reached the end of the list
+	farcall GetCardIDFromDeckIndex
+	farcall GetCardType
+	cp TYPE_ENERGY_DARKNESS
+	jr nz, .loop_deck ; card isn't a Trainer card
+	ret ; Trainer card found	
+
+FindColorless:
+	call CreateDeckCardList
+	ldtx hl, ChooseColorlessPKMNCardFromDeckText
+	ldtx bc, ColorlessPokemonText
+	lb de, SEARCHEFFECT_COLORLESS, 0
+	farcall LookForCardsInDeck
+	jr c, .exit ; no Trainer cards in the deck
+
+; draw deck list interface and print text
+	bank1call Func_5591
+	ldtx hl, ChooseColorlessText
+	ldtx de, DuelistDeckText
+	farcall SetCardListHeaderText
+
+.read_input
+	bank1call DisplayCardList
+	jr c, .attempt_to_cancel ; the B button was pressed
+	farcall LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Type]
+	cp TYPE_PKMN_COLORLESS
+	jr nz, .play_sfx ; not a Trainer card
+
+; a Trainer card was selected
+	ldh a, [hTempCardIndex_ff98]
+	ldh [hTemp_ffa0], a
+	or a
+	ret
+
+; play SFX and loop back
+.play_sfx
+	call Func_3794
+	jr .read_input
+
+; see if the Player can exit the screen without selecting a card,
+; that is, if the deck contains no Trainer cards.
+.attempt_to_cancel
+	ld hl, wDuelTempList
+.next_card
+	ld a, [hli]
+	cp $ff
+	jr z, .exit
+	farcall LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Type]
+	cp TYPE_PKMN_COLORLESS
+	jr nz, .next_card
+	jr .play_sfx ; found a Trainer card, return to selection process
+
+.exit
+	ld a, $ff
+	ldh [hTemp_ffa0], a
+	or a
+	ret
+
+AIFindColorless:
+	farcall CreateDeckCardList
+	ld hl, wDuelTempList
+.loop_deck
+	ld a, [hli]
+	ldh [hTemp_ffa0], a
+	cp $ff
+	ret z ; reached the end of the list
+	farcall GetCardIDFromDeckIndex
+	farcall GetCardType
+	cp TYPE_PKMN_COLORLESS
+	jr nz, .loop_deck ; card isn't a Trainer card
+	ret ; Trainer card found	
+
+GetEnergyAttachedMultiplierDamage2:
+	farcall SwapTurn
+	ld a, DUELVARS_CARD_LOCATIONS
+	farcall GetTurnDuelistVariable
+
+	ld c, 0
+.loop
+	ld a, [hl]
+	cp CARD_LOCATION_ARENA
+	jr nz, .next
+	; is in Arena
+	ld a, l
+	farcall GetCardIDFromDeckIndex
+	farcall GetCardType
+	and TYPE_ENERGY
+	jr z, .next
+	; is Energy attached to Arena card
+	inc c
+.next
+	inc l
+	ld a, l
+	cp DECK_SIZE
+	jr c, .loop
+
+	farcall SwapTurn
+	ld l, c
+	ld h, $00
+	ld b, $00
+	add hl, hl ; hl =  2 * c
+	add hl, hl ; hl =  4 * c
+	add hl, bc ; hl =  5 * c
+	add hl, hl ; hl = 10 * c
+	ld e, l
+	ld d, h
+	ret
+
+FindEvolution:
+	farcall CreateDeckCardList
+	ldtx hl, ChooseEvolutionCardFromDeckText
+	ldtx bc, EvolutionCardText
+	lb de, SEARCHEFFECT_EVOLUTION, 0
+	farcall LookForCardsInDeck
+	jr c, .exit ; no Evolution cards in the deck
+
+; draw deck list interface and print text
+	bank1call Func_5591
+	ldtx hl, ChooseEvolutionCardText
+	ldtx de, DuelistDeckText
+	farcall SetCardListHeaderText
+
+.read_input
+	bank1call DisplayCardList
+	jr c, .attempt_to_cancel ; the B button was pressed
+	farcall CheckDeckIndexForStage1OrStage2Pokemon
+	jr nc, .play_sfx ; not an Evolution card
+
+; an Evolution card was selected
+	ldh a, [hTempCardIndex_ff98]
+	ldh [hTemp_ffa0], a
+	or a
+	ret
+
+; play SFX and loop back
+.play_sfx
+	call Func_3794
+	jr .read_input
+
+; see if the Player can exit the screen without selecting a card,
+; that is, if the deck contains no Evolution cards.
+.attempt_to_cancel
+	ld hl, wDuelTempList
+.next_card
+	ld a, [hli]
+	cp $ff
+	jr z, .exit
+	farcall CheckDeckIndexForStage1OrStage2Pokemon
+	jr nc, .next_card
+	jr .play_sfx ; found an Evolution card, return to selection process
+
+; no Evolution cards in the deck, can safely exit screen
+.exit
+	ld a, $ff
+	ldh [hTemp_ffa0], a
+	or a
+	ret
+
+
+; uses a card's deck index to check whether or not it is an Evolution card
+; preserves all registers except af
+; input:
+;	a = deck index (0-59) of the card being checked
+; output:
+;	carry = set:  if the card is an Evolution card
+CheckDeckIndexForStage1OrStage2Pokemon:
+	farcall LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Type]
+	cp TYPE_ENERGY
+	ret nc ; not a Pokemon
+	ld a, [wLoadedCard2Stage]
+	or a
+	ret z ; is Basic
+	; is an evolution
+	scf
+	ret
+
+
+; finds the first Evolution card in the deck
+; output:
+;	[hTemp_ffa0] = deck index of the chosen card ($ff if no card was chosen)
+AIFindEvolution:
+	farcall CreateDeckCardList
+	ld hl, wDuelTempList
+.loop_deck
+	ld a, [hli]
+	ldh [hTemp_ffa0], a
+	cp $ff
+	ret z ; reached the end of the list
+	farcall CheckDeckIndexForStage1OrStage2Pokemon
+	jr nc, .loop_deck ; card isn't an Evolution card
+	ret ; Evolution card found
+
+use_pokemon_powerEffect:
+	bank1call DrawDuelMainScene
+	ldh a, [hTempCardIndex_ff9f]
+	call LoadCardDataToBuffer1_FromDeckIndex
+	ld de, wLoadedCard1Name
+	ld hl, wTxRam2
+	ld a, [de]
+	inc de
+	ld [hli], a
+	ld a, [de]
+	ld [hli], a
+	ld de, wLoadedAttackName
+	ld a, [de]
+	inc de
+	ld [hli], a
+	ld a, [de]
+	ld [hl], a
+	ldtx hl, WillUseThePokemonPowerText
+	call DrawWideTextBox_WaitForInput
+	ret
+
+Riptide_PlayerSelectEffect2:
+  farcall CreateEnergyCardListFromDiscardPile_AllEnergy
+  ld a, 4
+  ld [hTempCardIndex_ff9f], a
+  ld a, $ff
+  ldh [hTempList], a
+  xor a
+  ldh [hCurSelectionItem], a
+  ldtx hl, Choose2BasicEnergyCardsFromDiscardPileText
+  farcall DrawWideTextBox_WaitForInput
+
+.loop
+  bank1call InitAndDrawCardListScreenLayout
+  ldtx hl, PleaseSelectCardText
+  ldtx de, PlayerDiscardPileText
+  bank1call SetCardListHeaderText
+  ld a, [wDuelTempList]
+  cp $ff
+  jr z, .done  ; no more cards to choose from
+  bank1call DisplayCardList
+  jr nc, .store_selected_card
+; B pressed
+  ld a, [hTempCardIndex_ff9f]
+  farcall AskWhetherToQuitSelectingCards
+  jr c, .loop ; chose to continue
+  jr .done
+
+.store_selected_card
+  farcall GetNextPositionInTempList
+  ldh a, [hTempCardIndex_ff98]
+  ld [hl], a ; store selected card
+  farcall RemoveCardFromDuelTempList
+  jr c, .done
+  ld a, [hTempCardIndex_ff9f]
+  ld b, a
+  ldh a, [hCurSelectionItem]
+  cp b
+  jr c, .loop
+
+.done
+  farcall GetNextPositionInTempList
+  ld [hl], $ff
+  or a
+  ret
+
+SelectedDiscardPileCards_ShuffleIntoDeckEffect2:
+  ld hl, hTempList
+  ld de, wDuelTempList
+.loop
+  ld a, [hli]
+  ld [de], a
+  inc de
+  cp $ff
+  jr z, .done
+; this is kinda dumb and can probably be abbreviated
+  farcall MoveDiscardPileCardToHand
+  farcall AddCardToHand
+  farcall RemoveCardFromHand
+  farcall ReturnCardToDeck
+  jr .loop
+
+.done
+  call ShuffleDeck
+; if Player played the card, exit
+  farcall IsPlayerTurn
+  ret c
+; if not, show card list selected by Opponent
+  bank1call DisplayCardList
+  ret  
+
+EnergyRetrieval_PlayerDiscardPileSelection2:
+	ld a, 1 ; start at 1 due to card selected from hand
+	ldh [hCurSelectionItem], a
+	ldtx hl, Choose2BasicEnergyCardsFromDiscardPileText
+	farcall DrawWideTextBox_WaitForInput
+	farcall CreateEnergyCardListFromDiscardPile_OnlyBasic
+
+.select_card
+	bank1call InitAndDrawCardListScreenLayout
+	ldtx hl, PleaseSelectCardText
+	ldtx de, PlayerDiscardPileText
+	bank1call SetCardListHeaderText
+	bank1call DisplayCardList
+	jr nc, .selected
+	; B was pressed
+	ld a, 2 + 1 ; includes the card selected from hand
+	farcall AskWhetherToQuitSelectingCards
+	jr c, .select_card ; player selected No
+	jr .done
+
+.selected
+	farcall GetNextPositionInTempList_TrainerEffects
+	ldh a, [hTempCardIndex_ff98]
+	ld [hl], a
+	farcall RemoveCardFromDuelTempList
+	jr c, .done
+	ldh a, [hCurSelectionItem]
+	cp 2 + 1 ; includes the card selected from hand
+	jr c, .select_card
+
+.done
+	farcall GetNextPositionInTempList_TrainerEffects
+	ld [hl], $ff ; terminating byte
+	or a
+	ret  
