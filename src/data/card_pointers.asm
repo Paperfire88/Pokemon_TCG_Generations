@@ -11,8 +11,8 @@ CardPointers::
 	dab DoubleColorlessEnergyCard
 	dab ChikoritaCard
 	dab BayleefCard
-	dab CelebiCard
 	dab MeganiumCard
+	dab CelebiCard
 	dab WurmpleCard
 	dab SilcoonCard
 	dab BeautiflyCard
@@ -90,6 +90,7 @@ CardPointers::
 	dab KinglerCard
 	dab HorseaCard
 	dab SeadraCard
+	dab KingdraCard
 	dab GoldeenCard
 	dab SeakingCard
 	dab StaryuCard
@@ -202,6 +203,8 @@ CardPointers::
 	dab ImpidimpCard
 	dab	MorgremCard
 	dab	GrimmsnarlCard
+	dab PawniardCard
+	dab BisharpCard
 	dab SneaselCard
 	dab WeavileCard
 	dab UmbreonCard

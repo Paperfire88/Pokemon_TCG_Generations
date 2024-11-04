@@ -173,6 +173,11 @@ Draw1CardFromTheDeckText:
 	text "Draw 1 card from the Deck."
 	done
 
+OpDraw1CardFromTheDeckText:
+	text "Your opponent Draws 1 card from"
+	line "their Deck."
+	done
+
 DrawCardsFromTheDeckText:
 	text "Draw <RAMNUM> card(s) from the Deck."
 	done

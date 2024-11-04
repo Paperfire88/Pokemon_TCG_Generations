@@ -2175,7 +2175,7 @@ TextOffsets::
 	textpointer CharmanderDescription
 	textpointer CharmeleonName
 	textpointer FlamethrowerName
-	textpointer CharmeleonsFlamethrowerDescription
+	textpointer PowerCycloneName
 	textpointer FlameName
 	textpointer CharmeleonDescription
 	textpointer CharizardName
@@ -2930,7 +2930,7 @@ TextOffsets::
 	textpointer HelioliskName										   ; 0x0bb8
 	textpointer LugiaName										   ; 0x0bb9
 	textpointer MagnezoneName										   ; 0x0bba
-	textpointer LimtiName											; 0x0bbb
+	textpointer DeltaKingdraName											; 0x0bbb
 	textpointer TyruntName											; 0x0bbc
 	textpointer SkorupiName											; 0x0bbd
 	textpointer BidoofName											; 0x0bbe
@@ -2999,7 +2999,7 @@ TextOffsets::
 	textpointer MetangName								; 0x0c12
 	textpointer MetagrossName								; 0x0c13
 	textpointer BulletPunchName							; 0x0c14
-	textpointer MeteorMashName							; 0x0c15
+	textpointer MetalReversalName							; 0x0c15
 	textpointer MeteorMashDescription						; 0x0c16
 	textpointer BagonName						; 0x0c17
 	textpointer ShelgonName						; 0x0c18
@@ -3469,3 +3469,24 @@ TextOffsets::
 	textpointer	DarkDestructionName
 	textpointer	GnawOffDescription
 	textpointer	WaterArrowName
+	textpointer	KingdraName
+	textpointer	DragonVortexName
+	textpointer	DragonVortexDescription
+	textpointer	PawniardName
+	textpointer	BisharpName
+	textpointer	WickedJabName
+	textpointer	WickedJabDescription
+	textpointer	ScoutDescription
+	textpointer	PowerCycloneDescription
+	textpointer	OpDraw1CardFromTheDeckText
+	textpointer EachPlayerDraw1CardsText
+	textpointer	EachPlayerDraw2CardsText
+	textpointer	OpDraw2CardsFromTheDeckText
+	textpointer	ShareLootName
+	textpointer	ShareLootDescription
+	textpointer	MeteorMashName
+	textpointer	SharpenName
+	textpointer	SharpenDescription
+	textpointer	SuckerPunchName
+	textpointer	SuckerPunchDescription
+	textpointer	FalseSurrenderName

@@ -403,14 +403,13 @@ ParasectName:
 	done
 
 SlashName:
-	text "Meteor Mash"
+	text "Slash"
 	done
 
 ParasectDescription:
 	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (Scarlet & Violet 4)"
 	line "OG illustrator: (Ryuta Fuse)"
-	
 	done
 
 VenonatName:
@@ -799,10 +798,13 @@ FlamethrowerName:
 	text "Flamethrower"
 	done
 
-CharmeleonsFlamethrowerDescription:
-	text "Discard 1 <FIRE> Energy card attached to"
-	line "this PKMN in order to use this"
-	line "attack."
+PowerCycloneName:
+	text "Power Cyclone"
+	done
+
+PowerCycloneDescription:
+	text "Put 1 <WATER> Energy card attached to"
+	line "this PKMN into your hand."
 	done
 
 FlameName:
@@ -1611,4 +1613,34 @@ OpponentAttackMayDoNothingDescription:
 
 DragonName:
 	text "Dragon"
+	done
+
+MeteorMashName:
+	text "Meteor Mash"
+	done
+
+SharpenName:
+	text "Sharpen"
+	done	
+
+SharpenDescription:
+	text "Flip a coin. If heads, draw a card."
+	line "If tails, your opponent draws a card"
+	line "Either way, During your next turn,"
+	line "Pawniard's Slash attack's base"
+	line "damage is doubled."
+	done
+
+SuckerPunchName:
+	text "Sucker Punch"
+	done
+
+SuckerPunchDescription:
+	text "If your opponent has 5 or more cards" 
+	line "in their hand, this attack does"
+	line "20 more damage."
+	done
+
+FalseSurrenderName:
+	text "False Surrender"
 	done

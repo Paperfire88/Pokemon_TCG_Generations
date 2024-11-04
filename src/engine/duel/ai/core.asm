@@ -459,16 +459,15 @@ CheckEnergyNeededForAttack:
 
 	; colorless
 	ld a, [de]
-	swap a
-	and %00001111
-	ld b, a ; colorless energy still needed
+	and $f
+  	ld c, a ; colorless energy cost
 	ld a, [wTempLoadedAttackEnergyCost]
 	ld hl, wTempLoadedAttackEnergyNeededAmount
 	sub [hl]
-	ld c, a ; basic energy still needed
+	ld b, a ; basic energy still needed
 	ld a, [wTotalAttachedEnergies]
-	sub c
 	sub b
+	sub c
 	jr c, .not_enough
 
 	ld a, [wTempLoadedAttackEnergyNeededAmount]
@@ -486,8 +485,9 @@ CheckEnergyNeededForAttack:
 	ld b, a ; basic energy still needed
 	ld a, [wTempLoadedAttackEnergyNeededType]
 	call ConvertColorToEnergyCardID
+
 	ld e, a
-  	ld d, 0
+	ld d, 0
 	scf
 	ret
 
@@ -549,8 +549,8 @@ ConvertColorToEnergyCardID:
 	dw WATER_ENERGY
 	dw FIGHTING_ENERGY
 	dw PSYCHIC_ENERGY
-	dw DOUBLE_COLORLESS_ENERGY
 	dw DARKNESS_ENERGY
+	dw DOUBLE_COLORLESS_ENERGY
 
 ; return carry depending on card index in a:
 ;	- if energy card, return carry if no energy card has been played yet
@@ -905,6 +905,8 @@ CheckEnergyNeededForAttackAfterDiscard:
 
 	ld a, [de]
 	swap a
+	call CheckIfEnoughParticularAttachedEnergy  ; darkness
+    ld a, [de]
 	and $0f
 	ld b, a ; colorless energy still needed
 	ld a, [wTempLoadedAttackEnergyCost]
@@ -931,6 +933,8 @@ CheckEnergyNeededForAttackAfterDiscard:
 	ld b, a ; basic energy still needed
 	ld a, [wTempLoadedAttackEnergyNeededType]
 	call ConvertColorToEnergyCardID
+	ld e, a
+    ld d, 0
 	scf
 	ret
 
@@ -1617,19 +1621,18 @@ GetEnergyCostBits:
 	or c
 	ld c, a
 .darkness
-	ld a, b
-	and $0f
+	ld a, [hli]
+	ld b, a
+	and $f0
 	jr z, .colorless
 	ld a, DARKNESS_f
 	or c
 	ld c, a
 .colorless
-	ld a, [hli]
-	ld b, a
-	and $f0
+	ld a, b
+	and $0f
 	jr z, .done
 	ld a, %11111111
-	or c ; unnecessary
 	ld c, a
 .done
 	ld a, c
@@ -2113,7 +2116,6 @@ CheckIfNoSurplusEnergyForAttack:
   	call CalculateParticularAttachedEnergyNeeded
 	; colorless
 	ld a, [de]
-	swap a
 	and %00001111
 	ld b, a
 	ld hl, wTempLoadedAttackEnergyCost

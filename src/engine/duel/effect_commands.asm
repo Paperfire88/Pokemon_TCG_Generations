@@ -498,13 +498,6 @@ VaporeonFocusEnergyEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, FocusEnergyEffect
 	db  $00
 
-ArcanineFlamethrowerEffectCommands:
-	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Fire_CheckEnergy
-	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, Flamethrower_PlayerSelectEffect
-	dbw EFFECTCMDTYPE_DISCARD_ENERGY, Flamethrower_DiscardEffect
-	dbw EFFECTCMDTYPE_AI_SELECTION, Flamethrower_AISelectEffect
-	db  $00
-
 ArcanineTakeDownEffectCommands:
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, TakeDownEffect
 	db  $00
@@ -532,15 +525,15 @@ NinetalesLureEffectCommands:
 
 NinetalesFireBlastEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Fire_CheckEnergy
-	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, FireBlast_PlayerSelectEffect
-	dbw EFFECTCMDTYPE_DISCARD_ENERGY, FireBlast_DiscardEffect
-	dbw EFFECTCMDTYPE_AI_SELECTION, FireBlast_AISelectEffect
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, Ember_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_DISCARD_ENERGY, DiscardSelectedEnergyEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, Ember_AISelectEffect
 	db  $00
 
 CharmanderEmberEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Fire_CheckEnergy
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, Ember_PlayerSelectEffect
-	dbw EFFECTCMDTYPE_DISCARD_ENERGY, Ember_DiscardEffect
+	dbw EFFECTCMDTYPE_DISCARD_ENERGY, DiscardSelectedEnergyEffect
 	dbw EFFECTCMDTYPE_AI_SELECTION, Ember_AISelectEffect
 	db  $00
 
@@ -550,25 +543,6 @@ MoltresWildfireEffectCommands:
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Wildfire_DiscardDeckEffect
 	dbw EFFECTCMDTYPE_DISCARD_ENERGY, Wildfire_DiscardEnergyEffect
 	dbw EFFECTCMDTYPE_AI_SELECTION, Wildfire_AISelectEffect
-	db  $00
-
-MoltresLv35DiveBombEffectCommands:
-	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, MoltresLv35DiveBomb_Success50PercentEffect
-	dbw EFFECTCMDTYPE_AI, MoltresLv35DiveBomb_AIEffect
-	db  $00
-
-FlareonFlamethrowerEffectCommands:
-	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Fire_CheckEnergy
-	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, Flamethrower_PlayerSelectEffect
-	dbw EFFECTCMDTYPE_DISCARD_ENERGY, Flamethrower_DiscardEffect
-	dbw EFFECTCMDTYPE_AI_SELECTION, Flamethrower_AISelectEffect
-	db  $00
-
-MagmarFlamethrowerEffectCommands:
-	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Fire_CheckEnergy
-	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, Flamethrower_PlayerSelectEffect
-	dbw EFFECTCMDTYPE_DISCARD_ENERGY, Flamethrower_DiscardEffect
-	dbw EFFECTCMDTYPE_AI_SELECTION, Flamethrower_AISelectEffect
 	db  $00
 
 MagmarSmokescreenEffectCommands:
@@ -582,9 +556,9 @@ MagmarSmogEffectCommands:
 
 CharmeleonFlamethrowerEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Fire_CheckEnergy
-	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, Flamethrower_PlayerSelectEffect
-	dbw EFFECTCMDTYPE_DISCARD_ENERGY, Flamethrower_DiscardEffect
-	dbw EFFECTCMDTYPE_AI_SELECTION, Flamethrower_AISelectEffect
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, Ember_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_DISCARD_ENERGY, DiscardSelectedEnergyEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, Ember_AISelectEffect
 	db  $00
 
 CharizardEnergyBurnEffectCommands:
@@ -607,10 +581,6 @@ RageEffectCommands:
 	dbw EFFECTCMDTYPE_AI, Rage_AIEffect
 	db  $00
 
-NinetalesMixUpEffectCommands:
-	dbw EFFECTCMDTYPE_AFTER_DAMAGE, MixUpEffect
-	db  $00
-
 NinetalesDancingEmbersEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, DancingEmbers_MultiplierEffect
 	dbw EFFECTCMDTYPE_AI, DancingEmbers_AIEffect
@@ -619,11 +589,6 @@ NinetalesDancingEmbersEffectCommands:
 MoltresFiregiverEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Firegiver_InitialEffect
 	dbw EFFECTCMDTYPE_PKMN_POWER_TRIGGER, Firegiver_AddToHandEffect
-	db  $00
-
-MoltresLv37DiveBombEffectCommands:
-	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, MoltresLv37DiveBomb_Success50PercentEffect
-	dbw EFFECTCMDTYPE_AI, MoltresLv37DiveBomb_AIEffect
 	db  $00
 
 AbraPsyshockEffectCommands:
@@ -734,14 +699,6 @@ MewtwoPsychicEffectCommands:
 	dbw EFFECTCMDTYPE_AI, Psychic_AIEffect
 	db  $00
 
-MewtwoBarrierEffectCommands:
-	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Psychic_CheckEnergy
-	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, Barrier_PlayerSelectEffect
-	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Barrier_BarrierEffect
-	dbw EFFECTCMDTYPE_DISCARD_ENERGY, Barrier_DiscardEffect
-	dbw EFFECTCMDTYPE_AI_SELECTION, Barrier_AISelectEffect
-	db  $00
-
 MewtwoAltLV60EnergyAbsorptionEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, EnergyAbsorption_CheckDiscardPile
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, EnergyAbsorption_AddToHandEffect
@@ -832,11 +789,6 @@ KabutopsAbsorbEffectCommands:
 
 CuboneSnivelEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, SnivelEffect
-	db  $00
-
-MarowakBonemerangEffectCommands:
-	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Bonemerang_MultiplierEffect
-	dbw EFFECTCMDTYPE_AI, Bonemerang_AIEffect
 	db  $00
 
 MarowakCallforFriendEffectCommands:
@@ -2113,8 +2065,40 @@ GnawOffEffectCommands:
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, GnawOffEffect
 	db  $00	
 
-RiptideEffectCommands:
-  dbw EFFECTCMDTYPE_BEFORE_DAMAGE, AquaStream_DamageBoostEffect
+DragonVortexEffectCommands:
+  dbw EFFECTCMDTYPE_BEFORE_DAMAGE, DragonVortex_DamageBoostEffect
   dbw EFFECTCMDTYPE_AFTER_DAMAGE, SelectedDiscardPileCards_ShuffleIntoDeckEffect
   dbw EFFECTCMDTYPE_REQUIRE_SELECTION, Riptide_PlayerSelectEffect
   db  $00
+
+WickedJabEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Paralysis50PercentEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, WickedJabEffect
+	db  $00 
+
+ScoutEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, ScoutEffect
+	db  $00
+
+Bounce1EnergyEffectCommands:
+  dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Water_CheckEnergyEffect
+  dbw EFFECTCMDTYPE_REQUIRE_SELECTION, StarmieRecover_PlayerSelectEffect
+  dbw EFFECTCMDTYPE_AFTER_DAMAGE, BounceEnergy_BounceEffect
+  dbw EFFECTCMDTYPE_AI_SELECTION, StarmieRecover_AISelectEffect
+  db  $00
+
+ShareLootEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, ShareLootEffect
+	db $00
+
+SharpenEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, SharpenEffect
+	db  $00
+
+SuckerPunchEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, SuckerPunchEffect
+	db  $00
+
+Discard1RandomHandCardEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Discard1RandomHandCardEffect
+	db $00

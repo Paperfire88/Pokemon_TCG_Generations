@@ -2191,7 +2191,7 @@ use_pokemon_powerEffect:
 
 Riptide_PlayerSelectEffect2:
   farcall CreateEnergyCardListFromDiscardPile_AllEnergy
-  ld a, 4
+  ld a, 6
   ld [hTempCardIndex_ff9f], a
   ld a, $ff
   ldh [hTempList], a

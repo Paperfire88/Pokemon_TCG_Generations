@@ -148,7 +148,7 @@ TyranitarName:
 	text "Tyranitar"
 	done
 
-LimtiName:
+DeltaKingdraName:
 	text "Delta Kingdra"	
 	done
 
@@ -428,7 +428,7 @@ BulletPunchName:
 	text "Bullet Punch"
 	done
 
-MeteorMashName:
+MetalReversalName:
 	text "Metal Reversal"
 	done	
 
@@ -1342,6 +1342,10 @@ ScoutName:
 	text "Scout"
 	done
 
+ScoutDescription:
+	text "Your opponent reveals their hand."
+	done
+
 DragonImpactName:
 	text "Dragon Impact"
 	done
@@ -1488,3 +1492,7 @@ OpportunistDescription:
 	line "Opponent Can't play trainer cards"
 	line "during their next turn."
 	done	
+
+KingdraName:
+	text "Kingdra"
+	done

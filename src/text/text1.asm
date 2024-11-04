@@ -319,8 +319,7 @@ DamageToSelfDueToConfusionText:
 	done
 
 ChooseEnergyCardToDiscardText:
-	text "Choose the Energy card"
-	line "you wish to discard."
+	text "Choose an Energy card."
 	done
 
 ChooseNextActivePokemonText:

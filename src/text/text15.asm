@@ -869,7 +869,7 @@ IceShardName:
 IceShardDescription:
 	text "If your opponent's Active Pkmn is"
 	line "a <FIGHTING> Pkmn, this attack does" 
-	line "+20 more damage."
+	line "+10 more damage."
 	done	
 
 MorelullName:
@@ -1258,4 +1258,45 @@ GnawOffDescription:
 
 WaterArrowName:
 	text "Water Arrow"
+	done
+
+DragonVortexName:
+	text "Dragon Vortex"
+	done
+
+DragonVortexDescription:
+	text "Return up to 6 Energy Cards from"
+	line "your discard pile into your Deck."
+	line "This Attack Does +10 damage for each"
+	line "card returned this way."
+	done
+
+PawniardName:
+	text "Pawniard"
+	done
+
+BisharpName:
+	text "Bisharp"
+	done
+
+WickedJabName:
+	text "Wicked Jab"
+	done	
+
+WickedJabDescription:
+	text "Flip a coin. If heads, the Defending"
+	line "PKMN is now Paralyzed. If the"
+	line "Defending PKMN is an Evolved PKMN,"
+	line "Draw a Card."
+	done
+
+ShareLootName:
+	text "Share Loot"
+	done
+
+ShareLootDescription:
+	text "Each player draws 1 card from their"
+	line "Deck. If your opponent's Active Pkmn"
+	line "is a <FIGHTING> Pkmn, Each Player draws 2"
+	line "cards from their deck instead."
 	done

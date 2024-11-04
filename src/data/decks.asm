@@ -1469,11 +1469,7 @@ LonelyFriendsDeck:
 	card_item FIGHTING_ENERGY,            8
 	card_item WATER_ENERGY,            9
 	card_item DOUBLE_COLORLESS_ENERGY, 4
-	card_item POLIWAG,                 4
-	card_item OMANYTE,                 3
-	card_item OMASTAR,                 2
-	card_item CYCLIZAR,         2
-	card_item STUFFUL,         4
+	card_item STUFFUL,         15
 	card_item BEWEAR,              4
 	card_item PROFESSOR_OAK,           2
 	card_item BILL,                    3

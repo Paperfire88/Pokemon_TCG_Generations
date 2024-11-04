@@ -4334,7 +4334,7 @@ AIDecide_Recycle:
 	jr .loop_1
 
 .jigglypuff
-	cp16 TOGEKISS
+	cp16 STUFFUL
 	jr nz, .loop_1
 	ld a, b
 	ld [wce08 + 3], a

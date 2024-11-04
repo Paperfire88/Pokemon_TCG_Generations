@@ -1422,3 +1422,16 @@ DownDrawName:
 GrubbinName:
 	text "Grubbin"
 	done	
+
+EachPlayerDraw1CardsText:
+	text "Each player will draw 1 card."
+	done
+
+EachPlayerDraw2CardsText:
+	text "Each player will draw 2 cards."
+	done	
+
+OpDraw2CardsFromTheDeckText:
+	text "Your opponent Draws 2 cards from"
+	line "their Deck."
+	done

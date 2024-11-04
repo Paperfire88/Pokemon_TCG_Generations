@@ -89,7 +89,6 @@ DEF PKMN_CARD_DATA_LENGTH EQU _RS
 	const DARKNESS ; $07
 DEF NUM_COLORED_TYPES EQU const_value
 	const COLORLESS   ; $06
-	const UNUSED ; $07
 DEF NUM_TYPES EQU const_value
 
 ; generic type (color) flag constants

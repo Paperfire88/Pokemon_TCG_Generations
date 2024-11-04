@@ -9,8 +9,8 @@
 	const DOUBLE_COLORLESS_ENERGY     ; $07
 	const CHIKORITA                   ; $08
 	const BAYLEEF                     ; $09
-	const CELEBI               ; $0a
 	const MEGANIUM               ; $0b
+	const CELEBI               ; $0a
 	const WURMPLE                    ; $0c
 	const SILCOON                     ; $0d
 	const BEAUTIFLY                  ; $0e
@@ -88,6 +88,7 @@
 	const KINGLER                     ; $50
 	const HORSEA                      ; $51
 	const SEADRA                      ; $52
+	const KINGDRA                      ; $52
 	const GOLDEEN                     ; $53
 	const SEAKING                     ; $54
 	const STARYU                      ; $55
@@ -200,6 +201,8 @@
 	const IMPIDIMP
 	const MORGREM
 	const GRIMMSNARL
+	const PAWNIARD
+	const BISHARP
 	const SNEASEL                    ; $57
 	const WEAVILE                    ; $58
 	const UMBREON

@@ -128,7 +128,7 @@ MeganiumCard:
 	tx GaintBloomName ; name
 	tx GiantBloomDescription ; description
 	dw NONE ; description (cont)
-	db 50 ; damage
+	db 40 ; damage
 	db DAMAGE_NORMAL ; category
 	dw GiantBloomEffectCommands ; effect commands
 	db NONE ; flags 1
@@ -2076,7 +2076,7 @@ CharmeleonCard:
 	; attack 2
 	energy FIRE, 2, COLORLESS, 1 ; energies
 	tx FlamethrowerName ; name
-	tx CharmeleonsFlamethrowerDescription ; description
+	tx EmberDescription ; description
 	dw NONE ; description (cont)
 	db 50 ; damage
 	db DAMAGE_NORMAL ; category
@@ -2676,7 +2676,7 @@ PyroarCard:
 	; attack 2
 	energy FIRE, 1, COLORLESS, 2 ; energies
 	tx FlamethrowerName ; name
-	tx CharmeleonsFlamethrowerDescription ; description
+	tx EmberDescription ; description
 	dw NONE ; description (cont)
 	db 50 ; damage
 	db DAMAGE_NORMAL ; category
@@ -2730,7 +2730,7 @@ MagmarLv24Card:
 	dw NONE ; description (cont)
 	db 50 ; damage
 	db DAMAGE_NORMAL ; category
-	dw MagmarFlamethrowerEffectCommands ; effect commands
+	dw CharmeleonFlamethrowerEffectCommands ; effect commands
 	db NONE ; flags 1
 	db DISCARD_ENERGY ; flags 2
 	db NONE ; flags 3
@@ -3026,7 +3026,7 @@ CrocalorCard:
 	; attack 2
 	energy FIRE, 2, COLORLESS, 1 ; energies
 	tx FlamethrowerName ; name
-	tx CharmeleonsFlamethrowerDescription ; description
+	tx EmberDescription ; description
 	dw NONE ; description (cont)
 	db 50 ; damage
 	db DAMAGE_NORMAL ; category
@@ -3924,18 +3924,18 @@ PelipperCard:
 	db ATK_ANIM_HEALING_WIND ; animation
 
 	; attack 2
-	energy COLORLESS, 2, WATER, 1, ; energies
-	tx EnergySearchName ; name
-	tx EnergySearchDescription ; description
+	energy COLORLESS, 1, WATER, 1, ; energies
+	tx PowerCycloneName ; name
+	tx PowerCycloneDescription ; description
 	dw NONE ; description (cont)
 	db 30 ; damage
 	db DAMAGE_NORMAL ; category
-	dw EnergySearchEffectCommands ; effect commands
+	dw Bounce1EnergyEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_NONE ; animation
+	db ATK_ANIM_WHIRLPOOL ; animation
 
 	db 2 ; retreat cost
 	db WR_LIGHTNING ; weakness
@@ -4121,7 +4121,7 @@ SeadraCard:
 	db FLAG_2_BIT_6 ; flags 2
 	db NONE ; flags 3
 	db 3
-	db ATK_ANIM_STRETCH_KICK ; animation
+	db ATK_ANIM_WATER_GUN ; animation
 
 	; attack 2
 	energy WATER, 1, COLORLESS, 1 ; energies
@@ -4146,6 +4146,56 @@ SeadraCard:
 	db 3, 1 ; length
 	dw 55 * 10 ; weight
 	tx SeadraDescription ; description
+	db 0
+
+KingdraCard:
+	db TYPE_PKMN_WATER ; type
+	gfx KingdraGfx ; gfx
+	tx KingdraName ; name
+	db STAR ; rarity
+	db EVOLUTION |	NONE ; sets
+	dw KINGDRA
+	db 100 ; hp
+	db STAGE2 ; stage
+	tx SeadraName ; pre-evo name
+
+	; attack 1
+	energy WATER, 1 ; energies
+	tx WaterArrowName ; name
+	tx StretchKickDescription ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw HitmonleeStretchKickEffectCommands ; effect commands
+	db DAMAGE_TO_OPPONENT_BENCH ; flags 1
+	db FLAG_2_BIT_6 ; flags 2
+	db NONE ; flags 3
+	db 3
+	db ATK_ANIM_WATER_GUN ; animation
+
+	; attack 2
+	energy WATER, 3 ; energies
+	tx AquaStreamName ; name
+	tx AquaStreamKingDescription ; description
+	dw NONE ; description (cont)
+	db 50 ; damage
+	db DAMAGE_PLUS ; category
+	dw DragonVortexEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_WHIRLPOOL ; animation
+
+	db 1 ; retreat cost
+	db WR_PSYCHIC ; weakness
+	db WR_WATER ; resistance
+	tx DragonName ; category
+	db 90 ; Pokedex number
+	db 55 ; level
+	db 3, 7 ; length
+	dw 44 * 10 ; weight
+	tx NinetalesLv35Description ; description
 	db 0
 
 GoldeenCard:
@@ -6051,7 +6101,7 @@ RegielekiCard:
 SandshrewCard:
 	db TYPE_PKMN_FIGHTING ; type
 	gfx SandshrewCardGfx ; gfx
-	tx SandshrewName ; name
+	tx MeowthName ; name
 	db CIRCLE ; rarity
 	db COLOSSEUM | NONE ; sets
 	dw SANDSHREW
@@ -6107,21 +6157,21 @@ SandslashCard:
 	dw SANDSLASH
 	db 70 ; hp
 	db STAGE1 ; stage
-	tx SandshrewName ; pre-evo name
+	tx MeowthName ; pre-evo name
 
 	; attack 1
 	energy COLORLESS, 1, FIGHTING, 1 ; energies
-	tx CatPunchName ; name
-	tx CatPunchDescription ; description
+	tx ShareLootName ; name
+	tx ShareLootDescription ; description
 	dw NONE ; description (cont)
-	db 10 ; damage
-	db RESIDUAL ; category
-	dw MeowthCatPunchEffectCommands ; effect commands
-	db DAMAGE_TO_OPPONENT_BENCH ; flags 1
-	db FLAG_2_BIT_6 ; flags 2
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw ShareLootEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
 	db NONE ; flags 3
 	db 2
-	db ATK_ANIM_CAT_PUNCH ; animation
+	db ATK_ANIM_HIT ; animation
 
 	energy COLORLESS, 1, FIGHTING, 2 ; energies
 	tx TreasureRushName ; name
@@ -8410,7 +8460,7 @@ MetagrossCard:
 
 	; attack 1
 	energy PSYCHIC, 1, COLORLESS, 1 ; energies
-	tx MeteorMashName ; name
+	tx MetalReversalName ; name
 	tx MeteorMashDescription ; description
 	dw NONE ; description (cont)
 	db 30 ; damage
@@ -8424,7 +8474,7 @@ MetagrossCard:
 	
 	; attack 2
 	energy PSYCHIC, 1, COLORLESS, 2, ; energies
-	tx SlashName ; GasName
+	tx MetalReversalName ; GasName
 	tx BattleBlastDescription ; description
 	dw NONE ; description (cont)
 	db 50 ; damage
@@ -8829,7 +8879,7 @@ MewtwoLv53Card:
 	dw NONE ; description (cont)
 	db 0 ; damage
 	db RESIDUAL ; category
-	dw MewtwoBarrierEffectCommands ; effect commands
+	dw NONE ; effect commands
 	db NONE ; flags 1
 	db NULLIFY_OR_WEAKEN_ATTACK | DISCARD_ENERGY ; flags 2
 	db NONE ; flags 3
@@ -9109,7 +9159,7 @@ HypnoCard:
 	tx DrowzeeName ; pre-evo name
 
 	; attack 1
-	energy PSYCHIC, 2 ; energies
+	energy DARKNESS, 2 ; energies
 	tx ProphecyName ; name
 	tx ProphecyDescription ; description
 	dw NONE ; description (cont)
@@ -9123,7 +9173,7 @@ HypnoCard:
 	db ATK_ANIM_GLOW_EFFECT ; animation
 
 	; attack 2
-	energy PSYCHIC, 2, COLORLESS, 1 ; energies
+	energy DARKNESS, 2, COLORLESS, 1 ; energies
 	tx VengeanceName ; name
 	tx LastRespectsDescription ; description
 	dw NONE ; description (cont)
@@ -9960,12 +10010,12 @@ SpearowCard:
 
 	; attack 1
 	energy COLORLESS, 1 ; energies
-	tx PeckName ; name
-	dw NONE ; description
+	tx ScoutName ; name
+	tx ScoutDescription ; description
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw NONE ; effect commands
+	dw ScoutEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3

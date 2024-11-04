@@ -1833,8 +1833,8 @@ MeowthLv14CardGfx::
 	INCBIN "gfx/cards/meowth1.pal"
 
 BidoofCardGfx::
-	INCBIN "gfx/cards/meowth2.2bpp"
-	INCBIN "gfx/cards/meowth2.pal"
+	INCBIN "gfx/cards/bidoof.2bpp"
+	INCBIN "gfx/cards/bidoof.pal"
 
 BibarelCardGfx::
 	INCBIN "gfx/cards/persian.2bpp"

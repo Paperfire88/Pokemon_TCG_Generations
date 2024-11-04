@@ -21,3 +21,15 @@ MorgremCardGfx:
 GrimmsnarlCardGfx:
 	INCBIN "gfx/cards/grimmsnarl.2bpp"
 	INCBIN "gfx/cards/grimmsnarl.pal"	
+
+KingdraGfx:
+	INCBIN "gfx/cards/kingdra.2bpp"
+	INCBIN "gfx/cards/kingdra.pal"	
+
+PawniardCardGfx:
+	INCBIN "gfx/cards/pawniard.2bpp"
+	INCBIN "gfx/cards/pawniard.pal"
+
+BisharpCardGfx:
+	INCBIN "gfx/cards/bisharp.2bpp"
+	INCBIN "gfx/cards/bisharp.pal"	
