@@ -151,7 +151,7 @@ MACRO duel_vars
 \1Bench4CardStage::              ds $1
 \1Bench5CardStage::              ds $1
 
-; changed type from Venomoth's Shift Pokemon Power
+; changed type from YANMEGA's Shift Pokemon Power
 ; if bit 7 == 1, then bits 0-3 override the Pokemon's actual color
 \1ArenaCardChangedType::         ds $1
 \1Bench1CardChangedType::        ds $1

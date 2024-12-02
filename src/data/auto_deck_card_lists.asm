@@ -38,7 +38,7 @@ BenchAttackCardList:
 	card_item VIKAVOLT,       2
 	card_item HITMONLEE,         4
 	card_item HITMONCHAN,        2
-	card_item MEOWTH_LV14,       4
+	card_item SANDSHREW,       4
 	card_item PROFESSOR_OAK,     1
 	card_item BILL,              2
 	card_item MR_FUJI,           1
@@ -61,7 +61,7 @@ BattleContestCardList:
 	card_item KROKOROK,                  3
 	card_item HITMONLEE,                2
 	card_item HITMONCHAN,               2
-	card_item MEOWTH_LV14,              3
+	card_item SANDSHREW,              3
 	card_item BIBAREL,                  2
 	card_item GOOMY,                  3
 	card_item SLIGGOO,                2
@@ -223,9 +223,9 @@ BlueWaterCardList:
 	card_item WATER_ENERGY,      25
 	card_item PSYDUCK,            2
 	card_item GOLDUCK,            1
-	card_item POLIWAG,            2
-	card_item POLIWHIRL,          1
-	card_item POLIWRATH,          1
+	card_item TYMPOLE,            2
+	card_item PALPITOAD,          1
+	card_item SEISMITOAD,          1
 	card_item SEEL,               2
 	card_item DEWGONG,            1
 	card_item WINGULL,           2
@@ -298,9 +298,9 @@ EnergyRemovalCardList:
 	card_item DOUBLE_COLORLESS_ENERGY,  3
 	card_item PSYDUCK,                  3
 	card_item GOLDUCK,                  2
-	card_item POLIWAG,                  4
-	card_item POLIWHIRL,                3
-	card_item POLIWRATH,                2
+	card_item TYMPOLE,                  4
+	card_item PALPITOAD,                3
+	card_item SEISMITOAD,                2
 	card_item MISDREAVUS,              4
 	card_item DUSCLOPS,             3
 	card_item GOOMY,                  3
@@ -362,7 +362,7 @@ CutePokemonCardList:
 	card_item EEVEE,                    4
 	card_item PROFESSOR_OAK,            2
 	card_item BILL,                     3
-	card_item TOGEPI_DOLL,            2
+	card_item CLEFAIRY_DOLL,            2
 	card_item SCOOP_UP,                 2
 	card_item COMPUTER_SEARCH,          1
 	card_item PLUSPOWER,                1
@@ -468,13 +468,13 @@ InsectCollectionCardList:
 	card_item WURMPLE,         3
 	card_item SILCOON,          2
 	card_item BEAUTIFLY,       1
-	card_item WEEDLE,           3
-	card_item KAKUNA,           2
+	card_item ROWLET,           3
+	card_item DARTRIX,           2
 	card_item BEEDRILL,         1
-	card_item PARAS,            4
-	card_item PARASECT,         3
-	card_item VENONAT,          2
-	card_item VENOMOTH,         1
+	card_item SHROOMISH,            4
+	card_item BRELOOM,         3
+	card_item YANMA,          2
+	card_item YANMEGA,         1
 	card_item SCYTHER,          1
 	card_item SCIZOR,           1
 	card_item BILL,             2
@@ -493,16 +493,16 @@ JungleCardList:
 	card_item DUSTOX,                    1
 	card_item ZUBAT,                    2
 	card_item GOLBAT,                   1
-	card_item ODDISH,                   2
+	card_item APPLIN,                   2
 	card_item GLOOM,                    1
 	card_item VILEPLUME,                1
-	card_item PARAS,                    2
-	card_item PARASECT,                 1
-	card_item VENONAT,                  2
-	card_item VENOMOTH,                 1
+	card_item SHROOMISH,                    2
+	card_item BRELOOM,                 1
+	card_item YANMA,                  2
+	card_item YANMEGA,                 1
 	card_item BELLSPROUT,               2
 	card_item WEEPINBELL,               1
-	card_item VICTREEBEL,               1
+	card_item TSAREENA,               1
 	card_item SCIZOR,                   1
 	card_item LICKITUNG,                1
 	card_item CHATOT,               1
@@ -522,12 +522,12 @@ FlowerGardenCardList:
 	card_item CHIKORITA,                3
 	card_item BAYLEEF,                  2
 	card_item MEGANIUM,            2
-	card_item ODDISH,                   3
+	card_item APPLIN,                   3
 	card_item GLOOM,                    2
 	card_item VILEPLUME,                2
 	card_item BELLSPROUT,               2
 	card_item WEEPINBELL,               1
-	card_item VICTREEBEL,               1
+	card_item TSAREENA,               1
 	card_item TANGELA_LV8,              2
 	card_item GRUBBIN,             1
 	card_item LICKITUNG,                2
@@ -546,8 +546,8 @@ KaleidoscopeCardList:
 	card_item WATER_ENERGY,             4
 	card_item LIGHTNING_ENERGY,         4
 	card_item DOUBLE_COLORLESS_ENERGY,  3
-	card_item VENONAT,                  3
-	card_item VENOMOTH,                 2
+	card_item YANMA,                  3
+	card_item YANMEGA,                 2
 	card_item NUMEL,             1
 	card_item FLAREON_LV28,             1
 	card_item DREDNAW,            1
@@ -571,11 +571,11 @@ FlowerPowerCardList:
 	card_item CHIKORITA,         4
 	card_item BAYLEEF,           3
 	card_item MEGANIUM,     2
-	card_item ODDISH,            4
+	card_item APPLIN,            4
 	card_item GLOOM,             3
 	card_item VILEPLUME,         2
-	card_item EXEGGCUTE,         4
-	card_item EXEGGUTOR,         3
+	card_item SNOVER,         4
+	card_item ABOMASNOW,         3
 	card_item PROFESSOR_OAK,     2
 	card_item BILL,              3
 	card_item POKEMON_BREEDER,   2
@@ -703,11 +703,11 @@ StrangePsyshockCardList:
 LovelyNidoranCardList:
 	deck_list_start
 	card_item GRASS_ENERGY,     20
-	card_item NIDORANF,          4
-	card_item NIDORINA,          3
-	card_item NIDOQUEEN,         2
-	card_item NIDORANM,          4
-	card_item NIDORINO,          4
+	card_item SHELMET,          4
+	card_item ACCELGOR,          3
+	card_item ILLUMISE,         2
+	card_item KARRABLAST,          4
+	card_item ESCAVALIER,          4
 	card_item NIDOKING,          4
 	card_item LICKITUNG,         3
 	card_item PROFESSOR_OAK,     2
@@ -724,15 +724,15 @@ ScienceCorpsCardList:
 	card_item GRASS_ENERGY,    26
 	card_item CASCOON,            2
 	card_item DUSTOX,            1
-	card_item NIDORANF,         2
-	card_item NIDORINA,         1
-	card_item NIDOQUEEN,        1
-	card_item NIDORANM,         3
-	card_item NIDORINO,         2
+	card_item SHELMET,         2
+	card_item ACCELGOR,         1
+	card_item ILLUMISE,        1
+	card_item KARRABLAST,         3
+	card_item ESCAVALIER,         2
 	card_item NIDOKING,         1
 	card_item ZUBAT,            2
 	card_item GOLBAT,           1
-	card_item GRIMER,           2
+	card_item PHANTUMP,           2
 	card_item TREVENANT,              1
 	card_item KOFFING,          2
 	card_item WEEZING,          1
@@ -760,9 +760,9 @@ FlyinPokemonCardList:
 	card_item PIDGEY,                   4
 	card_item PIDGEOTTO,                3
 	card_item PIDGEOT_LV38,             1
-	card_item PIDGEOT_LV40,             1
+	card_item PIDGEOT_LV38,             1
 	card_item SPEAROW,                  4
-	card_item FEAROW,                   3
+	card_item SWELLOW,                   3
 	card_item IMPOSTER_PROFESSOR_OAK,   2
 	card_item LASS,                     2
 	card_item BILL,                     2
@@ -772,13 +772,13 @@ FlyinPokemonCardList:
 PoisonCardList:
 	deck_list_start
 	card_item GRASS_ENERGY,           24
-	card_item WEEDLE,                  3
-	card_item KAKUNA,                  2
+	card_item ROWLET,                  3
+	card_item DARTRIX,                  2
 	card_item BEEDRILL,                1
 	card_item CASCOON,                   4
 	card_item DUSTOX,                   3
-	card_item NIDORANM,                4
-	card_item NIDORINO,                3
+	card_item KARRABLAST,                4
+	card_item ESCAVALIER,                3
 	card_item NIDOKING,                2
 	card_item KOFFING,                 3
 	card_item WEEZING,                 2
@@ -794,7 +794,7 @@ WondersOfScienceCardList:
 	deck_list_start
 	card_item GRASS_ENERGY,           15
 	card_item PSYCHIC_ENERGY,          8
-	card_item GRIMER,                  4
+	card_item PHANTUMP,                  4
 	card_item TREVENANT,                     3
 	card_item KOFFING,                 4
 	card_item WEEZING,                 3
@@ -825,7 +825,7 @@ ReplaceEmAllCardList:
 	card_item PIDGEY,                  4
 	card_item PIDGEOTTO,               3
 	card_item PIDGEOT_LV38,            1
-	card_item PIDGEOT_LV40,            1
+	card_item PIDGEOT_LV38,            1
 	card_item RUFFLET,                   3
 	card_item BRAVIARY,                  2
 	card_item PROFESSOR_OAK,           2
@@ -936,8 +936,8 @@ CharmanderAndFriendsCardList:
 	card_item WATER_ENERGY,     6
 	card_item WURMPLE,         2
 	card_item SILCOON,          1
-	card_item NIDORANF,         2
-	card_item NIDORANM,         1
+	card_item SHELMET,         2
+	card_item KARRABLAST,         1
 	card_item SCIZOR,           1
 	card_item CHARMANDER,       2
 	card_item CHARMELEON,       1
@@ -952,7 +952,7 @@ CharmanderAndFriendsCardList:
 	card_item SEAKING,          1
 	card_item ZIGZAGOON,          2
 	card_item LINOONE,         1
-	card_item MEOWTH_LV14,      1
+	card_item SANDSHREW,      1
 	card_item PROFESSOR_OAK,    1
 	card_item BILL,             2
 	card_item SWITCH,           1
@@ -990,7 +990,7 @@ SquirtleAndFriendsCardList:
 	card_item ELECTABUZZ_LV35,   1
 	card_item ZIGZAGOON,           2
 	card_item LINOONE,          1
-	card_item MEOWTH_LV14,       1
+	card_item SANDSHREW,       1
 	card_item PROFESSOR_OAK,     1
 	card_item BILL,              1
 	card_item SWITCH,            1
@@ -1009,9 +1009,9 @@ BulbasaurAndFriendsCardList:
 	card_item CHIKORITA,        2
 	card_item BAYLEEF,          1
 	card_item MEGANIUM,    1
-	card_item NIDORANF,         2
-	card_item NIDORANM,         2
-	card_item NIDORINO,         1
+	card_item SHELMET,         2
+	card_item KARRABLAST,         2
+	card_item ESCAVALIER,         1
 	card_item GRUBBIN,     1
 	card_item BLITZLE,     2
 	card_item ZEBSTRIKA,      1
@@ -1023,7 +1023,7 @@ BulbasaurAndFriendsCardList:
 	card_item MISMAGIUS,     1
 	card_item ESPEON,             1
 	card_item STUFFUL,  1
-	card_item MEOWTH_LV14,      1
+	card_item SANDSHREW,      1
 	card_item CHATOT,       1
 	card_item PROFESSOR_OAK,    1
 	card_item BILL,             1
@@ -1059,7 +1059,7 @@ PsychicKrookodileCardList:
 	card_item MEW_LV23,         1
 	card_item PIDGEY,           2
 	card_item PIDGEOTTO,        1
-	card_item PIDGEOT_LV40,     1
+	card_item PIDGEOT_LV38,     1
 	card_item ZIGZAGOON,          2
 	card_item LINOONE,         1
 	card_item PROFESSOR_OAK,    1
@@ -1074,26 +1074,26 @@ WaterBeetleCardList:
 	deck_list_start
 	card_item GRASS_ENERGY,     14
 	card_item WATER_ENERGY,     10
-	card_item WEEDLE,            2
-	card_item KAKUNA,            1
+	card_item ROWLET,            2
+	card_item DARTRIX,            1
 	card_item BEEDRILL,          1
-	card_item NIDORANM,          2
-	card_item NIDORINO,          1
+	card_item KARRABLAST,          2
+	card_item ESCAVALIER,          1
 	card_item NIDOKING,          1
 	card_item BELLSPROUT,        2
 	card_item WEEPINBELL,        1
-	card_item VICTREEBEL,        1
+	card_item TSAREENA,        1
 	card_item SCYTHER,           1
-	card_item POLIWAG,           2
-	card_item POLIWHIRL,         1
-	card_item POLIWRATH,         1
+	card_item TYMPOLE,           2
+	card_item PALPITOAD,         1
+	card_item SEISMITOAD,         1
 	card_item KRABBY,            2
 	card_item KINGLER,           1
 	card_item SNEASEL,          2
 	card_item WEAVILE,          1
 	card_item CHEWTLE,            1
 	card_item RELICANTH,     1
-	card_item LICKITUNG,         1
+	card_item DUSCLOPS,         1
 	card_item CHATOT,        1
 	card_item STANTLER,            1
 	card_item PROFESSOR_OAK,     1
@@ -1115,7 +1115,7 @@ LegendaryMoltresCardList:
 	card_item MAGMAR_LV24,             2
 	card_item MAGMORTAR,             2
 	card_item TORTUNATOR,            2
-	card_item MOLTRES_LV37,            2
+	card_item ENTEI,            2
 	card_item BILL,                    3
 	card_item LASS,                    2
 	card_item POKEMON_TRADER,          1
@@ -1136,7 +1136,7 @@ LegendaryZapdosCardList:
 	card_item JOLTEON_LV29,      2
 	card_item VIKAVOLT,       1
 	card_item ZERAORA,       1
-	card_item ZAPDOS_LV68,       2
+	card_item RAIKOU,       2
 	card_item EEVEE,             3
 	card_item BILL,              4
 	card_item ENERGY_RETRIEVAL,  2
@@ -1152,7 +1152,7 @@ LegendaryArticunoCardList:
 	card_item SEEL,              4
 	card_item DEWGONG,           3
 	card_item CHEWTLE,            4
-	card_item ARTICUNO_LV37,     2
+	card_item SUICUNE,     2
 	card_item RELICANTH,     2
 	card_item AUDINO,           3
 	card_item DITTO,             2

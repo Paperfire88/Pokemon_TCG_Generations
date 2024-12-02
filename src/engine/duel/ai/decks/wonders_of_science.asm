@@ -30,13 +30,13 @@ AIActionTable_WondersOfScience:
 	dw MEWTWO_LV53
 	dw MEWTWO_ALT_LV60
 	dw MEWTWO_LV60
-	dw GRIMER
+	dw PHANTUMP
 	dw KOFFING
 	dw PORYGON
 	dw NULL
 
 .list_bench
-	dw GRIMER
+	dw PHANTUMP
 	dw KOFFING
 	dw MEWTWO_ALT_LV60
 	dw MEWTWO_LV60
@@ -48,7 +48,7 @@ AIActionTable_WondersOfScience:
 	dw NULL
 
 .list_energy
-	ai_energy GRIMER,          3, +0
+	ai_energy PHANTUMP,          3, +0
 	ai_energy TREVENANT,             4, +0
 	ai_energy KOFFING,         2, +0
 	ai_energy WEEZING,         3, +0

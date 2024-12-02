@@ -125,8 +125,10 @@ Script_BeatNikki:
 	show_medal_received_screen EVENT_BEAT_NIKKI
 	record_master_win $05
 	print_npc_text Text0721
+    give_card MEGANIUM
+    show_card_received_screen MEGANIUM
 .ows_e7eb
-	give_booster_packs BOOSTER_LABORATORY_NEUTRAL, BOOSTER_LABORATORY_NEUTRAL, NO_BOOSTER
+	give_booster_packs BOOSTER_LABORATORY_NEUTRAL, BOOSTER_LABORATORY_GRASS, BOOSTER_LABORATORY_GRASS
 	script_jump Script_LostToNikki.ows_e7f3
 
 Script_LostToNikki:

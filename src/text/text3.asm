@@ -440,7 +440,7 @@ FlowerGardenDescriptionText:
 	done
 
 KaleidoscopeDescriptionText:
-	text "Uses Venomoth's Pokémon Power to"
+	text "Uses YANMEGA's Pokémon Power to"
 	line "change the opponent's Weakness."
 	done
 
@@ -582,7 +582,7 @@ GlossaryMenuPage1Text:
 	text "Deck                Active Pokémon"
 	line "Discard Pile        Bench Pokémon"
 	line "Hand                Prizes    "
-	line "Arena               Damage Counter"
+	line "Play Area           Damage Counter"
 	line "Bench               To next page    "
 	done
 
@@ -612,7 +612,7 @@ AboutTheHandText:
 	done
 
 AboutTheArenaText:
-	text "About the Arena"
+	text "About the Play Area"
 	done
 
 AboutTheBenchText:
@@ -672,75 +672,91 @@ AboutRetreatingText:
 	done
 
 DeckDescriptionText:
-	text "The Deck is the pile of cards"
-	line "you will be drawing from."
-	line "At the beginning of your turn, you"
-	line "will draw 1 card from your Deck."
-	line "If there are no cards to draw"
-	line "from the Deck, you lose the game."
+	text "The Deck is the group of cards you" 
+	line "will be drawing from. At the start" 
+	line "of your turn, you will draw 1 card"
+	line "from your Deck. If your Deck has no"
+	line "cards left, you lose the game."
+	line "Both players have their own decks of" 
+	line "60 cards to use."
+	line "While both players know how many"
+	line "cards are in their decks, they can't"
+	line "see or rearrange the order of the"
+	line "cards unless a card allows it."
 	done
 
 DiscardPileDescriptionText:
 	text "The pile in which you place used"
 	line "cards is called the Discard Pile."
-	line "You can look at both yours and your"
-	line "opponent's Discard Pile "
-	line "with the Check command."
+	line "Usually when a PKMN is Knocked"
+	line "Out, it and any cards attached to it" 
+	line "(such as Energy cards) are sent to"
+	line "its owner's discard pile."
+	line "Each player has their own discard" 
+	line "pile. You can look at either player"
+	line "Discard Pile with the Check command."
 	done
 
 HandDescriptionText:
-	text "The cards held by each player"
-	line "are called a Hand."
-	line "There is no restriction to the"
-	line "number of cards in the Hand."
-	line "You may even have 10 or 20 "
-	line "cards in your Hand."
+	text "The cards held by each player are"
+	line "called a Hand. Each player draws 7"
+	line "cards at the start of the game and" 
+	line "keeps their own hand hidden. Cards" 
+	line "you draw go into your hand. There is" 
+	line "no restriction to the number of cards" 
+	line "in the Hand. Players may not look at" 
+	line "their opponent's hand unless a card"
+	line "allows them."
 	done
 
 ArenaDescriptionText:
-	text "The place where the Pokémon"
-	line "that is actively fighting"
-	line "is placed is called the Arena."
-	line "The game proceeds by using the"
-	line "Active Pokémon in the Arena."
-	done
-
-BenchDescriptionText:
-	text "The Bench is where your Pokémon"
-	line "that are in play but aren't actively"
-	line "fighting sit."
-	line "They're ready to come out and fight"
-	line "if the Active Pokémon retreats or"
-	line "is Knocked Out."
-	line "You can have up to 5 Pokémon on"
+	text "The place where the PKMN are placed"
+	line "is called the Play Area or in-play"
+	line "Zone. The in-play zone is shared by"
+	line "the players. Each player has two"
+	line "sections, divided into two rows for"
+	line "their PKMN, the Active Zone and"
 	line "the Bench."
 	done
 
+BenchDescriptionText:
+	text "The bottom row of a player's in-play"
+	line "section is for the Benched PKMN."
+	line "Each player may have up to 5 PKMN on" 
+	line "the Bench at any one time. Any PKMN"
+	line "in play other than the Active PKMN" 
+	line "must be put on the Bench."
+	done
+
 ActivePokemonDescriptionText:
-	text "The Active Pokémon is the "
-	line "Pokémon that is in the Arena."
-	line "Only Active Pokémon can "
-	line "attack."
+	text "The top row of a player's in-play"
+	line "section is for the Active PKMN."
+	line "The Active PKMN is the PKMN that"
+	line "is in the Arena. Each player starts" 
+	line "with (and must always have) 1 Active"
+	line "PKMN. Only Active PKMN can attack."
 	done
 
 BenchPokemonDescriptionText:
-	text "The Pokémon that are in play"
-	line "but aren't actively fighting"
-	line "are called Bench Pokémon."
-	line "They're ready to come out and fight"
-	line "if the Active Pokémon retreats or"
-	line "is Knocked Out."
-	line "If the Active Pokémon is Knocked"
-	line "Out and you don't have a Bench "
-	line "Pokémon, you lose the game."
+	text "The PKMN that are in played in the"
+	line "Bench are called Bench PKMN."
+	line "They come out to fight if the Active" 
+	line "PKMN retreats or is Knocked Out."
+	line "If the Active PKMN is Knocked Out"
+	line "and you don't have a Bench PKMN," 
+	line "you lose the game."
 	done
 
 PrizesDescriptionText:
-	text "Prizes are the cards placed to"
-	line "count the number of the opponent's"
-	line "Pokémon you Knocked Out."
+	text "Each player has their own Prize"
+	line "cards. Prize cards are 6 cards"
+	line "that each player sets aside, face"
+	line "down, from their deck at the start"
+  	line "of the game. These cards are chosen"
+	line "randomly. They count the number of"
+	line "opponent's PKMN you Knocked Out."
 	line "Every time one of your opponent's"
-	line "Pokémon is Knocked Out, you take 1"
+	line "PKMN is Knocked Out, you take 1"
 	line "of your Prizes into your Hand."
 	line "When you take all of your Prizes,"
 	line "you win the game."
@@ -748,113 +764,115 @@ PrizesDescriptionText:
 
 DamageCountersDescriptionText:
 	text "A Damage Counter represents the"
-	line "amount of damage a certain Pokémon"
-	line "has taken."
-	line "1 Damage Counter represents"
-	line "10 HP of damage."
-	line "If a Pokémon with an HP of 30 has"
+	line "amount of damage a certain PKMN"
+	line "has taken. 1 Damage Counter" 
+	line "represents 10 HP of damage."
+	line "If a PKMN with an HP of 30 has"
 	line "3 Damage Counters, it has received"
 	line "30 HP of damage, and its remaining"
-	line "HP is 0."
+	line "HP is 0 and is Knocked Out."
 	done
 
 EnergyCardsDescriptionText:
 	text "Energy Cards are cards that power"
-	line "your Pokémon, making them able"
-	line "to Attack."
-	line "There are 7 types of Energy Cards"
-	line "[<GRASS> Grass] [<FIRE> Fire]"
+	line "your PKMN, You need the right amount"
+	line "of Energy attached to a PKMN for it"
+	line "to attack. There are 8 types of" 
+	line "Energy Cards [<GRASS> Grass] [<FIRE> Fire]"
 	line "[<WATER> Water] [<LIGHTNING> Lightning]"
 	line "[<PSYCHIC> Psychic] [<FIGHTING> Fighting]"
-	line "and [<COLORLESS> Double Colorless]"
-	line "You may only play 1 Energy Card"
-	line "from your Hand per turn."
+	line "[<DARKNESS> Darkness] and [<COLORLESS> Colorless]"
+	line "<COLORLESS> cost means that any kind of" 
+	line "Energy can be used for the cost of"
+	line "an Attack. You can only play 1"
+	line "Energy Card from your Hand per turn."
 	done
 
 TrainerCardsDescriptionText:
 	text "Trainer Cards are support cards."
-	line "There are many Trainer Cards"
-	line "with different effects."
-	line "Trainer Cards are played during"
-	line "your turn by following the"
-	line "instructions on the card and then"
-	line "discarding it."
-	line "You may use as many Trainer Cards"
-	line "as you like."
+	line "There are many Trainer Cards with"
+	line "different effects. Trainer Cards"
+	line "are played during your turn by" 
+	line "following the instructions on the"
+	line "card and thenvdiscarding it."
+	line "You can use as many Trainer Cards"
+	line "as you like during your turn."
 	done
 
 BasicPokemonDescriptionText:
-	text "Basic Pokémon are cards that "
-	line "can be played directly from your "
-	line "hand into the play area. Basic "
-	line "Pokémon act as the base for "
-	line "Evolution Cards. Charmander, "
-	line "Squirtle and Bulbasaur are"
-	line "examples of Basic Pokémon."
+	text "Basic PKMN are cards that can be"
+	line "played directly from your hand into"
+	line "the play area. Basic PKMN act as the"
+	line "base for Evolution Cards. Tepig,"
+	line "Froakie and Chikorita are examples"
+	line "of Basic PKMN."
 	done
 
 EvolutionCardsDescriptionText:
-	text "Evolution Cards are cards you"
-	line "play on top of a Basic Pokémon card"
-	line "(or sometimes on top of another"
-	line "Evolution Card) to make it stronger."
-	line "There are Stage 1 and Stage 2"
-	line "Evolution Cards."
-	line "If you do not have a Basic Pokémon"
-	line "in the Play Area, you cannot place"
-	line "the Stage 1 Evolution Card, and if"
-	line "you do not have a Stage 1 Evolution"
-	line "Card in the Play Area, you cannot"
-	line "place the Stage 2 Evolution Card."
+	text "Evolution Cards are cards you play"
+	line "on top of a Basic PKMN or Stage 1"  
+	line "card to make it stronger. There" 
+	line "are Stage 1 and 2 Evolution Cards." 
+	line "Neither player can evolve a PKMN" 
+	line "on its first turn in play. When you"
+	line "evolve a PKMN, it means that PKMN is"
+	line "new in play, so you can't evolve it" 
+	line "a second time the same turn. You can"
+	line "evolve either your Active or Benched" 
+	line "PKMN. Finally, neither player can" 
+	line "evolve a PKMN on their first turn!"
 	done
 
 AttackingDescriptionText:
-	text "By choosing Attack, your Pokémon"
-	line "will fight your opponent's Pokémon."
-	line "Your Pokémon require Energy"
+	text "By choosing Attack, your PKMN will"
+	line "fight your opponent's PKMN."
+	line "Your PKMN require Energy"
 	line "in order to Attack."
 	line "The amount of Energy required"
 	line "differs according to the Attack."
-	line "The Active Pokémon is the only"
-	line "Pokémon that can Attack."
+	line "The Active PKMN is the only"
+	line "PKMN that can Attack."
 	done
 
 PokemonPowerDescriptionText:
-	text "Unlike Attacks, Pokémon Power"
-	line "can be used by Active or Benched"
-	line "Pokémon. Some Pokémon Power are"
-	line "effective by just placing the"
-	line "Pokémon in the Play Area, but for"
-	line "some you must choose the"
-	line "command, PKMN Power."
+	text "Some PKMN have special Abilities" 
+	line "that they can use, the PKMN Powers." 
+	line "Many of them can be used before your" 
+	line "attack. Unlike Attacks, PKMN Powers" 
+	line "can be used by the Active or Benched"
+	line "PKMN. Some work only if a condition"
+	line "is met, Some can be used by just" 
+	line "placing the PKMN in the Play Area,"
+	line "but for some you must choose the" 
+	line "command, PKMN Power. Each PKMN Power"
+	line "is different, so read carefully to" 
+	line "see how each one works." 
 	done
 
 WeaknessDescriptionText:
-	text "Some Pokémon have a Weakness."
-	line "If a Pokémon has a Weakness, it"
-	line "takes double damage when attacked by"
-	line "Pokémon of a certain type."
+	text "Some PKMN have a Weakness. If a" 
+	line "PKMN has a Weakness, it takes"
+	line "X2 damage when attacked by a PKMN"
+	line "of a certain type."
 	done
 
 ResistanceDescriptionText:
-	text "Some Pokémon have Resistance."
-	line "If a Pokémon has Resistance, it"
-	line "takes 30 less damage whenever"
-	line "attacked by Pokémon of"
-	line "a certain type."
+	text "Some PKMN have Resistance. If a"
+	line "PKMN has Resistance, it takes"
+	line "30 less damage whenever attacked by"
+	line "a PKMN of a certain type."
 	done
 
 RetreatingDescriptionText:
-	text "By choosing Retreat, you can"
-	line "switch the Active Pokémon with"
-	line "a Pokémon on your Bench."
-	line "Energy is required to Retreat"
-	line "your Active Pokémon."
-	line "The amount of Energy required to"
-	line "Retreat differs for each Pokémon."
-	line "To Retreat, you must discard"
-	line "Energy equal to the Retreat Cost"
-	line "of the retreating Pokémon."
+	text "By choosing Retreat, you can switch"
+	line "the Active PKMN with a PKMN on your"
+	line "Bench. Energy is required to Retreat"
+	line "your Active switch. he amount of" 
+	line "Energy required to Retreat differs" 
+	line "for each switch. To Retreat, you"
+	line "must discard Energy equal to the"
+	line "<COLORLESS> Retreat Cost of the retreating"
+	line "PKMN."
 	done
 
 OverworldMapMasonLaboratoryText:

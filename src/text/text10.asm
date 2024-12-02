@@ -1,67 +1,8 @@
-KakunaDescription:
-	text "Booster Pack: (MYSTERY)"
-	line "OG Set: (Sun & Moon 10)"
-	line "OG illustrator: (Mizue)"
-	done
-
-BeedrillName:
-	text "Dedicdueye"
-	done
-
-TwineedleName:
-	text "Twineedle"
-	done
-
-DoubleAttackX30Description:
-	text "Flip 2 coins. This attack does 30"
-	line "damage times the number of heads."
-	done
-
-PoisonBeeName:
-	text "Poison Bee"
-	done
-
-BeedrillDescription:
-	text "Booster Pack: (MYSTERY)"
-	line "OG Set: (Sword & Shield Promos 35)"
-	line "OG illustrator: (Souichirou Gunjima)"
-	done
-
-CascoonName:
-	text "Cascoon"
-	done
-
-SpitPoisonName:
-	text "Spit Poison"
-	done
-
-WrapName:
-	text "Wrap"
-	done
-
-SnakeName:
-	text "Snake"
-	done
-
-EkansDescription:
-	text "Booster Pack: (EVOLUTION)"
-	line "OG Set: (Roaring Skies 6)"
-	line "OG illustrator: (MAHOU)"
-	done
-
-DustoxName:
-	text "Dustox"
-	done
-
-TerrorStrikeName:
-	text "Luring Glow"
-	done
-
 TerrorStrikeDescription:
-	text "Flip a coin. If heads your opponent" 
-	line "switches their Active Pkmn with 1 of" 
-	line "their Benched Pkmn. (Do the damage" 
-	line "before switching the Pkmn.)"
+	text "After doing damage, Flip a coin."
+	line "If heads, your opponent switches" 
+	line "their Active Pkmn with 1 of their" 
+	line "Benched Pkmn."
 	done
 
 PoisonFangName:
@@ -78,7 +19,7 @@ ArbokDescription:
 	line "OG illustrator: (Akira Komayama)"
 	done
 
-NidoranFName:
+ShelmetName:
 	text "Shelmet"
 	done
 
@@ -95,12 +36,12 @@ CallForFamilyName:
 	text "Call for Family"
 	done
 
-NidoranFsCallForFamilyDescription:
-	text "Search your deck for a Basic PKMN"
-	line "named Shelmet or Karrablast and put"
-	line "it onto your Bench. Shuffle your"
-	line "deck afterward. (You can't use this"
-	line "attack if your Bench is full.)"
+GrassCallForFamilyDescription:
+	text "Search your deck for a <GRASS> Basic"
+	line "PKMN card and put it onto your"
+	line "Bench. Shuffle your deck afterward."
+	line "(You can't use this attack if your"
+	line "Bench is full.)"
 	done
 
 PoisonPinName:
@@ -111,10 +52,9 @@ NidoranFDescription:
 	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (Darkness Ablaze 9)"
 	line "OG illustrator: (Megumi Mizutani)"
-	
 	done
 
-NidorinaName:
+AccelgorName:
 	text "Accelgor"
 	done
 
@@ -135,10 +75,9 @@ NidorinaDescription:
 	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (Darkness Ablaze 10)"
 	line "OG illustrator: (Shigenori Negishi)"
-	
 	done
 
-NidoqueenName:
+IllumiseName:
 	text "Illumise"
 	done
 
@@ -147,8 +86,8 @@ BoyfriendsName:
 	done
 
 BoyfriendsDescription:
-	text "Does damage +20 more damage"
-	line "for each Volbeat you have in play."
+	text "Does damage +20 more damage for"
+	line "each (Volbeat) you have in play."
 	done
 
 MegaPunchName:
@@ -162,11 +101,10 @@ DrillName:
 NidoqueenDescription:
 	text "Booster Pack: (EVOLUTION)"
 	line "OG Set: (XY 8)"
-	line "OG illustrator: (Kanako Eo)"
-	
+	line "OG illustrator: (Kanako Eo)"	
 	done
 
-NidoranMName:
+KarrablastName:
 	text "Karrablast"
 	done
 
@@ -183,10 +121,9 @@ NidoranMDescription:
 	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (Phantom Forces 8)"
 	line "OG illustrator: (Sanosuke Sakuma)"
-	
 	done
 
-NidorinoName:
+EscavalierName:
 	text "Escavalier"
 	done
 
@@ -198,7 +135,6 @@ NidorinoDescription:
 	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (Noble Victories 80)"
 	line "OG illustrator: (Kouki Saitou)"
-	
 	done
 
 NidokingName:
@@ -233,7 +169,6 @@ NidokingDescription:
 	text "Booster Pack: (EVOLUTION)"
 	line "OG Set: (XY 9)"
 	line "OG illustrator: (Kanako Eo)"
-	
 	done
 
 ZubatName:
@@ -258,7 +193,6 @@ ZubatDescription:
 	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Gym Heroes 24)"
 	line "OG illustrator: (Ken Sugimori)"
-	
 	done
 
 GolbatName:
@@ -279,23 +213,19 @@ GolbatDescription:
 	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Generations 31)"
 	line "OG illustrator: (Kanako Eo)"
-	
 	done
 
-OddishName:
+ApplinName:
 	text "Applin"
 	done
 
-SproutName:
-	text "Sprout"
+TradeName:
+	text "Trade"
 	done
 
-SproutDescription:
-	text "Search your deck for a Basic PKMN"
-	line "named Applin and put it onto your"
-	line "Bench. Shuffle your deck afterward."
-	line "(You can't use this attack if your"
-	line "Bench is full.)"
+TradeDescription:
+	text "Discard 1 card from your hand," 
+	line "Draw 2 cards."
 	done
 
 WeedName:
@@ -306,7 +236,6 @@ OddishDescription:
 	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Rebel Clash 21)"
 	line "OG illustrator: (Kagemaru Himeno)"
-	
 	done
 
 GloomName:
@@ -318,16 +247,15 @@ FoulOdorName:
 	done
 
 FoulOdorDescription:
-	text "Both the Defending PKMN and"
-	line "this PKMN are now Confused"
-	line "(after doing damage)."
+	text "After doing damage, Both the"
+	line "Defending PKMN and this PKMN are now"
+	line "Confused."
 	done
 
 GloomDescription:
 	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Sword & Shield Promos 189)"
 	line "OG illustrator: (nagimiso)"
-	
 	done
 
 VileplumeName:
@@ -339,12 +267,9 @@ HealName:
 	done
 
 HealDescription:
-	text "Once during your turn (before your"
-	line "attack), you may flip a coin. If"
-	line "heads, remove 1 damage counter from"
-	line "1 of your PKMN. This PKMN power" 
-	line "can't be used if this PKMN is"
-	line "affected by a Special Condition."
+	text "Once per turn (before your attack),"
+	line "you may flip a coin. If heads,"
+	line "heal 10 damage from 1 of your PKMN."
 	done
 
 PetalDanceName:
@@ -368,10 +293,9 @@ VileplumeDescription:
 	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Evolving Skies 121)"
 	line "OG illustrator: (Yuya Oka)"
-	
 	done
 
-ParasName:
+ShroomishName:
 	text "Shroomish"
 	done
 
@@ -394,11 +318,10 @@ MushroomName:
 ParasDescription:
 	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (Scarlet & Violet 3)"
-	line "OG illustrator: (kurumitsu)"
-	
+	line "OG illustrator: (kurumitsu)"	
 	done
 
-ParasectName:
+BreloomName:
 	text "Breloom"
 	done
 
@@ -412,12 +335,8 @@ ParasectDescription:
 	line "OG illustrator: (Ryuta Fuse)"
 	done
 
-VenonatName:
+YanmaName:
 	text "Yanma"
-	done
-
-VenonatLeechLifeDescription:
-	text ""
 	done
 
 InsectName:
@@ -427,20 +346,11 @@ InsectName:
 VenonatDescription:
 	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Vivid Voltage 6)"
-	line "OG illustrator: (MAHOU)"
-	
+	line "OG illustrator: (MAHOU)"	
 	done
 
-VenomothName:
+YanmegaName:
 	text "Yanmega"
-	done
-
-ShiftName:
-	text "Adaptability"
-	done
-
-ShiftDescription:
-	text ""
 	done
 
 VenomPowderName:
@@ -449,34 +359,30 @@ VenomPowderName:
 
 VenomPowderDescription:
 	text "Flip a coin. If heads, the Defending"
-	line "PKMN is now Confused and"
-	line "Poisoned."
+	line "PKMN is now Confused and Poisoned."
+	line "If the Defending PKMN is an Evolved" 
+	line "PKMN, use this effect without" 
+	line "flipping a coin."
 	done
 
 PoisonmothName:
 	text "Poisonmoth"
 	done
 
-VenomothDescription:
+YANMEGADescription:
 	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Supreme Victors 14)"
 	line "OG illustrator: (Masakazu Fukuda)"
-	
 	done
 
 BellsproutName:
 	text "Bounsweet"
 	done
 
-BellsproutsCallForFamilyDescription:
-	text ""
-	done
-
 BellsproutDescription:
 	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Chilling Reign 13)"
 	line "OG illustrator: (MAHOU)"
-	
 	done
 
 WeepinbellName:
@@ -495,23 +401,24 @@ WeepinbellDescription:
 	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Sun & Moon 19)"
 	line "OG illustrator: (Mizue)"
-	
 	done
 
-VictreebelName:
+TsareenaName:
 	text "Tsareena"
 	done
 
-LureName:
+AttractName:
 	text "Attract"
 	done
 
-VictreebelsLureDescription:
-	text "After doing damage, switch 1 of"
-	line "your opponent's Benched PKMN"
-	line "with the Defending PKMN. Then,"
-	line "flip a coin. If heads, the new"
-	line "Active PKMN is now Confused."
+AttractDescription:
+	text "After doing damage, Switch in 1 of" 
+	line "your opponent's Benched PKMN to the"
+	line "Active Spot. Then, flip a coin."
+	line "If heads, the Active PKMN is now"
+	line "Confused. If the Defending PKMN is" 
+	line "an Evolved PKMN, use this effect" 
+	line "without flipping a coin."
 	done
 
 AcidName:
@@ -528,10 +435,9 @@ VictreebelDescription:
 	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Chilling Reign 15)"
 	line "OG illustrator: (Yuu Nishida)"
-	
 	done
 
-GrimerName:
+PhantumpName:
 	text "Phantump"
 	done
 
@@ -547,7 +453,7 @@ GrimersMinimizeDescription:
 	text "All damage done to this PKMN"
 	line "during your opponent's next turn"
 	line "is reduced by 20 (after applying"
-	line "Weakness and Resistance)."
+	line "Weakness/Resistance)."
 	done
 
 SludgeName:
@@ -569,10 +475,9 @@ ToxicGasName:
 	done
 
 ToxicGasDescription:
-	text "Ignore all PKMN Powers other than"
-	line "This one. This PKMN power can't be" 
-	line "used if this PKMN is affected by" 
-	line "a Special Condition."
+	text "As long as this PKMN is in play," 
+	line "Neither player can use or activate"
+	line "the effect of any other PKMN Power." 
 	done
 
 MukDescription:
@@ -581,7 +486,7 @@ MukDescription:
 	line "OG illustrator: (Kouki Saitou)"
 	done
 
-ExeggcuteName:
+SnoverName:
 	text "Snover"
 	done
 
@@ -590,9 +495,8 @@ HypnosisName:
 	done
 
 ExeggcutesLeechSeedDescription:
-	text "Unless all damage from this attack"
-	line "is prevented, you may remove 1"
-	line "damage counter from This PKMN."
+	text "If this attack deals damage, Heal 10"
+	line "damage from this Pkmn."
 	done
 
 EggName:
@@ -603,20 +507,24 @@ ExeggcuteDescription:
 	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Chilling Reign 9)"
 	line "OG illustrator: (Naoki Saito)"
-	
 	done
 
-ExeggutorName:
+AbomasnowName:
 	text "Abomasnow"
 	done
 
 TeleportName:
-	text "U-Turn"
+	text "Teleport Blast"
 	done
 
 TeleportDescription:
-	text "You can Switch this Pkmn with 1 of"
-	line "your Benched PKMN."
+	text "After doing damage, You can Switch"
+	line "this Pkmn with 1 of your Benched"
+	line "PKMN (If any)."
+	done
+
+UTurnName:
+	text "U-Turn"
 	done
 
 BigEggsplosionName:
@@ -624,10 +532,9 @@ BigEggsplosionName:
 	done
 
 BigEggsplosionDescription:
-	text "Flip a number of coins equal to the"
-	line "number of Energy attached to"
-	line "this PKMN. This attack does DAMAGE"
-	line "times the number of heads."
+	text "Flip a coin for each Energy attached"
+	line "to this PKMN. This attack does 20"
+	line "damage for each heads."
 	done
 
 CoconutName:
@@ -637,8 +544,7 @@ CoconutName:
 ExeggutorDescription:
 	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Paldea Evolved 11)"
-	line "OG illustrator: (Ryuta Fuse)"
-	
+	line "OG illustrator: (Ryuta Fuse)"	
 	done
 
 KoffingName:
@@ -663,7 +569,6 @@ KoffingDescription:
 	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Emerging Powers 70)"
 	line "OG illustrator: (Midori Harada)"
-	
 	done
 
 WeezingName:
@@ -681,9 +586,8 @@ SelfdestructName:
 WeezingsSelfdestructDescription:
 	text "Does 10 damage to each PKMN on"
 	line "each player's Bench. (Don't apply"
-	line "Weakness and Resistance for Benched"
-	line "PKMN.) does 60 damage to"
-	line "itself."
+	line "Weakness/Resistance.)" 
+	line "does 60 damage to itself."
 	done
 
 WeezingDescription:
@@ -815,7 +719,6 @@ CharmeleonDescription:
 	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (Boundaries Crossed 25)"
 	line "OG illustrator: (Shin Nagasawa)"
-	
 	done
 
 CharizardName:
@@ -827,13 +730,9 @@ EnergyBurnName:
 	done
 
 EnergyBurnDescription:
-	text "As often as you like during your"
-	line "turn (before your attack), you may"
-	line "turn all Energy attached to"
-	line "this PKMN into <FIRE> Energy for the"
-	line "rest of the turn. This power can't"
-	line "be used if is Asleep,"
-	line "Confused, or Paralyzed."
+	text "All Energy attached to this PKMN are"
+	line "<FIRE> Energy instead of their"  
+	line "usual type."
 	done
 
 FireSpinName:
@@ -868,7 +767,6 @@ VulpixDescription:
 	text "Booster Pack: (EVOLUTION)"
 	line "OG Set: (Neo Discovery 39)"
 	line "OG illustrator: (Shin-ichi Yoshida)"
-	
 	done
 
 NinetalesName:
@@ -876,12 +774,11 @@ NinetalesName:
 	done
 
 NinetalesLureDescription:
-	text "If your opponent has any Benched"
-	line "PKMN, choose 1 of them and switch"
-	line "it with the Defending PKMN."
-	line "If this PKMN has any <PSYCHIC> energy "
-	line "attached to it, this attack does +20"
-	line "more damage."
+	text "Before doing damage, Switch in 1 of" 
+	line "your opponent's Benched PKMN to the"
+	line "Active Spot. If this PKMN has any"
+	line "<PSYCHIC> energy attached, this attack does"
+	line "+20 more damage."
 	done
 
 FireBlastName:
@@ -960,7 +857,7 @@ QuickAttackName:
 
 QuickAttackDescription:
 	text "Flip a coin. If heads, this attack"
-	line "does 20 more damage;"
+	line "does 20 more damage."
 	done
 
 FlamesOfRageName:
@@ -1025,7 +922,6 @@ PonytaDescription:
 	text "Booster Pack: (EVOLUTION)"
 	line "OG Set: (Next Destinies 17)"
 	line "OG illustrator: (Atsuko Nishida)"
-	
 	done
 
 RapidashName:
@@ -1050,15 +946,14 @@ AgilityName:
 RapidashsAgilityDescription:
 	text "Flip a coin. If heads, during your"
 	line "opponent's next turn, prevent all"
-	line "effects of attacks, including"
-	line "damage, done to this PKMN."
+	line "damage and effects from attacks" 
+	line "done to this PKMN."
 	done
 
 RapidashDescription:
 	text "Booster Pack: (EVOLUTION)"
 	line "OG Set: (Black & White 25)"
 	line "OG illustrator: (Naoki Saito)"
-	
 	done
 
 MagmarName:
@@ -1082,7 +977,6 @@ MagmarLv24Description:
 	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Cosmic Eclipse 36)"
 	line "OG illustrator: (HYOGONOSUKE)"
-	
 	done
 
 SmokescreenName:
@@ -1100,7 +994,6 @@ MagmarLv31Description:
 	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Phantom Forces 12)"
 	line "OG illustrator: (Naoki Saito)"
-	
 	done
 
 FlareonName:
@@ -1128,7 +1021,6 @@ FlareonLv22Description:
 	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Legends Awakened 110)"
 	line "OG illustrator: (Kouki Saitou)"
-	
 	done
 
 FlareonsFlamethrowerDescription:
@@ -1140,10 +1032,9 @@ FlareonLv28Description:
 	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Sword & Shield Promos 41)"
 	line "OG illustrator: (You Iribi)"
-	
 	done
 
-MoltresName:
+EnteiName:
 	text "Entei"
 	done
 
@@ -1152,11 +1043,11 @@ WildfireName:
 	done
 
 WildfireDescription:
-	text "You must discard 1 or more <FIRE>"
-	line "Energy cards attached to this PKMN"
-	line "when you use this attack. If you do,"
-	line "discard that many cards from the top"
-	line "of your opponent's deck."
+	text "Discard 1 or more <FIRE> Energy cards"
+	line "attached to this PKMN, discard cards"
+	line "from the top of your opponent's deck"
+	line "Equal to the number of card discarted"
+	line "From this PKMN."
 	done
 
 DiveBombName:
@@ -1167,7 +1058,6 @@ MoltresLv35Description:
 	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Sword & Shield Promos 29)"
 	line "OG illustrator: (KEIICHIRO ITO)"
-	
 	done
 
 FiregiverName:
@@ -1175,11 +1065,10 @@ FiregiverName:
 	done
 
 FiregiverDescription:
-	text "When you put this PKMN into play"
-	line "during your turn (not during"
-	line "set-up), put from 1 to 4 (chosen at"
-	line "random) <FIRE> Energy cards from your"
-	line "deck into your hand. Shuffle your"
+	text "When you play this PKMN from your"
+	line "hand (not during set-up), add 1 to" 
+	line "4 <FIRE> Energy cards from your deck" 
+	line "at random. Then, Shuffle your"
 	line "deck afterward."
 	done
 
@@ -1187,7 +1076,6 @@ MoltresLv37Description:
 	text "Booster Pack: (LEGENDARY Card)"
 	line "OG Set: (Crown Zenith 21)"
 	line "OG illustrator: (Nisota Niso)"
-	
 	done
 
 SquirtleName:
@@ -1217,7 +1105,6 @@ SquirtleDescription:
 	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (Kalos Starter Set 12)"
 	line "OG illustrator: (5ban Graphics)"
-	
 	done
 
 WartortleName:
@@ -1239,7 +1126,6 @@ WartortleDescription:
 	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (Kalos Starter Set 13)"
 	line "OG illustrator: (5ban Graphics)"
-	
 	done
 
 BlastoiseName:
@@ -1252,17 +1138,10 @@ RainDanceName:
 
 RainDanceDescription:
 	text "As often as you like during your"
-	line "turn, you may attach 1<WATER>Energy card"
-	line "to 1 of your <WATER> Pkmn. (This"
-	line "doesn't use up your 1 Energy attach"
-	line "for the turn.) This power can't be"
-	line "used if is Affected by an Status."
-	done
-
-RainDanceDescriptionCont:
-	text "This PKMN power can't be used if" 
-	line "this PKMN is affected by a" 
-	line "Special Condition."
+	line "turn, you may attach 1 <WATER> Energy"
+	line "card from your hand to 1 of your <WATER>"
+	line "Pkmn. (This doesn't use up your 1"
+	line "Energy attach for the turn.)"
 	done
 
 HydroPumpName:
@@ -1270,11 +1149,11 @@ HydroPumpName:
 	done
 
 HydroPumpDescription:
-	text "Does damage plus 10 more damage"
-	line "for each <WATER> Energy attached to"
-	line "this PKMN but not used to pay for"
-	line "this attack's Energy cost. You can't"
-	line "add more than 20 damage in this way."
+	text "This attack does +20 more damage for"
+	line "each extra <WATER> Energy attached to"
+	line "this PKMN (in addition to its attack"
+	line "cost). You can't add more than 20" 
+	line "damage in this way."
 	done
 
 ShellfishName:
@@ -1284,8 +1163,7 @@ ShellfishName:
 BlastoiseDescription:
 	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (XY 41)"
-	line "OG illustrator: (5ban Graphics)"
-	
+	line "OG illustrator: (5ban Graphics)"	
 	done
 
 PsyduckName:
@@ -1310,15 +1188,18 @@ PsyduckDescription:
 	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (Scarlet & Violet 46)"
 	line "OG illustrator: (Mizue)"
-	
 	done
 
 GolduckName:
 	text "Floatzel"
 	done
 
-PsyshockName:
+DeepGrowlName:
 	text "Deep Growl"
+	done
+
+PsyshockName:
+	text "Psyshock"
 	done
 
 HyperBeamName:
@@ -1326,19 +1207,17 @@ HyperBeamName:
 	done
 
 Discard1EnergyFromTargetDescription:
-	text "If the Defending PKMN has any"
-	line "Energy cards attached to it, choose"
-	line "1 of them and discard it."
+	text "Discard an Energy (If any), from the" 
+	line "Defending PKMN."
 	done
 
 GolduckDescription:
 	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (Flashfire 29)"
 	line "OG illustrator: (Kanako Eo)"
-	
 	done
 
-PoliwagName:
+TympoleName:
 	text "Tympole"
 	done
 
@@ -1347,11 +1226,11 @@ WaterGunName:
 	done
 
 PoliwagsWaterGunDescription:
-	text "Does 10 damage plus 10 more damage"
-	line "for each <WATER> Energy attached to"
-	line "This PKMN but not used to pay for"
-	line "this attack's Energy cost. You can't"
-	line "add more than 20 damage in this way."
+	text "This attack does +10 more damage for"
+	line "each extra <WATER> Energy attached to"
+	line "this PKMN (in addition to its attack"
+	line "cost). You can't add more than 20" 
+	line "damage in this way."
 	done
 
 TadpoleName:
@@ -1362,10 +1241,9 @@ PoliwagDescription:
 	text "Booster Pack: (EVOLUTION)"
 	line "OG Set: (Plasma Freeze 24)"
 	line "OG illustrator: (MAHOU)"
-	
 	done
 
-PoliwhirlName:
+PalpitoadName:
 	text "Palpitoad"
 	done
 
@@ -1388,20 +1266,10 @@ PoliwhirlsDescription:
 	text "Booster Pack: (EVOLUTION)"
 	line "OG Set: (Rebel Clash 45)"
 	line "OG illustrator: (MAHOU)"
-	
 	done
 
-PoliwrathName:
+SeismitoadName:
 	text "Seismitoad"
-	done
-
-PoliwrathsWaterGunDescription:
-	text "Does 30 damage plus 10 more damage"
-	line "for each <WATER> Energy attached to"
-	line "Poliwrath but not used to pay for"
-	line "this attack's Energy cost. You"
-	line "can't add more than 20 damage in"
-	line "this way."
 	done
 
 WhirlpoolName:
@@ -1412,7 +1280,6 @@ PoliwrathDescription:
 	text "Booster Pack: (EVOLUTION)"
 	line "OG Set: (BREAKpoint 35)"
 	line "OG illustrator: (Kanako Eo)"
-	
 	done
 
 SkrelpName:
@@ -1424,13 +1291,13 @@ CowardiceName:
 	done
 
 CowardiceDescription:
-	text "At any time during your turn"
-	line "(before your attack), you may return"
-	line "This Card to your hand. (Discard all"
-	line "cards attached to this Card.) This"
-	line "power can't be used the turn you put"
-	line "it into play or if"
-	line "is Asleep, Confused, or Paralyzed."
+	text "Once per turn (before your attack),"
+	line "you may discard all cards attached"
+	line "to this PKMN and return it to your" 
+	line "hand. You can't use this PKMN Power" 
+	line "during the turn this PKMN was put" 
+	line "into play or if it is affected by an"
+	line "Status Condition."
 	done
 
 JellyfishName:
@@ -1441,7 +1308,6 @@ TentacoolDescription:
 	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Forbidden Light 52)"
 	line "OG illustrator: (Mina Nakai)"
-	
 	done
 
 DragalgeName:
@@ -1456,7 +1322,6 @@ TentacruelDescription:
 	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (BREAKpoint 86)"
 	line "OG illustrator: (Shin Nagasawa)"
-	
 	done
 
 SeelName:
@@ -1475,7 +1340,6 @@ SeelDescription:
 	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Lost Origin 33)"
 	line "OG illustrator: (GIDORA)"
-	
 	done
 
 DewgongName:
@@ -1494,7 +1358,6 @@ DewgongDescription:
 	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Supreme Victors 24)"
 	line "OG illustrator: (Kanako Eo)"
-	
 	done
 
 ShellderName:
@@ -1520,7 +1383,6 @@ ShellderDescription:
 	text "Booster Pack: (Evolution)"
 	line "OG Set: (Celestial Storm 111)"
 	line "OG illustrator: (Ken Sugimori)"
-	
 	done
 
 CloysterName:
@@ -1531,13 +1393,6 @@ ClampName:
 	text "Clamp"
 	done
 
-ClampDescription:
-	text "Flip a coin. If heads, the Defending"
-	line "PKMN is now Paralyzed. If tails,"
-	line "this attack does nothing (not even"
-	line "damage)."
-	done
-
 SpikeCannonName:
 	text "Spike Cannon"
 	done
@@ -1546,7 +1401,6 @@ CloysterDescription:
 	text "Booster Pack: (Evolution)"
 	line "OG Set: (Ruby & Sapphire 19)"
 	line "OG illustrator: (Kouki Saitou)"
-	
 	done
 
 KrabbyName:
@@ -1569,7 +1423,6 @@ KrabbyDescription:
 	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Furious Fists 23)"
 	line "OG illustrator: (5ban Graphics)"
-	
 	done
 
 KinglerName:
@@ -1578,11 +1431,6 @@ KinglerName:
 
 FlailName:
 	text "Flail"
-	done
-
-KinglersFlailDescription:
-	text "Does 10 damage times the number of"
-	line "damage counters on this PKMN."
 	done
 
 CrabhammerName:
@@ -1597,7 +1445,6 @@ KinglerDescription:
 	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Furious Fists 24)"
 	line "OG illustrator: (5ban Graphics)"
-	
 	done
 
 HorseaName:
@@ -1605,10 +1452,10 @@ HorseaName:
 	done
 
 OpponentAttackMayDoNothingDescription:
-	text "If the Defending PKMN tries to"
-	line "attack during your opponent's next"
-	line "turn, your opponent flips a coin."
-	line "If tails, that attack does nothing."
+	text "During your opponent's next turn, if" 
+	line "the Defending PKMN tries to use an"
+	line "attack, your opponent flips a coin." 
+	line "If tails, that attack fails."
 	done
 
 DragonName:
@@ -1621,7 +1468,7 @@ MeteorMashName:
 
 SharpenName:
 	text "Sharpen"
-	done	
+	done
 
 SharpenDescription:
 	text "Flip a coin. If heads, draw a card."
@@ -1643,4 +1490,205 @@ SuckerPunchDescription:
 
 FalseSurrenderName:
 	text "False Surrender"
+	done
+
+IronTackleDescription:
+	text "If ACCELGOR Is in play, During your" 
+	line "opponent's turn, if 30 or less" 
+	line "damage is done to this PKMN, prevent" 
+	line "that damage."
+	line "(after applying Weakness/Resistance)"
+	done
+
+ToxicSporeName:
+	text "Toxic Spore"
+	done
+
+ToxicSporeDescription:
+	text "The Defending PKMN is now Asleep."
+	line "If the Defending PKMN is an Evolved" 
+	line "PKMN, it is also Poisoned."
+	done
+
+DiscardedFromHandText:
+	text "Was discardted to the Discard Pile."
+	done
+
+ReturnedFromHandText:
+	text "Was Returned to the Deck."
+	done
+	
+
+XScissorName:
+	text "X-Scissor"
+	done
+
+HorseaDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Dragon Frontiers 50)"
+	line "OG illustrator: (Hisao Nakamura)"
+	done
+
+SeadraName:
+	text "Seadra"
+	done
+
+SeadrasWaterGunDescription:
+	text "This attack does +10 more damage for"
+	line "each extra <WATER> Energy attached to"
+	line "this PKMN (in addition to its attack"
+	line "cost). You can't add more than 20" 
+	line "damage in this way. Flip a coin."
+	line "If heads, the Defending PKMN is now" 
+	line "Asleep."
+	done
+
+SeadrasAgilityDescription:
+	text "Flip a coin. If heads, during your"
+	line "opponent's next turn, prevent all "
+	line "effects of attacks, including"
+	line "damage."
+	done
+
+SeadraDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Holon Phantoms 52)"
+	line "OG illustrator: (Kouki Saitou)"
+	done
+
+GoldeenName:
+	text "Basculin"
+	done
+
+HornAttackName:
+	text "Strength"
+	done
+
+GoldfishName:
+	text "Goldfish"
+	done
+
+GoldeenDescription:
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Emerging Powers 25)"
+	line "OG illustrator: (Akira Komayama)"
+	done
+
+SeakingName:
+	text "Basculegion"
+	done
+
+WaterfallName:
+	text "Grudge Dive"
+	done
+
+SeakingDescription:
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Sword & Shield Promos 205)"
+	line "OG illustrator: (Pani Kobayashi)"
+	done
+
+StaryuName:
+	text "Dewpider"
+	done
+
+SlapName:
+	text "Slap"
+	done
+
+StarshapeName:
+	text "Starshape"
+	done
+
+StaryuDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Cosmic Eclipse 64)"
+	line "OG illustrator: (Shibuzoh)"
+	done
+
+StarmieName:
+	text "Araquanid"
+	done
+
+RecoverName:
+	text "Recover"
+	done
+
+StarmiesRecoverDescription:
+	text "Discard 1 <WATER> Energy attached to this"
+	line "card in order to use this attack."
+	line "Remove all damage counters from"
+	line "this card."
+	done
+
+StarFreezeName:
+	text "Powder Snow"
+	done
+
+MysteriousName:
+	text "Mysterious"
+	done
+
+StarmieDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Silver Tempest 48)"
+	line "OG illustrator: (DOM)"
+	done
+
+MagikarpName:
+	text "Sneasel"
+	done
+
+TackleName:
+	text "Tackle"
+	done
+
+MagikarpsFlailDescription:
+	text "Does 10 damage times the number of"
+	line "damage counters on This PKMN."
+	done
+
+FishName:
+	text "Fish"
+	done
+
+MagikarpDescription:
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Neo Genesis 25)"
+	line "OG illustrator: (KEN SUGIMORI)"
+	done
+
+GyaradosName:
+	text "Weavile"
+	done
+
+DragonRageName:
+	text "Dragon Rage"
+	done
+
+BubblebeamName:
+	text "Liquidation"
+	done
+
+AtrociousName:
+	text "Atrocious"
+	done
+
+GyaradosDescription:
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Secret Wonders 40)"
+	line "OG illustrator: (Kagemaru Himeno)"
+	done
+
+ChewtleName:
+	text "Chewtle"
+	done
+
+TransportName:
+	text "Transport"
+	done
+
+ThisCardCannotBeUsedTwiceText:
+	text "This Card cannot be"
+	line "used twice in a turn."
 	done

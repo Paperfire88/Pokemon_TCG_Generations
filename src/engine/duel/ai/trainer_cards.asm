@@ -163,9 +163,9 @@ AIPlay_Potion:
 	ldh [hTemp_ffa0], a
 	ld e, a
 	call GetCardDamageAndMaxHP
-	cp 20
+	cp 30
 	jr c, .play_card
-	ld a, 20
+	ld a, 30
 .play_card
 	ldh [hTempPlayAreaLocation_ffa1], a
 	ld a, OPPACTION_EXECUTE_TRAINER_EFFECTS
@@ -193,9 +193,9 @@ AIDecide_Potion1:
 	ld h, a
 	ld e, PLAY_AREA_ARENA
 	call GetCardDamageAndMaxHP
-	cp 20 + 1 ; if damage <= 20
+	cp 30 + 1 ; if damage <= 20
 	jr c, .calculate_hp
-	ld a, 20 ; amount of Potion HP healing
+	ld a, 30 ; amount of Potion HP healing
 
 ; if damage done by defending Pokémon next turn will still
 ; KO this card after healing, return no carry.
@@ -231,9 +231,9 @@ AIDecide_Potion2:
 	ld h, a
 	ld e, PLAY_AREA_ARENA
 	call GetCardDamageAndMaxHP
-	cp 20 + 1  ; if damage <= 20
+	cp 30 + 1  ; if damage <= 20
 	jr c, .calculate_hp
-	ld a, 20
+	ld a, 30
 ; return if using healing prevents KO.
 .calculate_hp
 	ld l, a
@@ -270,7 +270,7 @@ AIDecide_Potion2:
 	call .check_boost_if_taken_damage
 	jr c, .has_boost_damage
 	call GetCardDamageAndMaxHP
-	cp 20 ; if damage >= 20
+	cp 30 ; if damage >= 20
 	jr nc, .found
 .has_boost_damage
 	inc e
@@ -353,9 +353,9 @@ AIPlay_SuperPotion:
 	ld a, [wAITrainerCardParameter]
 	ld e, a
 	call GetCardDamageAndMaxHP
-	cp 40
+	cp 60
 	jr c, .play_card
-	ld a, 40
+	ld a, 60
 .play_card
 	ldh [hTempRetreatCostCards], a
 	ld a, OPPACTION_EXECUTE_TRAINER_EFFECTS
@@ -389,7 +389,7 @@ AIDecide_SuperPotion1:
 	call GetCardDamageAndMaxHP
 	cp 40 + 1 ; if damage < 40
 	jr c, .calculate_hp
-	ld a, 40
+	ld a, 60
 .calculate_hp
 	ld l, a
 	ld a, h
@@ -431,7 +431,7 @@ AIDecide_SuperPotion2:
 	ld h, a
 	ld e, PLAY_AREA_ARENA
 	call GetCardDamageAndMaxHP
-	cp 40 + 1 ; if damage < 40
+	cp 60 + 1 ; if damage < 40
 	jr c, .calculate_hp
 	ld a, 40
 ; return if using healing prevents KO.
@@ -477,7 +477,7 @@ AIDecide_SuperPotion2:
 	call .check_energy_cost
 	jr c, .next
 	call GetCardDamageAndMaxHP
-	cp 40 ; if damage >= 40
+	cp 60 ; if damage >= 40
 	jr nc, .found
 .next
 	inc e
@@ -865,7 +865,7 @@ AIDecide_Pluspower1:
 	jr c, .no_carry
 	jr z, .no_carry
 	ld a, [hl]
-	add 10 ; add Pluspower boost
+	add 30 ; add Pluspower boost
 	ld c, a
 	ld a, b
 	sub c
@@ -2592,7 +2592,7 @@ AIDecide_ProfessorOak:
 ; if there's either Grimer or Muk in hand,
 ; do not play Professor Oak.
 .HandleWondersOfScienceDeck
-	ld de, GRIMER
+	ld de, PHANTUMP
 	call LookForCardIDInHandList_Bank8
 	jr c, .found_grimer_or_muk
 	ld de, TREVENANT
@@ -4070,7 +4070,7 @@ AIDecide_ScoopUp:
 	jr c, .no_carry
 
 ; look for ArticunoLv37 in bench
-	ld de, ARTICUNO_LV37
+	ld de, SUICUNE
 	ld b, PLAY_AREA_BENCH_1
 	call LookForCardIDInPlayArea_Bank8
 	jr c, .articuno_bench
@@ -4079,7 +4079,7 @@ AIDecide_ScoopUp:
 	ld a, DUELVARS_ARENA_CARD
 	call GetTurnDuelistVariable
 	call GetCardIDFromDeckIndex
-	cp16 ARTICUNO_LV37
+	cp16 SUICUNE
 	jr z, .articuno_or_chansey
 	cp16 AUDINO
 	jr nz, .no_carry
@@ -4149,15 +4149,15 @@ AIDecide_ScoopUp:
 	cp 3
 	jp c, .no_carry
 
-	ld de, ARTICUNO_LV37
+	ld de, SUICUNE
 	ld b, PLAY_AREA_BENCH_1
 	call LookForCardIDInPlayArea_Bank8
 	jr c, .articuno_bench
-	ld de, ZAPDOS_LV68
+	ld de, RAIKOU
 	ld b, PLAY_AREA_BENCH_1
 	call LookForCardIDInPlayArea_Bank8
 	jr c, .check_attached_energy
-	ld de, MOLTRES_LV37
+	ld de, ENTEI
 	ld b, PLAY_AREA_BENCH_1
 	call LookForCardIDInPlayArea_Bank8
 	jr c, .check_attached_energy
@@ -5019,36 +5019,36 @@ AIDecide_Pokeball:
 ; it does this for both the NidoranM (first)
 ; and NidoranF (second) families.
 .lovely_nidoran
-	ld bc, NIDORANM
-	ld de, NIDORINO
+	ld bc, KARRABLAST
+	ld de, ESCAVALIER
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	ret c
-	ld bc, NIDORINO
+	ld bc, ESCAVALIER
 	ld de, NIDOKING
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	ret c
-	ld de, NIDORANM
-	ld bc, NIDORINO
+	ld de, KARRABLAST
+	ld bc, ESCAVALIER
 	call LookForCardIDInDeck_GivenCardIDInHand
 	ret c
-	ld de, NIDORINO
+	ld de, ESCAVALIER
 	ld bc, NIDOKING
 	call LookForCardIDInDeck_GivenCardIDInHand
 	ret c
-	ld bc, NIDORANF
-	ld de, NIDORINA
+	ld bc, SHELMET
+	ld de, ACCELGOR
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	ret c
-	ld bc, NIDORINA
-	ld de, NIDOQUEEN
+	ld bc, ACCELGOR
+	ld de, ILLUMISE
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	ret c
-	ld de, NIDORANF
-	ld bc, NIDORINA
+	ld de, SHELMET
+	ld bc, ACCELGOR
 	call LookForCardIDInDeck_GivenCardIDInHand
 	ret c
-	ld de, NIDORINA
-	ld bc, NIDOQUEEN
+	ld de, ACCELGOR
+	ld bc, ILLUMISE
 	call LookForCardIDInDeck_GivenCardIDInHand
 	ret c
 	ret
@@ -5301,7 +5301,7 @@ AIDecide_ComputerSearch_WondersOfScience:
 ; if Grimer or Muk are not in hand,
 ; check whether to use Computer Search on them.
 .look_in_hand
-	ld de, GRIMER
+	ld de, PHANTUMP
 	call LookForCardIDInHandList_Bank8
 	jr nc, .target_grimer
 	ld de, TREVENANT
@@ -5315,7 +5315,7 @@ AIDecide_ComputerSearch_WondersOfScience:
 ; first check Grimer
 ; if in deck, check cards to discard.
 .target_grimer
-	ld de, GRIMER
+	ld de, PHANTUMP
 	ld a, CARD_LOCATION_DECK
 	call LookForCardIDInLocation
 	jp nc, .no_carry ; can be a jr
@@ -5520,7 +5520,7 @@ AIDecide_PokemonTrader:
 AIDecide_PokemonTrader_LegendaryMoltres:
 ; look for MoltresLv37 card in deck to trade with a
 ; card in hand different from MoltresLv35.
-	ld de, MOLTRES_LV37
+	ld de, ENTEI
 	ld bc, TORTUNATOR
 	call LookForCardIDToTradeWithDifferentHandCard
 	jr nc, .no_carry
@@ -5575,7 +5575,7 @@ AIDecide_PokemonTrader_LegendaryArticuno:
 	ld de, DITTO
 	call CheckIfHasCardIDInHand
 	jr c, .set_carry
-	ld de, ARTICUNO_LV37
+	ld de, SUICUNE
 	call CheckIfHasCardIDInHand
 	jr c, .set_carry
 	; doesn't have any of the cards in hand
@@ -5737,13 +5737,13 @@ AIDecide_PokemonTrader_LegendaryRonald:
 ; look for card in hand to trade with
 .choose_hand
 	ld [wce1a], a
-	ld de, ZAPDOS_LV68
+	ld de, RAIKOU
 	call LookForCardIDInHandList_Bank8
 	jr c, .set_carry
-	ld de, ARTICUNO_LV37
+	ld de, SUICUNE
 	call LookForCardIDInHandList_Bank8
 	jr c, .set_carry
-	ld de, MOLTRES_LV37
+	ld de, ENTEI
 	call LookForCardIDInHandList_Bank8
 	jr c, .set_carry
 	; none found
@@ -5971,7 +5971,7 @@ AIDecide_PokemonTrader_FlowerGarden:
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
 	ld bc, WEEPINBELL
-	ld de, VICTREEBEL
+	ld de, TSAREENA
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
 	ld de, BELLSPROUT
@@ -5979,10 +5979,10 @@ AIDecide_PokemonTrader_FlowerGarden:
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
 	ld de, WEEPINBELL
-	ld bc, VICTREEBEL
+	ld bc, TSAREENA
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
-	ld bc, ODDISH
+	ld bc, APPLIN
 	ld de, GLOOM
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
@@ -5990,7 +5990,7 @@ AIDecide_PokemonTrader_FlowerGarden:
 	ld de, VILEPLUME
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
-	ld de, ODDISH
+	ld de, APPLIN
 	ld bc, GLOOM
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates

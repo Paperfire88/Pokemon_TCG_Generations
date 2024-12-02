@@ -10,13 +10,13 @@ HandleSpecialAIAttacks:
 	call GetTurnDuelistVariable
 	call GetCardIDFromDeckIndex
 
-	cp16 NIDORANF
+	cp16 SHELMET
 	jp z, .NidoranFCallForFamily
-	cp16 ODDISH
+	cp16 APPLIN
 	jp z, .CallForFamily
 	cp16 BELLSPROUT
 	jp z, .CallForFamily
-	cp16 EXEGGUTOR
+	cp16 YANMA
 	jp z, .Teleport
 	cp16 SCYTHER
 	jp z, .SwordsDanceAndFocusEnergy
@@ -24,13 +24,13 @@ HandleSpecialAIAttacks:
 	jp z, .CallForFamily
 	cp16 DREDNAW
 	jp z, .SwordsDanceAndFocusEnergy
-	cp16 ELECTRODE_LV42
+	cp16 MANECTRIC
 	jp z, .ChainLightning
 	cp16 TYRANITAR
 	jp z, .CallForFriend
 	cp16 MEW_LV23
 	jp z, .DevolutionBeam
-	cp16 STUFFUL
+	cp16 TOGEPI
 	jp z, .FriendshipSong
 	cp16 PORYGON
 	jp z, .Conversion
@@ -38,9 +38,7 @@ HandleSpecialAIAttacks:
 	jp z, .EnergyAbsorption
 	cp16 MEWTWO_LV60
 	jp z, .EnergyAbsorption
-	cp16 DELTA_KINGDRA
-	jp z, .MixUp
-	cp16 ZAPDOS_LV68
+	cp16 RAIKOU
 	jp z, .BigThunder
 	cp16 CHATOT
 	jp z, .Fetch
@@ -52,6 +50,10 @@ HandleSpecialAIAttacks:
 	jp z, .HyperBeam
 	cp16 SLIGGOO
 	jp z, .HyperBeam
+	cp16 DUSKULL
+	jp z, .DarkRevival
+	cp16 DUSCLOPS
+	jp z, .DarkRevival
 
 ; return zero score.
 .zero_score
@@ -77,11 +79,11 @@ HandleSpecialAIAttacks:
 ; if any of NidoranM or NidoranF is found in deck,
 ; return a score of $80 + slots available in bench.
 .NidoranFCallForFamily:
-	ld de, NIDORANM
+	ld de, KARRABLAST
 	ld a, CARD_LOCATION_DECK
 	call CheckIfAnyCardIDinLocation
 	jr c, .found_nidoran
-	ld de, NIDORANF
+	ld de, SHELMET
 	ld a, CARD_LOCATION_DECK
 	call CheckIfAnyCardIDinLocation
 	jr nc, .zero_score
@@ -249,79 +251,16 @@ HandleSpecialAIAttacks:
 	ld a, $82
 	ret
 
-; if player has cards in hand, AI calls Random:
-; - 1/3 chance to encourage attack regardless;
-; - 1/3 chance to dismiss attack regardless;
-; - 1/3 change to make some checks to player's hand.
-; AI tallies number of basic cards in hand, and if this
-; number is >= 2, encourage attack.
-; otherwise, if it finds an evolution card in hand that
-; can evolve a card in player's deck, encourage.
-; if encouraged, returns a score of $80 + 3.
-.MixUp:
-	ld a, DUELVARS_NUMBER_OF_CARDS_IN_HAND
-	call GetNonTurnDuelistVariable
-	or a
-	ret z
-
-	ld a, 3
-	call Random
-	or a
-	jr z, .encourage_mix_up
-	dec a
-	ret z
+.DarkRevival
 	call SwapTurn
-	call CreateHandCardList
+	call CreateDiscardPileCardList
 	call SwapTurn
-	or a
-	ret z ; return if no hand cards (again)
+	jp c, .zero_score
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
 	call GetNonTurnDuelistVariable
-	cp 3
-	jr nc, .mix_up_check_play_area
-
-	ld hl, wDuelTempList
-	ld b, 0
-.loop_mix_up_hand
-	ld a, [hli]
-	cp $ff
-	jr z, .tally_basic_cards
-	push bc
-	call SwapTurn
-	call LoadCardDataToBuffer2_FromDeckIndex
-	call SwapTurn
-	pop bc
-	ld a, [wLoadedCard2Type]
-	cp TYPE_ENERGY
-	jr nc, .loop_mix_up_hand
-	ld a, [wLoadedCard2Stage]
-	or a
-	jr nz, .loop_mix_up_hand
-	; is a basic Pokémon card
-	inc b
-	jr .loop_mix_up_hand
-.tally_basic_cards
-	ld a, b
-	cp 2
-	jr nc, .encourage_mix_up
-
-; less than 2 basic cards in hand
-.mix_up_check_play_area
-	ld a, DUELVARS_ARENA_CARD
-	call GetNonTurnDuelistVariable
-.loop_mix_up_play_area
-	ld a, [hli]
-	cp $ff
-	jp z, .zero_score
-	push hl
-	call SwapTurn
-	call CheckForEvolutionInList
-	call SwapTurn
-	pop hl
-	jr nc, .loop_mix_up_play_area
-
-.encourage_mix_up
-	ld a, $83
+	cp MAX_PLAY_AREA_POKEMON
+	jp nc, .zero_score
+	ld a, $82
 	ret
 
 ; return score of $80 + 3.

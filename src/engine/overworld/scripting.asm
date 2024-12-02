@@ -1179,7 +1179,7 @@ ScriptCommand_PickNextMan1RequestedCard:
 Man1RequestedCardsList:
 	dw VIBRAVA
 	dw OMASTAR
-	dw PARASECT
+	dw BRELOOM
 	dw RAPIDASH
 	dw WEEZING
 .end
@@ -1534,13 +1534,13 @@ ScriptCommand_PickLegendaryCard:
 	jr ScriptCommand_PickChallengeCupPrizeCard.get_card_from_list
 
 LegendaryCards:
-	dw ZAPDOS_LV68
+	dw RAIKOU
 	tx ZapdosLegendaryCardName
 
-	dw MOLTRES_LV37
+	dw ENTEI
 	tx MoltresLegendaryCardName
 
-	dw ARTICUNO_LV37
+	dw SUICUNE
 	tx ArticunoLegendaryCardName
 
 	dw LUGIA

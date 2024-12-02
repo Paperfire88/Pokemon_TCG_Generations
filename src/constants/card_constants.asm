@@ -15,29 +15,29 @@
 	const SILCOON                     ; $0d
 	const BEAUTIFLY                  ; $0e
 	const CASCOON                       ; $12
-	const WEEDLE                      ; $0f
-	const KAKUNA                      ; $10
+	const ROWLET                      ; $0f
+	const DARTRIX                      ; $10
 	const BEEDRILL                    ; $11
-	const NIDORANF                    ; $14
-	const NIDORINA                    ; $15
-	const NIDOQUEEN                   ; $16
-	const NIDORANM                    ; $17
-	const NIDORINO                    ; $18
+	const SHELMET                    ; $14
+	const ACCELGOR                    ; $15
+	const ILLUMISE                   ; $16
+	const KARRABLAST                    ; $17
+	const ESCAVALIER                    ; $18
 	const NIDOKING                    ; $19
-	const ODDISH                      ; $1c
+	const APPLIN                      ; $1c
 	const GLOOM                       ; $1d
 	const VILEPLUME                   ; $1e
-	const PARAS                       ; $1f
-	const PARASECT                    ; $20
-	const VENONAT                     ; $21
-	const VENOMOTH                    ; $22
+	const SHROOMISH                       ; $1f
+	const BRELOOM                    ; $20
+	const YANMA                     ; $21
+	const YANMEGA                    ; $22
 	const BELLSPROUT                  ; $23
 	const WEEPINBELL                  ; $24
-	const VICTREEBEL                  ; $25
-	const GRIMER                      ; $26
+	const TSAREENA                  ; $25
+	const PHANTUMP                      ; $26
 	const TREVENANT                         ; $27
-	const EXEGGCUTE                   ; $28
-	const EXEGGUTOR                   ; $29
+	const SNOVER                   ; $28
+	const ABOMASNOW                   ; $29
 	const KOFFING                     ; $2a
 	const WEEZING                     ; $2b
 	const TANGELA_LV8                 ; $2c
@@ -63,7 +63,7 @@
 	const MAGMORTAR                 ; $3c
 	const FLAREON_LV28                ; $3e
 	const TORTUNATOR                ; $3f
-	const MOLTRES_LV37                ; $40
+	const ENTEI                ; $40
 	const FUECOCO                ; $3e
 	const CROCALOR                ; $3f
 	const SKELEDIRGE                ; $40
@@ -77,9 +77,9 @@
 	const BLASTOISE                   ; $43
 	const PSYDUCK                     ; $44
 	const GOLDUCK                     ; $45
-	const POLIWAG                     ; $46
-	const POLIWHIRL                   ; $47
-	const POLIWRATH                   ; $48
+	const TYMPOLE                     ; $46
+	const PALPITOAD                   ; $47
+	const SEISMITOAD                   ; $48
 	const SEEL                        ; $4b
 	const DEWGONG                     ; $4c
 	const WINGULL                    ; $4d
@@ -99,7 +99,7 @@
 	const OMANYTE                     ; $5c
 	const OMASTAR                     ; $5d
 	const RELICANTH               ; $5e
-	const ARTICUNO_LV37               ; $5f
+	const SUICUNE               ; $5f
 	const BLITZLE                ; $60
 	const ZEBSTRIKA                 ; $67
 	const HELIOPTILE                ; $61
@@ -122,7 +122,7 @@
 	const CHARJABUG              ; $6a
 	const VIKAVOLT                 ; $74
 	const ZERAORA                 ; $75
-	const ZAPDOS_LV68                 ; $76
+	const RAIKOU                 ; $76
 	const TYNAMO                      ; $e6
 	const EELEKTROSS				  ; $e7
 	const EELEKTRIK				      ; $e8
@@ -169,6 +169,9 @@
 	const MISMAGIUS                ; $97
 	const SPIRITOMB                     ; $9b
 	const ESPEON                        ; $9c
+	const ABRA
+	const KADABRA
+	const ALAKAZAM
 	const MEWTWO_LV60                 ; $9e
 	const MIMIKYU                     ; $a0
 	const MEW_LV23                    ; $a2
@@ -187,7 +190,7 @@
 	const MEW_LV15                    ; $a1
 	const DEINO                        ; $8e
 	const ZWEILOUS                     ; $8f
-	const ALAKAZAM                    ; $90
+	const HYDREIGON                    ; $90
 	const DROWZEE                     ; $99
 	const HYPNO                       ; $9a
 	const SKRELP                   ; $49
@@ -206,21 +209,22 @@
 	const SNEASEL                    ; $57
 	const WEAVILE                    ; $58
 	const UMBREON
+	const GASTLY
+	const HAUNTER
+	const GENGAR
 	const PIDGEY                      ; $a3
 	const PIDGEOTTO                   ; $a4
 	const PIDGEOT_LV38                ; $a5
-	const PIDGEOT_LV40                ; $a6
 	const ZIGZAGOON                     ; $a7
 	const LINOONE                    ; $a8
 	const SPEAROW                     ; $a9
-	const FEAROW                      ; $aa
+	const SWELLOW                      ; $aa
 	const TOGEPI                    ; $ab
 	const TOGETIC                    ; $ac
 	const TOGEKISS             ; $ad
 	const CYCLIZAR             ; $ae
 	const STUFFUL             ; $af
 	const BEWEAR                  ; $b0
-	const MEOWTH_LV14                 ; $b1
 	const BIDOOF                 ; $b2
 	const BIBAREL                     ; $b3
 	const ORANGURU                   ; $b4
@@ -249,11 +253,12 @@
 	const IMAKUNI_CARD                ; $c8
 	const POKEMON_TRADER              ; $c9
 	const POKEMON_BREEDER             ; $ca
-	const TOGEPI_DOLL               ; $cb
+	const CLEFAIRY_DOLL               ; $cb
 	const MYSTERIOUS_FOSSIL           ; $cc
 	const ENERGY_RETRIEVAL            ; $cd
 	const SUPER_ENERGY_RETRIEVAL      ; $ce
 	const ENERGY_SEARCH               ; $cf
+	const MOON_STONE
 	const ENERGY_REMOVAL              ; $d0
 	const SUPER_ENERGY_REMOVAL        ; $d1
 	const SWITCH                      ; $d2

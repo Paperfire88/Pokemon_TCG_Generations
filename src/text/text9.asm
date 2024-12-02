@@ -1244,8 +1244,8 @@ LeechSeedName:
 	done
 
 BulbasaursLeechSeedDescription:
-	text "If this attack deals damage, remove"
-	line "3 damage counters from this Pkmn."
+	text "If this attack deals damage, Heal 30"
+	line "damage from this Pkmn."
 	done
 
 SeedName:
@@ -1292,14 +1292,9 @@ SolarPowerDescription:
 	text "Once during your turn (before your"
 	line "attack), you may use this power."
 	line "Your Active pkmn and the Defending"
-	line "pkmn are no longer Asleep, Confused," 
-	line "Paralyzed, or Poisoned."
-	done
-
-SolarPowerDescriptionCont:
-	text "This PKMN power can't be used if" 
-	line "this PKMN is affected by a" 
-	line "Special Condition."
+	line "pkmn both Recovers from all Special"
+	line "Conditions. (Asleep, Confused,"
+	line "Paralyzed, or Poisoned)."
 	done
 
 MegaDrainName:
@@ -1307,18 +1302,12 @@ MegaDrainName:
 	done
 
 DigDrainDescription:
-	text "Heal damage from this card equal to"
-	line "half the damage done to the"
-	line "Defending Pkmn (after applying"
-	line "Weakness and Resistance)."
+	text "Heal damage from this PKMN equal to"
+	line "half the damage done (Rounded Up)."
 	line "During your opponent's next turn,"
 	line "whenever 30 or less damage is done"
-	done
-
-DigDrainDescriptionCont:
-	text "to this PKMN, prevent that damage."
-	line "from attacks (after applying"
-	line "Weakness and Resistance)."
+	line "to this PKMN, prevent that damage."
+	line "(after applying Weakness/Resistance)"
 	done
 
 VenusaurLv64Description:
@@ -1333,12 +1322,9 @@ EnergyTransName:
 
 EnergyTransDescription:
 	text "As often as you like during your"
-	line "turn (before your attack), move"
-	line "1 <GRASS> Energy card attached to 1"
-	line "of your PKMN and attach it to a"
-	line "different one. This PKMN power can't"
-	line "be used if this PKMN is affected by" 
-	line "a Special Condition."
+	line "turn (before your attack), move 1 <GRASS>"
+	line "Energy card attached to 1 of your"
+	line "PKMN to another."
 	done
 
 SolarBeamName:
@@ -1413,17 +1399,14 @@ WhirlwindName:
 	done
 
 WhirlwindDescription:
-	text "Switch out your opponent's Active "
-	line "Pkmn to the Bench. (Your opponent "
-	line "chooses the new Active Pkmn.)"
+	text "After doing damage, Switch in 1 of" 
+	line "your opponent's Benched PKMN to the"
+	line "Active Spot."
 	done
 
 ButterfreesMegaDrainDescription:
-	text "Heal damage from this card equal to"
-	line "half the damage done to the"
-	line "Defending Pkmn (after applying"
-	line "Weakness and Resistance) (rounded up"
-	line "to the nearest 10)."
+	text "Heal damage from this PKMN equal to"
+	line "half the damage done (rounded up)."
 	done
 
 ButterfreesMegaDrainDescriptionCont:
@@ -1442,7 +1425,7 @@ ButterfreeDescription:
 	line "OG illustrator: (Yuu Nishida)"
 	done
 
-WeedleName:
+RowletName:
 	text "Rowlet"
 	done
 
@@ -1465,7 +1448,7 @@ WeedleDescription:
 	line "OG illustrator: (sowsow)"
 	done
 
-KakunaName:
+DartrixName:
 	text "Dartrix"
 	done
 
@@ -1476,3 +1459,65 @@ KakunasStiffenDescription:
 	line "effects of attacks still happen.)"
 	done
 
+KakunaDescription:
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Sun & Moon 10)"
+	line "OG illustrator: (Mizue)"
+	done
+
+BeedrillName:
+	text "Dedicdueye"
+	done
+
+TwineedleName:
+	text "Twineedle"
+	done
+
+DoubleAttackX30Description:
+	text "Flip 2 coins. This attack does 30"
+	line "damage times the number of heads."
+	done
+
+PoisonBeeName:
+	text "Poison Bee"
+	done
+
+BeedrillDescription:
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Sword & Shield Promos 35)"
+	line "OG illustrator: (Souichirou Gunjima)"
+	done
+
+CascoonName:
+	text "Cascoon"
+	done
+
+SpitPoisonName:
+	text "Spit Poison"
+	done
+
+WrapName:
+	text "Wrap"
+	done
+
+SnakeName:
+	text "Snake"
+	done
+
+EkansDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Roaring Skies 6)"
+	line "OG illustrator: (MAHOU)"
+	done
+
+DustoxName:
+	text "Dustox"
+	done
+
+TerrorStrikeName:
+	text "Luring Glow"
+	done
+
+CallBackName:
+	text "Call Back"
+	done

@@ -193,17 +193,17 @@ CheckIfEnergyIsUseful:
 	ld hl, wTempCardID 
 
 	ld bc, PSYCHIC_ENERGY
-	cphl EXEGGCUTE
+	cphl SNOVER
 	jp z, .check_energy
-	cphl EXEGGUTOR
+	cphl ABOMASNOW
 	jp z, .check_energy
 	cphl VOLTORB
 	jp z, .check_energy
-	cphl POLIWAG
+	cphl TYMPOLE
 	jp z, .check_energy
-	cphl POLIWHIRL
+	cphl PALPITOAD
 	jp z, .check_energy
-	cphl POLIWRATH
+	cphl SEISMITOAD
 	jp z, .check_energy
 
 	ld bc, WATER_ENERGY
@@ -1952,7 +1952,7 @@ AISelectSpecialAttackParameters:
 	jr z, .EnergyAbsorption
 	cp16 MEWTWO_LV60
 	jr z, .EnergyAbsorption
-	cp16 EXEGGUTOR
+	cp16 ABOMASNOW
 	jr z, .Teleport
 	cp16 ELECTRODE_LV35
 	jr z, .EnergySpike
@@ -2057,7 +2057,7 @@ AISelectSpecialAttackParameters:
 	ldh [hTempPlayAreaLocation_ffa1], a
 	scf
 	ret
-
+		
 ; return carry if Pokémon at play area location
 ; in hTempPlayAreaLocation_ff9d does not have
 ; energy required for the attack index in wSelectedAttack
@@ -2391,19 +2391,19 @@ AIChooseRandomlyNotToDoAction:
 .check_deck
 	ld a, [wOpponentDeckID]
 	cp MUSCLES_FOR_BRAINS_DECK_ID
-	jr z, .carry_50_percent
+	jr z, .carry_25_percent
 	cp BLISTERING_POKEMON_DECK_ID
-	jr z, .carry_50_percent
+	jr z, .carry_25_percent
 	cp WATERFRONT_POKEMON_DECK_ID
-	jr z, .carry_50_percent
+	jr z, .carry_25_percent
 	cp BOOM_BOOM_SELFDESTRUCT_DECK_ID
-	jr z, .carry_50_percent
+	jr z, .carry_25_percent
 	cp KALEIDOSCOPE_DECK_ID
-	jr z, .carry_50_percent
+	jr z, .carry_25_percent
 	cp RESHUFFLE_DECK_ID
-	jr z, .carry_50_percent
+	jr z, .carry_25_percent
 
-; carry 25 percent
+.carry_25_percent
 	ld a, 4
 	call Random
 	cp 1

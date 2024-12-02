@@ -376,7 +376,7 @@ RetreatWasUnsuccessfulText:
 
 WillUseThePokemonPowerText:
 	text "<RAMTEXT> will use the"
-	line "Pokémon Power <RAMTEXT>."
+	line "Pkmn Power <RAMTEXT>."
 	done
 
 FinishedTurnWithoutAttackingText:
@@ -773,7 +773,7 @@ YouDidNotReceiveAnAttackToMirrorMoveText:
 	done
 
 ThisAttackCannotBeUsedTwiceText:
-	text "This attack cannot"
+	text "This Effect cannot"
 	line "be used twice."
 	done
 
@@ -887,6 +887,11 @@ ConfusionCheckText:
 VenomPowderCheckText:
 	text "Venom Powder check! If Heads,"
 	line "opponent is Poisoned & Confused."
+	done
+
+SleepPoisonCheckText:
+	text "Sleep Poison check! If Heads,"
+	line "opponent is Poisoned & Asleep."
 	done
 
 IfTailsYourPokemonBecomesConfusedText:

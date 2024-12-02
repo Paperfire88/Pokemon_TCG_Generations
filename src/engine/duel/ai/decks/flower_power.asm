@@ -27,15 +27,15 @@ AIActionTable_FlowerPower:
 	jp AIPickPrizeCards
 
 .list_arena
-	dw ODDISH
-	dw EXEGGCUTE
+	dw APPLIN
+	dw SNOVER
 	dw CHIKORITA
 	dw NULL
 
 .list_bench
 	dw CHIKORITA
-	dw EXEGGCUTE
-	dw ODDISH
+	dw SNOVER
+	dw APPLIN
 	dw NULL
 
 .list_retreat
@@ -49,11 +49,11 @@ AIActionTable_FlowerPower:
 	ai_energy CHIKORITA,      3, +0
 	ai_energy BAYLEEF,        4, +0
 	ai_energy MEGANIUM,  4, +0
-	ai_energy ODDISH,         2, +0
+	ai_energy APPLIN,         2, +0
 	ai_energy GLOOM,          3, -1
 	ai_energy VILEPLUME,      3, -1
-	ai_energy EXEGGCUTE,      3, +0
-	ai_energy EXEGGUTOR,     22, +0
+	ai_energy SNOVER,      3, +0
+	ai_energy ABOMASNOW,     22, +0
 	dw NULL
 
 .list_prize

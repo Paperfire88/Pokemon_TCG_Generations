@@ -1,249 +1,3 @@
-DamageSwapDescription:
-	text "As often as you like during your"
-	line "turn (before your attack), you may"
-	line "move 1 damage counter from 1 of your"
-	line "PKMN to another as long as you"
-	line "don't Knock Out that PKMN. This PKMN"
-	line "power can't be used if this PKMN is" 
-	line "affected by a Special Condition."
-	done
-
-AlakazamDescription:
-	text "Booster Pack: (COLOSSEUM)"
-	line "OG Set: (Dragons Exalted 97)"
-	line "OG illustrator: (5ban Graphics)"
-	done
-
-SlowpokeName:
-	text "Inkay"
-	done
-
-SlowpokesAmnesiaDescription:
-	text "Choose 1 of the Defending PKMN's"
-	line "attacks. That PKMN can't use"
-	line "that attack during your opponent's"
-	line "next turn."
-	done
-
-DopeyName:
-	text "Dopey"
-	done
-
-SlowpokeLv9Description:
-	text "Booster Pack: (LABORATORY)"
-	line "OG Set: (Scarlet & Violet 51)"
-	line "OG illustrator: (kurumitsu)"
-	done
-
-SpacingOutName:
-	text "Spacing Out"
-	done
-
-SpacingOutDescription:
-	text "Flip a coin. If heads, remove a"
-	line "damage counter from this PKMN."
-	line "This attack can't be used if IT"
-	line "has no damage counters on it."
-	done
-
-ScavengeName:
-	text "Scavenge"
-	done
-
-ScavengeDescription:
-	text "Discard 1 <PSYCHIC> Energy card attached"
-	line "to this PKMN in order to use this"
-	line "attack. Put a Trainer card from your"
-	line "discard pile into your hand."
-	done
-
-SlowbroName:
-	text "Malamar"
-	done
-
-StrangeBehaviorName:
-	text "Contrary Beheavior"
-	done
-
-StrangeBehaviorDescription:
-	text "As often as you like during your"
-	line "turn (before your attack), you may"
-	line "move 1 damage counter from 1 of your"
-	line "PKMN to this PKMN as long as you"
-	line "don't Knock Out it. This power"
-	line "can't be used if is Asleep,"
-	line "Confused, or Paralyzed."
-	done
-
-HermitcrabName:
-	text "Hermitcrab"
-	done
-
-SlowbroDescription:
-	text "Booster Pack: (LABORATORY)"
-	line "OG Set: (Forbidden Light 51)"
-	line "OG illustrator: (You Iribi)"
-	done
-
-DuskullName:
-	text "Duskull"
-	done
-
-SleepingGasName:
-	text "Sleep Powder"
-	done
-
-MayInflictSleepDescription:
-	text "Flip a coin. If heads, the Defending"
-	line "PKMN is now Asleep."
-	done
-
-DestinyBondName:
-	text "Destiny Bond"
-	done
-
-DestinyBondDescription:
-	text "Discard 1 <PSYCHIC> Energy attached to this"
-	line "PKMN in order to use this attack"
-	line "If a PKMN Knocks Out THIS PKMN"
-	line "during your opponent's next turn,"
-	line "Knock Out that PKMN."
-	done
-
-GasName:
-	text "Requiem"
-	done
-
-GastlyLv8Description:
-	text "Booster Pack: (EVOLUTION)"
-	line "OG Set: (Boundaries Crossed 61)"
-	line "OG illustrator: (Naoki Saito)"
-	done
-
-LickName:
-	text "Lick"
-	done
-
-EnergyConversionName:
-	text "Energy Conversion"
-	done
-
-EnergyConversionDescription:
-	text "In order to use this attack you must"
-	line "Put up to 2 Energy cards from your"
-	line "discard pile into your hand. this"
-	line "Card does 10 damage to itself."
-	done
-
-GastlyLv17Description:
-	text "Booster Pack: (COLOSSEUM)"
-	line "OG Set: (Neo Revelation 11)"
-	line "OG illustrator: (Ken Sugimori)"
-	done
-
-DusclopsName:
-	text "Dusclops"
-	done
-
-TransparencyName:
-	text "Transparency"
-	done
-
-TransparencyDescription:
-	text "Whenever an attack does anything to"
-	line "this card, flip a coin. If heads,"
-	line "prevent all effects of that attack,"
-	line "including damage."
-	line "This power stops working while"
-	line "is Asleep, Confused, or"
-	line "Paralyzed."
-	done
-
-NightmareName:
-	text "Nightmare"
-	done
-
-HaunterDescription:
-	text "Booster Pack: (EVOLUTION)"
-	line "OG Set: (Deoxys 7)"
-	line "OG illustrator: (Tomoko Wakai)"
-	done
-
-DreamEaterName:
-	text "Dream Eater"
-	done
-
-DreamEaterDescription:
-	text "Unless all damage from this attack"
-	line "is prevented, you may remove 1"
-	line "damage counter from This PKMN."
-	line "You can't use this attack unless"
-	line "the Defending PKMN is Asleep."
-	done
-
-DusknoirName:
-	text "Dusknoir"
-	done
-
-CurseName:
-	text "Curse"
-	done
-
-CurseDescription:
-	text "Once during your turn (before your"
-	line "attack), you may move 1 damage"
-	line "counter from 1 of your opponent's"
-	line "PKMN to another (even if it would"
-	line "Knock Out the other PKMN)."
-	line "This PKMN power can't be used if" 
-	line "this PKMN is affected by a" 
-	line "Special Condition."
-	done
-
-DarkMindName:
-	text "Dark Mind"
-	done
-
-DarkMindDescription:
-	text "If your opponent has any Benched"
-	line "PKMN, choose 1 of them and this"
-	line "attack does 10 damage to it."
-	line "(Don't apply Weakness and Resistance"
-	line "for Benched PKMN.)"
-	done
-
-ShadowName:
-	text "Shadow"
-	done
-
-GengarDescription:
-	text "Booster Pack: (EVOLUTION)"
-	line "OG Set: (Stormfront 1)"
-	line "OG illustrator: (Mitsuhiro Arita)"
-	done
-
-DrowzeeName:
-	text "Murkrow"
-	done
-
-PoundName:
-	text "Pound"
-	done
-
-DrowzeeDescription:
-	text "Booster Pack: (EVOLUTION)"
-	line "OG Set: (Paldea Evolved 131)"
-	line "OG illustrator: (Teeziro)"
-	done
-
-HypnoName:
-	text "Honchkrow"
-	done
-
-ProphecyName:
-	text "Dark Deal"
-	done
-
 ProphecyDescription:
 	text "Look at up to 3 cards from the top"
 	line "of either player's deck and"
@@ -266,18 +20,18 @@ InvisibleWallName:
 	done
 
 InvisibleWallDescription:
-	text "Whenever an attack (including your"
-	line "own) does 30 or more damage to this"
-	line "Card (after applying Weakness and"
-	line "Resistance), prevent that damage."
-	line "(Any other effects of attacks still"
-	line "happen.)"
+	text "If an attack (including your own)"
+	line "does 30 or more damage to this Card"
+	line "(after Weakness and Resistance),"
+	line "prevent that damage. (Any other"
+	line "effects of attacks still happen.)"
 	done
 
-InvisibleWallDescriptionCont:
+PKMNPowerCondition2:
 	text "This PKMN power can't be used if" 
-	line "this PKMN is affected by a" 
-	line "Special Condition."
+	line "this PKMN is affected by a Status" 
+	line "Condition. (Asleep, Confused, or"
+	line "Paralyzed.)"
 	done
 
 MeditateName:
@@ -285,9 +39,8 @@ MeditateName:
 	done
 
 MrMimesMeditateDescription:
-	text "Does 10 damage plus 10 more damage"
-	line "for each damage counter on the"
-	line "Defending PKMN."
+	text "Does +10 more damage for each damage" 
+	line "counter on the Defending PKMN."
 	done
 
 BarrierName:
@@ -362,9 +115,8 @@ EnergyAbsorptionName:
 	done
 
 EnergyAbsorptionDescription:
-	text "Choose up to 2 Energy cards from"
-	line "your discard pile and attach them"
-	line "to this PKMN."
+	text "Attach up to 2 Energy cards from"  
+	line "your discard pile to this PKMN."
 	done
 
 PsyburnName:
@@ -381,17 +133,14 @@ MewName:
 	text "Mew"
 	done
 
-NeutralizingShieldName:
-	text "Neutralizing Shield"
+DummyDollName:
+	text "Dummy Doll"
 	done
 
 NeutralizingShieldDescription:
 	text "Prevent all effects of attacks,"
 	line "including damage, done by"
-	line "evolved PKMN (excluding your"
-	line "own). This power stops working while"
-	line "this PKMN is Asleep, Confused, or"
-	line "Paralyzed."
+	line "evolved PKMN (excluding your own)."
 	done
 
 NewSpeciesName:
@@ -436,11 +185,9 @@ DevolutionBeamName:
 	done
 
 DevolutionBeamDescription:
-	text "Choose an evolved PKMN (Your"
-	line "own or your opponent's). Return"
-	line "the highest stage evolution card"
-	line "on that PKMN to Its player's"
-	line "hand."
+	text "Devolve 1 evolved PKMN on Play by"
+	line "putting the highest Stage Evolution" 
+	line "card on it into their owner's hand."
 	done
 
 PidgeyName:
@@ -492,7 +239,7 @@ SlicingWindName:
 SlicingWildDescription:
 	text "Does 30 damage to 1 of your"
 	line "opponent's PKMN chosen at random."
-	line "Don't apply Weakness and Resistance"
+	line "Don't apply Weakness/Resistance"
 	line "for this attack. (Any other effects"
 	line "that would happen after applying"
 	line "Weakness and Resistance still"
@@ -504,12 +251,11 @@ GaleName:
 	done
 
 GaleDescription:
-	text "Switch this PKMN with 1 of your"
-	line "Benched PKMN chosen at random. If"
-	line "your opponent has any Benched PKMN,"
-	line "switch the Defending PKMN with 1 of"
-	line "them chosen at random. (Do the"
-	line "damage before switching.)"
+	text "After Doing Damage, Switch this PKMN"
+	line "with 1 of your Benched PKMN chosen"
+	line "at random. if you do, switch the"
+	line "Defending PKMN with 1 of your" 
+	line "opponent's random Benched PKMN."
 	done
 
 Pidgeot1Description:
@@ -524,10 +270,9 @@ HurricaneName:
 
 HurricaneDescription:
 	text "Unless this attack Knocks Out the"
-	line "Defending PKMN, return the"
-	line "Defending PKMN and all cards"
-	line "attached to it to your opponent's"
-	line "hand."
+	line "Defending PKMN, return the Defending"
+	line "PKMN and all cards attached to it to"
+	line "your opponent's hand."
 	done
 
 Pidgeot2Description:
@@ -592,7 +337,7 @@ SpearowDescription:
 	line "OG illustrator: (Takao Unno)"
 	done
 
-FearowName:
+SwellowName:
 	text "Swellow"
 	done
 
@@ -661,11 +406,11 @@ ClefablesMetronomeDescription:
 	line "still Colorless.)"
 	done
 
-ClefablesMinimizeDescription:
-	text "All damage done by attacks to"
-	line "Clefable during your opponent's next"
-	line "turn is reduced by 20 (after"
-	line "applying Weakness and Resistance)."
+SteelWingDescription:
+	text "During your opponent's next turn,"
+	line "any damage done to this PKMN by" 
+	line "attacks is reduced by 20 (after" 
+	line "applying Weakness/Resistance)."
 	done
 
 ClefableDescription:
@@ -710,8 +455,7 @@ FriendshipSongName:
 	done
 
 FriendshipSongDescription:
-	text "Flip a coin. If heads, put a Basic"
-	line "PKMN card chosen at random from"
+	text "Put a random Basic PKMN card from"
 	line "your deck onto your Bench. (You"
 	line "can't use this attack if your Bench"
 	line "is full.)"
@@ -774,11 +518,10 @@ CatPunchName:
 CatPunchDescription:
 	text "Does 20 damage to 1 of your"
 	line "opponent's PKMN chosen at random."
-	line "Don't apply Weakness and Resistance"
+	line "Don't apply Weakness/Resistance"
 	line "for this attack. (Any other effects"
 	line "that would happen after applying"
-	line "Weakness and Resistance still"
-	line "happen.)"
+	line "Weakness/Resistance still happen.)"
 	done
 
 ScratchCatName:
@@ -809,18 +552,15 @@ BibarelName:
 	text "Bibarel"
 	done
 
-PounceName:
+SteelWingName:
 	text "Steel Wing"
 	done
 
 PounceDescription:
-	text "If the Defending PKMN attacks"
-	line "this PKMN during your opponent's"
-	line "next turn, any damage done by the"
-	line "attack is reduced by 10 (after "
-	line "applying Weakness and Resistance)."
-	line "(Benching or evolving either PKMN"
-	line "ends this effect.)"
+	text "During your opponent's next turn,"
+	line "any damage done to this PKMN by" 
+	line "attacks is reduced by 10 (after" 
+	line "applying Weakness/Resistance)."
 	done
 
 ClassyCatName:
@@ -1151,12 +891,9 @@ HealingWindName:
 	done
 
 HealingWindDescription:
-	text "When you put this PKMN into play,"
-	line "remove 2 damage counters from each"
-	line "of your PKMN. If a PKMN has "
-	line "fewer damage counters than that,"
-	line "remove all of them from that"
-	line "PKMN."
+	text "When you play this PKMN from your"
+	line "hand (not during set-up), Heal 20"
+	line "damage from each of your PKMN."
 	done
 
 DragoniteLv41Description:
@@ -1170,10 +907,9 @@ StepInName:
 	done
 
 StepInDescription:
-	text "Once during your turn (before your"
-	line "attack), if this card is on your"
-	line "Bench, you may switch it with your"
-	line "Active PKMN."
+	text "Once per turn (before your attack),"
+	line "if this PKMN is on your Bench, you"
+	line "may switch it with your Active PKMN."
 	done
 
 DoubleAttackX40Description:
@@ -1192,8 +928,7 @@ ProfessorOakName:
 	done
 
 ProfessorOakDescription:
-	text "Discard your hand, then draw 7"
-	line "cards."
+	text "Discard your hand and draw 7 cards."
 	done
 
 ImposterProfessorOakName:
@@ -1201,9 +936,8 @@ ImposterProfessorOakName:
 	done
 
 ImposterProfessorOakDescription:
-	text "Your opponent shuffles his or her"
-	line "hand into his or her deck, then"
-	line "draws 5 cards."
+	text "Your opponent shuffles their hand"
+	line "into their deck, then draws 5 cards."
 	done
 
 BillName:
@@ -1229,10 +963,10 @@ LassName:
 	done
 
 LassDescription:
-	text "You and your opponent show each"
-	line "other your hands, then shuffle all"
-	line "the Trainer cards from your hands"
-	line "into your decks."
+	text "Discard 2 cards from your hand, Both"
+	line "Players show their hand; shuffle all"
+	line "the Trainer cards in their hands"
+	line "into their decks."
 	done
 
 ImakuniName:
@@ -1254,22 +988,24 @@ PokemonTraderName:
 
 PokemonTraderDescription:
 	text "Reveal a PKMN from your hand and put" 
-	line "it into your deck. If you do,"
-	line "search your deck for a PKMN,"
-	line "reveal it,and put it into your hand." 
-	line "Then, shuffle your deck."
+	line "it into your deck. If you do, search"
+	line "your deck for a PKMN, reveal it, and"
+	line "put it into your hand. Then," 
+	line "shuffle your deck."
 	done
 
-PokemonBreederName:
+RareCandyName:
 	text "Rare Candy"
 	done
 
-PokemonBreederDescription:
-	text "Put a Stage 2 Evolution card from"
-	line "your hand on the matching Basic"
-	line "PKMN. You can only play this card"
-	line "when you would be allowed to evolve"
-	line "that PKMN anyway."
+RareCandyDescription:
+	text "Choose 1 Stage 2 PKMN from your hand"
+	line "that evolves from 1 of your Basic"
+	line "PKMN in play, put it on that Basic"
+	line "PKMN and Put 2 damage counters on"
+	line "that played PKMN. You can only use" 
+	line "this effect if you are allowed " 
+	line "evolve it this turn."
 	done
 
 ClefairyDollName:
@@ -1277,43 +1013,18 @@ ClefairyDollName:
 	done
 
 ClefairyDollDescription:
-	text "Play Clefairy Doll as if it were a"
-	line "Basic PKMN. While in play,"
-	line "Clefairy Doll counts as a PKMN"
-	line "(instead of a Trainer card)."
-	line "Clefairy Doll has no attacks, can't"
-	line "retreat, and can't be Asleep,"
-	line "Confused, Paralyzed, or Poisoned."
+	text "Play this card as if it were a 30-HP"
+	line "<COLORLESS> Basic PKMN. this card has no"
+	line "attacks, can't retreat, and can't be"
+	line "Affected by any Status Conditions."
+	line "If this card is KO, your opponent" 
+	line "can't take any Prize cards for it."
 	done
 
 ClefairyDollDescriptionCont:
-	text "If Clefairy Doll is Knocked Out, it"
-	line "doesn't count as a Knocked Out"
-	line "PKMN. At any time during your"
-	line "turn before your attack, you may"
-	line "discard Clefairy Doll."
-	line "(Use GameBoy PKMN Power menu"
-	line "option to do this.)"
-	done
-
-MysteriousFossilDescription:
-	text "Play Mysterious Fossil as if it were"
-	line "a Basic PKMN. While in play,"
-	line "Mysterious Fossil counts as a"
-	line "PKMN (instead of a Trainer card)."
-	line "Mysterious Fossil has no attacks,"
-	line "can't retreat, and can't be Asleep,"
-	line "Confused, Paralyzed, or Poisoned."
-	done
-
-MysteriousFossilDescriptionCont:
-	text "If Mysterious Fossil is Knocked Out,"
-	line "it doesn't count as a Knocked Out"
-	line "PKMN. (Discard it anyway.) At any"
-	line "time during your turn before your"
-	line "attack, you may discard Mysterious"
-	line "Fossil from play. (Use GameBoy Poké-"
-	line "mon Power menu option to do this.)"
+	text "On your turn (before your attack),"
+	line "you may discard this card. (Use"
+	line "the PKMN Power menu option.)"
 	done
 
 EnergyRetrievalName:
@@ -1321,9 +1032,9 @@ EnergyRetrievalName:
 	done
 
 EnergyRetrievalDescription:
-	text "Trade 1 of the other cards in your"
-	line "hand for up to 2 basic Energy cards"
-	line "from your discard pile."
+	text "Discard 1 card from your hand; put"
+	line "up to 2 basic Energy cards from your"
+	line "discard pile into your hand."
 	done
 
 SuperEnergyRetrievalName:
@@ -1331,9 +1042,9 @@ SuperEnergyRetrievalName:
 	done
 
 SuperEnergyRetrievalDescription:
-	text "Trade 2 of the other cards in your"
-	line "hand for up to 4 basic Energy cards"
-	line "from your discard pile."
+	text "Discard 2 cards from your hand; put"
+	line "up to 4 basic Energy cards from your"
+	line "discard pile into your hand."
 	done
 
 EnergySearchName:
@@ -1351,9 +1062,12 @@ EnergyRemovalName:
 	done
 
 EnergyRemovalDescription:
-	text "Choose 1 Energy card attached to 1"
-	line "of your opponent's PKMN and"
-	line "discard it."
+	text "Flip a coin. If heads, discard an" 
+	line "Energy from 1 of your opponent's"
+	line "PKMN." 
+	line "If your opponent has 3 or less Prize"
+	line "cards remaining, use this effect" 
+	line "without flipping a coin."
 	done
 
 SuperEnergyRemovalName:
@@ -1373,8 +1087,8 @@ SwitchName:
 	done
 
 SwitchDescription:
-	text "Switch 1 of your Benched PKMN with"
-	line "your Active PKMN."
+	text "Switch your Active PKMN with 1 of"
+	line "your Benched PKMN." 
 	done
 
 PokemonCenterName:
@@ -1382,11 +1096,9 @@ PokemonCenterName:
 	done
 
 PokemonCenterDescription:
-	text "Remove all damage counters from all"
-	line "of your own PKMN with damage"
-	line "counters on them, then discard all"
-	line "Energy cards attached to those"
-	line "PKMN."
+	text "Heal all damage from all of your"
+	line "Damaged PKMN, then discard all"
+	line "Energy attached to those PKMN."
 	done
 
 PokeBallName:
@@ -1394,14 +1106,391 @@ PokeBallName:
 	done
 
 PokeBallDescription:
-	text "Flip a coin. If heads, you may"
-	line "search your deck for any Basic"
-	line "PKMN or Evolution card. Show that"
-	line "card to your opponent, then put it"
-	line "into your hand. Shuffle your deck"
-	line "afterward."
+	text "Flip a coin. If heads, search your" 
+	line "deck for a PKMN, reveal it, and put" 
+	line "it into your hand. Then, shuffle" 
+	line "your deck afterward."
 	done
 
 ScoopUpName:
 	text "Scoop Up"
 	done
+
+ScoopUpDescription:
+	text "Choose 1 of your PKMN in play and"
+	line "return its Basic PKMN card to"
+	line "your hand. (Discard all cards"
+	line "attached to that card.)"
+	done
+
+ComputerSearchName:
+	text "Computer Search"
+	done
+
+ComputerSearchDescription:
+	text "Discard 2 cards from your hand;"
+	line "Search your deck for any card and"
+	line "put it into your hand. Shuffle your" 
+	line "deck afterward."
+	line "(You can only use this effect once"
+	line "per Duel.)"
+	done
+
+PokedexName:
+	text "Pokédex"
+	done
+
+PokedexDescription:
+	text "Look at the top 5 cards of your deck"
+	line "and put them back in any order."
+	done
+
+PlusPowerName:
+	text "PlusPower"
+	done
+
+PlusPowerDescription:
+	text "Attach this card to your Active PKMN" 
+	line "Discard this card at the end of your" 
+	line "turn. If this PKMN attacks,"
+	line "the attack does +10 more damage to" 
+	line "the Defending PKMN (before applying" 
+	line "Weakness/Resistance)."
+	done
+
+DefenderName:
+	text "Defender"
+	done
+
+DefenderDescription:
+	text "Attach this card to 1 of your PKMN"
+	line "Discard this card at the end of your" 
+	line "turn. Any damage done to to this"
+	line "PKMN by attacks is reduced by 20."
+	line "(after applying Weakness/Resistance)"
+	done
+
+ItemFinderName:
+	text "Item Finder"
+	done
+
+ItemFinderDescription:
+	text "Discard 2 cards from your"
+	line "hand; Put a Trainer card from your"
+	line "discard pile into your hand."
+	done
+
+GustOfWindName:
+	text "Gust of Wind"
+	done
+
+GustOfWindDescription:
+	text "Flip a Coin. if heads, Switch in 1" 
+	line "of your opponent's Benched PKMN to"
+	line "the Active Spot."
+	line "If your opponent has 3 or less Prize"
+	line "cards remaining, use this effect"
+	line "without flipping a coin."
+	done
+
+DevolutionSprayName:
+	text "Devolution Spray"
+	done
+
+DevolutionSprayDescription:
+	text "Devolve 1 of your evolved PKMN and" 
+	line "put the Stage 1 and/or Stage 2 card"
+	line "on it into your hand. (That PKMN"
+	line "can't evolve this turn.)"
+	done
+
+PotionName:
+	text "Potion"
+	done
+
+PotionDescription:
+	text "Heal 30 damage from 1 of your PKMN."
+	done
+
+SuperPotionName:
+	text "Super Potion"
+	done
+
+SuperPotionDescription:
+	text "Discard an Energy attached 1 of" 
+	line "your PKMN. If you do, Heal 60 damage"
+	line "from that PKMN."
+	done
+
+FullHealName:
+	text "Full Heal"
+	done
+
+FullHealDescription:
+	text "Your Active PKMN Recovers from"
+	line "all Status Conditions. (Asleep,"
+	line "Confused, Paralyzed, or Poisoned)."
+	line "then, Draw 1 card."
+	done
+
+ReviveName:
+	text "Revive"
+	done
+
+ReviveDescription:
+	text "If your Bench isn't full: Put 1"
+	line "Basic PKMN from your discard pile"
+	line "onto your Bench. then, Put damage" 
+	line "counters on that PKMN equal to half"
+	line "its HP (rounded down)."
+	done
+
+MaintenanceName:
+	text "Maintenance"
+	done
+
+MaintenanceDescription:
+	text "Shuffle 2 of the other cards from"
+	line "your hand into your deck in order"
+	line "to draw 1 cards."
+	done
+
+PokemonFluteName:
+	text "Pokémon Flute"
+	done
+
+PokemonFluteDescription:
+	text "If your opponent's Bench isn't full:"
+	line "Choose 1 Basic PKMN from their"
+	line "discard pile and put it onto their"
+	line "Bench."
+	done
+
+GamblerName:
+	text "Gambler"
+	done
+
+GamblerDescription:
+	text "Shuffle your hand into your deck."
+	line "Flip a coin. If heads, draw 8 cards."
+	line "If tails, draw 3 cards."
+	done
+
+RecycleName:
+	text "Recycle"
+	done
+
+RecycleDescription:
+	text "Flip a coin. If heads, put a card"
+	line "in your discard pile on top of your"
+	line "deck. If Tails, Draw 1 card."
+	done
+
+NewIntroText1:
+	text "Oh! Why the rush, <RAMNAME>?"
+	line "What? "
+	line "So you're interested in playing"
+	line "the PKMN Trading Card Game?"
+	line "Well, playing is certainly more fun"
+	line "than simply collecting the cards!"
+	done
+
+NewIntroText2:
+	text "Do you want to try a practice game?"
+	line ""
+	done
+
+NewIntroText3:
+	text "Well, if you change your mind,"
+	line "Sam would be happy to help you."
+	line "He can answer a lot of questions"
+	line "that you might have about the game,"
+	line "and he's always up for a match  "
+	line "using the practice decks.          "
+	line "Sam can usually be found near "
+	line "the card table to your left."
+	done	
+
+AreYouBoyOrGirlText:
+	text "Are you a boy"
+	line "or a girl?"
+	done
+
+BoyText:
+	text "Boy"
+	done
+
+GirlText:
+	text "Girl"
+	done	
+
+AttackSuccessCheckText:
+	text "Flip a Coin for the Result."
+	done
+
+ChooseAndDiscardanyFireEnergyCardsText:
+	text "Choose and Discard any number of" 
+	line "Fire Energy cards. (Min.1)"
+	done
+
+GenericAttachedEnergyToPokemonText:
+  text "Attached Energy"
+  line "to <RAMTEXT>."
+  done
+  
+ParalyzedIfHeadsAsleepIfTailsText:
+	text "Opponent is Paralyzed if Heads,"
+	line "and Asleep if Tails."
+	done
+
+ConfusedIfHeadsAsleepIfTailsText:
+	text "Opponent is Confused if Heads,"
+	line "and Asleep if Tails."
+	done	
+
+PoisonedIfHeadsAsleepIfTailsText:
+	text "Opponent is Poisoned if Heads,"
+	line "and Asleep if Tails."
+	done
+
+PoisonedIfHeadsParalysedIfTailsText:
+	text "Opponent is Poisoned if Heads,"
+	line "and Paralyzed if Tails."
+	done	
+
+YesOrNoTextNEOtext:
+    text "Which PKMN?:"
+    line "            Horsea  Seadra"
+    done 
+
+FoundCardText:
+	text "<RAMTEXT> was added to the hand."
+	done	
+
+ChooseEeveelutionFromDeckText:
+	text "Choose a card that evolves"
+	line "from Eevee in the deck."
+	done
+
+DunsparceName:
+	text "Dunsparce"
+	done
+	
+;         01234567890123456789012345678901234
+DucklettDescription:
+	text "They are better at swimming than"
+	line "flying, and they happily eat"
+	line "their favorite food, peat moss,"
+	line "as they dive underwater."
+	done
+
+TynamoName:
+	text "Tynamo"
+	done
+
+EelektrikName:
+	text "Eelektrik"
+	done
+
+EelektrossName:
+	text "Eelektross"
+	done
+
+EmolgaName:
+	text "Emolga"
+	done
+
+TurtonatorName:
+	text "Turtonator"
+	done
+
+MagnezoneName:
+	text "Magnezone"	
+	done
+
+HelioptileName:
+	text "Helioptile"
+	done
+HelioliskName:
+	text "Heliolisk"
+	done
+
+LugiaName:
+	text "Lugia"
+	done	
+
+DrapionName:
+	text "Drapion"
+	done
+
+TyranitarName:
+	text "Tyranitar"
+	done
+
+DeltaKingdraName:
+	text "Delta Kingdra"	
+	done
+
+TyruntName:
+	text "Tyrunt"
+	done	
+
+SkorupiName:
+	text "Skorupi"
+	done
+
+BidoofName:
+	text "Bidoof"
+	done
+
+ElectrikeName:
+	text "Electrike"
+	done
+
+ManectricName:
+	text "Manectric"
+	done 	
+
+MisdreavusName:
+	text "Misdreavus"
+	done
+
+MismagiusName:
+	text "Mismagius"
+	done
+
+LuxrayName:
+	text "Luxray"
+	done
+
+CharjabugName:
+	text "Charjabug"
+	done
+
+CelebiName:
+	text "Celebi"
+	done	
+
+MimikyuName:
+	text "Mimikyu"
+	done
+
+PincurchinName:
+	text "Pincurchin"
+	done	
+
+NumelName:
+	text "Numel"
+	done
+
+CameruptName:
+	text "Camerupt"
+	done
+
+DottlerName:
+	text "Dottler"
+	done
+
+OrbeetleName:
+	text "Orbeetle"
+	done	 

@@ -30,9 +30,9 @@ AIActionTable_LegendaryRonald:
 	dw CHATOT
 	dw GOOMY
 	dw EEVEE
-	dw ZAPDOS_LV68
-	dw ARTICUNO_LV37
-	dw MOLTRES_LV37
+	dw RAIKOU
+	dw SUICUNE
+	dw ENTEI
 	dw NULL
 
 .list_bench
@@ -42,12 +42,12 @@ AIActionTable_LegendaryRonald:
 	dw NULL
 
 .list_play_hand
-	dw MOLTRES_LV37
-	dw ZAPDOS_LV68
+	dw ENTEI
+	dw RAIKOU
 	dw CHATOT
 	dw GOOMY
 	dw EEVEE
-	dw ARTICUNO_LV37
+	dw SUICUNE
 	dw NULL
 
 .list_retreat
@@ -56,11 +56,11 @@ AIActionTable_LegendaryRonald:
 
 .list_energy
 	ai_energy NUMEL,   3, +0
-	ai_energy MOLTRES_LV37,   3, +0
+	ai_energy ENTEI,   3, +0
 	ai_energy DREDNAW,  3, +0
-	ai_energy ARTICUNO_LV37,  0, -8
+	ai_energy SUICUNE,  0, -8
 	ai_energy MANECTRIC,   4, +0
-	ai_energy ZAPDOS_LV68,    0, -8
+	ai_energy RAIKOU,    0, -8
 	ai_energy CHATOT,     4, -1
 	ai_energy EEVEE,          3, +0
 	ai_energy GOOMY,        3, +0
@@ -69,9 +69,9 @@ AIActionTable_LegendaryRonald:
 	dw NULL
 
 .list_prize
-	dw MOLTRES_LV37
-	dw ARTICUNO_LV37
-	dw ZAPDOS_LV68
+	dw ENTEI
+	dw SUICUNE
+	dw RAIKOU
 	dw LUGIA
 	dw GAMBLER
 	dw NULL
@@ -109,7 +109,7 @@ AIDoTurn_LegendaryRonald:
 	ld de, TREVENANT
 	call CountPokemonIDInBothPlayAreas
 	jr c, .skip_moltres_1 ; skip if Muk in play
-	ld de, MOLTRES_LV37
+	ld de, ENTEI
 	call LookForCardIDInHandList_Bank5
 	jr nc, .skip_moltres_1 ; skip if no MoltresLv37 in hand
 	ldh [hTemp_ffa0], a
@@ -163,7 +163,7 @@ AIDoTurn_LegendaryRonald:
 	ld de, TREVENANT
 	call CountPokemonIDInBothPlayAreas
 	jr c, .skip_moltres_2 ; skip if Muk in play
-	ld de, MOLTRES_LV37
+	ld de, ENTEI
 	call LookForCardIDInHandList_Bank5
 	jr nc, .skip_moltres_2 ; skip if no MoltresLv37 in hand
 	ldh [hTemp_ffa0], a

@@ -1942,17 +1942,17 @@ ShuffleDeckAndDrawSevenCards:
 	ret
 
 ; return nc if the card at wLoadedCard1 is a basic Pokemon card
-; MYSTERIOUS_FOSSIL and TOGEPI_DOLL do count as basic Pokemon cards
+; MYSTERIOUS_FOSSIL and CLEFAIRY_DOLL do count as basic Pokemon cards
 IsLoadedCard1BasicPokemon:
 	ld hl, wLoadedCard1ID
 	cphl MYSTERIOUS_FOSSIL
 	jr z, .basic
-	cphl TOGEPI_DOLL
+	cphl CLEFAIRY_DOLL
 	jr z, .basic
 ;	fallthrough
 
 ; return nc if the card at wLoadedCard1 is a basic Pokemon card
-; MYSTERIOUS_FOSSIL and TOGEPI_DOLL do NOT count unless already checked
+; MYSTERIOUS_FOSSIL and CLEFAIRY_DOLL do NOT count unless already checked
 .skip_mysterious_fossil_clefairy_doll
 	ld a, [wLoadedCard1Type]
 	cp TYPE_ENERGY
@@ -1970,7 +1970,7 @@ IsLoadedCard1BasicPokemon:
 	scf
 	ret
 
-.basic ; MYSTERIOUS_FOSSIL or TOGEPI_DOLL
+.basic ; MYSTERIOUS_FOSSIL or CLEFAIRY_DOLL
 	ld a, $01
 	or a
 	ret ; nz
@@ -6256,6 +6256,9 @@ DrawWideTextBox_WaitForInput_Bank1:
 
 ; apply and/or refresh status conditions and other events that trigger between turns
 HandleBetweenTurnsEvents:
+	ld de, FLYGON
+	call CheckPokemonIDInArena
+    jr c, .something_to_handle
 	call IsArenaPokemonAsleepOrPoisoned
 	jr c, .something_to_handle
 	cp PARALYZED
@@ -6280,6 +6283,9 @@ HandleBetweenTurnsEvents:
 	call DrawDuelBoxMessage
 	ldtx hl, BetweenTurnsText
 	call DrawWideTextBox_WaitForInput
+	ld de, FLYGON
+	call CheckPokemonIDInArena
+	call c, HandleIrritatingBuzz
 
 	ld a, DUELVARS_ARENA_CARD
 	call GetTurnDuelistVariable
@@ -6331,6 +6337,36 @@ HandleBetweenTurnsEvents:
 	call DiscardAttachedDefenders
 	call SwapTurn
 	jp HandleBetweenTurnKnockOuts
+
+HandleIrritatingBuzz:
+	ld a, c
+	ldh [hTemp_ffa0], a
+	ld de, TREVENANT
+	call CountPokemonIDInBothPlayAreas
+	ret c ; return if there's Muk in play
+
+	ldtx hl, Received10DamageDueToIrritatingBuzzText
+	call DrawWideTextBox_WaitForInput
+
+; initial animation
+    ld a, ATK_ANIM_HIT
+    ld [wLoadedAttackAnimation], a 
+    bank1call Func_7415
+    ldh a, [hTempPlayAreaLocation_ff9d]
+    ld b, a
+    ld c, $00
+    ldh a, [hWhoseTurn]
+    ld h, a
+    bank1call WaitAttackAnimation
+
+; deal damage   
+	call SwapTurn
+    ldh a, [hTempPlayAreaLocation_ff9d]
+    ld b, a
+    ld de, 10 ; damage.    
+    call DealDamageToPlayAreaPokemon
+	call SwapTurn
+    jp HandleBetweenTurnKnockOuts	
 
 ; discard any PLUSPOWER attached to the turn holder's arena and/or bench Pokemon
 DiscardAttachedPluspowers:
@@ -6454,39 +6490,53 @@ PrintCardNameFromCardIDInTextBox:
 ; handles the sleep check for the NonTurn Duelist
 ; heals sleep status if coin is heads, else
 ; it plays sleeping animation
+
 HandleSleepCheck:
-	ld a, [hl]
-	and CNF_SLP_PRZ
-	cp ASLEEP
-	ret nz ; quit if not asleep
+    ld a, [hl]
+    and CNF_SLP_PRZ
+    cp ASLEEP
+    ret nz ; quit if not asleep
 
-	push hl
-	ld a, [wTempNonTurnDuelistCardID + 0]
-	ld e, a
-	ld a, [wTempNonTurnDuelistCardID + 1]
-	ld d, a
-	call LoadCardDataToBuffer1_FromCardID
-	ld a, 18
-	call CopyCardNameAndLevel
-	ld [hl], TX_END
-	ld hl, wTxRam2
-	xor a
-	ld [hli], a
-	ld [hl], a
-	ldtx de, PokemonsSleepCheckText
-	call TossCoin
-	ld a, DUEL_ANIM_SLEEP
-	ldtx hl, IsStillAsleepText
-	jr nc, .tails
+    push hl
+    ld a, [wTempNonTurnDuelistCardID]
+    ld e, a
+    call LoadCardDataToBuffer1_FromCardID
+    ld a, 18
+    call CopyCardNameAndLevel
+    ld [hl], TX_END
+    ld hl, wTxRam2
+    xor a
+    ld [hli], a
+    ld [hl], a
+    ldtx de, PokemonsSleepCheckText
+    call TossCoin
+    ld a, DUEL_ANIM_SLEEP
+    ldtx hl, IsStillAsleepText
+    jr nc, .tails
 
+	ld a, c
+	ldh [hTemp_ffa0], a
+	ld de, TREVENANT
+	call CountPokemonIDInBothPlayAreas
+    jp c, .nothing
+    ld de, GENGAR
+	call CountPokemonIDInBothPlayAreas
+    jr nc, .nothing
+    ldtx de, DeepSleepText ; IMPORTANT: define this in text
+    call TossCoin
+    ld a, DUEL_ANIM_SLEEP
+    ldtx hl, IsStillAsleepText ; IMPORTANT: define this in a text
+    jr nc, .tails
+
+.nothing
 ; coin toss was heads, cure sleep status
-	pop hl
-	push hl
-	ld a, DOUBLE_POISONED
-	and [hl]
-	ld [hl], a
-	ld a, DUEL_ANIM_HEAL
-	ldtx hl, IsCuredOfSleepText
+    pop hl
+    push hl
+    ld a, DOUBLE_POISONED
+    and [hl]
+    ld [hl], a
+    ld a, DUEL_ANIM_HEAL
+    ldtx hl, IsCuredOfSleepText
 
 .tails
 	push af
@@ -6566,7 +6616,7 @@ ConvertSpecialTrainerCardToPokemon::
 	ret z ; return if the card is not in the arena or bench
 	cp16 MYSTERIOUS_FOSSIL
 	jr z, .start_ram_data_overwrite
-	cp16 TOGEPI_DOLL
+	cp16 CLEFAIRY_DOLL
 	ret nz
 .start_ram_data_overwrite
 	push de
@@ -6585,7 +6635,7 @@ ConvertSpecialTrainerCardToPokemon::
 	ret
 
 .trainer_to_pkmn_data
-	db 10                 ; CARD_DATA_HP
+	db 30                 ; CARD_DATA_HP
 	ds $07                ; CARD_DATA_ATTACK1_NAME - (CARD_DATA_HP + 1)
 	tx DiscardName        ; CARD_DATA_ATTACK1_NAME
 	tx DiscardDescription ; CARD_DATA_ATTACK1_DESCRIPTION

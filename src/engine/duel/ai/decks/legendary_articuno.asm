@@ -32,7 +32,7 @@ AIActionTable_LegendaryArticuno:
 	dw DITTO
 	dw SEEL
 	dw RELICANTH
-	dw ARTICUNO_LV37
+	dw SUICUNE
 	dw NULL
 
 .list_bench
@@ -53,14 +53,14 @@ AIActionTable_LegendaryArticuno:
 	ai_energy DEWGONG,       4, +0
 	ai_energy CHEWTLE,        3, +0
 	ai_energy RELICANTH, 4, +1
-	ai_energy ARTICUNO_LV37, 3, +0
+	ai_energy SUICUNE, 3, +0
 	ai_energy AUDINO,       0, -8
 	ai_energy DITTO,         3, +0
 	dw NULL
 
 .list_prize
 	dw GAMBLER
-	dw ARTICUNO_LV37
+	dw SUICUNE
 	dw NULL
 
 .store_list_pointers

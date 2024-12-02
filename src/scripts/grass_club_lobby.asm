@@ -58,11 +58,11 @@ Script_Lass2:
 	print_text_quit_fully Text06ee
 
 .ows_e648
-	jump_if_card_owned ODDISH, .ows_e64f
+	jump_if_card_owned APPLIN, .ows_e64f
 	print_text_quit_fully Text06ef
 
 .ows_e64f
-	jump_if_card_in_collection ODDISH, .ows_e656
+	jump_if_card_in_collection APPLIN, .ows_e656
 	print_text_quit_fully Text06f0
 
 .ows_e656
@@ -70,7 +70,7 @@ Script_Lass2:
 	set_event EVENT_LASS2_TRADE_STATE, LASS2_TRADE_2_AVAILABLE
 	print_npc_text Text06f1
 	print_text Text06f2
-	take_card ODDISH
+	take_card APPLIN
 	give_card VILEPLUME
 	show_card_received_screen VILEPLUME
 	print_text_quit_fully Text06f3

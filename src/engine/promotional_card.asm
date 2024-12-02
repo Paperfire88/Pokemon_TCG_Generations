@@ -10,11 +10,11 @@ _ShowPromotionalCardScreen:
 	ld a, d
 	or e
 	jr nz, .else
-	ld de, MOLTRES_LV37
+	ld de, ENTEI
 	call .legendary_card_text
-	ld de, ARTICUNO_LV37
+	ld de, SUICUNE
 	call .legendary_card_text
-	ld de, ZAPDOS_LV68
+	ld de, RAIKOU
 	call .legendary_card_text
 	ld de, LUGIA
 .legendary_card_text

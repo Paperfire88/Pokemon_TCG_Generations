@@ -76,7 +76,7 @@ MorgremCard:
 	; attack 2
 	energy DARKNESS, 2, COLORLESS, 1 ; energies
 	tx FalseSurrenderName; name
-	tx SonicboomDescription ; description
+	tx DontApplyWsRsDescription ; description
 	dw NONE ; description (cont)
 	db 40 ; damage
 	db DAMAGE_NORMAL ; category
@@ -247,3 +247,314 @@ BisharpCard:
 	dw 22 * 10 ; weight
 	tx MagikarpDescription ; description
 	db 18
+
+AbraCard:
+	db TYPE_PKMN_PSYCHIC ; type
+	gfx AbraCardGfx ; gfx
+	tx AbraName ; name
+	db CIRCLE ; rarity
+	db COLOSSEUM | NONE ; sets
+	dw ABRA
+	db 40 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy PSYCHIC, 1 ; energies
+	tx TeleportName ; name
+	tx TeleportDescription ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db RESIDUAL ; category
+	dw ExeggutorTeleportEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_GLOW_EFFECT ; animation
+
+	; attack 2
+	energy PSYCHIC, 1, COLORLESS, 1 ; energies
+	tx ConfusionAbraName ; name
+	tx ConfusionAbraDescription ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw AbraConfusionEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_PSYCHIC_HIT ; animation
+
+	db 1 ; retreat cost
+	db WR_DARKNESS ; weakness
+	db NONE ; resistance
+	tx PsiName ; category
+	db 152 ; Pokedex number
+	db 15 ; level
+	db 2, 11 ; length
+	dw 43 * 10 ; weight
+	tx AbraDescription ; description
+	db 16
+
+KadabraCard:
+	db TYPE_PKMN_PSYCHIC ; type
+	gfx KadabraCardGfx ; gfx
+	tx KadabraName ; name
+	db DIAMOND ; rarity
+	db COLOSSEUM | NONE ; sets
+	dw KADABRA
+	db 70 ; hp
+	db STAGE1 ; stage
+	tx AbraName ; pre-evo name
+
+	; attack 1
+	energy PSYCHIC, 1, COLORLESS, 1 ; energies
+	tx KinesisName ; name
+	tx OpponentAttackMayDoNothingDescription ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw SandshrewSandAttackEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HYPNOSIS ; animation
+
+	; attack 2
+	energy PSYCHIC, 2, COLORLESS, 1 ; energies
+	tx SuperPsiName ; name
+	tx SuperPsiDescription ; description
+	dw NONE ; description (cont)
+	db 30 ; damage
+	db DAMAGE_PLUS ; category
+	dw SuperPsiEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_PSYCHIC_HIT ; animation
+
+	db 2 ; retreat cost
+	db WR_DARKNESS ; weakness
+	db NONE ; resistance
+	tx PsiName ; category
+	db 153 ; Pokedex number
+	db 38 ; level
+	db 4, 3 ; length
+	dw 125 * 10 ; weight
+	tx KadabraDescription ; description
+	db 16
+
+AlakazamCard:
+	db TYPE_PKMN_PSYCHIC ; type
+	gfx AlakazamCardGfx ; gfx
+	tx AlakazamName ; name
+	db STAR ; rarity
+	db COLOSSEUM | NONE ; sets
+	dw ALAKAZAM
+	db 90 ; hp
+	db STAGE2 ; stage
+	tx KadabraName ; pre-evo name
+
+	; attack 1
+	energy 0 ; energies
+	tx DamageSwapName ; name
+	tx DamageSwapDescription ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db POKEMON_POWER ; category
+	dw AlakazamDamageSwapEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_PKMN_POWER_1 ; animation
+
+	; attack 2
+	energy PSYCHIC, 2, COLORLESS, 1 ; energies
+	tx PsychicZenName ; name
+	tx PsychicZenDescription ; description
+	dw NONE ; description (cont)
+	db 40 ; damage
+	db DAMAGE_PLUS ; category
+	dw PsychicZenEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_PSYCHIC_HIT ; animation
+
+	db 2 ; retreat cost
+	db WR_DARKNESS ; weakness
+	db WR_FIGHTING ; resistance
+	tx PsiName ; category
+	db 154 ; Pokedex number
+	db 62 ; level
+	db 4, 11 ; length
+	dw 106 * 10 ; weight
+	tx AlakazamDescription ; description
+	db 0
+
+GastlyCard:
+	db TYPE_PKMN_DARKNESS ; type
+	gfx GastlyCardGfx ; gfx
+	tx GastlyName ; name
+	db CIRCLE ; rarity
+	db MYSTERY | NONE ; sets
+	dw GASTLY
+	db 40 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy DARKNESS, 1 ; energies
+	tx SleepPoisonName ; name
+	tx SleepPoisonDescription ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw SleepingPoisonEffectCommands ; effect commands
+	db INFLICT_POISON/INFLICT_SLEEP ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_SLEEPING_GAS ; animatio
+
+	; attack 1
+	energy DARKNESS, 2 ; energies
+	tx SpookifyName ; name
+	tx SpookifyDescription ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_NORMAL ; category
+	dw SpookifyEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_NIGHTMARE ; animation
+
+	db 0 ; retreat cost
+	db WR_PSYCHIC ; weakness
+	db NONE ; resistance
+	tx GasName ; category
+	db 95 ; Pokedex number
+	db 16 ; level
+	db 2, 11 ; length
+	dw 22 * 10 ; weight
+	tx MagikarpDescription ; description
+	db 18
+
+HaunterCard:
+	db TYPE_PKMN_DARKNESS ; type
+	gfx HaunterCardGfx ; gfx
+	tx HaunterName ; name
+	db DIAMOND ; rarity
+	db MYSTERY | NONE ; sets
+	dw HAUNTER
+	db 60 ; hp
+	db STAGE1 ; stage
+	tx GastlyName ; pre-evo name
+
+	; attack 1
+	energy DARKNESS, 1, COLORLESS, 1 ; energies
+	tx DarkSlumberName ; name
+	tx DarkSlumberDescription ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_NORMAL ; category
+	dw DarkSlumberEffectCommands ; effect commands
+	db INFLICT_POISON/INFLICT_SLEEP ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_NIGHTMARE ; animatio
+
+	; attack 2
+	energy DARKNESS, 2 ; energies
+	tx PoltergeistName ; name
+	tx PoltergeistDescription ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_PLUS ; category
+	dw PoltergeistEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_DARK_MIND ; animation
+
+	db 1 ; retreat cost
+	db WR_PSYCHIC ; weakness
+	db NONE ; resistance
+	tx SharpClawName ; category
+	db 95 ; Pokedex number
+	db 29 ; level
+	db 2, 11 ; length
+	dw 22 * 10 ; weight
+	tx MagikarpDescription ; description
+	db 18
+
+GengarCard:
+	db TYPE_PKMN_DARKNESS ; type
+	gfx GengarCardGfx ; gfx
+	tx GengarName ; name
+	db STAR ; rarity
+	db MYSTERY | NONE ; sets
+	dw GENGAR
+	db 100 ; hp
+	db STAGE2 ; stage
+	tx HaunterName ; pre-evo name
+
+	; attack 1
+    energy 0 ; energies
+    tx DeepSleepName ; name
+    tx DeepSleepDescription ; description
+    dw NONE ; description (cont)
+    db 0 ; damage
+    db POKEMON_POWER ; category
+    dw DeepSleepEffectCommands ; effect commands
+    db NONE ; flags 1
+    db NONE ; flags 2
+    db NONE ; flags 3
+    db 0
+    db ATK_ANIM_PKMN_POWER_1
+
+	; attack 3
+	energy DARKNESS, 3, ; energies
+	tx PoltergeistName ; name
+	tx PoltergeistDescription ; description
+	dw NONE ; description (cont)
+	db 40 ; damage
+	db DAMAGE_PLUS ; category
+	dw PoltergeistEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_DARK_MIND ; animation
+
+	db 2 ; retreat cost
+	db WR_PSYCHIC ; weakness
+	db WR_FIGHTING ; resistance
+	tx SharpClawName ; category
+	db 95 ; Pokedex number
+	db 52 ; level
+	db 2, 11 ; length
+	dw 22 * 10 ; weight
+	tx MagikarpDescription ; description
+	db 18
+
+MoonStoneCard:
+	db TYPE_TRAINER ; type
+	gfx MoonStoneCardGfx ; gfx
+	tx MoonStoneName ; name
+	db CIRCLE ; rarity
+	db COLOSSEUM | NONE ; sets
+	dw MOON_STONE
+	dw ColorlessEvolutionPkmnSearchEffectCommands ; effect commands
+	tx MoonStoneDescription ; description
+	dw NONE ; description (cont)

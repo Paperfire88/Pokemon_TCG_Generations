@@ -367,11 +367,10 @@ FightingPokemonBookName:
 	done
 
 FightingPokemonBookText:
-	text "Fighting Pokémon Characteristics:"
-	line "Strong against Lightning Pokémon."
-	line "Weak against Psychic Pokémon."
-	line "Require Fighting Energy cards "
-	line "to Attack."
+	text "<FIGHTING> Pokémon Characteristics: usually"
+	line "Strong against <LIGHTNING> Pokémon. usually"
+	line "Weak against <PSYCHIC> Pokémon."
+	line "Require <FIGHTING> Energy cards to Attack."
 	done
 
 FightingPokemonAndCombosBookName:
@@ -405,10 +404,9 @@ RockPokemonBookName:
 
 RockPokemonBookText:
 	text "Rock Pokémon Characteristics:"
-	line "Strong against Lightning Pokémon."
-	line "Weak against Grass Pokémon."
-	line "Require Fighting Energy cards"
-	line "to Attack."
+	line "Usually Strong against <LIGHTNING> Pokémon."
+	line "Usually Weak against <GRASS> Pokémon."
+	line "Require <FIGHTING> Energy cards to Attack."
 	done
 
 WinningWithFightingPokemonBookName:
@@ -416,12 +414,12 @@ WinningWithFightingPokemonBookName:
 	done
 
 WinningWithFightingPokemonBookText:
-	text "Fighting Pokémon will have a hard"
-	line "time against Stage 2 Pokémon,"
-	line "as many Stage 2 Pokémon are"
-	line "resistant to Fighting Pokémon."
-	line "Try to knock out your opponent's"
-	line "Pokémon before they evolve."
+	text "<FIGHTING> Pokémon will have a hard time" 
+	line "against Stage 2 Pokémon, as many"
+	line "Stage 2 Pokémon are resistant"
+	line "to <FIGHTING> Pokémon. Try to knock out"
+	line "your opponent's Pokémon before"
+	line "they evolve."
 	done
 
 BasicPokemonBookName:
@@ -445,12 +443,12 @@ WaterPokemonBookName:
 	done
 
 WaterPokemonBookText:
-	text "Water Pokémon Characteristics:"
-	line "Strong against Fire Pokémon."
-	line "Weak against Lightning Pokémon."
-	line "Some cards are weak against "
-	line "Grass Pokémon. Require Water "
-	line "Energy cards to attack."
+	text "<WATER> Pokémon Characteristics: usually"
+	line "Strong against <FIRE> Pokémon."
+	line "usually Weak against <LIGHTNING> Pokémon."
+	line "Some cards are usually weak against"
+	line "<GRASS> Pokémon. Require <WATER> Energy" 
+	line "cards to attack."
 	done
 
 WaterPokemonAttacksBookName:
@@ -487,10 +485,10 @@ LightningPokemonBookName:
 	done
 
 LightningPokemonBookText:
-	text "Lightning Pokémon Characteristics:"
-	line "Strong against Water Pokémon."
-	line "Weak against Fighting Pokémon."
-	line "Require Lightning Energy cards"
+	text "<LIGHTNING> Pokémon Characteristics:"
+	line "Usually Strong against <WATER> Pokémon."
+	line "Usually Weak against <FIGHTING> Pokémon."
+	line "Require <LIGHTNING> Energy cards"
 	line "to attack."
 	done
 
@@ -499,11 +497,10 @@ EnergyCardsBookName:
 	done
 
 EnergyCardsBookText:
-	text "There are 6 Basic Energy cards:"
-	line "Grass, Fire, Water, Lightning,"
-	line "Fighting and Psychic!"
+	text "There are 7 Basic Energy cards:"
+	line "<GRASS>, <FIRE>, <WATER>, <LIGHTNING>, <FIGHTING>, <PSYCHIC> and <DARKNESS>!"
 	line "There is also the Double Colorless"
-	line "Energy card."
+	line "Energy card.<COLORLESS><COLORLESS>"
 	line "You may include as many Energy "
 	line "cards as you like in your deck,"
 	line "but you may only include 4"
@@ -530,12 +527,12 @@ GrassPokemonBookName:
 	done
 
 GrassPokemonBookText:
-	text "Grass Pokémon Characteristics:"
-	line "Strong against Rock Pokémon."
-	line "Weak against Fire Pokémon."
-	line "Some Water Pokémon are weak"
-	line "against Grass Pokémon. Require "
-	line "Grass Energy cards to attack."
+	text "<GRASS> Pokémon Characteristics:"
+	line "Strong against <FIGHTING> Pokémon."
+	line "Usually Weak against <FIRE> Pokémon."
+	line "Some <WATER> Pokémon are Usually weak"
+	line "against <GRASS> Pokémon."
+	line "Require <GRASS> Energy cards to attack."
 	done
 
 PoisonBookName:
@@ -572,11 +569,11 @@ PsychicPokemonBookName:
 	done
 
 PsychicPokemonBookText:
-	text "Psychic Pokémon Characteristics:"
-	line "Weak against Psychic Pokémon."
-	line "Some Colorless Pokémon are strong "
-	line "against Psychic Pokémon. Require"
-	line "Psychic Energy cards to attack."
+	text "<PSYCHIC> Pokémon Characteristics:"
+	line "Usually Weak against <DARKNESS> Pokémon."
+	line "Some <COLORLESS> Pokémon are strong "
+	line "against <PSYCHIC> Pokémon. Require"
+	line "<PSYCHIC> Energy cards to attack."
 	done
 
 SleepBookName:
@@ -615,14 +612,10 @@ ScienceClubPokemonBookName:
 	done
 
 ScienceClubPokemonBookText:
-	text "Characteristics of Pokémon used"
-	line "in the Science Club:"
-	line "Strong against Rock Pokémon."
-	line "Weak against Psychic Pokémon."
-	line "Many cards have attacks with "
-	line "poison and sleep effects."
-	line "Require Grass Energy cards"
-	line "to attack."
+	text "<DARKNESS> Pokémon Characteristics:"
+	line "Usually Strong against <PSYCHIC> Pokémon."
+	line "Usually Weak against <FIGHTING> Pokémon."
+	line "Require <DARKNESS> Energy cards to attack."
 	done
 
 ConfusionBookName:
@@ -661,12 +654,12 @@ FirePokemonBookName:
 	done
 
 FirePokemonBookText:
-	text "Fire Pokémon Characteristics:"
-	line "Strong against Grass Pokémon."
-	line "Weak against Water Pokémon."
-	line "Some Grass Pokémon are not weak"
-	line "against Fire Pokémon."
-	line "Require Fire Energy cards"
+	text "<FIRE> Pokémon Characteristics:"
+	line "Usually Strong against <GRASS> Pokémon."
+	line "Usually Weak against <WATER> Pokémon."
+	line "Some <GRASS> Pokémon are not weak"
+	line "against <FIRE> Pokémon."
+	line "Require <FIRE> Energy cards"
 	line "to attack."
 	done
 
@@ -702,7 +695,7 @@ ColorlessPokemonBookName:
 	done
 
 ColorlessPokemonBookText:
-	text "Colorless Pokémon are very easy"
+	text "<COLORLESS> Pokémon are very easy"
 	line "to use. They can attack with "
 	line "any type of Energy card, so"
 	line "you can include them in any type"
@@ -715,9 +708,8 @@ DragonPokemonBookName:
 	done
 
 DragonPokemonBookText:
-	text "Colorless Dragon Pokémon cards"
-	line "have resistance to Psychic"
-	line "Pokémon and have no weaknesses."
+	text "<COLORLESS> Dragon Pokémon cards have" 
+	line "no weaknesses."
 	line "They can attack with any type"
 	line "of Energy card - they are truly"
 	line "worthy of the name ”dragon!”"
@@ -728,10 +720,10 @@ BirdPokemonBookName:
 	done
 
 BirdPokemonBookText:
-	text "Colorless Bird Pokémon cards"
-	line "have resistance to Fighting"
+	text "<COLORLESS> Bird Pokémon cards"
+	line "have resistance to <FIGHTING>"
 	line "Pokémon but are weak against"
-	line "Lightning Pokémon. They can attack"
+	line "<LIGHTNING> Pokémon. They can attack"
 	line "with any type of Energy card."
 	line "They can retreat easily, since"
 	line "they are flying."
@@ -1019,4 +1011,44 @@ RonaldChallengeCup2LostInactive2Text:
 RonaldChallengeCup2Missed1Text:
 	text "Hey, <RAMNAME>!"
 	line "What are you doing here?"
+	done
+
+LuckyFindCheckText:
+	text "Effect check! If Heads, add"
+	line "that Trainer Card to the hand."
+	done
+
+DontapplyweaknessDescription:
+	line "(Don't apply Weakness and/or"
+	line "Resistance for Benched PKMN.)"
+	done
+
+Sended2CardfromDecktoDiscardPile:
+	text "2 Basic Energy Cards were" 
+	line "sent to your Discard Pile.           "
+	ret
+
+MoonStoneName:
+	text "Moon Stone"
+	done
+
+MoonStoneDescription:
+	text "Search your deck for a <COLORLESS> Evolution" 
+	line "card, show it to your opponent, and" 
+	line "put it into your hand. Shuffle your"
+	line "deck afterward."
+	done
+
+ChooseColorlessEvolutionFromDeckText:
+	text "Choose a <COLORLESS> Evolution card"
+	line "from your deck."
+	done	
+
+ChooseColorlessEvolutionCardText:
+	text "Choose an <COLORLESS>"
+	line "Evolution PKMN."
+	done
+
+EvolutionaryLightName:
+	text "Evolutionary Light"
 	done

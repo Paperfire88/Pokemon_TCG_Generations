@@ -78,7 +78,7 @@ KnockedOutDueToDestinyBondText:
 
 ReceivesDamageDueToStrikesBackText:
 	text "<RAMTEXT> receives <RAMNUM> damage"
-	line "due to the effects of Strikes Back."
+	line "due to the effects of Bite's Back."
 	done
 
 UnableToEvolveDueToPrehistoricPowerText:
@@ -202,6 +202,11 @@ Choose1BasicEnergyCardFromDeckText:
 	line "from the Deck."
 	done
 
+Chooseupto2BasicEnergyCardFromDeckText:
+	text "Choose up to 2 Basic Energy"
+	line "card from the Deck."
+	done
+
 ChoosePokemonToAttachEnergyCardText:
 	text "Choose a Pokémon to attach"
 	line "the Energy card to."
@@ -209,7 +214,7 @@ ChoosePokemonToAttachEnergyCardText:
 
 ChooseAndDiscard2FireEnergyCardsText:
 	text "Choose and Discard"
-	line "2 Fire Energy cards."
+	line "1 Energy card."
 	done
 
 DiscardOppDeckAsManyFireEnergyCardsText:
@@ -289,22 +294,23 @@ ProcedureForEnergyTransferText:
 	line "4. Press the B Button to end."
 	done
 
-ChooseABellsproutFromDeckText:
-	text "Choose a Bellsprout"
-	line "from the Deck."
-	done
-
-ChooseABellsproutText:
-	text "Choose a Bellsprout."
-	done
-
 ChoosePkmnToRemoveDamageCounterText:
 	text "Choose a Pokémon to remove"
 	line "the Damage counter from."
 	done
 
+ChooseBasicGrassPokemonText:
+	text "Choose a Basic"
+	line "<GRASS> Pokémon"
+	done
+
+ChooseBasicGrassPokemonFromDeckText:
+	text "Choose a Basic <GRASS> Pokémon"
+	line "from the Deck."
+	done
+
 ProcedureForCurseText:
-	text "Procedure for Curse:"
+	text "Procedure for Sinister Hand:"
 	line ""
 	line "1. Choose a Pokémon to move the"
 	line "   Damage counter from and press"

@@ -85,7 +85,7 @@ Script_Jonathan:
 Script_BeatJonathan:
 	start_script
 	print_npc_text Text06b7
-	give_booster_packs BOOSTER_COLOSSEUM_FIRE, BOOSTER_COLOSSEUM_FIRE, NO_BOOSTER
+	give_booster_packs BOOSTER_MYSTERY_FIRE, BOOSTER_MYSTERY_FIRE, NO_BOOSTER
 	print_npc_text Text06b8
 	quit_script_fully
 

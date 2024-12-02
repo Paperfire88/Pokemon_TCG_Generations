@@ -33,3 +33,31 @@ PawniardCardGfx:
 BisharpCardGfx:
 	INCBIN "gfx/cards/bisharp.2bpp"
 	INCBIN "gfx/cards/bisharp.pal"	
+
+MoonStoneCardGfx:
+	INCBIN "gfx/cards/moonstone.2bpp"
+	INCBIN "gfx/cards/moonstone.pal"
+
+AbraCardGfx::
+	INCBIN "gfx/cards/abra.2bpp"
+	INCBIN "gfx/cards/abra.pal"
+
+KadabraCardGfx::
+	INCBIN "gfx/cards/kadabra.2bpp"
+	INCBIN "gfx/cards/kadabra.pal"
+
+AlakazamCardGfx::
+	INCBIN "gfx/cards/alakazam.2bpp"
+	INCBIN "gfx/cards/alakazam.pal"
+
+GastlyCardGfx::
+	INCBIN "gfx/cards/gastly1.2bpp"
+	INCBIN "gfx/cards/gastly1.pal"
+
+HaunterCardGfx::
+	INCBIN "gfx/cards/haunter1.2bpp"
+	INCBIN "gfx/cards/haunter1.pal"
+
+GengarCardGfx::
+	INCBIN "gfx/cards/gengar.2bpp"
+	INCBIN "gfx/cards/gengar.pal"

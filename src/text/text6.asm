@@ -1185,3 +1185,16 @@ Text05da:
 	line "Powers, so read each card's text"
 	line "carefully."
 	done
+
+EvolutionaryLightDescription:
+	text "Once per turn, search your deck for"
+	line "an Evolution card. Show it to your" 
+	line "opponent and put it into your hand." 
+	line "Shuffle your deck afterward."
+	done
+
+SearchyourDeckforanEvolvedPkmnText:
+	text "Search your Deck for an"
+	line "Evolved card."
+	done
+

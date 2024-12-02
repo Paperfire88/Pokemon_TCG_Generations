@@ -32,11 +32,11 @@ AIActionTable_InvincibleRonald:
 	dw AUDINO
 	dw TRAPINCH
 	dw SCYTHER
-	dw GRIMER
+	dw PHANTUMP
 	dw NULL
 
 .list_bench
-	dw GRIMER
+	dw PHANTUMP
 	dw SCYTHER
 	dw TRAPINCH
 	dw AUDINO
@@ -45,11 +45,11 @@ AIActionTable_InvincibleRonald:
 	dw NULL
 
 .list_retreat
-	ai_retreat GRIMER, -1
+	ai_retreat PHANTUMP, -1
 	dw NULL
 
 .list_energy
-	ai_energy GRIMER,         1, -1
+	ai_energy PHANTUMP,         1, -1
 	ai_energy TREVENANT,            3, -1
 	ai_energy SCYTHER,        4, +1
 	ai_energy MAGMORTAR,    2, +0

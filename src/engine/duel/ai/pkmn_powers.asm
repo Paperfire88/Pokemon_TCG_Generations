@@ -419,7 +419,7 @@ HandleAIPkmnPowers:
 	ld a, DUELVARS_ARENA_CARD_STATUS
 	call GetTurnDuelistVariable
 	and CNF_SLP_PRZ
-	jr nz, .next_2
+	jp nz, .next_2
 
 .loop_play_area
 	ld a, DUELVARS_ARENA_CARD
@@ -458,15 +458,20 @@ HandleAIPkmnPowers:
 	call HandleAIHeal
 	jr .next_1
 .check_shift
-	cp16 VENOMOTH
+	cp16 YANMEGA
 	jr nz, .check_peek
 	call HandleAIShift
 	jr .next_1
 .check_peek
 	cp16 DROWZEE
-	jr nz, .check_strange_behavior
+	jr nz, .check_longdistancehypnosis
 	call HandleAIPeek
 	jr .next_1
+.check_longdistancehypnosis
+	cp16 MUNNA
+	jr nz, .check_strange_behavior
+	call HandleAIlongdistancehypnosis
+	jr .next_1	
 .check_strange_behavior
 	cp16 SLOWBRO
 	jr nz, .check_curse
@@ -484,7 +489,7 @@ HandleAIPkmnPowers:
 	inc c
 	ld a, c
 	cp b
-	jr nz, .loop_play_area
+	jp nz, .loop_play_area
 	ret
 
 .next_3
@@ -602,11 +607,11 @@ HandleAIHeal:
 
 ; checks whether AI uses Shift.
 ; input:
-;	c = Play Area location (PLAY_AREA_*) of Venomoth
+;	c = Play Area location (PLAY_AREA_*) of YANMEGA
 HandleAIShift:
 	ld a, c
 	or a
-	ret nz ; return if Venomoth is not Arena card
+	ret nz ; return if YANMEGA is not Arena card
 
 	ldh [hTemp_ffa0], a
 	call GetArenaCardColor
@@ -619,7 +624,7 @@ HandleAIShift:
 	or a
 	ret z ; return if Defending Pokemon has no weakness
 	and b
-	ret nz ; return if Venomoth is already Defending card's weakness type
+	ret nz ; return if YANMEGA is already Defending card's weakness type
 
 ; check whether there's a card in play with
 ; the same color as the Player's card weakness
@@ -927,6 +932,32 @@ HandleAICurse:
 	ldh [hTempCardIndex_ff9f], a
 	ld a, OPPACTION_USE_PKMN_POWER
 	bank1call AIMakeDecision
+	ld a, OPPACTION_EXECUTE_PKMN_POWER_EFFECT
+	bank1call AIMakeDecision
+	ld a, OPPACTION_DUEL_MAIN_SCENE
+	bank1call AIMakeDecision
+	ret
+
+HandleAIlongdistancehypnosis:
+	ld a, c
+	ldh [hTemp_ffa0], a
+	ld de, TREVENANT
+	call CountPokemonIDInBothPlayAreas
+	ret c ; return if there's Muk in play
+
+	ld a, DUELVARS_ARENA_CARD_STATUS
+	call GetNonTurnDuelistVariable
+	or a
+	ret nz
+
+.use_longdistancehypnosis
+	push af
+	ld a, [wce08]
+	ldh [hTempCardIndex_ff9f], a
+	ld a, OPPACTION_USE_PKMN_POWER
+	bank1call AIMakeDecision
+	pop af
+	ldh [hAIPkmnPowerEffectParam], a
 	ld a, OPPACTION_EXECUTE_PKMN_POWER_EFFECT
 	bank1call AIMakeDecision
 	ld a, OPPACTION_DUEL_MAIN_SCENE

@@ -163,7 +163,7 @@ HandleDamageReductionOrNoDamageFromPkmnPowerEffects::
 	ld de, 0
 	ret
 
-; when KROOKODILE is damaged, if its Strikes Back is active, the
+; when MACHAMP is damaged, if its Strikes Back is active, the
 ; attacking Pokemon (turn holder's arena Pokemon) takes 10 damage.
 ; ignore if damage taken at de is 0.
 ; used to bounce back a damaging attack.
@@ -174,15 +174,16 @@ HandleStrikesBack_AgainstDamagingAttack::
 	ld a, [wIsDamageToSelf]
 	or a
 	ret nz
-	ld hl, wTempNonTurnDuelistCardID ; ID of defending Pokemon
-	cphl KROOKODILE
+	ld a, [wTempNonTurnDuelistCardID] ; ID of defending Pokemon
+	cp KROOKODILE
 	ret nz
-	ld de, TREVENANT
+	ld a, TREVENANT
 	call CountPokemonIDInBothPlayAreas
 	ret c
 	ld a, [wLoadedAttackCategory] ; category of attack used
-	cp POKEMON_POWER
+	cp POKEMON_POWER	
 	ret z
+
 	ld a, [wTempPlayAreaLocation_cceb] ; defending Pokemon's PLAY_AREA_*
 	or a ; cp PLAY_AREA_ARENA
 	jr nz, .in_bench
@@ -200,13 +201,11 @@ HandleStrikesBack_AgainstDamagingAttack::
 	call GetTurnDuelistVariable
 	push af
 	push hl
-	ld de, 10
+	ld de, 20
 	call SubtractHP
-	ld a, [wLoadedCard2ID + 0]
-	ld [wTempNonTurnDuelistCardID + 0], a
-	ld a, [wLoadedCard2ID + 1]
-	ld [wTempNonTurnDuelistCardID + 1], a
-	ld hl, 10
+	ld a, [wLoadedCard2ID]
+	ld [wTempNonTurnDuelistCardID], a
+	ld hl, 20
 	call LoadTxRam3
 	ld hl, wLoadedCard2Name
 	ld a, [hli]
@@ -237,7 +236,7 @@ HandleNShieldAndTransparency::
 	call GetCardIDFromDeckIndex
 	cp16 MIMIKYU
 	jr z, .nshield
-	cp16 DUSCLOPS
+	cp16 MAINTENANCE
 	jr z, .transparency
 .done
 	pop de
@@ -400,7 +399,7 @@ HandleNoDamageOrEffectSubstatus::
 ; return carry if damage is prevented
 HandleTransparency::
 	ld hl, wTempNonTurnDuelistCardID
-	cphl DUSCLOPS
+	cphl MAINTENANCE
 	jr z, .transparency
 .done
 	or a
@@ -566,6 +565,45 @@ CountPokemonIDInPlayArea::
 .skip
 	inc b
 	jr .next_bench_slot
+.done
+	ld a, c
+	or a
+	scf
+	jr nz, .found
+	or a
+.found
+	pop bc
+	pop de
+	pop hl
+	ret
+
+CheckPokemonIDInArena::
+	push hl
+	push de
+	push bc
+	ld a, e
+	ld [wTempPokemonID_ce7c + 0], a
+	ld a, d
+	ld [wTempPokemonID_ce7c + 1], a
+	ld c, $0
+	ld a, DUELVARS_ARENA_CARD
+	call GetTurnDuelistVariable
+	cp -1
+	jr z, .done
+	call GetCardIDFromDeckIndex
+	push bc
+	ld a, [wTempPokemonID_ce7c + 0]
+	ld c, a
+	ld a, [wTempPokemonID_ce7c + 1]
+	ld b, a
+	call CompareDEtoBC
+	pop bc
+	jr nz, .done
+	ld a, DUELVARS_ARENA_CARD_STATUS
+	call GetTurnDuelistVariable
+	and CNF_SLP_PRZ
+	jr nz, .done
+	inc c
 .done
 	ld a, c
 	or a
@@ -769,8 +807,8 @@ HandleDestinyBondSubstatus::
 ; attacking Pokemon (turn holder's arena Pokemon) takes 10 damage.
 ; used to bounce back an attack of the RESIDUAL category
 HandleStrikesBack_AgainstResidualAttack::
-	ld hl, wTempNonTurnDuelistCardID
-	cphl KROOKODILE
+	ld a, [wTempNonTurnDuelistCardID]
+	cp KROOKODILE
 	jr z, .strikes_back
 	ret
 .strikes_back
@@ -784,7 +822,7 @@ HandleStrikesBack_AgainstResidualAttack::
 	call CheckCannotUseDueToStatus
 	call SwapTurn
 	ret c
-	ld hl, 10 ; damage to be dealt to attacker
+	ld hl, 20 ; damage to be dealt to attacker
 	call ApplyStrikesBack_AgainstResidualAttack
 	call nc, WaitForWideTextBoxInput
 	ret
@@ -792,10 +830,9 @@ HandleStrikesBack_AgainstResidualAttack::
 ApplyStrikesBack_AgainstResidualAttack::
 	push hl
 	call LoadTxRam3
-	ld a, [wTempTurnDuelistCardID + 0]
+	ld a, [wTempTurnDuelistCardID]
 	ld e, a
-	ld a, [wTempTurnDuelistCardID + 1]
-	ld d, a
+	ld d, $0
 	call LoadCardDataToBuffer2_FromCardID
 	ld hl, wLoadedCard2Name
 	ld a, [hli]

@@ -17,29 +17,29 @@ CardPointers::
 	dab SilcoonCard
 	dab BeautiflyCard
 	dab CascoonCard
-	dab WeedleCard
-	dab KakunaCard
+	dab RowletCard
+	dab DartrixCard
 	dab BeedrillCard
-	dab NidoranFCard
-	dab NidorinaCard
-	dab NidoqueenCard
-	dab NidoranMCard
-	dab NidorinoCard
+	dab ShelmetCard
+	dab AccelgorCard
+	dab IllumiseCard
+	dab KarrablastCard
+	dab EscavalierCard
 	dab NidokingCard
-	dab OddishCard
+	dab ApplinCard
 	dab GloomCard
 	dab VileplumeCard
-	dab ParasCard
-	dab ParasectCard
-	dab VenonatCard
-	dab VenomothCard
+	dab ShroomishCard
+	dab BreloomCard
+	dab YanmaCard
+	dab YanmegaCard
 	dab BellsproutCard
 	dab WeepinbellCard
-	dab VictreebelCard
-	dab GrimerCard
+	dab TsareenaCard
+	dab PhantumpCard
 	dab TrevenantCard
-	dab ExeggcuteCard
-	dab ExeggutorCard
+	dab SnoverCard
+	dab AbomasnowCard
 	dab KoffingCard
 	dab WeezingCard
 	dab TangelaLv8Card
@@ -65,7 +65,7 @@ CardPointers::
 	dab MagmortarCard
 	dab FlareonLv28Card
 	dab TortunatorCard
-	dab MoltresLv37Card
+	dab EnteiCard
 	dab FuecocoCard
 	dab CrocalorCard
 	dab SkeledirgeCard
@@ -79,9 +79,9 @@ CardPointers::
 	dab BlastoiseCard
 	dab PsyduckCard
 	dab GolduckCard
-	dab PoliwagCard
-	dab PoliwhirlCard
-	dab PoliwrathCard
+	dab TympoleCard
+	dab PalpitoadCard
+	dab SeismitoadCard
 	dab SeelCard
 	dab DewgongCard
 	dab WingullCard
@@ -101,7 +101,7 @@ CardPointers::
 	dab OmanyteCard
 	dab OmastarCard
 	dab RelicanthCard
-	dab ArticunoLv37Card
+	dab SuicuneCard
 	dab BlitzleCard
 	dab ZebstrikaCard
 	dab HelioptileCard
@@ -124,7 +124,7 @@ CardPointers::
 	dab CharjabugCard
 	dab VikavoltCard
 	dab ZeraoraCard
-	dab ZapdosLv68Card
+	dab RaikouCard
 	dab TynamoCard
 	dab EelektrikCard
 	dab EelektrossCard
@@ -171,6 +171,9 @@ CardPointers::
 	dab MismagiusCard
 	dab SpiritombCard
 	dab EspeonCard
+	dab AbraCard
+	dab KadabraCard
+	dab AlakazamCard
 	dab MewtwoLv60Card
 	dab MimikyuCard
 	dab MewLv23Card
@@ -189,7 +192,7 @@ CardPointers::
 	dab MewLv15Card
 	dab DeinoCard
 	dab ZweilousCard
-	dab AlakazamCard
+	dab HydreigonCard
 	dab DrowzeeCard
 	dab HypnoCard
 	dab SkrelpCard
@@ -208,21 +211,22 @@ CardPointers::
 	dab SneaselCard
 	dab WeavileCard
 	dab UmbreonCard
+	dab GastlyCard
+	dab HaunterCard
+	dab GengarCard
 	dab PidgeyCard
 	dab PidgeottoCard
 	dab PidgeotLv38Card
-	dab PidgeotLv40Card
 	dab ZigzagoonCard
 	dab LinooneCard
 	dab SpearowCard
-	dab FearowCard
+	dab SwellowCard
 	dab TogepiCard
 	dab TogeticCard
 	dab TogekissCard
 	dab CyclizarCard
 	dab StuffulName
 	dab BewearCard
-	dab MeowthLv14Card
 	dab BidoofCard
 	dab BibarelCard
 	dab OranguruCard
@@ -256,6 +260,7 @@ CardPointers::
 	dab EnergyRetrievalCard
 	dab SuperEnergyRetrievalCard
 	dab EnergySearchCard
+	dab MoonStoneCard
 	dab EnergyRemovalCard
 	dab SuperEnergyRemovalCard
 	dab SwitchCard

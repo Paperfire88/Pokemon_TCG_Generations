@@ -32,7 +32,7 @@ AIActionTable_LegendaryZapdos:
 	dw EEVEE
 	dw VIKAVOLT
 	dw ZERAORA
-	dw ZAPDOS_LV68
+	dw RAIKOU
 	dw NULL
 
 .list_bench
@@ -56,13 +56,13 @@ AIActionTable_LegendaryZapdos:
 	ai_energy JOLTEON_LV29,    3, +1
 	ai_energy VIKAVOLT,     4, +2
 	ai_energy ZERAORA,     4, +2
-	ai_energy ZAPDOS_LV68,     3, +1
+	ai_energy RAIKOU,     3, +1
 	ai_energy EEVEE,           3, +0
 	dw NULL
 
 .list_prize
 	dw GAMBLER
-	dw ZAPDOS_LV68
+	dw RAIKOU
 	dw NULL
 
 .store_list_pointers

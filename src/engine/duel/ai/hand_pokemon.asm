@@ -444,7 +444,7 @@ AIDecideSpecialEvolutions:
 
 .invincible_ronald
 	ld hl, wLoadedCard2ID
-	cphl GRIMER
+	cphl PHANTUMP
 	jr z, .grimer
 	ret
 
@@ -533,11 +533,11 @@ AIDecidePlayLegendaryBirds:
 ; check if card applies
 .begin
 	ld hl, wLoadedCard1ID
-	cphl ARTICUNO_LV37
+	cphl SUICUNE
 	jr z, .articuno
-	cphl MOLTRES_LV37
+	cphl ENTEI
 	jr z, .moltres
-	cphl ZAPDOS_LV68
+	cphl RAIKOU
 	jr z, .zapdos
 	ret
 

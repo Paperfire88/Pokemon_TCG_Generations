@@ -32,7 +32,7 @@ AIActionTable_LegendaryMoltres:
 	dw VULPIX
 	dw MAGMAR_LV24
 	dw TORTUNATOR
-	dw MOLTRES_LV37
+	dw ENTEI
 	dw NULL
 
 .list_bench
@@ -44,7 +44,7 @@ AIActionTable_LegendaryMoltres:
 	dw NULL
 
 .list_play_hand
-	dw MOLTRES_LV37
+	dw ENTEI
 	dw TORTUNATOR
 	dw VULPIX
 	dw GROWLITHE
@@ -64,13 +64,13 @@ AIActionTable_LegendaryMoltres:
 	ai_energy ARCANINE_LV45,  4, +1
 	ai_energy MAGMAR_LV24,    4, -1
 	ai_energy MAGMORTAR,    1, -1
-	ai_energy MOLTRES_LV37,   3, +2
+	ai_energy ENTEI,   3, +2
 	ai_energy TORTUNATOR,   4, +2
 	dw NULL
 
 .list_prize
 	dw ENERGY_REMOVAL
-	dw MOLTRES_LV37
+	dw ENTEI
 	dw NULL
 
 .store_list_pointers
@@ -107,7 +107,7 @@ AIDoTurn_LegendaryMoltres:
 	ld de, TREVENANT
 	call CountPokemonIDInBothPlayAreas
 	jr c, .skip_moltres ; skip if Muk in play
-	ld de, MOLTRES_LV37
+	ld de, ENTEI
 	call LookForCardIDInHandList_Bank5
 	jr nc, .skip_moltres ; skip if no MoltresLv37 in hand
 	ldh [hTemp_ffa0], a

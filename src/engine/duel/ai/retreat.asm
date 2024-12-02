@@ -377,10 +377,10 @@ AIDecideWhetherToRetreat:
 
 .not_mysterious_fossil
 	ld a, [wLoadedCard2ID + 0]
-	cp LOW(TOGEPI_DOLL)
+	cp LOW(CLEFAIRY_DOLL)
 	jr nz, .not_clefairy_doll
 	ld a, [wLoadedCard2ID + 1]
-	cp HIGH(TOGEPI_DOLL)
+	cp HIGH(CLEFAIRY_DOLL)
 	jr z, .loop_ko_2
 
 .not_clefairy_doll
@@ -403,7 +403,7 @@ AIDecideWhetherToRetreat:
 	call GetCardIDFromDeckIndex
 	cp16 MYSTERIOUS_FOSSIL
 	jr z, .mysterious_fossil_or_clefairy_doll
-	cp16 TOGEPI_DOLL
+	cp16 CLEFAIRY_DOLL
 	jr z, .mysterious_fossil_or_clefairy_doll
 
 ; if wAIScore is at least 131, set carry
@@ -719,7 +719,7 @@ AIDecideBenchPokemonToSwitchTo:
 	ld hl, wLoadedCard1ID
 	cphl MYSTERIOUS_FOSSIL
 	jr z, .lower_score_2
-	cphl TOGEPI_DOLL
+	cphl CLEFAIRY_DOLL
 	jr nz, .ai_score_bonus
 .lower_score_2
 	ld a, 10
@@ -840,7 +840,7 @@ AITryToRetreat:
 	call GetCardIDFromDeckIndex
 	cp16 MYSTERIOUS_FOSSIL
 	jp z, .mysterious_fossil_or_clefairy_doll
-	cp16 TOGEPI_DOLL
+	cp16 CLEFAIRY_DOLL
 	jp z, .mysterious_fossil_or_clefairy_doll
 
 ; if card is Asleep or Paralyzed, set carry and exit
