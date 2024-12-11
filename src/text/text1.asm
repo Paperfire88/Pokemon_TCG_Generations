@@ -860,7 +860,7 @@ SandAttackCheckText:
 	done
 
 SmokescreenCheckText:
-	text "Smokescreen check!"
+	text "Effect check!"
 	line "If Tails, Attack is unsuccessful."
 	done
 
@@ -942,6 +942,11 @@ IfTailsDamageToYourselfTooText:
 SuccessCheckIfHeadsAttackIsSuccessfulText:
 	text "Success check!!!"
 	line "If Heads, Attack is successful!"
+	done
+
+SuccessCheckIfHeadsPowerIsSuccessfulText:
+	text "Success check!!!"
+	line "If Heads, PKMN Power is successful!"
 	done
 
 TrainerCardSuccessCheckText:

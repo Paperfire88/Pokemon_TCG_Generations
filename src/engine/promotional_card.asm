@@ -24,7 +24,7 @@ _ShowPromotionalCardScreen:
 	ldtx hl, ReceivedCardText
 	cp16 VILEPLUME
 	jr z, .print_text
-	cp16 BLASTOISE
+	cp16 GRENINJA
 	jr z, .print_text
 	ldtx hl, ReceivedPromotionalFlyingPikachuText
 	cp16 SHINX

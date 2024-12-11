@@ -221,7 +221,7 @@ RockCrusherCardList:
 BlueWaterCardList:
 	deck_list_start
 	card_item WATER_ENERGY,      25
-	card_item PSYDUCK,            2
+	card_item BUIZEL,            2
 	card_item GOLDUCK,            1
 	card_item TYMPOLE,            2
 	card_item PALPITOAD,          1
@@ -296,7 +296,7 @@ EnergyRemovalCardList:
 	card_item WATER_ENERGY,            15
 	card_item PSYCHIC_ENERGY,           8
 	card_item DOUBLE_COLORLESS_ENERGY,  3
-	card_item PSYDUCK,                  3
+	card_item BUIZEL,                  3
 	card_item GOLDUCK,                  2
 	card_item TYMPOLE,                  4
 	card_item PALPITOAD,                3
@@ -318,7 +318,7 @@ RainDancerCardList:
 	card_item WATER_ENERGY,           24
 	card_item SQUIRTLE,                4
 	card_item WARTORTLE,               3
-	card_item BLASTOISE,               2
+	card_item GRENINJA,               2
 	card_item GOLDEEN,                 4
 	card_item SEAKING,                 3
 	card_item HORSEA,                  3
@@ -816,8 +816,8 @@ WondersOfScienceCardList:
 ReplaceEmAllCardList:
 	deck_list_start
 	card_item FIRE_ENERGY,            24
-	card_item VULPIX,                  4
-	card_item NINETALES_LV32,          2
+	card_item HOUNDOUR,                  4
+	card_item HOUNDOOM,          2
 	card_item DELTA_KINGDRA,          1
 	card_item GROWLITHE,               4
 	card_item CAMERUPT,           1
@@ -861,8 +861,8 @@ TrafficLightCardList:
 	card_item LIGHTNING_ENERGY,  8
 	card_item CHARMANDER,        3
 	card_item CHARMELEON,        2
-	card_item PONYTA,            3
-	card_item RAPIDASH,          2
+	card_item DARUMAKA,            3
+	card_item DARMANITAN,          2
 	card_item NUMEL,      2
 	card_item DREDNAW,     2
 	card_item BLITZLE,      2
@@ -882,13 +882,13 @@ FirePokemonCardList:
 	card_item CHARMANDER,               3
 	card_item CHARMELEON,               2
 	card_item EMBOAR,                1
-	card_item VULPIX,                   3
-	card_item NINETALES_LV32,           1
+	card_item HOUNDOUR,                   3
+	card_item HOUNDOOM,           1
 	card_item DELTA_KINGDRA,           1
 	card_item GROWLITHE,                2
 	card_item ARCANINE_LV45,            1
-	card_item PONYTA,                   2
-	card_item RAPIDASH,                 1
+	card_item DARUMAKA,                   2
+	card_item DARMANITAN,                 1
 	card_item MAGMAR_LV24,              1
 	card_item MAGMORTAR,              1
 	card_item NUMEL,             1
@@ -929,7 +929,7 @@ FireChargeCardList:
 	card_item GAMBLER,                  1
 	deck_list_end
 
-CharmanderAndFriendsCardList:
+TepigAndFriendsCardList:
 	; deck_list_start
 	card_item GRASS_ENERGY,     8
 	card_item FIRE_ENERGY,     10
@@ -944,7 +944,7 @@ CharmanderAndFriendsCardList:
 	card_item EMBOAR,        1
 	card_item GROWLITHE,        2
 	card_item ARCANINE_LV45,    1
-	card_item PONYTA,           2
+	card_item DARUMAKA,           2
 	card_item MAGMAR_LV24,      1
 	card_item SEEL,             2
 	card_item DEWGONG,          1
@@ -964,7 +964,7 @@ CharmanderAndFriendsCardList:
 	;deck_list_end
 	db 0 ; end of list
 
-SquirtleAndFriendsCardList:
+FroakieAndFriendsCardList:
 	deck_list_start
 	card_item FIRE_ENERGY,       8
 	card_item WATER_ENERGY,     11
@@ -976,7 +976,7 @@ SquirtleAndFriendsCardList:
 	card_item MAGMAR_LV24,       1
 	card_item SQUIRTLE,          2
 	card_item WARTORTLE,         1
-	card_item BLASTOISE,         1
+	card_item GRENINJA,         1
 	card_item SEEL,              2
 	card_item DEWGONG,           1
 	card_item GOLDEEN,           1
@@ -1001,7 +1001,7 @@ SquirtleAndFriendsCardList:
 	card_item FULL_HEAL,         1
 	deck_list_end
 
-BulbasaurAndFriendsCardList:
+ChikoritaAndFriendsCardList:
 	deck_list_start
 	card_item GRASS_ENERGY,     9
 	card_item LIGHTNING_ENERGY, 8
@@ -1108,7 +1108,7 @@ WaterBeetleCardList:
 LegendaryMoltresCardList:
 	deck_list_start
 	card_item FIRE_ENERGY,            25
-	card_item VULPIX,                  4
+	card_item HOUNDOUR,                  4
 	card_item DELTA_KINGDRA,          3
 	card_item GROWLITHE,               4
 	card_item ARCANINE_LV45,           2

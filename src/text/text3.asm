@@ -284,16 +284,16 @@ FireChargeText:
 	text "Fire Charge"
 	done
 
-CharmanderAndFriendsText:
-	text "Charmander & Friends"
+TepigAndFriendsText:
+	text "Tepig & Friends"
 	done
 
-SquirtleAndFriendsText:
-	text "Squirtle & Friends"
+FroakieAndFriendsText:
+	text "Froakie & Friends"
 	done
 
-BulbasaurAndFriendsText:
-	text "Bulbasaur & Friends"
+ChikoritaAndFriendsText:
+	text "Chikorita & Friends"
 	done
 
 PsychicMachampText:
@@ -524,19 +524,19 @@ FireChargeDescriptionText:
 	line "opponent and you!"
 	done
 
-CharmanderAndFriendsDescriptionText:
+TepigAndFriendsDescriptionText:
 	text "A Fire, Grass and Water Deck:"
-	line "Charmander, Pinsir and Seel"
+	line "Tepig, Pinsir and Seel"
 	done
 
-SquirtleAndFriendsDescriptionText:
+FroakieAndFriendsDescriptionText:
 	text "A Water, Fire, and Lightning Deck:"
-	line "Squirtle, Charmander and Pikachu"
+	line "Froakie, Tepig and Pikachu"
 	done
 
-BulbasaurAndFriendsDescriptionText:
+ChikoritaAndFriendsDescriptionText:
 	text "A Grass, Lightning and Psychic Deck:"
-	line "Bulbasaur, Pikachu and Abra"
+	line "Chikorita, Pikachu and Abra"
 	done
 
 PsychicMachampDescriptionText:
@@ -1765,15 +1765,15 @@ SelectDeckToDuelText:
 	line "you wish to Duel against."
 	done
 
-CharmanderAndFriendsDeckChoiceText:
+TepigAndFriendsDeckChoiceText:
 	text "CHARMANDER & Friends Deck"
 	done
 
-SquirtleAndFriendsDeckChoiceText:
+FroakieAndFriendsDeckChoiceText:
 	text "SQUIRTLE & Friends Deck"
 	done
 
-BulbasaurAndFriendsDeckChoiceText:
+ChikoritaAndFriendsDeckChoiceText:
 	text "CHIKORITA & Friends Deck"
 	done
 

@@ -44,21 +44,19 @@ CardPointers::
 	dab WeezingCard
 	dab TangelaLv8Card
 	dab TangrowthCard	
-	dab GrubbinCard
-	dab BlipbugCard
 	dab ScytherCard
-	dab CharmanderCard
+	dab TepigCard
 	dab CharmeleonCard
 	dab CharizardCard
-	dab VulpixCard
-	dab NinetalesLv32Card
+	dab HoundourCard
+	dab HoundoomCard
 	dab DeltaKingdra
 	dab GrowlitheCard
 	dab ArcanineLv45Card
 	dab NumelCard
 	dab CameruptCard
-	dab PonytaCard
-	dab RapidashCard
+	dab DarumakaCard
+	dab DarmanitanCard
 	dab LitleoCard
 	dab PyroarCard
 	dab MagmarLv24Card
@@ -74,10 +72,10 @@ CardPointers::
 	dab SalamenceCard
 	dab DruddigonCard
 	dab HoohCard
-	dab SquirtleCard
+	dab FroakieCard
 	dab WartortleCard
-	dab BlastoiseCard
-	dab PsyduckCard
+	dab GreninjaCard
+	dab BuizelCard
 	dab GolduckCard
 	dab TympoleCard
 	dab PalpitoadCard
@@ -118,9 +116,11 @@ CardPointers::
 	dab ElectrodeLv35Card
 	dab ElectrodeLv42Card
 	dab ElectabuzzLv35Card
+	dab ElectivireCard
 	dab ElectrikeCard
 	dab ManectricCard
 	dab JolteonLv29Card
+	dab GrubbinCard
 	dab CharjabugCard
 	dab VikavoltCard
 	dab ZeraoraCard
@@ -183,6 +183,7 @@ CardPointers::
 	dab MetagrossCard
 	dab MunnaCard
 	dab MusharnaCard
+	dab BlipbugCard
 	dab DottlerCard
 	dab OrbeetleCard
 	dab MorelullCard
@@ -262,7 +263,7 @@ CardPointers::
 	dab EnergySearchCard
 	dab MoonStoneCard
 	dab EnergyRemovalCard
-	dab SuperEnergyRemovalCard
+	dab RecycleCard
 	dab SwitchCard
 	dab PokemonCenterCard
 	dab PokeBallCard
@@ -278,9 +279,10 @@ CardPointers::
 	dab SuperPotionCard
 	dab FullHealCard
 	dab ReviveCard
+	dab SuperRodCard
 	dab MaintenanceCard
 	dab PokemonFluteCard
 	dab GamblerCard
-	dab RecycleCard
+	dab SuperEnergyRemovalCard
 	dwb NULL, $0
 	assert_table_length NUM_CARDS + 2

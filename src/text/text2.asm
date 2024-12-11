@@ -520,7 +520,7 @@ ChoosePokemonToRemoveEnergyFromText:
 	done
 
 Choose2BasicEnergyCardsFromDiscardPileText:
-	text "Choose 2 Basic Energy cards"
+	text "Choose up to 2 Basic Energy cards"
 	line "from the Discard Pile."
 	done
 
@@ -1245,28 +1245,28 @@ SamsPracticeDeckName:
 	text "Sam's Practice"
 	done
 
-CharmanderAndFriendsDeckName:
-	text "Charmander & Friends"
+TepigAndFriendsDeckName:
+	text "Tepig & Friends"
 	done
 
-CharmanderExtraDeckName:
-	text "Charmander extra"
+TepigExtraDeckName:
+	text "Tepig extra"
 	done
 
-SquirtleAndFriendsDeckName:
-	text "Squirtle & Friends"
+FroakieAndFriendsDeckName:
+	text "Froakie & Friends"
 	done
 
-SquirtleExtraDeckName:
-	text "Squirtle extra"
+FroakieExtraDeckName:
+	text "Froakie extra"
 	done
 
-BulbasaurAndFriendsDeckName:
-	text "Bulbasaur & Friends"
+ChikoritaAndFriendsDeckName:
+	text "Chikorita & Friends"
 	done
 
-BulbasaurExtraDeckName:
-	text "Bulbasaur extra"
+ChikoritaExtraDeckName:
+	text "Chikorita extra"
 	done
 
 FirstStrikeDeckName:

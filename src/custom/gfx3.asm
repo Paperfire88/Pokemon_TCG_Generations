@@ -61,3 +61,11 @@ HaunterCardGfx::
 GengarCardGfx::
 	INCBIN "gfx/cards/gengar.2bpp"
 	INCBIN "gfx/cards/gengar.pal"
+
+SuperRodCardGfx::
+	INCBIN "gfx/cards/superrod.2bpp"
+	INCBIN "gfx/cards/superrod.pal"
+
+ElectivireCardGfx::
+	INCBIN "gfx/cards/Electivire.2bpp"
+	INCBIN "gfx/cards/Electivire.pal"	

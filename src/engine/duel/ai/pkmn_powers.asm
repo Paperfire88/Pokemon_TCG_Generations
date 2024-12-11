@@ -1226,7 +1226,7 @@ HandleAIGoGoRainDanceEnergy:
 	cp GO_GO_RAIN_DANCE_DECK_ID
 	ret nz ; return if not Go Go Rain Dance deck
 
-	ld de, BLASTOISE
+	ld de, GRENINJA
 	call CountPokemonIDInPlayArea
 	ret nc ; return if no Blastoise
 	ld de, TREVENANT

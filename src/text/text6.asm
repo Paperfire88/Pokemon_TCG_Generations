@@ -98,7 +98,7 @@ Clerk12ChallengeCupIntroText:
 	done
 
 Clerk12ChallengeCupContenderText:
-	text "Presently, <RAMNAME> is still"
+	text "Presently, <RAMTEXT> is still"
 	line "a contender!"
 	done
 
@@ -1159,7 +1159,7 @@ Text05d8:
 Text05d9:
 	text "There are 3 types of Pokémon cards:"
 	line "Basic Pokémon, Stage 1 Pokémon and "
-	line "Stage 2 Pokémon. Squirtle is a "
+	line "Stage 2 Pokémon. Froakie is a "
 	line "Basic, Wartortle a Stage 1 and "
 	line "Blastoise a Stage 2 Pokémon."
 	line "Basic Pokémon are the only cards"
@@ -1168,7 +1168,7 @@ Text05d9:
 	line "evolved to a Stage 1 Pokémon. A"
 	line "Stage 1 Pokémon in the Play Area "
 	line "can then be evolved to a Stage 2 "
-	line "Pokémon. Therefore, Squirtle is "
+	line "Pokémon. Therefore, Froakie is "
 	line "needed in order to play Wartortle,"
 	line "and Wartortle is needed in"
 	line "order to play Blastoise."

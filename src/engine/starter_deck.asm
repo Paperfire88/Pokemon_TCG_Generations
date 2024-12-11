@@ -2,9 +2,9 @@
 ; and also adds to the collection its corresponding extra cards
 ; input:
 ; - a = starter deck chosen
-;   $0 = Charmander
-;   $1 = Squirtle
-;   $2 = Bulbasaur
+;   $0 = Tepig
+;   $1 = Froakie
+;   $2 = Chikorita
 _AddStarterDeck:
 	add a
 	ld e, a

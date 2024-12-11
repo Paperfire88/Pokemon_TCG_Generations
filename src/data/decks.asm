@@ -5,12 +5,12 @@ DeckPointers::
 	dw SamsPracticeDeck
 	dw PracticePlayerDeck
 	dw SamsPracticeDeck
-	dw CharmanderAndFriendsDeck
-	dw CharmanderExtraDeck
-	dw SquirtleAndFriendsDeck
-	dw SquirtleExtraDeck
-	dw BulbasaurAndFriendsDeck
-	dw BulbasaurExtraDeck
+	dw TepigAndFriendsDeck
+	dw TepigExtraDeck
+	dw FroakieAndFriendsDeck
+	dw FroakieExtraDeck
+	dw ChikoritaAndFriendsDeck
+	dw ChikoritaExtraDeck
 	dw LightningAndFireDeck
 	dw WaterAndFightingDeck
 	dw GrassAndPsychicDeck
@@ -376,7 +376,7 @@ UnnamedDeck2:
 	card_item ENTEI,     4
 	card_item EEVEE,            4
 	card_item CHARMANDER,       4
-	card_item VULPIX,           4
+	card_item HOUNDOUR,           4
 	card_item SUICUNE,    4
 	card_item DREDNAW,    4
 	card_item POKEMON_BREEDER,  4
@@ -387,7 +387,7 @@ UnnamedDeck2:
 	card_item WURMPLE,           4
 	card_item MYSTERIOUS_FOSSIL,  4
 	card_item POKEMON_BREEDER,    4
-	card_item PSYDUCK,            4
+	card_item BUIZEL,            4
 	card_item STUFFUL,    4
 	card_item ROWLET,             4
 	card_item TYRANTRUM,         4
@@ -411,10 +411,10 @@ UnnamedDeck2:
 
 	deck_list_start
 	card_item WATER_ENERGY,      24
-	card_item BLASTOISE,          4
+	card_item GRENINJA,          4
 	card_item SQUIRTLE,           4
 	card_item HORSEA,             4
-	card_item PSYDUCK,            4
+	card_item BUIZEL,            4
 	card_item TYMPOLE,            4
 	card_item MYSTERIOUS_FOSSIL,  4
 	card_item SKRELP,          4
@@ -424,10 +424,10 @@ UnnamedDeck2:
 
 	deck_list_start
 	card_item WATER_ENERGY,      24
-	card_item BLASTOISE,          4
+	card_item GRENINJA,          4
 	card_item WARTORTLE,          4
 	card_item SQUIRTLE,           4
-	card_item PSYDUCK,            4
+	card_item BUIZEL,            4
 	card_item GOLDUCK,            4
 	card_item TYMPOLE,            4
 	card_item MYSTERIOUS_FOSSIL,  4
@@ -474,7 +474,7 @@ UnnamedDeck2:
 	card_item OMASTAR,        4
 	card_item OMANYTE,        4
 	card_item WARTORTLE,      4
-	card_item BLASTOISE,      4
+	card_item GRENINJA,      4
 	card_item WEAVILE,       4
 	card_item KINGLER,        4
 	card_item KRABBY,         4
@@ -519,7 +519,7 @@ PracticePlayerDeck:
 	card_item WARTORTLE,      1
 	card_item BILL,           1
 	card_item WATER_ENERGY,   1
-	card_item BLASTOISE,      1
+	card_item GRENINJA,      1
 	card_item WATER_ENERGY,   1
 	card_item PSYCHIC_ENERGY, 1
 	card_item WATER_ENERGY,   1
@@ -615,7 +615,7 @@ SamsPracticeDeck:
 	deck_list_end
 	tx SamsPracticeDeckName
 
-CharmanderAndFriendsDeck:
+TepigAndFriendsDeck:
 	deck_list_start
 	card_item FIRE_ENERGY,      14
 	card_item FIGHTING_ENERGY,   6
@@ -623,9 +623,9 @@ CharmanderAndFriendsDeck:
 	card_item CHARMELEON,        2
 	card_item EMBOAR,         1
 	card_item NUMEL,         1
-	card_item PONYTA,            2
+	card_item DARUMAKA,            2
 	card_item MAGMAR_LV24,    	 1
-	card_item VULPIX,    	 1
+	card_item HOUNDOUR,    	 1
 	card_item GROWLITHE,    	 2
 	card_item SANDSHREW,           2
 	card_item SANDSLASH,           1
@@ -647,9 +647,9 @@ CharmanderAndFriendsDeck:
 	card_item DEFENDER,         1
 	card_item RECYCLE,         1
 	deck_list_end
-	tx CharmanderAndFriendsDeckName
+	tx TepigAndFriendsDeckName
 
-CharmanderExtraDeck:
+TepigExtraDeck:
 	deck_list_start
 	card_item GRASS_ENERGY,    4
 	card_item WATER_ENERGY,    4
@@ -680,15 +680,15 @@ CharmanderExtraDeck:
 	card_item BIDOOF,        2
 	card_item GRASS_ENERGY,   8 ; irrelevant
 	deck_list_end
-	tx CharmanderExtraDeckName
+	tx TepigExtraDeckName
 
-SquirtleAndFriendsDeck:
+FroakieAndFriendsDeck:
 	deck_list_start
 	card_item WATER_ENERGY,    14
 	card_item PSYCHIC_ENERGY,   6
 	card_item SQUIRTLE,         3
 	card_item WARTORTLE,        2
-	card_item BLASTOISE,        1
+	card_item GRENINJA,        1
 	card_item SEEL,             2
 	card_item WINGULL,          1
 	card_item HORSEA,           2
@@ -713,9 +713,9 @@ SquirtleAndFriendsDeck:
 	card_item DEFENDER,         1
 	card_item RECYCLE,         1
 	deck_list_end
-	tx SquirtleAndFriendsDeckName
+	tx FroakieAndFriendsDeckName
 
-SquirtleExtraDeck:
+FroakieExtraDeck:
 	deck_list_start
 	card_item GRASS_ENERGY,      4
 	card_item FIRE_ENERGY,       4
@@ -739,9 +739,9 @@ SquirtleExtraDeck:
 	card_item ELECTRIKE,   1
 	card_item GRASS_ENERGY,     24 ; irrelevant
 	deck_list_end
-	tx SquirtleExtraDeckName
+	tx FroakieExtraDeckName
 
-BulbasaurAndFriendsDeck:
+ChikoritaAndFriendsDeck:
 	deck_list_start
 	card_item GRASS_ENERGY,    14
 	card_item LIGHTNING_ENERGY,     6
@@ -773,9 +773,9 @@ BulbasaurAndFriendsDeck:
 	card_item DEFENDER,         1
 	card_item RECYCLE,         1
 	deck_list_end
-	tx BulbasaurAndFriendsDeckName
+	tx ChikoritaAndFriendsDeckName
 
-BulbasaurExtraDeck:
+ChikoritaExtraDeck:
 	deck_list_start
 	card_item LIGHTNING_ENERGY,  4
 	card_item PSYCHIC_ENERGY,    4
@@ -797,7 +797,7 @@ BulbasaurExtraDeck:
 	card_item GUST_OF_WIND,      1
 	card_item GRASS_ENERGY,     30 ; irrelevant
 	deck_list_end
-	tx BulbasaurExtraDeckName
+	tx ChikoritaExtraDeckName
 	
 LightningAndFireDeck:
 	deck_list_start
@@ -809,8 +809,8 @@ LightningAndFireDeck:
 	card_item EMBOAR,                1
 	card_item GROWLITHE,                2
 	card_item ARCANINE_LV45,            1
-	card_item PONYTA,                   2
-	card_item RAPIDASH,                 1
+	card_item DARUMAKA,                   2
+	card_item DARMANITAN,                 1
 	card_item MAGMAR_LV24,              1
 	card_item MAGMORTAR,              1
 	card_item BLITZLE,             1
@@ -1043,8 +1043,8 @@ GoGoRainDanceDeck:
 	card_item WATER_ENERGY,           16
 	card_item SQUIRTLE,                4
 	card_item WARTORTLE,               3
-	card_item BLASTOISE,               4
-	card_item PSYDUCK,                 4
+	card_item GRENINJA,               4
+	card_item BUIZEL,                 4
 	card_item GOLDUCK,                 3
 	card_item WINGULL,                2
 	card_item PROFESSOR_OAK,           3
@@ -1170,8 +1170,8 @@ FireChargeDeck:
 	deck_list_start
 	card_item FIRE_ENERGY,             13
 	card_item PSYCHIC_ENERGY,             6
-	card_item VULPIX,                4
-	card_item NINETALES_LV32,            3
+	card_item HOUNDOUR,                4
+	card_item HOUNDOOM,            3
 	card_item TORTUNATOR,              1
 	card_item NUMEL,              3
 	card_item CAMERUPT,              3
@@ -1329,8 +1329,8 @@ HeatedBattleDeck:
 	deck_list_start
 	card_item FIRE_ENERGY,       8
 	card_item FIGHTING_ENERGY,  12
-	card_item PONYTA,       4
-	card_item RAPIDASH,		3
+	card_item DARUMAKA,       4
+	card_item DARMANITAN,		3
 	card_item CROAGUNK,            4
 	card_item TOXICROAK,          2
 	card_item HITMONLEE,         3
@@ -1765,9 +1765,9 @@ AngerDeck:
 	card_item DOUBLE_COLORLESS_ENERGY,  4
 	card_item GROWLITHE,                3
 	card_item CAMERUPT,            2
-	card_item PONYTA,                   3
+	card_item DARUMAKA,                   3
 	card_item ZIGZAGOON,                  3
-	card_item RAPIDASH,                 2
+	card_item DARMANITAN,                 2
 	card_item RUFFLET,                    3
 	card_item BRAVIARY,                   2
 	card_item DRUDDIGON,                   3
@@ -1788,8 +1788,8 @@ FlamethrowerDeck:
 	card_item CHARMANDER,               4
 	card_item CHARMELEON,               3
 	card_item EMBOAR,                2
-	card_item VULPIX,                   4
-	card_item NINETALES_LV32,           2
+	card_item HOUNDOUR,                   4
+	card_item HOUNDOOM,           2
 	card_item MAGMAR_LV24,              4
 	card_item MAGMORTAR,              2
 	card_item FLAREON_LV28,             2
@@ -1831,7 +1831,7 @@ ImakuniDeck:
 	deck_list_start
 	card_item WATER_ENERGY,   10
 	card_item PSYCHIC_ENERGY, 16
-	card_item PSYDUCK,         4
+	card_item BUIZEL,         4
 	card_item GOLDUCK,         3
 	card_item CRESSELIA,    2
 	card_item SLOWPOKE_LV18,   2

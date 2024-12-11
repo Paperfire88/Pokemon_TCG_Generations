@@ -69,9 +69,9 @@ AutoDeckMachineEntries:
 	auto_deck FireChargeCardList,           FireChargeText,           FireChargeDescriptionText
 
 ; Auto Deck Machine
-	auto_deck CharmanderAndFriendsCardList, CharmanderAndFriendsText, CharmanderAndFriendsDescriptionText
-	auto_deck SquirtleAndFriendsCardList,   SquirtleAndFriendsText,   SquirtleAndFriendsDescriptionText
-	auto_deck BulbasaurAndFriendsCardList,  BulbasaurAndFriendsText,  BulbasaurAndFriendsDescriptionText
+	auto_deck TepigAndFriendsCardList, TepigAndFriendsText, TepigAndFriendsDescriptionText
+	auto_deck FroakieAndFriendsCardList,   FroakieAndFriendsText,   FroakieAndFriendsDescriptionText
+	auto_deck ChikoritaAndFriendsCardList,  ChikoritaAndFriendsText,  ChikoritaAndFriendsDescriptionText
 	auto_deck PsychicKrookodileCardList,       PsychicMachampText,       PsychicMachampDescriptionText
 	auto_deck WaterBeetleCardList,          WaterBeetleText,          WaterBeetleDescriptionText
 

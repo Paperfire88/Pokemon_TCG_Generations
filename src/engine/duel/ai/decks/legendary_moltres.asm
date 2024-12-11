@@ -29,7 +29,7 @@ AIActionTable_LegendaryMoltres:
 .list_arena
 	dw MAGMORTAR
 	dw GROWLITHE
-	dw VULPIX
+	dw HOUNDOUR
 	dw MAGMAR_LV24
 	dw TORTUNATOR
 	dw ENTEI
@@ -37,7 +37,7 @@ AIActionTable_LegendaryMoltres:
 
 .list_bench
 	dw TORTUNATOR
-	dw VULPIX
+	dw HOUNDOUR
 	dw GROWLITHE
 	dw MAGMORTAR
 	dw MAGMAR_LV24
@@ -46,7 +46,7 @@ AIActionTable_LegendaryMoltres:
 .list_play_hand
 	dw ENTEI
 	dw TORTUNATOR
-	dw VULPIX
+	dw HOUNDOUR
 	dw GROWLITHE
 	dw MAGMORTAR
 	dw MAGMAR_LV24
@@ -54,11 +54,11 @@ AIActionTable_LegendaryMoltres:
 
 .list_retreat
 	ai_retreat GROWLITHE, -5
-	ai_retreat VULPIX,    -5
+	ai_retreat HOUNDOUR,    -5
 	dw NULL
 
 .list_energy
-	ai_energy VULPIX,         3, +0
+	ai_energy HOUNDOUR,         3, +0
 	ai_energy DELTA_KINGDRA, 3, +1
 	ai_energy GROWLITHE,      3, +1
 	ai_energy ARCANINE_LV45,  4, +1

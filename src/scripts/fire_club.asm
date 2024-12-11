@@ -127,11 +127,13 @@ Script_BeatKen:
 	show_medal_received_screen EVENT_BEAT_KEN
 	record_master_win $08
 	print_npc_text Text06c2
+	give_card HOUNDOOM
+    show_card_received_screen HOUNDOOM
 .give_booster_packs
-	give_booster_packs BOOSTER_MYSTERY_NEUTRAL, BOOSTER_MYSTERY_NEUTRAL, NO_BOOSTER
+	give_booster_packs BOOSTER_MYSTERY_FIRE, BOOSTER_LABORATORY_FIRE, BOOSTER_LABORATORY_NEUTRAL, NO_BOOSTER
 	print_npc_text Text06c3
 	quit_script_fully
-
+ 
 Script_LostToKen:
 	start_script
 	test_if_event_false EVENT_BEAT_KEN

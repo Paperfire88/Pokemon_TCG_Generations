@@ -1180,7 +1180,7 @@ Man1RequestedCardsList:
 	dw VIBRAVA
 	dw OMASTAR
 	dw BRELOOM
-	dw RAPIDASH
+	dw DARMANITAN
 	dw WEEZING
 .end
 
@@ -1596,9 +1596,9 @@ ScriptCommand_ChooseStarterDeckMultichoice:
 	dw .text_entries ; location of table containing text entries
 
 .text_entries
-	tx CharmanderAndFriendsDeckChoiceText
-	tx SquirtleAndFriendsDeckChoiceText
-	tx BulbasaurAndFriendsDeckChoiceText
+	tx TepigAndFriendsDeckChoiceText
+	tx FroakieAndFriendsDeckChoiceText
+	tx ChikoritaAndFriendsDeckChoiceText
 
 ; displays a textbox with multiple choices and a cursor.
 ; takes as an argument in h1 a pointer to a table

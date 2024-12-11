@@ -499,10 +499,7 @@ DetermineAIScoreOfAttackEnergyRequirement:
 	ld a, 3
 	call AddToAIScore
 
-; if the attack KOs player and this is the active card, add to AI score.
-	ldh a, [hTempPlayAreaLocation_ff9d]
-	or a
-	jr nz, .check_evolution
+; if the attack KOs player add to AI score.
 	ld a, [wSelectedAttack]
 	call EstimateDamage_VersusDefendingCard
 	ld a, DUELVARS_ARENA_CARD_HP
@@ -515,9 +512,7 @@ DetermineAIScoreOfAttackEnergyRequirement:
 	ld a, 20
 	call AddToAIScore
 
-; this is possibly a bug.
-; this is an identical check as above to test whether this card is active.
-; in case it is active, the score gets added 10 more points,
+; add 10 more in case it's the Arena card
 	ldh a, [hTempPlayAreaLocation_ff9d]
 	or a
 	jr nz, .check_evolution
@@ -977,7 +972,7 @@ CheckSpecificDecksToAttachDoubleColorless:
 	ret
 
 ; if playing Legendary Dragonite deck,
-; check for Charmander and Dratini.
+; check for Tepig and Dratini.
 .legendary_dragonite_deck
 	call .GetArenaCardID
 	cp16 CHARMANDER

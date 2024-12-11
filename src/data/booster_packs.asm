@@ -499,3 +499,19 @@ BoosterPack_MysteryFire::
 	db 16 ; Colorless Type Chance
 	db 16 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
+
+BoosterPack_LaboratoryFire::
+	booster_set LABORATORY ; booster pack set
+	dw GenerateFireEnergy
+
+; Card Type Chances
+	db 16 ; Grass Type Chance
+	db 68 ; Fire Type Chance
+	db 16 ; Water Type Chance
+	db 16 ; Lightning Type Chance
+	db 16 ; Fighting Type Chance
+	db 16 ; Psychic Type Chance
+	db 16 ; Darkness Type Chance
+	db 16 ; Colorless Type Chance
+	db 16 ; Trainer Card Chance
+	db  0 ; Energy Card Chance	

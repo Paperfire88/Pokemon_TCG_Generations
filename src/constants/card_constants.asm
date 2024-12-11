@@ -42,21 +42,19 @@
 	const WEEZING                     ; $2b
 	const TANGELA_LV8                 ; $2c
 	const TANGROWTH                ; $2d
-	const GRUBBIN                ; $2d
-	const BLIPBUG
 	const SCYTHER                     ; $2e
 	const CHARMANDER                  ; $30
 	const CHARMELEON                  ; $31
 	const EMBOAR                   ; $32
-	const VULPIX                      ; $33
-	const NINETALES_LV32              ; $34
+	const HOUNDOUR                      ; $33
+	const HOUNDOOM              ; $34
 	const DELTA_KINGDRA              ; $35
 	const GROWLITHE                   ; $36
 	const ARCANINE_LV45               ; $38
 	const NUMEL                ; $3d
 	const CAMERUPT               ; $37
-	const PONYTA                      ; $39
-	const RAPIDASH                    ; $3a
+	const DARUMAKA                      ; $39
+	const DARMANITAN                    ; $3a
 	const LITLEO
 	const PYROAR
 	const MAGMAR_LV24                 ; $3b
@@ -74,8 +72,8 @@
 	const HOOH
 	const SQUIRTLE                    ; $41
 	const WARTORTLE                   ; $42
-	const BLASTOISE                   ; $43
-	const PSYDUCK                     ; $44
+	const GRENINJA                   ; $43
+	const BUIZEL                     ; $44
 	const GOLDUCK                     ; $45
 	const TYMPOLE                     ; $46
 	const PALPITOAD                   ; $47
@@ -116,9 +114,11 @@
 	const ELECTRODE_LV35              ; $6e
 	const ELECTRODE_LV42              ; $6f
 	const ELECTABUZZ_LV35             ; $71
+	const ELECTIVIRE             ; $71
 	const ELECTRIKE             ; $70
 	const MANECTRIC                ; $72
 	const JOLTEON_LV29                ; $73
+	const GRUBBIN                ; $2d
 	const CHARJABUG              ; $6a
 	const VIKAVOLT                 ; $74
 	const ZERAORA                 ; $75
@@ -183,6 +183,7 @@
 	const MUSHARNA
 	const MORELULL
 	const SHIINOTIC
+	const BLIPBUG
 	const DOTTLER
 	const ORBEETLE
 	const MEWTWO_LV53                 ; $9d
@@ -260,7 +261,7 @@
 	const ENERGY_SEARCH               ; $cf
 	const MOON_STONE
 	const ENERGY_REMOVAL              ; $d0
-	const SUPER_ENERGY_REMOVAL        ; $d1
+	const RECYCLE                     ; $e4
 	const SWITCH                      ; $d2
 	const POKEMON_CENTER              ; $d3
 	const POKE_BALL                   ; $d4
@@ -276,8 +277,9 @@
 	const SUPER_POTION                ; $de
 	const FULL_HEAL                   ; $df
 	const REVIVE                      ; $e0
+	const SUPER_ROD
 	const MAINTENANCE                 ; $e1
 	const POKEMON_FLUTE               ; $e2
 	const GAMBLER                     ; $e3
-	const RECYCLE                     ; $e4
+	const SUPER_ENERGY_REMOVAL        ; $d1
 DEF NUM_CARDS EQU const_value - 1

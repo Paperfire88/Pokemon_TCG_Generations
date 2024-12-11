@@ -1972,7 +1972,7 @@ AIDecide_PokemonBreeder:
 	jr z, .found
 	cp16 MEGANIUM
 	jr z, .found
-	cp16 BLASTOISE
+	cp16 GRENINJA
 	jr z, .found
 	cp16 VILEPLUME
 	jr z, .found
@@ -2361,7 +2361,7 @@ AIDecide_ProfessorOak:
 	jr c, .check_hand
 
 ; no Muk in Play Area
-	ld de, BLASTOISE
+	ld de, GRENINJA
 	call CountPokemonIDInPlayArea
 	jr nc, .check_hand
 
@@ -2386,7 +2386,7 @@ AIDecide_ProfessorOak:
 	call LoadCardDataToBuffer1_FromDeckIndex
 	ld a, [wLoadedCard1Type]
 	cp TYPE_ENERGY
-	jr c, .loop_hand ; bug, should be jr nc
+	jr nc, .loop_hand ; bug, should be jr nc
 
 	ld a, [wLoadedCard1Stage]
 	or a
@@ -2646,7 +2646,7 @@ AIDecide_EnergyRetrieval:
 	ld de, TREVENANT
 	call CountPokemonIDInBothPlayAreas
 	jr c, .start
-	ld de, BLASTOISE
+	ld de, GRENINJA
 	call CountPokemonIDInPlayArea
 	jp nc, .no_carry
 
@@ -2911,7 +2911,7 @@ AIDecide_SuperEnergyRetrieval:
 	ld de, TREVENANT
 	call CountPokemonIDInBothPlayAreas
 	jr c, .start
-	ld de, BLASTOISE
+	ld de, GRENINJA
 	call CountPokemonIDInPlayArea
 	jp nc, .no_carry
 
@@ -3295,7 +3295,7 @@ AIDecide_EnergySearch:
 	ld a, CARD_LOCATION_DECK
 	call FindBasicEnergyCardsInLocation
 	jr c, .no_carry
-	call .CheckUsefulFireOrLightningEnergy
+	call .CheckUsefulGrassEnergy
 	jr c, .no_carry
 	scf
 	ret
@@ -3525,13 +3525,12 @@ AIDecide_Pokedex:
 ; to use PickPokedexCards_Unreferenced instead
 	ld a, [wOpponentDeckID]
 	cp WONDERS_OF_SCIENCE_DECK_ID
-	jp PickPokedexCards ; bug, should be jp nz
+	jp nz, PickPokedexCards
+	; fallthrough
 
 ; picks order of the cards in deck from the effects of Pokedex.
 ; prioritizes Pokemon cards, then Trainer cards, then energy cards.
 ; stores the resulting order in wce1a.
-PickPokedexCards_Unreferenced:
-; unreferenced
 	xor a
 	ld [wAIPokedexCounter], a ; reset counter
 
@@ -3820,19 +3819,22 @@ AIDecide_FullHeal:
 ; set carry if any of the following
 ; cards are in the Play Area.
 	ld de, DUSKULL
-	ld b, PLAY_AREA_ARENA
-	call LookForCardIDInPlayArea_Bank8
+	call .CheckPlayerArenaCard
 	jr c, .set_carry
 	ld de, MISDREAVUS
-	ld b, PLAY_AREA_ARENA
-	call LookForCardIDInPlayArea_Bank8
+	call .CheckPlayerArenaCard
 	jr c, .set_carry
 	ld de, MISMAGIUS
+	call .CheckPlayerArenaCard
+	jr .paralyzed
+
+; returns carry if player's Arena card
+; is card in register a
+.CheckPlayerArenaCard:
+	call SwapTurn
 	ld b, PLAY_AREA_ARENA
 	call LookForCardIDInPlayArea_Bank8
-	jr c, .set_carry
-
-; otherwise fallthrough
+	jp SwapTurn
 
 .paralyzed
 ; if Scoop Up is in hand and decided to be played, skip.
@@ -3843,14 +3845,22 @@ AIDecide_FullHeal:
 	jr c, .no_carry
 
 .no_scoop_up_prz
-; return no carry if Arena card
-; cannot damage the defending Pokémon
+; return carry if Arena card
+; can damage the defending Pokémon
 
-; this is a bug, since CheckIfCanDamageDefendingPokemon
-; also takes into account whether card is paralyzed
+; temporarily remove status effect for damage checking
+	ld a, DUELVARS_ARENA_CARD_STATUS
+	call GetTurnDuelistVariable
+	ld b, [hl]
+	ld [hl], NO_STATUS
+	push hl
+	push bc
 	xor a ; PLAY_AREA_ARENA
 	farcall CheckIfCanDamageDefendingPokemon
-	jr nc, .no_carry
+	pop bc
+	pop hl
+	ld [hl], b
+	jr c, .set_carry
 
 ; if it can play an energy card to retreat, set carry.
 	ld a, [wAIPlayEnergyCardForRetreat]
@@ -5777,12 +5787,12 @@ AIDecide_PokemonTrader_BlisteringPokemon:
 	ld bc, TYRANITAR
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
-	ld bc, PONYTA
-	ld de, RAPIDASH
+	ld bc, DARUMAKA
+	ld de, DARMANITAN
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
-	ld de, PONYTA
-	ld bc, RAPIDASH
+	ld de, DARUMAKA
+	ld bc, DARMANITAN
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
 	jr .no_carry
@@ -5931,6 +5941,7 @@ AIDecide_PokemonTrader_PowerGenerator:
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
 	; bug, missing jr .no_carry
+	jr .no_carry
 
 ; a card in deck was found to look for,
 ; check if there are duplicates in hand to trade with.
@@ -5942,6 +5953,7 @@ AIDecide_PokemonTrader_PowerGenerator:
 	ret
 .set_carry
 	scf
+.no_carry	
 	ret
 
 AIDecide_PokemonTrader_FlowerGarden:
@@ -6052,12 +6064,12 @@ AIDecide_PokemonTrader_Flamethrower:
 	ld bc, EMBOAR
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
-	ld bc, VULPIX
-	ld de, NINETALES_LV32
+	ld bc, HOUNDOUR
+	ld de, HOUNDOOM
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
-	ld de, VULPIX
-	ld bc, NINETALES_LV32
+	ld de, HOUNDOUR
+	ld bc, HOUNDOOM
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
 	ld bc, GROWLITHE

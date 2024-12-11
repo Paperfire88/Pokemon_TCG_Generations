@@ -1304,7 +1304,7 @@ ScizorCardGfx::
 	INCBIN "gfx/cards/scizor.2bpp"
 	INCBIN "gfx/cards/scizor.pal"
 
-CharmanderCardGfx::
+TepigCardGfx::
 	INCBIN "gfx/cards/charmander.2bpp"
 	INCBIN "gfx/cards/charmander.pal"
 
@@ -1316,13 +1316,13 @@ CharizardCardGfx::
 	INCBIN "gfx/cards/charizard.2bpp"
 	INCBIN "gfx/cards/charizard.pal"
 
-VulpixCardGfx::
+HoundourCardGfx::
 	INCBIN "gfx/cards/vulpix.2bpp"
 	INCBIN "gfx/cards/vulpix.pal"
 
-NinetalesLv32CardGfx::
-	INCBIN "gfx/cards/ninetales1.2bpp"
-	INCBIN "gfx/cards/ninetales1.pal"
+HoundoomCardGfx::
+	INCBIN "gfx/cards/houndoom.2bpp"
+	INCBIN "gfx/cards/houndoom.pal"
 
 DeltaKingdraGfx::
 	INCBIN "gfx/cards/ninetales2.2bpp"
@@ -1333,18 +1333,18 @@ GrowlitheCardGfx::
 	INCBIN "gfx/cards/growlithe.pal"
 
 CameruptCardGfx::
-	INCBIN "gfx/cards/arcanine1.2bpp"
-	INCBIN "gfx/cards/arcanine1.pal"
+	INCBIN "gfx/cards/camerupt.2bpp"
+	INCBIN "gfx/cards/camerupt.pal"
 
 ArcanineLv45CardGfx::
 	INCBIN "gfx/cards/arcanine2.2bpp"
 	INCBIN "gfx/cards/arcanine2.pal"
 
-PonytaCardGfx::
+DarumakaCardGfx::
 	INCBIN "gfx/cards/ponyta.2bpp"
 	INCBIN "gfx/cards/ponyta.pal"
 
-RapidashCardGfx::
+DarmanitanCardGfx::
 	INCBIN "gfx/cards/rapidash.2bpp"
 	INCBIN "gfx/cards/rapidash.pal"
 
@@ -1357,8 +1357,8 @@ MagmortarCardGfx::
 	INCBIN "gfx/cards/magmortar.pal"
 
 NumelCardGfx::
-	INCBIN "gfx/cards/flareon1.2bpp"
-	INCBIN "gfx/cards/flareon1.pal"
+	INCBIN "gfx/cards/numel.2bpp"
+	INCBIN "gfx/cards/numel.pal"
 
 FlareonLv28CardGfx::
 	INCBIN "gfx/cards/flareon2.2bpp"
@@ -1372,7 +1372,7 @@ TortunatorCardGfx::
 
 SECTION "Card Gfx 4", ROMX
 
-SquirtleCardGfx::
+FroakieCardGfx::
 	INCBIN "gfx/cards/squirtle.2bpp"
 	INCBIN "gfx/cards/squirtle.pal"
 
@@ -1380,11 +1380,11 @@ WartortleCardGfx::
 	INCBIN "gfx/cards/wartortle.2bpp"
 	INCBIN "gfx/cards/wartortle.pal"
 
-BlastoiseCardGfx::
+GreninjaCardGfx::
 	INCBIN "gfx/cards/blastoise.2bpp"
 	INCBIN "gfx/cards/blastoise.pal"
 
-PsyduckCardGfx::
+BuizelCardGfx::
 	INCBIN "gfx/cards/psyduck.2bpp"
 	INCBIN "gfx/cards/psyduck.pal"
 
@@ -1513,8 +1513,8 @@ ShinxCardGfx::
 	INCBIN "gfx/cards/flyingpikachu.pal"
 
 LuxioCardGfx::
-	INCBIN "gfx/cards/surfingpikachu1.2bpp"
-	INCBIN "gfx/cards/surfingpikachu1.pal"
+	INCBIN "gfx/cards/luxio.2bpp"
+	INCBIN "gfx/cards/luxio.pal"
 
 LuxrayCardGfx::
 	INCBIN "gfx/cards/surfingpikachu2.2bpp"

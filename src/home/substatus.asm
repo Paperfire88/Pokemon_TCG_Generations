@@ -739,7 +739,7 @@ UpdateSubstatusConditions_EndOfTurn::
 
 ; return carry if turn holder has Blastoise and its Rain Dance Pkmn Power is active
 IsRainDanceActive::
-	ld de, BLASTOISE
+	ld de, GRENINJA
 	call CountPokemonIDInPlayArea
 	ret nc ; return if no Pkmn Power-capable Blastoise found in turn holder's play area
 	ld de, TREVENANT

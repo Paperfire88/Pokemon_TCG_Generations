@@ -121,8 +121,8 @@ Script_Lass2:
 	print_npc_text Text0700
 	print_text Text0701
 	take_card EMBOAR
-	give_card BLASTOISE
-	show_card_received_screen BLASTOISE
+	give_card GRENINJA
+	show_card_received_screen GRENINJA
 	print_text_quit_fully Text06f3
 
 Script_Granny2:

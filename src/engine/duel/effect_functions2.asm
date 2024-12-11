@@ -67,6 +67,7 @@ LookForCardsInDeck:
 	dw .SearchDeckForBasicGrass
 	dw .SearchDeckForColorlessEvolution
 	dw .SearchDeckForBasicColorless
+	dw .SearchDeckForBasicFire
 
 .set_carry
 	scf
@@ -331,6 +332,21 @@ LookForCardsInDeck:
 	ld a, [wLoadedCard2Stage]
 	or a ; BASIC
 	jp nz, .loop_deck_basic_colorless
+	ret
+
+.SearchDeckForBasicFire
+	ld hl, wDuelTempList
+.loop_deck_basic_fire
+	ld a, [hli]
+	cp $ff
+	jp z, .set_carry
+	call LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Type]
+	cp TYPE_PKMN_FIRE
+	jp nz, .loop_deck_basic_fire
+	ld a, [wLoadedCard2Stage]
+	or a ; BASIC
+	jp nz, .loop_deck_basic_fire
 	ret
 
 MysteryAttack_RandomEffect2:
@@ -1643,6 +1659,51 @@ use_pokemon_powerEffect:
 	call DrawWideTextBox_WaitForInput
 	ret
 
+RodEffect:
+  farcall CreateNoTrainerCardListFromDiscardPile
+  ld a, 3
+  ld [hTempCardIndex_ff9f], a
+  ld a, $ff
+  ldh [hTempList], a
+  xor a
+  ldh [hCurSelectionItem], a
+  ldtx hl, Choose2EnorPKCardsFromDiscardPileText
+  farcall DrawWideTextBox_WaitForInput
+ .loop
+  bank1call InitAndDrawCardListScreenLayout
+  ldtx hl, PleaseSelectCardText
+  ldtx de, PlayerDiscardPileText
+  bank1call SetCardListHeaderText
+  ld a, [wDuelTempList]
+  cp $ff
+  jr z, .done  ; no more cards to choose from
+  bank1call DisplayCardList
+  jr nc, .store_selected_card
+; B pressed
+  ld a, [hTempCardIndex_ff9f]
+  farcall AskWhetherToQuitSelectingCards
+  jr c, .loop ; chose to continue
+  jr .done
+
+.store_selected_card
+  farcall GetNextPositionInTempList_TrainerEffects
+	ldh a, [hTempCardIndex_ff98]
+	ld [hl], a
+	farcall RemoveCardFromDuelTempList
+	jr c, .done
+  ld a, [hTempCardIndex_ff9f]
+  ld b, a
+  ldh a, [hCurSelectionItem]
+  cp b
+  jr c, .loop
+
+.done
+	farcall GetNextPositionInTempList_TrainerEffects
+	ld [hl], $ff ; terminating byte
+	or a
+	ret  
+  ret
+
 Riptide_PlayerSelectEffect2:
   farcall CreateEnergyCardListFromDiscardPile_AllEnergy
   ld a, 6
@@ -1705,12 +1766,7 @@ SelectedDiscardPileCards_ShuffleIntoDeckEffect2:
   jr .loop
 
 .done
-  call ShuffleDeck
-; if Player played the card, exit
-  farcall IsPlayerTurn
-  ret c
-; if not, show card list selected by Opponent
-  bank1call DisplayCardList
+	farcall Func_2c0bd
   ret  
 
 EnergyRetrieval_PlayerDiscardPileSelection2:
@@ -1757,8 +1813,6 @@ GrassCallForFamily_PlayerSelectEffect2:
 	ldtx hl, ChooseBasicGrassPokemonFromDeckText
 	ldtx bc, FightingPokemonDeckText
 	ld d, SEARCHEFFECT_BASIC_GRASS
-	farcall LookForCardsInDeck
-	ret c
 
 ; draw Deck list interface and print text
 	bank1call Func_5591
@@ -2066,3 +2120,216 @@ ColorlessCallForFamily_AISelectEffect2:
 ; found
 	ret
 
+CreateNoTrainerCardListFromDiscardPile:
+; get number of cards in Discard Pile
+; and have hl point to the end of the
+; Discard Pile list in wOpponentDeckCards.
+	ld a, DUELVARS_NUMBER_OF_CARDS_IN_DISCARD_PILE
+	call GetTurnDuelistVariable
+	ld b, a
+	add DUELVARS_DECK_CARDS
+	ld l, a
+
+	ld de, wDuelTempList
+	inc b
+	jr .next_card
+
+.check_trainer
+	ld a, [hl]
+	call LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Type]
+	cp TYPE_TRAINER
+	jr z, .next_card
+
+	ld a, [hl]
+	ld [de], a
+	inc de
+
+.next_card
+	dec l
+	dec b
+	jr nz, .check_trainer
+
+	ld a, $ff ; terminating byte
+	ld [de], a
+	ld a, [wDuelTempList]
+	cp $ff
+	jr z, .no_trainers
+	or a
+	ret
+.no_trainers
+	ldtx hl, ThereAreNoTrainerCardsInDiscardPileText
+	scf
+	ret
+
+ShadowBindEffect2:
+	ld a, SUBSTATUS2_UNABLE_RETREAT
+	call ApplySubstatus2ToDefendingCard
+	call SwapTurn
+	ld e, PLAY_AREA_ARENA
+	call GetCardDamageAndMaxHP
+	or a
+	call SwapTurn
+	cp 30
+	ret c
+	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
+	call GetNonTurnDuelistVariable
+	cp 2
+	ret c ; has no Bench Pokemon
+	call GlowAnimationsEffect
+	jp Blizzard_BenchDamageEffect.opp_bench
+
+PlayerYesNoEffect2:
+	bank1call DrawDuelMainScene ; draws a screen for the player to select from
+	ldtx hl, YesNoText ; loads the text we made in step 1
+	call TwoItemHorizontalMenu ; defines that this text contains 2 menu items (yes/no)
+	ldh a, [hKeysHeld] ; loads the player's input
+	and B_BUTTON
+	jp nz, PlayerYesNoEffect ; this forces the player to select either "Yes" or "No", can't exit
+	ldh a, [hCurMenuItem] ; stores the result in a
+	ldh [hTemp_ffa0], a ; loads what the player selected into hTemp_ffa0
+	ret
+
+FireCallForFamily_PlayerSelectEffect2:
+	ld a, $ff
+	ldh [hTemp_ffa0], a
+
+	farcall CreateDeckCardList
+	ldtx hl, ChooseBasicFirePokemonFromDeckText
+	ldtx bc, FightingPokemonDeckText
+	ld d, SEARCHEFFECT_BASIC_FIRE
+
+; draw Deck list interface and print text
+	bank1call Func_5591
+	ldtx hl, ChooseBasicFirePokemonText
+	ldtx de, DuelistDeckText
+	bank1call SetCardListHeaderText
+
+.loop
+	bank1call DisplayCardList
+	jr c, .pressed_b
+
+	farcall LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Type]
+	cp FIRE
+	jr nz, .play_sfx ; is Fighting?
+	ld a, [wLoadedCard2Stage]
+	or a
+	jr nz, .play_sfx ; is Basic?
+	ldh a, [hTempCardIndex_ff98]
+	ldh [hTemp_ffa0], a
+	or a
+	ret
+
+.play_sfx
+	; play SFX and loop back
+	farcall Func_3794
+	jr .loop
+
+.pressed_b
+; figure if Player can exit the screen without selecting,
+; that is, if the Deck has no Basic Fighting Pokemon.
+	ld a, DUELVARS_CARD_LOCATIONS
+	farcall GetTurnDuelistVariable
+.loop_b_press
+	ld a, [hl]
+	cp CARD_LOCATION_DECK
+	jr nz, .next
+	ld a, l
+	farcall LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard1Type]
+	cp FIRE
+	jr nz, .next ; found, go back to top loop
+	ld a, [wLoadedCard1Stage]
+	or a
+	jr z, .play_sfx ; found, go back to top loop
+.next
+	inc l
+	ld a, l
+	cp DECK_SIZE
+	jr c, .loop_b_press
+
+; no valid card in Deck, can safely exit screen
+	ld a, $ff
+	ldh [hTemp_ffa0], a
+	or a
+	ret
+
+FireCallForFamily_AISelectEffect2:
+	farcall CreateDeckCardList
+	ld hl, wDuelTempList
+.loop_deck
+	ld a, [hli]
+	ldh [hTemp_ffa0], a
+	cp $ff
+	ret z ; none found
+	farcall LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Type]
+	cp FIRE
+	jr nz, .loop_deck
+	ld a, [wLoadedCard2Stage]
+	or a
+	jr nz, .loop_deck
+; found
+	ret
+
+NidoranFCallForFamily_PlayerSelectEffect2:
+	ld a, $ff
+	ldh [hTemp_ffa0], a
+
+	call CreateDeckCardList
+	ldtx hl, ChooseNidoranFromDeckText
+	ldtx bc, NidoranMNidoranFText
+	ld d, SEARCHEFFECT_NIDORAN
+	farcall LookForCardsInDeck
+	ret c
+
+; draw Deck list interface and print text
+	bank1call Func_5591
+	ldtx hl, ChooseNidoranText
+	ldtx de, DuelistDeckText
+	bank1call SetCardListHeaderText
+
+.loop
+	bank1call DisplayCardList
+	jr c, .pressed_b
+	call GetCardIDFromDeckIndex
+	cp16 PLUSPOWER
+	jr nz, .loop ; .play_sfx would be more appropriate here
+
+.selected_nidoran
+	ldh a, [hTempCardIndex_ff98]
+	ldh [hTemp_ffa0], a
+	or a
+	ld e, PLAY_AREA_ARENA
+  	jp Put1DamageCounterOnTarget
+
+.play_sfx
+	; play SFX and loop back
+	call Func_3794
+	jr .loop
+
+.pressed_b
+; figure if Player can exit the screen without selecting,
+; that is, if the Deck has no NidoranF or NidoranM card.
+	ld a, DUELVARS_CARD_LOCATIONS
+	call GetTurnDuelistVariable
+.loop_b_press
+	ld a, [hl]
+	cp CARD_LOCATION_DECK
+	jr nz, .next
+	ld a, l
+	call GetCardIDFromDeckIndex
+	cp16 PLUSPOWER
+	jr z, .play_sfx ; found, go back to top loop
+.next
+	inc l
+	ld a, l
+	cp DECK_SIZE
+	jr c, .loop_b_press
+
+; no Nidoran in Deck, can safely exit screen
+	ld a, $ff
+	ldh [hTemp_ffa0], a
+	or a
+	ret

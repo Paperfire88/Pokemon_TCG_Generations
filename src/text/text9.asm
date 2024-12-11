@@ -1235,7 +1235,7 @@ DoubleColorlessEnergyDescription:
 	line "count as a basic Energy card.) "
 	done
 
-BulbasaurName:
+ChikoritaName:
 	text "Chikorita"
 	done
 
@@ -1243,19 +1243,13 @@ LeechSeedName:
 	text "Leech Seed"
 	done
 
-BulbasaursLeechSeedDescription:
+ChikoritasLeechSeedDescription:
 	text "If this attack deals damage, Heal 30"
 	line "damage from this Pkmn."
 	done
 
 SeedName:
 	text "Leaf"
-	done
-
-BulbasaurDescription:
-	text "Booster Pack: (COLOSSEUM)"
-	line "Base on: (Neo Genesis 53)"
-	line "OG Artist: (Naoyo Kimura)"
 	done
  
 BayleefName:
@@ -1272,12 +1266,6 @@ PoisonPowderName:
 
 InflictPoisonDescription:
 	text "The Defending pkmn is now Poisoned."
-	done
-
-IvysaurDescription:
-	text "Booster Pack: (COLOSSEUM)"
-	line "OG Set: (Neo Genesis 29)"
-	line "OG illustrator: (Ken Sugimori)"
 	done
 
 MeganiumName:
@@ -1310,12 +1298,6 @@ DigDrainDescription:
 	line "(after applying Weakness/Resistance)"
 	done
 
-VenusaurLv64Description:
-	text "Booster Pack: (MYSTERY)"
-	line "OG Set: (Neo Revelation 3)"
-	line "OG illustrator: (Hironobu Yoshida)"
-	done
-
 EnergyTransName:
 	text "Energy Trans"
 	done
@@ -1329,12 +1311,6 @@ EnergyTransDescription:
 
 SolarBeamName:
 	text "Solarbeam"
-	done
-
-VenusaurLv67Description:
-	text "Booster Pack: (COLOSSEUM)"
-	line "OG Set: (Neo Genesis 10)"
-	line "OG illustrator: (Ken Sugimori)"
 	done
 
 WurmpleName:
@@ -1352,12 +1328,6 @@ MayInflictParalysisDescription:
 
 WormName:
 	text "Catepillar"
-	done
-
-CaterpieDescription:
-	text "Booster Pack: (EVOLUTION)"
-	line "OG Set: (Ruby & Sapphire 78)"
-	line "OG illustrator: (Hajime Kusajima)"
 	done
 
 SilcoonName:
@@ -1382,12 +1352,6 @@ StunSporeName:
 
 CocoonName:
 	text "Chrysalis"
-	done
-
-MetapodDescription:
-	text "Booster Pack: (EVOLUTION)"
-	line "OG Set: (Deoxys 46)"
-	line "OG illustrator: (Kagemaru Himeno)"
 	done
 
 BeautiflyName:
@@ -1419,11 +1383,6 @@ ButterflyName:
 	text "Butterfly"
 	done
 
-ButterfreeDescription:
-	text "Booster Pack: (EVOLUTION)"
-	line "OG Set: (Lost Origin 8)"
-	line "OG illustrator: (Yuu Nishida)"
-	done
 
 RowletName:
 	text "Rowlet"
@@ -1442,12 +1401,6 @@ HairyBugName:
 	text "Hairy Bug"
 	done
 
-WeedleDescription:
-	text "Booster Pack: (MYSTERY)"
-	line "OG Set: (Sword & Shield Promos 220)"
-	line "OG illustrator: (sowsow)"
-	done
-
 DartrixName:
 	text "Dartrix"
 	done
@@ -1457,12 +1410,6 @@ KakunasStiffenDescription:
 	line "damage done during your"
 	line "opponent's next turn. (Any other"
 	line "effects of attacks still happen.)"
-	done
-
-KakunaDescription:
-	text "Booster Pack: (MYSTERY)"
-	line "OG Set: (Sun & Moon 10)"
-	line "OG illustrator: (Mizue)"
 	done
 
 BeedrillName:
@@ -1482,12 +1429,6 @@ PoisonBeeName:
 	text "Poison Bee"
 	done
 
-BeedrillDescription:
-	text "Booster Pack: (MYSTERY)"
-	line "OG Set: (Sword & Shield Promos 35)"
-	line "OG illustrator: (Souichirou Gunjima)"
-	done
-
 CascoonName:
 	text "Cascoon"
 	done
@@ -1504,12 +1445,6 @@ SnakeName:
 	text "Snake"
 	done
 
-EkansDescription:
-	text "Booster Pack: (EVOLUTION)"
-	line "OG Set: (Roaring Skies 6)"
-	line "OG illustrator: (MAHOU)"
-	done
-
 DustoxName:
 	text "Dustox"
 	done
@@ -1520,4 +1455,162 @@ TerrorStrikeName:
 
 CallBackName:
 	text "Call Back"
+	done
+
+GyaradosName:
+	text "Weavile"
+	done
+
+DragonRageName:
+	text "Dragon Rage"
+	done
+
+BubblebeamName:
+	text "Liquidation"
+	done
+
+AtrociousName:
+	text "Atrocious"
+	done
+
+ChewtleName:
+	text "Chewtle"
+	done
+
+SharpenName:
+	text "Sharpen"
+	done
+
+SharpenDescription:
+	text "Flip a coin. If heads, draw a card."
+	line "If tails, your opponent draws a card"
+	line "Either way, During your next turn,"
+	line "Pawniard's Slash attack's base"
+	line "damage is doubled."
+	done
+
+SuckerPunchName:
+	text "Sucker Punch"
+	done
+
+SuckerPunchDescription:
+	text "If your opponent has 5 or more cards" 
+	line "in their hand, this attack does"
+	line "20 more damage."
+	done
+
+FalseSurrenderName:
+	text "False Surrender"
+	done
+
+IronTackleDescription:
+	text "If ACCELGOR Is in play, During your" 
+	line "opponent's turn, if 30 or less" 
+	line "damage is done to this PKMN, prevent" 
+	line "that damage."
+	line "(after applying Weakness/Resistance)"
+	done
+
+ToxicSporeName:
+	text "Toxic Spore"
+	done
+
+ToxicSporeDescription:
+	text "The Defending PKMN is now Asleep."
+	line "If the Defending PKMN is an Evolved" 
+	line "PKMN, it is also Poisoned."
+	done
+
+DiscardedFromHandText:
+	text "Was discardted to the Discard Pile."
+	done
+
+ReturnedFromHandText:
+	text "Was Returned to the Deck."
+	done
+	
+XScissorName:
+	text "X-Scissor"
+	done
+
+KinglerName:
+	text "Clawitzer"
+	done
+
+FlailName:
+	text "Flail"
+	done
+
+CrabhammerName:
+	text "Crabhammer"
+	done
+
+PincerName:
+	text "Pincer"
+	done
+
+KrabbyName:
+	text "Clauncher"
+	done
+
+KrabbysCallForFamilyDescription:
+	text "Search your deck for a Basic PKMN"
+	line "named Clauncher and put it onto your"
+	line "Bench. Shuffle your deck afterward."
+	line "(You can't use this attack if your"
+	line "Bench is full.)"
+	done
+
+RiverCrabName:
+	text "River Crab"
+	done
+
+CloysterName:
+	text "Pelipper"
+	done
+
+ClampName:
+	text "Clamp"
+	done
+
+SpikeCannonName:
+	text "Spike Cannon"
+	done
+
+MagikarpName:
+	text "Sneasel"
+	done
+
+TackleName:
+	text "Tackle"
+	done
+
+MagikarpsFlailDescription:
+	text "Does 10 damage times the number of"
+	line "damage counters on This PKMN."
+	done
+
+FishName:
+	text "Fish"
+	done
+
+TransportName:
+	text "Transport"
+	done
+
+ThisCardCannotBeUsedTwiceText:
+	text "This Card cannot be"
+	line "used twice in a turn."
+	done
+
+BivalveName:
+	text "Bivalve"
+	done
+
+StarmieName:
+	text "Araquanid"
+	done
+
+RecoverName:
+	text "Recover"
 	done

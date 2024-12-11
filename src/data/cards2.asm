@@ -363,7 +363,7 @@ AlakazamCard:
 	energy 0 ; energies
 	tx DamageSwapName ; name
 	tx DamageSwapDescription ; description
-	dw NONE ; description (cont)
+	tx PKMNPowerCondition2 ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw AlakazamDamageSwapEffectCommands ; effect commands
@@ -548,6 +548,106 @@ GengarCard:
 	tx MagikarpDescription ; description
 	db 18
 
+ElectabuzzLv35Card:
+	db TYPE_PKMN_LIGHTNING ; type
+	gfx ElectabuzzLv35CardGfx ; gfx
+	tx ElectabuzzName ; name
+	db DIAMOND ; rarity
+	db LABORATORY | NONE ; sets
+	dw ELECTABUZZ_LV35
+	db 60 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy LIGHTNING, 1 ; energies
+	tx PlasmaName ; name
+	tx PlasmaDescription ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw PlasmaEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db SPECIAL_AI_HANDLING ; flags 3
+	db 0
+	db ATK_ANIM_GLOW_EFFECT ; animation
+
+	; attack 2
+	energy LIGHTNING, 1, COLORLESS, 2 ; energies
+	tx ThunderpunchName ; name
+	tx ThunderpunchDescription ; description
+	dw NONE ; description (cont)
+	db 30 ; damage
+	db DAMAGE_PLUS ; category
+	dw ElectabuzzThunderpunchEffectCommands ; effect commands
+	db LOW_RECOIL ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_THUNDERPUNCH ; animation
+
+	db 2 ; retreat cost
+	db WR_FIGHTING ; weakness
+	db NONE ; resistance
+	tx ElectricName ; category
+	db 117 ; Pokedex number
+	db 35 ; level
+	db 3, 7 ; length
+	dw 66 * 10 ; weight
+	tx ElectabuzzLv35Description ; description
+	db 0
+
+ElectivireCard:
+	db TYPE_PKMN_LIGHTNING ; type
+	gfx ElectivireCardGfx ; gfx
+	tx ElectivireName ; name
+	db STAR ; rarity
+	db LABORATORY | NONE ; sets
+	dw ELECTIVIRE
+	db 100 ; hp
+	db STAGE1 ; stage
+	tx ElectabuzzName ; pre-evo name
+
+	; attack 1
+	energy LIGHTNING, 1, COLORLESS, 2 ; energies
+	tx ExplosiveBoltName ; name
+	tx ExplosiveBoltDescription ; description
+	dw NONE ; description (cont)
+	db 40 ; damage
+	db DAMAGE_PLUS ; category
+	dw ElectroComboEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 3
+	db ATK_ANIM_THUNDER ; animation
+
+	; attack 2
+	energy LIGHTNING, 1, COLORLESS, 2 ; energies
+	tx ExplosiveBoltName ; name
+	tx ExplosiveBoltDescription ; description
+	dw NONE ; description (cont)
+	db 40 ; damage
+	db DAMAGE_PLUS ; category
+	dw ElectroComboEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 3
+	db ATK_ANIM_THUNDER ; animation
+
+	db 3 ; retreat cost
+	db WR_FIGHTING ; weakness
+	db WR_LIGHTNING ; resistance
+	tx ElectricName ; category
+	db 117 ; Pokedex number
+	db 66 ; level
+	db 3, 7 ; length
+	dw 66 * 10 ; weight
+	tx ElectabuzzLv35Description ; description
+	db 0
+
 MoonStoneCard:
 	db TYPE_TRAINER ; type
 	gfx MoonStoneCardGfx ; gfx
@@ -557,4 +657,15 @@ MoonStoneCard:
 	dw MOON_STONE
 	dw ColorlessEvolutionPkmnSearchEffectCommands ; effect commands
 	tx MoonStoneDescription ; description
+	dw NONE ; description (cont)
+
+SuperRodCard:
+	db TYPE_TRAINER ; type
+	gfx SuperRodCardGfx ; gfx
+	tx SuperRodName ; name
+	db DIAMOND ; rarity
+	db COLOSSEUM | NONE ; sets
+	dw SUPER_ROD
+	dw SuperRodEffectCommands ; effect commands
+	tx SuperRodDescription ; description
 	dw NONE ; description (cont)

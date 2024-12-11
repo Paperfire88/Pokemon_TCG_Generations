@@ -50,6 +50,8 @@ DEF NUM_BOOSTER_CARD_TYPES EQU const_value
 	const BOOSTER_ENERGY_GRASS_PSYCHIC        ; $1b
 	const BOOSTER_ENERGY_RANDOM               ; $1c
 	const BOOSTER_MYSTERY_FIRE             	  ; $0e
+	const BOOSTER_LABORATORY_FIRE         	  ; $17
+
 
 DEF NUM_BOOSTERS EQU const_value
 DEF NO_BOOSTER EQU $ff

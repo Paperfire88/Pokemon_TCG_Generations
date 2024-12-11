@@ -938,7 +938,7 @@ AITryToRetreat:
 ; that are not of the same type as the Pokémon
 ; the exception for this are cards that are needed for
 ; some attacks but are not of the same color as the Pokémon
-; (i.e. Psyduck's Headache attack)
+; (i.e. BUIZEL's Headache attack)
 ; and energy cards attached to Eevee corresponding to a
 ; color of any of its evolutions (water, fire, lightning)
 .energy_not_same_color
