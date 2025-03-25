@@ -31,16 +31,16 @@ AIActionTable_ImRonald:
 	dw SEEL
 	dw CHARMANDER
 	dw LARVITAR
-	dw SQUIRTLE
-	dw GROWLITHE
+	dw FROAKIE
+	dw SIZZLIPEDE
 	dw NULL
 
 .list_bench
 	dw CHARMANDER
-	dw SQUIRTLE
+	dw FROAKIE
 	dw SEEL
 	dw LARVITAR
-	dw GROWLITHE
+	dw SIZZLIPEDE
 	dw CHEWTLE
 	dw NULL
 
@@ -50,9 +50,9 @@ AIActionTable_ImRonald:
 .list_energy
 	ai_energy CHARMANDER,     3, +0
 	ai_energy CHARMELEON,     5, +0
-	ai_energy GROWLITHE,      2, +0
-	ai_energy ARCANINE_LV45,  4, +0
-	ai_energy SQUIRTLE,       2, +0
+	ai_energy SIZZLIPEDE,      2, +0
+	ai_energy CENTISKORCH,  4, +0
+	ai_energy FROAKIE,       2, +0
 	ai_energy WARTORTLE,      3, +0
 	ai_energy SEEL,           3, +0
 	ai_energy DEWGONG,        4, +0

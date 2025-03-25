@@ -1770,7 +1770,7 @@ TepigAndFriendsDeckChoiceText:
 	done
 
 FroakieAndFriendsDeckChoiceText:
-	text "SQUIRTLE & Friends Deck"
+	text "FROAKIE & Friends Deck"
 	done
 
 ChikoritaAndFriendsDeckChoiceText:

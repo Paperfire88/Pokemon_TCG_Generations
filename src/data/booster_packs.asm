@@ -329,16 +329,16 @@ BoosterPack_MysteryTrainerColorless::
 	dw NULL ; energy generation function
 
 ; Card Type Chances
-	db 12 ; Grass Type Chance
-	db 12 ; Fire Type Chance
-	db 12 ; Water Type Chance
-	db 12 ; Lightning Type Chance
-	db 12 ; Fighting Type Chance
-	db 12 ; Psychic Type Chance
-	db 12 ; Darkness Type Chance
-	db 22 ; Colorless Type Chance
+	db 16 ; Grass Type Chance
+	db 16 ; Fire Type Chance
+	db 16 ; Water Type Chance
+	db 16 ; Lightning Type Chance
+	db 16 ; Fighting Type Chance
+	db 16 ; Psychic Type Chance
+	db 16 ; Darkness Type Chance
+	db 16 ; Colorless Type Chance
 	db 48 ; Trainer Card Chance
-	db 12 ; Energy Card Chance
+	db 0 ; Energy Card Chance
 
 BoosterPack_LaboratoryMostlyNeutral::
 	booster_set LABORATORY ; booster pack set
@@ -515,3 +515,4 @@ BoosterPack_LaboratoryFire::
 	db 16 ; Colorless Type Chance
 	db 16 ; Trainer Card Chance
 	db  0 ; Energy Card Chance	
+	

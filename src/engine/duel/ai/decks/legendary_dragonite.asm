@@ -61,7 +61,7 @@ AIActionTable_LegendaryDragonite:
 	dw NULL
 
 .list_prize
-	dw GAMBLER
+	dw COPYCAT
 	dw LUGIA
 	dw CHATOT
 	dw NULL

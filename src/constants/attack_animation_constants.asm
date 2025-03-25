@@ -5,7 +5,7 @@
 	const ATK_ANIM_NONE                   ; $00
 	const ATK_ANIM_HIT                    ; $01
 	const ATK_ANIM_BIG_HIT                ; $02
-	const ATK_ANIM_UNUSED_03              ; $03
+	const ATK_ANIM_OWN_SLEEP              ; $03
 	const ATK_ANIM_HIT_RECOIL             ; $04
 	const ATK_ANIM_HIT_EFFECT             ; $05
 	const ATK_ANIM_THUNDERSHOCK           ; $06
@@ -13,7 +13,7 @@
 	const ATK_ANIM_THUNDERBOLT            ; $08
 	const ATK_ANIM_UNUSED_09              ; $09
 	const ATK_ANIM_THUNDER_WHOLE_SCREEN   ; $0a
-	const ATK_ANIM_UNUSED_0B              ; $0b
+	const ATK_ANIM_EVOLUTIONARY_FLAME              ; $0b
 	const ATK_ANIM_THUNDERSTORM           ; $0c
 	const ATK_ANIM_CHAIN_LIGHTNING        ; $0d
 	const ATK_ANIM_SMALL_FLAME            ; $0e
@@ -29,7 +29,7 @@
 	const ATK_ANIM_BLIZZARD               ; $18
 	const ATK_ANIM_PSYCHIC_HIT            ; $19
 	const ATK_ANIM_NIGHTMARE              ; $1a
-	const ATK_ANIM_UNUSED_1B              ; $1b
+	const ATK_ANIM_DARK_MIND_GLOW         ; $1b
 	const ATK_ANIM_DARK_MIND              ; $1c
 	const ATK_ANIM_BEAM                   ; $1d
 	const ATK_ANIM_HYPER_BEAM             ; $1e

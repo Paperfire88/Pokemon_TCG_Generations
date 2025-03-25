@@ -25,7 +25,7 @@ PointerTable_AttackAnimation:
 	dw NULL                                ; ATK_ANIM_NONE
 	dw AttackAnimation_Hit                 ; ATK_ANIM_HIT
 	dw AttackAnimation_BigHit              ; ATK_ANIM_BIG_HIT
-	dw AttackAnimation_Hit                 ; ATK_ANIM_UNUSED_03
+	dw AttackAnimation_OwnSleep                 ; ATK_ANIM_OWN_SLEEP
 	dw AttackAnimation_Hit                 ; ATK_ANIM_HIT_RECOIL
 	dw AttackAnimation_Hit                 ; ATK_ANIM_HIT_EFFECT
 	dw AttackAnimation_ThunderShock        ; ATK_ANIM_THUNDERSHOCK
@@ -33,7 +33,7 @@ PointerTable_AttackAnimation:
 	dw AttackAnimation_Thunderbolt         ; ATK_ANIM_THUNDERBOLT
 	dw AttackAnimation_ThunderShock        ; ATK_ANIM_UNUSED_09
 	dw AttackAnimation_BigLightning        ; ATK_ANIM_THUNDER_WHOLE_SCREEN
-	dw AttackAnimation_BigLightning        ; ATK_ANIM_UNUSED_0B
+	dw AttackAnimation_EvolutionaryFlame        ; ATK_ANIM_EVOLUTIONARY_FLAME
 	dw AttackAnimation_BigLightning        ; ATK_ANIM_THUNDERSTORM
 	dw AttackAnimation_BigLightning        ; ATK_ANIM_CHAIN_LIGHTNING
 	dw AttackAnimation_SmallFlame          ; ATK_ANIM_SMALL_FLAME
@@ -49,7 +49,7 @@ PointerTable_AttackAnimation:
 	dw AttackAnimation_Blizzard            ; ATK_ANIM_BLIZZARD
 	dw AttackAnimation_PsychicHit          ; ATK_ANIM_PSYCHIC_HIT
 	dw AttackAnimation_PsychicHit          ; ATK_ANIM_NIGHTMARE
-	dw AttackAnimation_PsychicHit          ; ATK_ANIM_UNUSED_1B
+	dw AttackAnimation_DarkMindGlow        ; ATK_ANIM_DARK_MIND_GLOW
 	dw AttackAnimation_DarkMind            ; ATK_ANIM_DARK_MIND
 	dw AttackAnimation_Beam                ; ATK_ANIM_BEAM
 	dw AttackAnimation_HyperBeam           ; ATK_ANIM_HYPER_BEAM
@@ -217,6 +217,14 @@ AttackAnimation_SmallFlame:
 	anim_opponent       DUEL_ANIM_SHOW_DAMAGE
 	anim_end
 
+AttackAnimation_EvolutionaryFlame:
+	anim_screen         SET_ANIM_SCREEN_PLAY_AREA
+	anim_play_area      DUEL_ANIM_BENCH_GLOW
+	anim_player         DUEL_ANIM_GLOW
+	anim_screen         SET_ANIM_SCREEN_MAIN
+	anim_opponent       DUEL_ANIM_SMALL_FLAME
+	anim_end
+
 AttackAnimation_BigFlame:
 	anim_player         DUEL_ANIM_GLOW
 	anim_opponent       DUEL_ANIM_BIG_FLAME
@@ -296,6 +304,12 @@ AttackAnimation_PsychicHit:
 	anim_opponent       DUEL_ANIM_HIT
 	anim_normal         DUEL_ANIM_SHAKE1
 	anim_opponent       DUEL_ANIM_SHOW_DAMAGE
+	anim_end
+
+AttackAnimation_DarkMindGlow:
+	anim_player         DUEL_ANIM_GLOW
+	anim_opponent       DUEL_ANIM_LEER
+	anim_normal         DUEL_ANIM_SHAKE1
 	anim_end
 
 AttackAnimation_DarkMind:
@@ -820,6 +834,10 @@ AttackAnimation_Sleep:
 
 AttackAnimation_OwnConfusion:
 	anim_player         DUEL_ANIM_CONFUSION
+	anim_end
+
+AttackAnimation_OwnSleep:
+	anim_player         DUEL_ANIM_SLEEP
 	anim_end
 
 AttackAnimation_SleepingGas:

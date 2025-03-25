@@ -31,26 +31,26 @@ AIActionTable_ZappingSelfdestruct:
 	dw ELECTABUZZ_LV35
 	dw STANTLER
 	dw MAGNEMITE_LV13
-	dw VOLTORB
+	dw TOXEL
 	dw NULL
 
 .list_bench
 	dw MAGNEMITE_LV13
-	dw VOLTORB
+	dw TOXEL
 	dw ELECTABUZZ_LV35
 	dw STANTLER
 	dw CHATOT
 	dw NULL
 
 .list_retreat
-	ai_retreat VOLTORB, -1
+	ai_retreat TOXEL, -1
 	dw NULL
 
 .list_energy
 	ai_energy MAGNEMITE_LV13,  3, +1
 	ai_energy MAGNETON_LV28,   4, +0
-	ai_energy VOLTORB,         3, +1
-	ai_energy ELECTRODE_LV35,  3, +0
+	ai_energy TOXEL,         3, +1
+	ai_energy TOXTRICITY,  3, +0
 	ai_energy ELECTABUZZ_LV35, 1, +0
 	ai_energy CHATOT,      2, -2
 	ai_energy STANTLER,          3, +0

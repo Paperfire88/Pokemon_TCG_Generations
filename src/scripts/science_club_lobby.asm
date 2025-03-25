@@ -89,7 +89,7 @@ Data_ebe7:
 	dw PORYGON
 	dw DITTO
 	dw TREVENANT
-	dw WEEZING
+	dw FERROTHORN
 
 NPCMovement_ebeb:
 	db WEST | NO_MOVE

@@ -16,6 +16,7 @@ _PauseMenu_Diary:
 	lb bc, 16, 6
 	call PrintMedalCount
 	call FlashWhiteScreen
+.save_file	
 	ldtx hl, PlayerDiarySaveQuestionText
 	call YesOrNoMenuWithText_SetCursorToYes
 	jr c, .cancel

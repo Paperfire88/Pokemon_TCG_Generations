@@ -153,7 +153,7 @@ Script_BeatIsaac:
 	show_medal_received_screen EVENT_BEAT_ISAAC
 	record_master_win $04
 	print_npc_text Text0639
-	give_booster_packs BOOSTER_MYSTERY_LIGHTNING_COLORLESS, BOOSTER_MYSTERY_LIGHTNING_COLORLESS, NO_BOOSTER
+	give_booster_packs BOOSTER_EVOLUTION_TRAINER, BOOSTER_MYSTERY_LIGHTNING_COLORLESS, BOOSTER_MYSTERY_TRAINER_COLORLESS
 	print_npc_text Text063a
 	quit_script_fully
 
@@ -175,7 +175,7 @@ Script_LostToIsaac:
 
 .ows_e517
 	print_npc_text Text063f
-	give_booster_packs BOOSTER_MYSTERY_LIGHTNING_COLORLESS, BOOSTER_MYSTERY_LIGHTNING_COLORLESS, NO_BOOSTER
+	give_booster_packs BOOSTER_EVOLUTION_TRAINER, BOOSTER_MYSTERY_LIGHTNING_COLORLESS, BOOSTER_MYSTERY_TRAINER_COLORLESS
 	print_npc_text Text0640
 	quit_script_fully
 

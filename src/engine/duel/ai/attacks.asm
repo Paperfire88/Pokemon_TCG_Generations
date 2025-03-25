@@ -404,7 +404,7 @@ GetAIScoreOfAttack:
 	jr z, .chansey
 	cp16 MAGNEMITE_LV13
 	jr z, .magnemite1_or_weezing
-	cp16 WEEZING
+	cp16 FERROTHORN
 	jr z, .magnemite1_or_weezing
 	ld b, 20 ; bench damage
 	jr .check_bench_kos
@@ -604,12 +604,19 @@ GetAIScoreOfAttack:
 	call GetCardIDFromDeckIndex
 	call SwapTurn
 	; skip if player has Snorlax
-	cp16 REGIDRAGO
+	cp16 MAINTENANCE
 	jp z, .handle_special_atks
 
 	ld a, DUELVARS_ARENA_CARD_STATUS
 	call GetNonTurnDuelistVariable
 	ld [wTempAI], a
+
+.check_burn
+	ld a, ATTACK_FLAG1_ADDRESS | INFLICT_BURN_F
+	call CheckLoadedAttackFlag
+	jr nc, .check_poison
+	ld a, 2
+	call AddToAIScore
 
 ; encourage a poison inflicting attack if opposing Pokémon
 ; isn't (doubly) poisoned already.
@@ -617,6 +624,7 @@ GetAIScoreOfAttack:
 ; and this attack has FLAG_2_BIT_6 set, discourage it
 ; (possibly to make Nidoking's Toxic attack less likely to be chosen
 ; if the other Pokémon is poisoned.)
+.check_poison
 	ld a, ATTACK_FLAG1_ADDRESS | INFLICT_POISON_F
 	call CheckLoadedAttackFlag
 	jr nc, .check_sleep

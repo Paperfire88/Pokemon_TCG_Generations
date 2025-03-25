@@ -14,13 +14,13 @@ HandleSpecialAIAttacks:
 	jp z, .NidoranFCallForFamily
 	cp16 APPLIN
 	jp z, .CallForFamily
-	cp16 BELLSPROUT
+	cp16 BOUNSWEET
 	jp z, .CallForFamily
 	cp16 YANMA
 	jp z, .Teleport
 	cp16 SCYTHER
 	jp z, .SwordsDanceAndFocusEnergy
-	cp16 KRABBY
+	cp16 CLAUNCHER
 	jp z, .CallForFamily
 	cp16 DREDNAW
 	jp z, .SwordsDanceAndFocusEnergy
@@ -28,7 +28,7 @@ HandleSpecialAIAttacks:
 	jp z, .ChainLightning
 	cp16 TYRANITAR
 	jp z, .CallForFriend
-	cp16 MEW_LV23
+	cp16 MEW
 	jp z, .DevolutionBeam
 	cp16 TOGEPI
 	jp z, .FriendshipSong
@@ -44,9 +44,9 @@ HandleSpecialAIAttacks:
 	jp z, .Fetch
 	cp16 SANDACONDA
 	jp z, .Earthquake
-	cp16 ELECTRODE_LV35
+	cp16 TOXTRICITY
 	jp z, .EnergySpike
-	cp16 GOLDUCK
+	cp16 FLOATZEL
 	jp z, .HyperBeam
 	cp16 SLIGGOO
 	jp z, .HyperBeam

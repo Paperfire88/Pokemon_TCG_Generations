@@ -28,7 +28,7 @@ AIActionTable_LegendaryZapdos:
 
 .list_arena
 	dw ELECTABUZZ_LV35
-	dw VOLTORB
+	dw TOXEL
 	dw EEVEE
 	dw VIKAVOLT
 	dw ZERAORA
@@ -39,19 +39,19 @@ AIActionTable_LegendaryZapdos:
 	dw ZERAORA
 	dw VIKAVOLT
 	dw EEVEE
-	dw VOLTORB
+	dw TOXEL
 	dw ELECTABUZZ_LV35
 	dw NULL
 
 .list_retreat
 	ai_retreat EEVEE,           -5
-	ai_retreat VOLTORB,         -5
+	ai_retreat TOXEL,         -5
 	ai_retreat ELECTABUZZ_LV35, -5
 	dw NULL
 
 .list_energy
-	ai_energy VOLTORB,         1, -1
-	ai_energy ELECTRODE_LV35,  3, +0
+	ai_energy TOXEL,         1, -1
+	ai_energy TOXTRICITY,  3, +0
 	ai_energy ELECTABUZZ_LV35, 2, -1
 	ai_energy JOLTEON_LV29,    3, +1
 	ai_energy VIKAVOLT,     4, +2
@@ -61,7 +61,7 @@ AIActionTable_LegendaryZapdos:
 	dw NULL
 
 .list_prize
-	dw GAMBLER
+	dw COPYCAT
 	dw RAIKOU
 	dw NULL
 
@@ -97,7 +97,7 @@ AIDoTurn_LegendaryZapdos:
 	or a
 	jr nz, .skip_energy_attach
 
-; if Arena card is Voltorb and there's ElectrodeLv35 in hand,
+; if Arena card is Toxel and there's ToxtricityLv35 in hand,
 ; or if it's Electabuzz, try attaching Energy card
 ; to the Arena card if it doesn't have any energy attached.
 ; Otherwise if Energy card is not needed,
@@ -105,9 +105,9 @@ AIDoTurn_LegendaryZapdos:
 	ld a, DUELVARS_ARENA_CARD
 	call GetTurnDuelistVariable
 	call GetCardIDFromDeckIndex
-	cp16 VOLTORB
+	cp16 TOXEL
 	jr nz, .check_electabuzz
-	ld de, ELECTRODE_LV35
+	ld de, TOXTRICITY
 	call LookForCardIDInHandList_Bank5
 	jr nc, .attach_normally
 	jr .voltorb_or_electabuzz

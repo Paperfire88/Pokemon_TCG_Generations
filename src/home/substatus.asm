@@ -6,7 +6,7 @@ HandleDoubleDamageSubstatus::
 	bit SUBSTATUS3_THIS_TURN_DOUBLE_DAMAGE_F, [hl]
 	call nz, .double_damage_at_de
 	ld a, DUELVARS_ARENA_CARD_SUBSTATUS1
-	call GetTurnDuelistVariable
+	call GetNonTurnDuelistVariable
 	or a
 	call nz, .ret1
 	ld a, DUELVARS_ARENA_CARD_SUBSTATUS2
@@ -15,6 +15,14 @@ HandleDoubleDamageSubstatus::
 	call nz, .ret2
 	ret
 .ret1
+	cp SUBSTATUS1_INCREASE_BY_30
+	jr z, .increase_damage_by_30
+	ret
+.increase_damage_by_30
+	ld hl, +30
+	add hl, de
+	ld e, l
+	ld d, h
 	ret
 .double_damage_at_de
 	ld a, e
@@ -470,8 +478,7 @@ IsClairvoyanceActive::
 ; and/or toxic gas in play, meaning that attack and/or pkmn power cannot be used
 CheckCannotUseDueToStatus::
 	xor a
-
-; same as above, but if a is non-0, only toxic gas is checked
+	
 CheckCannotUseDueToStatus_OnlyToxicGasIfANon0::
 	or a
 	jr nz, .check_toxic_gas
@@ -675,6 +682,22 @@ CheckCantUseTrainerDueToHeadache::
 	scf
 	ret
 
+CheckCantUseTrainerDueToFlag:
+	ld a, DUELVARS_ARENA_CARD_FLAGS
+	call GetTurnDuelistVariable
+	and HEALED_THIS_TURN
+	ret z
+	ldtx hl, ThisAttackCannotBeUsedTwiceText
+	scf
+	ret
+
+checkifxisinplay::
+	ld de, LASS
+	call SwapTurn
+	call CountPokemonIDInPlayArea
+	call SwapTurn
+	ret
+
 ; return carry if any duelist has Aerodactyl and its Prehistoric Power Pkmn Power is active
 IsPrehistoricPowerActive::
 	ld de, TYRANTRUM
@@ -771,10 +794,10 @@ HandleDestinyBondSubstatus::
 	ld a, DUELVARS_ARENA_CARD_SUBSTATUS1
 	call GetNonTurnDuelistVariable
 	cp SUBSTATUS1_DESTINY_BOND
-	jr z, .check_hp
+	jr z, Thecheck_hp
 	ret
 
-.check_hp
+Thecheck_hp::
 	ld a, DUELVARS_ARENA_CARD
 	call GetNonTurnDuelistVariable
 	cp -1

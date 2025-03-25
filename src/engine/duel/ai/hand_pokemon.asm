@@ -595,14 +595,6 @@ AIDecidePlayLegendaryBirds:
 	ld de, TREVENANT
 	call CountPokemonIDInBothPlayAreas
 	jr c, .subtract
-	; checks if player's active card is Snorlax
-	ld a, DUELVARS_ARENA_CARD
-	call GetNonTurnDuelistVariable
-	call SwapTurn
-	call GetCardIDFromDeckIndex
-	call SwapTurn
-	cp16 REGIDRAGO
-	jr z, .subtract
 
 ; add
 	ld a, 70

@@ -293,7 +293,7 @@ Script_BeatAmy:
 	record_master_win $03
 	print_npc_text AmyGivesMedal2Text
 .give_booster_packs
-	give_booster_packs BOOSTER_LABORATORY_WATER, BOOSTER_LABORATORY_WATER, NO_BOOSTER
+	give_booster_packs BOOSTER_COLOSSEUM_WATER, BOOSTER_MYSTERY_TRAINER_COLORLESS, BOOSTER_LABORATORY_WATER
 	print_npc_text AmyPlayerWon2Text
 	jump_if_active_npc_coords_match 20, 4, Script_LostToAmy.ows_e34e
 	quit_script_fully

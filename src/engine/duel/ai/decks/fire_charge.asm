@@ -30,16 +30,16 @@ AIActionTable_FireCharge:
 	dw STUFFUL
 	dw AUDINO
 	dw STANTLER
-	dw MAGMAR_LV24
+	dw MAGMAR
 	dw TOGEKISS
-	dw GROWLITHE
+	dw SIZZLIPEDE
 	dw NULL
 
 .list_bench
 	dw STUFFUL
 	dw AUDINO
-	dw GROWLITHE
-	dw MAGMAR_LV24
+	dw SIZZLIPEDE
+	dw MAGMAR
 	dw TOGEKISS
 	dw STANTLER
 	dw NULL
@@ -47,13 +47,13 @@ AIActionTable_FireCharge:
 .list_retreat
 	ai_retreat TOGEKISS, -1
 	ai_retreat AUDINO,         -1
-	ai_retreat GROWLITHE,       -1
+	ai_retreat SIZZLIPEDE,       -1
 	dw NULL
 
 .list_energy
-	ai_energy GROWLITHE,       3, +0
-	ai_energy ARCANINE_LV45,   4, +0
-	ai_energy MAGMAR_LV24,     3, +0
+	ai_energy SIZZLIPEDE,       3, +0
+	ai_energy CENTISKORCH,   4, +0
+	ai_energy MAGMAR,     3, +0
 	ai_energy TOGEKISS, 3, +0
 	ai_energy STUFFUL, 2, +0
 	ai_energy BEWEAR,      3, +0
@@ -62,7 +62,7 @@ AIActionTable_FireCharge:
 	dw NULL
 
 .list_prize
-	dw GAMBLER
+	dw COPYCAT
 	dw NULL
 
 .store_list_pointers

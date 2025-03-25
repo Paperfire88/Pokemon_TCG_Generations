@@ -197,7 +197,7 @@ CheckIfEnergyIsUseful:
 	jp z, .check_energy
 	cphl ABOMASNOW
 	jp z, .check_energy
-	cphl VOLTORB
+	cphl TOXEL
 	jp z, .check_energy
 	cphl TYMPOLE
 	jp z, .check_energy
@@ -1946,7 +1946,7 @@ AISelectSpecialAttackParameters:
 	ld a, DUELVARS_ARENA_CARD
 	call GetTurnDuelistVariable
 	call GetCardIDFromDeckIndex
-	cp16 MEW_LV23
+	cp16 MEW
 	jr z, .DevolutionBeam
 	cp16 MEWTWO_ALT_LV60
 	jr z, .EnergyAbsorption
@@ -1954,7 +1954,7 @@ AISelectSpecialAttackParameters:
 	jr z, .EnergyAbsorption
 	cp16 ABOMASNOW
 	jr z, .Teleport
-	cp16 ELECTRODE_LV35
+	cp16 TOXTRICITY
 	jr z, .EnergySpike
 	; fallthrough
 

@@ -35,7 +35,7 @@ AIActionTable_PowerfulRonald:
 	dw HITMONLEE
 	dw STANTLER
 	dw ESPEON
-	dw MEWTWO_LV53
+	dw MewtwoCard
 	dw RUFFLET
 	dw NULL
 
@@ -46,7 +46,7 @@ AIActionTable_PowerfulRonald:
 	dw STANTLER
 	dw RUFFLET
 	dw ESPEON
-	dw MEWTWO_LV53
+	dw MewtwoCard
 	dw ELECTABUZZ_LV35
 	dw SPIRITOMB
 	dw LICKITUNG
@@ -64,7 +64,7 @@ AIActionTable_PowerfulRonald:
 	ai_energy HITMONCHAN,      3, +1
 	ai_energy SPIRITOMB,         2, +0
 	ai_energy ESPEON,            3, +0
-	ai_energy MEWTWO_LV53,     2, +0
+	ai_energy MewtwoCard,     2, +0
 	ai_energy RUFFLET,           3, -1
 	ai_energy BRAVIARY,          3, -1
 	ai_energy LICKITUNG,       2, +0
@@ -73,7 +73,7 @@ AIActionTable_PowerfulRonald:
 	dw NULL
 
 .list_prize
-	dw GAMBLER
+	dw COPYCAT
 	dw ENERGY_REMOVAL
 	dw NULL
 

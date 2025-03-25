@@ -752,7 +752,59 @@ HandlePlayerMoveMode:
 	ldh a, [hKeysPressed]
 	and START
 	call nz, OpenPauseMenu
+	call DoFrame
+	ldh a, [hKeysHeld]
+	and SELECT
+	ret z
+	ldh a, [hKeysHeld]
+	bit B_BUTTON_F, a
+	jp nz, PauseMenu_Diary2
 	ret
+ 
+PauseMenu_Diary2:
+	call BackupPlayerPosition
+	call PauseSong
+	ld a, MUSIC_PAUSE_MENU
+	call PlaySong
+	push hl
+	push bc
+	push de
+	call EnableAndClearSpriteAnimations
+.save_file	
+	ldtx hl, PlayerDiarySaveQuestionText
+	call YesOrNoMenuWithText_SetCursorToYes
+	jr c, .cancel
+	farcall BackupPlayerPosition
+	farcall SaveAndBackupData
+	ld a, SFX_SAVE_GAME
+	call PlaySFX
+	ldtx hl, PlayerDiarySaveConfirmText
+	jr .print_result_text
+.cancel
+	ldtx hl, PlayerDiarySaveCancelText
+.print_result_text
+	call PrintScrollableText_NoTextBoxLabel
+	pop af
+	ld [wd291], a
+	call ResumeSong
+	pop de
+	pop bc
+	pop hl
+	call LoadMap
+	ret	
+
+PauseMenu_Deck2:
+	call PauseSong
+	ld a, MUSIC_PAUSE_MENU
+	call PlaySong
+	farcall FadeScreenToWhite
+	call Func_c280
+	farcall SetDefaultPalettes
+	farcall DeckSelectionMenu
+	call Set_OBJ_8x8
+	call ResumeSong
+	call LoadMap
+	ret	
 
 Func_c53d:
 	ld a, [wPlayerSpriteIndex]

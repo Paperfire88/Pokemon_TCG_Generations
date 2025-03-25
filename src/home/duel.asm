@@ -1729,6 +1729,8 @@ CheckSelfConfusionDamage::
 PlayTrainerCard::
 	call CheckCantUseTrainerDueToHeadache
 	jr c, .cant_use
+	call CheckCantUseTrainerDueToFlag
+	jr c, .cant_use
 	ldh a, [hWhoseTurn]
 	ld h, a
 	ldh a, [hTempCardIndex_ff98]
@@ -1748,6 +1750,9 @@ PlayTrainerCard::
 	ld a, OPPACTION_PLAY_TRAINER
 	ldh [hOppActionTableIndex], a
 	call DisplayUsedTrainerCardDetailScreen
+	call checkifxisinplay
+	jp c, isinhere
+.effect
 	ld a, EFFECTCMDTYPE_DISCARD_ENERGY
 	call TryExecuteEffectCommandFunction
 	ld a, EFFECTCMDTYPE_REQUIRE_SELECTION
@@ -1757,10 +1762,21 @@ PlayTrainerCard::
 	ld a, EFFECTCMDTYPE_BEFORE_DAMAGE
 	call TryExecuteEffectCommandFunction
 	ldh a, [hTempCardIndex_ff9f]
-	call MoveHandCardToDiscardPile
+	call MoveHandCardToDiscardPile	
 .done
 	or a
 	ret
+
+isinhere:
+	ldtx de, PoisonCheckText
+	call TossCoin
+	jp c, PlayTrainerCard.effect
+	ldh a, [hTempCardIndex_ff9f]
+	call RemoveCardFromHand
+  	call ReturnCardToDeck
+	or a
+	ret
+
 
 
 
@@ -1882,6 +1898,7 @@ ApplyDamageModifiers_DamageToTarget::
 	ld hl, wDamageEffectiveness
 	set RESISTANCE, [hl]
 .check_pluspower_and_defender
+	call ApplyFightingFury
 	ld b, CARD_LOCATION_ARENA
 	call ApplyAttachedPluspower
 	call SwapTurn
@@ -1947,6 +1964,7 @@ ApplyDamageModifiers_DamageToSelf::
 .not_resistant
 	ld b, CARD_LOCATION_ARENA
 	call ApplyAttachedPluspower
+	call ApplyFightingFury
 	ld b, CARD_LOCATION_ARENA
 	call ApplyAttachedDefender
 	bit 7, d ; test for underflow
@@ -1968,6 +1986,37 @@ ApplyAttachedPluspower::
 	add hl, de
 	ld e, l
 	ld d, h
+	ret
+
+; increases de by 10 points for each Pluspower found in location b
+ApplyFightingFury::
+	push de
+	ld de, TREVENANT
+	call CountPokemonIDInBothPlayAreas
+	jp c,.nope ; return if there's Muk in play
+	ld a, DUELVARS_ARENA_CARD
+	call CheckCannotUseDueToStatus
+	jp c, .nope
+	call GetTurnDuelistVariable
+	call GetArenaCardColor
+	cp TYPE_PKMN_COLORLESS
+	jp nc,.nope
+	cp TYPE_PKMN_FIGHTING
+	jp c,.nope
+	call GetTurnDuelistVariable
+	ld de, KOMMO_O
+	call CountPokemonIDInPlayArea
+	jp z,.nope
+	ld l, a
+	ld h, 10
+	call HtimesL
+	pop de
+	add hl, de
+	ld e, l
+	ld d, h
+	ret
+.nope 
+	pop de
 	ret
 
 ; reduces de by 20 points for each Defender found in location b
@@ -2076,6 +2125,14 @@ PrintKnockedOut::
 ; shows the defending player's play area screen when dealing the damage
 ; instead of the main duel interface with regular attack animation.
 DealDamageToPlayAreaPokemon_RegularAnim::
+	ld a, DUELVARS_ARENA_CARD_SUBSTATUS1
+	call GetTurnDuelistVariable
+	cp SUBSTATUS1_NO_DAMAGE_BENCH
+	jp z, .noset
+	jp .nothingxd
+.noset	
+	ld de, 0
+.nothingxd	
 	ld a, ATK_ANIM_BENCH_HIT
 	ld [wLoadedAttackAnimation], a
 ;	fallthrough
@@ -2117,11 +2174,13 @@ DealDamageToPlayAreaPokemon::
 	jr z, .turn_swapped
 	ld b, CARD_LOCATION_ARENA
 	call ApplyAttachedPluspower
+	call ApplyFightingFury
 	jr .next
 .turn_swapped
 	call SwapTurn
 	ld b, CARD_LOCATION_ARENA
 	call ApplyAttachedPluspower
+	call ApplyFightingFury
 	call SwapTurn
 .next
 	ld a, [wLoadedAttackCategory]

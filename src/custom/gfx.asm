@@ -1,14 +1,14 @@
 EspeonCardGfx::
-	INCBIN "gfx/cards/jynx.2bpp"
-	INCBIN "gfx/cards/jynx.pal"
+	INCBIN "gfx/cards/espeon.2bpp"
+	INCBIN "gfx/cards/espeon.pal"
 
 NidokingCardGfx::
-	INCBIN "gfx/cards/nidoking.2bpp"
-	INCBIN "gfx/cards/nidoking.pal"	
+	INCBIN "gfx/cards/volbeat.2bpp"
+	INCBIN "gfx/cards/volbeat.pal"	
 
-RegidragoCardGfx::
-	INCBIN "gfx/cards/snorlax.2bpp"
-	INCBIN "gfx/cards/snorlax.pal"	
+KilowattrelCardGfx::
+	INCBIN "gfx/cards/kilowattrel.2bpp"
+	INCBIN "gfx/cards/kilowattrel.pal"	
 
 DunsparceCardGfx::
 	INCBIN "gfx/cards/dunsparce.2bpp"

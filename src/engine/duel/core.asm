@@ -277,6 +277,8 @@ PrintDuelMenuAndHandleInput:
 	jr nz, DuelMenuShortcut_OpponentDiscardPile
 	bit START_F, a
 	jp nz, DuelMenuShortcut_OpponentActivePokemon
+	bit SELECT_F, a
+	jp nz, HandleBetweenTurnKnockOuts.set_player_forfeit
 
 .b_not_held
 	ldh a, [hKeysPressed]
@@ -454,6 +456,7 @@ DuelMenu_Retreat:
 	jr c, .unable_to_retreat
 	call DisplayRetreatScreen
 	jr c, .done
+	jp z, .normalprocedure
 	call DiscardRetreatCostCards
 	ldtx hl, SelectPkmnOnBenchToSwitchWithActiveText
 	call DrawWideTextBox_WaitForInput
@@ -467,8 +470,23 @@ DuelMenu_Retreat:
 	ld a, OPPACTION_ATTEMPT_RETREAT
 	ldh [hOppActionTableIndex], a
 	call AttemptRetreat
-
+	call CheckSwitchCurrent	
 .done
+	jp DuelMainInterface
+
+.normalprocedure
+	ldtx hl, SelectPkmnOnBenchToSwitchWithActiveText
+	call DrawWideTextBox_WaitForInput
+	call OpenPlayAreaScreenForSelection
+	ld [wBenchSelectedPokemon], a
+	ldh [hTempPlayAreaLocation_ffa1], a
+	push af
+	call ReturnRetreatCostCardsToArena
+	pop af
+	jp c, DuelMainInterface
+	ld a, OPPACTION_ATTEMPT_RETREAT
+	ldh [hOppActionTableIndex], a
+	call AttemptRetreat
 	jp DuelMainInterface
 
 .unable_to_retreat
@@ -548,6 +566,7 @@ PlayEnergyCard:
 	ld a, OPPACTION_PLAY_ENERGY
 	ldh [hOppActionTableIndex], a
 	call PrintAttachedEnergyToPokemon
+	call HandleOnPlayEnergyEffects
 	jp DuelMainInterface
 
 .rain_dance_active
@@ -743,6 +762,23 @@ CheckAbleToRetreat:
 	ldtx hl, UnableToRetreatText
 .done
 	scf
+	ret
+
+CheckSwitchCurrent:
+	farcall CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
+	ret c
+	ld de, MANECTRIC
+	call CountPokemonIDInPlayArea
+    ret nc; not Goodra
+	farcall DeckCheck
+	ret c
+	ldtx hl, SwitchCurrentActivatesText
+	farcall DrawWideTextBox_WaitForInput
+	farcall LightningEnergyDiscardPileSelection2
+	ret c
+	call MoveDiscardPileCardToHand
+	call GetTurnDuelistVariable
+	ld [hl], CARD_LOCATION_ARENA
 	ret
 
 ; check if the turn holder's arena Pokemon has enough energies attached to it
@@ -985,7 +1021,7 @@ DuelMenu_Attack:
 
 .cannot_use_due_to_amnesia
 	call DrawWideTextBox_WaitForInput
-	jr .try_open_attack_menu
+	jp .try_open_attack_menu
 
 .display_selected_attack_info
 	call OpenAttackPage
@@ -1871,7 +1907,7 @@ ChooseInitialArenaAndBenchPokemon:
 	call DrawDuelBoxMessage
 	ldtx hl, ChooseUpTo5BasicPkmnToPlaceOnBenchText
 	call PrintScrollableText_NoTextBoxLabel
-	ld a, PRACTICEDUEL_PUT_STARYU_IN_BENCH
+	ld a, PRACTICEDUEL_PUT_DEWPIDER_IN_BENCH
 	call DoPracticeDuelAction
 .bench_loop
 	ld a, TRUE
@@ -1942,17 +1978,17 @@ ShuffleDeckAndDrawSevenCards:
 	ret
 
 ; return nc if the card at wLoadedCard1 is a basic Pokemon card
-; MYSTERIOUS_FOSSIL and CLEFAIRY_DOLL do count as basic Pokemon cards
+; MYSTERIOUS_FOSSIL and SUBSTITUTE_DOLL do count as basic Pokemon cards
 IsLoadedCard1BasicPokemon:
 	ld hl, wLoadedCard1ID
 	cphl MYSTERIOUS_FOSSIL
 	jr z, .basic
-	cphl CLEFAIRY_DOLL
+	cphl SUBSTITUTE_DOLL
 	jr z, .basic
 ;	fallthrough
 
 ; return nc if the card at wLoadedCard1 is a basic Pokemon card
-; MYSTERIOUS_FOSSIL and CLEFAIRY_DOLL do NOT count unless already checked
+; MYSTERIOUS_FOSSIL and SUBSTITUTE_DOLL do NOT count unless already checked
 .skip_mysterious_fossil_clefairy_doll
 	ld a, [wLoadedCard1Type]
 	cp TYPE_ENERGY
@@ -1970,7 +2006,7 @@ IsLoadedCard1BasicPokemon:
 	scf
 	ret
 
-.basic ; MYSTERIOUS_FOSSIL or CLEFAIRY_DOLL
+.basic ; MYSTERIOUS_FOSSIL or SUBSTITUTE_DOLL
 	ld a, $01
 	or a
 	ret ; nz
@@ -2315,6 +2351,8 @@ DrawDuelHUDs::
 	call GetTurnDuelistVariable
 	call CheckPrintCnfSlpPrz
 	inc c
+	call CheckPrintBurned
+	inc c
 	call CheckPrintPoisoned
 	inc c
 	call CheckPrintDoublePoisoned ; if double poisoned, print a second poison icon
@@ -2327,6 +2365,8 @@ DrawDuelHUDs::
 	ld a, DUELVARS_ARENA_CARD_STATUS
 	call GetTurnDuelistVariable
 	call CheckPrintCnfSlpPrz
+	dec c
+	call CheckPrintBurned
 	dec c
 	call CheckPrintPoisoned
 	dec c
@@ -2488,10 +2528,10 @@ DuelEAndHPTileData:
 
 DuelHorizontalSeparatorTileData:
 ; x, y, tiles[], 0
-	db 0, 4, $37, $37, $37, $37, $37, $37, $37, $37, $37, $31, $32, 0
-	db 9, 5, $33, $34, 0
-	db 9, 6, $33, $34, 0
-	db 9, 7, $35, $36, $37, $37, $37, $37, $37, $37, $37, $37, $37, 0
+	db 0, 4, $37, $37, $37, $37, $37, $37, $37, $37, $37, $37, $34, 0
+	db 10, 5, $35, 0
+	db 10, 6, $35, 0
+	db 10, 7, $36, $37, $37, $37, $37, $37, $37, $37, $37, $37, 0
 	db $ff
 
 DuelHorizontalSeparatorCGBPalData:
@@ -2860,7 +2900,7 @@ PracticeDuelVerify_Turn5:
 	cp 2
 	jr nz, ReturnWrongAction
 	ld hl, wTempCardID_ccc2
-	cphl STARYU
+	cphl DEWPIDER
 	jr nz, ReturnWrongAction
 	ret
 
@@ -2874,13 +2914,13 @@ PracticeDuelVerify_Turn6:
 	cp 40
 	jr nz, ReturnWrongAction
 	ld hl, wTempCardID_ccc2
-	cphl STARYU
+	cphl DEWPIDER
 	jr nz, ReturnWrongAction
 	ret
 
 PracticeDuelVerify_Turn7Or8:
 	ld hl, wTempCardID_ccc2
-	cphl STARMIE
+	cphl ARAQUANID
 	jr nz, ReturnWrongAction
 	ld a, [wSelectedAttack]
 	cp 1
@@ -4019,7 +4059,7 @@ PrintAttackOrPkmnPowerInformation:
 	; if in Attack menu and attack 1 description exists, print at 18,e:
 	ld b, 18
 	ld c, e
-	ld a, SYM_ATK_DESCR
+	ld a, SYM_SPACE
 	call WriteByteToBGMap0
 .print_damage
 	inc hl
@@ -4042,6 +4082,8 @@ PrintAttackOrPkmnPowerInformation:
 	jr z, .print_energy_cost
 	cp POKEMON_POWER
 	jr z, .print_pokemon_power
+	ld bc, CARD_DATA_ATTACK1_ENERGY_COST
+	jr nc, .print_Resd
 	; register a is DAMAGE_PLUS, DAMAGE_MINUS, or DAMAGE_X
 	; print the damage modifier (+, -, x) at 18,(e+1) (after the damage value)
 	add SYM_PLUS - DAMAGE_PLUS
@@ -4069,6 +4111,13 @@ PrintAttackOrPkmnPowerInformation:
 	; print "PKMN PWR" at 2,e
 	ld d, 2
 	ldtx hl, PKMNPWRText
+	call InitTextPrinting_ProcessTextFromID
+	pop bc
+	ret
+.print_Resd	
+	; print "PKMN PWR" at 2,e
+	ld d, 2
+	ldtx hl, CeroCostText
 	call InitTextPrinting_ProcessTextFromID
 	pop bc
 	ret
@@ -4452,10 +4501,6 @@ PrintPokemonCardWeight:
 	ld hl, wStringBuffer + 5
 	or a
 	jr z, .decimal_done
-	ld [hl], SYM_DOT
-	inc hl
-	add SYM_0
-	ld [hli], a
 .decimal_done
 	ld [hl], 0
 	push bc
@@ -5096,6 +5141,8 @@ PrintPlayAreaCardHeader:
 	call GetTurnDuelistVariable
 	call CheckPrintCnfSlpPrz
 	inc b
+	call CheckPrintBurned
+	inc b
 	call CheckPrintPoisoned
 	inc b
 	call CheckPrintDoublePoisoned
@@ -5142,6 +5189,16 @@ FaceDownCardTileNumbers:
 	db $d4, $02 ; stage 1
 	db $d8, $01 ; stage 2
 	db $dc, $01 ; stage 2 special
+
+CheckPrintBurned:
+	push af
+	and BURNED
+	jr z, .print
+	ld a, SYM_BURNED
+.print
+	call WriteByteToBGMap0
+	pop af
+	ret
 
 ; given a card's status in a, print the Poison symbol at bc if it's poisoned
 CheckPrintPoisoned:
@@ -5431,6 +5488,7 @@ AttemptRetreat:
 	call SwapArenaWithBenchPokemon
 	xor a
 	ld [wGotHeadsFromConfusionCheckDuringRetreat], a
+	farcall FerroCheck
 	ret
 
 ; given a number between 0-255 in a, converts it to TX_SYMBOL format,
@@ -5995,6 +6053,7 @@ OppAction_PlayEnergyCard:
 	call PrintAttachedEnergyToPokemon
 	ld a, TRUE
 	ld [wAlreadyPlayedEnergy], a
+	call HandleOnPlayEnergyEffects
 	jp DrawDuelMainScene
 
 ; evolve a Pokemon card in the arena or in the bench
@@ -6256,9 +6315,6 @@ DrawWideTextBox_WaitForInput_Bank1:
 
 ; apply and/or refresh status conditions and other events that trigger between turns
 HandleBetweenTurnsEvents:
-	ld de, FLYGON
-	call CheckPokemonIDInArena
-    jr c, .something_to_handle
 	call IsArenaPokemonAsleepOrPoisoned
 	jr c, .something_to_handle
 	cp PARALYZED
@@ -6283,9 +6339,6 @@ HandleBetweenTurnsEvents:
 	call DrawDuelBoxMessage
 	ldtx hl, BetweenTurnsText
 	call DrawWideTextBox_WaitForInput
-	ld de, FLYGON
-	call CheckPokemonIDInArena
-	call c, HandleIrritatingBuzz
 
 	ld a, DUELVARS_ARENA_CARD
 	call GetTurnDuelistVariable
@@ -6301,13 +6354,15 @@ HandleBetweenTurnsEvents:
 	; has status condition
 	call HandlePoisonDamage
 	jr c, .discard_pluspower
+	call HandleBurnCheck
+	jr c, .discard_pluspower
 	call HandleSleepCheck
 	ld a, [hl]
 	and CNF_SLP_PRZ
 	cp PARALYZED
 	jr nz, .discard_pluspower
 	; heal paralysis
-	ld a, DOUBLE_POISONED
+	ld a, DOUBLE_POISONED | BURNED
 	and [hl]
 	ld [hl], a
 	call RedrawTurnDuelistsMainSceneOrDuelHUD
@@ -6332,41 +6387,14 @@ HandleBetweenTurnsEvents:
 	or a
 	jr z, .asm_6c3a
 	call HandlePoisonDamage
-	call nc, HandleSleepCheck
+	jr c, .asm_6c3a
+	call HandleBurnCheck
+	jr c, .asm_6c3a
+    call HandleSleepCheck
 .asm_6c3a
 	call DiscardAttachedDefenders
 	call SwapTurn
 	jp HandleBetweenTurnKnockOuts
-
-HandleIrritatingBuzz:
-	ld a, c
-	ldh [hTemp_ffa0], a
-	ld de, TREVENANT
-	call CountPokemonIDInBothPlayAreas
-	ret c ; return if there's Muk in play
-
-	ldtx hl, Received10DamageDueToIrritatingBuzzText
-	call DrawWideTextBox_WaitForInput
-
-; initial animation
-    ld a, ATK_ANIM_HIT
-    ld [wLoadedAttackAnimation], a 
-    bank1call Func_7415
-    ldh a, [hTempPlayAreaLocation_ff9d]
-    ld b, a
-    ld c, $00
-    ldh a, [hWhoseTurn]
-    ld h, a
-    bank1call WaitAttackAnimation
-
-; deal damage   
-	call SwapTurn
-    ldh a, [hTempPlayAreaLocation_ff9d]
-    ld b, a
-    ld de, 10 ; damage.    
-    call DealDamageToPlayAreaPokemon
-	call SwapTurn
-    jp HandleBetweenTurnKnockOuts	
 
 ; discard any PLUSPOWER attached to the turn holder's arena and/or bench Pokemon
 DiscardAttachedPluspowers:
@@ -6403,7 +6431,7 @@ IsArenaPokemonAsleepOrPoisoned:
 	ret z
 	; note that POISONED | DOUBLE_POISONED is the same as just DOUBLE_POISONED ($c0)
 	; poison status masking is normally done with PSN_DBLPSN ($f0)
-	and POISONED | DOUBLE_POISONED
+	and POISONED | DOUBLE_POISONED | BURNED
 	jr nz, .set_carry
 	ld a, [hl]
 	and CNF_SLP_PRZ
@@ -6597,6 +6625,79 @@ HandlePoisonDamage:
 	pop hl
 	ret
 
+HandleBurnCheck:
+    ld a, [hl]
+    and BURNED
+    ret z ; quit if not burned
+
+    push hl
+    ld a, [wTempNonTurnDuelistCardID]
+    ld e, a
+    call LoadCardDataToBuffer1_FromCardID
+    ld a, 18
+    call CopyCardNameAndLevel
+    ld [hl], TX_END
+    ld hl, wTxRam2
+    xor a
+    ld [hli], a
+    ld [hl], a
+
+; coin check    
+    ldtx de, PokemonsBurnCheckText    
+    call TossCoin
+    ld a, DUEL_ANIM_SMALL_FLAME
+    ldtx hl, IsStillBurnedText
+    jr nc, .tails
+
+; coin toss was heads, cure burn status
+    pop hl
+    push hl
+    ld a, DOUBLE_POISONED
+    and [hl]
+    ld [hl], a
+    ld a, DUEL_ANIM_HEAL
+    ldtx hl, IsCuredOfBurnText
+	jp HandleSleepCheck.tails
+
+.tails
+; load damage and text according to burn
+    bit BURNED_F, [hl]
+    ld a, BRN_DAMAGE
+    ldtx hl, Received20DamageDueToBurnText
+    push af
+    ld [wDuelAnimDamage + 0], a
+    xor a
+    ld [wDuelAnimDamage + 1], a
+
+    push hl
+    call RedrawTurnDuelistsMainSceneOrDuelHUD
+    pop hl
+    call PrintCardNameFromCardIDInTextBox
+
+; play animation
+    ld a, DUEL_ANIM_SMALL_FLAME
+    call PlayBetweenTurnsAnimation
+    pop af
+
+; deal burn damage
+    ld e, a
+    ld d, $00
+    ld a, DUELVARS_ARENA_CARD_HP
+    call GetTurnDuelistVariable
+    call SubtractHP
+    push hl
+    ld a, $8c
+    call PlayBetweenTurnsAnimation
+    pop hl
+
+    call PrintKnockedOutIfHLZero
+    push af
+    call WaitForWideTextBoxInput
+    pop af
+    pop hl
+	or a
+    ret
+
 ; given the deck index of a turn holder's card in register a,
 ; and a pointer in hl to the wLoadedCard* buffer where the card data is loaded,
 ; check if the card is Clefairy Doll or Mysterious Fossil, and, if so, convert it
@@ -6616,7 +6717,7 @@ ConvertSpecialTrainerCardToPokemon::
 	ret z ; return if the card is not in the arena or bench
 	cp16 MYSTERIOUS_FOSSIL
 	jr z, .start_ram_data_overwrite
-	cp16 CLEFAIRY_DOLL
+	cp16 SUBSTITUTE_DOLL
 	ret nz
 .start_ram_data_overwrite
 	push de
@@ -6793,6 +6894,15 @@ HandleBetweenTurnKnockOuts:
 	ld [wDuelFinished], a
 	scf
 	jr .asm_6eb2
+.set_player_forfeit
+	farcall PlayerForfeitEffect
+	ldh a, [hTemp_ffa0]
+	or a
+	jp z, DuelMainInterface
+	ld a, TURN_PLAYER_LOST
+	ld [wDuelFinished], a
+	scf
+	jr .asm_6eb2
 
 .Data_6ed2:
 	db DUEL_NOT_FINISHED, TURN_PLAYER_LOST, TURN_PLAYER_WON,  TURN_PLAYER_TIED
@@ -6879,7 +6989,7 @@ ReplaceKnockedOutPokemon:
 	call DrawWideTextBox_WaitForInput
 	ld a, $01
 	ld [wPlayAreaSelectAction], a
-	ld a, PRACTICEDUEL_PLAY_STARYU_FROM_BENCH
+	ld a, PRACTICEDUEL_PLAY_DEWPIDER_FROM_BENCH
 	call DoPracticeDuelAction
 .select_pokemon
 	call OpenPlayAreaScreenForSelection
@@ -7145,6 +7255,7 @@ SetAllPlayAreaPokemonCanEvolve:
 	ld l, DUELVARS_ARENA_CARD_FLAGS
 .next_pkmn_loop
 	res USED_PKMN_POWER_THIS_TURN_F, [hl]
+	res HEALED_THIS_TURN_F, [hl]
 	set CAN_EVOLVE_THIS_TURN_F, [hl]
 	inc l
 	dec c
@@ -7671,4 +7782,36 @@ PlayAttackAnimation::
 	pop hl
 	pop af
 	ldh [hWhoseTurn], a
+	ret
+
+HandleOnPlayEnergyEffects:
+	farcall CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
+	ret c
+    ldh a, [hTempPlayAreaLocation_ff9d]
+    add DUELVARS_ARENA_CARD
+    call GetTurnDuelistVariable
+    call GetCardIDFromDeckIndex
+    ld a, e
+	cp16 GOODRA
+    jp nz, .not_Goodra
+    ldh a, [hTempPlayAreaLocation_ff9d]
+    ld e, a
+    call GetCardDamageAndMaxHP
+    or a
+    ret z  ; no damage
+    ld c, 20
+    cp 20
+    jr nc, .skip_cap
+    ld c, a
+.skip_cap
+    ld a, c
+    farcall HealPlayAreaCardHP	
+    ret
+.not_Goodra
+	cp16 FLYGON
+	ret nz
+	call SwapTurn
+	ld e, PLAY_AREA_ARENA
+	call SwapTurn
+  	farcall Put1DamageCounterOnTarget
 	ret

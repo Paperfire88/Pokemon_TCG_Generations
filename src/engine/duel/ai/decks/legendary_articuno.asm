@@ -59,7 +59,7 @@ AIActionTable_LegendaryArticuno:
 	dw NULL
 
 .list_prize
-	dw GAMBLER
+	dw COPYCAT
 	dw SUICUNE
 	dw NULL
 

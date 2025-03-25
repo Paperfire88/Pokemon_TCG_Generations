@@ -1,12 +1,7 @@
 TerrorStrikeDescription:
-	text "After doing damage, Flip a coin."
-	line "If heads, Switch in 1 of your" 
-	line "opponent's Benched PKMN to the"
-	line "Active Spot."
-	done
-
-PoisonFangName:
-	text "Poison Fang"
+	text "After doing damage, Flip a coin. If"
+	line "heads, Switch in 1 of your opponents" 
+	line "Benched PKMN to the Active Spot."
 	done
 
 CobraName:
@@ -23,7 +18,7 @@ FurySwipesName:
 
 TripleAttackX10Description:
 	text "Flip 3 coins. This attack does 10"
-	line "damage times the number of heads."
+	line "damage for each heads."
 	done
 
 CallForFamilyName:
@@ -31,15 +26,9 @@ CallForFamilyName:
 	done
 
 GrassCallForFamilyDescription:
-	text "Search your deck for a <GRASS> Basic"
-	line "PKMN card and put it onto your"
-	line "Bench. Shuffle your deck afterward."
-	line "(You can't use this attack if your"
-	line "Bench is full.)"
-	done
-
-PoisonPinName:
-	text "Poison Pin"
+	text "If your Bench isn't full:Search your"
+	line "deck for a <GRASS> Basic PKMN and put it"
+	line "onto your Bench. Shuffle your deck."
 	done
 
 AccelgorName:
@@ -68,8 +57,8 @@ BoyfriendsName:
 	done
 
 BoyfriendsDescription:
-	text "Does damage +20 more damage for"
-	line "each (Volbeat) you have in play."
+	text "Does +20 damage for each [VOLBEAT]"
+	line "you have in play."
 	done
 
 KarrablastName:
@@ -82,31 +71,26 @@ HornHazardName:
 
 MayDoNothingDescription:
 	text "Flip a coin. If tails, this attack"
-	line "does nothing."
+	line "Fails."
 	done
 
 EscavalierName:
 	text "Escavalier"
 	done
 
-HornDrillName:
+IronTackleName:
 	text "Iron Tackle"
+	done
+
+IronTackleDescription:
+	text "If an [ACCELGOR] is in play, prevent"
+	line "all damage done to this PKMN that is"
+	line "30 or less during the next turn."
+	line "(after applying Weakness/Resistance)"
 	done
 
 NidokingName:
 	text "Volbeat"
-	done
-
-ThrashName:
-	text "Thrash"
-	done
-
-ThrashDescription:
-	text "Flip a coin. If heads, this attack"
-	line "does 30 damage plus 10 more damage;"
-	line "if tails, this attack does 30 damage"
-	line "and Nidoking does 10 damage to"
-	line "itself."
 	done
 
 ToxicName:
@@ -126,10 +110,9 @@ LeechLifeName:
 	text "Leech Life"
 	done
 
-ZubatsLeechLifeDescription:
-	text "Heal from this PKMN the same amount"
-	line "of damage you did to your opponent"
-	line "Active PKMN."
+LeechLifeDescription:
+	text "Heal damage from this PKMN equal to"
+	line "the damage done."
 	done
 
 BatName:
@@ -138,16 +121,6 @@ BatName:
 
 GolbatName:
 	text "Golbat"
-	done
-
-WingAttackName:
-	text "Wing Attack"
-	done
-
-GolbatsLeechLifeDescription:
-	text "Heal from this PKMN the same amount"
-	line "of damage you did to your opponent"
-	line "Active PKMN."
 	done
 
 ApplinName:
@@ -159,7 +132,7 @@ TradeName:
 	done
 
 TradeDescription:
-	text "Discard 1 card from your hand," 
+	text "Discard 1 card from your hand;" 
 	line "Draw 2 cards."
 	done
 
@@ -176,9 +149,8 @@ FoulOdorName:
 	done
 
 FoulOdorDescription:
-	text "After doing damage, Both the"
-	line "Defending PKMN and this PKMN are now"
-	line "Confused."
+	text "After doing damage, Both Active PKMN"
+	line "are now Confused."
 	done
 
 VileplumeName:
@@ -190,9 +162,9 @@ HealName:
 	done
 
 HealDescription:
-	text "Once per turn (before your attack),"
-	line "you may flip a coin. If heads,"
-	line "heal 10 damage from 1 of your PKMN."
+	text "Once per turn, you may flip a coin."
+	line "If heads, heal 10 damage from 1 of"
+	line "your PKMN."
 	done
 
 PetalDanceName:
@@ -216,16 +188,12 @@ ShroomishName:
 	text "Shroomish"
 	done
 
-ScratchName:
-	text "Scratch"
-	done
-
 SporeName:
 	text "Spore"
 	done
 
 InflictSleepDescription:
-	text "The Defending PKMN is now Sleep."
+	text "The Defending PKMN is now Asleep."
 	done
 
 MushroomName:
@@ -260,24 +228,20 @@ VenomPowderDescription:
 	text "Flip a coin. If heads, the Defending"
 	line "PKMN is now Confused and Poisoned."
 	line "If the Defending PKMN is an Evolved" 
-	line "PKMN, use this effect without" 
-	line "flipping a coin."
+	line "PKMN, you can use this effect" 
+	line "without flipping a coin."
 	done
 
 PoisonmothName:
 	text "Poisonmoth"
 	done
 
-BellsproutName:
+BounsweetName:
 	text "Bounsweet"
 	done
 
-WeepinbellName:
+SteeneeName:
 	text "Steenee"
-	done
-
-RazorLeafName:
-	text "Razor Leaf"
 	done
 
 FlycatcherName:
@@ -295,11 +259,8 @@ AttractName:
 AttractDescription:
 	text "After doing damage, Switch in 1 of" 
 	line "your opponent's Benched PKMN to the"
-	line "Active Spot. Then, flip a coin."
-	line "If heads, the Active PKMN is now"
-	line "Confused. If the Defending PKMN is" 
-	line "an Evolved PKMN, use this effect" 
-	line "without flipping a coin."
+	line "Active Spot. Then, that Active PKMN"
+	line "is now Confused."
 	done
 
 AcidName:
@@ -307,28 +268,22 @@ AcidName:
 	done
 
 VictreebelsAcidDescription:
-	text "Flip a coin. If heads, the Defending"
-	line "PKMN can't retreat during your"
-	line "opponent's next turn."
+	text "Flip a coin. If heads, during your"
+	line "opponent's next turn the Defending"
+	line "PKMN can't retreat."
+	done
+
+CantRetreatDescription:
+	text "The Defending PKMN can't retreat"
+	line "during your opponent's next turn."
 	done
 
 PhantumpName:
 	text "Phantump"
 	done
 
-NastyGooName:
-	text "Nasty Goo"
-	done
-
-MinimizeName:
+VanishName:
 	text "Vanish"
-	done
-
-GrimersMinimizeDescription:
-	text "All damage done to this PKMN"
-	line "during your opponent's next turn"
-	line "is reduced by 20 (after applying"
-	line "Weakness/Resistance)."
 	done
 
 SludgeName:
@@ -339,11 +294,11 @@ TrevenantName:
 	text "Trevenant"
 	done
 
-ToxicGasName:
+ForestCurseName:
 	text "Forest's Curse"
 	done
 
-ToxicGasDescription:
+ForestCurseDescription:
 	text "As long as this PKMN is in play," 
 	line "Neither player can use or activate"
 	line "the effect of any other PKMN Power." 
@@ -375,8 +330,8 @@ TeleportName:
 	done
 
 TeleportDescription:
-	text "After doing damage, You can Switch"
-	line "this Pkmn with 1 of your Benched"
+	text "After doing damage, you can Switch"
+	line "this PKMN with 1 of your Benched"
 	line "PKMN (If any)."
 	done
 
@@ -384,25 +339,21 @@ UTurnName:
 	text "U-Turn"
 	done
 
-BigEggsplosionName:
+PowerWhipName:
 	text "Power Whip"
 	done
 
-BigEggsplosionDescription:
+PowerWhipDescription:
 	text "Flip a coin for each Energy attached"
 	line "to this PKMN. This attack does 20"
 	line "damage for each heads."
 	done
 
-CoconutName:
-	text "Coconut"
-	done
-
-KoffingName:
+FerroseedName:
 	text "Ferroseed"
 	done
 
-FoulGasName:
+DangerousClawName:
 	text "Dangerous Claw"
 	done
 
@@ -416,7 +367,7 @@ PoisonGasName:
 	text "Poison Gas"
 	done
 
-WeezingName:
+FerrothornName:
 	text "Ferrothorn"
 	done
 
@@ -439,16 +390,8 @@ TangelaName:
 	text "Tangela"
 	done
 
-BindName:
-	text "Bind"
-	done
-
 VineName:
 	text "Vine"
-	done
-
-PoisonWhipName:
-	text "Poison Whip"
 	done
 
 ScytherName:
@@ -475,10 +418,6 @@ ScizorName:
 
 IronGripName:
 	text "Irongrip"
-	done
-
-GuillotineName:
-	text "Guillotine"
 	done
 
 StagbeetleName:
@@ -511,13 +450,9 @@ FlamethrowerName:
 	text "Flamethrower"
 	done
 
-PowerCycloneName:
-	text "Power Cyclone"
-	done
-
-PowerCycloneDescription:
-	text "Put 1 <WATER> Energy card attached to"
-	line "this PKMN into your hand."
+BounceEnergyDescription:
+	text "Bounce 1 <WATER> Energy card attached to"
+	line "this PKMN to your hand."
 	done
 
 FlameName:
@@ -544,8 +479,7 @@ FireSpinName:
 
 FireSpinDescription:
 	text "Discard 2 Energy cards attached to"
-	line "this PKMN in order to use this"
-	line "attack."
+	line "this PKMN to use this attack."
 	done
 
 HoundourName:
@@ -568,10 +502,9 @@ NinetalesLureDescription:
 	text "Before doing damage, Switch in 1 of" 
 	line "your opponent's Benched PKMN to the"
 	line "Active Spot. If this PKMN has any"
-	line "<DARKNESS> energy attached, If the Defending"
-	line "PKMN attacks on your opponent's next"
-	line "turn, your opponent flips a coin."
-	line "If tails, that attack fails."
+	line "<DARKNESS> energy attached, during your"
+	line "opponent's next turn the Defending"
+	line "PKMN can't retreat."
 	done
 
 FireBlastName:
@@ -580,25 +513,11 @@ FireBlastName:
 
 FireBlastDescription:
 	text "Discard 1 <FIRE> Energy card attached"
-	line "to this PKMN in order to use this"
-	line "attack."
+	line "to this PKMN to use this attack."
 	done
 
 MixUpName:
 	text "Fast Attack"
-	done
-
-MixUpDescription:
-	text "If your opponent has any PKMN cards"
-	line "in their hand, your opponent"
-	line "shuffles them into the deck. Then,"
-	line "your opponent Adds an equal number"
-	line "of PKMN chosen at random from their"
-	line "deck into their hand. Then,"
-	done
-
-MixUpDescriptionCont:
-	text "Your opponent shuffles their deck."
 	done
 
 DancingEmbersName:
@@ -607,10 +526,10 @@ DancingEmbersName:
 
 DancingEmbersDescription:
 	text "Flip 8 coins. This attack does 10"
-	line "damage times the number of heads."
+	line "damage for each heads."
 	done
 
-GrowlitheName:
+SizzlipedeName:
 	text "Sizzlipede"
 	done
 
@@ -622,7 +541,7 @@ PuppyName:
 	text "Puppy"
 	done
 
-ArcanineName:
+CentiskorchName:
 	text "Centiskorch"
 	done
 
@@ -632,7 +551,7 @@ QuickAttackName:
 
 QuickAttackDescription:
 	text "Flip a coin. If heads, this attack"
-	line "does +20 more damage."
+	line "does +20 damage."
 	done
 
 FlareblitzName:
@@ -641,19 +560,13 @@ FlareblitzName:
 
 FlareblitzDescription:
 	text "Discard 1 Energy card attached to"
-	line "this PKMN to use this attack."
-	line "Does damage +10 more damage for each"
-	line "damage counter on this pkmn."
+	line "this PKMN; this attack. Does +10"
+	line "damage for each <HP_NOK> damage counter"
+	line "on this pkmn."
 	done
 
-LegendaryName:
+RadiatorName:
 	text "Radiator"
-	done
-
-ArcaninesFlamethrowerDescription:
-	text "Discard 1 <FIRE> Energy card attached to"
-	line "this PKMN in order to use this"
-	line "attack."
 	done
 
 TakeDownName:
@@ -668,31 +581,12 @@ DarumakaName:
 	text "Darumaka"
 	done
 
-GnawOffName:
-	text "Gnaw Off"
-	done
-
 FlameTailName:
-	text "Reckles Charge"
-	done
-
-FireHorseName:
-	text "Fire Horse"
+	text "Reckless Charge"
 	done
 
 DarmanitanName:
 	text "Darmanitan"
-	done
-
-StompName:
-	text "Stomp"
-	done
-
-StompDescription:
-	text "Flip a coin. If heads, this attack"
-	line "does 20 damage plus 10 more damage;"
-	line "if tails, this attack does 20"
-	line "damage."
 	done
 
 AgilityName:
@@ -701,9 +595,8 @@ AgilityName:
 
 RapidashsAgilityDescription:
 	text "Flip a coin. If heads, during your"
-	line "opponent's next turn, prevent all"
-	line "damage and effects from attacks" 
-	line "done to this PKMN."
+	line "opponent's next turn, this PKMN is"
+	line "unaffected by attacks."
 	done
 
 MagmarName:
@@ -715,8 +608,9 @@ FirePunchName:
 	done
 
 FirePunchDescription:
-	text "Discard 1 <FIRE> Energy card attached to"
-	line "Magmar in order to use this attack."
+	text "Flip a coin. If heads, this attack"
+	line "does +10 damage; if tails, the"
+	line "Defending PKMN is now Burned."
 	done
 
 SpitfireName:
@@ -725,13 +619,6 @@ SpitfireName:
 
 SmokescreenName:
 	text "Smokescreen"
-	done
-
-MagmarsSmokescreenDescription:
-	text "If the Defending PKMN tries to"
-	line "attack during your opponent's next"
-	line "turn, your opponent flips a coin. If"
-	line "tails, that attack does nothing."
 	done
 
 FlareonName:
@@ -751,13 +638,8 @@ RageName:
 	done
 
 FlareonsRageDescription:
-	text "Does damage +10 more damage for each"
-	line "damage counter on this pkmn."
-	done
-
-FlareonsFlamethrowerDescription:
-	text "Discard 1 <FIRE> Energy card attached to"
-	line "Flareon in order to use this attack."
+	text "Does damage +10 damage for each"
+	line "<HP_NOK> damage counter on this pkmn."
 	done
 
 EnteiName:
@@ -769,14 +651,14 @@ WildfireName:
 	done
 
 WildfireDescription:
-	text "Discard 1 or more <FIRE> Energy cards"
-	line "attached to this PKMN, discard cards"
-	line "from the top of your opponent's deck"
-	line "Equal to the number of card discarted"
-	line "From this PKMN."
+	text "You can Discard 1 or more <FIRE> Energy"
+	line "cards attached to this PKMN, discard"
+	line "cards from the top of your opponent"
+	line "deck Equal to the number of card"
+	line "discarted From this PKMN."
 	done
 
-DiveBombName:
+SkillDiveName:
 	text "Skill Dive"
 	done
 
@@ -786,10 +668,9 @@ FiregiverName:
 
 FiregiverDescription:
 	text "When you play this PKMN from your"
-	line "hand (not during set-up), add 1 to" 
-	line "4 <FIRE> Energy cards from your deck" 
-	line "at random. Then, Shuffle your"
-	line "deck afterward."
+	line "hand, add 1 to 4 <FIRE> Energy cards"
+	line "from your deck at random. Then,"
+	line "Shuffle your deck."
 	done
 
 FroakieName:
@@ -800,30 +681,12 @@ BubbleName:
 	text "Bubble"
 	done
 
-WithdrawName:
-	text "Withdraw"
-	done
-
-FroakiesWithdrawDescription:
-	text "Flip a coin. If heads, prevent all"
-	line "damage done to Froakie during your"
-	line "opponent's next turn. (Any other"
-	line "effects of attacks still happen.)"
-	done
-
 TinyTurtleName:
 	text "Tiny Turtle"
 	done
 
 WartortleName:
 	text "Frogadier"
-	done
-
-WartortlesWithdrawDescription:
-	text "Flip a coin. If heads, prevent all"
-	line "damage done to Wartortle during your"
-	line "opponent's next turn. (Any other"
-	line "effects of attacks still happen.)"
 	done
 
 TurtleName:
@@ -839,11 +702,10 @@ RainDanceName:
 	done
 
 RainDanceDescription:
-	text "As often as you like during your"
-	line "turn, you may attach 1 <WATER> Energy"
-	line "card from your hand to 1 of your <WATER>"
-	line "Pkmn. (This doesn't use up your 1"
-	line "Energy attach for the turn.)"
+	text "During your turn, you may attach any"
+	line "number of <WATER> Energy from your hand"
+	line "to 1 of your <WATER> PKMN (This doesn't"
+	line "use your 1 Energy attachment)."
 	done
 
 HydroPumpName:
@@ -851,11 +713,10 @@ HydroPumpName:
 	done
 
 HydroPumpDescription:
-	text "This attack does +20 more damage for"
-	line "each extra <WATER> Energy attached to"
-	line "this PKMN (in addition to its attack"
-	line "cost). You can't add more than 20" 
-	line "damage in this way."
+	text "This attack does +20 damage for each"
+	line "extra <WATER> energy attached to this"
+	line "pkmn (in addition to its attack cost"
+	line "and up to +60 damage)."
 	done
 
 ShellfishName:
@@ -866,7 +727,7 @@ BuizelName:
 	text "Buizel"
 	done
 
-HeadacheName:
+KnockOffName:
 	text "Knock Off"
 	done
 
@@ -880,7 +741,7 @@ DuckName:
 	text "Duck"
 	done
 
-GolduckName:
+FloatzelName:
 	text "Floatzel"
 	done
 
@@ -910,11 +771,10 @@ WaterGunName:
 	done
 
 PoliwagsWaterGunDescription:
-	text "This attack does +10 more damage for"
-	line "each extra <WATER> Energy attached to"
-	line "this PKMN (in addition to its attack"
-	line "cost). You can't add more than 20" 
-	line "damage in this way."
+	text "This attack does +10 damage for each"
+	line "extra <WATER> energy attached to this"
+	line "pkmn (in addition to its attack cost"
+	line "and up to +30 damage)."
 	done
 
 TadpoleName:
@@ -930,10 +790,9 @@ AmnesiaName:
 	done
 
 PoliwhirlsAmnesiaDescription:
-	text "Choose 1 of the Defending PKMN's"
-	line "attacks. That PKMN can't use that"
-	line "attack during your opponent's next"
-	line "turn."
+	text "Select 1 of the defending PKMN"
+	line "attacks. it can't use that selected"
+	line "attack during the next turn."
 	done
 
 DoubleslapName:
@@ -942,10 +801,6 @@ DoubleslapName:
 
 SeismitoadName:
 	text "Seismitoad"
-	done
-
-WhirlpoolName:
-	text "Whirlpool"
 	done
 
 SkrelpName:
@@ -957,21 +812,17 @@ CowardiceName:
 	done
 
 CowardiceDescription:
-	text "Once per turn (before your attack),"
-	line "If this PKMN wasn't play this turn,"
-	line "you can return it to your hand."
-	line "(discard all cards attached to it)"
-	done
-
-JellyfishName:
-	text "Jellyfish"
+	text "Once per turn, If this PKMN wasn't"
+	line "played this turn, you can return it"
+	line "to your hand."
+	line "(discard all cards attached to it)."
 	done
 
 DragalgeName:
 	text "Dragalge"
 	done
 
-JellyfishStingName:
+SludgeBombName:
 	text "Sludge Bomb"
 	done
 
@@ -991,7 +842,7 @@ DewgongName:
 	text "Dewgong"
 	done
 
-AuroraBeamName:
+CrushingIceName:
 	text "Crushing Ice"
 	done
 
@@ -999,26 +850,14 @@ IceBeamName:
 	text "Ice Beam"
 	done
 
-ShellderName:
+WingullName:
 	text "Wingull"
-	done
-
-HideInShellName:
-	text "Dive"
-	done
-
-HideInShellDescription:
-	text "Flip a coin. If heads, prevent all"
-	line "damage done during your"
-	line "opponent's next turn. (Any other"
-	line "effects of attacks still happen.)"
 	done
 
 StarmiesRecoverDescription:
 	text "Discard 1 <WATER> Energy attached to this"
-	line "card in order to use this attack."
-	line "Remove all damage counters from"
-	line "this card."
+	line "PKMN to use this attack."
+	line "Heal all damage from this card."
 	done
 
 StarFreezeName:
@@ -1029,7 +868,7 @@ MysteriousName:
 	text "Mysterious"
 	done
 
-StaryuName:
+DewpiderName:
 	text "Dewpider"
 	done
 
@@ -1066,13 +905,12 @@ SeadraName:
 	done
 
 SeadrasWaterGunDescription:
-	text "This attack does +10 more damage for"
-	line "each extra <WATER> Energy attached to"
-	line "this PKMN (in addition to its attack"
-	line "cost). You can't add more than 20" 
-	line "damage in this way. Flip a coin."
-	line "If heads, the Defending PKMN is now" 
-	line "Asleep."
+	text "This attack does +10 damage for each"
+	line "extra <WATER> energy attached to this"
+	line "pkmn (in addition to its attack cost"
+	line "and up to +30 damage)."
+	line "Flip a coin. If heads, the Defending" 
+	line "PKMN is now Asleep."
 	done
 
 HorseaName:
@@ -1080,10 +918,9 @@ HorseaName:
 	done
 
 OpponentAttackMayDoNothingDescription:
-	text "If the Defending PKMN attacks on" 
-	line "your opponent's next turn, your" 
-	line "opponent flips a coin. If tails,"
-	line "that attack fails."
+	text "If the Defending PKMN attacks during" 
+	line "your opponent's next turn, they flip"
+	line "a coin. If tails, that attack fails."
 	done
 
 DragonName:
@@ -1092,6 +929,11 @@ DragonName:
 
 MeteorMashName:
 	text "Meteor Mash"
+	done
+
+MeteorMashDescription:
+	text "Does +20 damage for each <FIGHTING> Energy"
+	line "atached to this PKMN."
 	done
 
 FocusEnergyDescription:
@@ -1142,11 +984,10 @@ BlizzardName:
 	done
 
 BlizzardDescription:
-	text "Flip a coin. If heads, this attack"
-	line "does 10 damage to each of your"
-	line "opponent's Benched Pkmn. (Don't"
-	line "apply Weakness/Resistance)"
-	line "If tails, Draw 1 card."
+	text "Flip a coin. If heads, do 10 damage"
+	line "to each of your opponent's Benched"
+	line "PKMN (Don't apply Weakness or"
+	line "Resistance). If tails, Draw 1 card."
 	done
 
 FreezeName:
@@ -1159,9 +1000,8 @@ QuickfreezeName:
 
 QuickfreezeDescription:
 	text "When you play this PKMN from your"
-	line "hand (not during set-up)," 
-	line "Flip a coin. If heads, the Defending"
-	line "PKMN is now Paralyzed."
+	line "hand, Flip a coin. If heads, the"
+	line "Defending PKMN is now Paralyzed."
 	done
 
 IceBreathName:
@@ -1170,11 +1010,8 @@ IceBreathName:
 
 IceBreathDescription:
 	text "Does 40 damage to 1 of your"
-	line "opponent's PKMN chosen at random."
+	line "opponent's PKMN chosen at ."
 	line "Don't apply Weakness/Resistance."
-	line "(Any other effects that would happen"
-	line "after applying Weakness/Resistance"
-	line "still happen.)"
 	done
 
 BlitzleName:
@@ -1190,8 +1027,7 @@ ThunderJoltName:
 	done
 
 ThunderJoltDescription:
-	text "Flip a coin. If tails, does 10"
-	line "damage to itself."
+	text "Flip a coin. If tails,take 10 damage"
 	done
 
 MouseName:
@@ -1216,8 +1052,8 @@ ChainLightningName:
 ChainLightningDescription:
 	text "If the Defending PKMN isn't <COLORLESS>,"
 	line "this attack does 10 damage to each"
-	line "Benched PKMN of the same type as the" 
-	line "Defending PKMN (including your own)."
+	line "player's Benched PKMN of the same" 
+	line "type as the Defending PKMN."
 	done
 
 SonicboomName:
@@ -1240,7 +1076,7 @@ MagneticStormName:
 MagneticStormDescription:
 	text "Remove all Energy cards attached to"
 	line "all of your PKMN, then randomly"
-	line "reattach each of them."
+	line "re-attach each of them."
 	done
 
 MagnemiteName:
@@ -1249,13 +1085,6 @@ MagnemiteName:
 
 ThunderWaveName:
 	text "Thunder Wave"
-	done
-
-MagnemitesSelfdestructDescription:
-	text "Does 10 damage to each PKMN on"
-	line "each player's Bench. (Don't apply"
-	line "Weakness/Resistance PKMN.)" 
-	line "Magnemite does 40 damage to itself."
 	done
 
 MagnetName:
@@ -1273,7 +1102,7 @@ GigashockDescription:
 	line "Benched PKMN.)"
 	done
 
-RaichuName:
+ZebstrikaName:
 	text "Zebstrika"
 	done
 
@@ -1282,8 +1111,8 @@ ThunderName:
 	done
 
 RaichusThunderDescription:
-	text "Flip a coin. If tails, does 30"
-	line "damage to itself."
+	text "Flip a coin. If tails, take 30"
+	line "damage."
 	done
 
 LuxioName:
@@ -1302,34 +1131,15 @@ FlyName:
 	text "Fly"
 	done
 
-FlyDescription:
-	text "Flip a coin. If heads, during your"
-	line "opponent's next turn, prevent all"
-	line "effects of attacks, including"
-	line "damage, done to Flying Pikachu. "
-	line "If tails, this attack does nothing "
-	line "(not even damage)."
-	done
-
 GrowlName:
 	text "Growl"
-	done
-
-GrowlDescription:
-	text "If the Defending PKMN attacks"
-	line "Pikachu during your opponent's next"
-	line "turn, any damage done by the attack"
-	line "is reduced by 10 (after applying"
-	line "Weakness/Resistance). "
-	line "(Benching or evolving either PKMN"
-	line "ends this effect.)"
 	done
 
 ThundershockName:
 	text "Thundershock"
 	done
 
-VoltorbName:
+ToxelName:
 	text "Toxel"
 	done
 
@@ -1337,7 +1147,7 @@ BallName:
 	text "Ball"
 	done
 
-ElectrodeName:
+ToxtricityName:
 	text "Toxtricity"
 	done
 
@@ -1347,8 +1157,8 @@ EnergySpikeName:
 
 EnergySpikeDescription:
 	text "Search your deck for a basic Energy"
-	line "card and attach it to 1 of your"
-	line "PKMN. Shuffle your deck afterward."
+	line "and attach it to 1 of your PKMN."
+	line "Then, shuffle your deck."
 	done
 
 ElectabuzzName:
@@ -1360,18 +1170,10 @@ LightScreenName:
 	done
 
 LightScreenDescription:
-	text "Whenever an attack does damage to"
-	line "this PKMN (after applying Weakness"
-	line "and Resistance) during your"
-	line "opponent's next turn, that attack"
-	line "only does half the damage to"
-	line "PKMN (rounded down to the"
-	line "nearest 10)."
-	done
-
-LightScreenDescriptionCont:
-	text "(Any other effects of attacks still"
-	line "happen.)"
+	text "During your opponent's next turn,"
+	line "This PKMN takes Half the damage done" 
+	line "from attacks (after Weakness and" 
+	line "Resistance). (rounded down)."
 	done
 
 ElectricName:
@@ -1387,15 +1189,10 @@ PeekName:
 	done
 
 PeekDescription:
-	text "Once per turn (before your attack),"
-	line "you may look at either: the top card"
-	line "of either player's deck, a random" 
-	line "card from your opponent's hand, or"
-	line "one of either player's Prizes."
-	done
-
-PigMonkeyName:
-	text "Pig Monkey"
+	text "Once per turn, you may look at:"
+	line "the top card of either players deck,"
+	line "a random card from your opponent's"
+	line "hand,or 1 of either player's Prizes."
 	done
 
 SandacondaName:
@@ -1409,7 +1206,7 @@ EarthquakeName:
 EarthquakeDescription:
 	text "Does 10 damage to each of your own"
 	line "Benched PKMN. (Don't apply Weakness"
-	line "and Resistance for Benched PKMN.)"
+	line "or Resistance for Benched PKMN.)"
 	done
 
 SilicobraName:
@@ -1424,17 +1221,13 @@ MudSlapName:
 	text "Mud Slap"
 	done
 
-MoleName:
-	text "Mole"
-	done
-
 SandslashName:
 	text "Perrserker"
 	done
 
 TripleAttackX20Description:
 	text "Flip 3 coins. This attack does 20"
-	line "damage times the number of heads."
+	line "damage for each heads."
 	done
 
 SandshrewName:
@@ -1451,10 +1244,9 @@ PealOfThunderName:
 
 PealOfThunderDescription:
 	text "When you play this PKMN from your"
-	line "hand (not during set-up)," 
-	line "do 30 damage to a PKMN other than"
-	line "This PKMN chosen at random. (Don't"
-	line "apply Weakness/Resistance.)"
+	line "hand, do 30 damage to 1 random PKMN"
+	line "in play, except this PKMN. (Don't"
+	line "apply Weakness or Resistance.)"
 	done
 
 BigThunderName:
@@ -1462,18 +1254,10 @@ BigThunderName:
 	done
 
 BigThunderDescription:
-	text "Choose a PKMN other than this"
-	line "One at random. This attack does 70"
-	line "damage to that PKMN. Don't apply"
-	line "Weakness/Resistance for this"
-	line "attack. (Any other effects that"
-	line "would happen after applying Weakness"
-	line "and Resistance still happen.)"
-	done
-
-ZapdosThunderDescription:
-	text "Flip a coin. If tails, Zapdos does"
-	line "30 damage to itself."
+	text "Choose a PKMN in play other than"
+	line "this One at random. This attack does"
+	line "70 damage to that PKMN. (Don't apply"
+	line "Weakness ot Resistance.)"
 	done
 
 ThunderboltName:
@@ -1509,7 +1293,7 @@ PinMissileName:
 
 QuadrupleAttackX20Description:
 	text "Flip 4 coins. This attack does"
-	line "damage times the number of heads."
+	line "damage for each heads."
 	done
 
 JolteonName:
@@ -1518,7 +1302,7 @@ JolteonName:
 
 DoubleAttackX20Description:
 	text "Flip 2 coins. This attack does 20"
-	line "damage times the number of heads."
+	line "damage for each heads."
 	done
 
 StunNeedleName:
@@ -1534,9 +1318,8 @@ ThunderpunchName:
 	done
 
 ThunderpunchDescription:
-	text "Flip a coin. If heads, this attack"
-	line "does +10 more damage; if tails,"
-	line "take 10 damage."
+	text "Flip a coin. If heads, it does +10"
+	line "damage; if tails, take 10 damage."
 	done
 
 ToxicroakName:
@@ -1548,8 +1331,8 @@ TantrumName:
 	done
 
 TantrumDescription:
-	text "Flip a coin. If tails, is"
-	line "now Confused (after doing damage)."
+	text "After doing damage, Flip a coin."
+	line "If tails, this PKMN is now Confused."
 	done
 
 SandileName:
@@ -1573,16 +1356,12 @@ KarateChopName:
 	done
 
 KarateChopDescription:
-	text "Does Damage -10 less damage for each"
-	line "damage counter on this PKMN."
+	text "Does -10 less damage for each damage"
+	line "counter on this PKMN."
 	done
 
 SubmissionName:
 	text "Submission"
-	done
-
-SubmissionDescription:
-	text "Does 20 damage to itself."
 	done
 
 KrookodileName:
@@ -1595,9 +1374,8 @@ StrikesBackName:
 
 StrikesBackDescription:
 	text "If this PKMN is your Active PKMN and"
-	line "is damaged by an opponent's attack" 
-	line "(even if this PKMN is Knocked Out)," 
-	line "put 2 damage counters on the"
+	line "is damaged by an opponent's attack," 
+	line "put 2 <HP_NOK> damage counters on the"
 	line "Attacking PKMN."
 	done
 
@@ -1621,8 +1399,7 @@ StoneBarrageName:
 
 StoneBarrageDescription:
 	text "Flip a coin until you get tails."
-	line "This attack does 10 damage for"
-	line "each heads."
+	line "do 10 damage for each heads."
 	done
 
 RockName:
@@ -1637,11 +1414,11 @@ HardenName:
 	text "Harden"
 	done
 
-GravelersHardenDescription:
+HardenDescription:
 	text "During your opponent's next turn,"
 	line "if 30 or less damage is done to"
 	line "this PKMN, prevent that damage."
-	line "(after applying Weakness and"
+	line "(after applying Weakness or"
 	line "Resistance)"
 	done
 
@@ -1653,7 +1430,7 @@ FlygonName:
 	text "Flygon"
 	done
 
-AvalancheName:
+DragonEnergyName:
 	text "Dragon Energy"
 	done
 
@@ -1678,18 +1455,10 @@ SnivelName:
 	done
 
 SnivelDescription:
-	text "If the Defending PKMN attacks"
-	line "Cubone during your opponent's next"
-	line "turn, any damage done by the attack"
-	line "is reduced by 20 (after applying"
-	line "Weakness and Resistance). (Benching"
-	line "or evolving either PKMN ends this"
-	line "effect.)"
-	done
-
-CubonesRageDescription:
-	text "Does 10 damage plus 10 more damage"
-	line "for each damage counter on Cubone."
+	text "During your opponent's next turn,"
+	line "the Defending PKMN attacks do -20"
+	line "less damage. (before Weakness or"
+	line "Resistance)."
 	done
 
 LonelyName:
@@ -1700,28 +1469,18 @@ PupitarName:
 	text "Pupitar"
 	done
 
-BonemerangName:
-	text "Bonemerang"
-	done
-
 CallforFriendName:
 	text "Call for Friend"
 	done
 
 CallforFriendDescription:
-	text "Search your deck for a <FIGHTING> Basic"
-	line "PKMN card and put it onto your"
-	line "Bench. Shuffle your deck afterward."
-	line "(You can't use this attack if your"
-	line "Bench is full.)"
+	text "If your Bench isn't full:Search your"
+	line "deck for a <FIGHTING> Basic PKMN and put it"
+	line "onto your Bench. Shuffle your deck."
 	done
 
 BonekeeperName:
 	text "Bonekeeper"
-	done
-
-BoneAttackName:
-	text "Bone Attack"
 	done
 
 BoneAttackDescription:
@@ -1736,9 +1495,9 @@ WailName:
 
 WailDescription:
 	text "Each player randomly selects Basic" 
-	line "PKMN from their deck (If Any), to"
-	line "fill their Bench. Each Player" 
-	line "shuffles their deck afterwards."
+	line "PKMN from their deck to fill their"
+	line "Bench (If Any). Each Player shuffles" 
+	line "their deck afterwards."
 	done
 
 HitmonleeName:
@@ -1751,9 +1510,9 @@ StretchKickName:
 
 StretchKickDescription:
 	text "If your opponent has any Benched"
-	line "PKMN, choose 1 of them, this attack"
-	line "does 20 damage to it."
-	line "(Don't apply Weakness/Resistance)"
+	line "PKMN, choose 1 of them and deal 20"
+	line "damage to it (Don't apply Weakness"
+	line "or Resistance)."
 	done
 
 HighJumpKickName:
@@ -1874,8 +1633,7 @@ ZweilousName:
 KadabrasRecoverDescription:
 	text "Discard 1 <PSYCHIC> Energy card attached to"
 	line "Kadabra in order to use this attack."
-	line "Remove all damage counters from"
-	line "Kadabra."
+	line "Remove all damage counters"
 	done
 
 AlakazamName:
@@ -1920,10 +1678,9 @@ HydreigonName:
 	done		
 
 DamageSwapDescription:
-	text "As often as you like during your"
-	line "turn (before your attack), You may"
-	line "move 1 damage counter from 1 of your"
-	line "PKMN to another as long as you don't"
+	text "During your turn,You may move 1 <HP_NOK> "
+	line "damage counter from 1 of your PKMN"
+	line "to another as long as it doesn't"
 	line "Knock it Out."
 	done
 
@@ -1935,41 +1692,15 @@ DopeyName:
 	text "Dopey"
 	done
 
-SpacingOutName:
-	text "Spacing Out"
-	done
-
-SpacingOutDescription:
-	text "Flip a coin. If heads, remove a"
-	line "damage counter from this PKMN."
-	line "This attack can't be used if IT"
-	line "has no damage counters on it."
-	done
-
 ScavengeName:
 	text "Scavenge"
 	done
 
-ScavengeDescription:
-	text "Discard 1 <PSYCHIC> Energy card attached to"
-	line "this PKMN; Put a Trainer card from"
-	line "your discard pile into your hand."
-	done
-
-SlowbroName:
-	text "Malamar"
-	done
-
-StrangeBehaviorName:
-	text "Contrary Beheavior"
-	done
-
 StrangeBehaviorDescription:
-	text "As often as you like during your"
-	line "turn (before your attack), You may"
-	line "move 1 damage counter from 1 of"
-	line "your PKMN to this PKMN. You can't" 
-	line "Knock Out this PKMN with this effect" 
+	text "During your turn,You may move 1 <HP_NOK> "
+	line "damage counter from 1 of your PKMN" 
+	line "to this PKMN. You can't Knock Out"
+	line "this PKMN with this effect." 
 	done
 
 HermitcrabName:
@@ -1987,4 +1718,306 @@ SleepingGasName:
 MayInflictSleepDescription:
 	text "Flip a coin. If heads, the Defending"
 	line "PKMN is now Asleep."
+	done
+
+ChaoticNoiseDescription:
+	text "Flip a coin. If heads, the Defending" 
+	line "Pkmn is now Confused. If tails," 
+	line "the Defending Pkmn is now Asleep."
+	done				
+
+ShadowClawDescription:
+	text "If this PKMN has any <PSYCHIC> energy "
+	line "attached, it does +20 damage."
+	done
+
+TwineedleDescription:
+	text "Flip 2 coins. do 30 damage for each"
+	line "heads. If both of them were heads,"
+	line "the Defending PKMN is now Poisoned."
+	done
+
+ApplefallDescription:
+	text "After doing damage, Both Active PKMN"
+	line "are now Confused. If this PKMN has"
+	line "any <FIRE> energy attached, this attack"
+	line "does +20 damage."
+	done	
+
+SweetImpactDescription:
+	text "If this attack deals damage, Heal 10"
+	line "damage from this Pkmn. If this PKMN"
+	line "has any <FIRE> energy attached, this"
+	line "attack does +20 damage."
+	done	
+
+HuntingName:
+	text "Hunting"
+	done	
+
+LoudMixName:
+	text "Electrical Riot"
+	done		
+
+KabutiDescription:
+	text "Heal damage from this PKMN equal to"
+	line "half the damage done (rounded up)."
+	line "If this PKMN has any <LIGHTNING> energy"
+	line "attached, this attack does +20 more"
+	line "damage."
+	done
+
+ElectricalRiotDescription:
+	text "If this PKMN has any <GRASS> energy"
+	line "attached, this attack does +20 more"
+	line "damage. If the defending PKMN is"
+	line "affected by a status Condition, Your"
+	line "Opponent Can't play trainer cards"
+	line "during their next turn."
+	done
+
+DestinyBondName:
+	text "Destiny Bond"
+	done
+
+CounterPunchName:
+	text "Damage Counterpunch"
+	done		
+
+DamageCounterDescription:
+	text "If this Pkmn has any <HP_NOK> damage" 
+	line "counters on it, it does +30 damage."
+	done		
+
+ClawRendName:
+	text "Claw Rend"
+	done	
+
+ClawRendDescription:
+	text "If the Defending Pkmn already has" 
+	line "any <HP_NOK> damage counters on it,"
+	line "this attack does +20 damage."
+	done	
+
+EntrapName:
+	text "Entrap"
+	done	
+
+EntrapDescription:
+	text "The Defending PKMN Retreat cost is 1"
+	line "<COLORLESS> More until the end of the next"
+	line "turn. If your opponent has the most"
+	line "Benched PKMN in play, Draw 2 cards." 
+	done	
+
+GaintBloomName:
+	text "Giant Bloom"
+	done	
+
+GiantBloomDescription:
+	text "Heal damage from this PKMN equal to"
+	line "half the damage done (rounded up)."
+	line "If this pkmn has 4 or more <GRASS>energy"
+	line "attached, Flip a coin. If heads," 
+	line "the Defending Pkmn is now Paralyzed." 
+	line "If tails, the Defending Pkmn is" 
+	line "now Asleep."
+	done
+
+GrassKnotName:
+	text "Grass Knot"
+	done
+
+HealingLightName:
+	text "Healing Light"
+	done	
+
+ScoutName:
+	text "Scout"
+	done
+
+ScoutDescription:
+	text "Your opponent reveals their hand."
+	done
+
+DragonImpactName:
+	text "Dragon Impact"
+	done
+
+MeanLookName:
+	text "Mean Look"
+	done		
+
+ToxicVibrationName:
+	text "Toxic Vibration"
+	done		
+
+ToxicVibrationDescription:
+	text "Flip a coin. If heads, the Defending" 
+	line "Pkmn is now Poisoned. If tails," 
+	line "the Defending Pkmn is now Asleep."
+	done	
+
+ChaoticNoiseName:
+	text "Chaotic Noise"
+	done		
+
+TynamoName:
+	text "Tynamo"
+	done
+
+EelektrikName:
+	text "Eelektrik"
+	done
+
+EelektrossName:
+	text "Eelektross"
+	done
+
+EmolgaName:
+	text "Emolga"
+	done
+
+TurtonatorName:
+	text "Turtonator"
+	done
+
+MagnezoneName:
+	text "Magnezone"	
+	done
+
+HelioptileName:
+	text "Helioptile"
+	done
+HelioliskName:
+	text "Heliolisk"
+	done
+
+LugiaName:
+	text "Lugia"
+	done	
+
+DrapionName:
+	text "Drapion"
+	done
+
+TyranitarName:
+	text "Tyranitar"
+	done
+
+SalazzleName:
+	text "Salazzle"	
+	done
+
+TyruntName:
+	text "Tyrunt"
+	done	
+
+SkorupiName:
+	text "Skorupi"
+	done
+
+BidoofName:
+	text "Bidoof"
+	done
+
+ElectrikeName:
+	text "Electrike"
+	done
+
+ManectricName:
+	text "Manectric"
+	done 	
+
+MisdreavusName:
+	text "Misdreavus"
+	done
+
+MismagiusName:
+	text "Mismagius"
+	done
+
+LuxrayName:
+	text "Luxray"
+	done
+
+CharjabugName:
+	text "Charjabug"
+	done
+
+CelebiName:
+	text "Celebi"
+	done	
+
+MimikyuName:
+	text "Mimikyu"
+	done
+
+PincurchinName:
+	text "Pincurchin"
+	done	
+
+NumelName:
+	text "Numel"
+	done
+
+CameruptName:
+	text "Camerupt"
+	done
+
+DottlerName:
+	text "Dottler"
+	done
+
+OrbeetleName:
+	text "Orbeetle"
+	done	 
+
+CinderCannonDescription:
+	text "If this PKMN has any <FIGHTING> energy"
+	line "attached, this attack does +20 more"
+	line "damage and After attacking, Discard" 
+	line "3 cards from the Top of Your"
+	line "Opponent's Deck."
+	done	
+
+FlareUpName:
+	text "Flare Up"
+	done		
+
+FlareUpDescription:
+	text "This Attack does +10 damage"
+	line "for each Basic Energy in your"
+	line "Discard Pile. (Up to 5)"
+	done
+
+ExploJetName:
+	text "Explosive Jet"
+	done		
+
+SpitShotName:
+	text "Spit-Out Shot"
+	done			
+
+OpportunistName:
+	text "Opportunist"
+	done		
+
+OpportunistDescription:
+	text "If the Defending Pkmn already has" 
+	line "any <HP_NOK> damage counters on it,"
+	line "Your Opponent Can't play any trainer"
+	line "cards during their next turn."
+	done	
+
+KingdraName:
+	text "Kingdra"
+	done
+
+ColorlessPokemonDeckText:
+	text "Colorless Pokémon"
+	done
+
+TargetName:
+	text "Valid Target"
 	done

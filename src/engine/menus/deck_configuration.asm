@@ -1883,10 +1883,33 @@ HandleDeckCardSelectionList:
 	jr .asm_9bb9
 .check_d_right
 	bit D_RIGHT_F, b
+	jr z, .hold_select
+	call GetSelectedVisibleCardID
+	call AddCardToDeckAndUpdateCount
+	jr .asm_9bb9
+.hold_select
+	bit SELECT_F, b
 	jr z, .asm_9bb9
 	call GetSelectedVisibleCardID
 	call AddCardToDeckAndUpdateCount
-
+	jr c, .remove_cards
+	call GetSelectedVisibleCardID
+	call AddCardToDeckAndUpdateCount
+	call GetSelectedVisibleCardID
+	call AddCardToDeckAndUpdateCount
+	call GetSelectedVisibleCardID
+	call AddCardToDeckAndUpdateCount
+	jr .asm_9bb9
+	.remove_cards
+	call GetSelectedVisibleCardID
+	call RemoveCardFromDeckAndUpdateCount
+	call GetSelectedVisibleCardID
+	call RemoveCardFromDeckAndUpdateCount
+	call GetSelectedVisibleCardID
+	call RemoveCardFromDeckAndUpdateCount
+	call GetSelectedVisibleCardID
+	call RemoveCardFromDeckAndUpdateCount
+	;fallthrough
 .asm_9bb9
 	ld a, [wCardListCursorPos]
 	ldh [hffb3], a

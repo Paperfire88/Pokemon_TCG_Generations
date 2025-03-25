@@ -18,9 +18,9 @@ LycanrocMCardGfx:
 	INCBIN "gfx/cards/lycanrocM.2bpp"
 	INCBIN "gfx/cards/lycanrocM.pal"	
 
-RegielekiCardGfx:
-	INCBIN "gfx/cards/regieleki.2bpp"
-	INCBIN "gfx/cards/regieleki.pal"	    
+WattrelCardGfx:
+	INCBIN "gfx/cards/wattrel.2bpp"
+	INCBIN "gfx/cards/wattrel.pal"	    
 
 DruddigonCardGfx:
 	INCBIN "gfx/cards/druddigon.2bpp"

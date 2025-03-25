@@ -30,24 +30,24 @@ AIActionTable_GoGoRainDance:
 	dw CHEWTLE
 	dw HORSEA
 	dw GOLDEEN
-	dw SQUIRTLE
+	dw FROAKIE
 	dw NULL
 
 .list_bench
-	dw SQUIRTLE
+	dw FROAKIE
 	dw HORSEA
 	dw GOLDEEN
 	dw CHEWTLE
 	dw NULL
 
 .list_retreat
-	ai_retreat SQUIRTLE,  -3
+	ai_retreat FROAKIE,  -3
 	ai_retreat WARTORTLE, -2
 	ai_retreat HORSEA,    -1
 	dw NULL
 
 .list_energy
-	ai_energy SQUIRTLE,  2, +0
+	ai_energy FROAKIE,  2, +0
 	ai_energy WARTORTLE, 3, +0
 	ai_energy GRENINJA, 5, +0
 	ai_energy GOLDEEN,   1, +0
@@ -58,7 +58,7 @@ AIActionTable_GoGoRainDance:
 	dw NULL
 
 .list_prize
-	dw GAMBLER
+	dw COPYCAT
 	dw ENERGY_RETRIEVAL
 	dw SUPER_ENERGY_RETRIEVAL
 	dw GRENINJA

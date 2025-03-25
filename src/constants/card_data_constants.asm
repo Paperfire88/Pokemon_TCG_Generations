@@ -86,9 +86,9 @@ DEF PKMN_CARD_DATA_LENGTH EQU _RS
 	const WATER       ; $03
 	const FIGHTING    ; $04
 	const PSYCHIC     ; $05
-	const DARKNESS ; $07
+	const DARKNESS ; $06
 DEF NUM_COLORED_TYPES EQU const_value
-	const COLORLESS   ; $06
+	const COLORLESS   ; $07
 DEF NUM_TYPES EQU const_value
 
 ; generic type (color) flag constants
@@ -180,6 +180,7 @@ DEF DAMAGE_PLUS   EQU $01
 DEF DAMAGE_MINUS  EQU $02
 DEF DAMAGE_X      EQU $03
 DEF POKEMON_POWER EQU $04
+DEF COSTLESS EQU $05
 DEF RESIDUAL_F    EQU 7
 DEF RESIDUAL      EQU 1 << RESIDUAL_F
 
@@ -198,6 +199,7 @@ DEF LOW_RECOIL_F               EQU %100
 DEF DAMAGE_TO_OPPONENT_BENCH_F EQU %101
 DEF HIGH_RECOIL_F              EQU %110
 DEF DRAW_CARD_F                EQU %111
+DEF INFLICT_BURN_F             EQU %000
 
 ; CARD_DATA_ATTACK*_FLAG2 constants
 ; bits 5, 6 and 7 cover a wide variety of effects
@@ -225,6 +227,7 @@ DEF LOW_RECOIL               EQU $1 << LOW_RECOIL_F
 DEF DAMAGE_TO_OPPONENT_BENCH EQU $1 << DAMAGE_TO_OPPONENT_BENCH_F
 DEF HIGH_RECOIL              EQU $1 << HIGH_RECOIL_F
 DEF DRAW_CARD                EQU $1 << DRAW_CARD_F
+DEF INFLICT_BURN          EQU $1 << INFLICT_BURN_F
 
 ; CARD_DATA_ATTACK*_FLAG2_F constants
 ; bits 5, 6 and 7 cover a wide variety of effects

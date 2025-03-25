@@ -540,7 +540,7 @@ Text06d8:
 	line "Huh? You must be <RAMNAME>."
 	line "Mitch told me all about you."
 	line "Beating you will be much better"
-	line "than losing to the girls!"
+	line "than losing to those girls!"
 	done
 
 Text06d9:
@@ -800,7 +800,7 @@ Text0703:
 	text "Only girls are allowed to join"
 	line "the Grass Club,"
 	line "But we're not accepting "
-	line "applications now, anyway. Sorry!"
+	line "applications now, Sorry!"
 	done
 
 Text0704:

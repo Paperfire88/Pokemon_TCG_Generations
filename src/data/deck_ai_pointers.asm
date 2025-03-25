@@ -5,8 +5,8 @@ DeckAIPointerTable::
 	dw AIActionTable_GeneralDecks        ; SAMS_NORMAL_DECK
 	dw AIActionTable_GeneralDecks        ; CHARMANDER_AND_FRIENDS_DECK
 	dw AIActionTable_GeneralDecks        ; CHARMANDER_EXTRA_DECK
-	dw AIActionTable_GeneralDecks        ; SQUIRTLE_AND_FRIENDS_DECK
-	dw AIActionTable_GeneralDecks        ; SQUIRTLE_EXTRA_DECK
+	dw AIActionTable_GeneralDecks        ; FROAKIE_AND_FRIENDS_DECK
+	dw AIActionTable_GeneralDecks        ; FROAKIE_EXTRA_DECK
 	dw AIActionTable_GeneralDecks        ; CHIKORITA_AND_FRIENDS_DECK
 	dw AIActionTable_GeneralDecks        ; CHIKORITA_EXTRA_DECK
 	dw AIActionTable_GeneralDecks        ; LIGHTNING_AND_FIRE_DECK

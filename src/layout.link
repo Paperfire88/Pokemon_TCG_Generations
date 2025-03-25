@@ -183,6 +183,10 @@ ROMX $47
 	"Custom Gfx3"
 ROMX $48
 	"Cards2"	
+ROMX $49
+	"Custom Gfx4"	
+ROMX $50
+	"Custom Gfx5"	
 WRAM0
 	"WRAM0"
 	"WRAM0 Duels 1"

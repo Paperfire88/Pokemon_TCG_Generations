@@ -60,7 +60,7 @@ AIActionTable_InvincibleRonald:
 	dw NULL
 
 .list_prize
-	dw GAMBLER
+	dw COPYCAT
 	dw NULL
 
 .store_list_pointers

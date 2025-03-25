@@ -949,6 +949,11 @@ SuccessCheckIfHeadsPowerIsSuccessfulText:
 	line "If Heads, PKMN Power is successful!"
 	done
 
+SuccessCheckIfHeadsEffectIsSuccessfulText:
+	text "Success check!!!"
+	line "If Heads, Effect is successful!"
+	done
+
 TrainerCardSuccessCheckText:
 	text "Trainer card success check!"
 	line "If Heads, you're successful!"

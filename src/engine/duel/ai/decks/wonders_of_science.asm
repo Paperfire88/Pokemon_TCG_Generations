@@ -27,20 +27,20 @@ AIActionTable_WondersOfScience:
 	jp AIPickPrizeCards
 
 .list_arena
-	dw MEWTWO_LV53
+	dw MewtwoCard
 	dw MEWTWO_ALT_LV60
 	dw MEWTWO_LV60
 	dw PHANTUMP
-	dw KOFFING
+	dw FERROSEED
 	dw PORYGON
 	dw NULL
 
 .list_bench
 	dw PHANTUMP
-	dw KOFFING
+	dw FERROSEED
 	dw MEWTWO_ALT_LV60
 	dw MEWTWO_LV60
-	dw MEWTWO_LV53
+	dw MewtwoCard
 	dw PORYGON
 	dw NULL
 
@@ -50,9 +50,9 @@ AIActionTable_WondersOfScience:
 .list_energy
 	ai_energy PHANTUMP,          3, +0
 	ai_energy TREVENANT,             4, +0
-	ai_energy KOFFING,         2, +0
-	ai_energy WEEZING,         3, +0
-	ai_energy MEWTWO_LV53,     2, -1
+	ai_energy FERROSEED,         2, +0
+	ai_energy FERROTHORN,         3, +0
+	ai_energy MewtwoCard,     2, -1
 	ai_energy MEWTWO_ALT_LV60, 2, -1
 	ai_energy MEWTWO_LV60,     2, -1
 	ai_energy PORYGON,         2, -1

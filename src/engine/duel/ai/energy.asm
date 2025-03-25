@@ -709,7 +709,7 @@ GetEnergyCardForDiscardOrEnergyBoostAttack:
 	jr z, .zapdos2
 	cphl EMBOAR
 	jr z, .charizard_or_exeggutor
-	cphl WEEZING
+	cphl FERROTHORN
 	jr z, .charizard_or_exeggutor
 	ld hl, wLoadedCard2Atk2EnergyCost
 	jr .fire
@@ -985,7 +985,7 @@ CheckSpecificDecksToAttachDoubleColorless:
 ; check for Growlithe.
 .fire_charge_deck
 	call .GetArenaCardID
-	cp16 GROWLITHE
+	cp16 SIZZLIPEDE
 	jr z, .check_colorless_attached
 	jr .no_carry
 

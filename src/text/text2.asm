@@ -1,5 +1,5 @@
 AcidCheckText:
-	text "Acid check! If Heads,"
+	text "Effect check! If Heads,"
 	line "unable to Retreat during next turn."
 	done
 
@@ -118,7 +118,7 @@ NoDamageOrEffectDueToTransparencyText:
 
 MetamorphsToText:
 	text "<RAMTEXT>"
-	line "metamorphs to <RAMTEXT>."
+	line "transforms into <RAMTEXT>!"
 	done
 
 SelectPkmnOnBenchToSwitchWithActiveText:
@@ -300,8 +300,7 @@ ChoosePkmnToRemoveDamageCounterText:
 	done
 
 ChooseBasicGrassPokemonText:
-	text "Choose a Basic"
-	line "<GRASS> Pokémon"
+	text "Choose a Basic <GRASS> Pokémon"
 	done
 
 ChooseBasicGrassPokemonFromDeckText:

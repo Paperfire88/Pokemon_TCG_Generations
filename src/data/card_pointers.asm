@@ -16,7 +16,6 @@ CardPointers::
 	dab WurmpleCard
 	dab SilcoonCard
 	dab BeautiflyCard
-	dab CascoonCard
 	dab RowletCard
 	dab DartrixCard
 	dab BeedrillCard
@@ -33,256 +32,284 @@ CardPointers::
 	dab BreloomCard
 	dab YanmaCard
 	dab YanmegaCard
-	dab BellsproutCard
-	dab WeepinbellCard
+	dab BounsweetCard
+	dab SteeneeCard
 	dab TsareenaCard
 	dab PhantumpCard
 	dab TrevenantCard
 	dab SnoverCard
 	dab AbomasnowCard
-	dab KoffingCard
-	dab WeezingCard
+	dab FerroseedCard
+	dab FerrothornCard
 	dab TangelaLv8Card
 	dab TangrowthCard	
 	dab ScytherCard
+	dab LeafeonCard
 	dab TepigCard
 	dab CharmeleonCard
 	dab CharizardCard
 	dab HoundourCard
 	dab HoundoomCard
-	dab DeltaKingdra
-	dab GrowlitheCard
-	dab ArcanineLv45Card
+	dab SizzlipedeCard
+	dab CentiskorchCard
 	dab NumelCard
 	dab CameruptCard
+	dab LitwickCard
+	dab LampentCard
+	dab ChandelureCard
 	dab DarumakaCard
 	dab DarmanitanCard
 	dab LitleoCard
 	dab PyroarCard
+	dab MagbyCard
 	dab MagmarLv24Card
 	dab MagmortarCard
 	dab FlareonLv28Card
 	dab TortunatorCard
-	dab EnteiCard
 	dab FuecocoCard
 	dab CrocalorCard
 	dab SkeledirgeCard
+	dab SalanditCard
+	dab Salazzle
 	dab BagonCard
 	dab ShelgonCard
 	dab SalamenceCard
 	dab DruddigonCard
+	dab EnteiCard
 	dab HoohCard
 	dab FroakieCard
 	dab WartortleCard
 	dab GreninjaCard
+	dab BruxishCard
 	dab BuizelCard
-	dab GolduckCard
+	dab FloatzelCard
+	dab SeelCard
+	dab DewgongCard
 	dab TympoleCard
 	dab PalpitoadCard
 	dab SeismitoadCard
-	dab SeelCard
-	dab DewgongCard
 	dab WingullCard
 	dab PelipperCard
-	dab KrabbyCard
-	dab KinglerCard
+	dab ClauncherCard
+	dab ClawitzerCard
+	dab RelicanthCard
 	dab HorseaCard
 	dab SeadraCard
 	dab KingdraCard
 	dab GoldeenCard
 	dab SeakingCard
-	dab StaryuCard
-	dab StarmieCard
+	dab DewpiderCard
+	dab AraquanidCard
 	dab ChewtleCard
 	dab DrednawCard
+	dab MudkipCard
+	dab MarshtompCard
+	dab SwampertCard
 	dab VaporeonLv42Card
+	dab GlaceonCard
 	dab OmanyteCard
 	dab OmastarCard
-	dab RelicanthCard
 	dab SuicuneCard
+	dab MagnemiteLv13Card
+	dab MagnetonLv28Card
+	dab MagnezoneCard	
 	dab BlitzleCard
 	dab ZebstrikaCard
 	dab HelioptileCard
 	dab HelioliskCard
-	dab PincurchinCard
+	dab EmolgaCard
 	dab ShinxCard
 	dab LuxioCard
 	dab LuxrayCard
-	dab EmolgaCard
-	dab MagnemiteLv13Card
-	dab MagnetonLv28Card
-	dab MagnezoneCard
-	dab VoltorbCard
-	dab ElectrodeLv35Card
-	dab ElectrodeLv42Card
+	dab PichuCard
+	dab PikachuCard
+	dab RaichuCard
+	dab ToxelCard
+	dab ToxtricityLv35Card
+	dab ElekidCard
 	dab ElectabuzzLv35Card
 	dab ElectivireCard
-	dab ElectrikeCard
-	dab ManectricCard
-	dab JolteonLv29Card
+	dab PincurchinCard
 	dab GrubbinCard
 	dab CharjabugCard
 	dab VikavoltCard
-	dab ZeraoraCard
-	dab RaikouCard
+	dab ElectrikeCard
+	dab ManectricCard
+	dab WattrelCard
+	dab KilowattrelCard
+	dab JolteonLv29Card
 	dab TynamoCard
 	dab EelektrikCard
 	dab EelektrossCard
-	dab RegielekiCard
+	dab ZeraoraCard
+	dab RaikouCard	
+	dab SandileCard
+	dab KrokorokCard
+	dab KrookodileCard
 	dab SandshrewCard
 	dab SandslashCard
 	dab SilicobraCard
 	dab SandacondaCard
-	dab CroagunkCard
-	dab ToxicroakCard
-	dab SandileCard
-	dab KrokorokCard
-	dab KrookodileCard
 	dab TrapinchCard
 	dab VibravaCard
 	dab FlygonCard
-	dab HawluchaCard
+	dab RioluCard
+	dab LucarioCard
+	dab RockruffCard
+	dab LycanrocCard
+	dab LycanrocMCard
 	dab LarvitarCard
 	dab PupitarCard
 	dab TyranitarCard
+	dab TyrogueCard
 	dab HitmonleeCard
 	dab HitmonchanCard
+	dab HitmontopCard
 	dab CufantCard
 	dab CopperajahCard
-	dab ScizorCard
+	dab Jangmo_oCard
+	dab Hakamo_oCard
+	dab Kommo_oCard
+	dab HawluchaCard
 	dab KabutoCard
 	dab KabutopsCard
 	dab TyruntCard
 	dab TyrantrumCard
-	dab RockruffCard
-	dab LycanrocCard
-	dab LycanrocMCard
+	dab ScizorCard
 	dab GalladeCard
 	dab RaltsCard
 	dab KirliaCard
 	dab GardevoirCard
-	dab CresseliaCard
 	dab SlowpokeLv18Card
 	dab SlowbroCard
 	dab DuskullCard
 	dab DusclopsCard
 	dab DusknoirCard
+	dab CarbinkCard
+	dab TinkatinkCard
+	dab TinkatuffCard
+	dab TinkatonCard
 	dab MisdreavusCard
 	dab MismagiusCard
-	dab SpiritombCard
-	dab EspeonCard
-	dab AbraCard
-	dab KadabraCard
-	dab AlakazamCard
-	dab MewtwoLv60Card
-	dab MimikyuCard
-	dab MewLv23Card
-	dab CarbinkCard
-	dab BeldumCard
-	dab MetangCard
-	dab MetagrossCard
-	dab MunnaCard
-	dab MusharnaCard
 	dab BlipbugCard
 	dab DottlerCard
 	dab OrbeetleCard
+	dab SpiritombCard
+	dab MunnaCard
+	dab MusharnaCard
+	dab AbraCard
+	dab KadabraCard
+	dab AlakazamCard
+	dab MimikyuCard
 	dab MorelullCard
 	dab ShiinoticCard
-	dab MewtwoLv53Card
+	dab BeldumCard
+	dab MetangCard
+	dab MetagrossCard
+	dab EspeonCard
 	dab MewtwoAltLV60Card
-	dab MewLv15Card
+	dab MewLv23Card
+	dab MewtwoCard
 	dab DeinoCard
 	dab ZweilousCard
 	dab HydreigonCard
-	dab DrowzeeCard
-	dab HypnoCard
+	dab MurkrowCard
+	dab HonchkrowCard
 	dab SkrelpCard
 	dab DragalgeCard
+	dab CascoonCard
+	dab DustoxCard
 	dab ZubatCard
 	dab GolbatCard
 	dab CrobatCard
-	dab DustoxCard
+	dab ToxtricityLv42Card
 	dab SkorupiCard
 	dab DrapionCard
+	dab CroagunkCard
+	dab ToxicroakCard
 	dab ImpidimpCard
 	dab	MorgremCard
 	dab	GrimmsnarlCard
+	dab WooperCard
+	dab ClodsireCard
 	dab PawniardCard
 	dab BisharpCard
-	dab SneaselCard
-	dab WeavileCard
-	dab UmbreonCard
 	dab GastlyCard
 	dab HaunterCard
 	dab GengarCard
+	dab UmbreonCard
+	dab SneaselCard
+	dab WeavileCard
+	dab NihilegoCard
+	dab DarkraiCard
 	dab PidgeyCard
 	dab PidgeottoCard
 	dab PidgeotLv38Card
 	dab ZigzagoonCard
 	dab LinooneCard
-	dab SpearowCard
+	dab TailowCard
 	dab SwellowCard
+	dab CyclizarCard
 	dab TogepiCard
 	dab TogeticCard
 	dab TogekissCard
-	dab CyclizarCard
 	dab StuffulName
 	dab BewearCard
-	dab BidoofCard
-	dab BibarelCard
-	dab OranguruCard
+	dab DunsparceCard
 	dab RuffletCard
 	dab BraviaryCard
-	dab DrampaCard
-	dab AudinoCard
-	dab ChatotCard
-	dab StantlerCard
-	dab DittoCard
-	dab EeveeCard
 	dab PorygonCard
 	dab Porygon2Card
 	dab PorygonZCard
-	dab RegidragoCard
+	dab StantlerCard
+	dab BidoofCard
+	dab BibarelCard
+	dab ChatotCard
+	dab EeveeCard
+	dab SylveonCard
+	dab DittoCard
+	dab AudinoCard
+	dab DrampaCard
 	dab GoomyCard
 	dab SliggooCard
 	dab GoodraCard
+	dab RayquazaCard
 	dab LugiaCard
-	dab DunsparceCard
 	dab ProfessorOakCard
 	dab ImposterProfessorOakCard
 	dab BillCard
 	dab MrFujiCard
 	dab LassCard
 	dab ImakuniCard
-	dab PokemonTraderCard
-	dab PokemonBreederCard
-	dab ClefairyDollCard
-	dab MysteriousFossilCard
-	dab EnergyRetrievalCard
-	dab SuperEnergyRetrievalCard
+	dab PokemonCenterCard
+	dab CopycatCard
+	dab GustOfWindCard
 	dab EnergySearchCard
 	dab MoonStoneCard
+	dab PokemonTraderCard
+	dab EnergyRetrievalCard
+	dab SuperEnergyRetrievalCard
 	dab EnergyRemovalCard
-	dab RecycleCard
-	dab SwitchCard
-	dab PokemonCenterCard
+	dab SubstituteDollCard
+	dab MysteriousFossilCard
 	dab PokeBallCard
-	dab ScoopUpCard
-	dab ComputerSearchCard
-	dab PokedexCard
-	dab PlusPowerCard
-	dab DefenderCard
-	dab ItemFinderCard
-	dab GustOfWindCard
-	dab DevolutionSprayCard
+	dab SuperEnergyRemovalCard
 	dab PotionCard
 	dab SuperPotionCard
 	dab FullHealCard
+	dab DevolutionSprayCard
 	dab ReviveCard
-	dab SuperRodCard
+	dab PokemonBreederCard
+	dab PlusPowerCard
+	dab DefenderCard
+	dab RecycleCard
 	dab MaintenanceCard
 	dab PokemonFluteCard
-	dab GamblerCard
-	dab SuperEnergyRemovalCard
+	dab SuperRodCard
+	dab ScoopUpCard
+	dab SwitchCard
+	dab PokedexCard
+	dab ItemFinderCard
+	dab ComputerSearchCard
 	dwb NULL, $0
 	assert_table_length NUM_CARDS + 2

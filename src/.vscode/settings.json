@@ -1,0 +1,10 @@
+{
+    "vscodeCustomCodeColor.fileLanguageIdList": [
+        "asm",
+
+        "vue",
+        "typescript"
+    ],
+    "vscodeCustomCodeColor.highlightValue": "Text0767",
+    "vscodeCustomCodeColor.highlightValueColor": "#2a69af"
+}

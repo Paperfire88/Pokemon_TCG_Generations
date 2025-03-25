@@ -1069,13 +1069,13 @@ AIDecide_GustOfWind:
 	jr c, .no_carry ; if energy card is in hand
 
 .check_id
-	; skip if current active card is MEW_LV23 or MEWTWO_LV53
+	; skip if current active card is MEW or MewtwoCard
 	ld a, DUELVARS_ARENA_CARD
 	call GetTurnDuelistVariable
 	call GetCardIDFromDeckIndex
-	cp16 MEW_LV23
+	cp16 MEW
 	jr z, .no_carry
-	cp16 MEWTWO_LV53
+	cp16 MewtwoCard
 	jr z, .no_carry
 
 	call .FindBenchCardToKnockOut
@@ -4122,7 +4122,7 @@ AIDecide_ScoopUp:
 	call SwapTurn
 	call GetCardIDFromDeckIndex
 	call SwapTurn
-	cp16 REGIDRAGO
+	cp16 MAINTENANCE
 	pop bc
 	jp z, .no_carry
 
@@ -4950,14 +4950,14 @@ AIDecide_Pokeball:
 	ld de, CHARMANDER
 	call LookForCardIDInHandList_Bank8
 	jr c, .lightning
-	ld de, MAGMAR_LV24
+	ld de, MAGMAR
 	call LookForCardIDInHandList_Bank8
 	jr c, .lightning
 	ld de, CHARMANDER
 	ld a, CARD_LOCATION_DECK
 	call LookForCardIDInLocation
 	ret c
-	ld de, MAGMAR_LV24
+	ld de, MAGMAR
 	ld a, CARD_LOCATION_DECK
 	call LookForCardIDInLocation
 	ret c
@@ -5443,11 +5443,11 @@ AIDecide_ComputerSearch_Anger:
 	ld bc, LINOONE
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_discard_cards
-	ld bc, GROWLITHE
+	ld bc, SIZZLIPEDE
 	ld de, CAMERUPT
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_discard_cards
-	ld de, GROWLITHE
+	ld de, SIZZLIPEDE
 	ld bc, CAMERUPT
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_discard_cards
@@ -5824,12 +5824,12 @@ AIDecide_PokemonTrader_SoundOfTheWaves:
 	ld bc, DEWGONG
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .choose_hand
-	ld bc, KRABBY
-	ld de, KINGLER
+	ld bc, CLAUNCHER
+	ld de, CLAWITZER
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .choose_hand
-	ld de, KRABBY
-	ld bc, KINGLER
+	ld de, CLAUNCHER
+	ld bc, CLAWITZER
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .choose_hand
 	ld bc, WINGULL
@@ -5865,7 +5865,7 @@ AIDecide_PokemonTrader_SoundOfTheWaves:
 	ld de, SEEL
 	call CheckIfHasCardIDInHand
 	jr c, .set_carry
-	ld de, KRABBY
+	ld de, CLAUNCHER
 	call CheckIfHasCardIDInHand
 	jr c, .set_carry
 	ld de, HORSEA
@@ -5908,20 +5908,20 @@ AIDecide_PokemonTrader_PowerGenerator:
 	ld bc, ZEBSTRIKA
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jp c, .find_duplicates
-	ld bc, VOLTORB
-	ld de, ELECTRODE_LV42
+	ld bc, TOXEL
+	ld de, TOXTRICITY_LOW
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
-	ld bc, VOLTORB
-	ld de, ELECTRODE_LV35
+	ld bc, TOXEL
+	ld de, TOXTRICITY
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
-	ld de, VOLTORB
-	ld bc, ELECTRODE_LV42
+	ld de, TOXEL
+	ld bc, TOXTRICITY_LOW
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
-	ld de, VOLTORB
-	ld bc, ELECTRODE_LV35
+	ld de, TOXEL
+	ld bc, TOXTRICITY
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
 	ld bc, MAGNEMITE_LV13
@@ -5978,19 +5978,19 @@ AIDecide_PokemonTrader_FlowerGarden:
 	ld bc, MEGANIUM
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
-	ld bc, BELLSPROUT
-	ld de, WEEPINBELL
+	ld bc, BOUNSWEET
+	ld de, STEENEE
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
-	ld bc, WEEPINBELL
+	ld bc, STEENEE
 	ld de, TSAREENA
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
-	ld de, BELLSPROUT
-	ld bc, WEEPINBELL
+	ld de, BOUNSWEET
+	ld bc, STEENEE
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
-	ld de, WEEPINBELL
+	ld de, STEENEE
 	ld bc, TSAREENA
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
@@ -6072,12 +6072,12 @@ AIDecide_PokemonTrader_Flamethrower:
 	ld bc, HOUNDOOM
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
-	ld bc, GROWLITHE
-	ld de, ARCANINE_LV45
+	ld bc, SIZZLIPEDE
+	ld de, CENTISKORCH
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
-	ld de, GROWLITHE
-	ld bc, ARCANINE_LV45
+	ld de, SIZZLIPEDE
+	ld bc, CENTISKORCH
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
 	ld bc, EEVEE

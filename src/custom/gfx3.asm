@@ -69,3 +69,11 @@ SuperRodCardGfx::
 ElectivireCardGfx::
 	INCBIN "gfx/cards/Electivire.2bpp"
 	INCBIN "gfx/cards/Electivire.pal"	
+
+NihilegoCardGfx::
+	INCBIN "gfx/cards/nihilego.2bpp"
+	INCBIN "gfx/cards/nihilego.pal"
+
+LucarioCardGfx::
+	INCBIN "gfx/cards/lucario.2bpp"
+	INCBIN "gfx/cards/lucario.pal"

@@ -17,8 +17,8 @@ ENDM
 	deck_const SAMS_NORMAL_DECK            ; $04
 	deck_const CHARMANDER_AND_FRIENDS_DECK ; $05
 	deck_const CHARMANDER_EXTRA_DECK       ; $06
-	deck_const SQUIRTLE_AND_FRIENDS_DECK   ; $07
-	deck_const SQUIRTLE_EXTRA_DECK         ; $08
+	deck_const FROAKIE_AND_FRIENDS_DECK   ; $07
+	deck_const FROAKIE_EXTRA_DECK         ; $08
 	deck_const CHIKORITA_AND_FRIENDS_DECK  ; $09
 	deck_const CHIKORITA_EXTRA_DECK        ; $0A
 	deck_const LIGHTNING_AND_FIRE_DECK     ; $0B

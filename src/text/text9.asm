@@ -1256,10 +1256,6 @@ BayleefName:
 	text "Bayleef"
 	done
 
-VineWhipName:
-	text "Vine Whip"
-	done
-
 PoisonPowderName:
 	text "Poisonpowder"
 	done
@@ -1277,15 +1273,16 @@ SolarPowerName:
 	done
 
 SolarPowerDescription:
-	text "Once during your turn (before your"
-	line "attack), you may use this power."
-	line "Your Active pkmn and the Defending"
-	line "pkmn both Recovers from all Special"
-	line "Conditions. (Asleep, Confused,"
-	line "Paralyzed, or Poisoned)."
+	text "Once per turn, you may use this PKMN"
+	line "Power. Both Active PKMN recover from"
+	line "all Special Conditions."
 	done
 
 MegaDrainName:
+	text "Mega Drain"
+	done
+
+GigaDrainName:
 	text "Giga Drain"
 	done
 
@@ -1299,14 +1296,13 @@ DigDrainDescription:
 	done
 
 EnergyTransName:
-	text "Energy Trans"
+	text "Leaf Trans"
 	done
 
 EnergyTransDescription:
-	text "As often as you like during your"
-	line "turn (before your attack), move 1 <GRASS>"
-	line "Energy card attached to 1 of your"
-	line "PKMN to another."
+	text "During your turn, You may move 1"
+	line "<GRASS> Energy card attached to 1 of your"
+	line "PKMN to another of your own."
 	done
 
 SolarBeamName:
@@ -1315,10 +1311,6 @@ SolarBeamName:
 
 WurmpleName:
 	text "Wurmple"
-	done
-
-StringShotName:
-	text "String Shot"
 	done
 
 MayInflictParalysisDescription:
@@ -1339,11 +1331,10 @@ StiffenName:
 	done
 
 MetapodsStiffenDescription:
-	text "Flip a coin. If heads, prevent all"
-	line "damage done during your opponent's"
-	line "next turn. (Any other effects of"
-	line "attacks still happen.) Either Way,"
-	line "Draw a card from your Deck."
+	text "Flip a coin. If heads, during your"
+	line "opponent's next turn, prevent all"
+	line "damage deal to this PKMN."
+	line "Draw a card"
 	done
 
 StunSporeName:
@@ -1363,9 +1354,9 @@ WhirlwindName:
 	done
 
 WhirlwindDescription:
-	text "After doing damage, Switch in 1 of" 
-	line "your opponent's Benched PKMN to the"
-	line "Active Spot."
+	text "After doing damage, Your opponent"
+	line "Switches out their Active PKMN to"
+	line "the Bench."
 	done
 
 ButterfreesMegaDrainDescription:
@@ -1373,16 +1364,9 @@ ButterfreesMegaDrainDescription:
 	line "half the damage done (rounded up)."
 	done
 
-ButterfreesMegaDrainDescriptionCont:
-	text "If it has fewer damage"
-	line "counters than that, remove all of"
-	line "them."
-	done
-
 ButterflyName:
 	text "Butterfly"
 	done
-
 
 RowletName:
 	text "Rowlet"
@@ -1403,13 +1387,6 @@ HairyBugName:
 
 DartrixName:
 	text "Dartrix"
-	done
-
-KakunasStiffenDescription:
-	text "Flip a coin. If heads, prevent all"
-	line "damage done during your"
-	line "opponent's next turn. (Any other"
-	line "effects of attacks still happen.)"
 	done
 
 BeedrillName:
@@ -1433,24 +1410,12 @@ CascoonName:
 	text "Cascoon"
 	done
 
-SpitPoisonName:
-	text "Spit Poison"
-	done
-
-WrapName:
-	text "Wrap"
-	done
-
 SnakeName:
 	text "Snake"
 	done
 
 DustoxName:
 	text "Dustox"
-	done
-
-TerrorStrikeName:
-	text "Luring Glow"
 	done
 
 CallBackName:
@@ -1465,7 +1430,7 @@ DragonRageName:
 	text "Dragon Rage"
 	done
 
-BubblebeamName:
+LiquidationName:
 	text "Liquidation"
 	done
 
@@ -1485,8 +1450,7 @@ SharpenDescription:
 	text "Flip a coin. If heads, draw a card."
 	line "If tails, your opponent draws a card"
 	line "Either way, During your next turn,"
-	line "Pawniard's Slash attack's base"
-	line "damage is doubled."
+	line "this PKMN attack deals double damage"
 	done
 
 SuckerPunchName:
@@ -1495,20 +1459,12 @@ SuckerPunchName:
 
 SuckerPunchDescription:
 	text "If your opponent has 5 or more cards" 
-	line "in their hand, this attack does"
-	line "20 more damage."
+	line "in their hand, this attack does +20"
+	line "more damage."
 	done
 
 FalseSurrenderName:
 	text "False Surrender"
-	done
-
-IronTackleDescription:
-	text "If ACCELGOR Is in play, During your" 
-	line "opponent's turn, if 30 or less" 
-	line "damage is done to this PKMN, prevent" 
-	line "that damage."
-	line "(after applying Weakness/Resistance)"
 	done
 
 ToxicSporeName:
@@ -1533,7 +1489,7 @@ XScissorName:
 	text "X-Scissor"
 	done
 
-KinglerName:
+ClawitzerName:
 	text "Clawitzer"
 	done
 
@@ -1549,16 +1505,14 @@ PincerName:
 	text "Pincer"
 	done
 
-KrabbyName:
+ClauncherName:
 	text "Clauncher"
 	done
 
 KrabbysCallForFamilyDescription:
-	text "Search your deck for a Basic PKMN"
-	line "named Clauncher and put it onto your"
-	line "Bench. Shuffle your deck afterward."
-	line "(You can't use this attack if your"
-	line "Bench is full.)"
+	text "If your Bench isn't full:Search your"
+	line "deck for a <WATER> Basic PKMN and put it"
+	line "onto your Bench. Shuffle your deck."
 	done
 
 RiverCrabName:
@@ -1586,8 +1540,8 @@ TackleName:
 	done
 
 MagikarpsFlailDescription:
-	text "Does 10 damage times the number of"
-	line "damage counters on This PKMN."
+	text "Does 10 damage for each damage"
+	line "counter on This PKMN."
 	done
 
 FishName:
@@ -1607,10 +1561,24 @@ BivalveName:
 	text "Bivalve"
 	done
 
-StarmieName:
+AraquanidName:
 	text "Araquanid"
 	done
 
 RecoverName:
 	text "Recover"
+	done
+
+ScavengeDescription:
+	text "Discard 1 <PSYCHIC> Energy card attached to"
+	line "this PKMN; Put a Trainer card from"
+	line "your discard pile into your hand."
+	done
+
+MalamarName:
+	text "Malamar"
+	done
+
+ContraryBehaviorName:
+	text "Contrary Beheavior"
 	done

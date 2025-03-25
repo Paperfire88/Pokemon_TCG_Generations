@@ -69,7 +69,7 @@ _AddStarterDeck:
 .StarterCardIDs
 	; main deck, extra cards
 	db CHARMANDER_AND_FRIENDS_DECK_ID, CHARMANDER_EXTRA_DECK_ID
-	db SQUIRTLE_AND_FRIENDS_DECK_ID,   SQUIRTLE_EXTRA_DECK_ID
+	db FROAKIE_AND_FRIENDS_DECK_ID,   FROAKIE_EXTRA_DECK_ID
 	db CHIKORITA_AND_FRIENDS_DECK_ID,  CHIKORITA_EXTRA_DECK_ID
 
 ; clears saved data (card Collection/saved decks/etc)
@@ -94,7 +94,7 @@ InitSaveData:
 	ld a, CHARMANDER_AND_FRIENDS_DECK
 	ld hl, sSavedDeck1
 	call StoreDeckIDInSRAM
-	ld a, SQUIRTLE_AND_FRIENDS_DECK
+	ld a, FROAKIE_AND_FRIENDS_DECK
 	ld hl, sSavedDeck2
 	call StoreDeckIDInSRAM
 	ld a, CHIKORITA_AND_FRIENDS_DECK

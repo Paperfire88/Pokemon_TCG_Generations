@@ -1181,7 +1181,7 @@ Man1RequestedCardsList:
 	dw OMASTAR
 	dw BRELOOM
 	dw DARMANITAN
-	dw WEEZING
+	dw FERROTHORN
 .end
 
 ScriptCommand_LoadMan1RequestedCardIntoTxRamSlot:
@@ -1482,7 +1482,7 @@ ChallengeCupPrizeCards:
 	dw ELECTRIKE
 	tx ElectabuzzTradeCardName
 
-	dw CRESSELIA
+	dw BRUXISH
 	tx SlowpokeTradeCardName
 
 	dw MEWTWO_ALT_LV60

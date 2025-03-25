@@ -73,7 +73,7 @@ AIActionTable_LegendaryRonald:
 	dw SUICUNE
 	dw RAIKOU
 	dw LUGIA
-	dw GAMBLER
+	dw COPYCAT
 	dw NULL
 
 .store_list_pointers

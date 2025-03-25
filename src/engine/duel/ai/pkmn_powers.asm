@@ -146,7 +146,7 @@ HandleAIEnergyTrans:
 	ld a, DUELVARS_ARENA_CARD
 	call GetTurnDuelistVariable
 	call GetCardIDFromDeckIndex
-	cp16 WEEZING
+	cp16 FERROTHORN
 	jr z, .is_exeggutor
 
 	xor a ; PLAY_AREA_ARENA
@@ -463,7 +463,7 @@ HandleAIPkmnPowers:
 	call HandleAIShift
 	jr .next_1
 .check_peek
-	cp16 DROWZEE
+	cp16 MURKROW
 	jr nz, .check_longdistancehypnosis
 	call HandleAIPeek
 	jr .next_1
@@ -1172,7 +1172,7 @@ HandleAIDamageSwap:
 	jr z, .found_candidate
 	cp16 CHATOT
 	jr z, .found_candidate
-	cp16 REGIDRAGO
+	cp16 RAYQUAZA
 	jr z, .found_candidate
 	cp16 SPIRITOMB
 	jr z, .found_candidate

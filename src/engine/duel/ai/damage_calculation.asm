@@ -170,6 +170,7 @@ _CalculateDamage_VersusDefendingPokemon:
 
 .not_resistant
 	; apply pluspower and defender boosts
+	call ApplyFightingFury
 	ldh a, [hTempPlayAreaLocation_ff9d]
 	add CARD_LOCATION_ARENA
 	ld b, a
@@ -412,6 +413,7 @@ CalculateDamage_FromDefendingPokemon:
 
 .not_resistant
 	; apply pluspower and defender boosts
+	call ApplyFightingFury
 	call SwapTurn
 	ld b, CARD_LOCATION_ARENA
 	call ApplyAttachedPluspower

@@ -13,7 +13,7 @@ CheckIfPlayerHasPokemonOtherThanMewtwoLv53:
 	cp TYPE_ENERGY
 	jp nc, .next ; can be a jr
 	ld hl, wLoadedCard2ID
-	cphl MEWTWO_LV53
+	cphl MewtwoCard
 	jr nz, .not_mewtwo1
 .next
 	inc e

@@ -30,7 +30,7 @@ CreateCardSetList:
 ; it's same set as input
 	cp16 CELEBI
 	jp z, .SetVenusaurLv64OwnedFlag
-	cp16 MEW_LV15
+	cp16 MEW
 	jp z, .SetMewLv15OwnedFlag
 
 	push bc
@@ -215,7 +215,7 @@ CreateCardSetList:
 .PlaceMewLv15InList
 	push af
 	push hl
-	ld de, MEW_LV15
+	ld de, MEW
 	jr .PlaceCardInList
 
 ; a = CARD_SET_* constant
@@ -408,7 +408,7 @@ PrintCardSetListEntries:
 	jr c, .energy_card
 	cp16 CELEBI
 	jr z, .phantom_card
-	cp16 MEW_LV15
+	cp16 MEW
 	jr z, .phantom_card
 
 	ld a, [wNumVisibleCardListEntries]

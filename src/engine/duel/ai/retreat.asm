@@ -1,6 +1,14 @@
 ; determine AI score for retreating
 ; return carry if AI decides to retreat
 AIDecideWhetherToRetreat:
+	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
+	jr c, .check_headsConfu
+	ld de, FERROTHORN
+	call CountPokemonIDInBothPlayAreas
+	jr z, .check_headsConfu
+	ld a, 2
+	call SubFromAIScore
+.check_headsConfu
 	ld a, [wGotHeadsFromConfusionCheckDuringRetreat]
 	or a
 	jp nz, .no_carry
@@ -377,10 +385,10 @@ AIDecideWhetherToRetreat:
 
 .not_mysterious_fossil
 	ld a, [wLoadedCard2ID + 0]
-	cp LOW(CLEFAIRY_DOLL)
+	cp LOW(SUBSTITUTE_DOLL)
 	jr nz, .not_clefairy_doll
 	ld a, [wLoadedCard2ID + 1]
-	cp HIGH(CLEFAIRY_DOLL)
+	cp HIGH(SUBSTITUTE_DOLL)
 	jr z, .loop_ko_2
 
 .not_clefairy_doll
@@ -403,7 +411,7 @@ AIDecideWhetherToRetreat:
 	call GetCardIDFromDeckIndex
 	cp16 MYSTERIOUS_FOSSIL
 	jr z, .mysterious_fossil_or_clefairy_doll
-	cp16 CLEFAIRY_DOLL
+	cp16 SUBSTITUTE_DOLL
 	jr z, .mysterious_fossil_or_clefairy_doll
 
 ; if wAIScore is at least 131, set carry
@@ -719,7 +727,7 @@ AIDecideBenchPokemonToSwitchTo:
 	ld hl, wLoadedCard1ID
 	cphl MYSTERIOUS_FOSSIL
 	jr z, .lower_score_2
-	cphl CLEFAIRY_DOLL
+	cphl SUBSTITUTE_DOLL
 	jr nz, .ai_score_bonus
 .lower_score_2
 	ld a, 10
@@ -840,7 +848,7 @@ AITryToRetreat:
 	call GetCardIDFromDeckIndex
 	cp16 MYSTERIOUS_FOSSIL
 	jp z, .mysterious_fossil_or_clefairy_doll
-	cp16 CLEFAIRY_DOLL
+	cp16 SUBSTITUTE_DOLL
 	jp z, .mysterious_fossil_or_clefairy_doll
 
 ; if card is Asleep or Paralyzed, set carry and exit

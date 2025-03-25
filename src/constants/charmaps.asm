@@ -468,11 +468,18 @@ ENDM
 	txsymbol 7          ; $27
 	txsymbol 8          ; $28
 	txsymbol 9          ; $29
-	txsymbol DOT        ; $2a
-	txsymbol PLUS       ; $2b
-	txsymbol MINUS      ; $2c
-	txsymbol CROSS      ; $2d
-	txsymbol SLASH      ; $2e
-	txsymbol CURSOR_D   ; $2f
-	txsymbol PRIZE      ; $30
-	
+	txsymbol PLUS       ; $2a
+	txsymbol MINUS      ; $2b
+	txsymbol CROSS      ; $2c
+	txsymbol SLASH      ; $2d
+	txsymbol CURSOR_D   ; $2e
+	txsymbol PRIZE      ; $2f
+	txsymbol BURNED     ; $30
+	txsymbol UNUSED1	; $31
+	txsymbol UNUSED2	; $32
+	txsymbol UNUSED3	; $33
+	txsymbol UNUSED4	; $34
+	txsymbol UNUSED5	; $35
+	txsymbol UNUSED6	; $36
+	txsymbol UNUSED7	; $37
+	txsymbol UNUSED8	; $38
