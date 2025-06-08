@@ -473,7 +473,7 @@ HandleAIPkmnPowers:
 	call HandleAIlongdistancehypnosis
 	jr .next_1	
 .check_strange_behavior
-	cp16 SLOWBRO
+	cp16 MALAMAR
 	jr nz, .check_curse
 	call HandleAIStrangeBehavior
 	jr .next_1
@@ -771,11 +771,11 @@ HandleAIPeek:
 
 ; checks whether AI uses Strange Behavior.
 ; input:
-;	c = Play Area location (PLAY_AREA_*) of Slowbro.
+;	c = Play Area location (PLAY_AREA_*) of Malamar.
 HandleAIStrangeBehavior:
 	ld a, c
 	or a
-	ret z ; return if Slowbro is Arena card
+	ret z ; return if Malamar is Arena card
 
 	ldh [hTemp_ffa0], a
 	ld e, PLAY_AREA_ARENA
@@ -788,9 +788,9 @@ HandleAIStrangeBehavior:
 	add DUELVARS_ARENA_CARD_HP
 	call GetTurnDuelistVariable
 	sub 10
-	ret z ; return if Slowbro has only 10 HP remaining
+	ret z ; return if Malamar has only 10 HP remaining
 
-; if Slowbro can't receive all damage counters,
+; if Malamar can't receive all damage counters,
 ; only transfer remaining HP - 10 damage
 	ld hl, wce06
 	cp [hl]
@@ -991,7 +991,7 @@ HandleAICowardice:
 	ld [wce08], a
 	call GetCardIDFromDeckIndex
 	push bc
-	cp16 SKRELP
+	cp16 ALAKAZAM
 	call z, .CheckWhetherToUseCowardice
 	pop bc
 	jr nc, .next

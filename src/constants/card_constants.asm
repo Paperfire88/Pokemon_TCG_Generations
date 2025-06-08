@@ -44,7 +44,7 @@
 	const SCYTHER                     ; $2e
 	const LEAFEON                     ; $2e
 	const CHARMANDER                  ; $30
-	const CHARMELEON                  ; $31
+	const PIGNITE                  ; $31
 	const EMBOAR                   ; $32
 	const HOUNDOUR                      ; $33
 	const HOUNDOOM              ; $34
@@ -178,8 +178,8 @@
 	const RALTS
 	const KIRLIA
 	const GARDEVOIR
-	const SLOWPOKE_LV18               ; $92
-	const SLOWBRO                     ; $93
+	const INKAY               ; $92
+	const MALAMAR                     ; $93
 	const DUSKULL                  ; $94
 	const DUSCLOPS                ; $96
 	const DUSKNOIR                      ; $98
@@ -199,13 +199,13 @@
 	const KADABRA
 	const ALAKAZAM
 	const MIMIKYU                     ; $a0
-	const MORELULL
-	const SHIINOTIC
+	const CUTIEFLY
+	const RIBOMBEE
 	const BELDUM
 	const METANG
 	const METAGROSS
 	const ESPEON                        ; $9c
-	const MEWTWO_ALT_LV60             ; $9f
+	const CRESSELIA             ; $9f
 	const MEW                    ; $a2
 	const MEWTWO_LV60                 ; $9e
 	const DEINO                        ; $8e
@@ -240,9 +240,9 @@
 	const WEAVILE                    ; $58
 	const NIHILEGO
 	const DARKRAI
-	const PIDGEY                      ; $a3
-	const PIDGEOTTO                   ; $a4
-	const PIDGEOT_LV38                ; $a5
+	const ROOKIDEE                      ; $a3
+	const CORVISQUIRE                   ; $a4
+	const CORVIKNIGHT                ; $a5
 	const ZIGZAGOON                     ; $a7
 	const LINOONE                    ; $a8
 	const TAILOW                     ; $a9

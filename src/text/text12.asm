@@ -301,9 +301,8 @@ SleepingMagicName:
 SleepingMagicDescription:
 	text "After doing damage, Switch in 1 of" 
 	line "your opponent's Benched PKMN to the"
-	line "Active Spot. Then, flip a coin."
-	line "If heads, the Active PKMN is now "
-	line "Asleep."
+	line "Active Spot. Then, the Active PKMN"
+	line "is now Asleep."
 	done
 
 DeepSleepText:
@@ -335,11 +334,11 @@ PoisonHuntDescription:
 	line "Poisoned."
 	done
 
-ForewarnName:
-	text "Forewarn Dream"
+ComputingProwessName:
+	text "Computing Prowess"
 	done
 
-ForewarnDescription:
+ComputingProwessDescription:
 	text "Look at the top 3 cards of your Deck"
 	line "Choose 1 of them, and add it to your"
 	line "Hand. Then, shuffle your deck."
@@ -1032,12 +1031,12 @@ IceShardDescription:
 	line "a <FIGHTING> Pkmn, this attack does +10 damage."
 	done	
 
-MorelullName:
-	text "Morelull"
+CutieflyName:
+	text "Cutiefly"
 	done	
 
-ShiinoticName:
-	text "Shiinotic"
+RibombeeName:
+	text "Ribombee"
 	done	
 
 ChooseGrassText:
@@ -1239,12 +1238,11 @@ PsyShadowDescription:
 	text "Once per turn, search your deck for"
 	line "a <PSYCHIC> Energy card and attach it to"
 	line "1 of your PKMN. Put 2 <HP_NOK> damage"
-	line "counters on it."
-	line "then, shuffle your deck."
+	line "counters on it. shuffle your deck."
 	done	
 
 PKMNPowerCondition:
-	text "This Pkmn Power can't be used if" 
+	text "This [PKMN Power] can't be used if" 
 	line "your active PKMN is affected by a"
 	line "Status Condition (<PARALYZED>, <ASLEEP> or <CONFUSED>)."
 	done
@@ -1254,8 +1252,8 @@ CuttoSizeName:
 	done
 
 CuttoSizeDescription:		
-	text "Does +10 damage for each of" 
-	line "your own Evolved PKMN in play."
+	text "Does +10 damage for each of your own" 
+	line "Evolved PKMN in play."
 	done
 
 RisingSwordName:
@@ -1461,12 +1459,8 @@ ExplosiveEvolutionDescription:
 	line "of your opponent's benched Pkmn."
 	line "(Don't apply Weakness/Resistance.)"
 	line "Then, search your deck for an"
-	line "Tyranitar and put it on Pupitar."
-	done
-
-ExplosiveEvolutionDescription2:
-	text "(This counts as evolving Pupitar.)" 
-	line "Then, shuffle your deck."
+	line "[TYRANITAR] and put it on [PUPITAR]"
+	line "(This counts as evolving Pupitar)."
 	done
 
 ChooseATyranitarFromDeckText:
@@ -1537,15 +1531,14 @@ BisharpName:
 	text "Bisharp"
 	done
 
-WickedJabName:
-	text "Wicked Jab"
+MetalicSoundName:
+	text "Metallic Sound"
 	done	
 
-WickedJabDescription:
-	text "Flip a coin. If heads, the Defending"
-	line "PKMN is now Paralyzed. If the"
-	line "Defending PKMN is an Evolved PKMN,"
-	line "Draw a Card."
+MetalSoundDescription:
+	text "The Defending PKMN is now Confused."
+	line "If the Defending PKMN is an Evolved"
+	line "PKMN, Draw a Card."
 	done
 
 ShareLootName:
@@ -1643,21 +1636,15 @@ VineInviteDescription:
 	line "the next turn."
 	done
 
-LongDistanceHypnosisName:
-	text "Long-Distance Hypnosis"
+DreamMistName:
+	text "Dream Mist"
 	done
 
-LongDistanceHypnosisDescription:
-	text "Once per turn, you may flip a coin."
-	line "If heads, the Defending PKMN is now" 
-	line "Asleep; if tails, your Active PKMN"
-	line "is now Asleep."
+DreamMistDescription:
+	text "Once per turn, You can Flip a Coin."
+	line "If Heads, The Defending PKMN is"
+	line "now Asleep."
 	done
-
-LongDistanceHypnosisText:
-	text "if Heads, the Defending PKMN is now"
-	line "Asleep; if Tails yours is Asleep."
-	done	
 
 JealousEyesNames:
 	text "Jealous Eyes"
@@ -1668,8 +1655,8 @@ JealousEyesDescription:
 	line "PKMN, choose 1 of them, this attack"
 	line "does 20 damage to it. If [PIKACHU]"
 	line "and/or [Substitute Doll] are in play"
-	line "this Attack does 40 damage and this"
-	line "PKMN takes 10 damage instead."
+	line "instead, this Attack does 40 damage"
+	line "and this PKMN takes 10 damage."
 	done	
 
 JealousEyesDescriptionCont:

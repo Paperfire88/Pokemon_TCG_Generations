@@ -123,7 +123,7 @@ InvisibleWallDescription:
 	done
 
 PKMNPowerCondition2:
-	text "This PKMN power can't be used if" 
+	text "This [PKMN Power] can't be used if" 
 	line "this PKMN is affected by a Status" 
 	line "Condition (<PARALYZED>, <ASLEEP> or <CONFUSED>)."
 	done
@@ -231,7 +231,7 @@ DevolutionBeamDescription:
 	line "card on it into their owner's hand."
 	done
 
-PidgeyName:
+RookideeName:
 	text "Rookidee"
 	done
 
@@ -239,7 +239,7 @@ TinyBirdName:
 	text "Tiny Bird"
 	done
 
-PidgeottoName:
+CorvisquireName:
 	text "Corvisquire"
 	done
 
@@ -251,7 +251,7 @@ BirdName:
 	text "Bird"
 	done
 
-PidgeotName:
+CorviknightName:
 	text "Corviknight"
 	done
 
@@ -1647,10 +1647,16 @@ ElectricalRendName:
 	text "Electrical Rend"
 	done
 
+HexDescription:	
+	text "It does +20 damage if the Defending"
+	line "PKMN is Affected By a Status"
+	line "Condition."
+	done	
+
 ElectricalRendDescription:	
-	text "This Attack does +30 damage if the"
-	line "Defending PKMN is Affected By a"
-	line "Status Condition."
+	text "It does +30 damage if the Defending"
+	line "PKMN is Affected By a Status"
+	line "Condition."
 	done	
 
 SandPitName:

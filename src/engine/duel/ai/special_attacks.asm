@@ -34,7 +34,7 @@ HandleSpecialAIAttacks:
 	jp z, .FriendshipSong
 	cp16 PORYGON
 	jp z, .Conversion
-	cp16 MEWTWO_ALT_LV60
+	cp16 CRESSELIA
 	jp z, .EnergyAbsorption
 	cp16 MEWTWO_LV60
 	jp z, .EnergyAbsorption

@@ -671,6 +671,39 @@ CheckCantRetreatDueToAcid::
 	scf
 	ret
 
+CheckCantRetreatDueToPoisonReef::
+	ld a, TREVENANT
+	call CountPokemonIDInBothPlayAreas
+	ccf
+	ret nc
+	call SwapTurn
+	ld a, DUELVARS_ARENA_CARD
+	call GetTurnDuelistVariable
+	ld c, 0
+.loop
+	ld a, [hl]
+	cp $ff
+	jr z, .done
+	call GetCardIDFromDeckIndex
+	cp16 DRAGALGE
+	jr nz, .next
+	inc c
+.next
+	inc hl
+	jr .loop
+.done
+	call SwapTurn
+	ld a, c
+	cp 1
+	jr nc, .cant_retreat
+	or a
+	ret
+
+.cant_retreat
+	ldtx hl, UnableToRetreatText
+	scf
+	ret
+
 ; return carry if the turn holder is affected by Headache and trainer cards can't be used
 CheckCantUseTrainerDueToHeadache::
 	ld a, DUELVARS_ARENA_CARD_SUBSTATUS3
@@ -685,7 +718,7 @@ CheckCantUseTrainerDueToHeadache::
 CheckCantUseTrainerDueToFlag:
 	ld a, DUELVARS_ARENA_CARD_FLAGS
 	call GetTurnDuelistVariable
-	and HEALED_THIS_TURN
+	and SOMETHINGFORNOW
 	ret z
 	ldtx hl, ThisAttackCannotBeUsedTwiceText
 	scf

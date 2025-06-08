@@ -347,7 +347,7 @@ AIDecideEvolution:
 	cp PIKACHU_DECK_ID
 	jr nz, .check_score
 	ld hl, wLoadedCard1ID 
-	cphl BLITZLE
+	cphl PIKACHU
 	jr z, .pikachu
 	cphl HELIOPTILE
 	jr z, .pikachu
@@ -410,7 +410,7 @@ AIDecideSpecialEvolutions:
 
 .legendary_dragonite
 	ld hl, wLoadedCard2ID
-	cphl CHARMELEON
+	cphl PIGNITE
 	jr z, .charmeleon
 	cphl SNEASEL
 	jr z, .magikarp

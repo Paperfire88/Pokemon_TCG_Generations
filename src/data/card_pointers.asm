@@ -46,8 +46,8 @@ CardPointers::
 	dab ScytherCard
 	dab LeafeonCard
 	dab TepigCard
-	dab CharmeleonCard
-	dab CharizardCard
+	dab PigniteCard
+	dab EmboarCard
 	dab HoundourCard
 	dab HoundoomCard
 	dab SizzlipedeCard
@@ -180,8 +180,8 @@ CardPointers::
 	dab RaltsCard
 	dab KirliaCard
 	dab GardevoirCard
-	dab SlowpokeLv18Card
-	dab SlowbroCard
+	dab InkayCard
+	dab MalamarCard
 	dab DuskullCard
 	dab DusclopsCard
 	dab DusknoirCard
@@ -201,13 +201,13 @@ CardPointers::
 	dab KadabraCard
 	dab AlakazamCard
 	dab MimikyuCard
-	dab MorelullCard
-	dab ShiinoticCard
+	dab CutieflyCard
+	dab RibombeeCard
 	dab BeldumCard
 	dab MetangCard
 	dab MetagrossCard
 	dab EspeonCard
-	dab MewtwoAltLV60Card
+	dab CresseliaCard
 	dab MewLv23Card
 	dab MewtwoCard
 	dab DeinoCard
@@ -242,9 +242,9 @@ CardPointers::
 	dab WeavileCard
 	dab NihilegoCard
 	dab DarkraiCard
-	dab PidgeyCard
-	dab PidgeottoCard
-	dab PidgeotLv38Card
+	dab RookideeCard
+	dab CorvisquireCard
+	dab CorviknightCard
 	dab ZigzagoonCard
 	dab LinooneCard
 	dab TailowCard

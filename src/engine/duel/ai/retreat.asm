@@ -3,6 +3,11 @@
 AIDecideWhetherToRetreat:
 	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
 	jr c, .check_headsConfu
+	call IsArenaPokemonAsleepOrPoisoned
+	jr nc, .notDragl
+	call CheckCantRetreatDueToPoisonReef
+	jr c, .check_headsConfu
+.notDragl	
 	ld de, FERROTHORN
 	call CountPokemonIDInBothPlayAreas
 	jr z, .check_headsConfu

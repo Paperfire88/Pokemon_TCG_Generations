@@ -64,9 +64,9 @@ UnnamedDeck:
 	card_item BRUXISH,            4
 	card_item TOGEPI,                4
 	card_item MIMIKYU,                 4
-	card_item PIDGEOT_LV38,            2
-	card_item PIDGEOTTO,               2
-	card_item PIDGEY,                  4
+	card_item CORVIKNIGHT,            2
+	card_item CORVISQUIRE,               2
+	card_item ROOKIDEE,                  4
 	card_item IMAKUNI_CARD,            2
 	card_item COPYCAT,                 2
 	card_item PROFESSOR_OAK,           2
@@ -99,9 +99,9 @@ UnnamedDeck:
 
 	deck_list_start
 	card_item FIRE_ENERGY,            24
-	card_item PIDGEOT_LV38,            4
+	card_item CORVIKNIGHT,            4
 	card_item CHARMANDER,              4
-	card_item PIDGEY,                  4
+	card_item ROOKIDEE,                  4
 	card_item MISDREAVUS,             4
 	card_item EEVEE,                   4
 	card_item STANTLER,                  4
@@ -129,9 +129,9 @@ UnnamedDeck:
 	card_item LUGIA,  4
 	card_item SANDSHREW,     4
 	card_item DITTO,           4
-	card_item PIDGEY,          4
-	card_item PIDGEOTTO,       4
-	card_item PIDGEOT_LV38,    4
+	card_item ROOKIDEE,          4
+	card_item CORVISQUIRE,       4
+	card_item CORVIKNIGHT,    4
 	card_item CYCLIZAR, 4
 	card_item POKEMON_BREEDER, 4
 	deck_list_end
@@ -165,7 +165,7 @@ UnnamedDeck:
 	card_item LIGHTNING_ENERGY, 10
 	card_item CROAGUNK,            4
 	card_item BRUXISH,      4
-	card_item SLOWBRO,           4
+	card_item MALAMAR,           4
 	card_item DEINO,              4
 	card_item ZWEILOUS,           4
 	card_item ALAKAZAM,          4
@@ -177,9 +177,9 @@ UnnamedDeck:
 
 	deck_list_start
 	card_item FIRE_ENERGY,     24
-	card_item PIDGEOT_LV38,     4
+	card_item CORVIKNIGHT,     4
 	card_item CHARMANDER,       4
-	card_item PIDGEY,           4
+	card_item ROOKIDEE,           4
 	card_item MISDREAVUS,      4
 	card_item DUSCLOPS,     4
 	card_item ZIGZAGOON,          4
@@ -193,7 +193,7 @@ UnnamedDeck:
 	deck_list_start
 	card_item PSYCHIC_ENERGY,  20
 	card_item BRUXISH,     4
-	card_item SLOWBRO,          4
+	card_item MALAMAR,          4
 	card_item TOGEPI,         4
 	card_item TAILOW,          4
 	card_item PORYGON,          4
@@ -207,7 +207,7 @@ UnnamedDeck:
 	deck_list_start
 	card_item PSYCHIC_ENERGY, 24
 	card_item BRUXISH,    4
-	card_item SLOWBRO,         4
+	card_item MALAMAR,         4
 	card_item TOGEPI,        4
 	card_item MEW,        4
 	card_item MURKROW,         4
@@ -292,7 +292,7 @@ UnnamedDeck2:
 	card_item CHIKORITA,                4
 	card_item BAYLEEF,                  3
 	card_item CHARMANDER,               4
-	card_item CHARMELEON,               3
+	card_item PIGNITE,               3
 	card_item EMBOAR,                2
 	card_item POKEMON_BREEDER,          2
 	card_item AUDINO,                  2
@@ -312,7 +312,7 @@ UnnamedDeck2:
 	card_item BAYLEEF,                  3
 	card_item MEGANIUM,            2
 	card_item CHARMANDER,               4
-	card_item CHARMELEON,               3
+	card_item PIGNITE,               3
 	card_item EMBOAR,                2
 	card_item POKEMON_BREEDER,          3
 	card_item POKEMON_TRADER,           3
@@ -333,9 +333,9 @@ UnnamedDeck2:
 	card_item LUGIA,  4
 	card_item SANDSHREW,     4
 	card_item DITTO,           4
-	card_item PIDGEY,          4
-	card_item PIDGEOTTO,       4
-	card_item PIDGEOT_LV38,    4
+	card_item ROOKIDEE,          4
+	card_item CORVISQUIRE,       4
+	card_item CORVIKNIGHT,    4
 	card_item CYCLIZAR, 4
 	card_item POKEMON_BREEDER, 4
 	deck_list_end
@@ -620,7 +620,7 @@ TepigAndFriendsDeck:
 	card_item FIRE_ENERGY,      14
 	card_item FIGHTING_ENERGY,   6
 	card_item CHARMANDER,        3
-	card_item CHARMELEON,        2
+	card_item PIGNITE,        2
 	card_item EMBOAR,         1
 	card_item NUMEL,         1
 	card_item DARUMAKA,            2
@@ -675,7 +675,7 @@ TepigExtraDeck:
 	card_item DEINO,            2
 	card_item ZWEILOUS,         1
 	card_item DUSKULL,      1
-	card_item PIDGEY,        2
+	card_item ROOKIDEE,        2
 	card_item ZIGZAGOON,         2
 	card_item BIDOOF,        2
 	card_item GRASS_ENERGY,   8 ; irrelevant
@@ -729,7 +729,7 @@ FroakieExtraDeck:
 	card_item DARTRIX,            1
 	card_item SCYTHER,           1
 	card_item CHARMANDER,        2
-	card_item CHARMELEON,        1
+	card_item PIGNITE,        1
 	card_item MAGMAR,       1
 	card_item SIZZLIPEDE,         1
 	card_item CENTISKORCH,     1
@@ -805,7 +805,7 @@ LightningAndFireDeck:
 	card_item LIGHTNING_ENERGY,        10
 	card_item DOUBLE_COLORLESS_ENERGY,  2
 	card_item CHARMANDER,               2
-	card_item CHARMELEON,               1
+	card_item PIGNITE,               1
 	card_item EMBOAR,                1
 	card_item SIZZLIPEDE,                2
 	card_item CENTISKORCH,            1
@@ -892,7 +892,7 @@ LegendaryMoltresDeck:
 	card_item FIRE_ENERGY,            12
 	card_item COLORLESS,           2
 	card_item CHARMANDER,                  4
-	card_item CHARMELEON,          2
+	card_item PIGNITE,          2
 	card_item EMBOAR,               4
 	card_item CENTISKORCH,           3
 	card_item NUMEL,             4
@@ -1115,8 +1115,8 @@ FlowerPowerDeck:
 StrangePsyshockDeck:
 	deck_list_start
 	card_item PSYCHIC_ENERGY, 14
-	card_item SLOWPOKE_LV18,         4
-	card_item SLOWBRO,        2
+	card_item INKAY,         4
+	card_item MALAMAR,        2
 	card_item MEW,         2
 	card_item MEW,         1
 	card_item ABRA,         4
@@ -1197,7 +1197,7 @@ ImRonaldDeck:
 	card_item WATER_ENERGY,     10
 	card_item FIGHTING_ENERGY,   8
 	card_item CHARMANDER,        3
-	card_item CHARMELEON,        2
+	card_item PIGNITE,        2
 	card_item SIZZLIPEDE,         3
 	card_item CENTISKORCH,     1
 	card_item FROAKIE,          3
@@ -1276,7 +1276,7 @@ LegendaryRonaldDeck:
 	card_item WATER_ENERGY,	            4
 	card_item LIGHTNING_ENERGY,	        4
 	card_item DOUBLE_COLORLESS_ENERGY,  3
-	card_item PIDGEY,             3
+	card_item ROOKIDEE,             3
 	card_item ENTEI,             1
 	card_item KILOWATTREL,            	    2
 	card_item SUICUNE,            1
@@ -1439,8 +1439,8 @@ WaterfrontPokemonDeck:
 	card_item SEAKING,           3
 	card_item DEWPIDER,            4
 	card_item ARAQUANID,           3
-	card_item SLOWPOKE_LV18,     3
-	card_item SLOWBRO,           2
+	card_item INKAY,     3
+	card_item MALAMAR,           2
 	card_item RAYQUAZA,         1
 	card_item AUDINO,			 3
 	card_item GOOMY,           3
@@ -1496,8 +1496,7 @@ SoundoftheWavesDeck:
 
 PikachuDeck:
 	deck_list_start
-	card_item WATER_ENERGY,             6
-	card_item LIGHTNING_ENERGY,        12
+	card_item LIGHTNING_ENERGY,        18
 	card_item BLITZLE,             4
 	card_item HELIOPTILE,             2
 	card_item EMOLGA,             1
@@ -1677,8 +1676,8 @@ StrangePowerDeck:
 	card_item DARKNESS_ENERGY,			7
 	card_item DOUBLE_COLORLESS_ENERGY,  4
 	card_item MUNNA,            4
-	card_item SLOWPOKE_LV18,             4
-	card_item SLOWBRO,                  2
+	card_item INKAY,             4
+	card_item MALAMAR,                  2
 	card_item MURKROW,                  4
 	card_item HONCHKROW,                    3
 	card_item SPIRITOMB,                  2
@@ -1705,9 +1704,9 @@ FlyinPokemonDeck:
 	card_item ZUBAT,                    4
 	card_item GOLBAT,                   3
 	card_item SCIZOR,           2
-	card_item PIDGEY,                   4
-	card_item PIDGEOTTO,                3
-	card_item PIDGEOT_LV38,             2
+	card_item ROOKIDEE,                   4
+	card_item CORVISQUIRE,                3
+	card_item CORVIKNIGHT,             2
 	card_item TAILOW,                  4
 	card_item SWELLOW,                   3
 	card_item IMPOSTER_PROFESSOR_OAK,   2
@@ -1785,7 +1784,7 @@ FlamethrowerDeck:
 	card_item FIRE_ENERGY,             15
 	card_item DOUBLE_COLORLESS_ENERGY,  4
 	card_item CHARMANDER,               4
-	card_item CHARMELEON,               3
+	card_item PIGNITE,               3
 	card_item EMBOAR,                2
 	card_item HOUNDOUR,                   4
 	card_item HOUNDOOM,           2
@@ -1833,8 +1832,8 @@ ImakuniDeck:
 	card_item BUIZEL,         4
 	card_item FLOATZEL,         3
 	card_item BRUXISH,    2
-	card_item SLOWPOKE_LV18,   2
-	card_item SLOWBRO,         3
+	card_item INKAY,   2
+	card_item MALAMAR,         3
 	card_item MURKROW,         4
 	card_item HONCHKROW,           3
 	card_item RAYQUAZA,       4

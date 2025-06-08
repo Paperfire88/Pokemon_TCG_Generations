@@ -50,13 +50,13 @@ UmbreonCardGfx:
 	INCBIN "gfx/cards/umbreon.2bpp"
 	INCBIN "gfx/cards/umbreon.pal"  		
 
-MorelullCardGfx:
-	INCBIN "gfx/cards/morelull.2bpp"
-	INCBIN "gfx/cards/morelull.pal"	
+CutieflyCardGfx:
+	INCBIN "gfx/cards/cutiefly.2bpp"
+	INCBIN "gfx/cards/cutiefly.pal"	
 
-ShiinoticCardGfx:
-	INCBIN "gfx/cards/shiinotic.2bpp"
-	INCBIN "gfx/cards/shiinotic.pal"    
+RibombeeCardGfx:
+	INCBIN "gfx/cards/ribombee.2bpp"
+	INCBIN "gfx/cards/ribombee.pal"    
 
 RaltsCardGfx:
 	INCBIN "gfx/cards/ralts.2bpp"

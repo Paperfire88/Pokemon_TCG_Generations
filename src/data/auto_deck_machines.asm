@@ -50,7 +50,7 @@ AutoDeckMachineEntries:
 ; Psychic Auto Deck Machine
 	auto_deck PsychicPowerCardList,         PsychicPowerText,         PsychicPowerDescriptionText
 	auto_deck DreamEaterHaunterCardList,    DreamEaterHaunterText,    DreamEaterHaunterDescriptionText
-	auto_deck ScavengingSlowbroCardList,    ScavengingSlowbroText,    ScavengingSlowbroDescriptionText
+	auto_deck ScavengingMalamarCardList,    ScavengingMalamarText,    ScavengingMalamarDescriptionText
 	auto_deck StrangePowerCardList,         StrangePowerText,         StrangePowerDescriptionText
 	auto_deck StrangePsyshockCardList,      StrangePsyshockText,      StrangePsyshockDescriptionText
 

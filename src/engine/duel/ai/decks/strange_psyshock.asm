@@ -32,7 +32,7 @@ AIActionTable_StrangePsyshock:
 	dw KILOWATTREL
 	dw SPIRITOMB
 	dw DEINO
-	dw SLOWPOKE_LV18
+	dw INKAY
 	dw NULL
 
 .list_bench
@@ -41,7 +41,7 @@ AIActionTable_StrangePsyshock:
 	dw CHATOT
 	dw KILOWATTREL
 	dw AUDINO
-	dw SLOWPOKE_LV18
+	dw INKAY
 	dw NULL
 
 .list_retreat
@@ -59,7 +59,7 @@ AIActionTable_StrangePsyshock:
 	ai_energy AUDINO,    2, -2
 	ai_energy CHATOT, 4, -2
 	ai_energy KILOWATTREL,    0, -8
-	ai_energy SLOWPOKE_LV18,	1, +1
+	ai_energy INKAY,	1, +1
 	dw NULL
 
 .list_prize

@@ -232,8 +232,8 @@ DreamEaterHaunterText:
 	text "Dream Eater Haunter"
 	done
 
-ScavengingSlowbroText:
-	text "Scavenging Slowbro"
+ScavengingMalamarText:
+	text "Scavenging Malamar"
 	done
 
 StrangePowerText:
@@ -459,7 +459,7 @@ DreamEaterHaunterDescriptionText:
 	line "to cause great damage!"
 	done
 
-ScavengingSlowbroDescriptionText:
+ScavengingMalamarDescriptionText:
 	text "Continually draw Trainer "
 	line "Cards from the Discard Pile!"
 	done

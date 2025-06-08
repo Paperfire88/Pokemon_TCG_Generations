@@ -1286,15 +1286,6 @@ GigaDrainName:
 	text "Giga Drain"
 	done
 
-DigDrainDescription:
-	text "Heal damage from this PKMN equal to"
-	line "half the damage done (Rounded Up)."
-	line "During your opponent's next turn,"
-	line "whenever 30 or less damage is done"
-	line "to this PKMN, prevent that damage."
-	line "(after applying Weakness/Resistance)"
-	done
-
 EnergyTransName:
 	text "Leaf Trans"
 	done
@@ -1489,6 +1480,11 @@ XScissorName:
 	text "X-Scissor"
 	done
 
+XScissorDescription:
+	text "If the Defending PKMN has a PKMN PWR"
+	line "this attack does +40 more damage."
+	done 
+
 ClawitzerName:
 	text "Clawitzer"
 	done
@@ -1531,7 +1527,7 @@ SpikeCannonName:
 	text "Spike Cannon"
 	done
 
-MagikarpName:
+SneaselName:
 	text "Sneasel"
 	done
 

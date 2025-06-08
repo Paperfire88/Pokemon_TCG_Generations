@@ -245,7 +245,10 @@ AuraSphereName:
 SniffOutName:
 	text "Sniff Out"
 	done
-
+SniffOutDescription:
+	text "Put 1 Trainer from your discard pile"
+	line "into your hand."
+	done
 DrainpourName:
 	text "Drainpour"
 	done
@@ -550,8 +553,8 @@ StrangeEvolutionTyrogueDescription:
 	line "and/or Effects affecting this PKMN."
 	line "then, until the end of this Duel,"
 	line "replace this card with a copy of"
-	line "(HITMONCHAN), (HITMONLEE) or "
-	line "(HITMONTOP) from your deck."
+	line "[HITMONCHAN], [HITMONLEE] or "
+	line "[HITMONTOP] from your deck."
 	done 
 
 ChooseAHitmonFromDeckText:
@@ -573,9 +576,8 @@ TripleKickName:
 
 TripleKickDescription:
 	text "Flip 3 coins. This attack does 30"
-	line "damage for each heads."
-	line "If (HITMONCHAN) and/or (TYROGUE) are"
-	line "in your Bench, Draw 2 cards."
+	line "damage for each heads. If [TYROGUE]"
+	line "is in your Bench, Draw 2 cards."
 	done
 
 SpecialPunchName:
@@ -584,20 +586,15 @@ SpecialPunchName:
 
 SpecialPunchDescription:
 	text "Don't apply Weakness/Resistance for"
-	line "this attack. If (HITMONLEE) and/or"
-	line "(TYROGUE) are in your Bench, During"
-	line "your opponent's next turn, this PKMN"
-	line "takes -10 less damage (after Weakness"
-	line "and Resistance)."
+	line "this attack. If [TYROGUE] is in your"
+	line "bench, Heal 20 damage from this PKMN"
 	done 
 
 HighJumpKickDescription:
 	text "Flip a coin. If heads, this attack"
-	line "does +10 damage; if tails,"
-	line "take 10 damage. If (HITMONTOP) or"
-	line "(TYROGUE) are in your Bench, instead"
-	line "this attack does +30 damage and"
-	line "this pkmn takes 20 damage."
+	line "does +10 damage; if tails, take 10"
+	line "damage. If [TYROGUE] is in your"
+	line "Bench, this attack does +20 damage."
 	done 
 
 VacuumWaveName:
@@ -678,6 +675,14 @@ ForfeitText:
 
 MoonblastName:
 	text "Moonblast"
+	done
+
+MoonblastDescription:
+	text "Heal 10 Damage from this PKMN, then,"
+	line "During your opponent's next turn,"
+	line "the Defending PKMN attacks does -20"
+	line "less damage. (before Weakness or"
+	line "Resistance)."
 	done
 
 DrainingKissName:
@@ -1213,3 +1218,357 @@ Choose1FightingEnergyCardsFromDiscardPileText:
 	text "Choose 1 <FIGHTING> Energy card"
 	line "from the Discard Pile."
 	done	
+
+MountainEaterName:
+	text "Mountain Eater"
+	done
+
+MountainEaterDescription:
+	text "Discard the top card of your"
+	line "opponent's deck. Then,heal 10 damage"
+	line "from this PKMN (if able)."
+	done
+
+MountainClashName:
+	text "Mountain Clash"
+	done
+
+MountainClashDescription:
+	text "Does +10 for each <COLORLESS> in each of your"
+	line "PKMN Retreat Cost."
+	done
+
+SandCrushName:
+	text "Sand Crush"
+	done
+
+SandCrushDescription:
+	text "Discard 1 card from the top of your"
+	line "Opponent's Deck for each of their"
+	line "Damaged PKMN."
+	done
+
+AdamantinePressName:
+	text "Adamantine Press"
+	done
+
+AdamantinePressDescription:
+	text "During your opponents next turn,this"
+	line "PKMN takes -10 less damage (after"
+	line "Weakness/Resistance).If its Affected"
+	line "by a Status Condition, it also takes"
+	line "-20 less damage next turn."
+	done
+
+FutureSightName:
+	text "Future Sight"
+	done
+
+FutureSightDescription:
+	text "Look at the top 3 cards of either"
+	line "player's deck and put them back in"
+	line "any order." 
+	done
+	
+MaliceTentaclesName:
+	text "Malice Tentacles"
+	done
+
+MaliceTentaclesDescription:
+	text "If this PKMN is at full HP <HP_OK>, the" 
+	line "Defending Pkmn is now Confused."
+	line "Otherwise, Heal 20 Damage From this"
+	line "PKMN."
+	done
+
+HorrorChantName:
+	text "Horror Chant"
+	done
+
+HorrorChantDescription:
+	text "If your opponent has 4 or more"
+	line "Benched PKMN, choose 1 of them and"
+	line "return that PKMN and all cards"
+	line "attached to it to their Deck." 
+	done
+
+SmackDownName:
+	text "Smack Down"
+	done
+
+SmackDownDescription:
+	text "If the defending PKMN has a <FIGHTING>"
+	line "Resistance, it does +30 damage."
+	done
+
+PulverizingPressName:
+	text "Pulverizing Press"
+	done
+
+MegatonHammerName:
+	text "Megaton Hammer"
+	done
+
+MegatonHammerDescription:
+	text "It does 20 damage to itself."
+	line "Flip a Coin. if heads, This Attack"
+	line "does +40 damage. If tails, this PKMN"
+	line "is now Confused."	
+	done
+
+RipOffName:
+	text "Rip Off"
+	done
+
+PsychicCallForFamilyDescription:
+	text "If your Bench isn't full:Search your"
+	line "deck for a <PSYCHIC> Basic PKMN and put it"
+	line "onto your Bench. Shuffle your deck."
+	done
+
+MysteriousPowderName:
+	text "Mysterious Powder"
+	done
+
+DisruptiveSignalName:
+	text "Disruptive Signal"
+	done
+
+DisruptiveSignalDescription:
+	text "If the Defending PKMN is Confused,"
+	line "Discard an Energy (If any), from it."
+	done
+
+BrainShakeName:
+	text "Brain Shake"
+	done
+
+BrainShakeDescription:
+	text "The Defending PKMN is now Confused."
+	line "If it was Already Confused, Discard"
+	line "an Energy (If any), from it."
+	done
+
+SatelliteBeamName:
+	text "Satellite Beam"
+	done
+
+SatelliteBeamDescription:
+	text "It does +10 damage for each Basic"
+	line "Energy in your opponent's discard"
+	line "pile (Up to +120)."
+	done
+
+DreamSphereName:
+	text "Dream Sphere"
+	done
+
+DreamyWishName:
+	text "Dreamy Wish"
+	done
+
+DreamyWishDescription:
+	text "Attach 1 <PSYCHIC> Energy card from your"
+	line "discard pile to 1 of your PKMN."
+	done
+
+Choose1PsychicEnergyCardsFromDiscardPileText:
+	text "Choose 1 <PSYCHIC> Energy card"
+	line "from the Discard Pile."
+	done	
+
+SleepDrainName:
+	text "Sleep Drain"
+	done
+
+SleepDrainDescription:
+	text "If the Defending PKMN is Asleep,"
+	line "This Attack does +20 Damage and"
+	line "Heal damage from this PKMN equal to"
+	line "half the damage done (rounded up)."
+	done		
+
+FairyWindName:
+	text "Fairy Wind"
+	done
+
+FairyPollenName:
+	text "Fairy Pollen"
+	done
+FairyPollenDescription:
+	text "The Defending PKMN is now Asleep."
+	line "If your opponent has 3 or more basic"
+	line "Energies in the Discard Pile, The"
+	line "Defending PKMN is also Burned."
+	done
+	
+AllureName:
+	text "Allure"
+	done	
+
+NightSyndicateName:
+	text "Night Syndicate"
+	done
+
+NightSyndicateDescription:
+	text "Once per turn, If your Bench isn't"
+	line "full: Search your deck for a <DARKNESS>"
+	line "Basic PKMN and put it on your Bench."
+	line "then, Put 1 <HP_NOK> damage counter on it."
+	line "Shuffle your deck afterward."
+	done
+
+FlockPeckName:
+	text "Flock Peck"
+	done
+
+FlockPeckDescription:
+	text "If you have a benched [MURKROW] in"
+	line "play, Draw a Card. If you have a"
+	line "benched [HONCHKROW] in play, draw"
+	line "another one."
+	done
+
+ResentFulWingsName:
+	text "Resentful Wings"
+	done
+
+ResentFulWingsDescription:
+	text "If this PKMN has any <HP_NOK> damage"
+	line "counters on it, Your Opponent Can't"
+	line "play any trainer cards during their"
+	line "next turn."
+	done
+
+BlackwingVengeanceName:
+	text "Blackwing Raid"
+	done
+
+BlackwingVengeanceDescription:
+	text "Does +20 damage for each [MURKROW]"
+	line "in your Bench."
+	done
+
+PoisonReefName:
+	text "Poison Reef"
+	done
+
+PoisonReefDescription:
+	text "As long as this PKMN is in play,"
+	line "Your opponent's Poisoned PKMN can't"
+	line "retreat."
+	done
+
+DragonsVenomName:
+	text "Dragon's Venom"
+	done
+
+DragonsVenomDescription:
+	text "Flip a Coin. If heads, the Defending"
+	line "PKMN is now Burned and Poisoned."
+	done	
+
+DragonsVenomCheckText:
+	text "Dragon's Venom check! If Heads,"
+	line "opponent is Poisoned & Burned."
+	done
+
+ChemicalScaleName:
+	text "Chemical Scale"
+	done
+
+ChemicalScaleDescription:
+	text "If the Defending PKMN has a PKMN PWR"
+	line "it's now Burned and Confused."
+	done
+
+DarkChargeName:
+	text "Dark Charge"
+	done
+
+DarkChargeDescription:
+	text "Attach 1 <DARKNESS> Energy card from your"
+	line "discard pile to 1 of your PKMN."
+	done	
+
+Choose1DarknessEnergyCardsFromDiscardPileText:
+	text "Choose 1 <DARKNESS> Energy card"
+	line "from the Discard Pile."
+	done
+
+SpiritBreakName:
+	text "Spirit Break"
+	done
+
+SpiritBreakDescription:
+	text "If the defending PKMN has a Retreat"
+	line "cost of 3 or more <COLORLESS>, Discard an"
+	line "Energy, from the Defending PKMN." 
+	done
+
+DarkOathName:
+	text "Dark Oath"
+	done
+
+DarkOathDescription:
+	text "Once per turn, The Defending PKMN"
+	line "Retreat cost is 1 <COLORLESS> More until the"
+	line "end of the next turn.if its Retreat"
+	line "becomes 3 or more, Draw a card."
+	done
+
+ThiefName:
+	text "Thief"
+	done
+
+DarknessCallForFamilyDescription:
+	text "If your Bench isn't full:Search your"
+	line "deck for a <DARKNESS> Basic PKMN and put it"
+	line "onto your Bench. Shuffle your deck."
+	done
+
+SpitPoisonName:
+	text "Spit Poison"
+	done
+
+PoisonRingName:
+	text "Poison Ring"
+	done
+
+PoisonRingDescription:
+	text "The Defending pkmn is now Poisoned."
+	line "During your opponent's next turn,"
+	line "that pkmn can't retreat."
+	done
+
+MuddyHammerName:
+	text "Muddy Hammer"
+	done
+
+MuddyHammerDescription:
+	text "Discard the top card of your"
+	line "opponent's deck. If the defending"
+	line "PKMN is Poisoned, Discard the top 3"
+	line "cards instead."
+	done
+	
+DarkPulseName:
+	text "Dark Pulse"
+	done
+
+DarkPulseDescription:
+	text "Does 10 damage for each <DARKNESS> Energy"
+	line "attached to all of your PKMN."
+	done
+
+MercilessName:
+	text "Merciless"
+	done	
+MercilessDescription:
+	text "Also, Do 20 damage to the opponent's"
+	line "benched PKMN with the lowest"
+	line "remaining HP."
+	done			
+DarkVoidName:
+	text "Dark Void"
+	done

@@ -3297,7 +3297,7 @@ CheckIfyouhave3orMoreEvolvedPKMNinBench2:
 
 TotalRetreatCost_10xDamageEffect2:
     ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-    call GetTurnDuelistVariable
+    farcall GetTurnDuelistVariable
     ld b, a
     ld l, DUELVARS_ARENA_CARD
     ; hl is now set to the first duel variable that holds the deck indices of the turn holder's play area Pokémon
@@ -3307,7 +3307,7 @@ TotalRetreatCost_10xDamageEffect2:
 ; loop through each play area Pokémon, adding its Retreat Cost to c
 .loop_play_area
     ld a, [hli]
-    call LoadCardDataToBuffer1_FromDeckIndex
+    farcall LoadCardDataToBuffer1_FromDeckIndex
     ld a, [wLoadedCard1RetreatCost]
     add c
     ld c, a
@@ -3315,8 +3315,15 @@ TotalRetreatCost_10xDamageEffect2:
     jr nz, .loop_play_area
 .done
     ld a, c
-    call ATimes10
-    jp SetDefiniteDamage
+    farcall ATimes10
+    farcall AddToDamage
+	ret
+
+AllEnergyInYourPlayArea_10xDamageEffect:
+	ld c, 0  ; reset the Energy counter
+	farcall CountAllEnergyInTurnHolderPlayArea
+	farcall ATimes10	       ; convert the Energy counter into a damage value by multiplying it by 10
+   	jp SetDefiniteDamage   ; and then store that damage value in various wram locations
 
 MagnetismEffect2:
 	ld de, MAGNEMITE_LV13

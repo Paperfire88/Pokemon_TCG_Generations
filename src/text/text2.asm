@@ -395,7 +395,7 @@ ProcedureForStrangeBehaviorText:
 	line ""
 	line "1. Choose the Pokémon with the"
 	line "   Damage counters to move to"
-	line "   Slowbro and press the A Button."
+	line "   Malamar and press the A Button."
 	line ""
 	line "2. Repeat step 1 as many times as"
 	line "   you wish to move the counters."
@@ -403,7 +403,7 @@ ProcedureForStrangeBehaviorText:
 	line "3. Press the B Button to end."
 	line ""
 	line "4. You cannot move the damage if"
-	line "   Slowbro will be Knocked Out."
+	line "   Malamar will be Knocked Out."
 	done
 
 ChooseOppAttackToBeUsedWithMetronomeText:

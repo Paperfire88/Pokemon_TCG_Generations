@@ -1948,7 +1948,7 @@ AISelectSpecialAttackParameters:
 	call GetCardIDFromDeckIndex
 	cp16 MEW
 	jr z, .DevolutionBeam
-	cp16 MEWTWO_ALT_LV60
+	cp16 CRESSELIA
 	jr z, .EnergyAbsorption
 	cp16 MEWTWO_LV60
 	jr z, .EnergyAbsorption

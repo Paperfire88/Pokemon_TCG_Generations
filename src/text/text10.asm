@@ -442,7 +442,7 @@ LizardName:
 	text "Lizard"
 	done
 
-CharmeleonName:
+PigniteName:
 	text "Pignite"
 	done
 
@@ -459,7 +459,7 @@ FlameName:
 	text "Flame"
 	done
 
-CharizardName:
+EmboarName:
 	text "Emboar"
 	done
 
@@ -1415,11 +1415,10 @@ HardenName:
 	done
 
 HardenDescription:
-	text "During your opponent's next turn,"
-	line "if 30 or less damage is done to"
-	line "this PKMN, prevent that damage."
-	line "(after applying Weakness or"
-	line "Resistance)"
+	text "During your opponent's next turn, if"
+	line "30 or less damage is done to this"
+	line "PKMN, prevent that damage. (after"
+	line "Weakness or Resistance)."
 	done
 
 RockThrowName:
@@ -1453,14 +1452,18 @@ LarvitarName:
 SnivelName:
 	text "Snivel"
 	done
-
+GrowlDescription:
+	text "During your opponent's next turn,"
+	line "the Defending PKMN attacks does -10"
+	line "less damage. (before Weakness or"
+	line "Resistance)."
+	done	
 SnivelDescription:
 	text "During your opponent's next turn,"
-	line "the Defending PKMN attacks do -20"
+	line "the Defending PKMN attacks does -20"
 	line "less damage. (before Weakness or"
 	line "Resistance)."
 	done
-
 LonelyName:
 	text "Lonely"
 	done
@@ -1684,7 +1687,7 @@ DamageSwapDescription:
 	line "Knock it Out."
 	done
 
-SlowpokeName:
+InkayName:
 	text "Inkay"
 	done
 

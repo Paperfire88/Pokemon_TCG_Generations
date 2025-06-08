@@ -590,8 +590,8 @@ PsychicPowerCardList:
 	card_item DEINO,              3
 	card_item ZWEILOUS,           2
 	card_item ALAKAZAM,          1
-	card_item SLOWPOKE_LV18,     2
-	card_item SLOWBRO,           1
+	card_item INKAY,     2
+	card_item MALAMAR,           1
 	card_item DUSKULL,        1
 	card_item MISDREAVUS,       2
 	card_item DUSCLOPS,      1
@@ -638,11 +638,11 @@ DreamEaterHaunterCardList:
 	card_item REVIVE,                  3
 	deck_list_end
 
-ScavengingSlowbroCardList:
+ScavengingMalamarCardList:
 	deck_list_start
 	card_item PSYCHIC_ENERGY,   23
-	card_item SLOWPOKE_LV18,     4
-	card_item SLOWBRO,           3
+	card_item INKAY,     4
+	card_item MALAMAR,           3
 	card_item ESPEON,              3
 	card_item MewtwoCard,       2
 	card_item MEW,          2
@@ -662,7 +662,7 @@ StrangePowerCardList:
 	card_item PSYCHIC_ENERGY,          25
 	card_item DOUBLE_COLORLESS_ENERGY,  1
 	card_item BRUXISH,             3
-	card_item SLOWBRO,                  2
+	card_item MALAMAR,                  2
 	card_item MURKROW,                  4
 	card_item HONCHKROW,                    3
 	card_item SPIRITOMB,                  2
@@ -757,10 +757,10 @@ FlyinPokemonCardList:
 	card_item ZUBAT,                    4
 	card_item GOLBAT,                   3
 	card_item SHINX,           2
-	card_item PIDGEY,                   4
-	card_item PIDGEOTTO,                3
-	card_item PIDGEOT_LV38,             1
-	card_item PIDGEOT_LV38,             1
+	card_item ROOKIDEE,                   4
+	card_item CORVISQUIRE,                3
+	card_item CORVIKNIGHT,             1
+	card_item CORVIKNIGHT,             1
 	card_item TAILOW,                  4
 	card_item SWELLOW,                   3
 	card_item IMPOSTER_PROFESSOR_OAK,   2
@@ -799,7 +799,7 @@ WondersOfScienceCardList:
 	card_item FERROSEED,                 4
 	card_item FERROTHORN,                 3
 	card_item MewtwoCard,             2
-	card_item MEWTWO_ALT_LV60,         1
+	card_item CRESSELIA,         1
 	card_item MEWTWO_LV60,             1
 	card_item PORYGON,                 2
 	card_item IMPOSTER_PROFESSOR_OAK,  1
@@ -822,10 +822,10 @@ ReplaceEmAllCardList:
 	card_item SIZZLIPEDE,               4
 	card_item CAMERUPT,           1
 	card_item CENTISKORCH,           1
-	card_item PIDGEY,                  4
-	card_item PIDGEOTTO,               3
-	card_item PIDGEOT_LV38,            1
-	card_item PIDGEOT_LV38,            1
+	card_item ROOKIDEE,                  4
+	card_item CORVISQUIRE,               3
+	card_item CORVIKNIGHT,            1
+	card_item CORVIKNIGHT,            1
 	card_item RUFFLET,                   3
 	card_item BRAVIARY,                  2
 	card_item PROFESSOR_OAK,           2
@@ -842,7 +842,7 @@ ChariSaurCardList:
 	card_item BAYLEEF,           3
 	card_item MEGANIUM,     2
 	card_item CHARMANDER,        4
-	card_item CHARMELEON,        3
+	card_item PIGNITE,        3
 	card_item EMBOAR,         2
 	card_item NUMEL,      3
 	card_item EEVEE,             4
@@ -860,7 +860,7 @@ TrafficLightCardList:
 	card_item WATER_ENERGY,      8
 	card_item LIGHTNING_ENERGY,  8
 	card_item CHARMANDER,        3
-	card_item CHARMELEON,        2
+	card_item PIGNITE,        2
 	card_item DARUMAKA,            3
 	card_item DARMANITAN,          2
 	card_item NUMEL,      2
@@ -880,7 +880,7 @@ FirePokemonCardList:
 	card_item FIRE_ENERGY,             24
 	card_item DOUBLE_COLORLESS_ENERGY,  2
 	card_item CHARMANDER,               3
-	card_item CHARMELEON,               2
+	card_item PIGNITE,               2
 	card_item EMBOAR,                1
 	card_item HOUNDOUR,                   3
 	card_item HOUNDOOM,           1
@@ -940,7 +940,7 @@ TepigAndFriendsCardList:
 	card_item KARRABLAST,         1
 	card_item SCIZOR,           1
 	card_item CHARMANDER,       2
-	card_item CHARMELEON,       1
+	card_item PIGNITE,       1
 	card_item EMBOAR,        1
 	card_item SIZZLIPEDE,        2
 	card_item CENTISKORCH,    1
@@ -970,7 +970,7 @@ FroakieAndFriendsCardList:
 	card_item WATER_ENERGY,     11
 	card_item LIGHTNING_ENERGY,  6
 	card_item CHARMANDER,        2
-	card_item CHARMELEON,        1
+	card_item PIGNITE,        1
 	card_item SIZZLIPEDE,         1
 	card_item CENTISKORCH,     1
 	card_item MAGMAR,       1
@@ -1057,9 +1057,9 @@ PsychicKrookodileCardList:
 	card_item SPIRITOMB,          1
 	card_item ESPEON,             1
 	card_item MEW,         1
-	card_item PIDGEY,           2
-	card_item PIDGEOTTO,        1
-	card_item PIDGEOT_LV38,     1
+	card_item ROOKIDEE,           2
+	card_item CORVISQUIRE,        1
+	card_item CORVIKNIGHT,     1
 	card_item ZIGZAGOON,          2
 	card_item LINOONE,         1
 	card_item PROFESSOR_OAK,    1
@@ -1169,7 +1169,7 @@ LegendaryDragoniteCardList:
 	card_item WATER_ENERGY,            20
 	card_item DOUBLE_COLORLESS_ENERGY,  4
 	card_item CHARMANDER,               3
-	card_item CHARMELEON,               2
+	card_item PIGNITE,               2
 	card_item EMBOAR,                2
 	card_item SNEASEL,                 3
 	card_item WEAVILE,                 2

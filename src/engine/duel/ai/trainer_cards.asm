@@ -4927,7 +4927,7 @@ AIDecide_Pokeball:
 	ld a, CARD_LOCATION_DECK
 	call LookForCardIDInLocation
 	ret c
-	ld de, BLITZLE
+	ld de, PIKACHU
 	ld a, CARD_LOCATION_DECK
 	call LookForCardIDInLocation
 	ret c
@@ -4966,13 +4966,13 @@ AIDecide_Pokeball:
 	ld de, LIGHTNING_ENERGY
 	call LookForCardIDInHandList_Bank8
 	jr nc, .fighting
-	ld de, BLITZLE
+	ld de, PIKACHU
 	call LookForCardIDInHandList_Bank8
 	jr c, .fighting
 	ld de, MAGNEMITE_LV13
 	call LookForCardIDInHandList_Bank8
 	jr c, .fighting
-	ld de, BLITZLE
+	ld de, PIKACHU
 	ld a, CARD_LOCATION_DECK
 	call LookForCardIDInLocation
 	ret c
@@ -5641,18 +5641,18 @@ AIDecide_PokemonTrader_LegendaryDragonite:
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .choose_hand
 	ld bc, CHARMANDER
-	ld de, CHARMELEON
+	ld de, PIGNITE
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .choose_hand
-	ld bc, CHARMELEON
+	ld bc, PIGNITE
 	ld de, EMBOAR
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .choose_hand
 	ld de, CHARMANDER
-	ld bc, CHARMELEON
+	ld bc, PIGNITE
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .choose_hand
-	ld de, CHARMELEON
+	ld de, PIGNITE
 	ld bc, EMBOAR
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .choose_hand
@@ -5671,7 +5671,7 @@ AIDecide_PokemonTrader_LegendaryDragonite:
 	ld de, SLIGGOO
 	call CheckIfHasCardIDInHand
 	jr c, .set_carry
-	ld de, CHARMELEON
+	ld de, PIGNITE
 	call CheckIfHasCardIDInHand
 	jr c, .set_carry
 	ld de, WEAVILE
@@ -5896,7 +5896,7 @@ AIDecide_PokemonTrader_PowerGenerator:
 	ld de, ZEBSTRIKA
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jp c, .find_duplicates
-	ld bc, BLITZLE
+	ld bc, PIKACHU
 	ld de, ZEBSTRIKA
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jp c, .find_duplicates
@@ -5904,7 +5904,7 @@ AIDecide_PokemonTrader_PowerGenerator:
 	ld bc, ZEBSTRIKA
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jp c, .find_duplicates
-	ld de, BLITZLE
+	ld de, PIKACHU
 	ld bc, ZEBSTRIKA
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jp c, .find_duplicates
@@ -6049,18 +6049,18 @@ AIDecide_PokemonTrader_Flamethrower:
 ; otherwise, check if the evolution card is in
 ; hand and if so, choose it as target instead.
 	ld bc, CHARMANDER
-	ld de, CHARMELEON
+	ld de, PIGNITE
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
-	ld bc, CHARMELEON
+	ld bc, PIGNITE
 	ld de, EMBOAR
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
 	ld de, CHARMANDER
-	ld bc, CHARMELEON
+	ld bc, PIGNITE
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
-	ld de, CHARMELEON
+	ld de, PIGNITE
 	ld bc, EMBOAR
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates

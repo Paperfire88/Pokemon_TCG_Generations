@@ -24,9 +24,11 @@
 
 # intermediate BG map files
 *.bgmap
+*.attrmap
 
 # compressed data
 *.lz
 
 # *disasm.py output file
 *disasm_output.asm
+/Mini-Cards

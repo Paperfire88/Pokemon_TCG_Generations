@@ -28,7 +28,7 @@ AIActionTable_WondersOfScience:
 
 .list_arena
 	dw MewtwoCard
-	dw MEWTWO_ALT_LV60
+	dw CRESSELIA
 	dw MEWTWO_LV60
 	dw PHANTUMP
 	dw FERROSEED
@@ -38,7 +38,7 @@ AIActionTable_WondersOfScience:
 .list_bench
 	dw PHANTUMP
 	dw FERROSEED
-	dw MEWTWO_ALT_LV60
+	dw CRESSELIA
 	dw MEWTWO_LV60
 	dw MewtwoCard
 	dw PORYGON
@@ -53,7 +53,7 @@ AIActionTable_WondersOfScience:
 	ai_energy FERROSEED,         2, +0
 	ai_energy FERROTHORN,         3, +0
 	ai_energy MewtwoCard,     2, -1
-	ai_energy MEWTWO_ALT_LV60, 2, -1
+	ai_energy CRESSELIA, 2, -1
 	ai_energy MEWTWO_LV60,     2, -1
 	ai_energy PORYGON,         2, -1
 	dw NULL

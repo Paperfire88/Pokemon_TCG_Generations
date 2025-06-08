@@ -738,6 +738,11 @@ CheckAbleToRetreat:
 	ret c
 	call CheckIfActiveCardParalyzedOrAsleep
 	ret c
+	call IsArenaPokemonAsleepOrPoisoned
+	jr nc, .notDragl
+	call CheckCantRetreatDueToPoisonReef
+	ret c
+.notDragl	
 	call HasAlivePokemonInBench
 	jr c, .unable_to_retreat
 	ld a, DUELVARS_ARENA_CARD

@@ -64,7 +64,7 @@ EkansDescription:
 	line "OG illustrator: (MAHOU)"
 	done
 
-MagikarpDescription:
+SneaselDescription:
 	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Neo Genesis 25)"
 	line "OG illustrator: (KEN SUGIMORI)"
@@ -256,13 +256,13 @@ TepigDescription:
 	line "OG illustrator: (Shin Nagasawa)"
 	done
 
-CharmeleonDescription:
+PigniteDescription:
 	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (Boundaries Crossed 25)"
 	line "OG illustrator: (Shin Nagasawa)"
 	done
 
-CharizardDescription:
+EmboarDescription:
 	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (Black & White 19)"
 	line "OG illustrator: (Kouki Saitou)"
@@ -808,7 +808,7 @@ BruxishDescription:
 	line "OG illustrator: (kurumitsu)"
 	done
 
-SlowbroDescription:
+MalamarDescription:
 	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Forbidden Light 51)"
 	line "OG illustrator: (You Iribi)"
@@ -893,20 +893,20 @@ MewLv15Description:
 	line "OG illustrator: (Wataru Kawahara)"
 	done
 
-PidgeyDescription:
+RookideeDescription:
 	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (Paldea Evolved 164)"
 	line "OG illustrator: (Naoki Saito)"
 	done
 
 
-PidgeottoDescription:
+CorvisquireDescription:
 	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (Darkness Ablaze 155)"
 	line "OG illustrator: (kirisAki)"
 	done
 
-Pidgeot1Description:
+CorviknightDescription:
 	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (Fusion Strike 190)"
 	line "OG illustrator: (Ryuta Fuse)"

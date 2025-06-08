@@ -1485,7 +1485,7 @@ ChallengeCupPrizeCards:
 	dw BRUXISH
 	tx SlowpokeTradeCardName
 
-	dw MEWTWO_ALT_LV60
+	dw CRESSELIA
 	tx MewtwoTradeCardName
 
 	dw MEWTWO_LV60

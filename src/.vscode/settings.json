@@ -1,10 +1,28 @@
 {
-    "vscodeCustomCodeColor.fileLanguageIdList": [
-        "asm",
-
-        "vue",
-        "typescript"
-    ],
-    "vscodeCustomCodeColor.highlightValue": "Text0767",
-    "vscodeCustomCodeColor.highlightValueColor": "#2a69af"
+    "editor.unicodeHighlight.includeComments": true,
+    "editor.minimap.enabled": false,
+    "editor.unicodeHighlight.allowedCharacters": {
+        ";": true
+    },
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.defaultColorDecorators": "auto",
+    "editor.language.colorizedBracketPairs": [],
+    "workbench.preferredHighContrastColorTheme": "Default Dark Modern",
+    "window.autoDetectColorScheme": true,
+    "editor.autoClosingQuotes": "always",
+    "editor.tabCompletion": "on",
+    "colorMyText.configurations": [
+        {
+            "paths": ["*.asm"]
+            "rules": [
+                {"patterns": ["text "],"bold": true, "color": "Green"}
+                {"patterns": ["tx "],"bold": true, "color": "Green", "matchCase": true}
+                {"patterns": ["Effect"],"bold": true, "color": "Green", "matchCase": true}
+                {"patterns": ["gfx "],"bold": true, "color": "Red", "matchCase": true}
+                {"patterns": ["Name"],"bold": true, "color": "BrightBlue", "matchCase": true}
+                {"patterns": ["Description"],"bold": true, "color": "Blue", "matchCase": true}
+                {"patterns": ["farcall"],"bold": true, "color": "Blue", "matchCase": true}
+                {"patterns": ["line"],"color": "Green"}]
+        }
+    ]
 }

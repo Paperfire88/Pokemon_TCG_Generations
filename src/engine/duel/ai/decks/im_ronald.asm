@@ -49,7 +49,7 @@ AIActionTable_ImRonald:
 
 .list_energy
 	ai_energy CHARMANDER,     3, +0
-	ai_energy CHARMELEON,     5, +0
+	ai_energy PIGNITE,     5, +0
 	ai_energy SIZZLIPEDE,      2, +0
 	ai_energy CENTISKORCH,  4, +0
 	ai_energy FROAKIE,       2, +0
