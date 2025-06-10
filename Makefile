@@ -135,7 +135,7 @@ src/gfx/titlescreen/title_screen.2bpp: rgbgfx += -x 12
 %.png: ;
 
 %.attrmap: %.png
-	$(RGBGFX) $(rgbgfx) -Z -P -A $<Add commentMore actions
+	$(RGBGFX) $(rgbgfx) -Z -P -A $<
 	tools/pal_fix $(tools/pal_fix) $*.pal
 	tools/attr_fix $(tools/attr_fix) $@
 

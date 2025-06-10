@@ -9,7 +9,6 @@ UNION
 
 wTempCardCollection:: ; c000
 	ds CARD_COLLECTION_SIZE
-
 NEXTU
 
 wc000:: ; c000
@@ -36,7 +35,6 @@ NEXTU
 ; buffer used to store a deck that will be built
 wDeckToBuild:: ; c000
 	ds DECK_STRUCT_SIZE
-
 ENDU
 
 SECTION "WRAM0 Duels 1", WRAM0
@@ -89,7 +87,6 @@ UNION
 ; when the text printing functions are called with text id $0000
 wDefaultText:: ; c590
 	ds $3c
-
 NEXTU
 
 ; used in CheckIfCurrentDeckWasChanged to determine whether
@@ -156,8 +153,6 @@ wIE:: ; cab7
 ; incremented whenever the vblank handler ends. used to wait for it to end,
 ; or to delay a specific amount of frames
 wVBlankCounter:: ; cab8
-	ds $1
-
 	ds $1
 
 ; bit0: is in vblank interrupt?
@@ -778,8 +773,6 @@ wTextMaxLength:: ; cd0c
 wUppercaseHalfWidthLetters:: ; cd0d
 	ds $1
 
-	ds $1
-
 ; handles timing of (horizontal or vertical) arrow blinking while waiting for user input.
 wCursorBlinkCounter:: ; cd0f
 	ds $1
@@ -830,7 +823,7 @@ wListItemNameMaxLength:: ; cd1c
 wListFunctionPointer:: ; cd1d
 	ds $2
 
-	ds $78
+	ds $50
 
 ; in a card list, the Y position where the <sel_item>/<num_items> indicator is placed
 ; if wCardListIndicatorYPosition == $ff, no indicator is displayed
@@ -1192,9 +1185,11 @@ wCurrentAIFlags:: ; ce21
 wEffectFunctionsBank:: ; ce22
 	ds $1
 
-; LoadCardGfx loads the card's palette here
+; LoadLoaded1CardGfx loads the card's palette here
 wCardPalette:: ; ce23
-	ds CGB_PAL_SIZE
+	ds 3 palettes
+wCardAttrMap::
+	ds $30
 
 ; information about the text being currently processed, including font width,
 ; the rom bank, and the memory address of the next character to be printed.
@@ -1604,8 +1599,6 @@ wCardConfirmationText:: ; cfda
 wDeckCompressionCmdByte::
 	ds $1
 
-	ds $1
-
 ; the tile to draw in place of the cursor, in case
 ; the cursor is not to be drawn
 wCursorAlternateTile:: ; cfde
@@ -1751,8 +1744,6 @@ wSelectedPauseMenuItem:: ; d0b8
 wSelectedPCMenuItem:: ; d0b9
 	ds $1
 
-	ds $1
-
 wTempMap:: ; d0bb
 	ds $1
 
@@ -1811,8 +1802,6 @@ wOBP0Backup:: ; d10c
 	ds $1
 
 wOBP1Backup:: ; d10d
-	ds $1
-
 	ds $1
 
 wReloadOverworldCallbackPtr:: ; d10f
@@ -1880,8 +1869,6 @@ wBGMapHeight:: ; d130
 ; current tilemap to load
 ; TILEMAP_* constant
 wCurTilemap:: ; d131
-	ds $1
-
 	ds $1
 
 UNION
@@ -1969,8 +1956,6 @@ wd291:: ; d291
 ; $0 = copies to VRAM
 ; $1 = copies to SRAM
 wWriteBGMapToSRAM:: ; d292
-	ds $1
-
 	ds $1
 
 wTempBGP:: ; d294
@@ -2085,8 +2070,6 @@ wOverworldMapPlayerMovementPtr:: ; d33f
 	ds $2
 
 wOverworldMapPlayerMovementCounter:: ; d341
-	ds $1
-
 	ds $1
 
 ; during setup, this holds a signed 16-bit integer
@@ -2338,8 +2321,6 @@ wd4bf:: ; d4bf
 	ds $1
 
 wd4c0:: ; d4c0
-	ds $1
-
 	ds $1
 
 ; pointer to address in VRAM
@@ -2651,19 +2632,14 @@ wChallengeHallNPC:: ; d696
 
 wCardReceived:: ; d697
 	ds $1
-
 wd698:: ; d698
 	ds $4
-
-; stores the list of all card IDs that filtered by its card type
-; (Fire, Water, ..., Energy card, Trainer card)
 wFilteredCardList::
 	ds DECK_SIZE * 2
 
 ; list of all the different cards in a deck configuration
 wUniqueDeckCardList::
 	ds DECK_SIZE * 2
-
 SECTION "WRAM1 Audio", WRAMX
 
 ; bit 7 is set once the song has been started
@@ -2962,5 +2938,4 @@ wMusicChannelStackPointersBackup:: ; dead
 
 wMusicCh1StackBackup:: ; deb5
 	ds $c * 4
-
 INCLUDE "sram.asm"

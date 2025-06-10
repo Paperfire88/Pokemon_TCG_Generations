@@ -33,7 +33,6 @@
 	charmap "9", $39
 	charmap ":", $3a
 	charmap ";", $3b
-	charmap "<", $3c
 	charmap "=", $3d
 	charmap ">", $3e
 	charmap "?", $3f
@@ -475,11 +474,3 @@ ENDM
 	txsymbol CURSOR_D   ; $2e
 	txsymbol PRIZE      ; $2f
 	txsymbol BURNED     ; $30
-	txsymbol UNUSED1	; $31
-	txsymbol UNUSED2	; $32
-	txsymbol UNUSED3	; $33
-	txsymbol UNUSED4	; $34
-	txsymbol UNUSED5	; $35
-	txsymbol UNUSED6	; $36
-	txsymbol UNUSED7	; $37
-	txsymbol UNUSED8	; $38
