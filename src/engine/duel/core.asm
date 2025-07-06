@@ -4609,6 +4609,7 @@ DisplayPlayAreaScreen:
 	call ZeroObjectPositionsAndToggleOAMCopy
 	call EmptyScreen
 	call LoadDuelCardSymbolTiles
+	call SetDefaultConsolePalettes
 	call LoadDuelCheckPokemonScreenTiles
 	call PrintPlayAreaCardList
 	call EnableLCD

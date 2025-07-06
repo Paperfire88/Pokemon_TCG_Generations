@@ -3787,4 +3787,8 @@ TextOffsets::
 	textpointer	DarkVoidDescription
 	textpointer NightSpearName
 	textpointer ExploreName
-	
+	textpointer BeamName
+	textpointer TDCommandName
+	textpointer TDCommandDescription
+	textpointer ZCommandName
+	textpointer ZCommandDescription

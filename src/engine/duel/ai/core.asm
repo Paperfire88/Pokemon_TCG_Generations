@@ -1954,7 +1954,7 @@ AISelectSpecialAttackParameters:
 	jr z, .EnergyAbsorption
 	cp16 ABOMASNOW
 	jr z, .Teleport
-	cp16 TOXTRICITY
+	cp16 BLITZLE
 	jr z, .EnergySpike
 	; fallthrough
 
@@ -2039,7 +2039,7 @@ AISelectSpecialAttackParameters:
 ; decide basic energy card to fetch from Deck.
 	ld a, [wSelectedAttack]
 	or a
-	jp z, .no_carry  ; can be jr
+	jp nz, .no_carry  ; can be jr
 
 	ld a, CARD_LOCATION_DECK
 	ld de, LIGHTNING_ENERGY

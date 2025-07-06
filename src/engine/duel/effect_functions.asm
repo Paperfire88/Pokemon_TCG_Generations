@@ -8808,10 +8808,17 @@ LastRespects_AIEffect:
 	call LastRespects_DamageBoostEffect
 	jp SetDefiniteAIDamage
 
+ZCommand_DamageBoostEffect:
+	call CreateTrainerCardListFromDiscardPile
+	ret c  ; return if there are no Pokémon in discard pile
+	ld c, l
+	jp SoulBurner_DamageBoostEffect.loadAwiththeAmmountandCap
+ZCommand_AIEffect:
+	call ZCommand_DamageBoostEffect
+	jp SetDefiniteAIDamage
 SatelliteBeam_AIEffect:
 	call SatelliteBeam_DamageBoostEffect
 	jp SetDefiniteAIDamage
-
 SatelliteBeam_DamageBoostEffect:
 	call SwapTurn
   	call CreateEnergyCardListFromDiscardPile_OnlyBasic
@@ -8833,15 +8840,23 @@ SoulBurner_DamageBoostEffect:
 .cap
 	call ATimes10
 	jp AddToDamage
-
 SoulBurner_AIEffect:
 	call SoulBurner_DamageBoostEffect
 	jp SetDefiniteAIDamage
-
+; +10 damage per Pokémon in discard pile (up to 5)
+TDCommandEffect:
+	call CreateTrainerCardListFromDiscardPile
+	ret c  ; return if there are no Pokémon in discard pile
+	ld a, b
+	cp 3
+	ret c
+	jp Add30damageEffect
+TDCommandAIEffect:
+	call TDCommandEffect
+	jp SetExpectedAIDamage
 CriticalStrikeEffectAIEffect:
 	call CriticalStrikeEffect
 	jp SetExpectedAIDamage
-
 CriticalStrikeEffect:
 	call CheckIfOpPKMNhasaStatus
 	ret z

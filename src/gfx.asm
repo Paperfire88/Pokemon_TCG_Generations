@@ -1216,9 +1216,9 @@ ShroomishCardGfx::
 	INCBIN "gfx/cards/shroomish.attrmap"
 	INCBIN "gfx/cards/shroomish.2bpp"
 BreloomCardGfx::
-	INCBIN "gfx/cards/parasect.pal"
-	INCBIN "gfx/cards/parasect.attrmap"
-	INCBIN "gfx/cards/parasect.2bpp"
+	INCBIN "gfx/cards/breloom.pal"
+	INCBIN "gfx/cards/breloom.attrmap"
+	INCBIN "gfx/cards/breloom.2bpp"
 YanmaCardGfx::
 	INCBIN "gfx/cards/venonat.pal"
 	INCBIN "gfx/cards/venonat.attrmap"
@@ -1255,9 +1255,9 @@ TangelaLv8CardGfx::
 	INCBIN "gfx/cards/tangela1.attrmap"
 	INCBIN "gfx/cards/tangela1.2bpp"
 GrubbinCardGfx::
-	INCBIN "gfx/cards/tangela2.pal"
-	INCBIN "gfx/cards/tangela2.attrmap"
-	INCBIN "gfx/cards/tangela2.2bpp"
+	INCBIN "gfx/cards/grubbin.pal"
+	INCBIN "gfx/cards/grubbin.attrmap"
+	INCBIN "gfx/cards/grubbin.2bpp"
 ScytherCardGfx::
 	INCBIN "gfx/cards/scyther.pal"
 	INCBIN "gfx/cards/scyther.attrmap"
@@ -1322,9 +1322,9 @@ MagmortarCardGfx::
 SECTION "Card Gfx 4", ROMX
 
 FroakieCardGfx::
-	INCBIN "gfx/cards/squirtle.pal"
-	INCBIN "gfx/cards/squirtle.attrmap"
-	INCBIN "gfx/cards/squirtle.2bpp"
+	INCBIN "gfx/cards/froakie.pal"
+	INCBIN "gfx/cards/froakie.attrmap"
+	INCBIN "gfx/cards/froakie.2bpp"
 WartortleCardGfx::
 	INCBIN "gfx/cards/frogadier.pal"
 	INCBIN "gfx/cards/frogadier.attrmap"
@@ -1449,9 +1449,9 @@ PincurchinCardGfx::
 	INCBIN "gfx/cards/pincurchin.attrmap"
 	INCBIN "gfx/cards/pincurchin.2bpp"
 ShinxCardGfx::
-	INCBIN "gfx/cards/flyingpikachu.pal"
-	INCBIN "gfx/cards/flyingpikachu.attrmap"
-	INCBIN "gfx/cards/flyingpikachu.2bpp"
+	INCBIN "gfx/cards/shinx.pal"
+	INCBIN "gfx/cards/shinx.attrmap"
+	INCBIN "gfx/cards/shinx.2bpp"
 LuxioCardGfx::
 	INCBIN "gfx/cards/luxio.pal"
 	INCBIN "gfx/cards/luxio.attrmap"
@@ -1536,9 +1536,9 @@ SandslashCardGfx::
 	INCBIN "gfx/cards/sandslash.attrmap"
 	INCBIN "gfx/cards/sandslash.2bpp"
 SilicobraCardGfx::
-	INCBIN "gfx/cards/diglett.pal"
-	INCBIN "gfx/cards/diglett.attrmap"
-	INCBIN "gfx/cards/diglett.2bpp"
+	INCBIN "gfx/cards/silicobra.pal"
+	INCBIN "gfx/cards/silicobra.attrmap"
+	INCBIN "gfx/cards/silicobra.2bpp"
 SandacondaCardGfx::
 	INCBIN "gfx/cards/dugtrio.pal"
 	INCBIN "gfx/cards/dugtrio.attrmap"
@@ -1548,9 +1548,9 @@ CroagunkCardGfx::
 	INCBIN "gfx/cards/mankey.attrmap"
 	INCBIN "gfx/cards/mankey.2bpp"
 ToxicroakCardGfx::
-	INCBIN "gfx/cards/primeape.pal"
-	INCBIN "gfx/cards/primeape.attrmap"
-	INCBIN "gfx/cards/primeape.2bpp"
+	INCBIN "gfx/cards/toxicroak.pal"
+	INCBIN "gfx/cards/toxicroak.attrmap"
+	INCBIN "gfx/cards/toxicroak.2bpp"
 	ds $58
 SECTION "Card Gfx 7", ROMX
 
@@ -1559,9 +1559,9 @@ KrookodileCardGfx::
 	INCBIN "gfx/cards/krookodile.attrmap"
 	INCBIN "gfx/cards/krookodile.2bpp"
 TrapinchCardGfx::
-	INCBIN "gfx/cards/geodude.pal"
-	INCBIN "gfx/cards/geodude.attrmap"
-	INCBIN "gfx/cards/geodude.2bpp"
+	INCBIN "gfx/cards/trapinch.pal"
+	INCBIN "gfx/cards/trapinch.attrmap"
+	INCBIN "gfx/cards/trapinch.2bpp"
 VibravaCardGfx::
 	INCBIN "gfx/cards/vibrava.pal"
 	INCBIN "gfx/cards/vibrava.attrmap"
@@ -1579,9 +1579,9 @@ LarvitarCardGfx::
 	INCBIN "gfx/cards/larvitar.attrmap"
 	INCBIN "gfx/cards/larvitar.2bpp"
 TyranitarCardGfx::
-	INCBIN "gfx/cards/marowak1.pal"
-	INCBIN "gfx/cards/marowak1.attrmap"
-	INCBIN "gfx/cards/marowak1.2bpp"
+	INCBIN "gfx/cards/tyranitar.pal"
+	INCBIN "gfx/cards/tyranitar.attrmap"
+	INCBIN "gfx/cards/tyranitar.2bpp"
 PupitarCardGfx::
 	INCBIN "gfx/cards/pupitar.pal"
 	INCBIN "gfx/cards/pupitar.attrmap"
@@ -1674,9 +1674,9 @@ CresseliaCardGfx::
 	INCBIN "gfx/cards/cresselia.attrmap"	
 	INCBIN "gfx/cards/cresselia.2bpp"
 MimikyuCardGfx::
-	INCBIN "gfx/cards/mew1.pal"
-	INCBIN "gfx/cards/mew1.attrmap"	
-	INCBIN "gfx/cards/mew1.2bpp"
+	INCBIN "gfx/cards/mimikyu.pal"
+	INCBIN "gfx/cards/mimikyu.attrmap"	
+	INCBIN "gfx/cards/mimikyu.2bpp"
 MewLv23CardGfx::
 	INCBIN "gfx/cards/mew3.pal"
 	INCBIN "gfx/cards/mew3.attrmap"	
@@ -1716,9 +1716,9 @@ TogepiCardGfx::
 	INCBIN "gfx/cards/togepi.attrmap"
 	INCBIN "gfx/cards/togepi.2bpp"	
 TogeticCardGfx::
-	INCBIN "gfx/cards/clefable.pal"
-	INCBIN "gfx/cards/clefable.attrmap"	
-	INCBIN "gfx/cards/clefable.2bpp"
+	INCBIN "gfx/cards/togetic.pal"
+	INCBIN "gfx/cards/togetic.attrmap"	
+	INCBIN "gfx/cards/togetic.2bpp"
 TogekissCardGfx::
 	INCBIN "gfx/cards/togekiss.pal"
 	INCBIN "gfx/cards/togekiss.attrmap"	
@@ -1768,9 +1768,9 @@ ChatotCardGfx::
 	INCBIN "gfx/cards/kangaskhan.attrmap"
 	INCBIN "gfx/cards/kangaskhan.2bpp"	
 StantlerCardGfx::
-	INCBIN "gfx/cards/tauros.pal"
-	INCBIN "gfx/cards/tauros.attrmap"
-	INCBIN "gfx/cards/tauros.2bpp"	
+	INCBIN "gfx/cards/stantler.pal"
+	INCBIN "gfx/cards/stantler.attrmap"
+	INCBIN "gfx/cards/stantler.2bpp"	
 DittoCardGfx::
 	INCBIN "gfx/cards/ditto.pal"
 	INCBIN "gfx/cards/ditto.attrmap"
@@ -1779,17 +1779,17 @@ DittoCardGfx::
 SECTION "Card Gfx 10", ROMX
 
 GoomyCardGfx::
-	INCBIN "gfx/cards/ditto.pal"
-	INCBIN "gfx/cards/ditto.attrmap"
-	INCBIN "gfx/cards/dratini.2bpp"	
+	INCBIN "gfx/cards/goomy.pal"
+	INCBIN "gfx/cards/goomy.attrmap"
+	INCBIN "gfx/cards/goomy.2bpp"	
 SliggooCardGfx::
 	INCBIN "gfx/cards/dragonair.pal"
 	INCBIN "gfx/cards/dragonair.attrmap"	
 	INCBIN "gfx/cards/dragonair.2bpp"
 LugiaCardGfx::
-	INCBIN "gfx/cards/dragonite1.pal"
-	INCBIN "gfx/cards/dragonite1.attrmap"	
-	INCBIN "gfx/cards/dragonite1.2bpp"
+	INCBIN "gfx/cards/lugia.pal"
+	INCBIN "gfx/cards/lugia.attrmap"	
+	INCBIN "gfx/cards/lugia.2bpp"
 GoodraCardGfx::
 	INCBIN "gfx/cards/dragonite2.pal"
 	INCBIN "gfx/cards/dragonite2.attrmap"	

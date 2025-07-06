@@ -17,8 +17,16 @@ _PauseMenu_Status:
 	lb bc, 13, 6
 	call PrintPlayTime
 	call FlashWhiteScreen
-	ld a, A_BUTTON | B_BUTTON | START
+	ld a, A_BUTTON | B_BUTTON 
 	call WaitUntilKeysArePressed
+	ldh a, [hKeysHeld]
+	and SELECT
+	jr z,.flash
+	ldh a, [hKeysHeld]
+	bit A_BUTTON, a
+	jr z,.flash
+	call DisplayPlayerNamingScreen
+.flash
 	pop af
 	ld [wd291], a
 	ret

@@ -61,6 +61,7 @@ AddDeckToCollection:
 DrawDecksScreen:
 	ldh [hffb5], a
 	call EmptyScreenAndLoadFontDuelAndHandCardsIcons
+.ds	
 	lb de, 0,  0
 	lb bc, 20, 4
 	call DrawRegularTextBox
@@ -357,6 +358,7 @@ HandleDeckBuildScreen:
 .skip_draw
 	ld hl, FiltersCardSelectionParams
 	call InitCardSelectionParams
+	call DrawDeckName
 .wait_input
 	call DoFrame
 	ldh a, [hDPadHeld]
@@ -879,6 +881,7 @@ DrawCardTypeIconsAndPrintCardCounts:
 	call PrintTotalCardCount
 	lb de, 17, 0
 	call PrintSlashSixty
+	call DrawDeckName
 	jp EnableLCD
 
 ; fills one line at coordinate bc in BG Map
@@ -1606,6 +1609,7 @@ PrintDeckBuildingCardList:
 	dec c
 	call WriteByteToBGMap0
 	pop bc
+	call DrawDeckName
 	ret
 
 Text_9a30:
@@ -2134,6 +2138,35 @@ AddCardToDeckAndUpdateCount:
 	call GetCountOfCardInCurDeck
 	jp PrintNumberValueInCursorYPos
 
+DrawDeckName:
+.skip_deck_numeral
+	ld hl, wCurDeckName
+	ld de, wDefaultText
+	call CopyListFromHLToDE
+	ld a, [wCurDeck]
+	cp $ff
+	jr z, .blank_deck_name
+
+.print_deck_name
+	ld hl, wDefaultText
+	call GetTextLengthInTiles
+	ld b, $0
+	ld hl, wDefaultText
+	add hl, bc
+	ld d, h
+	ld e, l
+	ld hl, DeckNameSuffix
+	call CopyListFromHLToDE
+	lb de, 1, 0
+	ld hl, wDefaultText
+	call InitTextPrinting
+	jp ProcessText
+
+.blank_deck_name
+	lb de, 1, 0
+	ld hl, wDefaultText
+	call InitTextPrinting
+	jp ProcessText	
 ; tries to add card ID in register de to wCurDeckCards
 ; fails to add card if one of the following conditions are met:
 ; - total cards are equal to wMaxNumCardsAllowed
@@ -2677,7 +2710,7 @@ PrintCurDeckNumberAndName:
 	cp $ff
 	jr z, .blank_deck_name
 
-; print "<deck name> deck"
+.print_deck_name
 	ld hl, wDefaultText
 	call GetTextLengthInTiles
 	ld b, $0

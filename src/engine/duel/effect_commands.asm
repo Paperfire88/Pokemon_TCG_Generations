@@ -2612,3 +2612,11 @@ MercilessEffectCommands:
 DarkVoidEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, IfAsleppHalfHP
 	db  $00
+TDCommandEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, TDCommandEffect
+	dbw EFFECTCMDTYPE_AI, TDCommandAIEffect
+	db  $00
+ZCommandEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, ZCommand_DamageBoostEffect
+	dbw EFFECTCMDTYPE_AI, ZCommand_AIEffect
+	db  $00

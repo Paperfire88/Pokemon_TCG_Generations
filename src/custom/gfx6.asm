@@ -11,9 +11,9 @@ InkayCardGfx::
 	INCBIN "gfx/cards/slowpoke2.attrmap"
 	INCBIN "gfx/cards/slowpoke2.2bpp"
 MalamarCardGfx::
-	INCBIN "gfx/cards/slowbro.pal"
-	INCBIN "gfx/cards/slowbro.attrmap"
-	INCBIN "gfx/cards/slowbro.2bpp"
+	INCBIN "gfx/cards/malamar.pal"
+	INCBIN "gfx/cards/malamar.attrmap"
+	INCBIN "gfx/cards/malamar.2bpp"
 EeveeCardGfx::
 	INCBIN "gfx/cards/eevee.pal"
 	INCBIN "gfx/cards/eevee.attrmap"	
@@ -31,13 +31,13 @@ SwitchCardGfx::
 	INCBIN "gfx/cards/switch.attrmap"
 	INCBIN "gfx/cards/switch.2bpp"	
 SneaselCardGfx::
-	INCBIN "gfx/cards/magikarp.pal"
-	INCBIN "gfx/cards/magikarp.attrmap"	
-	INCBIN "gfx/cards/magikarp.2bpp"
+	INCBIN "gfx/cards/sneasel.pal"
+	INCBIN "gfx/cards/sneasel.attrmap"	
+	INCBIN "gfx/cards/sneasel.2bpp"
 WeavileCardGfx::
-	INCBIN "gfx/cards/gyarados.pal"
- 	INCBIN "gfx/cards/gyarados.attrmap"	
-	INCBIN "gfx/cards/gyarados.2bpp"
+	INCBIN "gfx/cards/weavile.pal"
+ 	INCBIN "gfx/cards/weavile.attrmap"	
+	INCBIN "gfx/cards/weavile.2bpp"
 MetagrossCardGfx:
 	INCBIN "gfx/cards/metagross.pal"
 	INCBIN "gfx/cards/metagross.attrmap"

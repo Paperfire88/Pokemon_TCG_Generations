@@ -672,8 +672,8 @@ ProfessorOakName:
 
 ProfessorOakDescription:
 	text "Discard your hand and draw 5 cards."
-	line "If your opponent has 3 or less Prize"
-	line "cards remaining,Draw 7 Cards instead" 
+	line "[If your opponent has 3 or less"
+	line "Prizes remaining, Draw 7 instead]." 
 	done
 
 ImposterProfessorOakName:
@@ -681,9 +681,9 @@ ImposterProfessorOakName:
 	done
 
 ImposterProfessorOakDescription:
-	text "Discard 1 card from your hand," 
-	line "Your opponent shuffles their hand"
-	line "into their deck, then draws 4 cards."
+	text "Discard 1 card from your hand, Your" 
+	line "opponent shuffles their hand into"
+	line "their deck, then draws 4 cards."
 	done
 
 BillName:
@@ -699,9 +699,9 @@ MrFujiName:
 	done
 
 MrFujiDescription:
-	text "Choose a PKMN on your Bench."
-	line "Shuffle it and any cards attached"
-	line "to it into your deck."
+	text "Choose a PKMN on your Bench. Shuffle"
+	line "it and any cards attached to it into"
+	line "your deck."
 	done
 
 LassName:
@@ -711,8 +711,8 @@ LassName:
 LassDescription:
 	text "Discard 2 cards from your hand, Both"
 	line "Players show their hand; shuffle all"
-	line "Trainer cards in their hands"
-	line "into their decks."
+	line "Trainer cards in their hands into"
+	line "their decks."
 	done
 
 ImakuniName:
@@ -734,9 +734,9 @@ PokemonTraderName:
 
 PokemonTraderDescription:
 	text "Reveal a PKMN from your hand and put" 
-	line "it into your deck. If you do, search"
-	line "your deck for a PKMN, reveal it, and"
-	line "put it into your hand. Then, shuffle"
+	line "it into your deck. Then, search your"
+	line "deck for a PKMN, reveal it, and put"
+	line "it into your hand. Then, shuffle"
 	line "your deck."
 	done
 
@@ -778,7 +778,7 @@ EnergyRetrievalName:
 
 EnergyRetrievalDescription:
 	text "Discard 1 card from your hand; put"
-	line "up to 2 basic Energy cards from your"
+	line "up to 2 basic Energies from your"
 	line "discard pile into your hand."
 	done
 
@@ -788,7 +788,7 @@ SuperEnergyRetrievalName:
 
 SuperEnergyRetrievalDescription:
 	text "Discard 2 cards from your hand; put"
-	line "up to 4 basic Energy cards from your"
+	line "up to 4 basic Energies from your"
 	line "discard pile into your hand."
 	done
 
@@ -809,9 +809,9 @@ EnergyRemovalName:
 EnergyRemovalDescription:
 	text "Flip a coin. If heads, discard an" 
 	line "Energy from 1 of your opponent PKMN."
-	line "If your opponent has 3 or less Prize"
-	line "cards remaining, use this effect" 
-	line "without flipping a coin."
+	line "[If your opponent has 3 or less"
+	line "Prizes remaining, You can use this"
+	line "card without flipping a coin]."
 	done
 
 SuperEnergyRemovalName:
@@ -927,9 +927,10 @@ BossOrdersName:
 BossOrdersDescription:
 	text "Flip a Coin. if heads, Switch in 1" 
 	line "of your opponent's Benched PKMN to"
-	line "the Active Spot. If your opponent"
-	line "has 3 or less Prizes remaining, use"
-	line "this effect without flipping a coin."
+	line "the Active Spot."
+	line "[If your opponent has 3 or less"
+	line "Prizes remaining, You can use this"
+	line "card without flipping a coin]."
 	done
 
 DevolutionSprayName:

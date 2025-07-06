@@ -243,7 +243,7 @@ Text06a6:
 	done
 
 Text06a7:
-	text "If you're a real man, you gotta"
+	text "If you're a real duelist, you gotta"
 	line "compete in a heated duel!"
 	done
 

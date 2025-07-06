@@ -452,9 +452,9 @@ VolcanicClawName:
 VolcanicClawDescription:
 	text "Discard 2 Energy cards attached to"
 	line "this PKMN to use this attack."
-	line "If your opponent has 3 or less Prize"
-	line "cards remaining, Discard the top 5"
-	line "cards of their deck."
+	line "[If your opponent has 3 or less"
+	line "Prizes remaining, Discard the top 5"
+	line "cards of their deck]."
 	done
 
 CrystalStreamName:
@@ -462,11 +462,11 @@ CrystalStreamName:
 	done
 
 CrystalStreamDescription:
-	text "If your opponent has 3 or less Prize"
-	line "cards remaining, During their next"
+	text "[If your opponent has 3 or less"
+	line "Prizes remaining, During their next"
 	line "turn, This PKMN takes Half the" 
 	line "damage done from attacks (after" 
-	line "Weakness/Resistance) (rounded down)."
+	line "Weakness/Resistance)(rounded down)]."
 	done
 
 LightningSparkName:

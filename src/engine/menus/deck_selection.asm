@@ -114,6 +114,8 @@ DeckSelectionMenu:
 	jr c, .init_menu_params ; reinit menu parameters
 	call HandleStartButtonInDeckSelectionMenu
 	jr c, .init_menu_params
+	call HandleSelectButtonInDeckSelectionMenu
+	jr c, .init_menu_params
 	call HandleMenuInput
 	jr nc, .loop_input
 	ldh a, [hCurMenuItem]
@@ -167,6 +169,28 @@ HandleStartButtonInDeckSelectionMenu:
 	scf
 	ret
 
+HandleSelectButtonInDeckSelectionMenu:
+	ldh a, [hDPadHeld]
+	and SELECT
+	ret z ; skip
+
+; set menu item as current deck
+	ld a, [wCurMenuItem]
+	ld [wCurDeck], a
+	call CheckIfCurDeckIsValid
+	jp nc, .valid_deck ; can be jr
+
+; not a valid deck, cancel
+	ld a, $ff ; cancel
+	call PlaySFXConfirmOrCancel
+	call PrintThereIsNoDeckHereText
+	scf
+	ret
+
+.valid_deck
+	ld a, $1
+	call PlaySFXConfirmOrCancel
+	jp DeckSelectionSubMenu_SelectOrCancel
 OpenDeckConfirmationMenu:
 ; copy deck name
 	push de

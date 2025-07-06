@@ -1499,7 +1499,7 @@ NewDeckText:
 	done
 
 PleaseSelectDeckText:
-	text "Please select deck."
+	text "Select a deck."
 	done
 
 ModifyDeckText:

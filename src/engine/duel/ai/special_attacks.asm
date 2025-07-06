@@ -44,7 +44,7 @@ HandleSpecialAIAttacks:
 	jp z, .Fetch
 	cp16 SANDACONDA
 	jp z, .Earthquake
-	cp16 TOXTRICITY
+	cp16 BLITZLE
 	jp z, .EnergySpike
 	cp16 FLOATZEL
 	jp z, .HyperBeam

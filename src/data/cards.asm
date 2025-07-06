@@ -1988,7 +1988,7 @@ HoundourCard:
 	db ATK_ANIM_NIGHTMARE ; animation
 
 	db 1 ; retreat cost
-	db WR_WATER ; weakness
+	db WR_FIGHTING ; weakness
 	db NONE ; resistance
 	tx DarkName ; category
 	db 49 ; Pokedex number
@@ -4469,7 +4469,7 @@ BlitzleCard:
 	dw EnergyBoostEffectCommands ; effect commands
 	db DAMAGE_TO_OPPONENT_BENCH_F ; flags 1
 	db NONE ; flags 2
-	db NONE ; flags 3
+	db SPECIAL_AI_HANDLING ; flags 3
 	db 0
 	db ATK_ANIM_GLOW_EFFECT ; animation
 
@@ -7937,7 +7937,7 @@ CarbinkCard:
 	db ATK_ANIM_HIT ; animation
 
 	db 1 ; retreat cost
-	db WR_PSYCHIC ; weakness
+	db WR_WATER ; weakness
 	db NONE ; resistance
 	tx NewSpeciesName ; category
 	db 151 ; Pokedex number
@@ -8687,7 +8687,7 @@ MurkrowCard:
 
 	db 1 ; retreat cost
 	db WR_LIGHTNING ; weakness
-	db WR_PSYCHIC ; resistance
+	db NONE ; resistance
 	tx DarkName ; category
 	db 163 ; Pokedex number
 	db 25 ; level
@@ -10587,7 +10587,7 @@ DittoCard:
 
 	db 1 ; retreat cost
 	db WR_FIGHTING ; weakness
-	db WR_PSYCHIC ; resistance
+	db NONE ; resistance
 	tx TransformName ; category
 	db 198 ; Pokedex number
 	db 19 ; level
@@ -10637,7 +10637,7 @@ EeveeCard:
 
 	db 1 ; retreat cost
 	db WR_FIGHTING ; weakness
-	db WR_PSYCHIC ; resistance
+	db NONE ; resistance
 	tx EvolutionName ; category
 	db 199 ; Pokedex number
 	db 12 ; level
@@ -10653,41 +10653,41 @@ PorygonCard:
 	db CIRCLE ; rarity
 	db LABORATORY | NONE ; sets
 	dw PORYGON
-	db 30 ; hp
+	db 50 ; hp
 	db BASIC ; stage
 	dw NONE ; pre-evo name
 
 	; attack 1
 	energy COLORLESS, 1 ; energies
-	tx Conversion1Name ; name
-	tx Conversion1Description ; description
+	tx BeamName ; name
+	dw NONE ; description
 	dw NONE ; description (cont)
-	db 0 ; damage
+	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw PorygonConversion1EffectCommands ; effect commands
+	dw NONE ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
-	db SPECIAL_AI_HANDLING ; flags 3
+	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_GLOW_EFFECT ; animation
+	db ATK_ANIM_BEAM ; animation
 
 	; attack 2
-	energy COLORLESS, 2 ; energies
-	tx Conversion2Name ; name
-	tx Conversion2Description ; description
+	energy COLORLESS, 1 ; energies
+	tx DataRetrievalName ; name
+	tx EeeekDescription ; description
 	dw NONE ; description (cont)
 	db 0 ; damage
 	db RESIDUAL ; category
-	dw PorygonConversion2EffectCommands ; effect commands
+	dw ShuffleHandThenDraw4EffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
-	db SPECIAL_AI_HANDLING ; flags 3
+	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_GLOW_EFFECT ; animation
+	db ATK_ANIM_NONE ; animation
 
 	db 1 ; retreat cost
 	db WR_FIGHTING ; weakness
-	db WR_PSYCHIC ; resistance
+	db NONE ; resistance
 	tx VirtualName ; category
 	db 137 ; Pokedex number
 	db 12 ; level
@@ -10708,32 +10708,32 @@ Porygon2Card:
 	tx PorygonName ; pre-evo name
 
 	; attack 1
-	energy COLORLESS, 1 ; energies
-	tx Conversion1Name ; name
-	tx Conversion1Description ; description
+	energy 0 ; energies
+	tx LuckyFindName ; name
+	tx LuckyFindDescription ; description
 	dw NONE ; description (cont)
 	db 0 ; damage
-	db DAMAGE_NORMAL ; category
-	dw PorygonConversion1EffectCommands ; effect commands
+	db COSTLESS ; category
+	dw TrainerSearchEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
-	db SPECIAL_AI_HANDLING ; flags 3
+	db NONE ; flags 3
 	db 0
 	db ATK_ANIM_GLOW_EFFECT ; animation
 
 	; attack 2
 	energy COLORLESS, 2 ; energies
-	tx Conversion2Name ; name
-	tx Conversion2Description ; description
+	tx TDCommandName ; name
+	tx TDCommandDescription ; description
 	dw NONE ; description (cont)
-	db 0 ; damage
-	db RESIDUAL ; category
-	dw PorygonConversion2EffectCommands ; effect commands
+	db 10 ; damage
+	db DAMAGE_PLUS ; category
+	dw TDCommandEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
-	db SPECIAL_AI_HANDLING ; flags 3
+	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_GLOW_EFFECT ; animation
+	db ATK_ANIM_BEAM ; animation
 
 	db 2 ; retreat cost
 	db WR_FIGHTING ; weakness
@@ -10773,17 +10773,17 @@ PorygonZCard:
 
 	; attack 2
 	energy COLORLESS, 2 ; energies
-	tx Conversion2Name ; name
-	tx Conversion2Description ; description
+	tx ZCommandName ; name
+	tx ZCommandDescription ; description
 	dw NONE ; description (cont)
-	db 0 ; damage
-	db RESIDUAL ; category
-	dw PorygonConversion2EffectCommands ; effect commands
+	db 10 ; damage
+	db DAMAGE_PLUS ; category
+	dw ZCommandEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
-	db SPECIAL_AI_HANDLING ; flags 3
+	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_GLOW_EFFECT ; animation
+	db ATK_ANIM_BEAM ; animation
 
 	db 1 ; retreat cost
 	db WR_FIGHTING ; weakness
@@ -11402,7 +11402,7 @@ GustOfWindCard:
 	db TYPE_TRAINER ; type
 	gfx GustOfWindCardGfx ; gfx
 	tx BossOrdersName ; name
-	db CIRCLE ; rarity
+	db STAR ; rarity
 	db EVOLUTION | NONE ; sets
 	dw GUST_OF_WIND
 	dw GustOfWindEffectCommands ; effect commands

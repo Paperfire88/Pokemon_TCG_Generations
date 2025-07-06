@@ -1309,7 +1309,6 @@ LuckyFindDescription:
 	line "it into your hand. Then, shuffle"
 	line "your deck."
 	done	
-
 PowerGemName:
 	text "Power Gem"
 	done
