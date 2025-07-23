@@ -1380,7 +1380,7 @@ DartrixName:
 	text "Dartrix"
 	done
 
-BeedrillName:
+DecidueyeName:
 	text "Dedicdueye"
 	done
 

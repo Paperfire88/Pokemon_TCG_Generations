@@ -443,6 +443,7 @@ CheckEnergyNeededForAttack:
 	inc de
 	dec c
 	jr nz, .loop
+
 	ld a, [de]
 	swap a
 	call CheckIfEnoughParticularAttachedEnergy
@@ -1528,7 +1529,7 @@ CheckEnergyFlagsNeededInList:
 .darkness
 	cp16 DARKNESS_ENERGY
 	jr nz, .colorless
-	ld a, DARKNESS_f
+	ld a, DARKNESS_F
 	jr .check_energy	
 .colorless
 	cp16 DOUBLE_COLORLESS_ENERGY
@@ -1625,7 +1626,7 @@ GetEnergyCostBits:
 	ld b, a
 	and $f0
 	jr z, .colorless
-	ld a, DARKNESS_f
+	ld a, DARKNESS_F
 	or c
 	ld c, a
 .colorless
@@ -1947,15 +1948,31 @@ AISelectSpecialAttackParameters:
 	call GetTurnDuelistVariable
 	call GetCardIDFromDeckIndex
 	cp16 MEW
-	jr z, .DevolutionBeam
+	jp z, .DevolutionBeam
 	cp16 CRESSELIA
-	jr z, .EnergyAbsorption
+	jp z, .EnergyAbsorption
 	cp16 MEWTWO_LV60
-	jr z, .EnergyAbsorption
+	jp z, .EnergyAbsorption
 	cp16 ABOMASNOW
-	jr z, .Teleport
+	jp z, .Teleport
 	cp16 BLITZLE
-	jr z, .EnergySpike
+	jp z, .EnergySpike
+	cp16 TOXTRICITY
+	jp z, .EnergySpike
+	cp16 CHARJABUG
+	jp z, .EnergySpike
+	cp16 SHROOMISH
+	jp z, .EnergySpikeGrass
+	cp16 SIZZLIPEDE
+	jp z, .EnergySpikeFire
+	cp16 HORSEA
+	jp z, .EnergySpikeWater
+	cp16 ROCKRUFF
+	jp z, .EnergySpikeFighting
+	cp16 CUTIEFLY
+	jr z, .EnergySpikePsychic
+	cp16 IMPIDIMP
+	jr z, .EnergySpikeDarkness
 	; fallthrough
 
 .no_carry
@@ -2034,6 +2051,57 @@ AISelectSpecialAttackParameters:
 	scf
 	ret
 
+.EnergySpikeDarkness
+	ld a, [wSelectedAttack]
+	or a
+	jp nz, .no_carry  ; can be jr
+
+	ld a, CARD_LOCATION_DECK
+	ld de, DARKNESS_ENERGY
+	jp .NextStep
+.EnergySpikePsychic
+	ld a, [wSelectedAttack]
+	or a
+	jp nz, .no_carry  ; can be jr
+
+	ld a, CARD_LOCATION_DECK
+	ld de, PSYCHIC_ENERGY
+	jp .NextStep
+.EnergySpikeFighting
+	ld a, [wSelectedAttack]
+	or a
+	jp nz, .no_carry  ; can be jr
+
+	ld a, CARD_LOCATION_DECK
+	ld de, FIGHTING_ENERGY
+	jp .NextStep
+.EnergySpikeWater
+	ld a, [wSelectedAttack]
+	or a
+	jp nz, .no_carry  ; can be jr
+
+	ld a, CARD_LOCATION_DECK
+	ld de, WATER_ENERGY
+	jp .NextStep
+
+.EnergySpikeGrass
+	ld a, [wSelectedAttack]
+	or a
+	jp nz, .no_carry  ; can be jr
+
+	ld a, CARD_LOCATION_DECK
+	ld de, GRASS_ENERGY
+	jp .NextStep
+
+.EnergySpikeFire
+	ld a, [wSelectedAttack]
+	or a
+	jp nz, .no_carry  ; can be jr
+
+	ld a, CARD_LOCATION_DECK
+	ld de, FIRE_ENERGY
+	jp .NextStep
+
 .EnergySpike
 ; in case selected attack is Energy Spike
 ; decide basic energy card to fetch from Deck.
@@ -2045,6 +2113,7 @@ AISelectSpecialAttackParameters:
 	ld de, LIGHTNING_ENERGY
 
 ; if none were found in Deck, return carry...
+.NextStep
 	call CheckIfAnyCardIDinLocation
 	ldh [hTemp_ffa0], a
 	jp nc, .no_carry  ; can be jr
@@ -2116,7 +2185,7 @@ CheckIfNoSurplusEnergyForAttack:
   	call CalculateParticularAttachedEnergyNeeded
 	; colorless
 	ld a, [de]
-	and %00001111
+	and $f
 	ld b, a
 	ld hl, wTempLoadedAttackEnergyCost
 	ld a, [wTotalAttachedEnergies]

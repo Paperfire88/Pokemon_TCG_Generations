@@ -53,7 +53,7 @@ AIActionTable_ImRonald:
 	ai_energy SIZZLIPEDE,      2, +0
 	ai_energy CENTISKORCH,  4, +0
 	ai_energy FROAKIE,       2, +0
-	ai_energy WARTORTLE,      3, +0
+	ai_energy FROGADIER,      3, +0
 	ai_energy SEEL,           3, +0
 	ai_energy DEWGONG,        4, +0
 	ai_energy CHEWTLE,         3, +0

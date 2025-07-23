@@ -685,7 +685,7 @@ Animations:
 	db SPRITE_DUEL_CARD ; sprite ID
 	db PALETTE_91 ; palette ID
 	db SPRITE_ANIM_163 ; anim ID
-	db (1 << SPRITE_ANIM_FLAG_UNSKIPPABLE) | (1 << SPRITE_ANIM_FLAG_3) | (1 << SPRITE_ANIM_FLAG_SPEED) ; anim flags
+	db (1 << SPRITE_ANIM_FLAG_UNSKIPPABLE) | (1 << SPRITE_ANIM_FLAG_3) | (5 << SPRITE_ANIM_FLAG_SPEED) ; anim flags
 	db SFX_STOP ; sfx id
 	db $00 ; handler function
 

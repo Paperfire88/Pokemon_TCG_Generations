@@ -88,7 +88,7 @@ MapScripts::
 	dw RockClubEntranceNPCS
 	dw NULL
 	dw NULL
-	dw NULL
+	dw RockClubPressedA
 	dw LoadClubEntrance
 	dw ClubEntranceAfterDuel
 	dw NULL

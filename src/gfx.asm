@@ -1149,9 +1149,9 @@ BayleefCardGfx::
 	INCBIN "gfx/cards/bayleef.attrmap"
 	INCBIN "gfx/cards/bayleef.2bpp"
 CelebiCardGfx::
-	INCBIN "gfx/cards/venusaur1.pal"
-	INCBIN "gfx/cards/venusaur1.attrmap"
-	INCBIN "gfx/cards/venusaur1.2bpp"
+	INCBIN "gfx/cards/celebi.pal"
+	INCBIN "gfx/cards/celebi.attrmap"
+	INCBIN "gfx/cards/celebi.2bpp"
 MeganiumCardGfx::
 	INCBIN "gfx/cards/meganium.pal"
 	INCBIN "gfx/cards/meganium.attrmap"
@@ -1203,11 +1203,11 @@ ApplinCardGfx::
 	INCBIN "gfx/cards/applin.pal"
 	INCBIN "gfx/cards/applin.attrmap"
 	INCBIN "gfx/cards/applin.2bpp"
-GloomCardGfx::
+FlappleCardGfx::
 	INCBIN "gfx/cards/flapple.pal"
 	INCBIN "gfx/cards/flapple.attrmap"
 	INCBIN "gfx/cards/flapple.2bpp"
-VileplumeCardGfx::
+AppletunCardGfx::
 	INCBIN "gfx/cards/appletun.pal"
 	INCBIN "gfx/cards/appletun.attrmap"
 	INCBIN "gfx/cards/appletun.2bpp"
@@ -1325,7 +1325,7 @@ FroakieCardGfx::
 	INCBIN "gfx/cards/froakie.pal"
 	INCBIN "gfx/cards/froakie.attrmap"
 	INCBIN "gfx/cards/froakie.2bpp"
-WartortleCardGfx::
+FrogadierCardGfx::
 	INCBIN "gfx/cards/frogadier.pal"
 	INCBIN "gfx/cards/frogadier.attrmap"
 	INCBIN "gfx/cards/frogadier.2bpp"
@@ -1527,11 +1527,11 @@ RaikouCardGfx::
 	INCBIN "gfx/cards/raikou.pal"
 	INCBIN "gfx/cards/raikou.attrmap"
 	INCBIN "gfx/cards/raikou.2bpp"
-SandshrewCardGfx::
+MeowthCardGfx::
 	INCBIN "gfx/cards/sandshrew.pal"
 	INCBIN "gfx/cards/sandshrew.attrmap"
 	INCBIN "gfx/cards/sandshrew.2bpp"
-SandslashCardGfx::
+PerrserkerCardGfx::
 	INCBIN "gfx/cards/sandslash.pal"
 	INCBIN "gfx/cards/sandslash.attrmap"
 	INCBIN "gfx/cards/sandslash.2bpp"
@@ -1885,7 +1885,7 @@ ItemFinderCardGfx::
 	INCBIN "gfx/cards/itemfinder.pal"
 	INCBIN "gfx/cards/itemfinder.attrmap"
 	INCBIN "gfx/cards/itemfinder.2bpp"
-GustOfWindCardGfx::
+BossOrdersCardGfx::
 	INCBIN "gfx/cards/bossorders.pal"
 	INCBIN "gfx/cards/bossorders.attrmap"
 	INCBIN "gfx/cards/bossorders.2bpp"	
@@ -1909,10 +1909,10 @@ ReviveCardGfx::
 	INCBIN "gfx/cards/revive.pal"
 	INCBIN "gfx/cards/revive.attrmap"	
 	INCBIN "gfx/cards/revive.2bpp"
-MaintenanceCardGfx::
-	INCBIN "gfx/cards/maintenance.pal"
-	INCBIN "gfx/cards/maintenance.attrmap"	
-	INCBIN "gfx/cards/maintenance.2bpp"
+HeavyBallCardGfx::
+	INCBIN "gfx/cards/heavyball.pal"
+	INCBIN "gfx/cards/heavyball.attrmap"	
+	INCBIN "gfx/cards/heavyball.2bpp"
 PokemonFluteCardGfx::
 	INCBIN "gfx/cards/pokemonflute.pal"
 	INCBIN "gfx/cards/pokemonflute.attrmap"	

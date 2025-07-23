@@ -1031,7 +1031,7 @@ AIDecide_Switch:
 	ccf
 	ret
 
-AIPlay_GustOfWind:
+AIPlay_BossOrders:
 	ld a, [wCurrentAIFlags]
 	or AI_FLAG_USED_GUST_OF_WIND
 	ld [wCurrentAIFlags], a
@@ -1043,7 +1043,7 @@ AIPlay_GustOfWind:
 	bank1call AIMakeDecision
 	ret
 
-AIDecide_GustOfWind:
+AIDecide_BossOrders:
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
 	call GetNonTurnDuelistVariable
 	dec a
@@ -1974,7 +1974,7 @@ AIDecide_PokemonBreeder:
 	jr z, .found
 	cp16 GRENINJA
 	jr z, .found
-	cp16 VILEPLUME
+	cp16 APPLETUN
 	jr z, .found
 	cp16 ALAKAZAM
 	jr z, .found
@@ -4122,7 +4122,7 @@ AIDecide_ScoopUp:
 	call SwapTurn
 	call GetCardIDFromDeckIndex
 	call SwapTurn
-	cp16 MAINTENANCE
+	cp16 HEAVYBALL
 	pop bc
 	jp z, .no_carry
 
@@ -5034,7 +5034,7 @@ AIDecide_Pokeball:
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	ret c
 	ld bc, ESCAVALIER
-	ld de, NIDOKING
+	ld de, VOLBEAT
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	ret c
 	ld de, KARRABLAST
@@ -5042,7 +5042,7 @@ AIDecide_Pokeball:
 	call LookForCardIDInDeck_GivenCardIDInHand
 	ret c
 	ld de, ESCAVALIER
-	ld bc, NIDOKING
+	ld bc, VOLBEAT
 	call LookForCardIDInDeck_GivenCardIDInHand
 	ret c
 	ld bc, SHELMET
@@ -5231,9 +5231,9 @@ AIDecide_ComputerSearch_RockCrusher:
 	ld hl, wDuelTempList
 	jr .find_discard_cards_2
 
-; checks if there is a Dugtrio card in the deck to target.
-; if so, check if there's Diglett in Play Area,
-; and if there's no Dugtrio card in hand, proceed.
+; checks if there is a Sandaconda card in the deck to target.
+; if so, check if there's Silicobra in Play Area,
+; and if there's no Sandaconda card in hand, proceed.
 .dugtrio
 	ld de, SANDACONDA
 	ld a, CARD_LOCATION_DECK
@@ -5995,19 +5995,19 @@ AIDecide_PokemonTrader_FlowerGarden:
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
 	ld bc, APPLIN
-	ld de, GLOOM
+	ld de, FLAPPLE
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
-	ld bc, GLOOM
-	ld de, VILEPLUME
+	ld bc, FLAPPLE
+	ld de, APPLETUN
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
 	ld de, APPLIN
-	ld bc, GLOOM
+	ld bc, FLAPPLE
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
-	ld de, GLOOM
-	ld bc, VILEPLUME
+	ld de, FLAPPLE
+	ld bc, APPLETUN
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
 	jr .no_carry

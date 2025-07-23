@@ -1325,8 +1325,8 @@ IlluminateDescription:
 
 EelektrossDescription:
 	text "Booster Pack: (LABORATORY)"
-	line "OG Set: (Primal Clash 65)"
-	line "OG illustrator: (Mitsuhiro Arita)"
+	line "OG Set: (Dark Explorers 47)"
+	line "OG illustrator: (kawayoo)"
 	done
 
 WattrelDescription:
@@ -1342,21 +1342,19 @@ TyruntDescription:
 	done    
 
 RockruffDescription:
-	text "Booster Pack: (MYSTERY)"
-	line "OG Set: (Sun & Moon Promos 06)"
-	line "OG illustrator: (match)"
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Paldea Evolved 116)"
+	line "OG illustrator: (0313)"
 	done    	
-
 LycanrocDescription:
-	text "Booster Pack: (MYSTERY)"
-	line "OG Set: (Burning Shadows 76)"
-	line "OG illustrator: (Masakazu Fukuda)"
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Journey Together 85)"
+	line "OG illustrator: (Shiburingaru)"
 	done    	
-
 LycanrocMDescription:
-	text "Booster Pack: (MYSTERY)"
-	line "OG Set: (Sun & Moon Kit Lycanroc 16)"
-	line "OG illustrator: (5ban Graphics)"
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Paldea Evolved 117)"
+	line "OG illustrator: (kawayoo)"
 	done    	
 
 InkayDescription:
@@ -1367,8 +1365,8 @@ InkayDescription:
 
 MismagiusDescription:
 	text "Booster Pack: (COLOSSEUM)"
-	line "OG Set: (Crimson Invasion 40)"
-	line "OG illustrator: (Chibi)"
+	line "OG Set: (Silver Tempest 64)"
+	line "OG illustrator: (kawayoo)"
 	done	
 
 OrbeetleDescription:
@@ -1400,23 +1398,20 @@ MetagrossDescription:
 	line "OG Set: (Hidden Legends 95)"
 	line "OG illustrator: (Mitsuhiro Arita)"
 	done	
-
 MunnaDescription:
-	text "Booster Pack: (LABORATORY)"
-	line "OG Set: (Plasma Blast 39)"
-	line "OG illustrator: (Mizue)"
-	done	
-
-MusharnaDescription:
-	text "Booster Pack: (LABORATORY)"
-	line "OG Set: (Next Destinies 59)"
-	line "OG illustrator: (Maiko Fujiwara)"
-	done	
-
-DunsparceDescription:
 	text "Booster Pack: (COLOSSEUM)"
-	line "OG Set: (Platinum 73)"
-	line "OG illustrator: (Kouki Saitou)"
+	line "OG Set: (Fusion Strike 121)"
+	line "OG illustrator: (miki kudo)"
+	done	
+MusharnaDescription:
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Fusion Strike 122)"
+	line "OG illustrator: (Tika Matsuno)"
+	done	
+DunsparceDescription:
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Temporal Forces 128)"
+	line "OG illustrator: (Sanosuke Sakuma)"
 	done	
 
 AquaticRescueDescription:

@@ -2,7 +2,7 @@ EspeonCardGfx::
 	INCBIN "gfx/cards/espeon.pal"
 	INCBIN "gfx/cards/espeon.attrmap"	
 	INCBIN "gfx/cards/espeon.2bpp"
-NidokingCardGfx::
+VolbeatCardGfx::
 	INCBIN "gfx/cards/volbeat.pal"	
 	INCBIN "gfx/cards/volbeat.attrmap"
 	INCBIN "gfx/cards/volbeat.2bpp"	

@@ -71,8 +71,8 @@ Script_Lass2:
 	print_npc_text Text06f1
 	print_text Text06f2
 	take_card APPLIN
-	give_card VILEPLUME
-	show_card_received_screen VILEPLUME
+	give_card APPLETUN
+	show_card_received_screen APPLETUN
 	print_text_quit_fully Text06f3
 
 .ows_e66a
@@ -83,11 +83,11 @@ Script_Lass2:
 	print_text_quit_fully Text06f6
 
 .ows_e67f
-	jump_if_card_owned TOGEPI, .ows_e686
+	jump_if_card_owned TSAREENA, .ows_e686
 	print_text_quit_fully Text06f7
 
 .ows_e686
-	jump_if_card_in_collection TOGEPI, .ows_e68d
+	jump_if_card_in_collection TSAREENA, .ows_e68d
 	print_text_quit_fully Text06f8
 
 .ows_e68d
@@ -95,9 +95,9 @@ Script_Lass2:
 	set_event EVENT_LASS2_TRADE_STATE, LASS2_TRADE_3_AVAILABLE
 	print_npc_text Text06f9
 	print_text Text06fa
-	take_card TOGEPI
-	give_card EMOLGA
-	show_card_received_screen EMOLGA
+	take_card TSAREENA
+	give_card CELEBI
+	show_card_received_screen CELEBI
 	print_text_quit_fully Text06f3
 
 .ows_e6a1

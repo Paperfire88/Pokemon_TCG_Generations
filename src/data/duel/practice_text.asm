@@ -59,7 +59,7 @@ PracticeDuelText_Turn8:
 	practicetext 5, Turn8DrMason2PracticeDuelText, Turn8Instr2PracticeDuelText
 	db $00
 
-; on player's Seaking knocked out
+; on player's Basculegion knocked out
 PracticeDuelText_SamTurn4:
 	practicetext 2, SamTurn4DrMason1PracticeDuelText, SamTurn4Instr1PracticeDuelText
 	practicetext 7, SamTurn4DrMason2PracticeDuelText, SamTurn4Instr2PracticeDuelText

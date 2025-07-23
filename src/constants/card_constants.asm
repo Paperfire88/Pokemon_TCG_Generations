@@ -19,13 +19,13 @@
 	const BEEDRILL                    ; $11
 	const SHELMET                    ; $14
 	const ACCELGOR                    ; $15
-	const ILLUMISE                   ; $16
 	const KARRABLAST                    ; $17
 	const ESCAVALIER                    ; $18
-	const NIDOKING                    ; $19
+	const ILLUMISE                   ; $16
+	const VOLBEAT                    ; $19
 	const APPLIN                      ; $1c
-	const GLOOM                       ; $1d
-	const VILEPLUME                   ; $1e
+	const FLAPPLE                       ; $1d
+	const APPLETUN                   ; $1e
 	const SHROOMISH                       ; $1f
 	const BRELOOM                    ; $20
 	const YANMA                     ; $21
@@ -76,7 +76,7 @@
 	const ENTEI                ; $40
 	const HOOH
 	const FROAKIE                    ; $41
-	const WARTORTLE                   ; $42
+	const FROGADIER                   ; $42
 	const GRENINJA                   ; $43
 	const BRUXISH                ; $91
 	const BUIZEL                     ; $44
@@ -94,8 +94,8 @@
 	const HORSEA                      ; $51
 	const SEADRA                      ; $52
 	const KINGDRA                      ; $52
-	const GOLDEEN                     ; $53
-	const SEAKING                     ; $54
+	const BASCULIN                     ; $53
+	const BASCULEGION                     ; $54
 	const DEWPIDER                      ; $55
 	const ARAQUANID                     ; $56
 	const CHEWTLE                      ; $59
@@ -144,8 +144,8 @@
 	const SANDILE                      ; $7d
 	const KROKOROK                     ; $7e
 	const KROOKODILE                     ; $7f
-	const SANDSHREW                   ; $77
-	const SANDSLASH                   ; $78
+	const MEOWTH                   ; $77
+	const PERRSERKER                   ; $78
 	const SILICOBRA                     ; $79
 	const SANDACONDA                     ; $7a
 	const TRAPINCH                     ; $80
@@ -288,10 +288,11 @@
 	const ENERGY_RETRIEVAL            ; $cd
 	const SUPER_ENERGY_RETRIEVAL      ; $ce
 	const ENERGY_REMOVAL              ; $d0
-	const SUBSTITUTE_DOLL               ; $cb
+	const SUBSTITUTE_DOLL             ; $cb
 	const MYSTERIOUS_FOSSIL           ; $cc
 	const POKE_BALL                   ; $d4
-	const SUPER_ENERGY_REMOVAL        ; $d1
+	const QUICK_BALL        		  ; $d1
+	const HEAVYBALL                   ; $e1
 	const POTION                      ; $dd
 	const SUPER_POTION                ; $de
 	const FULL_HEAL                   ; $df
@@ -301,7 +302,6 @@
 	const PLUSPOWER                   ; $d8
 	const DEFENDER                    ; $d9
 	const RECYCLE                     ; $e4
-	const MAINTENANCE                 ; $e1
 	const POKEMON_FLUTE               ; $e2
 	const SUPER_ROD
 	const SCOOP_UP                    ; $d5

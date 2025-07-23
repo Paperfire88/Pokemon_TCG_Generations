@@ -1812,7 +1812,7 @@ HandleDuelSetup:
 
 .place_prize
 	push de
-	ld b, 20 ; frames to delay
+	ld b, 13 ; frames to delay
 .loop_delay
 	call DoFrame
 	call CheckSkipDelayAllowed
@@ -1892,7 +1892,7 @@ ChooseInitialArenaAndBenchPokemon:
 	jr c, .choose_arena_loop
 	ldh a, [hTempCardIndex_ff98]
 	call LoadCardDataToBuffer1_FromDeckIndex
-	ld a, PRACTICEDUEL_PLAY_GOLDEEN
+	ld a, PRACTICEDUEL_PLAY_BASCULIN
 	call DoPracticeDuelAction
 	jr c, .choose_arena_loop
 	ldh a, [hTempCardIndex_ff98]
@@ -2558,7 +2558,7 @@ DoPracticeDuelAction:
 PracticeDuelActionTable:
 	dw NULL
 	dw PracticeDuel_DrawSevenCards
-	dw PracticeDuel_PlayGoldeen
+	dw PracticeDuel_PlayBasculin
 	dw PracticeDuel_PutStaryuInBench
 	dw PracticeDuel_VerifyInitialPlay
 	dw PracticeDuel_DonePuttingOnBench
@@ -2574,11 +2574,11 @@ PracticeDuel_DrawSevenCards:
 	ldtx hl, DrawSevenCardsPracticeDuelText
 	jp PrintPracticeDuelDrMasonInstructions
 
-PracticeDuel_PlayGoldeen:
+PracticeDuel_PlayBasculin:
 	ld hl, wLoadedCard1ID
-	cphl GOLDEEN
+	cphl BASCULIN
 	ret z
-	ldtx hl, ChooseGoldeenPracticeDuelText
+	ldtx hl, ChooseBasculinPracticeDuelText
 	ldtx de, DrMasonText ; unnecessary
 	scf
 	jp PrintPracticeDuelDrMasonInstructions
@@ -2656,7 +2656,7 @@ PracticeDuel_PlayStaryuFromBench:
 	or a
 	ret
 .its_sam_turn_4
-	; ask player to choose Staryu from bench to replace knocked out Seaking
+	; ask player to choose Staryu from bench to replace knocked out Basculegion
 	call DrawPracticeDuelInstructionsTextBox
 	call EnableLCD
 	ld hl, PracticeDuelText_SamTurn4
@@ -2848,13 +2848,13 @@ PracticeDuelTurnVerificationPointerTable:
 
 PracticeDuelVerify_Turn1:
 	ld hl, wTempCardID_ccc2
-	cphl GOLDEEN
+	cphl BASCULIN
 	jp nz, ReturnWrongAction
 	ret
 
 PracticeDuelVerify_Turn2:
 	ld hl, wTempCardID_ccc2
-	cphl SEAKING
+	cphl BASCULEGION
 	jp nz, ReturnWrongAction
 	ld a, [wSelectedAttack]
 	cp 1
@@ -2868,7 +2868,7 @@ PracticeDuelVerify_Turn2:
 
 PracticeDuelVerify_Turn3:
 	ld hl, wTempCardID_ccc2
-	cphl SEAKING
+	cphl BASCULEGION
 	jp nz, ReturnWrongAction
 	ld e, PLAY_AREA_BENCH_1
 	call GetPlayAreaCardAttachedEnergies
@@ -2887,7 +2887,7 @@ PracticeDuelVerify_Turn4:
 	or a
 	jr z, ReturnWrongAction
 	ld hl, wTempCardID_ccc2
-	cphl SEAKING
+	cphl BASCULEGION
 	jr nz, ReturnWrongAction
 	ld a, [wSelectedAttack]
 	cp 1
@@ -4239,28 +4239,13 @@ DisplayCardPage_PokemonDescription:
 	ld a, [wLoadedCard1HP]
 	call WriteTwoByteNumberInTxSymbolFormat
 	; print the Pokemon's category at 1,10 (just above the length and weight texts)
-	lb de, 1, 10
+	lb de, 1, 11
 	ld hl, wLoadedCard1Category
 	call InitTextPrinting_ProcessTextFromPointerToID
 	ld a, TX_KATAKANA
 	call ProcessSpecialTextCharacter
 	ldtx hl, PokemonText
 	call ProcessTextFromID
-	; print the length and weight values at 5,11 and 5,12 respectively
-	lb bc, 5, 11
-	ld hl, wLoadedCard1Length
-	ld a, [hli]
-	ld l, [hl]
-	ld h, a
-	call PrintPokemonCardLength
-	lb bc, 5, 12
-	ld hl, wLoadedCard1Weight
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	call PrintPokemonCardWeight
-	ldtx hl, LbsText
-	call InitTextPrinting_ProcessTextFromID
 	; print the card's description without line separation
 	call SetNoLineSeparation
 	ld hl, wLoadedCard1Description
@@ -4268,7 +4253,7 @@ DisplayCardPage_PokemonDescription:
 	ld h, [hl]
 	ld l, a
 	call CountLinesOfTextFromID
-	lb de, 1, 13
+	lb de, 1, 12
 	cp 4
 	jr nc, .print_description
 	inc e ; move a line down, as the description is short enough to fit in three lines
@@ -4309,8 +4294,7 @@ DrawCardPageSet2AndRarityIcons:
 	ret
 
 CardPageLengthWeightTextData:
-	textitem 1, 11, LengthText
-	textitem 1, 12, WeightText
+
 	db $ff
 
 CardPageLvHPTextTileData:
@@ -5229,7 +5213,7 @@ PrintPlayAreaCardAttachedEnergies:
 	jr nz, .empty_loop
 	pop hl
 	ld de, wAttachedEnergies
-	lb bc, SYM_FIRE, NUM_TYPES - 1
+	lb bc, SYM_FIRE, NUM_TYPES
 .next_color
 	ld a, [de] ; energy count of current color
 	inc de
@@ -5849,7 +5833,7 @@ AIMakeDecision:
 .delay_loop
 	call DoFrame
 	ld a, [wVBlankCounter]
-	cp 30
+	cp 10
 	jr c, .delay_loop
 
 .skip_delay

@@ -3,7 +3,7 @@ ImpidimpCard:
 	gfx ImpidimpCardGfx ; gfx
 	tx ImpidimpName ; name
 	db CIRCLE ; rarity
-	db MYSTERY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw IMPIDIMP
 	db 40 ; hp
 	db BASIC ; stage
@@ -19,7 +19,7 @@ ImpidimpCard:
 	dw EnergyBoostEffectCommands ; effect commands
 	db DAMAGE_TO_OPPONENT_BENCH_F ; flags 1
 	db NONE ; flags 2
-	db NONE ; flags 3
+	db SPECIAL_AI_HANDLING ; flags 3
 	db 0
 	db ATK_ANIM_GLOW_EFFECT ; animation
 
@@ -53,7 +53,7 @@ MorgremCard:
 	gfx MorgremCardGfx ; gfx
 	tx MorgremName ; name
 	db DIAMOND ; rarity
-	db MYSTERY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw MORGREM
 	db 80 ; hp
 	db STAGE1 ; stage
@@ -103,7 +103,7 @@ GrimmsnarlCard:
 	gfx GrimmsnarlCardGfx ; gfx
 	tx GrimmsnarlName ; name
 	db STAR ; rarity
-	db MYSTERY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw GRIMMSNARL
 	db 110 ; hp
 	db STAGE2 ; stage
@@ -153,7 +153,7 @@ PawniardCard:
 	gfx PawniardCardGfx ; gfx
 	tx PawniardName ; name
 	db CIRCLE ; rarity
-	db MYSTERY | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw PAWNIARD
 	db 50 ; hp
 	db BASIC ; stage
@@ -203,7 +203,7 @@ BisharpCard:
 	gfx BisharpCardGfx ; gfx
 	tx BisharpName ; name
 	db DIAMOND ; rarity
-	db MYSTERY | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw BISHARP
 	db 80 ; hp
 	db STAGE1 ; stage
@@ -253,7 +253,7 @@ AbraCard:
 	gfx AbraCardGfx ; gfx
 	tx AbraName ; name
 	db CIRCLE ; rarity
-	db COLOSSEUM | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw ABRA
 	db 40 ; hp
 	db BASIC ; stage
@@ -303,7 +303,7 @@ KadabraCard:
 	gfx KadabraCardGfx ; gfx
 	tx KadabraName ; name
 	db DIAMOND ; rarity
-	db COLOSSEUM | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw KADABRA
 	db 70 ; hp
 	db STAGE1 ; stage
@@ -316,7 +316,7 @@ KadabraCard:
 	dw NONE ; description (cont)
 	db 20 ; damage
 	db DAMAGE_NORMAL ; category
-	dw SandshrewSandAttackEffectCommands ; effect commands
+	dw MeowthSandAttackEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
 	db NONE ; flags 3
@@ -353,7 +353,7 @@ AlakazamCard:
 	gfx AlakazamCardGfx ; gfx
 	tx AlakazamName ; name
 	db STAR ; rarity
-	db COLOSSEUM | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw ALAKAZAM
 	db 90 ; hp
 	db STAGE2 ; stage
@@ -553,7 +553,7 @@ ElekidCard:
 	gfx ElekidCardGfx ; gfx
 	tx ElekidName ; name
 	db CIRCLE ; rarity
-	db LABORATORY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw ELEKID
 	db 30 ; hp
 	db BASIC ; stage
@@ -603,7 +603,7 @@ ElectabuzzLv35Card:
 	gfx ElectabuzzLv35CardGfx ; gfx
 	tx ElectabuzzName ; name
 	db DIAMOND ; rarity
-	db LABORATORY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw ELECTABUZZ_LV35
 	db 60 ; hp
 	db BASIC ; stage
@@ -653,7 +653,7 @@ ElectivireCard:
 	gfx ElectivireCardGfx ; gfx
 	tx ElectivireName ; name
 	db STAR ; rarity
-	db LABORATORY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw ELECTIVIRE
 	db 90 ; hp
 	db STAGE1 ; stage
@@ -703,7 +703,7 @@ PichuCard:
 	gfx PichuCardGfx ; gfx
 	tx PichuName ; name
 	db CIRCLE ; rarity
-	db LABORATORY | NONE ; sets
+	db COLOSSEUM | NONE ; sets
 	dw PICHU
 	db 30 ; hp
 	db BASIC ; stage
@@ -753,7 +753,7 @@ PikachuCard:
 	gfx PikachuCardGfx ; gfx
 	tx PikachuName ; name
 	db DIAMOND ; rarity
-	db LABORATORY | NONE ; sets
+	db COLOSSEUM | NONE ; sets
 	dw PIKACHU
 	db 50 ; hp
 	db BASIC ; stage
@@ -803,7 +803,7 @@ RaichuCard:
 	gfx RaichuCardGfx ; gfx
 	tx RaichuName ; name
 	db STAR ; rarity
-	db LABORATORY | NONE ; sets
+	db COLOSSEUM | NONE ; sets
 	dw RAICHU
 	db 70 ; hp
 	db STAGE1 ; stage
@@ -852,8 +852,8 @@ NihilegoCard:
 	db TYPE_PKMN_DARKNESS ; type
 	gfx NihilegoCardGfx ; gfx
 	tx NihilegoName ; name
-	db PROMOSTAR ; rarity
-	db PROMOTIONAL | PRO ; sets
+	db STAR ; rarity
+	db LABORATORY | NONE ; sets
 	dw NIHILEGO
 	db 60 ; hp
 	db BASIC ; stage
@@ -903,7 +903,7 @@ RioluCard:
 	gfx RioluCardGfx ; gfx
 	tx RioluName ; name
 	db CIRCLE ; rarity
-	db MYSTERY | NONE ; sets
+	db COLOSSEUM | NONE ; sets
 	dw RIOLU
 	db 50 ; hp
 	db BASIC ; stage
@@ -953,7 +953,7 @@ LucarioCard:
 	gfx LucarioCardGfx ; gfx
 	tx LucarioName ; name
 	db STAR ; rarity
-	db MYSTERY | NONE ; sets
+	db COLOSSEUM | NONE ; sets
 	dw LUCARIO
 	db 80 ; hp
 	db STAGE1 ; stage
@@ -1003,7 +1003,7 @@ LeafeonCard:
 	gfx LeafeonCardGfx ; gfx
 	tx LeafeonName ; name
 	db STAR ; rarity
-	db MYSTERY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw LEAFEON
 	db 80 ; hp
 	db STAGE1 ; stage
@@ -1053,7 +1053,7 @@ GlaceonCard:
 	gfx GlaceonCardGfx ; gfx
 	tx GlaceonName ; name
 	db STAR ; rarity
-	db MYSTERY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw GLACEON
 	db 80 ; hp
 	db STAGE1 ; stage
@@ -1103,7 +1103,7 @@ SylveonCard:
 	gfx SylveonCardGfx ; gfx
 	tx SylveonName ; name
 	db STAR ; rarity
-	db MYSTERY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw SYLVEON
 	db 70 ; hp
 	db STAGE1 ; stage
@@ -1253,7 +1253,7 @@ MudkipCard:
 	gfx MudkipCardGfx ; gfx
 	tx MudkipName ; name
 	db CIRCLE ; rarity
-	db LABORATORY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw MUDKIP
 	db 50 ; hp
 	db BASIC ; stage
@@ -1280,7 +1280,7 @@ MudkipCard:
 	dw NONE ; description (cont)
 	db 20 ; damage
 	db DAMAGE_NORMAL ; category
-	dw SandshrewSandAttackEffectCommands ; effect commands
+	dw MeowthSandAttackEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
 	db NONE ; flags 3
@@ -1303,7 +1303,7 @@ MarshtompCard:
 	gfx MarshtompCardGfx ; gfx
 	tx MarshtompName ; name
 	db DIAMOND ; rarity
-	db LABORATORY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw MARSHTOMP
 	db 80 ; hp
 	db STAGE1 ; stage
@@ -1330,7 +1330,7 @@ MarshtompCard:
 	dw NONE ; description (cont)
 	db 50 ; damage
 	db DAMAGE_NORMAL ; category
-	dw DugtrioEarthquakeEffectCommands ; effect commands
+	dw SandacondaEarthquakeEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -1353,7 +1353,7 @@ SwampertCard:
 	gfx SwampertCardGfx ; gfx
 	tx SwampertName ; name
 	db STAR ; rarity
-	db LABORATORY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw SWAMPERT
 	db 110 ; hp
 	db STAGE2 ; stage
@@ -1403,7 +1403,7 @@ TyrogueCard:
 	gfx TyrogueCardGfx ; gfx
 	tx TyrogueName ; name
 	db CIRCLE ; rarity
-	db MYSTERY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw TYROGUE
 	db 30 ; hp
 	db BASIC ; stage
@@ -1453,7 +1453,7 @@ HitmontopCard:
 	gfx HitmontopCardGfx ; gfx
 	tx HitmontopName ; name
 	db STAR ; rarity
-	db MYSTERY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw HITMONTOP
 	db 60 ; hp
 	db BASIC ; stage
@@ -1503,7 +1503,7 @@ LitwickCard:
 	gfx LitwickCardGfx ; gfx
 	tx LitwickName ; name
 	db CIRCLE ; rarity
-	db COLOSSEUM | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw LITWICK
 	db 40 ; hp
 	db BASIC ; stage
@@ -1553,7 +1553,7 @@ LampentCard:
 	gfx LampentCardGfx ; gfx
 	tx LampentName ; name
 	db DIAMOND ; rarity
-	db COLOSSEUM | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw LAMPENT
 	db 70 ; hp
 	db STAGE1 ; stage
@@ -1603,7 +1603,7 @@ ChandelureCard:
 	gfx ChandelureCardGfx ; gfx
 	tx ChandelureName ; name
 	db STAR ; rarity
-	db COLOSSEUM | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw CHANDELURE
 	db 100 ; hp
 	db STAGE2 ; stage
@@ -1653,7 +1653,7 @@ MagbyCard:
 	gfx MagbyCardGfx ; gfx
 	tx MagbyName ; name
 	db CIRCLE ; rarity
-	db LABORATORY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw MAGBY
 	db 30 ; hp
 	db BASIC ; stage
@@ -1703,7 +1703,7 @@ MagmarLv24Card:
 	gfx MagmarLv24CardGfx ; gfx
 	tx MagmarName ; name
 	db DIAMOND ; rarity
-	db COLOSSEUM | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw MAGMAR
 	db 60 ; hp
 	db BASIC ; stage
@@ -1766,7 +1766,7 @@ MagmortarCard:
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw SandshrewSandAttackEffectCommands ; effect commands
+	dw MeowthSandAttackEffectCommands ; effect commands
 	db INFLICT_BURN ; flags 1
 	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
 	db NONE ; flags 3
@@ -2153,7 +2153,7 @@ SalanditCard:
 	gfx SalanditCardGfx ; gfx
 	tx SalanditName ; name
 	db CIRCLE ; rarity
-	db MYSTERY | NONE ; sets
+	db COLOSSEUM | NONE ; sets
 	dw SALANDIT
 	db 50 ; hp
 	db BASIC ; stage
@@ -2203,7 +2203,7 @@ Salazzle:
 	gfx SalazzleGfx ; gfx
 	tx SalazzleName ; name
 	db DIAMOND ; rarity
-	db EVOLUTION |	NONE ; sets
+	db COLOSSEUM |	NONE ; sets
 	dw SALAZZLE
 	db 70 ; hp
 	db STAGE1 ; stage
@@ -2245,7 +2245,7 @@ Salazzle:
 	db 65 ; level
 	db 3, 7 ; length
 	dw 44 * 10 ; weight
-	tx NinetalesLv35Description ; description
+	tx KingdraDescription ; description
 	db 0
 
 MoonStoneCard:
@@ -2253,7 +2253,7 @@ MoonStoneCard:
 	gfx MoonStoneCardGfx ; gfx
 	tx MoonStoneName ; name
 	db CIRCLE ; rarity
-	db COLOSSEUM | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw MOON_STONE
 	dw ColorlessEvolutionPkmnSearchEffectCommands ; effect commands
 	tx MoonStoneDescription ; description
@@ -2264,7 +2264,7 @@ SuperRodCard:
 	gfx SuperRodCardGfx ; gfx
 	tx SuperRodName ; name
 	db DIAMOND ; rarity
-	db COLOSSEUM | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw SUPER_ROD
 	dw SuperRodEffectCommands ; effect commands
 	tx SuperRodDescription ; description

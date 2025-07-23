@@ -22,17 +22,9 @@ _ShowPromotionalCardScreen:
 	jr .print_text
 .else
 	ldtx hl, ReceivedCardText
-	cp16 VILEPLUME
+	cp16 APPLETUN
 	jr z, .print_text
 	cp16 GRENINJA
-	jr z, .print_text
-	ldtx hl, ReceivedPromotionalFlyingPikachuText
-	cp16 SHINX
-	jr z, .print_text
-	ldtx hl, ReceivedPromotionalSurfingPikachuText
-	cp16 LUXIO
-	jr z, .print_text
-	cp16 LUXRAY
 	jr z, .print_text
 	ldtx hl, ReceivedPromotionalCardText
 .print_text

@@ -18,16 +18,16 @@ CardPointers::
 	dab BeautiflyCard
 	dab RowletCard
 	dab DartrixCard
-	dab BeedrillCard
+	dab DecidueyeCard
 	dab ShelmetCard
 	dab AccelgorCard
-	dab IllumiseCard
 	dab KarrablastCard
 	dab EscavalierCard
-	dab NidokingCard
+	dab IllumiseCard
+	dab VolbeatCard
 	dab ApplinCard
-	dab GloomCard
-	dab VileplumeCard
+	dab FlappleCard
+	dab AppletunCard
 	dab ShroomishCard
 	dab BreloomCard
 	dab YanmaCard
@@ -78,7 +78,7 @@ CardPointers::
 	dab EnteiCard
 	dab HoohCard
 	dab FroakieCard
-	dab WartortleCard
+	dab FrogadierCard
 	dab GreninjaCard
 	dab BruxishCard
 	dab BuizelCard
@@ -96,8 +96,8 @@ CardPointers::
 	dab HorseaCard
 	dab SeadraCard
 	dab KingdraCard
-	dab GoldeenCard
-	dab SeakingCard
+	dab BasculinCard
+	dab Basculegion
 	dab DewpiderCard
 	dab AraquanidCard
 	dab ChewtleCard
@@ -146,8 +146,8 @@ CardPointers::
 	dab SandileCard
 	dab KrokorokCard
 	dab KrookodileCard
-	dab SandshrewCard
-	dab SandslashCard
+	dab MeowthCard
+	dab PerrserkerCard
 	dab SilicobraCard
 	dab SandacondaCard
 	dab TrapinchCard
@@ -283,7 +283,7 @@ CardPointers::
 	dab ImakuniCard
 	dab PokemonCenterCard
 	dab CopycatCard
-	dab GustOfWindCard
+	dab BossOrdersCard
 	dab EnergySearchCard
 	dab MoonStoneCard
 	dab PokemonTraderCard
@@ -293,7 +293,8 @@ CardPointers::
 	dab SubstituteDollCard
 	dab MysteriousFossilCard
 	dab PokeBallCard
-	dab SuperEnergyRemovalCard
+	dab QuickBallCard
+	dab HeavyBallCard
 	dab PotionCard
 	dab SuperPotionCard
 	dab FullHealCard
@@ -303,7 +304,6 @@ CardPointers::
 	dab PlusPowerCard
 	dab DefenderCard
 	dab RecycleCard
-	dab MaintenanceCard
 	dab PokemonFluteCard
 	dab SuperRodCard
 	dab ScoopUpCard

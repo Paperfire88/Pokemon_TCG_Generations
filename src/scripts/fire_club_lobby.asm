@@ -211,8 +211,8 @@ Script_ee76:
 .ows_ee7d
 	set_event EVENT_LAD2_STATE, LAD2_SLOWPOKE_GONE
 	print_text FoundLv9SlowpokeText
-	give_card BRUXISH
-	show_card_received_screen BRUXISH
+	give_card HOOH
+	show_card_received_screen HOOH
 	quit_script_fully
 
 Script_Mania:

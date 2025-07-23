@@ -46,6 +46,22 @@ HandleSpecialAIAttacks:
 	jp z, .Earthquake
 	cp16 BLITZLE
 	jp z, .EnergySpike
+	cp16 TOXTRICITY
+	jp z, .EnergySpike
+	cp16 CHARJABUG
+	jp z, .EnergySpike
+	cp16 SHROOMISH
+	jp z, .EnergySpikeGrass
+	cp16 SIZZLIPEDE
+	jp z, .EnergySpikeFire
+	cp16 HORSEA
+	jp z, .EnergySpikeWater
+	cp16 ROCKRUFF
+	jp z, .EnergySpikeFighting
+	cp16 CUTIEFLY
+	jp z, .EnergySpikePsychic
+	cp16 IMPIDIMP
+	jp z, .EnergySpikeDarkness
 	cp16 FLOATZEL
 	jp z, .HyperBeam
 	cp16 SLIGGOO
@@ -309,11 +325,36 @@ HandleSpecialAIAttacks:
 	ld a, $80
 	ret
 
+.EnergySpikeDarkness:
+	ld a, CARD_LOCATION_DECK
+	ld de, DARKNESS_ENERGY
+	jp .NextStep
+.EnergySpikePsychic:
+	ld a, CARD_LOCATION_DECK
+	ld de, PSYCHIC_ENERGY
+	jp .NextStep
+.EnergySpikeFighting:
+	ld a, CARD_LOCATION_DECK
+	ld de, FIGHTING_ENERGY
+	jp .NextStep
+.EnergySpikeWater:
+	ld a, CARD_LOCATION_DECK
+	ld de, WATER_ENERGY
+	jp .NextStep
+.EnergySpikeGrass:
+	ld a, CARD_LOCATION_DECK
+	ld de, GRASS_ENERGY
+	jp .NextStep
+.EnergySpikeFire:
+	ld a, CARD_LOCATION_DECK
+	ld de, FIRE_ENERGY
+	jp .NextStep
 ; if there's any lightning energy cards in deck,
 ; return a score of $80 + 3.
 .EnergySpike:
 	ld a, CARD_LOCATION_DECK
 	ld de, LIGHTNING_ENERGY
+.NextStep	
 	call CheckIfAnyCardIDinLocation
 	jp nc, .zero_score
 	call AIProcessButDontPlayEnergy_SkipEvolution

@@ -13,6 +13,13 @@ RockClubLobbyAfterDuel:
 	dw Script_BeatMatthew
 	dw Script_LostToMatthew
 	db $00
+RockClubPressedA:
+	ld hl, RockPaintingObjectTable
+	jp FindExtraInteractableObjects
+RockPaintingObjectTable:
+	db 16, 2, NORTH
+	dw scrip_rock
+	db $00
 
 Preload_ChrisInRockClubLobby:
 	get_event_value EVENT_PUPIL_CHRIS_STATE
@@ -20,6 +27,11 @@ Preload_ChrisInRockClubLobby:
 	ret z
 	cp PUPIL_DEFEATED
 	ret
+
+scrip_rock:
+	start_script
+
+	quit_script_fully
 
 Script_Chris:
 	start_script

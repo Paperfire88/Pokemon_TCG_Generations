@@ -1689,14 +1689,14 @@ BoyfriendsEffect:
 	cp $ff
 	jr z, .done
 	call GetCardIDFromDeckIndex
-	cp16 NIDOKING
+	cp16 VOLBEAT
 	jr nz, .next
 	inc c
 .next
 	inc hl
 	jr .loop
 .done
-; c holds number of Nidoking found in Play Area
+; c holds number of Volbeat found in Play Area
 	ld a, c
 	add a
 	call ATimes10
@@ -5186,8 +5186,9 @@ Gigashock_BenchDamageEffect:
 	cp $ff
 	jr z, .done
 	push hl
-	ld e, a
-	call Put1DamageCounterOnTarget
+	ld b, a
+	ld de, 10
+	call DealDamageToPlayAreaPokemon_RegularAnim
 	pop hl
 	jr .loop_selection
 .done
@@ -6179,6 +6180,8 @@ Gale_SwitchEffect:
 	ld [hl], a
 .skip_clear_damage
 	call SwapTurn
+	call .SwitchWithRandomBenchPokemon
+	jp FerroCheck
 ;	fallthrough for attacking card switch
 
 .SwitchWithRandomBenchPokemon
@@ -6661,6 +6664,14 @@ EvolutionSearch_AISelection:
 	farcall AIFindEvolution
 	ret
 
+Find0RetreatCost_PlayerSelection:
+	farcall Find0RetreatCost
+	ret
+
+Find3orMoreRetreatCost_PlayerSelection:
+	farcall Find3orMoreRetreatCost
+	ret
+
 ProfessorOakEffect:
 ; discard hand
 	call CreateHandCardList
@@ -6967,10 +6978,11 @@ ClefairyDoll_PlaceInPlayAreaEffect:
 	jp PutHandPokemonCardInPlayArea
 
 HorrorChantCheckandSelection:
-	bank1call HasAlivePokemonInBench
-	ld a, b
-	cp 4
-	ret c
+	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
+	call GetNonTurnDuelistVariable
+	ld d, a
+	ld e, PLAY_AREA_BENCH_3
+	ret z
 	call SwapTurn
 	call MrFuji_PlayerSelection
 	call MrFuji_ReturnToDeckEffect
@@ -7850,6 +7862,10 @@ Maintenance_HandCheck:
 	cp 3
 	ret
 
+OneCardHandDeckCheck:
+	call DeckCheck
+	ret c
+	;falltrough
 OneCardHandCheck:
 	ld a, DUELVARS_NUMBER_OF_CARDS_IN_HAND
 	call GetTurnDuelistVariable
@@ -8475,7 +8491,7 @@ HandlePlayerSelection2HandCards:
 	scf
 	ret
 
-GustOfWind_PlayerSelection:
+BossOrders_PlayerSelection:
 	ldtx hl, ChooseAPokemonToSwitchWithActivePokemonText
 	call DrawWideTextBox_WaitForInput
 	call SwapTurn
@@ -8488,21 +8504,21 @@ GustOfWind_PlayerSelection:
 DarkerRingEffect:
 	call Opp_CheckBench
 	ret c
-	call GustOfWind_PlayerSelection
-	jp GustOfWind_SwitchEffect
+	call BossOrders_PlayerSelection
+	jp BossOrders_SwitchEffect
 
-GustOfWind_Switch50PercentEffect:
+BossOrders_Switch50PercentEffect:
 	call SwapTurn
 	call CountPrizes
 	call SwapTurn
 	cp 4
-	jp c, GustOfWind_SwitchEffect
+	jp c, BossOrders_SwitchEffect
 	ldtx de, TrainerCardSuccessCheckText
 	call TossCoin_BankB
 	ret nc
 	;fallthrough
 
-GustOfWind_SwitchEffect:
+BossOrders_SwitchEffect:
 ; play whirlwind animation
 	ld a, ATK_ANIM_GUST_OF_WIND
 	call Func_2fea9
@@ -10738,7 +10754,7 @@ PoltergeistEffect:
 	inc hl
 	jr .loop_hand
 .done
-; c holds number of Nidoking found in Play Area
+; c holds number of Volbeat found in Play Area
 	ld a, c
 	call ATimes10
 	call AddToDamage ; adds 2 * 10 * c

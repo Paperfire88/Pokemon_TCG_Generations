@@ -62,8 +62,8 @@ Script_Man1:
 
 .ows_dcd7
 	print_npc_text Man1PlayerReceivePikachuAltLv16Text
-	give_card PINCURCHIN
-	show_card_received_screen PINCURCHIN
+	give_card COMPUTER_SEARCH
+	show_card_received_screen COMPUTER_SEARCH
 	print_npc_text Man1ThankYouText
 	set_event EVENT_MAN1_GIFT_SEQUENCE_STATE, MAN1_GIFT_SEQUENCE_COMPLETE
 	quit_script_fully

@@ -4,8 +4,8 @@
 AllFightingPokemonCardList:
 	deck_list_start
 	card_item FIGHTING_ENERGY, 26
-	card_item SANDSHREW,        2
-	card_item SANDSLASH,        1
+	card_item MEOWTH,        2
+	card_item PERRSERKER,        1
 	card_item SILICOBRA,          2
 	card_item SANDACONDA,          1
 	card_item CROAGUNK,           2
@@ -38,7 +38,7 @@ BenchAttackCardList:
 	card_item VIKAVOLT,       2
 	card_item HITMONLEE,         4
 	card_item HITMONCHAN,        2
-	card_item SANDSHREW,       4
+	card_item MEOWTH,       4
 	card_item PROFESSOR_OAK,     1
 	card_item BILL,              2
 	card_item MR_FUJI,           1
@@ -49,7 +49,7 @@ BenchAttackCardList:
 	card_item DEFENDER,          2
 	card_item ITEM_FINDER,       1
 	card_item GUST_OF_WIND,      1
-	card_item MAINTENANCE,       1
+	card_item HEAVYBALL,       1
 	deck_list_end
 
 BattleContestCardList:
@@ -61,7 +61,7 @@ BattleContestCardList:
 	card_item KROKOROK,                  3
 	card_item HITMONLEE,                2
 	card_item HITMONCHAN,               2
-	card_item SANDSHREW,              3
+	card_item MEOWTH,              3
 	card_item BIBAREL,                  2
 	card_item GOOMY,                  3
 	card_item SLIGGOO,                2
@@ -119,8 +119,8 @@ SqueakingMouseCardList:
 	card_item HELIOPTILE,             2
 	card_item ZEBSTRIKA,              1
 	card_item HELIOLISK,              1
-	card_item SANDSHREW,                4
-	card_item SANDSLASH,                3
+	card_item MEOWTH,                4
+	card_item PERRSERKER,                3
 	card_item ZIGZAGOON,                  4
 	card_item LINOONE,                 3
 	card_item PROFESSOR_OAK,            1
@@ -156,8 +156,8 @@ GreatQuakeCardList:
 BoneAttackCardList:
 	deck_list_start
 	card_item FIGHTING_ENERGY, 24
-	card_item SANDSHREW,        3
-	card_item SANDSLASH,        2
+	card_item MEOWTH,        3
+	card_item PERRSERKER,        2
 	card_item TRAPINCH,          3
 	card_item VIBRAVA,         2
 	card_item FLYGON,            1
@@ -183,8 +183,8 @@ ExcavationCardList:
 	card_item PELIPPER,           1
 	card_item OMANYTE,            3
 	card_item OMASTAR,            2
-	card_item SANDSHREW,          4
-	card_item SANDSLASH,          2
+	card_item MEOWTH,          4
+	card_item PERRSERKER,          2
 	card_item LARVITAR,             3
 	card_item PUPITAR,       1
 	card_item HITMONCHAN,         3
@@ -262,8 +262,8 @@ OnTheBeachCardList:
 	card_item CLAWITZER,           2
 	card_item DEWPIDER,            3
 	card_item ARAQUANID,           2
-	card_item SANDSHREW,         3
-	card_item SANDSLASH,         2
+	card_item MEOWTH,         3
+	card_item PERRSERKER,         2
 	card_item BILL,              2
 	card_item ENERGY_RETRIEVAL,  2
 	card_item ENERGY_REMOVAL,    2
@@ -279,7 +279,7 @@ ParalyzeCardList:
 	card_item WURMPLE,                 3
 	card_item SILCOON,                  2
 	card_item FROAKIE,                 3
-	card_item WARTORTLE,                2
+	card_item FROGADIER,                2
 	card_item WINGULL,                 3
 	card_item PELIPPER,                 2
 	card_item DEWPIDER,                   4
@@ -310,17 +310,17 @@ EnergyRemovalCardList:
 	card_item LASS,                     1
 	card_item ENERGY_SEARCH,            2
 	card_item ENERGY_REMOVAL,           2
-	card_item SUPER_ENERGY_REMOVAL,     1
+	card_item QUICK_BALL,     1
 	deck_list_end
 
 RainDancerCardList:
 	deck_list_start
 	card_item WATER_ENERGY,           24
 	card_item FROAKIE,                4
-	card_item WARTORTLE,               3
+	card_item FROGADIER,               3
 	card_item GRENINJA,               2
-	card_item GOLDEEN,                 4
-	card_item SEAKING,                 3
+	card_item BASCULIN,                 4
+	card_item BASCULEGION,                 3
 	card_item HORSEA,                  3
 	card_item SEADRA,                  2
 	card_item CHEWTLE,                  2
@@ -329,7 +329,7 @@ RainDancerCardList:
 	card_item ENERGY_RETRIEVAL,        1
 	card_item SUPER_ENERGY_RETRIEVAL,  1
 	card_item ENERGY_REMOVAL,          2
-	card_item SUPER_ENERGY_REMOVAL,    1
+	card_item QUICK_BALL,    1
 	card_item SWITCH,                  2
 	card_item POTION,                  2
 	card_item COPYCAT,                 1
@@ -494,8 +494,8 @@ JungleCardList:
 	card_item ZUBAT,                    2
 	card_item GOLBAT,                   1
 	card_item APPLIN,                   2
-	card_item GLOOM,                    1
-	card_item VILEPLUME,                1
+	card_item FLAPPLE,                    1
+	card_item APPLETUN,                1
 	card_item SHROOMISH,                    2
 	card_item BRELOOM,                 1
 	card_item YANMA,                  2
@@ -523,8 +523,8 @@ FlowerGardenCardList:
 	card_item BAYLEEF,                  2
 	card_item MEGANIUM,            2
 	card_item APPLIN,                   3
-	card_item GLOOM,                    2
-	card_item VILEPLUME,                2
+	card_item FLAPPLE,                    2
+	card_item APPLETUN,                2
 	card_item BOUNSWEET,               2
 	card_item STEENEE,               1
 	card_item TSAREENA,               1
@@ -572,8 +572,8 @@ FlowerPowerCardList:
 	card_item BAYLEEF,           3
 	card_item MEGANIUM,     2
 	card_item APPLIN,            4
-	card_item GLOOM,             3
-	card_item VILEPLUME,         2
+	card_item FLAPPLE,             3
+	card_item APPLETUN,         2
 	card_item SNOVER,         4
 	card_item ABOMASNOW,         3
 	card_item PROFESSOR_OAK,     2
@@ -674,7 +674,7 @@ StrangePowerCardList:
 	card_item POKEMON_TRADER,           2
 	card_item ENERGY_RETRIEVAL,         2
 	card_item ENERGY_REMOVAL,           2
-	card_item SUPER_ENERGY_REMOVAL,     1
+	card_item QUICK_BALL,     1
 	card_item PLUSPOWER,                2
 	card_item ITEM_FINDER,              1
 	card_item GUST_OF_WIND,             1
@@ -708,7 +708,7 @@ LovelyNidoranCardList:
 	card_item ILLUMISE,         2
 	card_item KARRABLAST,          4
 	card_item ESCAVALIER,          4
-	card_item NIDOKING,          4
+	card_item VOLBEAT,          4
 	card_item LICKITUNG,         3
 	card_item PROFESSOR_OAK,     2
 	card_item POKEMON_TRADER,    3
@@ -729,7 +729,7 @@ ScienceCorpsCardList:
 	card_item ILLUMISE,        1
 	card_item KARRABLAST,         3
 	card_item ESCAVALIER,         2
-	card_item NIDOKING,         1
+	card_item VOLBEAT,         1
 	card_item ZUBAT,            2
 	card_item GOLBAT,           1
 	card_item PHANTUMP,           2
@@ -744,7 +744,7 @@ ScienceCorpsCardList:
 	card_item POKEMON_BREEDER,  1
 	card_item POTION,           1
 	card_item FULL_HEAL,        1
-	card_item MAINTENANCE,      1
+	card_item HEAVYBALL,      1
 	card_item COPYCAT,          1
 	card_item RECYCLE,          1
 	deck_list_end
@@ -779,7 +779,7 @@ PoisonCardList:
 	card_item DUSTOX,                   3
 	card_item KARRABLAST,                4
 	card_item ESCAVALIER,                3
-	card_item NIDOKING,                2
+	card_item VOLBEAT,                2
 	card_item FERROSEED,                 3
 	card_item FERROTHORN,                 2
 	card_item PROFESSOR_OAK,           1
@@ -809,7 +809,7 @@ WondersOfScienceCardList:
 	card_item SWITCH,                  2
 	card_item COMPUTER_SEARCH,         2
 	card_item POKEDEX,                 2
-	card_item MAINTENANCE,             2
+	card_item HEAVYBALL,             2
 	card_item FULL_HEAL,               2
 	deck_list_end
 
@@ -948,11 +948,11 @@ TepigAndFriendsCardList:
 	card_item MAGMAR,      1
 	card_item SEEL,             2
 	card_item DEWGONG,          1
-	card_item GOLDEEN,          2
-	card_item SEAKING,          1
+	card_item BASCULIN,          2
+	card_item BASCULEGION,          1
 	card_item ZIGZAGOON,          2
 	card_item LINOONE,         1
-	card_item SANDSHREW,      1
+	card_item MEOWTH,      1
 	card_item PROFESSOR_OAK,    1
 	card_item BILL,             2
 	card_item SWITCH,           1
@@ -975,12 +975,12 @@ FroakieAndFriendsCardList:
 	card_item CENTISKORCH,     1
 	card_item MAGMAR,       1
 	card_item FROAKIE,          2
-	card_item WARTORTLE,         1
+	card_item FROGADIER,         1
 	card_item GRENINJA,         1
 	card_item SEEL,              2
 	card_item DEWGONG,           1
-	card_item GOLDEEN,           1
-	card_item SEAKING,           1
+	card_item BASCULIN,           1
+	card_item BASCULEGION,           1
 	card_item DEWPIDER,            1
 	card_item ARAQUANID,           1
 	card_item CHEWTLE,            1
@@ -990,7 +990,7 @@ FroakieAndFriendsCardList:
 	card_item ELECTABUZZ_LV35,   1
 	card_item ZIGZAGOON,           2
 	card_item LINOONE,          1
-	card_item SANDSHREW,       1
+	card_item MEOWTH,       1
 	card_item PROFESSOR_OAK,     1
 	card_item BILL,              1
 	card_item SWITCH,            1
@@ -1023,7 +1023,7 @@ ChikoritaAndFriendsCardList:
 	card_item MISMAGIUS,     1
 	card_item ESPEON,             1
 	card_item STUFFUL,  1
-	card_item SANDSHREW,      1
+	card_item MEOWTH,      1
 	card_item CHATOT,       1
 	card_item PROFESSOR_OAK,    1
 	card_item BILL,             1
@@ -1079,7 +1079,7 @@ WaterBeetleCardList:
 	card_item BEEDRILL,          1
 	card_item KARRABLAST,          2
 	card_item ESCAVALIER,          1
-	card_item NIDOKING,          1
+	card_item VOLBEAT,          1
 	card_item BOUNSWEET,        2
 	card_item STEENEE,        1
 	card_item TSAREENA,        1

@@ -382,25 +382,25 @@ Text060e:
 
 Text060f:
 	text "Hey! Kid!"
-	line "I've got a <Lv>20 Electabuzz,"
+	line "I've got a Item Finder,"
 	line "but what I really want is"
-	line "a <Lv>35 Electabuzz!"
+	line "a <Lv>66 Electivire!"
 	line "Hey! Kid! Do you have a"
 	line ""
-	text "<Lv>35 Electabuzz?"
+	text "<Lv>66 Electivire?"
 	done
 
 Text0610:
 	text "Hey! Kid!"
 	line "We meet again!"
-	line "Do you have a <Lv>35 Electabuzz?"
+	line "Do you have a <Lv>66 Electivire?"
 	line "Come on! Trade it for my"
 	line ""
-	text "<Lv>20 Electabuzz!"
+	text "Item Finder!"
 	done
 
 Text0611:
-	text "Trade your <Lv>35 Electabuzz?"
+	text "Trade your <Lv>66 Electivire?"
 	done
 
 Text0612:
@@ -413,29 +413,27 @@ Text0612:
 Text0613:
 	text "Hey, kid!"
 	line "It's not cool to lie!"
-	line "You don't own a <Lv>35 Electabuzz!"
+	line "You don't own a <Lv>66 Electivire!"
 	line "You could get hurt lying to me, kid!"
 	done
 
 Text0614:
 	text "You're gonna trade me your"
 	line ""
-	text "<Lv>35 Electabuzz?"
+	text "<Lv>66 Electivire?"
 	line "Way cool!...Hey! Wait, kid!"
 	line "That card's in your Deck!"
 	line "It isn't cool to take that card!"
 	line "You take good care of that card!"
-	line "That's what's best for that"
-	line "Electabuzz!"
 	done
 
 Text0615:
 	text "You're gonna trade me your"
 	line ""
-	text "<Lv>35 Electabuzz? Way cool, kid!"
+	text "<Lv>66 Electivire? Way cool, kid!"
 	line "OK, I'll trade you my"
 	line ""
-	text "<Lv>20 Electabuzz for it!"
+	text "Item Finder for it!"
 	done
 
 Text0616:
@@ -445,16 +443,17 @@ Text0616:
 
 Text0617:
 	text "Whoa! Cool, kid! Thanks for "
-	line "that <Lv>35 Electabuzz! "
-	line "My <Lv>20 Electabuzz is a cool card!"
-	line "Charge it up with Electabuzz!"
+	line "that <Lv>66 Electivire! "
+	line "My Item Finder is a cool card!"
 	done
 
 Text0618:
-	text "I wonder if the Legendary Cards"
-	line "are pretty?"
-	line "If they're sparkly, I'll be"
-	line "really happy."
+	text "Do you know how Rarities Work?"
+	line "There are 3 different types:"
+	line "Common Represented with a Circle,"
+	line "Uncommon with a Diamond, and Rare"
+	line "with a Star! Check it out with"
+	line "Your own cards!"
 	done
 
 Text0619:
@@ -916,7 +915,7 @@ Text0660:
 	line "Did you defeat Murray!?!"
 	line "I feel so much better!"
 	line "Here, let me give you this"
-	line "Mewtwo card!"
+	line "Mew card!"
 	done
 
 Text0661:
@@ -924,7 +923,7 @@ Text0661:
 	line "Did you defeat Murray!?!"
 	line "I feel so much better!"
 	line "Here, let me give you this"
-	line "Mewtwo card."
+	line "Mew card."
 	done
 
 Text0662:

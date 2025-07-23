@@ -29,29 +29,29 @@ AIActionTable_GoGoRainDance:
 .list_arena
 	dw CHEWTLE
 	dw HORSEA
-	dw GOLDEEN
+	dw BASCULIN
 	dw FROAKIE
 	dw NULL
 
 .list_bench
 	dw FROAKIE
 	dw HORSEA
-	dw GOLDEEN
+	dw BASCULIN
 	dw CHEWTLE
 	dw NULL
 
 .list_retreat
 	ai_retreat FROAKIE,  -3
-	ai_retreat WARTORTLE, -2
+	ai_retreat FROGADIER, -2
 	ai_retreat HORSEA,    -1
 	dw NULL
 
 .list_energy
 	ai_energy FROAKIE,  2, +0
-	ai_energy WARTORTLE, 3, +0
+	ai_energy FROGADIER, 3, +0
 	ai_energy GRENINJA, 5, +0
-	ai_energy GOLDEEN,   1, +0
-	ai_energy SEAKING,   2, +0
+	ai_energy BASCULIN,   1, +0
+	ai_energy BASCULEGION,   2, +0
 	ai_energy HORSEA,    2, +0
 	ai_energy SEADRA,    3, +0
 	ai_energy CHEWTLE,    3, +0

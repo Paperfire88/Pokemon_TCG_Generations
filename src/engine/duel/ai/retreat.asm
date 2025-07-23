@@ -57,7 +57,18 @@ AIDecideWhetherToRetreat:
 	jp nc, .active_cant_use_atk
 	call LookForEnergyNeededForAttackInHand
 	jr nc, .active_cant_ko_1
+	ld a, [wLoadedCard1Stage]
+	or a
+	jr z, .evolution_card
 
+.evolution_card
+	ld a, 5
+	call SubFromAIScore
+	ld a, [wAIOpponentPrizeCount]
+	cp 2
+	jr nc, .active_cant_use_atk
+	ld a, 35
+	call SubFromAIScore
 .active_cant_use_atk
 	ld a, 5
 	call SubFromAIScore

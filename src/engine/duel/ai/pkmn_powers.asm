@@ -453,7 +453,7 @@ HandleAIPkmnPowers:
 	push bc
 
 ; check heal
-	cp16 VILEPLUME
+	cp16 APPLETUN
 	jr nz, .check_shift
 	call HandleAIHeal
 	jr .next_1
@@ -502,7 +502,7 @@ HandleAIPkmnPowers:
 
 ; checks whether AI uses Heal on Pokemon in Play Area.
 ; input:
-;	c = Play Area location (PLAY_AREA_*) of Vileplume.
+;	c = Play Area location (PLAY_AREA_*) of Appletun.
 HandleAIHeal:
 	ld a, c
 	ldh [hTemp_ffa0], a

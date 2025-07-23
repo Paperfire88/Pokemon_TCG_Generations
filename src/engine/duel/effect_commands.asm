@@ -78,12 +78,12 @@ CaterpieStringShotEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Paralysis50PercentEffect
 	db  $00
 
-GloomPoisonPowderEffectCommands:
+FlapplePoisonPowderEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, PoisonEffect
 	dbw EFFECTCMDTYPE_AI, InflictPoison_AIEffect
 	db  $00
 
-GloomFoulOdorEffectCommands:
+FlappleFoulOdorEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, FoulOdorEffect
 	db  $00
 
@@ -155,7 +155,7 @@ ExeggutorBigEggsplosionEffectCommands:
 	dbw EFFECTCMDTYPE_AI, BigEggsplosion_AIEffect
 	db  $00
 
-NidokingToxicEffectCommands:
+VolbeatToxicEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Toxic_DoublePoisonEffect
 	dbw EFFECTCMDTYPE_AI, Toxic_AIEffect
 	db  $00
@@ -247,12 +247,12 @@ TangelaPoisonPowderEffectCommands:
 	dbw EFFECTCMDTYPE_AI, InflictPoison_AIEffect
 	db  $00
 
-VileplumeHealEffectCommands:
+AppletunHealEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, Heal_OncePerTurnCheck
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Heal_RemoveDamageEffect
 	db  $00
 
-VileplumePetalDanceEffectCommands:
+AppletunPetalDanceEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, PetalDance_MultiplierEffect
 	dbw EFFECTCMDTYPE_AI, PetalDance_AIEffect
 	db  $00
@@ -726,16 +726,16 @@ HitmonleeStretchKickEffectCommands:
 	dbw EFFECTCMDTYPE_AI_SELECTION, VictreebelLure_GetBenchPokemonWithLowestHP
 	db  $00
 
-SandshrewSandAttackEffectCommands:
+MeowthSandAttackEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, SmokescreenEffect
 	db  $00
 
-SandslashFurySwipesEffectCommands:
+PerrserkerFurySwipesEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, FurySwipes20_MultiplierEffect
 	dbw EFFECTCMDTYPE_AI, FurySwipes20_AIEffect
 	db  $00
 
-DugtrioEarthquakeEffectCommands:
+SandacondaEarthquakeEffectCommands:
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, EarthquakeEffect
 	db  $00
 
@@ -978,8 +978,7 @@ DittoMorphEffectCommands:
 	db  $00
 
 PidgeotGaleEffectCommands:
-	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Gale_SwitchEffect
-	dbw EFFECTCMDTYPE_AFTER_DAMAGE, FerroCheck
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Gale_SwitchEffect
 	db  $00
 
 JigglypuffFriendshipSongEffectCommands:
@@ -1213,10 +1212,10 @@ SuperEnergyRetrievalEffectCommands:
 	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, SuperEnergyRetrieval_PlayerDiscardPileSelection
 	db  $00
 
-GustOfWindEffectCommands:
+BossOrdersEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Opp_CheckBench
-	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, GustOfWind_PlayerSelection
-	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, GustOfWind_Switch50PercentEffect
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, BossOrders_PlayerSelection
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, BossOrders_Switch50PercentEffect
 	db  $00
 
 GrassKnotEffectCommands:
@@ -2620,3 +2619,15 @@ ZCommandEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, ZCommand_DamageBoostEffect
 	dbw EFFECTCMDTYPE_AI, ZCommand_AIEffect
 	db  $00
+QuickBallEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, OneCardHandDeckCheck
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, EnergyRetrieval_PlayerHandSelection
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EnergySearch_AddToHandEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, Find0RetreatCost_PlayerSelection
+	db  $00	
+HeavyBallEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, OneCardHandDeckCheck
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, EnergyRetrieval_PlayerHandSelection
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EnergySearch_AddToHandEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, Find3orMoreRetreatCost_PlayerSelection
+	db  $00		

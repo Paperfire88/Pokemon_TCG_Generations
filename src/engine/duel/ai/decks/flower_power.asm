@@ -39,8 +39,8 @@ AIActionTable_FlowerPower:
 	dw NULL
 
 .list_retreat
-	ai_retreat GLOOM,     -2
-	ai_retreat VILEPLUME, -2
+	ai_retreat FLAPPLE,     -2
+	ai_retreat APPLETUN, -2
 	ai_retreat CHIKORITA, -2
 	ai_retreat BAYLEEF,   -2
 	dw NULL
@@ -50,8 +50,8 @@ AIActionTable_FlowerPower:
 	ai_energy BAYLEEF,        4, +0
 	ai_energy MEGANIUM,  4, +0
 	ai_energy APPLIN,         2, +0
-	ai_energy GLOOM,          3, -1
-	ai_energy VILEPLUME,      3, -1
+	ai_energy FLAPPLE,          3, -1
+	ai_energy APPLETUN,      3, -1
 	ai_energy SNOVER,      3, +0
 	ai_energy ABOMASNOW,     22, +0
 	dw NULL

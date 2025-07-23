@@ -162,4 +162,11 @@
 	const PALETTE_160               ; $a0
 	const PALETTE_161               ; $a1
 	const PALETTE_162				; $a2
+	const PALETTE_163				; $a3
+	const PALETTE_164				; $a4
+	const PALETTE_165				; $a5
+	const PALETTE_166				; $a6	
+	const PALETTE_167				; $a7	
+	const PALETTE_168				; $a8
+	const PALETTE_169				; $a9		
 DEF NUM_PALETTES EQU const_value

@@ -1034,9 +1034,8 @@ MoonStoneName:
 
 MoonStoneDescription:
 	text "Search your deck for a <COLORLESS> Evolution" 
-	line "card, show it to your opponent, and" 
-	line "put it into your hand. Shuffle your"
-	line "deck afterward."
+	line "card, reveal it, and add it to your"
+	line "hand. Shuffle your deck."
 	done
 
 ChooseColorlessEvolutionFromDeckText:
@@ -1048,7 +1047,9 @@ ChooseColorlessEvolutionCardText:
 	text "Choose an <COLORLESS>"
 	line "Evolution PKMN."
 	done
-
 EvolutionaryLightName:
 	text "Evolutionary Light"
+	done
+ChrisFightingClubWouldYouLikeToDuelText:
+	text "Would you like to duel Chris?"
 	done

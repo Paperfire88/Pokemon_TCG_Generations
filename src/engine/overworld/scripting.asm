@@ -1458,50 +1458,30 @@ ScriptCommand_PickChallengeCupPrizeCard:
 	jp IncreaseScriptPointerBy1
 
 ChallengeCupPrizeCards:
-	dw MEWTWO_LV60
-	tx MewtwoTradeCardName
 
-	dw MIMIKYU
+	dw MEW
 	tx MewTradeCardName
 
-	dw CAMERUPT
-	tx ArcanineTradeCardName
-
-	dw EMOLGA
-	tx PikachuTradeCardName
-
-	dw PINCURCHIN
-	tx PikachuTradeCardName
-
-	dw LUXIO
-	tx SurfingPikachuTradeCardName
-
-	dw LUXRAY
-	tx SurfingPikachuTradeCardName
-
-	dw ELECTRIKE
-	tx ElectabuzzTradeCardName
-
-	dw BRUXISH
-	tx SlowpokeTradeCardName
+	dw HOOH
+	tx HoohName
 
 	dw CRESSELIA
-	tx MewtwoTradeCardName
+	tx CresseliaName
 
-	dw MEWTWO_LV60
-	tx MewtwoTradeCardName
+	dw DARKRAI
+	tx DarkraiName
 
-	dw MIMIKYU
-	tx MewTradeCardName
+	dw CELEBI
+	tx CelebiName
 
-	dw TOGEKISS
-	tx JigglypuffTradeCardName
+	dw IMAKUNI_CARD
+	tx ImakuniName
+
+	dw RAYQUAZA
+	tx RayquazaName
 
 	dw SUPER_ENERGY_RETRIEVAL
 	tx SuperEnergyRetrievalTradeCardName
-
-	dw SHINX
-	tx FlyingPikachuTradeCardName
 .end
 
 ScriptCommand_PickLegendaryCard:

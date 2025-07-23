@@ -341,16 +341,16 @@ Clerk3Text:
 Gal1WantToTrade1Text:
 	text "We don't use Fire Pokémon cards"
 	line "here at the Water Club."
-	line "I have this rare Arcanine, but"
-	line "I prefer Lapras."
-	line "If you own a Lapras, would you"
-	line "mind trading it for my Arcanine?"
+	line "I have this rare DRUDDIGON, but"
+	line "I prefer RELICANTH."
+	line "If you own a RELICANTH, would you"
+	line "mind trading it for my DRUDDIGON?"
 	done
 
 Gal1WantToTrade2Text:
 	text "Hi! We meet again!"
 	line "Have you decided to trade your"
-	line "Lapras for my rare Arcanine?"
+	line "RELICANTH for my rare DRUDDIGON?"
 	done
 
 Gal1WouldYouLikeToTradeText:
@@ -367,42 +367,41 @@ Gal1DeclinedTradeText:
 
 Gal1DontOwnCardText:
 	text "Hey! What are you trying to pull?"
-	line "You don't have a Lapras!?!"
-	line "Come see me when you get a Lapras."
+	line "You don't have a RELICANTH!?!"
+	line "Come see me when you get RELICANTH."
 	done
 
 Gal1CardInDeckText:
-	text "OK! Let's trade your Lapras"
-	line "for my Arcanine..."
-	line "Oh! I see your Lapras"
+	text "OK! Let's trade your RELICANTH"
+	line "for my DRUDDIGON..."
+	line "Oh! I see your RELICANTH"
 	line "is included in your deck."
 	line "I'd feel guilty taking a card"
 	line "from your deck."
 	line "Maybe next time."
-	line ""
 	done
 
 Gal1LetsTradeText:
 	text "OK then, let's trade your"
-	line "Lapras for my Arcanine."
+	line "RELICANTH for my DRUDDIGON."
 	done
 
 Gal1TradeCompleteText:
-	text "<RAMNAME> traded a Lapras"
-	line "for an Arcanine!"
+	text "<RAMNAME> traded a RELICANTH"
+	line "for an DRUDDIGON!"
 	done
 
 Gal1ThanksText:
 	text "Thanks, <RAMNAME>!"
 	line "I'll take good care"
-	line "of this Lapras."
+	line "of this RELICANTH."
 	done
 
 Gal1AfterTradeText:
 	text "Hey! You're the one who"
-	line "gave me your Lapras!"
+	line "gave me your RELICANTH!"
 	line "I'm taking good care of"
-	line "your Lapras."
+	line "your RELICANTH."
 	done
 
 Lass1NormalText:
@@ -788,8 +787,6 @@ Man1PlayerReceivePikachuAltLv16Text:
 	line "me so many cards,"
 	line "please accept this card as a gift"
 	line "from me to you."
-	line "It's a <Lv>16 Pikachu."
-	line "Please take good care of it!"
 	done
 
 Man1ThankYouText:
@@ -917,7 +914,12 @@ ButchPlayerIsChampionText:
 	done
 
 Granny1Text:
-	text "If I were just a few years younger,"
+	text "You may have notice that there are"
+	line "Some attacks with a <ATK_DESCR> Symbol,"
+	line "it means that attack is -Costless-"
+	line "meaning that you don't need any"
+	line "Energy to power it and used it."
+	line "If I were just a few years younger,"
 	line "I'd be dueling with you kids, too."
 	done
 
@@ -1046,15 +1048,4 @@ ChrisFightingClubWantsToDuelInitialText:
 	line "an even better player!"
 	line "But before I can start my training"
 	line "again, I must defeat you first!"
-	done
-
-ChrisFightingClubWantsToDuelRepeatText:
-	text "I'm going to train to become"
-	line "an even better player!"
-	line "But before I can start my training"
-	line "again, I must defeat you first!"
-	done
-
-ChrisFightingClubWouldYouLikeToDuelText:
-	text "Would you like to duel Chris?"
 	done

@@ -15,11 +15,11 @@ AITrainerCardLogic:
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_13, PLUSPOWER,              AIDecide_Pluspower1,                     AIPlay_Pluspower
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_14, PLUSPOWER,              AIDecide_Pluspower2,                     AIPlay_Pluspower
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_09, SWITCH,                 AIDecide_Switch,                         AIPlay_Switch
-	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_07, GUST_OF_WIND,           AIDecide_GustOfWind,                     AIPlay_GustOfWind
-	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_10, GUST_OF_WIND,           AIDecide_GustOfWind,                     AIPlay_GustOfWind
+	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_07, GUST_OF_WIND,           AIDecide_BossOrders,                     AIPlay_BossOrders
+	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_10, GUST_OF_WIND,           AIDecide_BossOrders,                     AIPlay_BossOrders
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_04, BILL,                   AIDecide_Bill,                           AIPlay_Bill
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_05, ENERGY_REMOVAL,         AIDecide_EnergyRemoval,                  AIPlay_EnergyRemoval
-	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_05, SUPER_ENERGY_REMOVAL,   AIDecide_SuperEnergyRemoval,             AIPlay_SuperEnergyRemoval
+	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_05, QUICK_BALL,   AIDecide_SuperEnergyRemoval,             AIPlay_SuperEnergyRemoval
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_07, POKEMON_BREEDER,        AIDecide_PokemonBreeder,                 AIPlay_PokemonBreeder
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_15, PROFESSOR_OAK,          AIDecide_ProfessorOak,                   AIPlay_ProfessorOak
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_10, ENERGY_RETRIEVAL,       AIDecide_EnergyRetrieval,                AIPlay_EnergyRetrieval
@@ -31,7 +31,7 @@ AITrainerCardLogic:
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_07, FULL_HEAL,              AIDecide_FullHeal,                       AIPlay_FullHeal
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_10, MR_FUJI,                AIDecide_MrFuji,                         AIPlay_MrFuji
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_10, SCOOP_UP,               AIDecide_ScoopUp,                        AIPlay_ScoopUp
-	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_02, MAINTENANCE,            AIDecide_Maintenance,                    AIPlay_Maintenance
+	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_02, HEAVYBALL,            AIDecide_Maintenance,                    AIPlay_Maintenance
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_03, RECYCLE,                AIDecide_Recycle,                        AIPlay_Recycle
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_13, LASS,                   AIDecide_Lass,                           AIPlay_Lass
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_04, ITEM_FINDER,            AIDecide_ItemFinder,                     AIPlay_ItemFinder

@@ -210,7 +210,7 @@ FoundLv9SlowpokeText:
 	line "checked the wall!"
 	line ""
 	text "<RAMNAME>"
-	line "found a <Lv>9 Slowpoke!"
+	line "found a <Lv>93 Ho-oH!"
 	done
 
 Text06a3:
@@ -650,7 +650,7 @@ Text06eb:
 	line "Roly-Poly Oddish!"
 	line "Oddish is so Roly-Poly "
 	line "and so cute!"
-	line "I'll give you this Vileplume"
+	line "I'll give you this Appletun"
 	line "if you give me an Oddish!"
 	done
 
@@ -658,7 +658,7 @@ Text06ec:
 	text "Hi!"
 	line "Did you bring me an Oddish?"
 	line "Will you trade your Oddish"
-	line "for my Vileplume?"
+	line "for my Appletun?"
 	done
 
 Text06ed:
@@ -677,7 +677,7 @@ Text06ef:
 
 Text06f0:
 	text "Then let's trade!"
-	line "Vileplume for an Oddish!"
+	line "Appletun for an Oddish!"
 	line "Oops!"
 	line "Your Oddish is in your Deck!"
 	line "I can't take that!"
@@ -686,12 +686,12 @@ Text06f0:
 
 Text06f1:
 	text "OK then, let's trade!"
-	line "Vileplume for an Oddish."
+	line "Appletun for an Oddish."
 	done
 
 Text06f2:
 	text "<RAMNAME> traded an Oddish"
-	line "for a Vileplume!"
+	line "for a Appletun!"
 	done
 
 Text06f3:
@@ -700,48 +700,46 @@ Text06f3:
 	done
 
 Text06f4:
-	text "Pika Pika"
-	line "Pika Pika Pikachu!"
-	line "Pikachu's cute, but I prefer"
-	line "Clefairy!"
-	line "I'll give you this Pikachu"
-	line "if you give me a Clefairy!"
+	line "CELEBI's cute, but I prefer"
+	line "TSAREENA!"
+	line "I'll give you this CELEBI"
+	line "if you give me a TSAREENA!"
 	done
 
 Text06f5:
 	text "Hi!"
-	line "Did you bring me a Clefairy?"
-	line "Would you trade your Clefairy"
-	line "for my Pikachu?"
+	line "Did you bring me a TSAREENA?"
+	line "Would you trade your TSAREENA"
+	line "for my CELEBI?"
 	done
 
 Text06f6:
-	text "I want a Clefairy!"
-	line "Fairy, fairy, fairy!"
+	text "I want a TSAREENA!"
+	line "reena, reena, reena!"
 	done
 
 Text06f7:
 	text "Hi..."
-	line "Do you have a Clefairy..."
+	line "Do you have a TSAREENA..."
 	done
 
 Text06f8:
 	text "Then let's trade!"
-	line "Pikachu for a Clefairy!"
+	line "CELEBI for a TSAREENA!"
 	line "Oops!"
-	line "Your Clefairy is in your deck!"
+	line "Your TSAREENA is in your deck!"
 	line "I can't take that!"
 	line "Please trade me another time!"
 	done
 
 Text06f9:
 	text "OK then let's trade!"
-	line "Pikachu for Clefairy."
+	line "CELEBI for TSAREENA."
 	done
 
 Text06fa:
-	text "<RAMNAME> traded a Clefairy"
-	line "for a Pikachu!"
+	text "<RAMNAME> traded a TSAREENA"
+	line "for a CELEBI!"
 	done
 
 Text06fb:
@@ -1057,10 +1055,10 @@ Text0729:
 	text "Hello, <RAMNAME>."
 	line "I guess you're here because you"
 	line "heard the rumor that I'm looking"
-	line "for a Clefable..."
+	line "for a Togetic..."
 	line "I'm thinking about trading"
-	line "my Surfing Pikachu for it."
-	line "Do you have a Clefable?"
+	line "my Cresselia for it."
+	line "Do you have a Togetic?"
 	done
 
 Text072a:
@@ -1068,10 +1066,10 @@ Text072a:
 	line "Are you enjoying the "
 	line "Pokémon Trading Card Game?"
 	line "By the way, I'm looking for a "
-	line "Clefable..."
+	line "Togetic..."
 	line "I'm thinking about trading"
-	line "my Surfing Pikachu for it."
-	line "Do you have a Clefable?"
+	line "my Cresselia for it."
+	line "Do you have a Togetic?"
 	done
 
 Text072b:
@@ -1093,7 +1091,7 @@ Text072d:
 	done
 
 Text072e:
-	text "Hmm, I see all the Clefable cards "
+	text "Hmm, I see all the Togetic cards "
 	line "you own are in your Deck."
 	line "I can't very well take a card"
 	line "you are using in duels."
@@ -1107,12 +1105,12 @@ Text072f:
 	done
 
 Text0730:
-	text "<RAMNAME> traded a Clefable"
-	line "for a Surfing Pikachu!"
+	text "<RAMNAME> traded a Togetic"
+	line "for a Cresselia!"
 	done
 
 Text0731:
-	text "Thank you for this Clefable."
+	text "Thank you for this Togetic."
 	line "You've been a great help!"
 	done
 
@@ -1120,34 +1118,34 @@ Text0732:
 	text "Hello, <RAMNAME>."
 	line "I suppose you're here because you"
 	line "heard that I was looking for"
-	line "a Ditto this time..."
+	line "a Grimmsnarl this time..."
 	line "I'm thinking about trading"
-	line "my Flying Pikachu for one."
-	line "Do you have a Ditto?"
+	line "my Darkrai for one."
+	line "Do you have a Grimmsnarl?"
 	done
 
 Text0733:
 	text "Hello, <RAMNAME>. "
 	line "Are you enjoying the"
 	line "Pokémon Trading Card Game?"
-	line "I'm looking for a Ditto"
+	line "I'm looking for a Grimmsnarl"
 	line "this time..."
 	line "I'm thinking about trading"
-	line "my Flying Pikachu for one."
-	line "Do you have a Ditto?"
+	line "my Darkrai for one."
+	line "Do you have a Grimmsnarl?"
 	done
 
 Text0734:
 	text "Hmmm..."
-	line "I see you don't have a Ditto card."
+	line "I see you don't have a Grimmsnarl."
 	line "I will only trade my"
-	line "Flying Pikachu for a Ditto."
+	line "Darkrai for a Grimmsnarl."
 	line "Please trade with me"
 	line "some other time..."
 	done
 
 Text0735:
-	text "Hmmm...I see all your Ditto cards"
+	text "Hmmm...I see all your Grimmsnarl's"
 	line "are in your Deck."
 	line "I can't very well take a card"
 	line "you are using in duels."
@@ -1156,47 +1154,45 @@ Text0735:
 	done
 
 Text0736:
-	text "<RAMNAME> traded a Ditto"
-	line "for a Flying Pikachu!"
+	text "<RAMNAME> traded a"
+	line "Grimmsnarl for a Darkrai!"
 	done
 
 Text0737:
-	text "Thank you for this Ditto."
+	text "Thank you for this Grimmsnarl."
 	line "You've been a great help!"
 	done
 
 Text0738:
 	text "Hello, <RAMNAME>."
-	line "You're really current on the news!"
-	line "I'm looking for a Chansey this "
-	line "time! I'm thinking about trading"
-	line "my Surfing Pikachu for it."
-	line "This one has a different "
-	line "illustration than the last one."
-	line "Do you have a Chansey?"
+	line "I suppose you're here because you"
+	line "heard that I was looking for"
+	line "a Goodra this time..."
+	line "I'm thinking about trading"
+	line "my Rayquaza for one."
+	line "Do you have a Goodra?"
 	done
 
 Text0739:
 	text "Hello, <RAMNAME>. "
 	line "Are you enjoying the"
 	line "Pokémon Trading Card Game?"
-	line "I'm looking for a Chansey"
-	line "this time! I'm thinking about "
-	line "trading my Surfing Pikachu for "
-	line "one. This one has a different "
-	line "illustration than the last one."
-	line "Do you have a Chansey to trade?"
+	line "I'm looking for a Goodra"
+	line "this time..."
+	line "I'm thinking about trading"
+	line "my Rayquaza for one."
+	line "Do you have a Goodra?"
 	done
 
 Text073a:
 	text "Hmmm..."
-	line "I see you don't have a Chansey."
+	line "I see you don't have a Goodra."
 	line "Please trade with me"
 	line "some other time..."
 	done
 
 Text073b:
-	text "Hmmm...I see all your Chansey"
+	text "Hmmm...I see all your Goodra"
 	line "are in your Deck."
 	line "I can't very well take a card"
 	line "you are using in duels."
@@ -1205,12 +1201,12 @@ Text073b:
 	done
 
 Text073c:
-	text "<RAMNAME> traded a Chansey"
-	line "for a Surfing Pikachu!"
+	text "<RAMNAME> traded a Goodra"
+	line "for a Rayquaza!"
 	done
 
 Text073d:
-	text "Thank you for this Chansey."
+	text "Thank you for this Goodra."
 	line "You've been a great help!"
 	done
 

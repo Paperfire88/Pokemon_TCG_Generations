@@ -39,12 +39,12 @@ Script_Gal1:
 	quit_script_fully
 
 .ows_e0eb
-	jump_if_card_owned CHEWTLE, .ows_e0f3
+	jump_if_card_owned RELICANTH, .ows_e0f3
 	print_npc_text Gal1DontOwnCardText
 	quit_script_fully
 
 .ows_e0f3
-	jump_if_card_in_collection CHEWTLE, .ows_e0fb
+	jump_if_card_in_collection RELICANTH, .ows_e0fb
 	print_npc_text Gal1CardInDeckText
 	quit_script_fully
 
@@ -52,9 +52,9 @@ Script_Gal1:
 	set_event EVENT_GAL1_TRADE_STATE, GAL1_TRADE_COMPLETED
 	print_npc_text Gal1LetsTradeText
 	print_text Gal1TradeCompleteText
-	take_card CHEWTLE
-	give_card CAMERUPT
-	show_card_received_screen CAMERUPT
+	take_card RELICANTH
+	give_card DRUDDIGON
+	show_card_received_screen DRUDDIGON
 	print_npc_text Gal1ThanksText
 	quit_script_fully
 

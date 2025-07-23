@@ -163,7 +163,7 @@ PointerTable_AttackAnimation:
 	dw AttackAnimation_FullHeal            ; ATK_ANIM_FULL_HEAL
 	dw AttackAnimation_SleepUpdateHUD      ; ATK_ANIM_UNUSED_8B
 	dw AttackAnimation_SpitPoisonSuccess   ; ATK_ANIM_SPIT_POISON_SUCCESS
-	dw AttackAnimation_GustOfWind          ; ATK_ANIM_GUST_OF_WIND
+	dw AttackAnimation_BossOrders          ; ATK_ANIM_GUST_OF_WIND
 	dw AttackAnimation_HealBothSides       ; ATK_ANIM_HEAL_BOTH_SIDES
 	dw AttackAnimation_Stub2               ; ATK_ANIM_UNUSED_8F
 	dw AttackAnimation_Stub2               ; ATK_ANIM_UNUSED_90
@@ -918,7 +918,7 @@ AttackAnimation_SpitPoisonSuccess:
 	anim_normal         DUEL_ANIM_DISTORT
 	anim_end
 
-AttackAnimation_GustOfWind:
+AttackAnimation_BossOrders:
 	anim_opponent       DUEL_ANIM_WHIRLWIND
 	anim_end
 

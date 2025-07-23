@@ -245,7 +245,7 @@ WurmpleCard:
 	db 13 ; level
 	db 1, 0 ; length
 	dw 6 * 10 ; weight
-	tx CaterpieDescription ; description
+	tx WurmpleDescription ; description
 	db 19
 
 SilcoonCard:
@@ -295,7 +295,7 @@ SilcoonCard:
 	db 21 ; level
 	db 2, 4 ; length
 	dw 22 * 10 ; weight
-	tx MetapodDescription ; description
+	tx SilcoonDescription ; description
 	db 16
 
 BeautiflyCard:
@@ -345,7 +345,7 @@ BeautiflyCard:
 	db 33 ; level
 	db 3, 7 ; length
 	dw 71 * 10 ; weight
-	tx ButterfreeDescription ; description
+	tx BeautiflyDescription ; description
 	db 0
 
 RowletCard:
@@ -353,7 +353,7 @@ RowletCard:
 	gfx RowletCardGfx ; gfx
 	tx RowletName ; name
 	db CIRCLE ; rarity
-	db MYSTERY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw ROWLET
 	db 50 ; hp
 	db BASIC ; stage
@@ -390,12 +390,12 @@ RowletCard:
 	db 0 ; retreat cost
 	db WR_FIRE ; weakness
 	db WR_FIGHTING ; resistance
-	tx HairyBugName ; category
+	tx GrassQuillName ; category
 	db 10 ; Pokedex number
 	db 12 ; level
 	db 1, 0 ; length
 	dw 7 * 10 ; weight
-	tx WeedleDescription ; description
+	tx RowletDescription ; description
 	db 16
 
 DartrixCard:
@@ -403,7 +403,7 @@ DartrixCard:
 	gfx DartrixCardGfx ; gfx
 	tx DartrixName ; name
 	db DIAMOND ; rarity
-	db MYSTERY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw DARTRIX
 	db 70 ; hp
 	db STAGE1 ; stage
@@ -440,20 +440,20 @@ DartrixCard:
 	db 1 ; retreat cost
 	db WR_FIRE ; weakness
 	db WR_FIGHTING ; resistance
-	tx CocoonName ; category
+	tx BladeQuillName ; category
 	db 11 ; Pokedex number
 	db 26 ; level
 	db 2, 0 ; length
 	dw 22 * 10 ; weight
-	tx KakunaDescription ; description
+	tx DartrixDescription ; description
 	db 16
 
-BeedrillCard:
+DecidueyeCard:
 	db TYPE_PKMN_GRASS ; type
-	gfx BeedrillCardGfx ; gfx
-	tx BeedrillName ; name
+	gfx DecidueyeCardGfx ; gfx
+	tx DecidueyeName ; name
 	db STAR ; rarity
-	db MYSTERY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw BEEDRILL
 	db 80 ; hp
 	db STAGE2 ; stage
@@ -495,7 +495,7 @@ BeedrillCard:
 	db 47 ; level
 	db 3, 3 ; length
 	dw 65 * 10 ; weight
-	tx BeedrillDescription ; description
+	tx DecidueyeDescription ; description
 	db 0
 
 ShelmetCard:
@@ -545,7 +545,7 @@ ShelmetCard:
 	db 13 ; level
 	db 1, 4 ; length
 	dw 15 * 10 ; weight
-	tx NidoranFDescription ; description
+	tx ShelmetDescription ; description
 	db 19
 
 AccelgorCard:
@@ -595,7 +595,7 @@ AccelgorCard:
 	db 44 ; level
 	db 2, 7 ; length
 	dw 44 * 10 ; weight
-	tx NidorinaDescription ; description
+	tx AccelgorDescription ; description
 	db 0
 
 IllumiseCard:
@@ -603,7 +603,7 @@ IllumiseCard:
 	gfx IllumiseCardGfx ; gfx
 	tx IllumiseName ; name
 	db DIAMOND ; rarity
-	db EVOLUTION | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw ILLUMISE
 	db 60 ; hp
 	db BASIC ; stage
@@ -645,7 +645,7 @@ IllumiseCard:
 	db 43 ; level
 	db 4, 3 ; length
 	dw 132 * 10 ; weight
-	tx NidoqueenDescription ; description
+	tx IllumiseDescription ; description
 	db 0
 
 KarrablastCard:
@@ -695,7 +695,7 @@ KarrablastCard:
 	db 20 ; level
 	db 1, 4 ; length
 	dw 15 * 10 ; weight
-	tx NidoranMDescription ; description
+	tx KarrablastDescription ; description
 	db 19
 
 EscavalierCard:
@@ -745,16 +745,16 @@ EscavalierCard:
 	db 45 ; level
 	db 2, 11 ; length
 	dw 43 * 10 ; weight
-	tx NidorinoDescription ; description
+	tx EscavalierDescription ; description
 	db 0
 
-NidokingCard:
+VolbeatCard:
 	db TYPE_PKMN_GRASS ; type
-	gfx NidokingCardGfx ; gfx
-	tx NidokingName ; name
+	gfx VolbeatCardGfx ; gfx
+	tx VolbeatName ; name
 	db DIAMOND ; rarity
-	db EVOLUTION | NONE ; sets
-	dw NIDOKING
+	db MYSTERY | NONE ; sets
+	dw VOLBEAT
 	db 60 ; hp
 	db BASIC ; stage
 	dw NONE ; pre-evo name
@@ -795,7 +795,7 @@ NidokingCard:
 	db 48 ; level
 	db 4, 7 ; length
 	dw 137 * 10 ; weight
-	tx NidokingDescription ; description
+	tx VolbeatDescription ; description
 	db 0
 
 ApplinCard:
@@ -803,7 +803,7 @@ ApplinCard:
 	gfx ApplinCardGfx ; gfx
 	tx ApplinName ; name
 	db CIRCLE ; rarity
-	db LABORATORY | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw APPLIN
 	db 50 ; hp
 	db BASIC ; stage
@@ -845,16 +845,16 @@ ApplinCard:
 	db 8 ; level
 	db 1, 8 ; length
 	dw 12 * 10 ; weight
-	tx OddishDescription ; description
+	tx ApplinDescription ; description
 	db 16
 
-GloomCard:
+FlappleCard:
 	db TYPE_PKMN_GRASS ; type
-	gfx GloomCardGfx ; gfx
-	tx GloomName ; name
+	gfx FlappleCardGfx ; gfx
+	tx FlappleName ; name
 	db DIAMOND ; rarity
-	db LABORATORY | NONE ; sets
-	dw GLOOM
+	db MYSTERY | NONE ; sets
+	dw FLAPPLE
 	db 70 ; hp
 	db STAGE1 ; stage
 	tx ApplinName ; pre-evo name
@@ -895,16 +895,16 @@ GloomCard:
 	db 32 ; level
 	db 2, 7 ; length
 	dw 19 * 10 ; weight
-	tx GloomDescription ; description
+	tx FlappleDescription ; description
 	db 0
 
-VileplumeCard:
+AppletunCard:
 	db TYPE_PKMN_GRASS ; type
-	gfx VileplumeCardGfx ; gfx
-	tx VileplumeName ; name
+	gfx AppletunCardGfx ; gfx
+	tx AppletunName ; name
 	db DIAMOND ; rarity
 	db MYSTERY | NONE ; sets
-	dw VILEPLUME
+	dw APPLETUN
 	db 80 ; hp
 	db STAGE1 ; stage
 	tx ApplinName ; pre-evo name
@@ -916,7 +916,7 @@ VileplumeCard:
 	tx PKMNPowerCondition2 ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
-	dw VileplumeHealEffectCommands ; effect commands
+	dw AppletunHealEffectCommands ; effect commands
 	db NONE ; flags 1
 	db HEAL_USER ; flags 2
 	db NONE ; flags 3
@@ -945,7 +945,7 @@ VileplumeCard:
 	db 35 ; level
 	db 3, 11 ; length
 	dw 41 * 10 ; weight
-	tx VileplumeDescription ; description
+	tx AppletunDescription ; description
 	db 0
 
 ShroomishCard:
@@ -969,7 +969,7 @@ ShroomishCard:
 	dw EnergyBoostEffectCommands ; effect commands
 	db DAMAGE_TO_OPPONENT_BENCH_F ; flags 1
 	db NONE ; flags 2
-	db NONE ; flags 3
+	db SPECIAL_AI_HANDLING ; flags 3
 	db 0
 	db ATK_ANIM_GLOW_EFFECT ; animation
 
@@ -995,7 +995,7 @@ ShroomishCard:
 	db 8 ; level
 	db 1, 0 ; length
 	dw 12 * 10 ; weight
-	tx ParasDescription ; description
+	tx ShroomishDescription ; description
 	db 19
 
 BreloomCard:
@@ -1045,7 +1045,7 @@ BreloomCard:
 	db 28 ; level
 	db 3, 3 ; length
 	dw 65 * 10 ; weight
-	tx ParasectDescription ; description
+	tx BreloomDescription ; description
 	db 0
 
 YanmaCard:
@@ -1095,7 +1095,7 @@ YanmaCard:
 	db 12 ; level
 	db 3, 3 ; length
 	dw 66 * 10 ; weight
-	tx VenonatDescription ; description
+	tx YanmaDescription ; description
 	db 16
 
 YanmegaCard:
@@ -1345,7 +1345,7 @@ PhantumpCard:
 	db 17 ; level
 	db 2, 11 ; length
 	dw 66 * 10 ; weight
-	tx GrimerDescription ; description
+	tx PhantumpDescription ; description
 	db 19
 
 TrevenantCard:
@@ -1395,7 +1395,7 @@ TrevenantCard:
 	db 34 ; level
 	db 3, 11 ; length
 	dw 66 * 10 ; weight
-	tx MukDescription ; description
+	tx TrevenantDescription ; description
 	db 0
 
 SnoverCard:
@@ -1403,7 +1403,7 @@ SnoverCard:
 	gfx SnoverCardGfx ; gfx
 	tx SnoverName ; name
 	db CIRCLE ; rarity
-	db MYSTERY | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw SNOVER
 	db 60 ; hp
 	db BASIC ; stage
@@ -1453,7 +1453,7 @@ AbomasnowCard:
 	gfx AbomasnowCardGfx ; gfx
 	tx AbomasnowName ; name
 	db DIAMOND ; rarity
-	db MYSTERY | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw ABOMASNOW
 	db 90 ; hp
 	db STAGE1 ; stage
@@ -1503,7 +1503,7 @@ FerroseedCard:
 	gfx FerroseedCardGfx ; gfx
 	tx FerroseedName ; name
 	db CIRCLE ; rarity
-	db LABORATORY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw FERROSEED
 	db 60 ; hp
 	db BASIC ; stage
@@ -1530,7 +1530,7 @@ FerroseedCard:
 	dw NONE ; description (cont)
 	db 20 ; damage
 	db DAMAGE_X ; category
-	dw SandslashFurySwipesEffectCommands ; effect commands
+	dw PerrserkerFurySwipesEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -1553,7 +1553,7 @@ FerrothornCard:
 	gfx FerrothornCardGfx ; gfx
 	tx FerrothornName ; name
 	db DIAMOND ; rarity
-	db LABORATORY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw FERROTHORN
 	db 80 ; hp
 	db STAGE1 ; stage
@@ -1603,7 +1603,7 @@ TangelaLv8Card:
 	gfx TangelaLv8CardGfx ; gfx
 	tx TangelaName ; name
 	db CIRCLE ; rarity
-	db LABORATORY | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw TANGELA_LV8
 	db 60 ; hp
 	db BASIC ; stage
@@ -1653,7 +1653,7 @@ TangrowthCard:
 	gfx TangrowthCardGfx ; gfx
 	tx TangrowthName ; name
 	db DIAMOND ; rarity
-	db LABORATORY | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw TANGROWTH
 	db 100 ; hp
 	db STAGE1 ; stage
@@ -1695,7 +1695,7 @@ TangrowthCard:
 	db 52 ; level
 	db 3, 3 ; length
 	dw 77 * 10 ; weight
-	tx TangelaLv8Description ; description
+	tx TangrowthDescription ; description
 	db 0
 
 ScytherCard:
@@ -1703,7 +1703,7 @@ ScytherCard:
 	gfx ScytherCardGfx ; gfx
 	tx ScytherName ; name
 	db DIAMOND ; rarity
-	db COLOSSEUM | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw SCYTHER
 	db 60 ; hp
 	db BASIC ; stage
@@ -1753,7 +1753,7 @@ ScizorCard:
 	gfx ScizorCardGfx ; gfx
 	tx ScizorName ; name
 	db STAR ; rarity
-	db COLOSSEUM | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw SCIZOR
 	db 80 ; hp
 	db STAGE1 ; stage
@@ -1795,9 +1795,11 @@ ScizorCard:
 	db 45 ; level
 	db 4, 11 ; length
 	dw 121 * 10 ; weight
-	tx PinsirDescription ; description
+	tx ScizorDescription ; description
 	db 0
 
+
+;--FIRE--
 TepigCard:
 	db TYPE_PKMN_FIRE ; type
 	gfx TepigCardGfx ; gfx
@@ -1953,7 +1955,7 @@ HoundourCard:
 	gfx HoundourCardGfx ; gfx
 	tx HoundourName ; name
 	db CIRCLE ; rarity
-	db EVOLUTION | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw HOUNDOUR
 	db 50 ; hp
 	db BASIC ; stage
@@ -2003,7 +2005,7 @@ HoundoomCard:
 	gfx HoundoomCardGfx ; gfx
 	tx HoundoomName ; name
 	db STAR ; rarity
-	db EVOLUTION | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw HOUNDOOM
 	db 70 ; hp
 	db STAGE1 ; stage
@@ -2069,7 +2071,7 @@ SizzlipedeCard:
 	dw EnergyBoostEffectCommands ; effect commands
 	db DAMAGE_TO_OPPONENT_BENCH_F ; flags 1
 	db NONE ; flags 2
-	db NONE ; flags 3
+	db SPECIAL_AI_HANDLING ; flags 3
 	db 0
 	db ATK_ANIM_GLOW_EFFECT ; animation
 
@@ -2153,7 +2155,7 @@ NumelCard:
 	gfx NumelCardGfx ; gfx
 	tx NumelName ; name
 	db CIRCLE ; rarity
-	db MYSTERY | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw NUMEL
 	db 50 ; hp
 	db BASIC ; stage
@@ -2195,7 +2197,7 @@ NumelCard:
 	db 22 ; level
 	db 2, 11 ; length
 	dw 55 * 10 ; weight
-	tx FlareonLv22Description ; description
+	tx NumelDescription ; description
 	db 19
 
 CameruptCard:
@@ -2245,7 +2247,7 @@ CameruptCard:
 	db 44 ; level
 	db 6, 3 ; length
 	dw 342 * 10 ; weight
-	tx ArcanineLv34Description ; description
+	tx CameruptDescription ; description
 	db 0
 
 DarumakaCard:
@@ -2453,7 +2455,7 @@ FlareonLv28Card:
 	gfx FlareonLv28CardGfx ; gfx
 	tx FlareonName ; name
 	db STAR ; rarity
-	db MYSTERY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw FLAREON_LV28
 	db 80 ; hp
 	db STAGE1 ; stage
@@ -2503,7 +2505,7 @@ TortunatorCard:
 	gfx TortunatorCardGfx ; gfx
 	tx TurtonatorName ; name
 	db DIAMOND ; rarity
-	db MYSTERY | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw TORTUNATOR
 	db 80 ; hp
 	db BASIC ; stage
@@ -2603,7 +2605,7 @@ FuecocoCard:
 	gfx FuecocoCardGfx ; gfx
 	tx FuecocoName ; name
 	db CIRCLE ; rarity
-	db LABORATORY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw FUECOCO
 	db 50 ; hp
 	db BASIC ; stage
@@ -2653,7 +2655,7 @@ CrocalorCard:
 	gfx CrocalorCardGfx ; gfx
 	tx CrocalorName ; name
 	db DIAMOND ; rarity
-	db LABORATORY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw CROCALOR
 	db 80 ; hp
 	db STAGE1 ; stage
@@ -2666,7 +2668,7 @@ CrocalorCard:
 	dw NONE ; description (cont)
 	db 30 ; damage
 	db DAMAGE_NORMAL ; category
-	dw GloomFoulOdorEffectCommands ; effect commands
+	dw FlappleFoulOdorEffectCommands ; effect commands
 	db INFLICT_CONFUSION ; flags 1
 	db FLAG_2_BIT_7 ; flags 2
 	db NONE ; flags 3
@@ -2703,7 +2705,7 @@ SkeledirgeCard:
 	gfx SkeledirgeCardGfx ; gfx
 	tx SkeledirgeName ; name
 	db STAR ; rarity
-	db LABORATORY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw SKELEDIRGE
 	db 110 ; hp
 	db STAGE2 ; stage
@@ -2903,7 +2905,7 @@ DruddigonCard:
 	gfx DruddigonCardGfx ; gfx
 	tx DruddigonName ; name
 	db STAR ; rarity
-	db EVOLUTION | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw DRUDDIGON
 	db 80 ; hp
 	db BASIC ; stage
@@ -2945,7 +2947,7 @@ DruddigonCard:
 	db 43 ; level
 	db 6, 7 ; length
 	dw 132 * 10 ; weight
-	tx HoundoomDescription ; description
+	tx DruddigonDescription ; description
 	db 0
 
 HoohCard:
@@ -2998,6 +3000,7 @@ HoohCard:
 	tx HoohDescription ; description
 	db 0
 
+;--Water--
 FroakieCard:
 	db TYPE_PKMN_WATER ; type
 	gfx FroakieCardGfx ; gfx
@@ -3048,13 +3051,13 @@ FroakieCard:
 	tx FroakieDescription ; description
 	db 21
 
-WartortleCard:
+FrogadierCard:
 	db TYPE_PKMN_WATER ; type
-	gfx WartortleCardGfx ; gfx
-	tx WartortleName ; name
+	gfx FrogadierCardGfx ; gfx
+	tx FrogadierName ; name
 	db DIAMOND ; rarity
 	db COLOSSEUM | NONE ; sets
-	dw WARTORTLE
+	dw FROGADIER
 	db 70 ; hp
 	db STAGE1 ; stage
 	tx FroakieName ; pre-evo name
@@ -3095,7 +3098,7 @@ WartortleCard:
 	db 24 ; level
 	db 3, 3 ; length
 	dw 50 * 10 ; weight
-	tx WartortleDescription ; description
+	tx FrogadierDescription ; description
 	db 18
 
 GreninjaCard:
@@ -3107,7 +3110,7 @@ GreninjaCard:
 	dw GRENINJA
 	db 90 ; hp
 	db STAGE2 ; stage
-	tx WartortleName ; pre-evo name
+	tx FrogadierName ; pre-evo name
 
 	; attack 1
 	energy 0 ; energies
@@ -3253,7 +3256,7 @@ BruxishCard:
 	gfx BruxishCardGfx ; gfx
 	tx BruxishName ; name
 	db DIAMOND ; rarity
-	db LABORATORY | PRO ; sets
+	db COLOSSEUM | NONE ; sets
 	dw BRUXISH
 	db 60 ; hp
 	db BASIC ; stage
@@ -3303,7 +3306,7 @@ TympoleCard:
 	gfx TympoleCardGfx ; gfx
 	tx TympoleName ; name
 	db CIRCLE ; rarity
-	db EVOLUTION | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw TYMPOLE
 	db 50 ; hp
 	db BASIC ; stage
@@ -3353,7 +3356,7 @@ PalpitoadCard:
 	gfx PalpitoadCardGfx ; gfx
 	tx PalpitoadName ; name
 	db DIAMOND ; rarity
-	db EVOLUTION | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw PALPITOAD
 	db 70 ; hp
 	db STAGE1 ; stage
@@ -3380,7 +3383,7 @@ PalpitoadCard:
 	dw NONE ; description (cont)
 	db 40 ; damage
 	db DAMAGE_NORMAL ; category
-	dw DugtrioEarthquakeEffectCommands ; effect commands
+	dw SandacondaEarthquakeEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db SPECIAL_AI_HANDLING ; flags 3
@@ -3403,7 +3406,7 @@ SeismitoadCard:
 	gfx SeismitoadCardGfx ; gfx
 	tx SeismitoadName ; name
 	db STAR ; rarity
-	db EVOLUTION | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw SEISMITOAD
 	db 110 ; hp
 	db STAGE2 ; stage
@@ -3653,7 +3656,7 @@ ClauncherCard:
 	gfx ClauncherCardGfx ; gfx
 	tx ClauncherName ; name
 	db CIRCLE ; rarity
-	db MYSTERY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw CLAUNCHER
 	db 50 ; hp
 	db BASIC ; stage
@@ -3703,7 +3706,7 @@ ClawitzerCard:
 	gfx ClawitzerCardGfx ; gfx
 	tx ClawitzerName ; name
 	db DIAMOND ; rarity
-	db MYSTERY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw CLAWITZER
 	db 80 ; hp
 	db STAGE1 ; stage
@@ -3753,7 +3756,7 @@ HorseaCard:
 	gfx HorseaCardGfx ; gfx
 	tx HorseaName ; name
 	db CIRCLE ; rarity
-	db EVOLUTION | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw HORSEA
 	db 40 ; hp
 	db BASIC ; stage
@@ -3769,7 +3772,7 @@ HorseaCard:
 	dw EnergyBoostEffectCommands ; effect commands
 	db DAMAGE_TO_OPPONENT_BENCH_F ; flags 1
 	db NONE ; flags 2
-	db NONE ; flags 3
+	db SPECIAL_AI_HANDLING ; flags 3
 	db 0
 	db ATK_ANIM_GLOW_EFFECT ; animation
 
@@ -3853,7 +3856,7 @@ KingdraCard:
 	gfx KingdraGfx ; gfx
 	tx KingdraName ; name
 	db STAR ; rarity
-	db EVOLUTION |	NONE ; sets
+	db LABORATORY |	NONE ; sets
 	dw KINGDRA
 	db 100 ; hp
 	db STAGE2 ; stage
@@ -3895,16 +3898,16 @@ KingdraCard:
 	db 55 ; level
 	db 3, 7 ; length
 	dw 44 * 10 ; weight
-	tx NinetalesLv35Description ; description
+	tx KingdraDescription ; description
 	db 0
 
-GoldeenCard:
+BasculinCard:
 	db TYPE_PKMN_WATER ; type
-	gfx GoldeenCardGfx ; gfx
-	tx GoldeenName ; name
+	gfx BasculinCardGfx ; gfx
+	tx BasculinName ; name
 	db CIRCLE ; rarity
-	db LABORATORY | NONE ; sets
-	dw GOLDEEN
+	db MYSTERY | NONE ; sets
+	dw BASCULIN
 	db 50 ; hp
 	db BASIC ; stage
 	dw NONE ; pre-evo name
@@ -3917,7 +3920,7 @@ GoldeenCard:
 	db 10 ; damage
 	db DAMAGE_PLUS ; category
 	dw RageEffectCommands ; effect commands
-	db NONE ; flags 1
+	db DAMAGE_TO_OPPONENT_BENCH_F ; flags 1
 	db NONE ; flags 2
 	db BOOST_IF_TAKEN_DAMAGE ; flags 3
 	db 0
@@ -3945,19 +3948,19 @@ GoldeenCard:
 	db 32 ; level
 	db 2, 0 ; length
 	dw 33 * 10 ; weight
-	tx GoldeenDescription ; description
+	tx BasculinDescription ; description
 	db 21
 
-SeakingCard:
+Basculegion:
 	db TYPE_PKMN_WATER ; type
-	gfx SeakingCardGfx ; gfx
-	tx SeakingName ; name
+	gfx BasculegionGfx ; gfx
+	tx BasculegionName ; name
 	db DIAMOND ; rarity
-	db LABORATORY | NONE ; sets
-	dw SEAKING
+	db MYSTERY | NONE ; sets
+	dw BASCULEGION
 	db 70 ; hp
 	db STAGE1 ; stage
-	tx GoldeenName ; pre-evo name
+	tx BasculinName ; pre-evo name
 
 	; attack 1
 	energy WATER, 1 ; energies
@@ -3995,7 +3998,7 @@ SeakingCard:
 	db 58 ; level
 	db 4, 3 ; length
 	dw 86 * 10 ; weight
-	tx SeakingDescription ; description
+	tx BasculegionDescription ; description
 	db 0
 
 DewpiderCard:
@@ -4003,7 +4006,7 @@ DewpiderCard:
 	gfx DewpiderCardGfx ; gfx
 	tx DewpiderName ; name
 	db CIRCLE ; rarity
-	db EVOLUTION | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw DEWPIDER
 	db 50 ; hp
 	db BASIC ; stage
@@ -4053,7 +4056,7 @@ AraquanidCard:
 	gfx AraquanidCardGfx ; gfx
 	tx AraquanidName ; name
 	db DIAMOND ; rarity
-	db EVOLUTION | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw ARAQUANID
 	db 70 ; hp
 	db STAGE1 ; stage
@@ -4103,7 +4106,7 @@ ChewtleCard:
 	gfx ChewtleCardGfx ; gfx
 	tx ChewtleName ; name
 	db CIRCLE ; rarity
-	db LABORATORY | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw CHEWTLE
 	db 60 ; hp
 	db BASIC ; stage
@@ -4153,7 +4156,7 @@ DrednawCard:
 	gfx DrednawCardGfx ; gfx
 	tx DrednawName ; name
 	db STAR ; rarity
-	db LABORATORY | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw DREDNAW
 	db 100 ; hp
 	db STAGE1 ; stage
@@ -4203,7 +4206,7 @@ VaporeonLv42Card:
 	gfx VaporeonLv42CardGfx ; gfx
 	tx VaporeonName ; name
 	db STAR ; rarity
-	db MYSTERY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw VAPOREON_LV42
 	db 80 ; hp
 	db STAGE1 ; stage
@@ -4353,7 +4356,7 @@ RelicanthCard:
 	gfx RelicanthCardGfx ; gfx
 	tx RelicanthName ; name
 	db DIAMOND ; rarity
-	db COLOSSEUM | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw RELICANTH
 	db 70 ; hp
 	db BASIC ; stage
@@ -4448,6 +4451,7 @@ SuicuneCard:
 	tx SuicuneDescription ; description
 	db 0
 
+;--Lightning--
 BlitzleCard:
 	db TYPE_PKMN_LIGHTNING ; type
 	gfx BlitzleCardGfx ; gfx
@@ -4553,7 +4557,7 @@ HelioptileCard:
 	gfx HelioptileCardGfx ; gfx
 	tx HelioptileName ; name
 	db CIRCLE ; rarity
-	db EVOLUTION | NONE ; sets
+	db COLOSSEUM | NONE ; sets
 	dw HELIOPTILE
 	db 50 ; hp
 	db BASIC ; stage
@@ -4603,7 +4607,7 @@ HelioliskCard:
 	gfx HelioliskCardGfx ; gfx
 	tx HelioliskName ; name
 	db DIAMOND ; rarity
-	db EVOLUTION | NONE ; sets
+	db COLOSSEUM | NONE ; sets
 	dw HELIOLISK
 	db 70 ; hp
 	db STAGE1 ; stage
@@ -4653,7 +4657,7 @@ PincurchinCard:
 	gfx PincurchinCardGfx ; gfx
 	tx PincurchinName ; name
 	db DIAMOND ; rarity
-	db EVOLUTION | NONE ; sets
+	db COLOSSEUM | NONE ; sets
 	dw PINCURCHIN
 	db 70 ; hp
 	db BASIC ; stage
@@ -4703,7 +4707,7 @@ ShinxCard:
 	gfx ShinxCardGfx ; gfx
 	tx ShinxName ; name
 	db CIRCLE ; rarity
-	db COLOSSEUM | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw SHINX
 	db 50 ; hp
 	db BASIC ; stage
@@ -4753,7 +4757,7 @@ LuxioCard:
 	gfx LuxioCardGfx ; gfx
 	tx LuxioName ; name
 	db DIAMOND ; rarity
-	db COLOSSEUM | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw LUXIO
 	db 70 ; hp
 	db STAGE1 ; stage
@@ -4803,7 +4807,7 @@ LuxrayCard:
 	gfx LuxrayCardGfx ; gfx
 	tx LuxrayName ; name
 	db STAR ; rarity
-	db COLOSSEUM | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw LUXRAY
 	db 100 ; hp
 	db STAGE2 ; stage
@@ -4903,7 +4907,7 @@ MagnemiteLv13Card:
 	gfx MagnemiteLv13CardGfx ; gfx
 	tx MagnemiteName ; name
 	db CIRCLE ; rarity
-	db EVOLUTION | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw MAGNEMITE_LV13
 	db 40 ; hp
 	db BASIC ; stage
@@ -4953,7 +4957,7 @@ MagnetonLv28Card:
 	gfx MagnetonLv28CardGfx ; gfx
 	tx MagnetonName ; name
 	db DIAMOND ; rarity
-	db EVOLUTION | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw MAGNETON_LV28
 	db 70 ; hp
 	db STAGE1 ; stage
@@ -5003,7 +5007,7 @@ MagnezoneCard:
 	gfx MagnezoneCardGfx ; gfx
 	tx MagnezoneName ; name
 	db STAR ; rarity
-	db EVOLUTION | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw MAGNEZONE
 	db 110 ; hp
 	db STAGE2 ; stage
@@ -5045,7 +5049,7 @@ MagnezoneCard:
 	db 55 ; level
 	db 3, 3 ; length
 	dw 132 * 10 ; weight
-	tx MagnetonLv35Description ; description
+	tx MagnezoneDescription ; description
 	db 0
 
 ToxelCard:
@@ -5053,7 +5057,7 @@ ToxelCard:
 	gfx ToxelCardGfx ; gfx
 	tx ToxelName ; name
 	db CIRCLE ; rarity
-	db MYSTERY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw TOXEL
 	db 40 ; hp
 	db BASIC ; stage
@@ -5103,7 +5107,7 @@ ToxtricityLv35Card:
 	gfx ToxtricityLv35CardGfx ; gfx
 	tx ToxtricityName ; name
 	db DIAMOND ; rarity
-	db MYSTERY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw TOXTRICITY
 	db 70 ; hp
 	db STAGE1 ; stage
@@ -5119,7 +5123,7 @@ ToxtricityLv35Card:
 	dw EnergyBoostEffectCommands ; effect commands
 	db DAMAGE_TO_OPPONENT_BENCH_F ; flags 1
 	db NONE ; flags 2
-	db NONE ; flags 3
+	db SPECIAL_AI_HANDLING ; flags 3
 	db 0
 	db ATK_ANIM_GLOW_EFFECT ; animation
 
@@ -5153,7 +5157,7 @@ ToxtricityLv42Card:
 	gfx ToxtricityLv42CardGfx ; gfx
 	tx ToxtricityName ; name
 	db DIAMOND ; rarity
-	db MYSTERY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw TOXTRICITY_LOW
 	db 70 ; hp
 	db STAGE1 ; stage
@@ -5203,7 +5207,7 @@ ElectrikeCard:
 	gfx ElectrikeCardGfx ; gfx
 	tx ElectrikeName ; name
 	db CIRCLE ; rarity
-	db EVOLUTION | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw ELECTRIKE
 	db 50 ; hp
 	db BASIC ; stage
@@ -5253,7 +5257,7 @@ ManectricCard:
 	gfx ManectricCardGfx ; gfx
 	tx ManectricName ; name
 	db DIAMOND ; rarity
-	db EVOLUTION | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw MANECTRIC
 	db 70 ; hp
 	db STAGE1 ; stage
@@ -5303,7 +5307,7 @@ WattrelCard:
 	gfx WattrelCardGfx ; gfx
 	tx WattrelName ; name
 	db CIRCLE ; rarity
-	db LABORATORY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw WATTREL
 	db 50 ; hp
 	db BASIC ; stage
@@ -5353,7 +5357,7 @@ KilowattrelCard:
 	gfx KilowattrelCardGfx ; gfx
 	tx KilowattrelName ; name
 	db DIAMOND ; rarity
-	db LABORATORY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw KILOWATTREL
 	db 70 ; hp
 	db STAGE1 ; stage
@@ -5403,7 +5407,7 @@ JolteonLv29Card:
 	gfx JolteonLv29CardGfx ; gfx
 	tx JolteonName ; name
 	db STAR ; rarity
-	db MYSTERY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw JOLTEON_LV29
 	db 80 ; hp
 	db STAGE1 ; stage
@@ -5483,7 +5487,7 @@ GrubbinCard:
 	dw EnergyBoostEffectCommands ; effect commands
 	db DAMAGE_TO_OPPONENT_BENCH_F ; flags 1
 	db NONE ; flags 2
-	db NONE ; flags 3
+	db SPECIAL_AI_HANDLING ; flags 3
 	db 0
 	db ATK_ANIM_GLOW_EFFECT ; animation
 
@@ -5495,7 +5499,7 @@ GrubbinCard:
 	db 12 ; level
 	db 3, 3 ; length
 	dw 77 * 10 ; weight
-	tx TangelaLv12Description ; description
+	tx SkorupiDescription ; description
 	db 16
 
 CharjabugCard:
@@ -5519,7 +5523,7 @@ CharjabugCard:
 	dw EnergyBoostEffectCommands ; effect commands
 	db DAMAGE_TO_OPPONENT_BENCH_F ; flags 1
 	db NONE ; flags 2
-	db NONE ; flags 3
+	db SPECIAL_AI_HANDLING ; flags 3
 	db 0
 	db ATK_ANIM_GLOW_EFFECT ; animation
 
@@ -5545,7 +5549,7 @@ CharjabugCard:
 	db 25 ; level
 	db 1, 0 ; length
 	dw 13 * 10 ; weight
-	tx MagnemiteLv15Description ; description
+	tx CharjabugDescription ; description
 	db 19
 
 VikavoltCard:
@@ -5595,7 +5599,7 @@ VikavoltCard:
 	db 40 ; level
 	db 5, 3 ; length
 	dw 116 * 10 ; weight
-	tx ZapdosLv40Description ; description
+	tx VikavoltDescription ; description
 	db 0
 
 ZeraoraCard:
@@ -5603,7 +5607,7 @@ ZeraoraCard:
 	gfx ZeraoraCardGfx ; gfx
 	tx ZeraoraName ; name
 	db STAR ; rarity
-	db COLOSSEUM | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw ZERAORA
 	db 80 ; hp
 	db BASIC ; stage
@@ -5845,16 +5849,17 @@ EelektrossCard:
 	db 52 ; level
 	db 1, 4 ; length
 	dw 13 * 10 ; weight
-	tx BlitzleDescription ; description
+	tx EelektrossDescription ; description
 	db 0
 
-SandshrewCard:
+;--Fightning--
+MeowthCard:
 	db TYPE_PKMN_FIGHTING ; type
-	gfx SandshrewCardGfx ; gfx
+	gfx MeowthCardGfx ; gfx
 	tx MeowthName ; name
 	db CIRCLE ; rarity
-	db COLOSSEUM | NONE ; sets
-	dw SANDSHREW
+	db MYSTERY | NONE ; sets
+	dw MEOWTH
 	db 40 ; hp
 	db BASIC ; stage
 	dw NONE ; pre-evo name
@@ -5895,16 +5900,16 @@ SandshrewCard:
 	db 12 ; level
 	db 2, 0 ; length
 	dw 26 * 10 ; weight
-	tx SandshrewDescription ; description
+	tx MeowthDescription ; description
 	db 19
 
-SandslashCard:
+PerrserkerCard:
 	db TYPE_PKMN_FIGHTING ; type
-	gfx SandslashCardGfx ; gfx
-	tx SandslashName ; name
+	gfx PerrserkerCardGfx ; gfx
+	tx PerrserkerName ; name
 	db DIAMOND ; rarity
-	db COLOSSEUM | NONE ; sets
-	dw SANDSLASH
+	db MYSTERY | NONE ; sets
+	dw PERRSERKER
 	db 70 ; hp
 	db STAGE1 ; stage
 	tx MeowthName ; pre-evo name
@@ -5944,7 +5949,7 @@ SandslashCard:
 	db 33 ; level
 	db 3, 3 ; length
 	dw 65 * 10 ; weight
-	tx SandslashDescription ; description
+	tx PerrserkerDescription ; description
 	db 0
 
 SilicobraCard:
@@ -5952,7 +5957,7 @@ SilicobraCard:
 	gfx SilicobraCardGfx ; gfx
 	tx SilicobraName ; name
 	db CIRCLE ; rarity
-	db COLOSSEUM | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw SILICOBRA
 	db 50 ; hp
 	db BASIC ; stage
@@ -5994,7 +5999,7 @@ SilicobraCard:
 	db 18 ; level
 	db 0, 8 ; length
 	dw 2 * 10 ; weight
-	tx DiglettDescription ; description
+	tx SilicobraDescription ; description
 	db 19
 
 SandacondaCard:
@@ -6002,7 +6007,7 @@ SandacondaCard:
 	gfx SandacondaCardGfx ; gfx
 	tx SandacondaName ; name
 	db DIAMOND ; rarity
-	db EVOLUTION | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw SANDACONDA
 	db 80 ; hp
 	db STAGE1 ; stage
@@ -6029,7 +6034,7 @@ SandacondaCard:
 	dw NONE ; description (cont)
 	db 20 ; damage
 	db DAMAGE_NORMAL ; category
-	dw SandshrewSandAttackEffectCommands ; effect commands
+	dw MeowthSandAttackEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
 	db NONE ; flags 3
@@ -6044,7 +6049,7 @@ SandacondaCard:
 	db 36 ; level
 	db 2, 4 ; length
 	dw 73 * 10 ; weight
-	tx DugtrioDescription ; description
+	tx SandacondaDescription ; description
 	db 0
 
 SandileCard:
@@ -6079,7 +6084,7 @@ SandileCard:
 	dw NONE ; description (cont)
 	db 20 ; damage
 	db DAMAGE_NORMAL ; category
-	dw SandshrewSandAttackEffectCommands ; effect commands
+	dw MeowthSandAttackEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
 	db NONE ; flags 3
@@ -6152,7 +6157,7 @@ KrookodileCard:
 	gfx KrookodileCardGfx ; gfx
 	tx KrookodileName ; name
 	db STAR ; rarity
-	db EVOLUTION | NONE ; sets
+	db COLOSSEUM | NONE ; sets
 	dw KROOKODILE
 	db 110 ; hp
 	db STAGE2 ; stage
@@ -6229,7 +6234,7 @@ TrapinchCard:
 	dw NONE ; description (cont)
 	db 30 ; damage
 	db DAMAGE_NORMAL ; category
-	dw DugtrioEarthquakeEffectCommands ; effect commands
+	dw SandacondaEarthquakeEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db SPECIAL_AI_HANDLING ; flags 3
@@ -6352,7 +6357,7 @@ HawluchaCard:
 	gfx HawluchaCardGfx ; gfx
 	tx HawluchaName ; name
 	db CIRCLE ; rarity
-	db LABORATORY | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw HAWLUCHA
 	db 60 ; hp
 	db BASIC ; stage
@@ -6494,7 +6499,7 @@ PupitarCard:
 	db 32 ; level
 	db 3, 3 ; length
 	dw 99 * 10 ; weight
-	tx MarowakLv32Description ; description
+	tx PupitarDescription ; description
 	db 16
 
 TyranitarCard:
@@ -6544,7 +6549,7 @@ TyranitarCard:
 	db 64 ; level
 	db 3, 3 ; length
 	dw 99 * 10 ; weight
-	tx MarowakLv26Description ; description
+	tx TyranitarDescription ; description
 	db 0
 
 HitmonleeCard:
@@ -6552,7 +6557,7 @@ HitmonleeCard:
 	gfx HitmonleeCardGfx ; gfx
 	tx HitmonleeName ; name
 	db STAR ; rarity
-	db LABORATORY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw HITMONLEE
 	db 60 ; hp
 	db BASIC ; stage
@@ -6602,7 +6607,7 @@ HitmonchanCard:
 	gfx HitmonchanCardGfx ; gfx
 	tx HitmonchanName ; name
 	db STAR ; rarity
-	db COLOSSEUM | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw HITMONCHAN
 	db 60 ; hp
 	db BASIC ; stage
@@ -6652,7 +6657,7 @@ CufantCard:
 	gfx CufantCardGfx ; gfx
 	tx CufantName ; name
 	db CIRCLE ; rarity
-	db MYSTERY | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw CUFANT
 	db 60 ; hp
 	db BASIC ; stage
@@ -6668,7 +6673,7 @@ CufantCard:
 	dw MarowakCallforFriendEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
-	db SPECIAL_AI_HANDLING ; flags 3
+	db NONE ; flags 3
 	db 0
 	db ATK_ANIM_GLOW_EFFECT ; animation
 
@@ -6702,7 +6707,7 @@ CopperajahCard:
 	gfx CopperajahCardGfx ; gfx
 	tx CopperajahName ; name
 	db STAR ; rarity
-	db MYSTERY | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw RHYDON
 	db 100 ; hp
 	db STAGE1 ; stage
@@ -6894,7 +6899,7 @@ TyruntCard:
 	db 22 ; level
 	db 1, 4 ; length
 	dw 14 * 10 ; weight
-	tx CuboneDescription ; description
+	tx TyruntDescription ; description
 	db 19
 
 TyrantrumCard:
@@ -6952,7 +6957,7 @@ RockruffCard:
 	gfx RockruffCardGfx ; gfx
 	tx RockruffName ; name
 	db CIRCLE ; rarity
-	db MYSTERY | NONE ; sets
+	db COLOSSEUM | NONE ; sets
 	dw ROCKRUFF
 	db 40 ; hp
 	db BASIC ; stage
@@ -6968,7 +6973,7 @@ RockruffCard:
 	dw EnergyBoostEffectCommands ; effect commands
 	db DAMAGE_TO_OPPONENT_BENCH_F ; flags 1
 	db NONE ; flags 2
-	db NONE ; flags 3
+	db SPECIAL_AI_HANDLING ; flags 3
 	db 0
 	db ATK_ANIM_GLOW_EFFECT ; animation
 
@@ -6994,7 +6999,7 @@ RockruffCard:
 	db 14 ; level
 	db 1, 4 ; length
 	dw 14 * 10 ; weight
-	tx CuboneDescription ; description
+	tx RockruffDescription ; description
 	db 19
 
 LycanrocCard:
@@ -7002,7 +7007,7 @@ LycanrocCard:
 	gfx LycanrocCardGfx ; gfx
 	tx LycanrocName ; name
 	db DIAMOND ; rarity
-	db MYSTERY | NONE ; sets
+	db COLOSSEUM | NONE ; sets
 	dw LYCANROC
 	db 70 ; hp
 	db STAGE1 ; stage
@@ -7044,7 +7049,7 @@ LycanrocCard:
 	db 38 ; level
 	db 3, 3 ; length
 	dw 99 * 10 ; weight
-	tx MarowakLv26Description ; description
+	tx LycanrocDescription ; description
 	db 0
 
 LycanrocMCard:
@@ -7052,7 +7057,7 @@ LycanrocMCard:
 	gfx LycanrocMCardGfx ; gfx
 	tx LycanrocName ; name
 	db STAR ; rarity
-	db MYSTERY | NONE ; sets
+	db COLOSSEUM | NONE ; sets
 	dw LYCANROCM
 	db 80 ; hp
 	db STAGE1 ; stage
@@ -7065,7 +7070,7 @@ LycanrocMCard:
 	dw NONE ; description (cont)
 	db 20 ; damage
 	db DAMAGE_NORMAL ; category
-	dw GustOfWindEffectCommands ; effect commands
+	dw BossOrdersEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -7094,7 +7099,7 @@ LycanrocMCard:
 	db 52 ; level
 	db 3, 3 ; length
 	dw 99 * 10 ; weight
-	tx MarowakLv32Description ; description
+	tx LycanrocMDescription ; description
 	db 0
 
 GalladeCard:
@@ -7144,15 +7149,16 @@ GalladeCard:
 	db 55 ; level
 	db 3, 3 ; length
 	dw 99 * 10 ; weight
-	tx MarowakLv32Description ; description
+	tx GalladeDescription ; description
 	db 0
 
+;--Psychic--
 RaltsCard:
 	db TYPE_PKMN_PSYCHIC ; type
 	gfx RaltsCardGfx ; gfx
 	tx RaltsName ; name
 	db CIRCLE ; rarity
-	db MYSTERY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw RALTS
 	db 50 ; hp
 	db BASIC ; stage
@@ -7194,7 +7200,7 @@ RaltsCard:
 	db 13 ; level
 	db 1, 4 ; length
 	dw 9 * 10 ; weight
-	tx MewLv8Description ; description
+	tx RaltsDescription ; description
 	db 16
 
 KirliaCard:
@@ -7202,7 +7208,7 @@ KirliaCard:
 	gfx KirliaCardGfx ; gfx
 	tx KirliaName ; name
 	db DIAMOND ; rarity
-	db MYSTERY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw KIRLIA
 	db 70 ; hp
 	db STAGE1 ; stage
@@ -7244,7 +7250,7 @@ KirliaCard:
 	db 23 ; level
 	db 1, 4 ; length
 	dw 9 * 10 ; weight
-	tx MewLv8Description ; description
+	tx KirliaDescription ; description
 	db 16
 
 GardevoirCard:
@@ -7252,7 +7258,7 @@ GardevoirCard:
 	gfx GardevoirCardGfx ; gfx
 	tx GardevoirName ; name
 	db STAR ; rarity
-	db MYSTERY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw GARDEVOIR
 	db 100 ; hp
 	db STAGE2 ; stage
@@ -7294,7 +7300,7 @@ GardevoirCard:
 	db 55 ; level
 	db 1, 4 ; length
 	dw 9 * 10 ; weight
-	tx MewLv8Description ; description
+	tx GardevoirDescription ; description
 	db 0		
 
 InkayCard:
@@ -7329,7 +7335,7 @@ InkayCard:
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw GloomFoulOdorEffectCommands ; effect commands
+	dw FlappleFoulOdorEffectCommands ; effect commands
 	db INFLICT_CONFUSION ; flags 1
 	db FLAG_2_BIT_7 ; flags 2
 	db NONE ; flags 3
@@ -7402,7 +7408,7 @@ DuskullCard:
 	gfx DuskullCardGfx ; gfx
 	tx DuskullName ; name
 	db CIRCLE ; rarity
-	db EVOLUTION | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw DUSKULL
 	db 40 ; hp
 	db BASIC ; stage
@@ -7444,7 +7450,7 @@ DuskullCard:
 	db 8 ; level
 	db 4, 3 ; length
 	dw 2 ; weight
-	tx GastlyLv8Description ; description
+	tx DuskullDescription ; description
 	db 16
 
 DusclopsCard:
@@ -7452,7 +7458,7 @@ DusclopsCard:
 	gfx DusclopsCardGfx ; gfx
 	tx DusclopsName ; name
 	db DIAMOND ; rarity
-	db LABORATORY | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw DUSCLOPS
 	db 70 ; hp
 	db STAGE1 ; stage
@@ -7494,7 +7500,7 @@ DusclopsCard:
 	db 37 ; level
 	db 5, 3 ; length
 	dw 2 ; weight
-	tx HaunterDescription ; description
+	tx DusclopsDescription ; description
 	db 16
 
 DusknoirCard:
@@ -7502,7 +7508,7 @@ DusknoirCard:
 	gfx DusknoirCardGfx ; gfx
 	tx DusknoirName ; name
 	db STAR ; rarity
-	db EVOLUTION | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw DUSKNOIR
 	db 100 ; hp
 	db STAGE2 ; stage
@@ -7544,7 +7550,7 @@ DusknoirCard:
 	db 58 ; level
 	db 4, 11 ; length
 	dw 89 * 10 ; weight
-	tx GengarDescription ; description
+	tx DusknoirDescription ; description
 	db 1
 
 MisdreavusCard:
@@ -7594,7 +7600,7 @@ MisdreavusCard:
 	db 27 ; level
 	db 4, 3 ; length
 	dw 2 ; weight
-	tx GastlyLv17Description ; description
+	tx MisdreavusDescription ; description
 	db 16
 
 MismagiusCard:
@@ -7644,7 +7650,7 @@ MismagiusCard:
 	db 52 ; level
 	db 5, 3 ; length
 	dw 2 ; weight
-	tx HaunterDescription ; description
+	tx MismagiusDescription ; description
 	db 0
 
 SpiritombCard:
@@ -7652,7 +7658,7 @@ SpiritombCard:
 	gfx SpiritombCardGfx ; gfx
 	tx SpiritombName ; name
 	db STAR ; rarity
-	db LABORATORY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw SPIRITOMB
 	db 50 ; hp
 	db BASIC ; stage
@@ -7694,7 +7700,7 @@ SpiritombCard:
 	db 48 ; level
 	db 4, 3 ; length
 	dw 120 * 10 ; weight
-	tx MrMimeDescription ; description
+	tx SpiritombDescription ; description
 	db 3
 
 EspeonCard:
@@ -7744,15 +7750,15 @@ EspeonCard:
 	db 53 ; level
 	db 4, 7 ; length
 	dw 90 * 10 ; weight
-	tx JynxDescription ; description
+	tx EspeonDescription ; description
 	db 0
 
 MewtwoCard:
 	db TYPE_PKMN_PSYCHIC ; type
 	gfx MewtwoCardGfx ; gfx
 	tx MewtwoName ; name
-	db PROMOSTAR ; rarity
-	db PROMOTIONAL | PRO ; sets
+	db STAR ; rarity
+	db LABORATORY | NONE ; sets
 	dw MEWTWO_LV60
 	db 70 ; hp
 	db BASIC ; stage
@@ -7802,7 +7808,7 @@ MimikyuCard:
 	gfx MimikyuCardGfx ; gfx
 	tx MimikyuName ; name
 	db DIAMOND ; rarity
-	db LABORATORY | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw MIMIKYU
 	db 50 ; hp
 	db BASIC ; stage
@@ -7844,7 +7850,7 @@ MimikyuCard:
 	db 8 ; level
 	db 1, 4 ; length
 	dw 9 * 10 ; weight
-	tx MewLv8Description ; description
+	tx MimikyuDescription ; description
 	db 3
 
 MewLv23Card:
@@ -7894,7 +7900,7 @@ MewLv23Card:
 	db 23 ; level
 	db 1, 4 ; length
 	dw 9 * 10 ; weight
-	tx MewLv8Description ; description
+	tx MimikyuDescription ; description
 	db 8
 
 CarbinkCard:
@@ -7939,12 +7945,12 @@ CarbinkCard:
 	db 1 ; retreat cost
 	db WR_WATER ; weakness
 	db NONE ; resistance
-	tx NewSpeciesName ; category
+	tx JewelName ; category
 	db 151 ; Pokedex number
 	db 23 ; level
 	db 1, 4 ; length
 	dw 9 * 10 ; weight
-	tx MewLv8Description ; description
+	tx CarbinkDescription ; description
 	db 0
 
 BeldumCard:
@@ -8065,7 +8071,7 @@ MetagrossCard:
 	dw NONE ; description (cont)
 	db 30 ; damage
 	db DAMAGE_NORMAL ; category
-	dw GustOfWindEffectCommands ; effect commands
+	dw BossOrdersEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -8102,7 +8108,7 @@ MunnaCard:
 	gfx MunnaCardGfx ; gfx
 	tx MunnaName ; name
 	db CIRCLE ; rarity
-	db LABORATORY | NONE ; sets
+	db COLOSSEUM | NONE ; sets
 	dw MUNNA
 	db 60 ; hp
 	db BASIC ; stage
@@ -8151,7 +8157,7 @@ MusharnaCard:
 	gfx MusharnaCardGfx ; gfx
 	tx MusharnaName ; name
 	db DIAMOND ; rarity
-	db LABORATORY | NONE ; sets
+	db COLOSSEUM | NONE ; sets
 	dw MUSHARNA
 	db 80 ; hp
 	db STAGE1 ; stage
@@ -8243,7 +8249,7 @@ BlipbugCard:
 	db 9 ; level
 	db 3, 3 ; length
 	dw 77 * 10 ; weight
-	tx TangelaLv12Description ; description
+	tx BlipbugDescription ; description
 	db 16
 
 DottlerCard:
@@ -8293,7 +8299,7 @@ DottlerCard:
 	db 25 ; level
 	db 1, 4 ; length
 	dw 9 * 10 ; weight
-	tx MewtwoLv60Description ; description
+	tx DottlerDescription ; description
 	db 16
 
 OrbeetleCard:
@@ -8351,7 +8357,7 @@ CutieflyCard:
 	gfx CutieflyCardGfx ; gfx
 	tx CutieflyName ; name
 	db CIRCLE ; rarity
-	db COLOSSEUM | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw CUTIEFLY
 	db 30 ; hp
 	db BASIC ; stage
@@ -8393,7 +8399,7 @@ CutieflyCard:
 	db 7 ; level
 	db 3, 3 ; length
 	dw 71 * 10 ; weight
-	tx MurkrowDescription ; description
+	tx BeeFlyName ; description
 	db 19
 
 RibombeeCard:
@@ -8401,7 +8407,7 @@ RibombeeCard:
 	gfx RibombeeCardGfx ; gfx
 	tx RibombeeName ; name
 	db DIAMOND ; rarity
-	db COLOSSEUM | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw RIBOMBEE
 	db 70 ; hp
 	db STAGE1 ; stage
@@ -8438,12 +8444,12 @@ RibombeeCard:
 	db 0 ; retreat cost
 	db WR_FIRE ; weakness
 	db WR_DARKNESS ; resistance
-	tx HypnosisName ; category
+	tx BeeFlyName ; category
 	db 97 ; Pokedex number
 	db 48 ; level
 	db 5, 3 ; length
 	dw 167 * 10 ; weight
-	tx HonchkrowDescription ; description
+	tx RibombeeDescription ; description
 	db 0
 
 CresseliaCard:
@@ -8488,14 +8494,15 @@ CresseliaCard:
 	db 2 ; retreat cost
 	db WR_PSYCHIC ; weakness
 	db NONE ; resistance
-	tx GeneticName ; category
+	tx LunarName ; category
 	db 150 ; Pokedex number
 	db 60 ; level
 	db 6, 7 ; length
 	dw 269 * 10 ; weight
-	tx MewtwoLv60Description ; description
+	tx CresseliaDescription ; description
 	db 0
 
+;--Musharna--
 DeinoCard:
 	db TYPE_PKMN_DARKNESS ; type
 	gfx DeinoCardGfx ; gfx
@@ -8543,7 +8550,7 @@ DeinoCard:
 	db 20 ; level
 	db 2, 11 ; length
 	dw 43 * 10 ; weight
-	tx AbraDescription ; description
+	tx DeinoDescription ; description
 	db 16
 
 ZweilousCard:
@@ -8593,7 +8600,7 @@ ZweilousCard:
 	db 58 ; level
 	db 4, 3 ; length
 	dw 125 * 10 ; weight
-	tx KadabraDescription ; description
+	tx ZweilousDescription ; description
 	db 19
 
 HydreigonCard:
@@ -8643,7 +8650,7 @@ HydreigonCard:
 	db 72 ; level
 	db 4, 11 ; length
 	dw 106 * 10 ; weight
-	tx AlakazamDescription ; description
+	tx HydreigonDescription ; description
 	db 0
 
 MurkrowCard:
@@ -8651,7 +8658,7 @@ MurkrowCard:
 	gfx MurkrowCardGfx ; gfx
 	tx MurkrowName ; name
 	db CIRCLE ; rarity
-	db EVOLUTION | NONE ; sets
+	db COLOSSEUM | NONE ; sets
 	dw MURKROW
 	db 50 ; hp
 	db BASIC ; stage
@@ -8701,7 +8708,7 @@ HonchkrowCard:
 	gfx HonchkrowCardGfx ; gfx
 	tx HonchkrowName ; name
 	db STAR ; rarity
-	db EVOLUTION | NONE ; sets
+	db COLOSSEUM | NONE ; sets
 	dw HONCHKROW
 	db 80 ; hp
 	db STAGE1 ; stage
@@ -8751,7 +8758,7 @@ UmbreonCard:
 	gfx UmbreonCardGfx ; gfx
 	tx UmbreonName ; name
 	db DIAMOND ; rarity
-	db MYSTERY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw UMBREON
 	db 80 ; hp
 	db STAGE1 ; stage
@@ -8778,7 +8785,7 @@ UmbreonCard:
 	dw NONE ; description (cont)
 	db 20 ; damage
 	db DAMAGE_NORMAL ; category
-	dw NidokingToxicEffectCommands ; effect commands
+	dw VolbeatToxicEffectCommands ; effect commands
 	db INFLICT_POISON ; flags 1
 	db FLAG_2_BIT_6 ; flags 2
 	db NONE ; flags 3
@@ -8793,7 +8800,7 @@ UmbreonCard:
 	db 53 ; level
 	db 6, 7 ; length
 	dw 269 * 10 ; weight
-	tx MewtwoLv60Description ; description
+	tx UmbreonDescription ; description
 	db 0
 
 CascoonCard:
@@ -8901,7 +8908,7 @@ SkrelpCard:
 	gfx SkrelpCardGfx ; gfx
 	tx SkrelpName ; name
 	db CIRCLE ; rarity
-	db MYSTERY | NONE ; sets
+	db COLOSSEUM | NONE ; sets
 	dw SKRELP
 	db 50 ; hp
 	db BASIC ; stage
@@ -8951,7 +8958,7 @@ DragalgeCard:
 	gfx DragalgeCardGfx ; gfx
 	tx DragalgeName ; name
 	db DIAMOND ; rarity
-	db MYSTERY | NONE ; sets
+	db COLOSSEUM | NONE ; sets
 	dw DRAGALGE
 	db 70 ; hp
 	db STAGE1 ; stage
@@ -9001,7 +9008,7 @@ SkorupiCard:
 	gfx SkorupiCardGfx ; gfx
 	tx SkorupiName ; name
 	db CIRCLE ; rarity
-	db MYSTERY | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw SKORUPI
 	db 60 ; hp
 	db BASIC ; stage
@@ -9043,7 +9050,7 @@ SkorupiCard:
 	db 28 ; level
 	db 1, 4 ; length
 	dw 9 * 10 ; weight
-	tx MewLv8Description ; description
+	tx MimikyuDescription ; description
 	db 16
 
 DrapionCard:
@@ -9051,7 +9058,7 @@ DrapionCard:
 	gfx DrapionCardGfx ; gfx
 	tx DrapionName ; name
 	db DIAMOND ; rarity
-	db MYSTERY | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw DRAPION
 	db 80 ; hp
 	db STAGE1 ; stage
@@ -9093,7 +9100,7 @@ DrapionCard:
 	db 52 ; level
 	db 1, 4 ; length
 	dw 9 * 10 ; weight
-	tx MewLv8Description ; description
+	tx MimikyuDescription ; description
 	db 0		
 
 ZubatCard:
@@ -9228,7 +9235,7 @@ CrobatCard:
 	dw NONE ; description (cont)
 	db 30 ; damage
 	db DAMAGE_NORMAL ; category
-	dw NidokingToxicEffectCommands ; effect commands
+	dw VolbeatToxicEffectCommands ; effect commands
 	db INFLICT_POISON ; flags 1
 	db FLAG_2_BIT_6 ; flags 2
 	db NONE ; flags 3
@@ -9243,7 +9250,7 @@ CrobatCard:
 	db 54 ; level
 	db 5, 3 ; length
 	dw 121 * 10 ; weight
-	tx GolbatDescription ; description
+	tx CrobatDescription ; description
 	db 0
 
 CroagunkCard:
@@ -9251,7 +9258,7 @@ CroagunkCard:
 	gfx CroagunkCardGfx ; gfx
 	tx CroagunkName ; name
 	db CIRCLE ; rarity
-	db EVOLUTION | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw CROAGUNK
 	db 30 ; hp
 	db BASIC ; stage
@@ -9301,7 +9308,7 @@ ToxicroakCard:
 	gfx ToxicroakCardGfx ; gfx
 	tx ToxicroakName ; name
 	db DIAMOND ; rarity
-	db EVOLUTION | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw TOXICROAK
 	db 70 ; hp
 	db STAGE1 ; stage
@@ -9351,7 +9358,7 @@ SneaselCard:
 	gfx SneaselCardGfx ; gfx
 	tx SneaselName ; name
 	db DIAMOND ; rarity
-	db MYSTERY | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw SNEASEL
 	db 50 ; hp
 	db BASIC ; stage
@@ -9401,7 +9408,7 @@ WeavileCard:
 	gfx WeavileCardGfx ; gfx
 	tx GyaradosName ; name
 	db STAR ; rarity
-	db MYSTERY | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw WEAVILE
 	db 70 ; hp
 	db STAGE1 ; stage
@@ -9446,6 +9453,7 @@ WeavileCard:
 	tx GyaradosDescription ; description
 	db 0
 
+;--Colorless--
 RookideeCard:
 	db TYPE_PKMN_COLORLESS ; type
 	gfx RookideeCardGfx ; gfx
@@ -9551,7 +9559,7 @@ CorviknightCard:
 	gfx CorviknightCardGfx ; gfx
 	tx CorviknightName ; name
 	db STAR ; rarity
-	db LABORATORY | NONE ; sets
+	db COLOSSEUM | NONE ; sets
 	dw CORVIKNIGHT
 	db 100 ; hp
 	db STAGE2 ; stage
@@ -9628,7 +9636,7 @@ ZigzagoonCard:
 	dw NONE ; description (cont)
 	db 20 ; damage
 	db DAMAGE_X ; category
-	dw SandslashFurySwipesEffectCommands ; effect commands
+	dw PerrserkerFurySwipesEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -9801,7 +9809,7 @@ TogepiCard:
 	gfx TogepiCardGfx ; gfx
 	tx TogepiName ; name
 	db CIRCLE ; rarity
-	db EVOLUTION | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw TOGEPI
 	db 40 ; hp
 	db BASIC ; stage
@@ -9843,7 +9851,7 @@ TogepiCard:
 	db 14 ; level
 	db 2, 0 ; length
 	dw 17 * 10 ; weight
-	tx ClefairyDescription ; description
+	tx TogepiDescription ; description
 	db 16
 
 TogeticCard:
@@ -9851,7 +9859,7 @@ TogeticCard:
 	gfx TogeticCardGfx ; gfx
 	tx TogeticName ; name
 	db DIAMOND ; rarity
-	db EVOLUTION | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw TOGETIC
 	db 70 ; hp
 	db STAGE1 ; stage
@@ -9893,7 +9901,7 @@ TogeticCard:
 	db 34 ; level
 	db 4, 3 ; length
 	dw 88 * 10 ; weight
-	tx ClefableDescription ; description
+	tx TogeticDescription ; description
 	db 17
 
 TogekissCard:
@@ -9901,7 +9909,7 @@ TogekissCard:
 	gfx TogekissCardGfx ; gfx
 	tx TogekissName ; name
 	db STAR ; rarity
-	db EVOLUTION | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw TOGEKISS
 	db 100 ; hp
 	db STAGE2 ; stage
@@ -9943,7 +9951,7 @@ TogekissCard:
 	db 52 ; level
 	db 1, 8 ; length
 	dw 12 * 10 ; weight
-	tx JigglypuffLv12Description ; description
+	tx TogekissDescription ; description
 	db 0
 
 CyclizarCard:
@@ -9951,7 +9959,7 @@ CyclizarCard:
 	gfx CyclizarCardGfx ; gfx
 	tx ComfeyName ; name
 	db CIRCLE ; rarity
-	db MYSTERY | NONE ; sets
+	db COLOSSEUM | NONE ; sets
 	dw CYCLIZAR
 	db 60 ; hp
 	db BASIC ; stage
@@ -9993,7 +10001,7 @@ CyclizarCard:
 	db 32 ; level
 	db 1, 8 ; length
 	dw 12 * 10 ; weight
-	tx JigglypuffLv13Description ; description
+	tx CyclizarDescription ; description
 	db 0
 
 StuffulName:
@@ -10043,7 +10051,7 @@ StuffulName:
 	db 14 ; level
 	db 1, 8 ; length
 	dw 12 * 10 ; weight
-	tx JigglypuffLv14Description ; description
+	tx StuffulDescription ; description
 	db 16
 
 BewearCard:
@@ -10151,7 +10159,7 @@ BibarelCard:
 	gfx BibarelCardGfx ; gfx
 	tx BibarelName ; name
 	db DIAMOND ; rarity
-	db MYSTERY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw BIBAREL
 	db 70 ; hp
 	db STAGE1 ; stage
@@ -10251,7 +10259,7 @@ RuffletCard:
 	gfx RuffletCardGfx ; gfx
 	tx RuffletName ; name
 	db CIRCLE ; rarity
-	db MYSTERY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw RUFFLET
 	db 50 ; hp
 	db BASIC ; stage
@@ -10301,7 +10309,7 @@ BraviaryCard:
 	gfx BraviaryCardGfx ; gfx
 	tx BraviaryName ; name
 	db DIAMOND ; rarity
-	db MYSTERY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw BRAVIARY
 	db 70 ; hp
 	db STAGE1 ; stage
@@ -10401,7 +10409,7 @@ AudinoCard:
 	gfx AudinoCardGfx ; gfx
 	tx AudinoName ; name
 	db DIAMOND ; rarity
-	db MYSTERY | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw AUDINO
 	db 80 ; hp
 	db BASIC ; stage
@@ -10414,7 +10422,7 @@ AudinoCard:
 	tx PKMNPowerCondition2 ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
-	dw VileplumeHealEffectCommands ; effect commands
+	dw AppletunHealEffectCommands ; effect commands
 	db NONE ; flags 1
 	db HEAL_USER ; flags 2
 	db NONE ; flags 3
@@ -10451,7 +10459,7 @@ ChatotCard:
 	gfx ChatotCardGfx ; gfx
 	tx ChatotName ; name
 	db DIAMOND ; rarity
-	db MYSTERY | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw CHATOT
 	db 50 ; hp
 	db BASIC ; stage
@@ -10551,7 +10559,7 @@ DittoCard:
 	gfx DittoCardGfx ; gfx
 	tx DittoName ; name
 	db STAR ; rarity
-	db MYSTERY | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw DITTO
 	db 50 ; hp
 	db BASIC ; stage
@@ -10601,7 +10609,7 @@ EeveeCard:
 	gfx EeveeCardGfx ; gfx
 	tx EeveeName ; name
 	db CIRCLE ; rarity
-	db MYSTERY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw EEVEE
 	db 50 ; hp
 	db BASIC ; stage
@@ -10740,10 +10748,10 @@ Porygon2Card:
 	db WR_PSYCHIC ; resistance
 	tx VirtualName ; category
 	db 137 ; Pokedex number
-	db 12 ; level
+	db 28 ; level
 	db 2, 7 ; length
 	dw 80 * 10 ; weight
-	tx PorygonDescription ; description
+	tx Porygon2Description ; description
 	db 16
 
 PorygonZCard:
@@ -10758,21 +10766,21 @@ PorygonZCard:
 	tx Porygon2Name ; pre-evo name
 
 	; attack 1
-	energy 0 ; energies
-	tx ConversionZname ; name
-	tx ConversionZDescription ; description
+	energy COLORLESS, 2 ; energies
+	tx DowngradingBeamName ; name
+	tx DevolutionBeamDescription ; description
 	dw NONE ; description (cont)
-	db 0 ; damage
-	db POKEMON_POWER ; category
-	dw PsyShadowEffectCommands ; effect commands
+	db 20 ; damage
+	db RESIDUAL ; category
+	dw MewDevolutionBeamEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_PKMN_POWER_1 ; animation
+	db ATK_ANIM_BEAM ; animation
 
 	; attack 2
-	energy COLORLESS, 2 ; energies
+	energy COLORLESS, 4 ; energies
 	tx ZCommandName ; name
 	tx ZCommandDescription ; description
 	dw NONE ; description (cont)
@@ -10790,10 +10798,10 @@ PorygonZCard:
 	db WR_PSYCHIC ; resistance
 	tx VirtualName ; category
 	db 137 ; Pokedex number
-	db 12 ; level
+	db 66 ; level
 	db 2, 7 ; length
 	dw 80 * 10 ; weight
-	tx PorygonDescription ; description
+	tx PorygonZDescription ; description
 	db 0
 
 GoomyCard:
@@ -11002,7 +11010,7 @@ DunsparceCard:
 	tx DunsparceName ; name
 	db DIAMOND ; rarity
 	db MYSTERY | NONE ; sets
-	dw GOOMY
+	dw DUNSPARCE
 	db 50 ; hp
 	db BASIC ; stage
 	dw NONE ; pre-evo name
@@ -11022,28 +11030,29 @@ DunsparceCard:
 	db ATK_ANIM_HIT ; animation
 
 	; attack 2
-	energy 0 ; energies
-	dw NONE ; name
-	dw NONE ; description
+	energy COLORLESS, 2 ; energies
+	tx GlareName ; name
+	tx MayInflictParalysisDescription ; description
 	dw NONE ; description (cont)
-	db 0 ; damage
+	db 20 ; damage
 	db DAMAGE_NORMAL ; category
-	dw NONE ; effect commands
-	db NONE ; flags 1
+	dw ElectabuzzThundershockEffectCommands ; effect commands
+	db INFLICT_PARALYSIS ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_NONE ; animation
+	db ATK_ANIM_HIT ; animation
+
 
 	db 1 ; retreat cost
 	db WR_FIGHTING ; weakness
 	db NONE ; resistance
-	tx DragonName ; category
+	tx SnakeName ; category
 	db 147 ; Pokedex number
 	db 10 ; level
 	db 5, 11 ; length
 	dw 7 * 10 ; weight
-	tx DratiniDescription ; description
+	tx DunsparceDescription ; description
 	db 18
 
 GrassEnergyCard:
@@ -11134,6 +11143,7 @@ DoubleColorlessEnergyCard:
 	tx DoubleColorlessEnergyDescription ; description
 	dw NONE ; description (cont)
 
+;--Trainers--
 ProfessorOakCard:
 	db TYPE_TRAINER ; type
 	gfx ProfessorOakCardGfx ; gfx
@@ -11143,18 +11153,18 @@ ProfessorOakCard:
 	dw PROFESSOR_OAK
 	dw ProfessorOakEffectCommands ; effect commands
 	tx ProfessorOakDescription ; description
-	tx DratiniDescription ; description (cont)
+	tx ProfessorOakDescription2 ; description (cont)
 
 ImposterProfessorOakCard:
 	db TYPE_TRAINER ; type
 	gfx ImposterProfessorOakCardGfx ; gfx
 	tx ImposterProfessorOakName ; name
 	db DIAMOND ; rarity
-	db LABORATORY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw IMPOSTER_PROFESSOR_OAK
 	dw ImposterProfessorOakEffectCommands ; effect commands
 	tx ImposterProfessorOakDescription ; description
-	dw NONE ; description (cont)
+	tx ImposterProfessorOakDescription2 ; description (cont)
 
 BillCard:
 	db TYPE_TRAINER ; type
@@ -11165,29 +11175,29 @@ BillCard:
 	dw BILL
 	dw BillEffectCommands ; effect commands
 	tx BillDescription ; description
-	dw NONE ; description (cont)
+	tx BillDescription2 ; description (cont)
 
 MrFujiCard:
 	db TYPE_TRAINER ; type
 	gfx MrFujiCardGfx ; gfx
 	tx MrFujiName ; name
 	db CIRCLE ; rarity
-	db MYSTERY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw MR_FUJI
 	dw MrFujiEffectCommands ; effect commands
 	tx MrFujiDescription ; description
-	dw NONE ; description (cont)
+	tx MrFujiDescription2 ; description (cont)
 
 LassCard:
 	db TYPE_TRAINER ; type
 	gfx LassCardGfx ; gfx
 	tx LassName ; name
 	db STAR ; rarity
-	db LABORATORY | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw LASS
 	dw LassEffectCommands ; effect commands
 	tx LassDescription ; description
-	dw NONE ; description (cont)
+	tx LassDescription2 ; description (cont)
 
 ImakuniCard:
 	db TYPE_TRAINER ; type
@@ -11205,29 +11215,29 @@ PokemonTraderCard:
 	gfx PokemonTraderCardGfx ; gfx
 	tx PokemonTraderName ; name
 	db DIAMOND ; rarity
-	db EVOLUTION | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw POKEMON_TRADER
 	dw PokemonTraderEffectCommands ; effect commands
 	tx PokemonTraderDescription ; description
-	dw NONE ; description (cont)
+	tx PokemonTraderDescription2 ; description (cont)
 
 PokemonBreederCard:
 	db TYPE_TRAINER ; type
 	gfx PokemonBreederCardGfx ; gfx
 	tx RareCandyName ; name
 	db STAR ; rarity
-	db EVOLUTION | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw POKEMON_BREEDER
 	dw PokemonBreederEffectCommands ; effect commands
 	tx RareCandyDescription ; description
-	dw NONE ; description (cont)
+	tx RareCandyDescription2 ; description (cont)
 
 SubstituteDollCard:
 	db TYPE_TRAINER ; type
 	gfx SubstituteDollCardGfx ; gfx
 	tx SubstituteDollName ; name
 	db CIRCLE ; rarity
-	db EVOLUTION | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw SUBSTITUTE_DOLL
 	dw ClefairyDollEffectCommands ; effect commands
 	tx ClefairyDollDescription ; description
@@ -11238,11 +11248,11 @@ MysteriousFossilCard:
 	gfx MysteriousFossilCardGfx ; gfx
 	tx MysteriousFossilName ; name
 	db CIRCLE ; rarity
-	db MYSTERY | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw MYSTERIOUS_FOSSIL
 	dw MysteriousFossilEffectCommands ; effect commands
 	tx ClefairyDollDescription ; description
-	tx ClefairyDollDescriptionCont ; description (cont)
+	tx MysteriousFossillDescriptionCont ; description (cont)
 
 EnergyRetrievalCard:
 	db TYPE_TRAINER ; type
@@ -11253,7 +11263,7 @@ EnergyRetrievalCard:
 	dw ENERGY_RETRIEVAL
 	dw EnergyRetrievalEffectCommands ; effect commands
 	tx EnergyRetrievalDescription ; description
-	dw NONE ; description (cont)
+	tx EnergyRetrievalDescription2 ; description (cont)
 
 SuperEnergyRetrievalCard:
 	db TYPE_TRAINER ; type
@@ -11264,7 +11274,7 @@ SuperEnergyRetrievalCard:
 	dw SUPER_ENERGY_RETRIEVAL
 	dw SuperEnergyRetrievalEffectCommands ; effect commands
 	tx SuperEnergyRetrievalDescription ; description
-	dw NONE ; description (cont)
+	tx SuperEnergyRetrievalDescription2 ; description (cont)
 
 EnergySearchCard:
 	db TYPE_TRAINER ; type
@@ -11275,29 +11285,29 @@ EnergySearchCard:
 	dw ENERGY_SEARCH
 	dw EnergySearchEffectCommands ; effect commands
 	tx EnergySearchDescription ; description
-	dw NONE ; description (cont)
+	tx EnergySearchDescription2 ; description (cont)
 
 EnergyRemovalCard:
 	db TYPE_TRAINER ; type
 	gfx EnergyRemovalCardGfx ; gfx
 	tx EnergyRemovalName ; name
 	db CIRCLE ; rarity
-	db COLOSSEUM | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw ENERGY_REMOVAL
 	dw EnergyRemovalEffectCommands ; effect commands
 	tx EnergyRemovalDescription ; description
-	dw NONE ; description (cont)
+	tx EnergyRemovalDescription2 ; description (cont)
 
-SuperEnergyRemovalCard:
+QuickBallCard:
 	db TYPE_TRAINER ; type
-	gfx SuperEnergyRemovalCardGfx ; gfx
-	tx SuperEnergyRemovalName ; name
-	db PROMOSTAR ; rarity
-	db PROMOTIONAL | PRO ; sets
-	dw SUPER_ENERGY_REMOVAL
-	dw SuperEnergyRemovalEffectCommands ; effect commands
-	tx SuperEnergyRemovalDescription ; description
-	dw NONE ; description (cont)
+	gfx QuickBallCardGfx ; gfx
+	tx QuickBallName ; name
+	db DIAMOND ; rarity
+	db MYSTERY | PRO ; sets
+	dw QUICK_BALL
+	dw QuickBallEffectCommands ; effect commands
+	tx QuickBallDescription ; description
+	tx QuickBallDescription2 ; description (cont)
 
 SwitchCard:
 	db TYPE_TRAINER ; type
@@ -11308,7 +11318,7 @@ SwitchCard:
 	dw SWITCH
 	dw SwitchEffectCommands ; effect commands
 	tx SwitchDescription ; description
-	dw NONE ; description (cont)
+	tx SwitchDescription2 ; description (cont)
 
 PokemonCenterCard:
 	db TYPE_TRAINER ; type
@@ -11319,7 +11329,7 @@ PokemonCenterCard:
 	dw POKEMON_CENTER
 	dw PokemonCenterEffectCommands ; effect commands
 	tx PokemonCenterDescription ; description
-	dw NONE ; description (cont)
+	tx PokemonCenterDescription2 ; description (cont)
 
 PokeBallCard:
 	db TYPE_TRAINER ; type
@@ -11330,84 +11340,84 @@ PokeBallCard:
 	dw POKE_BALL
 	dw PokeBallEffectCommands ; effect commands
 	tx PokeBallDescription ; description
-	dw NONE ; description (cont)
+	tx PokeBallDescription2 ; description (cont)
 
 ScoopUpCard:
 	db TYPE_TRAINER ; type
 	gfx ScoopUpCardGfx ; gfx
 	tx ScoopUpName ; name
 	db STAR ; rarity
-	db COLOSSEUM | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw SCOOP_UP
 	dw ScoopUpEffectCommands ; effect commands
 	tx ScoopUpDescription ; description
-	dw NONE ; description (cont)
+	tx ScoopUpDescription2 ; description (cont)
 
 ComputerSearchCard:
 	db TYPE_TRAINER ; type
 	gfx ComputerSearchCardGfx ; gfx
 	tx ComputerSearchName ; name
 	db STAR ; rarity
-	db COLOSSEUM | NONE ; sets
+	db PROMOTIONAL | NONE ; sets
 	dw COMPUTER_SEARCH
 	dw ComputerSearchEffectCommands ; effect commands
 	tx ComputerSearchDescription ; description
-	dw NONE ; description (cont)
+	tx ComputerSearchDescription2 ; description (cont)
 
 PokedexCard:
 	db TYPE_TRAINER ; type
 	gfx PokedexCardGfx ; gfx
 	tx PokedexName ; name
 	db CIRCLE ; rarity
-	db LABORATORY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw POKEDEX
 	dw PokedexEffectCommands ; effect commands
 	tx PokedexDescription ; description
-	dw NONE ; description (cont)
+	tx PokedexDescription2 ; description (cont)
 
 PlusPowerCard:
 	db TYPE_TRAINER ; type
 	gfx PlusPowerCardGfx ; gfx
 	tx PlusPowerName ; name
 	db DIAMOND ; rarity
-	db COLOSSEUM | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw PLUSPOWER
 	dw PlusPowerEffectCommands ; effect commands
 	tx PlusPowerDescription ; description
-	dw NONE ; description (cont)
+	tx PlusPowerDescription2 ; description (cont)
 
 DefenderCard:
 	db TYPE_TRAINER ; type
 	gfx DefenderCardGfx ; gfx
 	tx DefenderName ; name
 	db DIAMOND ; rarity
-	db COLOSSEUM | NONE ; sets
+	db MYSTERY | NONE ; sets
 	dw DEFENDER
 	dw DefenderEffectCommands ; effect commands
 	tx DefenderDescription ; description
-	dw NONE ; description (cont)
+	tx DefenderDescription2 ; description (cont)
 
 ItemFinderCard:
 	db TYPE_TRAINER ; type
 	gfx ItemFinderCardGfx ; gfx
 	tx ItemFinderName ; name
 	db STAR ; rarity
-	db COLOSSEUM | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw ITEM_FINDER
 	dw ItemFinderEffectCommands ; effect commands
 	tx ItemFinderDescription ; description
-	dw NONE ; description (cont)
+	tx ItemFinderDescription2 ; description (cont)
 
-GustOfWindCard:
+BossOrdersCard:
 	db TYPE_TRAINER ; type
-	gfx GustOfWindCardGfx ; gfx
+	gfx BossOrdersCardGfx ; gfx
 	tx BossOrdersName ; name
 	db STAR ; rarity
-	db EVOLUTION | NONE ; sets
+	db LABORATORY | NONE ; sets
 	dw GUST_OF_WIND
-	dw GustOfWindEffectCommands ; effect commands
+	dw BossOrdersEffectCommands ; effect commands
 	tx BossOrdersDescription ; description
-	dw NONE ; description (cont)
+	tx BossOrdersDescription2 ; description (cont)
 
 DevolutionSprayCard:
 	db TYPE_TRAINER ; type
@@ -11418,7 +11428,7 @@ DevolutionSprayCard:
 	dw DEVOLUTION_SPRAY
 	dw DevolutionSprayEffectCommands ; effect commands
 	tx DevolutionSprayDescription ; description
-	dw NONE ; description (cont)
+	tx DevolutionSprayDescription2 ; description (cont)
 
 PotionCard:
 	db TYPE_TRAINER ; type
@@ -11429,7 +11439,7 @@ PotionCard:
 	dw POTION
 	dw PotionEffectCommands ; effect commands
 	tx PotionDescription ; description
-	dw NONE ; description (cont)
+	tx PotionDescription2 ; description (cont)
 
 SuperPotionCard:
 	db TYPE_TRAINER ; type
@@ -11440,7 +11450,7 @@ SuperPotionCard:
 	dw SUPER_POTION
 	dw SuperPotionEffectCommands ; effect commands
 	tx SuperPotionDescription ; description
-	dw NONE ; description (cont)
+	tx SuperPotionDescription2 ; description (cont)
 
 FullHealCard:
 	db TYPE_TRAINER ; type
@@ -11451,7 +11461,7 @@ FullHealCard:
 	dw FULL_HEAL
 	dw FullHealEffectCommands ; effect commands
 	tx FullHealDescription ; description
-	dw NONE ; description (cont)
+	tx FullHealDescription2 ; description (cont)
 
 ReviveCard:
 	db TYPE_TRAINER ; type
@@ -11462,18 +11472,18 @@ ReviveCard:
 	dw REVIVE
 	dw ReviveEffectCommands ; effect commands
 	tx ReviveDescription ; description
-	dw NONE ; description (cont)
+	tx ReviveDescription2 ; description (cont)
 
-MaintenanceCard:
+HeavyBallCard:
 	db TYPE_TRAINER ; type
-	gfx MaintenanceCardGfx ; gfx
-	tx MaintenanceName ; name
-	db CIRCLE ; rarity
-	db LABORATORY | NONE ; sets
-	dw MAINTENANCE
-	dw MaintenanceEffectCommands ; effect commands
-	tx MaintenanceDescription ; description
-	dw NONE ; description (cont)
+	gfx HeavyBallCardGfx ; gfx
+	tx HeavyBallName ; name
+	db DIAMOND ; rarity
+	db MYSTERY | NONE ; sets
+	dw HEAVYBALL
+	dw HeavyBallEffectCommands ; effect commands
+	tx HeavyBallDescription ; description
+	tx HeavyBallDescription2 ; description (cont)
 
 PokemonFluteCard:
 	db TYPE_TRAINER ; type
@@ -11484,18 +11494,18 @@ PokemonFluteCard:
 	dw POKEMON_FLUTE
 	dw PokemonFluteEffectCommands ; effect commands
 	tx PokemonFluteDescription ; description
-	dw NONE ; description (cont)
+	tx PokemonFluteDescription2 ; description (cont)
 
 CopycatCard:
 	db TYPE_TRAINER ; type
 	gfx CopycatCardGfx ; gfx
 	tx CopycatName ; name
 	db DIAMOND ; rarity
-	db LABORATORY | NONE ; sets
+	db EVOLUTION | NONE ; sets
 	dw COPYCAT
 	dw GamblerEffectCommands ; effect commands
 	tx CopycatDescription ; description
-	dw NONE ; description (cont)
+	tx CopycatDescription2 ; description (cont)
 
 RecycleCard:
 	db TYPE_TRAINER ; type

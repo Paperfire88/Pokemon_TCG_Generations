@@ -604,7 +604,7 @@ GetAIScoreOfAttack:
 	call GetCardIDFromDeckIndex
 	call SwapTurn
 	; skip if player has Snorlax
-	cp16 MAINTENANCE
+	cp16 HEAVYBALL
 	jp z, .handle_special_atks
 
 	ld a, DUELVARS_ARENA_CARD_STATUS
@@ -622,7 +622,7 @@ GetAIScoreOfAttack:
 ; isn't (doubly) poisoned already.
 ; if opposing Pokémon is only poisoned and not double poisoned,
 ; and this attack has FLAG_2_BIT_6 set, discourage it
-; (possibly to make Nidoking's Toxic attack less likely to be chosen
+; (possibly to make Volbeat's Toxic attack less likely to be chosen
 ; if the other Pokémon is poisoned.)
 .check_poison
 	ld a, ATTACK_FLAG1_ADDRESS | INFLICT_POISON_F

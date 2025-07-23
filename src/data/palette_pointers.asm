@@ -171,4 +171,11 @@ Palettes:
 	palette_pointer Palette160, 1, 0 ; PALETTE_160
 	palette_pointer Palette161, 1, 0 ; PALETTE_161
 	palette_pointer Palette162, 1, 0 ; PALETTE_162
+	palette_pointer Palette163, 8, 0 ; PALETTE 163
+	palette_pointer Palette164, 8, 0 ; PALETTE 164
+	palette_pointer Palette165, 8, 0 ; PALETTE 165
+	palette_pointer Palette166, 8, 0 ; PALETTE 166
+	palette_pointer Palette167, 8, 0 ; PALETTE 167	
+	palette_pointer Palette168, 8, 0 ; PALETTE 168
+	palette_pointer Palette169, 8, 0 ; PALETTE 169		
 	assert_table_length NUM_PALETTES

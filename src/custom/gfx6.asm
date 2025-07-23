@@ -22,10 +22,10 @@ PorygonCardGfx::
 	INCBIN "gfx/cards/porygon.pal"
 	INCBIN "gfx/cards/porygon.attrmap"	
 	INCBIN "gfx/cards/porygon.2bpp"
-SuperEnergyRemovalCardGfx::
-	INCBIN "gfx/cards/superenergyremoval.pal"
-	INCBIN "gfx/cards/superenergyremoval.attrmap"	
-	INCBIN "gfx/cards/superenergyremoval.2bpp"
+QuickBallCardGfx::
+	INCBIN "gfx/cards/quick_ball.pal"
+	INCBIN "gfx/cards/quick_ball.attrmap"	
+	INCBIN "gfx/cards/quick_ball.2bpp"
 SwitchCardGfx::
 	INCBIN "gfx/cards/switch.pal"
 	INCBIN "gfx/cards/switch.attrmap"
@@ -70,7 +70,7 @@ Kommo_oCardGfx::
 	INCBIN "gfx/cards/kommo_o.pal"	
 	INCBIN "gfx/cards/kommo_o.attrmap"	
 	INCBIN "gfx/cards/kommo_o.2bpp"
-SeakingCardGfx::
+BasculegionGfx::
 	INCBIN "gfx/cards/seaking.pal"
 	INCBIN "gfx/cards/seaking.attrmap"	
 	INCBIN "gfx/cards/seaking.2bpp"

@@ -89,7 +89,7 @@ IronTackleDescription:
 	line "(after applying Weakness/Resistance)"
 	done
 
-NidokingName:
+VolbeatName:
 	text "Volbeat"
 	done
 
@@ -140,7 +140,7 @@ WeedName:
 	text "Weed"
 	done
 
-GloomName:
+FlappleName:
 	text "Flapple"
 	done
 
@@ -153,7 +153,7 @@ FoulOdorDescription:
 	line "are now Confused."
 	done
 
-VileplumeName:
+AppletunName:
 	text "Appletun"
 	done
 
@@ -685,7 +685,7 @@ TinyTurtleName:
 	text "Tiny Turtle"
 	done
 
-WartortleName:
+FrogadierName:
 	text "Frogadier"
 	done
 
@@ -880,7 +880,7 @@ StarshapeName:
 	text "Starshape"
 	done
 
-SeakingName:
+BasculegionName:
 	text "Basculegion"
 	done
 
@@ -888,7 +888,7 @@ WaterfallName:
 	text "Grudge Dive"
 	done
 
-GoldeenName:
+BasculinName:
 	text "Basculin"
 	done
 
@@ -1221,17 +1221,13 @@ MudSlapName:
 	text "Mud Slap"
 	done
 
-SandslashName:
+PerrserkerName:
 	text "Perrserker"
 	done
 
 TripleAttackX20Description:
 	text "Flip 3 coins. This attack does 20"
 	line "damage for each heads."
-	done
-
-SandshrewName:
-	text "Sandshrew"
 	done
 
 SandAttackName:

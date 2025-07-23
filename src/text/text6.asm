@@ -940,13 +940,11 @@ ItsTheChallengeMachineText:
 Tech1MasterMedalExplanationText:
 	text "The 8 Club Masters each own a"
 	line "Master Medal."
-	line "The secret of each Club's deck is"
-	line "encrypted in its Master Medal."
 	line "Once you get a Master Medal, go"
 	line "to the computer room in back."
 	line "You can place the Medals in the"
-	line "Auto Deck Machines to create"
-	line "different Decks!"
+	line "Auto Deck Machines to See"
+	line "different Deckslits!"
 	done
 
 Tech1AutoDeckMachineExplanationText:
@@ -1001,7 +999,7 @@ Tech2LegendaryCardsCongratsText:
 Tech3BoosterPackExplanationText:
 	text "When you defeat a Club Member,"
 	line "you'll receive a Booster Pack."
-	line "Each Booster Pack has 10 cards."
+	line "Each Booster Pack has 11 cards."
 	line "The cards differ depending on"
 	line "the Booster Pack you receive. "
 	line "The type of Booster Pack differs"
@@ -1038,10 +1036,10 @@ Tech4DefeatedTheGrandMastersText:
 Tech5DiaryAndEmailExplanationText:
 	text "To save your game, press START"
 	line "and choose Diary from the Menu."
-	line "You can do all sorts of stuff with"
-	line "that PC over there."
+	line "You can do all sorts of stuff on"
+	line "the Menu and that PC over there."
 	line "You can read e-mail from "
-	line "Dr. Mason on that PC, too!"
+	line "Dr. Mason or Save your Decklist!"
 	done
 
 Tech5ChallengeMachineExplanationText:
@@ -1137,7 +1135,7 @@ Text05d7:
 	line "by attacking. Pokémon need Energy "
 	line "cards in order to attack."
 	line "For example, the energy required "
-	line "for Seaking's Waterfall is <WATER><COLORLESS>."
+	line "for Basculegion's Waterfall is <WATER><COLORLESS>."
 	line "<WATER><COLORLESS> stands for 1 Water Energy "
 	line "card and another Energy card of "
 	line "any type. The energy required "
@@ -1160,7 +1158,7 @@ Text05d9:
 	text "There are 3 types of Pokémon cards:"
 	line "Basic Pokémon, Stage 1 Pokémon and "
 	line "Stage 2 Pokémon. Froakie is a "
-	line "Basic, Wartortle a Stage 1 and "
+	line "Basic, Frogadier a Stage 1 and "
 	line "Blastoise a Stage 2 Pokémon."
 	line "Basic Pokémon are the only cards"
 	line "that can be put directly into play."
@@ -1169,8 +1167,8 @@ Text05d9:
 	line "Stage 1 Pokémon in the Play Area "
 	line "can then be evolved to a Stage 2 "
 	line "Pokémon. Therefore, Froakie is "
-	line "needed in order to play Wartortle,"
-	line "and Wartortle is needed in"
+	line "needed in order to play Frogadier,"
+	line "and Frogadier is needed in"
 	line "order to play Blastoise."
 	done
 
@@ -1197,4 +1195,3 @@ SearchyourDeckforanEvolvedPkmnText:
 	text "Search your Deck for an"
 	line "Evolved card."
 	done
-

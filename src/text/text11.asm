@@ -445,7 +445,7 @@ AudinoName:
 	text "Audino"
 	done
 
-PotSmashName:
+GlareName:
 	text "Glare"
 	done
 
@@ -735,9 +735,8 @@ PokemonTraderName:
 PokemonTraderDescription:
 	text "Reveal a PKMN from your hand and put" 
 	line "it into your deck. Then, search your"
-	line "deck for a PKMN, reveal it, and put"
-	line "it into your hand. Then, shuffle"
-	line "your deck."
+	line "deck for a PKMN, reveal it, and add"
+	line "it to your hand. Shuffle your deck."
 	done
 
 RareCandyName:
@@ -766,12 +765,14 @@ ClefairyDollDescription:
 	line "If this card is KO, your opponent" 
 	line "can't take any Prize cards for it."
 	done
-
 ClefairyDollDescriptionCont:
 	text "On your turn, you may discard this"
 	line "card. (Use the PKMN Power menu.)"
+	line ""
+	line "Booster Pack: (MYSTERY)"
+	line "OG Set: (Pokémon Official Illus.)"
+	line "OG illustrator: (Ken Sugimori)"
 	done
-
 EnergyRetrievalName:
 	text "Energy Retrieval"
 	done
@@ -814,14 +815,16 @@ EnergyRemovalDescription:
 	line "card without flipping a coin]."
 	done
 
-SuperEnergyRemovalName:
-	text "Super Energy Removal"
+QuickBallName:
+	text "Quick Ball"
 	done
 
-SuperEnergyRemovalDescription:
-	text "Discard 1 Energy card attached to 1"
-	line "of your PKMN; Discard up to 2 Energy"
-	line "from 1 of your opponent's PKMN."
+QuickBallDescription:
+	text "Discard 1 card from your hand,search"
+	line "your deck for a PKMN with 0 <COLORLESS>"
+	line "retreat cost on it, reveal it, and"
+	line "add it to your hand. then, Shuffle"
+	line "your deck."
 	done
 
 SwitchName:
@@ -849,9 +852,8 @@ PokeBallName:
 
 PokeBallDescription:
 	text "Flip a coin. If heads, search your" 
-	line "deck for a PKMN, reveal it, and put" 
-	line "it into your hand. Then, shuffle" 
-	line "your deck afterward."
+	line "deck for a PKMN, reveal it, and add" 
+	line "it to your hand. Shuffle your deck."
 	done
 
 ScoopUpName:
@@ -985,12 +987,16 @@ ReviveDescription:
 	line "its HP (rounded down)."
 	done
 
-MaintenanceName:
-	text "Maintenance"
+HeavyBallName:
+	text "Heavy Ball"
 	done
 
-MaintenanceDescription:
-	text ""
+HeavyBallDescription:
+	text "Discard 1 card from your hand,search"
+	line "your deck for a PKMN with 3 or more"
+	line "<COLORLESS> retreat cost on it, reveal it,"
+	line "and add it to your hand. then,"
+	line "Shuffle your deck."
 	done
 
 PokemonFluteName:
@@ -1755,7 +1761,7 @@ SignsOfEvolutionName:
 SignsOfEvolutionDescription:
 	text "Search your deck for a card that"
 	line "evolves from Eevee, reveal it,"
-	line "and put it into your hand. Then,"
+	line "and add it to your hand. Then,"
 	line "shuffle your deck."
 	done
 

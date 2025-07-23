@@ -26,7 +26,7 @@ AccelgorCardGfx::
 	INCBIN "gfx/cards/accelgor.pal"
 	INCBIN "gfx/cards/accelgor.attrmap"	
 	INCBIN "gfx/cards/accelgor.2bpp"
-BeedrillCardGfx::
+DecidueyeCardGfx::
 	INCBIN "gfx/cards/beedrill.pal"
 	INCBIN "gfx/cards/beedrill.attrmap"
 	INCBIN "gfx/cards/beedrill.2bpp"
@@ -70,7 +70,7 @@ TortunatorCardGfx::
 	INCBIN "gfx/cards/turtonator.pal"
 	INCBIN "gfx/cards/turtonator.attrmap"
 	INCBIN "gfx/cards/turtonator.2bpp"
-GoldeenCardGfx::
+BasculinCardGfx::
 	INCBIN "gfx/cards/goldeen.pal"
 	INCBIN "gfx/cards/goldeen.attrmap"
 	INCBIN "gfx/cards/goldeen.2bpp"

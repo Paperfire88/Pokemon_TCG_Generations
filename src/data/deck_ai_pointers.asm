@@ -9,9 +9,9 @@ DeckAIPointerTable::
 	dw AIActionTable_GeneralDecks        ; FROAKIE_EXTRA_DECK
 	dw AIActionTable_GeneralDecks        ; CHIKORITA_AND_FRIENDS_DECK
 	dw AIActionTable_GeneralDecks        ; CHIKORITA_EXTRA_DECK
-	dw AIActionTable_GeneralDecks        ; LIGHTNING_AND_FIRE_DECK
-	dw AIActionTable_GeneralDecks        ; WATER_AND_FIGHTING_DECK
-	dw AIActionTable_GeneralDecks        ; GRASS_AND_PSYCHIC_DECK
+	dw AIActionTable_GeneralNoRetreat        ; LIGHTNING_AND_FIRE_DECK
+	dw AIActionTable_GeneralNoRetreat        ; WATER_AND_FIGHTING_DECK
+	dw AIActionTable_GeneralNoRetreat        ; GRASS_AND_PSYCHIC_DECK
 	dw AIActionTable_LegendaryMoltres    ; LEGENDARY_MOLTRES_DECK
 	dw AIActionTable_LegendaryZapdos     ; LEGENDARY_ZAPDOS_DECK
 	dw AIActionTable_LegendaryArticuno   ; LEGENDARY_ARTICUNO_DECK

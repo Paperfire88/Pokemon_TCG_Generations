@@ -134,8 +134,8 @@ Script_Ishihara:
 	print_npc_text Text072f
 	print_text Text0730
 	take_card TOGETIC
-	give_card LUXIO
-	show_card_received_screen LUXIO
+	give_card CRESSELIA
+	show_card_received_screen CRESSELIA
 	print_text_quit_fully Text0731
 
 .ows_dbcc
@@ -146,11 +146,11 @@ Script_Ishihara:
 	print_text_quit_fully Text072c
 
 .check_if_ditto_owned
-	jump_if_card_owned DITTO, .check_if_ditto_in_collection
+	jump_if_card_owned GRIMMSNARL, .check_if_ditto_in_collection
 	print_text_quit_fully Text0734
 
 .check_if_ditto_in_collection
-	jump_if_card_in_collection DITTO, .do_ditto_trade
+	jump_if_card_in_collection GRIMMSNARL, .do_ditto_trade
 	print_text_quit_fully Text0735
 
 .do_ditto_trade
@@ -159,9 +159,9 @@ Script_Ishihara:
 	zero_out_event_value EVENT_ISHIHARA_WANTS_TO_TRADE
 	print_npc_text Text072f
 	print_text Text0736
-	take_card DITTO
-	give_card SHINX
-	show_card_received_screen SHINX
+	take_card GRIMMSNARL
+	give_card DARKRAI
+	show_card_received_screen DARKRAI
 	print_text_quit_fully Text0737
 
 .ows_dc05
@@ -172,11 +172,11 @@ Script_Ishihara:
 	print_text_quit_fully Text072c
 
 .check_if_chansey_owned
-	jump_if_card_owned AUDINO, .check_if_chansey_in_collection
+	jump_if_card_owned GOODRA, .check_if_chansey_in_collection
 	print_text_quit_fully Text073a
 
 .check_if_chansey_in_collection
-	jump_if_card_in_collection AUDINO, .do_chansey_trade
+	jump_if_card_in_collection GOODRA, .do_chansey_trade
 	print_text_quit_fully Text073b
 
 .do_chansey_trade
@@ -185,9 +185,9 @@ Script_Ishihara:
 	zero_out_event_value EVENT_ISHIHARA_WANTS_TO_TRADE
 	print_npc_text Text072f
 	print_text Text073c
-	take_card AUDINO
-	give_card LUXRAY
-	show_card_received_screen LUXRAY
+	take_card GOODRA
+	give_card RAYQUAZA
+	show_card_received_screen RAYQUAZA
 	print_text_quit_fully Text073d
 
 .ows_dc3e

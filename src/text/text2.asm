@@ -797,8 +797,8 @@ ReceivedCardText:
 	done
 
 ReceivedPromotionalCardText:
-	text "<RAMNAME> received a Promotional"
-	line "card <RAMTEXT>!"
+	text "<RAMNAME> received a card,"
+	line "<RAMTEXT>!"
 	done
 
 ReceivedLegendaryCardText:
@@ -882,14 +882,14 @@ DrawSevenCardsPracticeDuelText:
 	line "Choose your Active Pokémon."
 	line "You can only choose Basic Pokémon"
 	line "as your Active Pokémon,"
-	line "so you can choose either Goldeen"
+	line "so you can choose either Basculin"
 	line "or Staryu."
 	line "For our practice duel,"
-	line "choose Goldeen."
+	line "choose Basculin."
 	done
 
-ChooseGoldeenPracticeDuelText:
-	text "Choose Goldeen for this"
+ChooseBasculinPracticeDuelText:
+	text "Choose Basculin for this"
 	line "practice duel, OK?"
 	done
 
@@ -922,7 +922,7 @@ Turn1Instr1PracticeDuelText:
 
 Turn1Instr2PracticeDuelText:
 	text "2. Attach a Water Energy card to"
-	line "   your Active Pokémon, Goldeen."
+	line "   your Active Pokémon, Basculin."
 	done
 
 Turn1Instr3PracticeDuelText:
@@ -931,13 +931,13 @@ Turn1Instr3PracticeDuelText:
 	done
 
 Turn2Instr1PracticeDuelText:
-	text "1. Evolve Goldeen by"
-	line "   attaching Seaking to it."
+	text "1. Evolve Basculin by"
+	line "   attaching Basculegion to it."
 	done
 
 Turn2Instr2PracticeDuelText:
 	text "2. Attach a Psychic Energy card"
-	line "   to the evolved Seaking."
+	line "   to the evolved Basculegion."
 	done
 
 Turn2Instr3PracticeDuelText:
@@ -970,7 +970,7 @@ Turn4Instr2PracticeDuelText:
 	done
 
 Turn4Instr3PracticeDuelText:
-	text "3. Choose Seaking and attack your"
+	text "3. Choose Basculegion and attack your"
 	line "   opponent with Waterfall."
 	done
 
@@ -1022,7 +1022,7 @@ Turn8Instr2PracticeDuelText:
 	done
 
 SamTurn4Instr1PracticeDuelText:
-	text "1. Your Seaking was Knocked Out."
+	text "1. Your Basculegion was Knocked Out."
 	line "   Choose your Benched Staryu"
 	line "   and press the A Button to set"
 	line "   it as your Active Pokémon."
@@ -1044,9 +1044,9 @@ Turn1DrMason1PracticeDuelText:
 
 Turn1DrMason2PracticeDuelText:
 	text "Next, choose your Active Pokémon,"
-	line "Goldeen, and press the A Button."
+	line "Basculin, and press the A Button."
 	line "Then the Water Energy card will"
-	line "be attached to Goldeen."
+	line "be attached to Basculin."
 	done
 
 Turn1DrMason3PracticeDuelText:
@@ -1057,19 +1057,19 @@ Turn1DrMason3PracticeDuelText:
 	done
 
 Turn2DrMason1PracticeDuelText:
-	text "Your Goldeen's gonna get Knocked"
+	text "Your Basculin's gonna get Knocked"
 	line "Out. Let's evolve it!"
-	line "Choose Seaking from your hand and"
-	line "attach it to Goldeen to"
+	line "Choose Basculegion from your hand and"
+	line "attach it to Basculin to"
 	line "Evolve it."
 	line "Its HP increases from 40 to 70."
 	done
 
 Turn2DrMason2PracticeDuelText:
-	text "Your Seaking doesn't have enough"
+	text "Your Basculegion doesn't have enough"
 	line "Energy to use Waterfall."
 	line "You need to attach a Psychic Energy"
-	line "card to Seaking."
+	line "card to Basculegion."
 	line "<COLORLESS> means any Energy card."
 	line "Now you can use Waterfall."
 	line "Keep the Water Energy card for"
@@ -1078,11 +1078,11 @@ Turn2DrMason2PracticeDuelText:
 
 Turn2DrMason3PracticeDuelText:
 	text "Now let's attack your opponent with"
-	line "Seaking's Waterfall!"
+	line "Basculegion's Waterfall!"
 	done
 
 Turn3DrMason1PracticeDuelText:
-	text "Seaking's got enough Energy, so"
+	text "Basculegion's got enough Energy, so"
 	line "you don't need to attach any more."
 	line "Attach Energy cards to your Benched"
 	line "Pokémon to get them ready for"
@@ -1095,9 +1095,9 @@ Turn3DrMason1PracticeDuelText:
 Turn3DrMason2PracticeDuelText:
 	text "Next, select the attack command."
 	line "Machop has 10 HP left."
-	line "Seaking's Horn Attack will be"
+	line "Basculegion's Horn Attack will be"
 	line "enough to Knock out Machop."
-	line "Now, choose Seaking's"
+	line "Now, choose Basculegion's"
 	line "Horn Attack."
 	done
 
@@ -1125,7 +1125,7 @@ Turn4DrMason2PracticeDuelText:
 	done
 
 Turn4DrMason3PracticeDuelText:
-	text "Choose your Active Seaking and"
+	text "Choose your Active Basculegion and"
 	line "attack your opponent with"
 	line "Waterfall."
 	done

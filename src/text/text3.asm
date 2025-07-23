@@ -355,7 +355,7 @@ SqueakingMouseDescriptionText:
 	done
 
 GreatQuakeDescriptionText:
-	text "Use Dugtrio's Earthquake"
+	text "Use Sandaconda's Earthquake"
 	line "to cause great damage."
 	done
 
@@ -381,7 +381,7 @@ BlueWaterDescriptionText:
 
 OnTheBeachDescriptionText:
 	text "A well balanced Deck"
-	line "of Sandshrew and Water Pokémon!"
+	line "of Meowth and Water Pokémon!"
 	done
 
 ParalyzeDescriptionText:
@@ -454,7 +454,7 @@ PsychicPowerDescriptionText:
 	line "Psychic Pokémon to Attack!"
 	done
 
-DreamEaterHaunterDescriptionText:
+DreamEaterDusclopsDescriptionText:
 	text "Uses Haunter's Dream Eater"
 	line "to cause great damage!"
 	done
