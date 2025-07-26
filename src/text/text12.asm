@@ -1329,12 +1329,6 @@ EelektrossDescription:
 	line "OG illustrator: (kawayoo)"
 	done
 
-WattrelDescription:
-	text "Booster Pack: (LABORATORY)"
-	line "OG Set: (Astral Radiance 51)"
-	line "OG illustrator: (Shiburingaru)"
-	done
-
 TyruntDescription:
 	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Furious Fists 61)"
@@ -1373,12 +1367,6 @@ OrbeetleDescription:
 	text "Booster Pack: (EVOLUTION)"
 	line "OG Set: (Lost Origin 20)"
 	line "OG illustrator: (Yuu)"
-	done	
-
-MewDescription:
-	text "Booster Pack: (MYSTERY)"
-	line "OG Set: (Expedition 19)"
-	line "OG illustrator: (Hajime Kusajima)"
 	done	
 
 BeldumDescription:

@@ -3326,10 +3326,10 @@ AllEnergyInYourPlayArea_10xDamageEffect:
    	jp SetDefiniteDamage   ; and then store that damage value in various wram locations
 
 MagnetismEffect2:
-	ld de, MAGNEMITE_LV13
+	ld de, MAGNEMITE
 	call CountPokemonIDInBothPlayAreas
 	ld b, a
-	ld de, MAGNETON_LV28
+	ld de, MAGNETON
 	call CountPokemonIDInBothPlayAreas
 	ld c, a
 	ld de, MAGNEZONE

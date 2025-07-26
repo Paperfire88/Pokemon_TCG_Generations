@@ -111,17 +111,15 @@ EscavalierDescription:
 	line "OG Set: (Noble Victories 80)"
 	line "OG illustrator: (Kouki Saitou)"
 	done
-
 VolbeatDescription:
 	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (XY 9)"
 	line "OG illustrator: (Kanako Eo)"
 	done
-
 ZubatDescription:
 	text "Booster Pack: (MYSTERY)"
-	line "OG Set: (Gym Heroes 24)"
-	line "OG illustrator: (Ken Sugimori)"
+	line "OG Set: (Skyridge 117)"
+	line "OG illustrator: (Hisao Nakamura)"
 	done
 GolbatDescription:
 	text "Booster Pack: (MYSTERY)"
@@ -274,9 +272,8 @@ HoundoomDescription:
 	line "OG Set: (Scarlet & Violet 34)"
 	line "OG illustrator: (hncl)"
 	done
-
 KingdraDescription:
-	text "Booster Pack: (MYSTERY)"
+	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Neo Genesis 8)"
 	line "OG illustrator: (Ken Sugimori)"
 	done
@@ -374,24 +371,21 @@ FloatzelDescription:
 	line "OG illustrator: (Kanako Eo)"
 	done
 
-PoliwagDescription:
-	text "Booster Pack: (EVOLUTION)"
+TympoleDescription:
+	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Plasma Freeze 24)"
 	line "OG illustrator: (MAHOU)"
 	done
-
-PoliwhirlsDescription:
-	text "Booster Pack: (EVOLUTION)"
+PalpitoadDescription:
+	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Rebel Clash 45)"
 	line "OG illustrator: (MAHOU)"
 	done
-
-PoliwrathDescription:
-	text "Booster Pack: (EVOLUTION)"
+SeismitoadDescription:
+	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (BREAKpoint 35)"
 	line "OG illustrator: (Kanako Eo)"
 	done
-
 TentacoolDescription:
 	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (Forbidden Light 52)"
@@ -405,17 +399,15 @@ TentacruelDescription:
 	done
 
 SeelDescription:
-	text "Booster Pack: (MYSTERY)"
+	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (Lost Origin 33)"
 	line "OG illustrator: (GIDORA)"
 	done
-
 DewgongDescription:
-	text "Booster Pack: (MYSTERY)"
+	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (Supreme Victors 24)"
 	line "OG illustrator: (Kanako Eo)"
 	done
-
 ShellderDescription:
 	text "Booster Pack: (Evolution)"
 	line "OG Set: (Celestial Storm 111)"
@@ -441,47 +433,44 @@ ClawitzerDescription:
 	done
 
 HorseaDescription:
-	text "Booster Pack: (EVOLUTION)"
+	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Dragon Frontiers 50)"
 	line "OG illustrator: (Hisao Nakamura)"
 	done
 
 SeadraDescription:
-	text "Booster Pack: (EVOLUTION)"
+	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Holon Phantoms 52)"
 	line "OG illustrator: (Kouki Saitou)"
 	done
 
 BasculinDescription:
-	text "Booster Pack: (LABORATORY)"
+	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Emerging Powers 25)"
 	line "OG illustrator: (Akira Komayama)"
 	done
 
 BasculegionDescription:
-	text "Booster Pack: (LABORATORY)"
+	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Sword & Shield Promos 205)"
 	line "OG illustrator: (Pani Kobayashi)"
 	done
 
 DewpiderDescription:
-	text "Booster Pack: (EVOLUTION)"
+	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Cosmic Eclipse 64)"
 	line "OG illustrator: (Shibuzoh)"
 	done
-
 AraquanidDescription:
-	text "Booster Pack: (EVOLUTION)"
+	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Silver Tempest 48)"
 	line "OG illustrator: (DOM)"
 	done
-	
-VaporeonLv29Description:
-	text "Booster Pack: (LABORATORY)"
+DrednawDescription:
+	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Sword & Shield 61)"
 	line "OG illustrator: (Hitoshi Ariga)"
 	done
-
 VaporeonLv42Description:
 	text "Booster Pack: (EVOLUTION)"
 	line "OG Set: (Generations 24)"
@@ -500,8 +489,8 @@ OmastarDescription:
 	line "OG illustrator: (Hajime Kusajima)"
 	done
 
-ArticunoLv35Description:
-	text "Booster Pack: (COLOSSEUM)"
+RelicanthDescription:
+	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Darkness Ablaze 40)"
 	line "OG illustrator: (MAHOU)"
 	done
@@ -531,13 +520,13 @@ HelioptileDescription:
 	done
 
 ShinxDescription:
-	text "Booster Pack: (COLOSSEUM)"
+	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Mysterious Treasures 98)"
 	line "OG illustrator: (Lee HyunJung)"
 	done
 
 LuxioDescription:
-	text "Booster Pack: (COLOSSEUM)"
+	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Arceus 43)"
 	line "OG illustrator: (Suwama Chiaki)"
 	done
@@ -596,20 +585,20 @@ ToxtricityLv42Description:
 	line "OG illustrator: (nagimiso)"
 	done
 
-ElectabuzzLv20Description:
-	text "Booster Pack: (EVOLUTION)"
+ElectrikeDescription:
+	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Emerald 47)"
 	line "OG illustrator: (Kagemaru Himeno)"
 	done
 
 ElectabuzzLv35Description:
-	text "Booster Pack: (LABORATORY)"
-	line "OG Set: (Gym HeroeS 6)"
-	line "OG illustrator: (kEN SUGIMORI)"
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Sandstorm 35)"
+	line "OG illustrator: (Kouki Saitou)"
 	done
 
-JolteonLv24Description:
-	text "Booster Pack: (EVOLUTION)"
+ManectricDescription:
+	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Celestial Storm 52)"
 	line "OG illustrator: (Sanosuke Sakuma)"
 	done
@@ -777,21 +766,21 @@ AerodactylDescription:
 	done
 	
 AbraDescription:
-	text "Booster Pack: (COLOSSEUM)"
-	line "OG Set: (Dragons Exalted 93)"
-	line "OG illustrator: (kawayoo)"
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Expedition 93)"
+	line "OG illustrator: (Hajime Kusajima)"
 	done
 
 KadabraDescription:
-	text "Booster Pack: (COLOSSEUM)"
-	line "OG Set: (Steam Siege 85)"
-	line "OG illustrator: (Ken SUGIMORI)"
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Steam Siege 84)"
+	line "OG illustrator: (Hajime Kusajima)"
 	done
 
 AlakazamDescription:
-	text "Booster Pack: (COLOSSEUM)"
-	line "OG Set: (Dragons Exalted 97)"
-	line "OG illustrator: (5ban Graphics)"
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Gym Challenge 16)"
+	line "OG illustrator: (Ken Sugimori)"
 	done
 
 BruxishDescription:
@@ -835,8 +824,8 @@ MurkrowDescription:
 	line "OG Set: (Paldea Evolved 131)"
 	line "OG illustrator: (Teeziro)"
 	done
-LaprasDescription:
-	text "Booster Pack: (LABORATORY)"
+ChewtleDescription:
+	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Vivid Voltage 38)"
 	line "OG illustrator: (kirisAki)"
 	done
@@ -861,11 +850,10 @@ UmbreonDescription:
 	line "OG Set: (Neo Discovery 13)"
 	line "OG illustrator: (Kimiya Masago)"
 	done
-
 MewtwoLv60Description:
-	text "Booster Pack: (EVOLUTION)"
-	line "OG Set: (Battle Styles 64)"
-	line "OG illustrator: (Midori Harada)"
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Diamond & Pearl Promos 28)"
+	line "OG illustrator: (Shizurow)"
 	done
 MimikyuDescription:
 	text "Booster Pack: (MYSTERY)"
@@ -873,11 +861,10 @@ MimikyuDescription:
 	line "OG illustrator: (Hasuno)"
 	done
 CresseliaDescription:
-	text "Booster Pack: (LABORATORY)"
-	line "OG Set: (Diamond & Pearl Promos 51)"
-	line "OG illustrator: (Wataru Kawahara)"
+	text "Booster Pack: (PROMO)"
+	line "OG Set: (Sword & Shield Promos 114)"
+	line "OG illustrator: (Kagemaru Himeno)"
 	done
-
 RookideeDescription:
 	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (Darkness Ablaze 154)"
@@ -962,19 +949,16 @@ MeowthLv15Description:
 	line "OG Set: (Diamond & Pearl 70)"
 	line "OG illustrator: (Ken Sugimori)"
 	done
-
 PersianDescription:
 	text "Booster Pack: (EVOLUTION)"
 	line "OG Set: (Stormfront 32)"
 	line "OG illustrator: (Kouki Saitou)"
 	done
-
-FarfetchdDescription:
-	text "Booster Pack: (MYSTERY)"
+AudinoDescription:
+	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Noble Victories 85)"
 	line "OG illustrator: (Naoki Saito)"
 	done
-
 DoduoDescription:
 	text "Booster Pack: (EVOLUTION)"
 	line "OG Set: (Silver Tempest 148)"
@@ -991,36 +975,31 @@ LickitungDescription:
 	line "OG illustrator: (tetsuya koizumi)"
 	done
 
-ChanseyDescription:
-	text "Booster Pack: (LABORATORY)"
-	line "OG Set: (Unified Minds 182)"
-	line "OG illustrator: (Naoki Saito)"
+RayquazaDescription:
+	text "Booster Pack: (PROMO)"
+	line "OG Set: (Roaring Skies 75)"
+	line "OG illustrator: (Ryota Murayama)"
 	done
-
 ChatotDescription:
-	text "Booster Pack: (MYSTERY)"
+	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Vivid Voltage 139)"
 	line "OG illustrator: (0313)"
 	done
-
 TaurosDescription:
 	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Secret Wonders 113)"
 	line "OG illustrator: (Kouki Saitou)"
 	done
-
 DittoDescription:
-	text "Booster Pack: (MYSTERY)"
+	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (PKMN GO 53)"
 	line "OG illustrator: (Misa Tsutsui)"
 	done
-
 EeveeDescription:
 	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Furious Fists 80)"
 	line "OG illustrator: (sui)"
 	done
-
 PorygonDescription:
 	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Gym Challenge 98)"
@@ -1111,13 +1090,12 @@ MagmortarDescription:
 	done
 
 HoohDescription:
-	text "Booster Pack: (LABORATORY)"
+	text "Booster Pack: (PROMO)"
 	line "OG Set: (Unseen Forces 104)"
 	line "OG illustrator: (Mitsuhiro Arita)"
 	done
-
 LuxrayDescription:
-	text "Booster Pack: (COLOSSEUM)"
+	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Paldea Evolved 71)"
 	line "OG illustrator: (aoki)"
 	done	

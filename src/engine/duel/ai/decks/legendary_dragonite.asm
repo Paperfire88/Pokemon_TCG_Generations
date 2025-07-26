@@ -29,13 +29,13 @@ AIActionTable_LegendaryDragonite:
 .list_arena
 	dw CHATOT
 	dw CHEWTLE
-	dw CHARMANDER
+	dw TEPIG
 	dw GOOMY
 	dw SNEASEL
 	dw NULL
 
 .list_bench
-	dw CHARMANDER
+	dw TEPIG
 	dw SNEASEL
 	dw GOOMY
 	dw CHEWTLE
@@ -43,12 +43,12 @@ AIActionTable_LegendaryDragonite:
 	dw NULL
 
 .list_retreat
-	ai_retreat CHARMANDER, -1
+	ai_retreat TEPIG, -1
 	ai_retreat SNEASEL,   -5
 	dw NULL
 
 .list_energy
-	ai_energy CHARMANDER,     3, +1
+	ai_energy TEPIG,     3, +1
 	ai_energy PIGNITE,     4, +1
 	ai_energy EMBOAR,      5, +0
 	ai_energy SNEASEL,       3, +1

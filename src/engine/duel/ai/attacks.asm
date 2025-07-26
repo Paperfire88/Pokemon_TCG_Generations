@@ -362,7 +362,7 @@ GetAIScoreOfAttack:
 	ld a, DUELVARS_ARENA_CARD
 	call GetTurnDuelistVariable
 	call GetCardIDFromDeckIndex
-	cp16 MAGNEMITE_LV13
+	cp16 MAGNEMITE
 	jr z, .magnemite1
 	ld b, 10 ; bench damage
 .magnemite1
@@ -402,7 +402,7 @@ GetAIScoreOfAttack:
 	call GetCardIDFromDeckIndex
 	cp16 AUDINO
 	jr z, .chansey
-	cp16 MAGNEMITE_LV13
+	cp16 MAGNEMITE
 	jr z, .magnemite1_or_weezing
 	cp16 FERROTHORN
 	jr z, .magnemite1_or_weezing
@@ -604,7 +604,7 @@ GetAIScoreOfAttack:
 	call GetCardIDFromDeckIndex
 	call SwapTurn
 	; skip if player has Snorlax
-	cp16 HEAVYBALL
+	cp16 HEAVY_BALL
 	jp z, .handle_special_atks
 
 	ld a, DUELVARS_ARENA_CARD_STATUS

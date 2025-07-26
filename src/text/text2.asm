@@ -247,13 +247,13 @@ ChooseBasicFightingPokemonFromDeckText:
 	line "from the Deck."
 	done
 
-ChooseAnOddishFromDeckText:
-	text "Choose an Oddish"
+ChooseAnApplinFromDeckText:
+	text "Choose an Applin"
 	line "from the Deck."
 	done
 
-ChooseAnOddishText:
-	text "Choose an Oddish"
+ChooseAnApplinText:
+	text "Choose an Applin"
 	done
 
 ChooseAKrabbyText:
@@ -434,8 +434,8 @@ NidoranMNidoranFText:
 	text "Nidoran♂ Nidoran♀"
 	done
 
-OddishText:
-	text "Oddish"
+ApplinText:
+	text "Applin"
 	done
 
 BellsproutText:

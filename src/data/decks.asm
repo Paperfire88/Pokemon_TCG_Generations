@@ -55,6 +55,14 @@ DeckPointers::
 	dw FlamethrowerDeck
 	dw ReshuffleDeck
 	dw ImakuniDeck
+	dw DeinoAndFriendsDeck
+	dw DeinoExtraDeck
+	dw MagnemiteAndFriendsDeck
+	dw MagnemiteExtraDeck
+	dw TrapinchAndFriendsDeck
+	dw TrapinchExtraDeck
+	dw RaltsAndFriendsDeck
+	dw RaltsExtraDeck
 	dw NULL
 	assert_table_length NUM_VALID_DECKS + 1
 
@@ -100,7 +108,7 @@ UnnamedDeck:
 	deck_list_start
 	card_item FIRE_ENERGY,            24
 	card_item CORVIKNIGHT,            4
-	card_item CHARMANDER,              4
+	card_item TEPIG,              4
 	card_item ROOKIDEE,                  4
 	card_item MISDREAVUS,             4
 	card_item EEVEE,                   4
@@ -178,7 +186,7 @@ UnnamedDeck:
 	deck_list_start
 	card_item FIRE_ENERGY,     24
 	card_item CORVIKNIGHT,     4
-	card_item CHARMANDER,       4
+	card_item TEPIG,       4
 	card_item ROOKIDEE,           4
 	card_item MISDREAVUS,      4
 	card_item DUSCLOPS,     4
@@ -252,7 +260,7 @@ UnnamedDeck:
 	card_item LIGHTNING_ENERGY, 12
 	card_item TOXTRICITY_LOW,    4
 	card_item ELECTRIKE,   4
-	card_item MAGNEMITE_LV13,    4
+	card_item MAGNEMITE,    4
 	card_item EEVEE,             4
 	card_item VIKAVOLT,       4
 	card_item JOLTEON_LV29,      4
@@ -291,7 +299,7 @@ UnnamedDeck2:
 	card_item APPLETUN,                2
 	card_item CHIKORITA,                4
 	card_item BAYLEEF,                  3
-	card_item CHARMANDER,               4
+	card_item TEPIG,               4
 	card_item PIGNITE,               3
 	card_item EMBOAR,                2
 	card_item POKEMON_BREEDER,          2
@@ -311,7 +319,7 @@ UnnamedDeck2:
 	card_item CHIKORITA,                4
 	card_item BAYLEEF,                  3
 	card_item MEGANIUM,            2
-	card_item CHARMANDER,               4
+	card_item TEPIG,               4
 	card_item PIGNITE,               3
 	card_item EMBOAR,                2
 	card_item POKEMON_BREEDER,          3
@@ -375,7 +383,7 @@ UnnamedDeck2:
 	card_item SALAZZLE,   4
 	card_item ENTEI,     4
 	card_item EEVEE,            4
-	card_item CHARMANDER,       4
+	card_item TEPIG,       4
 	card_item HOUNDOUR,           4
 	card_item SUICUNE,    4
 	card_item DREDNAW,    4
@@ -453,7 +461,7 @@ UnnamedDeck2:
 	card_item LIGHTNING_ENERGY, 12
 	card_item TOXTRICITY_LOW,    4
 	card_item ELECTRIKE,   4
-	card_item MAGNEMITE_LV13,    4
+	card_item MAGNEMITE,    4
 	card_item EEVEE,             4
 	card_item VIKAVOLT,       4
 	card_item JOLTEON_LV29,      4
@@ -467,7 +475,7 @@ UnnamedDeck2:
 
 	deck_list_start
 	card_item HELIOLISK,    4
-	card_item MAGNETON_LV28,  4
+	card_item MAGNETON,  4
 	card_item MAGNEZONE,  4
 	card_item WATER_ENERGY,  24
 	card_item BASCULEGION,        4
@@ -608,7 +616,7 @@ SamsPracticeDeck:
 	card_item HAWLUCHA,                    1
 	card_item CUFANT,                 1
 	card_item CUFANT,                 1
-	card_item RHYDON,                  1
+	card_item COPPERAJAH,                  1
 	card_item ZIGZAGOON,                 1
 	card_item EEVEE,                   1
 	card_item EEVEE,                   1
@@ -617,184 +625,126 @@ SamsPracticeDeck:
 
 TepigAndFriendsDeck:
 	deck_list_start
-	card_item FIRE_ENERGY,      14
-	card_item FIGHTING_ENERGY,   6
-	card_item CHARMANDER,        3
-	card_item PIGNITE,        2
-	card_item EMBOAR,         1
-	card_item NUMEL,         1
-	card_item DARUMAKA,            2
-	card_item MAGMAR,    	 1
-	card_item HOUNDOUR,    	 1
-	card_item SIZZLIPEDE,    	 2
-	card_item MEOWTH,           2
-	card_item PERRSERKER,           1
-	card_item ROCKRUFF,            3
-	card_item LYCANROC,           1
-	card_item LYCANROCM,  	 1
-	card_item PROFESSOR_OAK,     2
+	card_item FIRE_ENERGY,    20
+	card_item TEPIG,        3
+	card_item PIGNITE,          2
+	card_item EMBOAR,    1
+	card_item HOUNDOUR,         2
+	card_item DARUMAKA,         2
+	card_item NUMEL,         2
+	card_item LITLEO,     1
+	card_item SIZZLIPEDE,     2
+	card_item ZIGZAGOON,             2
+	card_item ROOKIDEE,          2
+	card_item BIDOOF,           2
+	card_item TOGEPI,          2
+	card_item PROFESSOR_OAK,     1
 	card_item BILL,              2
 	card_item SWITCH,            1
-	card_item POKEMON_BREEDER,   1
-	card_item PLUSPOWER,         1
-	card_item POTION,            1
-	card_item FULL_HEAL,         1
-	card_item ENERGY_SEARCH,         2
+	card_item REVIVE,   1
+	card_item POKEMON_FLUTE,         1
+	card_item POTION,            2
+	card_item FULL_HEAL,         2
+	card_item ENERGY_SEARCH,         1
 	card_item ENERGY_RETRIEVAL,         1
-	card_item ENERGY_REMOVAL,         1
 	card_item POKE_BALL,         2
 	card_item POKEDEX,         2
-	card_item DEFENDER,         1
 	card_item RECYCLE,         1
 	deck_list_end
 	tx TepigAndFriendsDeckName
 
 TepigExtraDeck:
 	deck_list_start
-	card_item GRASS_ENERGY,    4
-	card_item WATER_ENERGY,    4
-	card_item PSYCHIC_ENERGY,  4
-	card_item LIGHTNING_ENERGY,  4
-	card_item CHIKORITA,       2
-	card_item BAYLEEF,         1
-	card_item SHELMET,        2
-	card_item WURMPLE,        2
-	card_item SILCOON,         1
-	card_item KARRABLAST,        2
-	card_item SCYTHER,         1
-	card_item FROAKIE,        2
-	card_item FROGADIER,         1
-	card_item SEEL,            2
-	card_item DEWGONG,         1
-	card_item BASCULIN,         2
-	card_item BASCULEGION,         1
-	card_item BLITZLE,        2
-	card_item ZEBSTRIKA,         1
-	card_item SANDILE,        2
-	card_item KROKOROK,         1
-	card_item DEINO,            2
-	card_item ZWEILOUS,         1
-	card_item DUSKULL,      1
-	card_item ROOKIDEE,        2
-	card_item ZIGZAGOON,         2
-	card_item BIDOOF,        2
-	card_item GRASS_ENERGY,   8 ; irrelevant
+	card_item LIGHTNING_ENERGY,  5
+	card_item PSYCHIC_ENERGY,    5
+	card_item FIGHTING_ENERGY,   5
+	card_item GRASS_ENERGY,   5
+	card_item WATER_ENERGY,   5
+	card_item DARKNESS_ENERGY,   5
+	card_item FIRE_ENERGY,   30 ; irrelevant
 	deck_list_end
 	tx TepigExtraDeckName
 
 FroakieAndFriendsDeck:
 	deck_list_start
-	card_item WATER_ENERGY,    14
-	card_item PSYCHIC_ENERGY,   6
-	card_item FROAKIE,         3
-	card_item FROGADIER,        2
-	card_item GRENINJA,        1
-	card_item SEEL,             2
-	card_item WINGULL,          1
-	card_item HORSEA,           2
-	card_item BASCULIN,          1
-	card_item BASCULEGION,          1
-	card_item DEINO,             2
-	card_item ZWEILOUS,          1
-	card_item MISDREAVUS,       3
-	card_item MISMAGIUS,     2
-	card_item PROFESSOR_OAK,     2
+	card_item WATER_ENERGY,    20
+	card_item FROAKIE,        3
+	card_item FROGADIER,          2
+	card_item GRENINJA,    1
+	card_item SEEL,         2
+	card_item CHEWTLE,         2
+	card_item SEEL,         2
+	card_item BUIZEL,     1
+	card_item HORSEA,     2
+	card_item ZIGZAGOON,             2
+	card_item ROOKIDEE,          2
+	card_item BIDOOF,           2
+	card_item TOGEPI,          2
+	card_item PROFESSOR_OAK,     1
 	card_item BILL,              2
 	card_item SWITCH,            1
-	card_item POKEMON_BREEDER,   1
-	card_item PLUSPOWER,         1
-	card_item POTION,            1
-	card_item FULL_HEAL,         1
+	card_item REVIVE,   1
+	card_item POKEMON_FLUTE,         1
+	card_item POTION,            2
+	card_item FULL_HEAL,         2
 	card_item ENERGY_SEARCH,         1
-	card_item ENERGY_RETRIEVAL,         2
-	card_item ENERGY_REMOVAL,         1
+	card_item ENERGY_RETRIEVAL,         1
 	card_item POKE_BALL,         2
 	card_item POKEDEX,         2
-	card_item DEFENDER,         1
 	card_item RECYCLE,         1
 	deck_list_end
 	tx FroakieAndFriendsDeckName
 
 FroakieExtraDeck:
 	deck_list_start
-	card_item GRASS_ENERGY,      4
-	card_item FIRE_ENERGY,       4
-	card_item LIGHTNING_ENERGY,  4
-	card_item FIGHTING_ENERGY,  4
-	card_item SHELMET,          2
-	card_item KARRABLAST,          2
-	card_item WURMPLE,          1
-	card_item SILCOON,           1
-	card_item ROWLET,            1
-	card_item DARTRIX,            1
-	card_item SCYTHER,           1
-	card_item CHARMANDER,        2
-	card_item PIGNITE,        1
-	card_item MAGMAR,       1
-	card_item SIZZLIPEDE,         1
-	card_item CENTISKORCH,     1
-	card_item BLITZLE,      2
-	card_item MAGNEMITE_LV13,    1
-	card_item MAGNETON_LV28,     1
-	card_item ELECTRIKE,   1
-	card_item GRASS_ENERGY,     24 ; irrelevant
+	card_item LIGHTNING_ENERGY,  5
+	card_item PSYCHIC_ENERGY,    5
+	card_item FIGHTING_ENERGY,   5
+	card_item GRASS_ENERGY,   5
+	card_item FIRE_ENERGY,   5
+	card_item DARKNESS_ENERGY,   5
+	card_item WATER_ENERGY,   30 ; irrelevant
 	deck_list_end
 	tx FroakieExtraDeckName
 
 ChikoritaAndFriendsDeck:
 	deck_list_start
-	card_item GRASS_ENERGY,    14
-	card_item LIGHTNING_ENERGY,     6
+	card_item GRASS_ENERGY,    20
 	card_item CHIKORITA,        3
 	card_item BAYLEEF,          2
 	card_item MEGANIUM,    1
 	card_item WURMPLE,         2
-	card_item SILCOON,          1
-	card_item SHELMET,         1
-	card_item KARRABLAST,         1
-	card_item GRUBBIN,     2
-	card_item VOLBEAT,     2
-	card_item TOXEL,             3
-	card_item TOXTRICITY,          1
-	card_item TOXTRICITY_LOW,           1
-	card_item HELIOPTILE,          1
-	card_item PROFESSOR_OAK,     2
+	card_item SHELMET,         2
+	card_item KARRABLAST,         2
+	card_item TANGELA,     1
+	card_item SHROOMISH,     2
+	card_item ZIGZAGOON,             2
+	card_item ROOKIDEE,          2
+	card_item BIDOOF,           2
+	card_item TOGEPI,          2
+	card_item PROFESSOR_OAK,     1
 	card_item BILL,              2
 	card_item SWITCH,            1
-	card_item POKEMON_BREEDER,   1
-	card_item PLUSPOWER,         1
+	card_item REVIVE,   1
+	card_item POKEMON_FLUTE,         1
 	card_item POTION,            2
-	card_item FULL_HEAL,         1
+	card_item FULL_HEAL,         2
 	card_item ENERGY_SEARCH,         1
 	card_item ENERGY_RETRIEVAL,         1
-	card_item ENERGY_REMOVAL,         1
 	card_item POKE_BALL,         2
 	card_item POKEDEX,         2
-	card_item DEFENDER,         1
 	card_item RECYCLE,         1
 	deck_list_end
 	tx ChikoritaAndFriendsDeckName
 
 ChikoritaExtraDeck:
 	deck_list_start
-	card_item LIGHTNING_ENERGY,  4
-	card_item PSYCHIC_ENERGY,    4
-	card_item FIGHTING_ENERGY,   3
-	card_item BLITZLE,      2
-	card_item EMOLGA,       1
-	card_item MAGNEMITE_LV13,    1
-	card_item ELECTRIKE,   1
-	card_item DEINO,              2
-	card_item ZWEILOUS,           1
-	card_item ESPEON,              1
-	card_item DUSKULL,        2
-	card_item DUSCLOPS,      1
-	card_item SILICOBRA,           1
-	card_item SANDACONDA,           1
-	card_item HITMONCHAN,        1
-	card_item BILL,              1
-	card_item POTION,            2
-	card_item GUST_OF_WIND,      1
+	card_item LIGHTNING_ENERGY,  5
+	card_item PSYCHIC_ENERGY,    5
+	card_item FIGHTING_ENERGY,   5
+	card_item FIRE_ENERGY,   5
+	card_item WATER_ENERGY,   5
+	card_item DARKNESS_ENERGY,   5
 	card_item GRASS_ENERGY,     30 ; irrelevant
 	deck_list_end
 	tx ChikoritaExtraDeckName
@@ -804,7 +754,7 @@ LightningAndFireDeck:
 	card_item FIRE_ENERGY,             10
 	card_item LIGHTNING_ENERGY,        10
 	card_item DOUBLE_COLORLESS_ENERGY,  2
-	card_item CHARMANDER,               2
+	card_item TEPIG,               2
 	card_item PIGNITE,               1
 	card_item EMBOAR,                1
 	card_item SIZZLIPEDE,                2
@@ -816,8 +766,8 @@ LightningAndFireDeck:
 	card_item BLITZLE,             1
 	card_item HELIOPTILE,             1
 	card_item ZEBSTRIKA,              1
-	card_item MAGNEMITE_LV13,           2
-	card_item MAGNETON_LV28,            1
+	card_item MAGNEMITE,           2
+	card_item MAGNETON,            1
 	card_item TOXEL,                  3
 	card_item TOXTRICITY,           1
 	card_item TOXTRICITY_LOW,           1
@@ -854,7 +804,7 @@ WaterAndFightingDeck:
 	card_item KROOKODILE,                  1
 	card_item HITMONCHAN,               1
 	card_item CUFANT,                  2
-	card_item RHYDON,                   1
+	card_item COPPERAJAH,                   1
 	card_item PROFESSOR_OAK,            3
 	card_item BILL,                     4
 	card_item ENERGY_SEARCH,            4
@@ -891,7 +841,7 @@ LegendaryMoltresDeck:
 	deck_list_start
 	card_item FIRE_ENERGY,            12
 	card_item COLORLESS,           2
-	card_item CHARMANDER,                  4
+	card_item TEPIG,                  4
 	card_item PIGNITE,          2
 	card_item EMBOAR,               4
 	card_item CENTISKORCH,           3
@@ -1065,8 +1015,8 @@ GoGoRainDanceDeck:
 ZappingSelfdestructDeck:
 	deck_list_start
 	card_item LIGHTNING_ENERGY,        16
-	card_item MAGNEMITE_LV13,           4
-	card_item MAGNETON_LV28,            2
+	card_item MAGNEMITE,           4
+	card_item MAGNETON,            2
 	card_item MAGNEZONE,                  4
 	card_item BLITZLE,           4
 	card_item ZEBSTRIKA,           2
@@ -1196,7 +1146,7 @@ ImRonaldDeck:
 	card_item FIRE_ENERGY,       9
 	card_item WATER_ENERGY,     10
 	card_item FIGHTING_ENERGY,   8
-	card_item CHARMANDER,        3
+	card_item TEPIG,        3
 	card_item PIGNITE,        2
 	card_item SIZZLIPEDE,         3
 	card_item CENTISKORCH,     1
@@ -1414,20 +1364,20 @@ HardPokemonDeck:
 	deck_list_start
 	card_item FIGHTING_ENERGY, 16
 	card_item ROCKRUFF,			4
-	card_item TRAPINCH,          4
-	card_item VIBRAVA,         3
-	card_item FLYGON,            2
-	card_item HAWLUCHA,             3
-	card_item LARVITAR,           3
-	card_item TYRANITAR,     2
+	card_item LYCANROCM,          2
 	card_item CUFANT,          4
-	card_item RHYDON,           1
-	card_item KILOWATTREL,          2
+	card_item COPPERAJAH,           3
+	card_item LARVITAR,          4
+	card_item PUPITAR,	3
+	card_item TYRANITAR, 2
 	card_item BILL,             3
-	card_item POKE_BALL,        4
-	card_item DEFENDER,         4
+	card_item PROFESSOR_OAK,	3
+	card_item POKE_BALL,        3
+	card_item DEFENDER,         2
 	card_item GUST_OF_WIND,     3
 	card_item POTION,           2
+	card_item SWITCH,	2
+	card_item HEAVY_BALL, 4
 	deck_list_end
 	tx HardPokemonDeckName
 
@@ -1522,7 +1472,7 @@ BoomBoomSelfdestructDeck:
 	card_item FERROSEED,           4
 	card_item FERROTHORN,           3
 	card_item CHARJABUG,    4
-	card_item MAGNETON_LV28,     3
+	card_item MAGNETON,     3
 	card_item MAGNEZONE,     2
 	card_item TYNAMO,			 4
 	card_item EELEKTRIK,		 3
@@ -1565,10 +1515,10 @@ EtceteraDeck:
 	card_item SHELMET,         2
 	card_item APPLIN,           2
 	card_item GRUBBIN,     2
-	card_item CHARMANDER,       2
+	card_item TEPIG,       2
 	card_item MAGMAR,      1
 	card_item BLITZLE,     2
-	card_item MAGNEMITE_LV13,   1
+	card_item MAGNEMITE,   1
 	card_item SILICOBRA,          1
 	card_item SANDILE,           2
 	card_item MUNNA,       2
@@ -1595,7 +1545,7 @@ FlowerGardenDeck:
 	card_item BOUNSWEET,               3
 	card_item STEENEE,               2
 	card_item TSAREENA,               1
-	card_item TANGELA_LV8,              2
+	card_item TANGELA,              2
 	card_item GRUBBIN,             2
 	card_item POKEMON_TRADER,           2
 	card_item POKEMON_BREEDER,          3
@@ -1783,7 +1733,7 @@ FlamethrowerDeck:
 	deck_list_start
 	card_item FIRE_ENERGY,             15
 	card_item DOUBLE_COLORLESS_ENERGY,  4
-	card_item CHARMANDER,               4
+	card_item TEPIG,               4
 	card_item PIGNITE,               3
 	card_item EMBOAR,                2
 	card_item HOUNDOUR,                   4
@@ -1838,8 +1788,176 @@ ImakuniDeck:
 	card_item HONCHKROW,           3
 	card_item RAYQUAZA,       4
 	card_item IMAKUNI_CARD,    4
-	card_item HEAVYBALL,     2
+	card_item HEAVY_BALL,     2
 	card_item POKEMON_FLUTE,   2
 	card_item COPYCAT,         1
 	deck_list_end
 	tx ImakuniDeckName
+
+DeinoAndFriendsDeck:
+	deck_list_start
+	card_item DARKNESS_ENERGY,    20
+	card_item DEINO,        3
+	card_item ZWEILOUS,          2
+	card_item HYDREIGON,    1
+	card_item WOOPER,         2
+	card_item ZUBAT,         2
+	card_item SKRELP,         2
+	card_item PAWNIARD,     1
+	card_item IMPIDIMP,     2
+	card_item ZIGZAGOON,             2
+	card_item ROOKIDEE,          2
+	card_item BIDOOF,           2
+	card_item TOGEPI,          2
+	card_item PROFESSOR_OAK,     1
+	card_item BILL,              2
+	card_item SWITCH,            1
+	card_item REVIVE,   1
+	card_item POKEMON_FLUTE,         1
+	card_item POTION,            2
+	card_item FULL_HEAL,         2
+	card_item ENERGY_SEARCH,         1
+	card_item ENERGY_RETRIEVAL,         1
+	card_item POKE_BALL,         2
+	card_item POKEDEX,         2
+	card_item RECYCLE,         1
+	deck_list_end
+	tx DeinoAndFriendsDeckName
+
+DeinoExtraDeck:
+	deck_list_start
+	card_item LIGHTNING_ENERGY,  5
+	card_item PSYCHIC_ENERGY,    5
+	card_item FIGHTING_ENERGY,   5
+	card_item GRASS_ENERGY,   5
+	card_item WATER_ENERGY,   5
+	card_item FIRE_ENERGY,   5
+	card_item DARKNESS_ENERGY,   30 ; irrelevant
+	deck_list_end
+	tx DeinoAndFriendsDeckName
+
+MagnemiteAndFriendsDeck:
+	deck_list_start
+	card_item LIGHTNING_ENERGY,    20
+	card_item MAGNEMITE,        3
+	card_item MAGNETON,          2
+	card_item MAGNEZONE,    1
+	card_item GRUBBIN,         2
+	card_item EMOLGA,         2
+	card_item TYNAMO,         2
+	card_item SHINX,     1
+	card_item BLITZLE,     2
+	card_item ZIGZAGOON,             2
+	card_item ROOKIDEE,          2
+	card_item BIDOOF,           2
+	card_item TOGEPI,          2
+	card_item PROFESSOR_OAK,     1
+	card_item BILL,              2
+	card_item SWITCH,            1
+	card_item REVIVE,   1
+	card_item POKEMON_FLUTE,         1
+	card_item POTION,            2
+	card_item FULL_HEAL,         2
+	card_item ENERGY_SEARCH,         1
+	card_item ENERGY_RETRIEVAL,         1
+	card_item POKE_BALL,         2
+	card_item POKEDEX,         2
+	card_item RECYCLE,         1
+	deck_list_end
+	tx MagnemiteAndFriendsDeckName
+
+MagnemiteExtraDeck:
+	deck_list_start
+	card_item DARKNESS_ENERGY,  5
+	card_item PSYCHIC_ENERGY,    5
+	card_item FIGHTING_ENERGY,   5
+	card_item GRASS_ENERGY,   5
+	card_item WATER_ENERGY,   5
+	card_item FIRE_ENERGY,   5
+	card_item LIGHTNING_ENERGY,   30 ; irrelevant
+	deck_list_end
+	tx MagnemiteAndFriendsDeckName
+
+TrapinchAndFriendsDeck:
+	deck_list_start
+	card_item FIGHTING_ENERGY,    20
+	card_item TRAPINCH,        3
+	card_item VIBRAVA,          2
+	card_item FLYGON,    1
+	card_item MEOWTH,         2
+	card_item CUFANT,         2
+	card_item SILICOBRA,         2
+	card_item JANGMO_O,     1
+	card_item ROCKRUFF,     2
+	card_item ZIGZAGOON,             2
+	card_item ROOKIDEE,          2
+	card_item BIDOOF,           2
+	card_item TOGEPI,          2
+	card_item PROFESSOR_OAK,     1
+	card_item BILL,              2
+	card_item SWITCH,            1
+	card_item REVIVE,   1
+	card_item POKEMON_FLUTE,         1
+	card_item POTION,            2
+	card_item FULL_HEAL,         2
+	card_item ENERGY_SEARCH,         1
+	card_item ENERGY_RETRIEVAL,         1
+	card_item POKE_BALL,         2
+	card_item POKEDEX,         2
+	card_item RECYCLE,         1
+	deck_list_end
+	tx TrapinchAndFriendsDeckName
+
+TrapinchExtraDeck:
+	deck_list_start
+	card_item LIGHTNING_ENERGY,  5
+	card_item PSYCHIC_ENERGY,    5
+	card_item DARKNESS_ENERGY,   5
+	card_item GRASS_ENERGY,   5
+	card_item WATER_ENERGY,   5
+	card_item FIRE_ENERGY,   5
+	card_item FIGHTING_ENERGY,   30 ; irrelevant
+	deck_list_end
+	tx TrapinchAndFriendsDeckName
+
+RaltsAndFriendsDeck:
+	deck_list_start
+	card_item PSYCHIC_ENERGY,    20
+	card_item RALTS,        3
+	card_item KIRLIA,          2
+	card_item GARDEVOIR,    1
+	card_item MUNNA,         2
+	card_item BLIPBUG,         2
+	card_item ABRA,         2
+	card_item DUSKULL,     1
+	card_item CUTIEFLY,     2
+	card_item ZIGZAGOON,             2
+	card_item ROOKIDEE,          2
+	card_item BIDOOF,           2
+	card_item TOGEPI,          2
+	card_item PROFESSOR_OAK,     1
+	card_item BILL,              2
+	card_item SWITCH,            1
+	card_item REVIVE,   1
+	card_item POKEMON_FLUTE,         1
+	card_item POTION,            2
+	card_item FULL_HEAL,         2
+	card_item ENERGY_SEARCH,         1
+	card_item ENERGY_RETRIEVAL,         1
+	card_item POKE_BALL,         2
+	card_item POKEDEX,         2
+	card_item RECYCLE,         1
+	deck_list_end
+	tx RaltsAndFriendsDeckName
+
+RaltsExtraDeck:
+	deck_list_start
+	card_item LIGHTNING_ENERGY,  5
+	card_item DARKNESS_ENERGY,    5
+	card_item FIGHTING_ENERGY,   5
+	card_item GRASS_ENERGY,   5
+	card_item WATER_ENERGY,   5
+	card_item FIRE_ENERGY,   5
+	card_item PSYCHIC_ENERGY,   30 ; irrelevant
+	deck_list_end
+	tx RaltsAndFriendsDeckName

@@ -68,9 +68,13 @@ _AddStarterDeck:
 
 .StarterCardIDs
 	; main deck, extra cards
-	db CHARMANDER_AND_FRIENDS_DECK_ID, CHARMANDER_EXTRA_DECK_ID
+	db TEPIG_AND_FRIENDS_DECK_ID, TEPIG_EXTRA_DECK_ID
 	db FROAKIE_AND_FRIENDS_DECK_ID,   FROAKIE_EXTRA_DECK_ID
 	db CHIKORITA_AND_FRIENDS_DECK_ID,  CHIKORITA_EXTRA_DECK_ID
+	db DEINO_AND_FRIENDS_DECK_ID,  DEINO_EXTRA_DECK_ID
+	db MAGNEMITE_AND_FRIENDS_DECK_ID,  MAGNEMITE_EXTRA_DECK_ID
+	db TRAPINCH_AND_FRIENDS_DECK_ID,  TRAPINCH_EXTRA_DECK_ID
+	db RALTS_AND_FRIENDS_DECK_ID,  RALTS_EXTRA_DECK_ID
 
 ; clears saved data (card Collection/saved decks/etc)
 ; then adds the starter decks as saved decks
@@ -91,7 +95,7 @@ InitSaveData:
 	jr nz, .loop_clear
 
 ; add the starter decks
-	ld a, CHARMANDER_AND_FRIENDS_DECK
+	ld a, TEPIG_AND_FRIENDS_DECK
 	ld hl, sSavedDeck1
 	call StoreDeckIDInSRAM
 	ld a, FROAKIE_AND_FRIENDS_DECK
@@ -99,6 +103,18 @@ InitSaveData:
 	call StoreDeckIDInSRAM
 	ld a, CHIKORITA_AND_FRIENDS_DECK
 	ld hl, sSavedDeck3
+	call StoreDeckIDInSRAM
+	ld a, DEINO_AND_FRIENDS_DECK
+	ld hl, sSavedDeck4
+	call StoreDeckIDInSRAM
+	ld a, MAGNEMITE_AND_FRIENDS_DECK
+	ld hl, sSavedDeck5
+	call StoreDeckIDInSRAM
+	ld a, TRAPINCH_AND_FRIENDS_DECK
+	ld hl, sSavedDeck6
+	call StoreDeckIDInSRAM
+	ld a, RALTS_AND_FRIENDS_DECK
+	ld hl, sSavedDeck7
 	call StoreDeckIDInSRAM
 
 ; marks all cards in Collection to not owned

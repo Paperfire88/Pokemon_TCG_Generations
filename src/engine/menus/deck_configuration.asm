@@ -803,8 +803,8 @@ CheckIfHasOtherValidDecks:
 	call GetPointerToDeckCards
 	call EnableSRAM
 	ld a, [hl]
+	or [hl]
 	call DisableSRAM
-	or a
 	jr z, .no_carry ; no cards
 	; has cards, is the only valid deck!
 	scf
@@ -1587,7 +1587,7 @@ PrintDeckBuildingCardList:
 
 .exit_loop
 	ld a, [hli]
-	or a
+	or [hl]
 	jr z, .cannot_scroll
 	pop de
 ; draw down cursor because
@@ -3395,7 +3395,7 @@ PrintCardSelectionList:
 
 .exit_loop
 	ld a, [hli]
-	or a
+	or [hl]
 	jr z, .cannot_scroll
 	pop de
 ; draw down cursor because

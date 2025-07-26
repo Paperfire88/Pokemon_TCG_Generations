@@ -40,12 +40,12 @@ ImpidimpCard:
 	db 1 ; retreat cost
 	db WR_GRASS ; weakness
 	db NONE ; resistance
-	tx SharpClawName ; category
-	db 95 ; Pokedex number
+	tx WilyName ; category
+	db 85 ; Pokedex number
 	db 18 ; level
 	db 2, 11 ; length
 	dw 22 * 10 ; weight
-	tx SneaselDescription ; description
+	tx ImpidimpDescription ; description
 	db 19
 
 MorgremCard:
@@ -90,12 +90,12 @@ MorgremCard:
 	db 2 ; retreat cost
 	db WR_GRASS ; weakness
 	db WR_PSYCHIC ; resistance
-	tx SharpClawName ; category
+	tx DeviousName ; category
 	db 95 ; Pokedex number
 	db 34 ; level
 	db 2, 11 ; length
 	dw 22 * 10 ; weight
-	tx SneaselDescription ; description
+	tx MorgremDescription ; description
 	db 16
 
 GrimmsnarlCard:
@@ -140,12 +140,12 @@ GrimmsnarlCard:
 	db 3 ; retreat cost
 	db WR_GRASS ; weakness
 	db WR_PSYCHIC ; resistance
-	tx SharpClawName ; category
+	tx BulkUpName ; category
 	db 95 ; Pokedex number
 	db 63 ; level
 	db 2, 11 ; length
 	dw 22 * 10 ; weight
-	tx SneaselDescription ; description
+	tx GrimmsnarlDescription ; description
 	db 0
 
 PawniardCard:
@@ -169,7 +169,7 @@ PawniardCard:
 	dw SharpenEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
-	db SPECIAL_AI_HANDLING ; flags 3
+	db NONE ; flags 3
 	db 0
 	db ATK_ANIM_GLOW_EFFECT ; animation
 
@@ -192,10 +192,10 @@ PawniardCard:
 	db NONE ; resistance
 	tx SharpClawName ; category
 	db 95 ; Pokedex number
-	db 28 ; level
+	db 24 ; level
 	db 2, 11 ; length
 	dw 22 * 10 ; weight
-	tx SneaselDescription ; description
+	tx PawniardDescription ; description
 	db 16
 
 BisharpCard:
@@ -242,10 +242,10 @@ BisharpCard:
 	db WR_DARKNESS ; resistance
 	tx SharpClawName ; category
 	db 95 ; Pokedex number
-	db 34 ; level
+	db 52 ; level
 	db 2, 11 ; length
 	dw 22 * 10 ; weight
-	tx SneaselDescription ; description
+	tx BisharpDescription ; description
 	db 0
 
 AbraCard:
@@ -445,7 +445,7 @@ GastlyCard:
 	db 16 ; level
 	db 2, 11 ; length
 	dw 22 * 10 ; weight
-	tx SneaselDescription ; description
+	tx GastlyDescription ; description
 	db 19
 
 HaunterCard:
@@ -490,12 +490,12 @@ HaunterCard:
 	db 1 ; retreat cost
 	db WR_PSYCHIC ; weakness
 	db NONE ; resistance
-	tx SharpClawName ; category
+	tx GasName ; category
 	db 95 ; Pokedex number
-	db 29 ; level
+	db 37 ; level
 	db 2, 11 ; length
 	dw 22 * 10 ; weight
-	tx SneaselDescription ; description
+	tx HaunterDescription ; description
 	db 19
 
 GengarCard:
@@ -540,12 +540,12 @@ GengarCard:
 	db 2 ; retreat cost
 	db WR_PSYCHIC ; weakness
 	db WR_FIGHTING ; resistance
-	tx SharpClawName ; category
+	tx ShadowName ; category
 	db 95 ; Pokedex number
-	db 52 ; level
+	db 65 ; level
 	db 2, 11 ; length
 	dw 22 * 10 ; weight
-	tx SneaselDescription ; description
+	tx GengarDescription ; description
 	db 0
 
 ElekidCard:
@@ -590,12 +590,12 @@ ElekidCard:
 	db 0 ; retreat cost
 	db NONE ; weakness
 	db NONE ; resistance
-	tx MouseName ; category
+	tx ElectricName ; category
 	db 117 ; Pokedex number
 	db 9 ; level
 	db 3, 7 ; length
 	dw 66 * 10 ; weight
-	tx ElectabuzzLv35Description ; description
+	tx ElekidDescription ; description
 	db 0
 
 ElectabuzzLv35Card:
@@ -690,12 +690,12 @@ ElectivireCard:
 	db 3 ; retreat cost
 	db WR_FIGHTING ; weakness
 	db WR_LIGHTNING ; resistance
-	tx ElectricName ; category
+	tx ThunderboltName ; category
 	db 117 ; Pokedex number
 	db 66 ; level
 	db 3, 7 ; length
 	dw 66 * 10 ; weight
-	tx ElectabuzzLv35Description ; description
+	tx ElectivireDescription ; description
 	db 0
 
 PichuCard:
@@ -745,7 +745,7 @@ PichuCard:
 	db 9 ; level
 	db 3, 7 ; length
 	dw 66 * 10 ; weight
-	tx ElectabuzzLv35Description ; description
+	tx PichuDescription ; description
 	db 0
 
 PikachuCard:
@@ -795,7 +795,7 @@ PikachuCard:
 	db 27 ; level
 	db 3, 7 ; length
 	dw 66 * 10 ; weight
-	tx ElectabuzzLv35Description ; description
+	tx PikachuDescription ; description
 	db 16
 
 RaichuCard:
@@ -845,7 +845,7 @@ RaichuCard:
 	db 48 ; level
 	db 3, 7 ; length
 	dw 66 * 10 ; weight
-	tx ElectabuzzLv35Description ; description
+	tx RaichuDescription ; description
 	db 0
 
 NihilegoCard:
@@ -890,12 +890,12 @@ NihilegoCard:
 	db 1 ; retreat cost
 	db WR_FIGHTING ; weakness
 	db WR_DARKNESS ; resistance
-	tx RequiemName ; category
+	tx ParasiteName ; category
 	db 95 ; Pokedex number
 	db 44 ; level
 	db 2, 11 ; length
 	dw 22 * 10 ; weight
-	tx SneaselDescription ; description
+	tx NihilegoDescription ; description
 	db 0
 
 RioluCard:
@@ -940,12 +940,12 @@ RioluCard:
 	db 1 ; retreat cost
 	db WR_PSYCHIC ; weakness
 	db NONE ; resistance
-	tx SharpClawName ; category
+	tx AuraName ; category
 	db 95 ; Pokedex number
 	db 17 ; level
 	db 2, 11 ; length
 	dw 22 * 10 ; weight
-	tx SneaselDescription ; description
+	tx RioluDescription ; description
 	db 16
 
 LucarioCard:
@@ -990,12 +990,12 @@ LucarioCard:
 	db 2 ; retreat cost
 	db WR_FIGHTING ; weakness
 	db WR_DARKNESS ; resistance
-	tx SharpClawName ; category
+	tx AuraName ; category
 	db 95 ; Pokedex number
 	db 41 ; level
 	db 2, 11 ; length
 	dw 22 * 10 ; weight
-	tx SneaselDescription ; description
+	tx LucarioDescription ; description
 	db 0
 
 LeafeonCard:
@@ -1040,12 +1040,12 @@ LeafeonCard:
 	db 1 ; retreat cost
 	db WR_FIRE ; weakness
 	db WR_LIGHTNING ; resistance
-	tx SharpClawName ; category
+	tx VerdantName ; category
 	db 95 ; Pokedex number
 	db 42 ; level
 	db 2, 11 ; length
 	dw 22 * 10 ; weight
-	tx SneaselDescription ; description
+	tx LeafeonDescription ; description
 	db 0
 
 GlaceonCard:
@@ -1090,12 +1090,12 @@ GlaceonCard:
 	db 1 ; retreat cost
 	db WR_FIRE ; weakness
 	db WR_WATER ; resistance
-	tx SharpClawName ; category
+	tx SnowName ; category
 	db 95 ; Pokedex number
 	db 44 ; level
 	db 2, 11 ; length
 	dw 22 * 10 ; weight
-	tx SneaselDescription ; description
+	tx GlaceonDescription ; description
 	db 0
 
 SylveonCard:
@@ -1140,12 +1140,12 @@ SylveonCard:
 	db 1 ; retreat cost
 	db WR_FIGHTING ; weakness
 	db WR_DARKNESS ; resistance
-	tx SharpClawName ; category
+	tx InterwiningName ; category
 	db 95 ; Pokedex number
 	db 47 ; level
 	db 2, 11 ; length
 	dw 22 * 10 ; weight
-	tx SneaselDescription ; description
+	tx SylveonDescription ; description
 	db 0
 
 WooperCard:
@@ -1190,12 +1190,12 @@ WooperCard:
 	db 2 ; retreat cost
 	db WR_FIGHTING  ; weakness
 	db NONE ; resistance
-	tx SharpClawName ; category
+	tx MudFishName ; category
 	db 95 ; Pokedex number
-	db 28 ; level
+	db 15 ; level
 	db 2, 11 ; length
 	dw 22 * 10 ; weight
-	tx SneaselDescription ; description
+	tx WooperDescription ; description
 	db 16
 
 ClodsireCard:
@@ -1240,12 +1240,12 @@ ClodsireCard:
 	db 3 ; retreat cost
 	db WR_FIGHTING ; weakness
 	db WR_LIGHTNING ; resistance
-	tx SharpClawName ; category
+	tx MudFishName ; category
 	db 95 ; Pokedex number
-	db 34 ; level
+	db 38 ; level
 	db 2, 11 ; length
 	dw 22 * 10 ; weight
-	tx SneaselDescription ; description
+	tx ClodsireDescription ; description
 	db 0
 
 MudkipCard:
@@ -1290,12 +1290,12 @@ MudkipCard:
 	db 1 ; retreat cost
 	db WR_GRASS ; weakness
 	db NONE ; resistance
-	tx MouseName ; category
+	tx MudFishName ; category
 	db 117 ; Pokedex number
-	db 11 ; level
+	db 14 ; level
 	db 3, 7 ; length
 	dw 66 * 10 ; weight
-	tx ElectabuzzLv35Description ; description
+	tx MudkipDescription ; description
 	db 16
 
 MarshtompCard:
@@ -1340,12 +1340,12 @@ MarshtompCard:
 	db 2 ; retreat cost
 	db WR_GRASS ; weakness
 	db WR_FIRE ; resistance
-	tx MouseName ; category
+	tx MudFishName ; category
 	db 117 ; Pokedex number
-	db 23 ; level
+	db 28 ; level
 	db 3, 7 ; length
 	dw 66 * 10 ; weight
-	tx ElectabuzzLv35Description ; description
+	tx MarshtompDescription ; description
 	db 16
 
 SwampertCard:
@@ -1390,12 +1390,12 @@ SwampertCard:
 	db 3 ; retreat cost
 	db WR_GRASS ; weakness
 	db WR_FIRE ; resistance
-	tx MouseName ; category
+	tx MudFishName ; category
 	db 117 ; Pokedex number
-	db 60 ; level
+	db 53 ; level
 	db 3, 7 ; length
 	dw 66 * 10 ; weight
-	tx ElectabuzzLv35Description ; description
+	tx SwampertDescription ; description
 	db 0
 
 TyrogueCard:
@@ -1440,12 +1440,12 @@ TyrogueCard:
 	db 0 ; retreat cost
 	db NONE ; weakness
 	db NONE ; resistance
-	tx SharpClawName ; category
+	tx ScuffleName ; category
 	db 95 ; Pokedex number
-	db 10 ; level
+	db 7 ; level
 	db 2, 11 ; length
 	dw 22 * 10 ; weight
-	tx SneaselDescription ; description
+	tx TyrogueDescription ; description
 	db 0
 
 HitmontopCard:
@@ -1490,12 +1490,12 @@ HitmontopCard:
 	db 1 ; retreat cost
 	db WR_PSYCHIC ; weakness
 	db WR_DARKNESS ; resistance
-	tx SharpClawName ; category
+	tx RapidSpinName ; category
 	db 95 ; Pokedex number
 	db 31 ; level
 	db 2, 11 ; length
 	dw 22 * 10 ; weight
-	tx SneaselDescription ; description
+	tx HitmontopDescription ; description
 	db 0
 
 LitwickCard:
@@ -1540,12 +1540,12 @@ LitwickCard:
 	db 0 ; retreat cost
 	db WR_PSYCHIC ; weakness
 	db NONE ; resistance
-	tx FirePigName ; category
+	tx CandleName ; category
 	db 46 ; Pokedex number
 	db 26 ; level
 	db 2, 0 ; length
 	dw 19 * 10 ; weight
-	tx TepigDescription ; description
+	tx LitwickDescription ; description
 	db 19
 
 LampentCard:
@@ -1590,12 +1590,12 @@ LampentCard:
 	db 1 ; retreat cost
 	db WR_PSYCHIC ; weakness
 	db NONE ; resistance
-	tx FirePigName ; category
+	tx LampName ; category
 	db 47 ; Pokedex number
 	db 46 ; level
 	db 3, 7 ; length
 	dw 42 * 10 ; weight
-	tx PigniteDescription ; description
+	tx LampentDescription ; description
 	db 16
 
 ChandelureCard:
@@ -1640,12 +1640,12 @@ ChandelureCard:
 	db 2 ; retreat cost
 	db WR_PSYCHIC ; weakness
 	db WR_FIGHTING ; resistance
-	tx MegaFirePigName ; category
+	tx LampName ; category
 	db 48 ; Pokedex number
 	db 62 ; level
 	db 5, 7 ; length
 	dw 200 * 10 ; weight
-	tx EmboarDescription ; description
+	tx ChandelureDescription ; description
 	db 0
 
 MagbyCard:
@@ -1690,7 +1690,7 @@ MagbyCard:
 	db 0 ; retreat cost
 	db NONE ; weakness
 	db NONE ; resistance
-	tx MouseName ; category
+	tx LiveCoalName ; category
 	db 117 ; Pokedex number
 	db 5 ; level
 	db 3, 7 ; length
@@ -1840,12 +1840,12 @@ DarkraiCard:
 	db 2 ; retreat cost
 	db WR_FIGHTING ; weakness
 	db NONE ; resistance
-	tx SharpClawName ; category
+	tx PitchBlackName ; category
 	db 95 ; Pokedex number
-	db 28 ; level
+	db 78 ; level
 	db 2, 11 ; length
 	dw 22 * 10 ; weight
-	tx SneaselDescription ; description
+	tx DarkaiDescription ; description
 	db 0
 
 Jangmo_oCard:
@@ -1890,12 +1890,12 @@ Jangmo_oCard:
 	db 1 ; retreat cost
 	db WR_PSYCHIC ; weakness
 	db NONE ; resistance
-	tx MouseName ; category
+	tx ScalyName ; category
 	db 117 ; Pokedex number
-	db 24 ; level
+	db 26 ; level
 	db 3, 7 ; length
 	dw 66 * 10 ; weight
-	tx ElectabuzzLv35Description ; description
+	tx Jangmo_oDescription ; description
 	db 16
 
 Hakamo_oCard:
@@ -1940,12 +1940,12 @@ Hakamo_oCard:
 	db 2 ; retreat cost
 	db WR_PSYCHIC ; weakness
 	db WR_LIGHTNING ; resistance
-	tx MouseName ; category
+	tx ScalyName ; category
 	db 117 ; Pokedex number
-	db 40 ; level
+	db 44 ; level
 	db 3, 7 ; length
 	dw 66 * 10 ; weight
-	tx ElectabuzzLv35Description ; description
+	tx Hakamo_oDescription ; description
 	db 16
 
 Kommo_oCard:
@@ -1990,12 +1990,12 @@ Kommo_oCard:
 	db 3 ; retreat cost
 	db WR_PSYCHIC ; weakness
 	db WR_LIGHTNING ; resistance
-	tx MouseName ; category
+	tx ScalyName ; category
 	db 117 ; Pokedex number
 	db 82 ; level
 	db 3, 7 ; length
 	dw 66 * 10 ; weight
-	tx ElectabuzzLv35Description ; description
+	tx Kommo_oDescription ; description
 	db 0
 
 TinkatinkCard:
@@ -2040,12 +2040,12 @@ TinkatinkCard:
 	db 1 ; retreat cost
 	db WR_FIRE ; weakness
 	db NONE ; resistance
-	tx PsiName ; category
+	tx MetalSmithName ; category
 	db 152 ; Pokedex number
 	db 21 ; level
 	db 2, 11 ; length
 	dw 43 * 10 ; weight
-	tx AbraDescription ; description
+	tx TinkatinkDescription ; description
 	db 19
 
 TinkatuffCard:
@@ -2090,12 +2090,12 @@ TinkatuffCard:
 	db 2 ; retreat cost
 	db WR_FIRE ; weakness
 	db WR_DARKNESS ; resistance
-	tx PsiName ; category
+	tx MetalSmithName ; category
 	db 153 ; Pokedex number
-	db 33 ; level
+	db 37 ; level
 	db 4, 3 ; length
 	dw 125 * 10 ; weight
-	tx KadabraDescription ; description
+	tx TinkatuffDescription ; description
 	db 19
 
 TinkatonCard:
@@ -2140,12 +2140,12 @@ TinkatonCard:
 	db 2 ; retreat cost
 	db WR_FIRE ; weakness
 	db WR_DARKNESS ; resistance
-	tx PsiName ; category
+	tx MetalSmithName ; category
 	db 154 ; Pokedex number
 	db 55 ; level
 	db 4, 11 ; length
 	dw 106 * 10 ; weight
-	tx AlakazamDescription ; description
+	tx TinkatonDescription ; description
 	db 0
 
 SalanditCard:
@@ -2190,12 +2190,12 @@ SalanditCard:
 	db 1 ; retreat cost
 	db WR_FIGHTING ; weakness
 	db WR_PSYCHIC ; resistance
-	tx LionCubName ; category
+	tx ToxicName ; category
 	db 55 ; Pokedex number
-	db 16 ; level
+	db 12 ; level
 	db 3, 3 ; length
 	dw 66 * 10 ; weight
-	tx DarumakaDescription ; description
+	tx SalanditDescription ; description
 	db 16
 
 Salazzle:
@@ -2240,12 +2240,12 @@ Salazzle:
 	db 1 ; retreat cost
 	db WR_FIGHTING ; weakness
 	db WR_FIRE ; resistance
-	tx DragonName ; category
+	tx ToxicName ; category
 	db 90 ; Pokedex number
-	db 65 ; level
+	db 45 ; level
 	db 3, 7 ; length
 	dw 44 * 10 ; weight
-	tx KingdraDescription ; description
+	tx SalazzleDescription ; description
 	db 0
 
 MoonStoneCard:
@@ -2257,7 +2257,7 @@ MoonStoneCard:
 	dw MOON_STONE
 	dw ColorlessEvolutionPkmnSearchEffectCommands ; effect commands
 	tx MoonStoneDescription ; description
-	dw NONE ; description (cont)
+	tx MoonStoneDescription2 ; description (cont)
 
 SuperRodCard:
 	db TYPE_TRAINER ; type
@@ -2268,5 +2268,5 @@ SuperRodCard:
 	dw SUPER_ROD
 	dw SuperRodEffectCommands ; effect commands
 	tx SuperRodDescription ; description
-	dw NONE ; description (cont)
+	tx SuperRodDescription2 ; description (cont)
 	

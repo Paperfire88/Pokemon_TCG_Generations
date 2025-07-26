@@ -1766,7 +1766,7 @@ SelectDeckToDuelText:
 	done
 
 TepigAndFriendsDeckChoiceText:
-	text "CHARMANDER & Friends Deck"
+	text "TEPIG & Friends Deck"
 	done
 
 FroakieAndFriendsDeckChoiceText:
@@ -1778,7 +1778,8 @@ ChikoritaAndFriendsDeckChoiceText:
 	done
 
 SelectDeckToTakeText:
-	text "Please select the Deck you want."
+	text "Please"
+	line "Select the Deck that you want."
 	done
 
 HowCanIHelpText:

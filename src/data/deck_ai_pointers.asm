@@ -1,14 +1,14 @@
 DeckAIPointerTable::
 	table_width 2, DeckAIPointerTable
 	dw AIActionTable_SamPractice         ; SAMS_PRACTICE_DECK
-	dw AIActionTable_GeneralDecks        ; PRACTICE_PLAYER_DECK
-	dw AIActionTable_GeneralDecks        ; SAMS_NORMAL_DECK
-	dw AIActionTable_GeneralDecks        ; CHARMANDER_AND_FRIENDS_DECK
-	dw AIActionTable_GeneralDecks        ; CHARMANDER_EXTRA_DECK
-	dw AIActionTable_GeneralDecks        ; FROAKIE_AND_FRIENDS_DECK
-	dw AIActionTable_GeneralDecks        ; FROAKIE_EXTRA_DECK
-	dw AIActionTable_GeneralDecks        ; CHIKORITA_AND_FRIENDS_DECK
-	dw AIActionTable_GeneralDecks        ; CHIKORITA_EXTRA_DECK
+	dw AIActionTable_GeneralNoRetreat        ; PRACTICE_PLAYER_DECK
+	dw AIActionTable_GeneralNoRetreat        ; SAMS_NORMAL_DECK
+	dw AIActionTable_GeneralNoRetreat        ; TEPIG_AND_FRIENDS_DECK
+	dw AIActionTable_GeneralNoRetreat        ; TEPIG_EXTRA_DECK
+	dw AIActionTable_GeneralNoRetreat        ; FROAKIE_AND_FRIENDS_DECK
+	dw AIActionTable_GeneralNoRetreat        ; FROAKIE_EXTRA_DECK
+	dw AIActionTable_GeneralNoRetreat        ; CHIKORITA_AND_FRIENDS_DECK
+	dw AIActionTable_GeneralNoRetreat        ; CHIKORITA_EXTRA_DECK
 	dw AIActionTable_GeneralNoRetreat        ; LIGHTNING_AND_FIRE_DECK
 	dw AIActionTable_GeneralNoRetreat        ; WATER_AND_FIGHTING_DECK
 	dw AIActionTable_GeneralNoRetreat        ; GRASS_AND_PSYCHIC_DECK
@@ -29,28 +29,36 @@ DeckAIPointerTable::
 	dw AIActionTable_InvincibleRonald    ; INVINCIBLE_RONALD_DECK
 	dw AIActionTable_LegendaryRonald     ; LEGENDARY_RONALD_DECK
 	dw AIActionTable_GeneralNoRetreat    ; MUSCLES_FOR_BRAINS_DECK
-	dw AIActionTable_GeneralDecks        ; HEATED_BATTLE_DECK
-	dw AIActionTable_GeneralDecks        ; LOVE_TO_BATTLE_DECK
-	dw AIActionTable_GeneralDecks        ; EXCAVATION_DECK
-	dw AIActionTable_GeneralDecks        ; BLISTERING_POKEMON_DECK
-	dw AIActionTable_GeneralDecks        ; HARD_POKEMON_DECK
-	dw AIActionTable_GeneralDecks        ; WATERFRONT_POKEMON_DECK
-	dw AIActionTable_GeneralDecks        ; LONELY_FRIENDS_DECK
-	dw AIActionTable_GeneralDecks        ; SOUND_OF_THE_WAVES_DECK
-	dw AIActionTable_GeneralDecks        ; PIKACHU_DECK
-	dw AIActionTable_GeneralDecks        ; BOOM_BOOM_SELFDESTRUCT_DECK
-	dw AIActionTable_GeneralDecks        ; POWER_GENERATOR_DECK
-	dw AIActionTable_GeneralDecks        ; ETCETERA_DECK
-	dw AIActionTable_GeneralDecks        ; FLOWER_GARDEN_DECK
-	dw AIActionTable_GeneralDecks        ; KALEIDOSCOPE_DECK
-	dw AIActionTable_GeneralDecks        ; GHOST_DECK
-	dw AIActionTable_GeneralDecks        ; NAP_TIME_DECK
-	dw AIActionTable_GeneralDecks        ; STRANGE_POWER_DECK
-	dw AIActionTable_GeneralDecks        ; FLYIN_POKEMON_DECK
-	dw AIActionTable_GeneralDecks        ; LOVELY_NIDORAN_DECK
-	dw AIActionTable_GeneralDecks        ; POISON_DECK
-	dw AIActionTable_GeneralDecks        ; ANGER_DECK
-	dw AIActionTable_GeneralDecks        ; FLAMETHROWER_DECK
-	dw AIActionTable_GeneralDecks        ; RESHUFFLE_DECK
+	dw AIActionTable_GeneralNoRetreat        ; HEATED_BATTLE_DECK
+	dw AIActionTable_GeneralNoRetreat        ; LOVE_TO_BATTLE_DECK
+	dw AIActionTable_GeneralNoRetreat        ; EXCAVATION_DECK
+	dw AIActionTable_GeneralNoRetreat        ; BLISTERING_POKEMON_DECK
+	dw AIActionTable_GeneralNoRetreat        ; HARD_POKEMON_DECK
+	dw AIActionTable_GeneralNoRetreat        ; WATERFRONT_POKEMON_DECK
+	dw AIActionTable_GeneralNoRetreat        ; LONELY_FRIENDS_DECK
+	dw AIActionTable_GeneralNoRetreat        ; SOUND_OF_THE_WAVES_DECK
+	dw AIActionTable_GeneralNoRetreat        ; PIKACHU_DECK
+	dw AIActionTable_GeneralNoRetreat        ; BOOM_BOOM_SELFDESTRUCT_DECK
+	dw AIActionTable_GeneralNoRetreat        ; POWER_GENERATOR_DECK
+	dw AIActionTable_GeneralNoRetreat        ; ETCETERA_DECK
+	dw AIActionTable_GeneralNoRetreat        ; FLOWER_GARDEN_DECK
+	dw AIActionTable_GeneralNoRetreat        ; KALEIDOSCOPE_DECK
+	dw AIActionTable_GeneralNoRetreat        ; GHOST_DECK
+	dw AIActionTable_GeneralNoRetreat        ; NAP_TIME_DECK
+	dw AIActionTable_GeneralNoRetreat        ; STRANGE_POWER_DECK
+	dw AIActionTable_GeneralNoRetreat        ; FLYIN_POKEMON_DECK
+	dw AIActionTable_GeneralNoRetreat        ; LOVELY_NIDORAN_DECK
+	dw AIActionTable_GeneralNoRetreat        ; POISON_DECK
+	dw AIActionTable_GeneralNoRetreat        ; ANGER_DECK
+	dw AIActionTable_GeneralNoRetreat        ; FLAMETHROWER_DECK
+	dw AIActionTable_GeneralNoRetreat        ; RESHUFFLE_DECK
 	dw AIActionTable_GeneralNoRetreat    ; IMAKUNI_DECK
+	dw AIActionTable_GeneralNoRetreat        ; TEPIG_AND_FRIENDS_DECK
+	dw AIActionTable_GeneralNoRetreat        ; TEPIG_EXTRA_DECK
+	dw AIActionTable_GeneralNoRetreat        ; TEPIG_AND_FRIENDS_DECK
+	dw AIActionTable_GeneralNoRetreat        ; TEPIG_EXTRA_DECK
+	dw AIActionTable_GeneralNoRetreat        ; TEPIG_AND_FRIENDS_DECK
+	dw AIActionTable_GeneralNoRetreat        ; TEPIG_EXTRA_DECK
+	dw AIActionTable_GeneralNoRetreat        ; TEPIG_AND_FRIENDS_DECK
+	dw AIActionTable_GeneralNoRetreat        ; TEPIG_EXTRA_DECK
 	assert_table_length NUM_DECK_IDS

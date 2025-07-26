@@ -244,7 +244,7 @@ HandleNShieldAndTransparency::
 	call GetCardIDFromDeckIndex
 	cp16 MIMIKYU
 	jr z, .nshield
-	cp16 HEAVYBALL
+	cp16 HEAVY_BALL
 	jr z, .transparency
 .done
 	pop de
@@ -407,7 +407,7 @@ HandleNoDamageOrEffectSubstatus::
 ; return carry if damage is prevented
 HandleTransparency::
 	ld hl, wTempNonTurnDuelistCardID
-	cphl HEAVYBALL
+	cphl HEAVY_BALL
 	jr z, .transparency
 .done
 	or a

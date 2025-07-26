@@ -1604,7 +1604,7 @@ TangelaLv8Card:
 	tx TangelaName ; name
 	db CIRCLE ; rarity
 	db MYSTERY | NONE ; sets
-	dw TANGELA_LV8
+	dw TANGELA
 	db 60 ; hp
 	db BASIC ; stage
 	dw NONE ; pre-evo name
@@ -1806,7 +1806,7 @@ TepigCard:
 	tx TepigName ; name
 	db CIRCLE ; rarity
 	db COLOSSEUM | NONE ; sets
-	dw CHARMANDER
+	dw TEPIG
 	db 50 ; hp
 	db BASIC ; stage
 	dw NONE ; pre-evo name
@@ -2447,7 +2447,7 @@ PyroarCard:
 	db 41 ; level
 	db 5, 7 ; length
 	dw 209 * 10 ; weight
-	tx DarmanitanDescription ; description
+	tx PyroarDescription ; description
 	db 0
 
 FlareonLv28Card:
@@ -3293,7 +3293,7 @@ BruxishCard:
 	db 1 ; retreat cost
 	db WR_DARKNESS ; weakness
 	db NONE ; resistance
-	tx DopeyName ; category
+	tx BiteName ; category
 	db 79 ; Pokedex number
 	db 29 ; level
 	db 3, 11 ; length
@@ -3348,7 +3348,7 @@ TympoleCard:
 	db 13 ; level
 	db 2, 0 ; length
 	dw 27 * 10 ; weight
-	tx PoliwagDescription ; description
+	tx TympoleDescription ; description
 	db 19
 
 PalpitoadCard:
@@ -3398,7 +3398,7 @@ PalpitoadCard:
 	db 28 ; level
 	db 3, 4 ; length
 	dw 44 * 10 ; weight
-	tx PoliwhirlsDescription ; description
+	tx PalpitoadDescription ; description
 	db 16
 
 SeismitoadCard:
@@ -3448,7 +3448,7 @@ SeismitoadCard:
 	db 68 ; level
 	db 4, 3 ; length
 	dw 119 * 10 ; weight
-	tx PoliwrathDescription ; description
+	tx SeismitoadDescription ; description
 	db 0
 
 SeelCard:
@@ -4084,7 +4084,7 @@ AraquanidCard:
 	db 30 ; damage
 	db DAMAGE_PLUS ; category
 	dw GyaradosBubblebeamEffectCommands ; effect commands
-	db INFLICT_PARALYSIS ; flags 1
+	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
@@ -4148,7 +4148,7 @@ ChewtleCard:
 	db 25 ; level
 	db 8, 2 ; length
 	dw 485 * 10 ; weight
-	tx LaprasDescription ; description
+	tx ChewtleDescription ; description
 	db 16
 
 DrednawCard:
@@ -4198,7 +4198,7 @@ DrednawCard:
 	db 59 ; level
 	db 3, 3 ; length
 	dw 64 * 10 ; weight
-	tx VaporeonLv29Description ; description
+	tx DrednawDescription ; description
 	db 0
 
 VaporeonLv42Card:
@@ -4398,7 +4398,7 @@ RelicanthCard:
 	db 35 ; level
 	db 5, 7 ; length
 	dw 122 * 10 ; weight
-	tx ArticunoLv35Description ; description
+	tx RelicanthDescription ; description
 	db 0
 
 SuicuneCard:
@@ -4445,7 +4445,7 @@ SuicuneCard:
 	db NONE ; resistance
 	tx FreezeName ; category
 	db 144 ; Pokedex number
-	db 37 ; level
+	db 87 ; level
 	db 5, 7 ; length
 	dw 122 * 10 ; weight
 	tx SuicuneDescription ; description
@@ -4908,7 +4908,7 @@ MagnemiteLv13Card:
 	tx MagnemiteName ; name
 	db CIRCLE ; rarity
 	db LABORATORY | NONE ; sets
-	dw MAGNEMITE_LV13
+	dw MAGNEMITE
 	db 40 ; hp
 	db BASIC ; stage
 	dw NONE ; pre-evo name
@@ -4958,7 +4958,7 @@ MagnetonLv28Card:
 	tx MagnetonName ; name
 	db DIAMOND ; rarity
 	db LABORATORY | NONE ; sets
-	dw MAGNETON_LV28
+	dw MAGNETON
 	db 70 ; hp
 	db STAGE1 ; stage
 	tx MagnemiteName ; pre-evo name
@@ -5223,7 +5223,7 @@ ElectrikeCard:
 	dw KangaskhanFetchEffectCommands ; effect commands
 	db DRAW_CARD ; flags 1
 	db NONE ; flags 2
-	db SPECIAL_AI_HANDLING ; flags 3
+	db NONE ; flags 3
 	db 0
 	db ATK_ANIM_GLOW_EFFECT ; animation
 
@@ -5249,7 +5249,7 @@ ElectrikeCard:
 	db 20 ; level
 	db 3, 7 ; length
 	dw 66 * 10 ; weight
-	tx ElectabuzzLv20Description ; description
+	tx ElectrikeDescription ; description
 	db 16
 
 ManectricCard:
@@ -5299,7 +5299,7 @@ ManectricCard:
 	db 44 ; level
 	db 2, 7 ; length
 	dw 54 * 10 ; weight
-	tx JolteonLv24Description ; description
+	tx ManectricDescription ; description
 	db 0
 
 WattrelCard:
@@ -5349,7 +5349,7 @@ WattrelCard:
 	db 17 ; level
 	db 5, 3 ; length
 	dw 116 * 10 ; weight
-	tx ZapdosLv64Description ; description
+	tx WattrelDescription ; description
 	db 0
 
 KilowattrelCard:
@@ -5394,12 +5394,12 @@ KilowattrelCard:
 	db 1 ; retreat cost
 	db WR_WATER ; weakness
 	db NONE ; resistance
-	tx DragonName ; category
+	tx ElectronName ; category
 	db 206 ; Pokedex number
 	db 42 ; level
 	db 6, 11 ; length
 	dw 1014 * 10 ; weight
-	tx SnorlaxDescription ; description
+	tx KilowattrelDescription ; description
 	db 0
 
 JolteonLv29Card:
@@ -5799,7 +5799,7 @@ EelektrikCard:
 	db 12 ; level
 	db 1, 4 ; length
 	dw 13 * 10 ; weight
-	tx BlitzleDescription ; description
+	tx EelektrikDescription ; description
 	db 19
 
 EelektrossCard:
@@ -6421,7 +6421,7 @@ LarvitarCard:
 	db 0 ; damage
 	db DAMAGE_NORMAL ; category
 	dw MountainEaterEffectCommands ; effect commands
-	db NONE ; flags 1
+	db DAMAGE_TO_OPPONENT_BENCH ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
@@ -6671,25 +6671,25 @@ CufantCard:
 	db 0 ; damage
 	db RESIDUAL ; category
 	dw MarowakCallforFriendEffectCommands ; effect commands
-	db NONE ; flags 1
+	db DAMAGE_TO_OPPONENT_BENCH ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
 	db ATK_ANIM_GLOW_EFFECT ; animation
 
-	; attack 2
+	; attack 1
 	energy FIGHTING, 1, COLORLESS, 1 ; energies
-	tx GaleName ; name
-	tx GaleDescription ; description
+	tx StompOffName ; name
+	tx StompOffDescription ; description
 	dw NONE ; description (cont)
 	db 30 ; damage
 	db DAMAGE_NORMAL ; category
-	dw PidgeotGaleEffectCommands ; effect commands
-	db NONE ; flags 1
-	db SWITCH_OPPONENT_POKEMON | FLAG_2_BIT_7 ; flags 2
+	dw StompOffEffectCommands ; effect commands
+	db LOW_RECOIL ; flags 1
+	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_GLOW_EFFECT ; animation
+	db ATK_ANIM_HIT_RECOIL ; animation
 
 	db 2 ; retreat cost
 	db WR_FIRE ; weakness
@@ -6708,7 +6708,7 @@ CopperajahCard:
 	tx CopperajahName ; name
 	db STAR ; rarity
 	db LABORATORY | NONE ; sets
-	dw RHYDON
+	dw COPPERAJAH
 	db 100 ; hp
 	db STAGE1 ; stage
 	tx CufantName ; pre-evo name
@@ -7144,7 +7144,7 @@ GalladeCard:
 	db 2 ; retreat cost
 	db WR_PSYCHIC ; weakness
 	db WR_DARKNESS ; resistance
-	tx BonekeeperName ; category
+	tx BlandeName ; category
 	db 105 ; Pokedex number
 	db 55 ; level
 	db 3, 3 ; length
@@ -7195,7 +7195,7 @@ RaltsCard:
 	db 1 ; retreat cost
 	db WR_PSYCHIC ; weakness
 	db NONE ; resistance
-	tx NewSpeciesName ; category
+	tx EmotionName ; category
 	db 151 ; Pokedex number
 	db 13 ; level
 	db 1, 4 ; length
@@ -7245,7 +7245,7 @@ KirliaCard:
 	db 1 ; retreat cost
 	db WR_PSYCHIC ; weakness
 	db NONE ; resistance
-	tx NewSpeciesName ; category
+	tx EmotionName ; category
 	db 151 ; Pokedex number
 	db 23 ; level
 	db 1, 4 ; length
@@ -7295,7 +7295,7 @@ GardevoirCard:
 	db 2 ; retreat cost
 	db WR_PSYCHIC ; weakness
 	db WR_DARKNESS ; resistance
-	tx NewSpeciesName ; category
+	tx EmotionName ; category
 	db 151 ; Pokedex number
 	db 55 ; level
 	db 1, 4 ; length
@@ -7858,7 +7858,7 @@ MewLv23Card:
 	gfx MewLv23CardGfx ; gfx
 	tx MewName ; name
 	db STAR ; rarity
-	db PROMOTIONAL | GB ; sets
+	db PROMOTIONAL | PRO ; sets
 	dw MEW
 	db 50 ; hp
 	db BASIC ; stage
@@ -8394,12 +8394,12 @@ CutieflyCard:
 	db 0 ; retreat cost
 	db WR_FIRE ; weakness
 	db WR_DARKNESS ; resistance
-	tx HypnosisName ; category
+	tx BeeFlyName ; category
 	db 96 ; Pokedex number
 	db 7 ; level
 	db 3, 3 ; length
 	dw 71 * 10 ; weight
-	tx BeeFlyName ; description
+	tx CutieflyDescription ; description
 	db 19
 
 RibombeeCard:
@@ -10208,8 +10208,8 @@ RayquazaCard:
 	db TYPE_PKMN_COLORLESS ; type
 	gfx RayquazaCardGfx ; gfx
 	tx RayquazaName ; name
-	db STAR ; rarity
-	db LABORATORY | NONE ; sets
+	db PROMOSTAR ; rarity
+	db PROMOTIONAL | PRO ; sets
 	dw RAYQUAZA
 	db 90 ; hp
 	db BASIC ; stage
@@ -10251,7 +10251,7 @@ RayquazaCard:
 	db 55 ; level
 	db 2, 7 ; length
 	dw 33 * 10 ; weight
-	tx ChanseyDescription ; description
+	tx RayquazaDescription ; description
 	db 3
 
 RuffletCard:
@@ -10451,7 +10451,7 @@ AudinoCard:
 	db 60 ; level
 	db 3, 7 ; length
 	dw 76 * 10 ; weight
-	tx FarfetchdDescription; description
+	tx AudinoDescription; description
 	db 8
 
 ChatotCard:
@@ -11480,7 +11480,7 @@ HeavyBallCard:
 	tx HeavyBallName ; name
 	db DIAMOND ; rarity
 	db MYSTERY | NONE ; sets
-	dw HEAVYBALL
+	dw HEAVY_BALL
 	dw HeavyBallEffectCommands ; effect commands
 	tx HeavyBallDescription ; description
 	tx HeavyBallDescription2 ; description (cont)
@@ -11516,4 +11516,4 @@ RecycleCard:
 	dw RECYCLE
 	dw RecycleEffectCommands ; effect commands
 	tx RecycleDescription ; description
-	dw NONE ; description (cont)
+	tx RecycleDescription2 ; description (cont)

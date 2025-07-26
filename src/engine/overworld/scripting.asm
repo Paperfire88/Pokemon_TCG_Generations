@@ -1579,6 +1579,10 @@ ScriptCommand_ChooseStarterDeckMultichoice:
 	tx TepigAndFriendsDeckChoiceText
 	tx FroakieAndFriendsDeckChoiceText
 	tx ChikoritaAndFriendsDeckChoiceText
+	tx DeinoAndFriendsDeckName
+	tx MagnemiteAndFriendsDeckName
+	tx TrapinchAndFriendsDeckName
+	tx RaltsAndFriendsDeckName
 
 ; displays a textbox with multiple choices and a cursor.
 ; takes as an argument in h1 a pointer to a table

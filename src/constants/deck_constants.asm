@@ -15,8 +15,8 @@ ENDM
 	deck_const SAMS_PRACTICE_DECK          ; $02
 	deck_const PRACTICE_PLAYER_DECK        ; $03
 	deck_const SAMS_NORMAL_DECK            ; $04
-	deck_const CHARMANDER_AND_FRIENDS_DECK ; $05
-	deck_const CHARMANDER_EXTRA_DECK       ; $06
+	deck_const TEPIG_AND_FRIENDS_DECK ; $05
+	deck_const TEPIG_EXTRA_DECK       ; $06
 	deck_const FROAKIE_AND_FRIENDS_DECK   ; $07
 	deck_const FROAKIE_EXTRA_DECK         ; $08
 	deck_const CHIKORITA_AND_FRIENDS_DECK  ; $09
@@ -65,6 +65,14 @@ ENDM
 	deck_const FLAMETHROWER_DECK           ; $34
 	deck_const RESHUFFLE_DECK              ; $35
 	deck_const IMAKUNI_DECK                ; $36
+	deck_const DEINO_AND_FRIENDS_DECK      ; $37
+	deck_const DEINO_EXTRA_DECK   		   ; $38
+	deck_const MAGNEMITE_AND_FRIENDS_DECK  ; $39
+	deck_const MAGNEMITE_EXTRA_DECK   	   ; $3A
+	deck_const TRAPINCH_AND_FRIENDS_DECK   ; $3B
+	deck_const TRAPINCH_EXTRA_DECK   	   ; $3C
+	deck_const RALTS_AND_FRIENDS_DECK      ; $3D
+	deck_const RALTS_EXTRA_DECK   		   ; $3E
 DEF NUM_VALID_DECKS EQU const_value
 DEF NUM_DECK_IDS EQU const_value - 2
 

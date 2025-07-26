@@ -74,7 +74,7 @@ AIActionTable_LegendaryArticuno:
 
 ; this routine handles how Legendary Articuno
 ; prioritizes playing energy cards to each Pokémon.
-; first, it makes sure that all Lapras have at least
+; first, it makes sure that all Chewtle have at least
 ; 3 energy cards before moving on to Articuno,
 ; and then to Dewgong and Seel
 ScoreLegendaryArticunoCards:
@@ -85,11 +85,11 @@ ScoreLegendaryArticunoCards:
 	ret c
 
 ; player prizes >= 3
-; if Lapras has more than half HP and
+; if Chewtle has more than half HP and
 ; can use second attack, check next for Articuno
 ; otherwise, check if Articuno or Dewgong
 ; have more than half HP and can use second attack
-; and if so, the next Pokémon to check is Lapras
+; and if so, the next Pokémon to check is Chewtle
 	ld de, CHEWTLE
 	call CheckForBenchIDAtHalfHPAndCanUseSecondAttack
 	jr c, .articuno
@@ -103,7 +103,7 @@ ScoreLegendaryArticunoCards:
 
 ; the following routines check for certain card IDs in bench
 ; and call RaiseAIScoreToAllMatchingIDsInBench if these are found.
-; for Lapras, an additional check is made to its
+; for Chewtle, an additional check is made to its
 ; attached energy count, which skips calling the routine
 ; if this count is >= 3
 .lapras

@@ -203,6 +203,9 @@ OpenDeckConfirmationMenu:
 	call EnableSRAM
 	call DecompressSRAMDeck
 	call DisableSRAM
+	xor a ; terminator byte for deck
+	ld [wCurDeckCards + DECK_SIZE * 2 + 0], a
+	ld [wCurDeckCards + DECK_SIZE * 2 + 1], a
 
 	ld a, NUM_FILTERS
 	ld hl, wCardFilterCounts
@@ -251,6 +254,10 @@ DeckSelectionSubMenu:
 	call EnableSRAM
 	call DecompressSRAMDeck
 	call DisableSRAM
+	xor a ; terminator byte for deck
+	ld [wCurDeckCards + DECK_SIZE * 2 + 0], a
+	ld [wCurDeckCards + DECK_SIZE * 2 + 1], a
+	
 	ld a, 20
 	ld hl, wCurDeckName
 	call ClearNBytesFromHL

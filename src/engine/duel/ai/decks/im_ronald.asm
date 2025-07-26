@@ -29,14 +29,14 @@ AIActionTable_ImRonald:
 .list_arena
 	dw CHEWTLE
 	dw SEEL
-	dw CHARMANDER
+	dw TEPIG
 	dw LARVITAR
 	dw FROAKIE
 	dw SIZZLIPEDE
 	dw NULL
 
 .list_bench
-	dw CHARMANDER
+	dw TEPIG
 	dw FROAKIE
 	dw SEEL
 	dw LARVITAR
@@ -48,7 +48,7 @@ AIActionTable_ImRonald:
 	dw NULL
 
 .list_energy
-	ai_energy CHARMANDER,     3, +0
+	ai_energy TEPIG,     3, +0
 	ai_energy PIGNITE,     5, +0
 	ai_energy SIZZLIPEDE,      2, +0
 	ai_energy CENTISKORCH,  4, +0

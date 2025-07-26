@@ -140,7 +140,7 @@ MetapodStunSporeEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Paralysis50PercentEffect
 	db  $00
 
-OddishStunSporeEffectCommands:
+ApplinStunSporeEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Paralysis50PercentEffect
 	db  $00
 
@@ -300,7 +300,8 @@ VaporeonHydroPumpEffectCommands:
 	db  $00
 
 GyaradosBubblebeamEffectCommands:
-	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Paralysis50PercentEffect
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, DamageincreseretreatcostEffect
+	dbw EFFECTCMDTYPE_AI, Low_AIEffect
 	db  $00
 
 FlailEffectCommands:
@@ -411,7 +412,7 @@ TentacoolCowardiceEffectCommands:
 	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, Cowardice_PlayerSelectEffect
 	db  $00
 
-LaprasConfuseRayEffectCommands:
+ChewtleConfuseRayEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Confusion50PercentEffect
 	db  $00
 
@@ -949,8 +950,8 @@ PorygonConversion1EffectCommands:
 PorygonConversion2EffectCommands:
 	db  $00
 
-ChanseyDoubleEdgeEffectCommands:
-	dbw EFFECTCMDTYPE_AFTER_DAMAGE, ChanseyDoubleEdgeEffect
+RayquazaDoubleEdgeEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, RayquazaDoubleEdgeEffect
 	db  $00
 
 RaticateSuperFangEffectCommands:

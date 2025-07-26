@@ -646,18 +646,18 @@ Text06ea:
 	done
 
 Text06eb:
-	text "Oddish, Oddish,"
-	line "Roly-Poly Oddish!"
-	line "Oddish is so Roly-Poly "
+	text "Applin, Applin,"
+	line "Roly-Poly Applin!"
+	line "Applin is so Roly-Poly "
 	line "and so cute!"
 	line "I'll give you this Appletun"
-	line "if you give me an Oddish!"
+	line "if you give me an Applin!"
 	done
 
 Text06ec:
 	text "Hi!"
-	line "Did you bring me an Oddish?"
-	line "Will you trade your Oddish"
+	line "Did you bring me an Applin?"
+	line "Will you trade your Applin"
 	line "for my Appletun?"
 	done
 
@@ -666,31 +666,31 @@ Text06ed:
 	done
 
 Text06ee:
-	text "I want an Oddish!"
-	line "A Roly-Poly Oddish!"
+	text "I want an Applin!"
+	line "A Roly-Poly Applin!"
 	done
 
 Text06ef:
 	text "Excuse me..."
-	line "Do you have an Oddish..."
+	line "Do you have an Applin..."
 	done
 
 Text06f0:
 	text "Then let's trade!"
-	line "Appletun for an Oddish!"
+	line "Appletun for an Applin!"
 	line "Oops!"
-	line "Your Oddish is in your Deck!"
+	line "Your Applin is in your Deck!"
 	line "I can't take that!"
 	line "Please trade me some other time."
 	done
 
 Text06f1:
 	text "OK then, let's trade!"
-	line "Appletun for an Oddish."
+	line "Appletun for an Applin."
 	done
 
 Text06f2:
-	text "<RAMNAME> traded an Oddish"
+	text "<RAMNAME> traded an Applin"
 	line "for a Appletun!"
 	done
 

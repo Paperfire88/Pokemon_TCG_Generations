@@ -2556,7 +2556,7 @@ IceBreath_RandomPokemonDamageEffect:
 FocusEnergyEffect:
 	ld hl, wTempTurnDuelistCardID + 1
 	cphl PAWNIARD
-	ret nz ; return if no VaporeonLv29
+	ret nz ; return if no Drednaw
 	ld a, SUBSTATUS1_NEXT_TURN_DOUBLE_DAMAGE
 	jp ApplySubstatus1ToDefendingCard
 
@@ -5893,7 +5893,7 @@ PounceEffect:
 	ld a, SUBSTATUS2_REDUCE_BY_10
 	jp ApplySubstatus2ToDefendingCard
 
-ChanseyDoubleEdgeEffect:
+RayquazaDoubleEdgeEffect:
 	ld a, 80
 	jp DealRecoilDamageToSelf
 
@@ -11016,13 +11016,15 @@ SandCrushEffect:
 	call SwapTurn
 	call CountDamagedPKMN
 	call SwapTurn
+	ld [hTemp_ffa0], a
+	call GlowAnimationsEffect
 	jp Wildfire_DiscardDeckEffect
 CountDamagedPKMN:
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
 	call GetTurnDuelistVariable
 	ld d, a
 	ld e, PLAY_AREA_ARENA
-	ld b, 0
+	ld b, 0 ; register each on B
 
 ; check every PKMN
 .loop_play_area
@@ -11037,7 +11039,7 @@ CountDamagedPKMN:
 	inc e
 	dec d
 	jr nz, .loop_play_area
-	ld a, b
+	ld a, b ;Load the count on a
 	ret
 
 MegatonHammerEffect:

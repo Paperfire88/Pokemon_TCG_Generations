@@ -3935,9 +3935,9 @@ DisplayCardPage_PokemonOverview:
 ; common for both card page types
 .print_numbers_and_energies
 	; print Pokedex number in the bottom right corner (16,16)
-	lb bc, 16, 16
-	ld a, [wLoadedCard1PokedexNumber]
-	call WriteTwoByteNumberInTxSymbolFormat
+	; lb bc, 16, 16
+	; ld a, [wLoadedCard1PokedexNumber]
+	; call WriteTwoByteNumberInTxSymbolFormat
 	; print the name, damage, and energy cost of each attack and/or Pokemon power that exists
 	; first attack at 5,10 and second at 5,12
 	lb bc, 5, 10
@@ -4171,7 +4171,7 @@ CardPageLvHPNoTextTileData:
 ;	continues to CardPageNoTextTileData
 
 CardPageNoTextTileData:
-	db 15, 16, SYM_POKEMON, 0
+	db 18, 16, SYM_POKEMON, 0
 	db $ff
 
 DisplayCardPage_PokemonAttack1Page1:

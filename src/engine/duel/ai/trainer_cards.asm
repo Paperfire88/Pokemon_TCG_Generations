@@ -270,7 +270,7 @@ AIDecide_Potion2:
 	call .check_boost_if_taken_damage
 	jr c, .has_boost_damage
 	call GetCardDamageAndMaxHP
-	cp 30 ; if damage >= 20
+	cp 20 ; if damage >= 20
 	jr nc, .found
 .has_boost_damage
 	inc e
@@ -292,7 +292,7 @@ AIDecide_Potion2:
 	jr z, .check_random
 	ld a, 10
 	call Random
-	cp 3
+	cp 5
 ; 7/10 chance of returning carry.
 .check_random
 	pop de
@@ -1055,9 +1055,6 @@ AIDecide_BossOrders:
 	ld a, [wPreviousAIFlags]
 	and AI_FLAG_USED_GUST_OF_WIND
 	ret nz
-
-	farcall CheckIfActivePokemonCanUseAnyNonResidualAttack
-	ret nc ; no non-residual attack can be used
 
 	xor a ; PLAY_AREA_ARENA
 	ldh [hTempPlayAreaLocation_ff9d], a
@@ -4094,7 +4091,7 @@ AIDecide_ScoopUp:
 	cp16 AUDINO
 	jr nz, .no_carry
 
-; here either ArticunoLv37 or Chansey
+; here either ArticunoLv37 or Rayquaza
 ; is the Arena Card.
 .articuno_or_chansey
 ; if can't KO defending Pokemon, check if defending Pokemon
@@ -4122,7 +4119,7 @@ AIDecide_ScoopUp:
 	call SwapTurn
 	call GetCardIDFromDeckIndex
 	call SwapTurn
-	cp16 HEAVYBALL
+	cp16 HEAVY_BALL
 	pop bc
 	jp z, .no_carry
 
@@ -4861,6 +4858,24 @@ AIPlay_Pokeball:
 	ld a, OPPACTION_EXECUTE_TRAINER_EFFECTS
 	bank1call AIMakeDecision
 	ret
+AIDecide_Heavyball:
+	cp HARD_POKEMON_DECK_ID
+	jr z, .hard_pokemon2
+	or a
+	ret
+.hard_pokemon2
+	ld de, TYRANITAR
+	ld a, CARD_LOCATION_DECK
+	call LookForCardIDInLocation
+	ret c
+	ld de, COPPERAJAH
+	ld a, CARD_LOCATION_DECK
+	call LookForCardIDInLocation
+	ret c
+	ret
+.no_carry
+	or a
+	ret		
 
 AIDecide_Pokeball:
 ; go to the routines associated with deck ID
@@ -4872,7 +4887,7 @@ AIDecide_Pokeball:
 	cp PIKACHU_DECK_ID
 	jr z, .pikachu
 	cp ETCETERA_DECK_ID
-	jr z, .etcetera
+	jp z, .etcetera
 	cp LOVELY_NIDORAN_DECK_ID
 	jp z, .lovely_nidoran
 	or a
@@ -4902,14 +4917,30 @@ AIDecide_Pokeball:
 	ld a, CARD_LOCATION_DECK
 	call LookForCardIDInLocation
 	ret c
-	ld de, RHYDON
+	ld de, COPPERAJAH
 	ld a, CARD_LOCATION_DECK
 	call LookForCardIDInLocation
 	ret c
-	ld de, HAWLUCHA
+	ld de, LARVITAR
 	ld a, CARD_LOCATION_DECK
 	call LookForCardIDInLocation
 	ret c
+	ld de, PUPITAR
+	ld a, CARD_LOCATION_DECK
+	call LookForCardIDInLocation
+	ret c
+	ld de, TYRANITAR
+	ld a, CARD_LOCATION_DECK
+	call LookForCardIDInLocation
+	ret c
+	ld de, ROCKRUFF
+	ld a, CARD_LOCATION_DECK
+	call LookForCardIDInLocation
+	ret c
+	ld de, LYCANROCM
+	ld a, CARD_LOCATION_DECK
+	call LookForCardIDInLocation
+	ret c	
 	ret
 
 ; this deck runs a deck check for specific
@@ -4947,13 +4978,13 @@ AIDecide_Pokeball:
 	ld de, FIRE_ENERGY
 	call LookForCardIDInHandList_Bank8
 	jr nc, .lightning
-	ld de, CHARMANDER
+	ld de, TEPIG
 	call LookForCardIDInHandList_Bank8
 	jr c, .lightning
 	ld de, MAGMAR
 	call LookForCardIDInHandList_Bank8
 	jr c, .lightning
-	ld de, CHARMANDER
+	ld de, TEPIG
 	ld a, CARD_LOCATION_DECK
 	call LookForCardIDInLocation
 	ret c
@@ -4969,14 +5000,14 @@ AIDecide_Pokeball:
 	ld de, PIKACHU
 	call LookForCardIDInHandList_Bank8
 	jr c, .fighting
-	ld de, MAGNEMITE_LV13
+	ld de, MAGNEMITE
 	call LookForCardIDInHandList_Bank8
 	jr c, .fighting
 	ld de, PIKACHU
 	ld a, CARD_LOCATION_DECK
 	call LookForCardIDInLocation
 	ret c
-	ld de, MAGNEMITE_LV13
+	ld de, MAGNEMITE
 	ld a, CARD_LOCATION_DECK
 	call LookForCardIDInLocation
 	ret c
@@ -5640,7 +5671,7 @@ AIDecide_PokemonTrader_LegendaryDragonite:
 	ld bc, LUGIA
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .choose_hand
-	ld bc, CHARMANDER
+	ld bc, TEPIG
 	ld de, PIGNITE
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .choose_hand
@@ -5648,7 +5679,7 @@ AIDecide_PokemonTrader_LegendaryDragonite:
 	ld de, EMBOAR
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .choose_hand
-	ld de, CHARMANDER
+	ld de, TEPIG
 	ld bc, PIGNITE
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .choose_hand
@@ -5680,7 +5711,7 @@ AIDecide_PokemonTrader_LegendaryDragonite:
 	ld de, SNEASEL
 	call CheckIfHasCardIDInHand
 	jr c, .set_carry
-	ld de, CHARMANDER
+	ld de, TEPIG
 	call CheckIfHasCardIDInHand
 	jr c, .set_carry
 	ld de, GOOMY
@@ -5772,11 +5803,11 @@ AIDecide_PokemonTrader_BlisteringPokemon:
 ; otherwise, check if the evolution card is in
 ; hand and if so, choose it as target instead.
 	ld bc, CUFANT
-	ld de, RHYDON
+	ld de, COPPERAJAH
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
 	ld de, CUFANT
-	ld bc, RHYDON
+	ld bc, COPPERAJAH
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
 	ld bc, LARVITAR
@@ -5924,20 +5955,20 @@ AIDecide_PokemonTrader_PowerGenerator:
 	ld bc, TOXTRICITY
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
-	ld bc, MAGNEMITE_LV13
+	ld bc, MAGNEMITE
 	ld de, MAGNEZONE
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
-	ld bc, MAGNEMITE_LV13
-	ld de, MAGNETON_LV28
+	ld bc, MAGNEMITE
+	ld de, MAGNETON
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
-	ld de, MAGNEMITE_LV13
+	ld de, MAGNEMITE
 	ld bc, MAGNEZONE
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
-	ld de, MAGNEMITE_LV13
-	ld bc, MAGNETON_LV28
+	ld de, MAGNEMITE
+	ld bc, MAGNETON
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
 	; bug, missing jr .no_carry
@@ -6048,7 +6079,7 @@ AIDecide_PokemonTrader_Flamethrower:
 ; Play Area or in the hand. If there is, choose it as target.
 ; otherwise, check if the evolution card is in
 ; hand and if so, choose it as target instead.
-	ld bc, CHARMANDER
+	ld bc, TEPIG
 	ld de, PIGNITE
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
@@ -6056,7 +6087,7 @@ AIDecide_PokemonTrader_Flamethrower:
 	ld de, EMBOAR
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
-	ld de, CHARMANDER
+	ld de, TEPIG
 	ld bc, PIGNITE
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates

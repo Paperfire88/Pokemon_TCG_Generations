@@ -226,4 +226,28 @@ OpponentTitlesAndDeckNames:
 	tx StrangeLifeformText
 	tx ImakuniDeckName
 
+	tx EmptyText
+	dw NULL
+	
+	tx EmptyText
+	dw NULL
+
+	tx EmptyText
+	dw NULL
+	
+	tx EmptyText
+	dw NULL
+
+	tx EmptyText
+	dw NULL
+	
+	tx EmptyText
+	dw NULL
+
+	tx EmptyText
+	dw NULL
+	
+	tx EmptyText
+	dw NULL
+	
 	assert_table_length NUM_DECK_IDS

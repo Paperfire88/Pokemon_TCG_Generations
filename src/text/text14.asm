@@ -105,7 +105,6 @@ DottlerDescription:
 	line "OG Set: (Battle Styles 64)"
 	line "OG illustrator: (Midori Harada)"
 	done	
-
 CutieflyDescription:	
 	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Sun & Moon 92)"
@@ -309,8 +308,304 @@ CopycatDescription2:
 	line "OG Set: (Expedition 136)"
 	line "OG illustrator: (Ken Sugimori)"
 	done		
-DevolutionSprayDescription2:
+RecycleDescription2:
 	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Fossil 61)"
 	line "OG illustrator: (Keiji Kinebuchi)"
 	done		
+ImpidimpDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Fusion Strike 176)"
+	line "OG illustrator: (sowsow)"
+	done	
+WilyName:
+	text "Wily"
+	done	
+MorgremDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Rebel Clash 124)"
+	line "OG illustrator: (Hitoshi Ariga)"
+	done	
+DeviousName:
+	text "Devious"
+	done		
+GrimmsnarlDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Journey Together 73)"
+	line "OG illustrator: (Nisota Niso)"
+	done
+BulkUpName:
+	text "Bulk Up"
+	done		
+PawniardDescription:
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Dark Explorers 78)"
+	line "OG illustrator: (Naoki Saito)"
+	done	
+BisharpDescription:
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Crown Zenith 93)"
+	line "OG illustrator: (DOM)"
+	done		
+GastlyDescription:
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Gym Heroes 93)"
+	line "OG illustrator: (Ken Sugimori)"
+	done
+HaunterDescription:
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Paldean Fates 56)"
+	line "OG illustrator: (DOM)"
+	done
+GengarDescription:
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (BREAKthrough 60)"
+	line "OG illustrator: (Saya Tsuruta)"
+	done
+ElekidDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Sandstorm 36)"
+	line "OG illustrator: (Kouki Saitou)"
+	done			
+ElectivireDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Destined Rivals 69)"
+	line "OG illustrator: (PLANETA Mochizuki)"
+	done		
+PichuDescription:
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Arceus 25)"
+	line "OG illustrator: (Kanako Eo)"
+	done					
+PikachuDescription:
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Paldea Evolved 63)"
+	line "OG illustrator: (N-DESIGN Inc.)"
+	done	
+RaichuDescription:
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Paldea Evolved 63)"
+	line "OG illustrator: (N-DESIGN Inc.)"
+	done	
+ParasiteName:
+	text "Parasite"
+	done
+NihilegoDescription:
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Lost Thunder 106)"
+	line "OG illustrator: (Megumi Mizutani)"
+	done		
+RioluDescription:
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Brilliant Stars 78)"
+	line "OG illustrator: (Teeziro)"
+	done	
+AuraName:
+	text "Aura"
+	done
+LucarioDescription:
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Japanese Promo)"
+	line "OG illustrator: (Mitsuhiro Arita)"
+	done		
+VerdantName:
+	text "Verdant"
+	done
+LeafeonDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Sword & Shield Promos 191)"
+	line "OG illustrator: (OKACHEKE)"
+	done		
+GlaceonDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Evolving Skies 40)"
+	line "OG illustrator: (5ban Graphics)"
+	done	
+SnowName:
+	text "Snow"
+	done	
+InterwiningName:
+	text "Internwining"
+	done
+SylveonDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Evolving Skies 75)"
+	line "OG illustrator: (Ryota Murayama)"
+	done	
+WooperDescription:
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Paldea Evolved 128)"
+	line "OG illustrator: (Kouki Saitou)"
+	done
+ClodsireDescription:
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Paldea Evolved 130)"
+	line "OG illustrator: (PLANETA Mochizuki)"
+	done				
+GasName:
+	text "Gas"
+	done
+MudkipDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (PokéPark Forest 3)"
+	line "OG illustrator: (Kanako Eo)"
+	done	
+MudFishName:
+	text "Mud Fish"
+	done	
+MarshtompDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Emerald 36)"
+	line "OG illustrator: (Atsuko Nishida)"
+	done	
+SwampertDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Great Encounters 9)"
+	line "OG illustrator: (Kouki Saitou)"
+	done	
+TyrogueDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Tyrogue OS anime)"
+	line "OG illustrator: (Pokémon anime)"
+	done				
+ScuffleName:
+	text "Scuffle"
+	done	
+HitmontopDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Vivid Voltage 88)"
+	line "OG illustrator: (Sanosuke Sakuma)"
+	done
+LitwickDescription:
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Twilight Masquerade 36)"
+	line "OG illustrator: (Saya Tsuruta)"
+	done	
+CandleName:
+	text "Candle"
+	done	
+LampentDescription:
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Guardians Rising 12)"
+	line "OG illustrator: (0313)"
+	done	
+LampName:
+	text "Lamp"
+	done	
+ChandelureDescription:
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Rebel Clash 33)"
+	line "OG illustrator: (Taira Akitsu)"
+	done	
+DarkaiDescription:
+	text "Booster Pack: (PROMO)"
+	line "OG Set: (Ultra Prism 77)"
+	line "OG illustrator: (Naoki Saito)"
+	done	
+PitchBlackName:
+	text "Pitch Black"
+	done	
+Jangmo_oDescription:
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Sun & Moon Promos 40)"
+	line "OG illustrator: (Naoki Saito)"
+	done	
+ScalyName:
+	text "Scaly"
+	done	
+Hakamo_oDescription:
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Cosmic Eclipse 162)"
+	line "OG illustrator: (Ryuta Fuse)"
+	done	
+Kommo_oDescription:
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Sun & Moon Promos 71)"
+	line "OG illustrator: (5ban Graphics)"
+	done		
+TinkatinkDescription:
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Paldea Evolved 100)"
+	line "OG illustrator: (Mizue)"
+	done		
+MetalSmithName:
+	text "Metal Smith"	
+	done
+TinkatuffDescription:
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Paradox Rift 84)"
+	line "OG illustrator: (Souichirou Gunjima)"
+	done
+TinkatonDescription:
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Scarlet & Violet Promos 31)"
+	line "OG illustrator: (takuyoa)"
+	done
+SalanditDescription:
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Sun & Moon Promos 154)"
+	line "OG illustrator: (Naoki Saito)"
+	done
+SalazzleDescription:
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Stellar Crown 24)"
+	line "OG illustrator: (Taiga Kasai)"
+	done						
+MoonStoneDescription2:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Vending S1)"
+	line "OG illustrator: (Keiji Kinebuchi)"
+	done	
+SuperRodDescription2:
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Paldea Evolved 188)"
+	line "OG illustrator: (Toyste Beach)"
+	done		
+DeinoAndFriendsDeckName:
+	text "Deino & Friends Deck"
+	done
+MagnemiteAndFriendsDeckName:
+	text "Magnemite & Friends Deck"
+	done
+TrapinchAndFriendsDeckName:
+	text "Trapinch & Friends Deck"
+	done			
+RaltsAndFriendsDeckName:
+	text "Ralts & Friends Deck"
+	done	
+
+PyroarDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Paldea Evolved 32)"
+	line "OG illustrator: (Uta)"
+	done
+WattrelDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Surging Sparks 66)"
+	line "OG illustrator: (Pani Kobayashi)"
+	done			
+KilowattrelDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Paldea Evolved 82)"
+	line "OG illustrator: (Pani Kobayashi)"
+	done
+BlandeName:
+	text "Blade"
+	done
+EmotionName:
+	text "Emotion"
+	done			
+MewDescription:
+	text "Booster Pack: (PROMO)"
+	line "OG Set: (POP Series-5 3)"
+	line "OG illustrator: (Masakazu Fukuda)"
+	done 
+DragonPulseName:
+	text "Dragon Pulse"
+	done
+DragonPulseDescription:
+	text "Discard the top 3 cards of your deck"
+	done
+EmeraldBreakName:
+	text "Emerald Break"
+	done

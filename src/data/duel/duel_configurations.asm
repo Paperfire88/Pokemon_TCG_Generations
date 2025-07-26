@@ -368,5 +368,5 @@ DeckIDDuelConfigurations:
 	tx StrangeLifeformText ; rank
 	dw NULL ; element
 
-	assert_table_length NUM_AI_DECK_IDS
+	assert_table_length NUM_AI_DECK_IDS -8
 	db -1 ; end

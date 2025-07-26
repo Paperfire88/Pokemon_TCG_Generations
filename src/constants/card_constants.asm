@@ -39,11 +39,11 @@
 	const ABOMASNOW                   ; $29
 	const FERROSEED                     ; $2a
 	const FERROTHORN                     ; $2b
-	const TANGELA_LV8                 ; $2c
+	const TANGELA                 ; $2c
 	const TANGROWTH                ; $2d
 	const SCYTHER                     ; $2e
 	const LEAFEON                     ; $2e
-	const CHARMANDER                  ; $30
+	const TEPIG                  ; $30
 	const PIGNITE                  ; $31
 	const EMBOAR                   ; $32
 	const HOUNDOUR                      ; $33
@@ -108,8 +108,8 @@
 	const OMANYTE                     ; $5c
 	const OMASTAR                     ; $5d
 	const SUICUNE               ; $
-	const MAGNEMITE_LV13              ; $69
-	const MAGNETON_LV28               ; $6b
+	const MAGNEMITE              ; $69
+	const MAGNETON               ; $6b
 	const MAGNEZONE               ; $6c
 	const BLITZLE                ; $60
 	const ZEBSTRIKA                 ; $67
@@ -164,7 +164,7 @@
 	const HITMONCHAN                  ; $88
 	const HITMONTOP
 	const CUFANT                     ; $89
-	const RHYDON                      ; $8a
+	const COPPERAJAH                      ; $8a
 	const JANGMO_O
 	const HAKAMO_O
 	const KOMMO_O
@@ -292,7 +292,7 @@
 	const MYSTERIOUS_FOSSIL           ; $cc
 	const POKE_BALL                   ; $d4
 	const QUICK_BALL        		  ; $d1
-	const HEAVYBALL                   ; $e1
+	const HEAVY_BALL                   ; $e1
 	const POTION                      ; $dd
 	const SUPER_POTION                ; $de
 	const FULL_HEAL                   ; $df

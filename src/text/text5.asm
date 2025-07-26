@@ -265,11 +265,11 @@ DamageSwapBookText:
 	line "to move damage counters off of a"
 	line "Pokémon that is almost knocked out,"
 	line "or you can create a combo by"
-	line "combining it with Chansey and"
+	line "combining it with Rayquaza and"
 	line "Scoop Up. Keep moving damage "
-	line "counters to Chansey and use Scoop "
-	line "Up to return Chansey to your hand."
-	line "Then put Chansey back in play. You"
+	line "counters to Rayquaza and use Scoop "
+	line "Up to return Rayquaza to your hand."
+	line "Then put Rayquaza back in play. You"
 	line "will have lost all damage counters!"
 	done
 

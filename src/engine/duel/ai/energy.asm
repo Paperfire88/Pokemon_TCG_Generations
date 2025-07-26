@@ -975,7 +975,7 @@ CheckSpecificDecksToAttachDoubleColorless:
 ; check for Tepig and Dratini.
 .legendary_dragonite_deck
 	call .GetArenaCardID
-	cp16 CHARMANDER
+	cp16 TEPIG
 	jr z, .check_colorless_attached
 	cp16 GOOMY
 	jr z, .check_colorless_attached

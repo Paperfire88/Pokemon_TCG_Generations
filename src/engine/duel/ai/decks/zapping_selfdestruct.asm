@@ -30,12 +30,12 @@ AIActionTable_ZappingSelfdestruct:
 	dw CHATOT
 	dw ELECTABUZZ_LV35
 	dw STANTLER
-	dw MAGNEMITE_LV13
+	dw MAGNEMITE
 	dw TOXEL
 	dw NULL
 
 .list_bench
-	dw MAGNEMITE_LV13
+	dw MAGNEMITE
 	dw TOXEL
 	dw ELECTABUZZ_LV35
 	dw STANTLER
@@ -47,8 +47,8 @@ AIActionTable_ZappingSelfdestruct:
 	dw NULL
 
 .list_energy
-	ai_energy MAGNEMITE_LV13,  3, +1
-	ai_energy MAGNETON_LV28,   4, +0
+	ai_energy MAGNEMITE,  3, +1
+	ai_energy MAGNETON,   4, +0
 	ai_energy TOXEL,         3, +1
 	ai_energy TOXTRICITY,  3, +0
 	ai_energy ELECTABUZZ_LV35, 1, +0
