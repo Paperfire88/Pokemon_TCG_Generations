@@ -16,7 +16,7 @@
 	const BEAUTIFLY                  ; $0e
 	const ROWLET                      ; $0f
 	const DARTRIX                      ; $10
-	const BEEDRILL                    ; $11
+	const DECIDUEYE                    ; $11
 	const SHELMET                    ; $14
 	const ACCELGOR                    ; $15
 	const KARRABLAST                    ; $17
@@ -62,7 +62,7 @@
 	const MAGBY
 	const MAGMAR                 ; $3b
 	const MAGMORTAR                 ; $3c
-	const FLAREON_LV28                ; $3e
+	const FLAREON                ; $3e
 	const TORTUNATOR                ; $3f
 	const FUECOCO                ; $3e
 	const CROCALOR                ; $3f
@@ -103,7 +103,7 @@
 	const MUDKIP
 	const MARSHTOMP
 	const SWAMPERT
-	const VAPOREON_LV42               ; $5b
+	const VAPOREON               ; $5b
 	const GLACEON                     ; $2e
 	const OMANYTE                     ; $5c
 	const OMASTAR                     ; $5d
@@ -125,7 +125,7 @@
 	const TOXEL                     ; $6d
 	const TOXTRICITY              ; $6e
 	const ELEKID
-	const ELECTABUZZ_LV35             ; $71
+	const ELECTABUZZ             ; $71
 	const ELECTIVIRE             ; $71
 	const PINCURCHIN            ; $63
 	const GRUBBIN                ; $2d
@@ -225,11 +225,11 @@
 	const DRAPION
 	const CROAGUNK                      ; $7b
 	const TOXICROAK                    ; $7c
-	const WOOPER
-	const CLODSIRE
 	const IMPIDIMP
 	const MORGREM
 	const GRIMMSNARL
+	const WOOPER
+	const CLODSIRE
 	const PAWNIARD
 	const BISHARP
 	const GASTLY
@@ -267,7 +267,7 @@
 	const SYLVEON                     ; $2e
 	const DITTO                       ; $bb
 	const AUDINO                     ; $b8
-	const LICKITUNG                   ; $b7
+	const DRAMPA                   ; $b7
 	const GOOMY                     ; $bf
 	const SLIGGOO                   ; $c0
 	const GOODRA              ; $c2
@@ -281,10 +281,10 @@
 	const IMAKUNI_CARD                ; $c8
 	const POKEMON_CENTER              ; $d3
 	const COPYCAT                     ; $e3
-	const GUST_OF_WIND                ; $db
+	const BOSS_ORDERS                ; $db
 	const ENERGY_SEARCH               ; $cf
 	const MOON_STONE
-	const POKEMON_TRADER              ; $c9
+	const POKEMON_COMMUNICATION              ; $c9
 	const ENERGY_RETRIEVAL            ; $cd
 	const SUPER_ENERGY_RETRIEVAL      ; $ce
 	const ENERGY_REMOVAL              ; $d0
@@ -298,7 +298,7 @@
 	const FULL_HEAL                   ; $df
 	const DEVOLUTION_SPRAY            ; $dc
 	const REVIVE                      ; $e0
-	const POKEMON_BREEDER             ; $ca
+	const RARE_CANDY             ; $ca
 	const PLUSPOWER                   ; $d8
 	const DEFENDER                    ; $d9
 	const RECYCLE                     ; $e4

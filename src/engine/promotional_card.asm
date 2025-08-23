@@ -1,6 +1,6 @@
 ; shows screen with the promotional card and received text
 ; depending on input de
-; if NULL = Legendary Molters, Articuno, Zapdos and Dragonite cards
+; if NULL = Legendary Molters, Suicune, Raikou and Lugia cards
 ; otherwise, a card ID
 _ShowPromotionalCardScreen:
 	push de

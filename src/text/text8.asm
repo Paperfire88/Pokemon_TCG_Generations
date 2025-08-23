@@ -189,7 +189,7 @@ Text069f:
 
 Text06a0:
 	text "<RAMNAME> lost all "
-	line "his Energy cards!"
+	line "Energy cards!"
 	done
 
 Text06a1:
@@ -743,48 +743,48 @@ Text06fa:
 	done
 
 Text06fb:
-	text "Charizard! Charizard!"
-	line "Charizard, light my fire!"
-	line "Blastoise is cool,"
-	line "But I prefer Charizard!"
-	line "I'll give you this Blastoise"
-	line "if you give me a Charizard!"
+	text "Emboar! Emboar!"
+	line "Emboar, light my fire!"
+	line "Greninja is cool,"
+	line "But I prefer Emboar!"
+	line "I'll give you this Greninja"
+	line "if you give me a Emboar!"
 	done
 
 Text06fc:
 	text "Hi!"
-	line "Did you bring me a Charizard?"
-	line "Would you trade your Charizard"
-	line "for my Blastoise?"
+	line "Did you bring me a Emboar?"
+	line "Would you trade your Emboar"
+	line "for my Greninja?"
 	done
 
 Text06fd:
-	text "I want a Charizard!"
-	line "Charizard! Charizard!"
+	text "I want a Emboar!"
+	line "Emboar! Emboar!"
 	done
 
 Text06fe:
 	text "Excuse me..."
-	line "Do you have a Charizard..."
+	line "Do you have a Emboar..."
 	done
 
 Text06ff:
 	text "Then let's trade!"
-	line "Blastoise for a Charizard."
+	line "Greninja for a Emboar."
 	line "Oops!"
-	line "Your Charizard is in your Deck!"
+	line "Your Emboar is in your Deck!"
 	line "I can't take that."
 	line "Please trade me some other time!"
 	done
 
 Text0700:
 	text "OK then, let's trade!"
-	line "Blastoise for a Charizard!"
+	line "Greninja for a Emboar!"
 	done
 
 Text0701:
-	text "<RAMNAME> traded a Charizard"
-	line "for a Blastoise!"
+	text "<RAMNAME> traded a Emboar"
+	line "for a Greninja!"
 	done
 
 Text0702:
@@ -830,9 +830,7 @@ Text0707:
 
 Text0708:
 	text "We'll play a single Match"
-	line "with 4 Prizes."
-	line "Don't take me lightly"
-	line "just because I'm a girl!"
+	line "with 4 Prizes. ok?"
 	done
 
 Text0709:

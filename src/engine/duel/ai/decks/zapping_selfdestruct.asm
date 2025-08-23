@@ -7,7 +7,7 @@ AIActionTable_ZappingSelfdestruct:
 	dw .take_prize
 
 .do_turn
-	jp AIMainTurnLogic
+	jp AIDoTurn_GeneralNoRetreat
 
 .start_duel
 	call InitAIDuelVars
@@ -27,37 +27,34 @@ AIActionTable_ZappingSelfdestruct:
 	jp AIPickPrizeCards
 
 .list_arena
-	dw CHATOT
-	dw ELECTABUZZ_LV35
-	dw STANTLER
+	dw BLITZLE
+	dw ELECTABUZZ
 	dw MAGNEMITE
-	dw TOXEL
 	dw NULL
 
 .list_bench
+	dw BLITZLE
+	dw ELECTABUZZ
 	dw MAGNEMITE
-	dw TOXEL
-	dw ELECTABUZZ_LV35
-	dw STANTLER
-	dw CHATOT
 	dw NULL
 
 .list_retreat
-	ai_retreat TOXEL, -1
+	ai_retreat MAGNEZONE, -1
 	dw NULL
 
 .list_energy
-	ai_energy MAGNEMITE,  3, +1
-	ai_energy MAGNETON,   4, +0
-	ai_energy TOXEL,         3, +1
-	ai_energy TOXTRICITY,  3, +0
-	ai_energy ELECTABUZZ_LV35, 1, +0
-	ai_energy CHATOT,      2, -2
-	ai_energy STANTLER,          3, +0
+	ai_energy MAGNEMITE,  2, +1
+	ai_energy MAGNETON,   3, +0
+	ai_energy MAGNEZONE,   3, +0	
+	ai_energy BLITZLE,         2, +1
+	ai_energy ZEBSTRIKA,  3, +1
+	ai_energy ELECTABUZZ, 3, +0
+	ai_energy ELECTIVIRE, 3, +2
 	dw NULL
 
 .list_prize
-	dw CHATOT
+	dw POKEMON_COMMUNICATION
+	dw BLITZLE
 	dw NULL
 
 .store_list_pointers

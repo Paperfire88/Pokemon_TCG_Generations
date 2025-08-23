@@ -752,7 +752,6 @@ HandlePlayerMoveMode:
 	ldh a, [hKeysPressed]
 	and START
 	call nz, OpenPauseMenu
-	call DoFrame
 	ldh a, [hKeysHeld]
 	and SELECT
 	ret z

@@ -79,7 +79,7 @@
 	const ATK_ANIM_SING                   ; $4a
 	const ATK_ANIM_LULLABY                ; $4b
 	const ATK_ANIM_SUPERSONIC             ; $4c
-	const ATK_ANIM_UNUSED_4D              ; $4d
+	const ATK_ANIM_QUICK_ATTACK_NO_DAMAGE ; $4d
 	const ATK_ANIM_PETAL_DANCE            ; $4e
 	const ATK_ANIM_PROTECT                ; $4f
 	const ATK_ANIM_BARRIER                ; $50
@@ -105,7 +105,7 @@
 	const ATK_ANIM_BIG_THUNDER            ; $64
 	const ATK_ANIM_SOLAR_POWER            ; $65
 	const ATK_ANIM_POISON_FANG            ; $66
-	const ATK_ANIM_UNUSED_67              ; $67
+	const ATK_ANIM_GLOW_ATTACK            ; $67
 	const ATK_ANIM_UNUSED_68              ; $68
 	const ATK_ANIM_UNUSED_69              ; $69
 	const ATK_ANIM_FRIENDSHIP_SONG        ; $6a

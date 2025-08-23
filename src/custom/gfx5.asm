@@ -27,9 +27,9 @@ AccelgorCardGfx::
 	INCBIN "gfx/cards/accelgor.attrmap"	
 	INCBIN "gfx/cards/accelgor.2bpp"
 DecidueyeCardGfx::
-	INCBIN "gfx/cards/beedrill.pal"
-	INCBIN "gfx/cards/beedrill.attrmap"
-	INCBIN "gfx/cards/beedrill.2bpp"
+	INCBIN "gfx/cards/decidueye.pal"
+	INCBIN "gfx/cards/decidueye.attrmap"
+	INCBIN "gfx/cards/decidueye.2bpp"
 CascoonCardGfx::
 	INCBIN "gfx/cards/ekans.pal"
 	INCBIN "gfx/cards/ekans.attrmap"

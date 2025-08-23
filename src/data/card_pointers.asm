@@ -300,7 +300,7 @@ CardPointers::
 	dab FullHealCard
 	dab DevolutionSprayCard
 	dab ReviveCard
-	dab PokemonBreederCard
+	dab RareCandyCard
 	dab PlusPowerCard
 	dab DefenderCard
 	dab RecycleCard

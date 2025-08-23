@@ -7,7 +7,7 @@ AIActionTable_InvincibleRonald:
 	dw .take_prize
 
 .do_turn
-	jp AIMainTurnLogic
+	jp AIDoTurn_GeneralNoRetreat
 
 .start_duel
 	call InitAIDuelVars
@@ -27,21 +27,17 @@ AIActionTable_InvincibleRonald:
 	jp AIPickPrizeCards
 
 .list_arena
-	dw CHATOT
-	dw MAGMORTAR
-	dw AUDINO
-	dw TRAPINCH
-	dw SCYTHER
 	dw PHANTUMP
+	dw ILLUMISE
+	dw VOLBEAT
+	dw SHELMET
 	dw NULL
 
 .list_bench
 	dw PHANTUMP
-	dw SCYTHER
-	dw TRAPINCH
-	dw AUDINO
-	dw MAGMORTAR
-	dw CHATOT
+	dw ILLUMISE
+	dw VOLBEAT
+	dw SHELMET
 	dw NULL
 
 .list_retreat
@@ -49,18 +45,16 @@ AIActionTable_InvincibleRonald:
 	dw NULL
 
 .list_energy
-	ai_energy PHANTUMP,         1, -1
-	ai_energy TREVENANT,            3, -1
-	ai_energy SCYTHER,        4, +1
-	ai_energy MAGMORTAR,    2, +0
-	ai_energy TRAPINCH,        2, +0
-	ai_energy VIBRAVA,       3, +0
-	ai_energy AUDINO,        4, +0
-	ai_energy CHATOT,     4, -1
+	ai_energy PHANTUMP,         2, +1
+	ai_energy TREVENANT,            2, +1
+	ai_energy ILLUMISE,        3, +1
+	ai_energy VOLBEAT,    2, +0
+	ai_energy SHELMET,        2, +0
+	ai_energy ACCELGOR,       3, +1
 	dw NULL
 
 .list_prize
-	dw COPYCAT
+	dw ENERGY_REMOVAL
 	dw NULL
 
 .store_list_pointers

@@ -557,14 +557,14 @@ AnimFrameTable7::
 
 .data_a9459
 	db 4 ; size
-	db 0, 0, 6, %011 | (1 << OAM_OBP_NUM)
+	db 0, 0, 12, %011 | (1 << OAM_OBP_NUM)
 	db 0, 8, 13, %011 | (1 << OAM_OBP_NUM)
 	db 8, 0, 14, %011 | (1 << OAM_OBP_NUM)
 	db 8, 8, 15, %011 | (1 << OAM_OBP_NUM)
 
 .data_a946a
 	db 4 ; size
-	db 0, 0, 8, %011 | (1 << OAM_OBP_NUM)
+	db 0, 0, 16, %011 | (1 << OAM_OBP_NUM)
 	db 0, 8, 17, %011 | (1 << OAM_OBP_NUM)
 	db 8, 0, 18, %011 | (1 << OAM_OBP_NUM)
 	db 8, 8, 19, %011 | (1 << OAM_OBP_NUM)
@@ -594,14 +594,14 @@ AnimFrameTable7::
 	db 4 ; size
 	db 0, 0, 13, %011 | (1 << OAM_OBP_NUM) | (1 << OAM_X_FLIP)
 	db 8, 0, 15, %011 | (1 << OAM_OBP_NUM) | (1 << OAM_X_FLIP)
-	db 0, 8, 6, %011 | (1 << OAM_OBP_NUM) | (1 << OAM_X_FLIP)
+	db 0, 8, 12, %011 | (1 << OAM_OBP_NUM) | (1 << OAM_X_FLIP)
 	db 8, 8, 14, %011 | (1 << OAM_OBP_NUM) | (1 << OAM_X_FLIP)
 
 .data_a94bf
 	db 4 ; size
 	db 0, 0, 17, %011 | (1 << OAM_OBP_NUM) | (1 << OAM_X_FLIP)
 	db 8, 0, 19, %011 | (1 << OAM_OBP_NUM) | (1 << OAM_X_FLIP)
-	db 0, 8, 8, %011 | (1 << OAM_OBP_NUM) | (1 << OAM_X_FLIP)
+	db 0, 8, 16, %011 | (1 << OAM_OBP_NUM) | (1 << OAM_X_FLIP)
 	db 8, 8, 18, %011 | (1 << OAM_OBP_NUM) | (1 << OAM_X_FLIP)
 
 AnimData27::
@@ -646,10 +646,10 @@ AnimFrameTable8::
 
 .data_a9530
 	db 4 ; size
-	db 0, 0, 8, %100
-	db 0, 8, 9, %100
-	db 8, 0, 10, %100
-	db 8, 8, 11, %100
+	db 0, 0, 8, %100 | (1 << OAM_OBP_NUM)
+	db 0, 8, 9, %100 | (1 << OAM_OBP_NUM)
+	db 8, 0, 10, %100 | (1 << OAM_OBP_NUM)
+	db 8, 8, 11, %100 | (1 << OAM_OBP_NUM)
 
 .data_a9541
 	db 4 ; size
@@ -667,10 +667,10 @@ AnimFrameTable8::
 
 .data_a9563
 	db 4 ; size
-	db 0, 0, 12, %100
-	db 0, 8, 13, %100
-	db 8, 0, 14, %100
-	db 8, 8, 15, %100
+	db 0, 0, 12, %100 | (1 << OAM_OBP_NUM)
+	db 0, 8, 13, %100 | (1 << OAM_OBP_NUM)
+	db 8, 0, 14, %100 | (1 << OAM_OBP_NUM)
+	db 8, 8, 15, %100 | (1 << OAM_OBP_NUM)
 
 .data_a9574
 	db 4 ; size

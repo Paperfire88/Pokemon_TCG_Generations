@@ -1013,31 +1013,24 @@ IceBreathDescription:
 	line "opponent's PKMN chosen at ."
 	line "Don't apply Weakness/Resistance."
 	done
-
 BlitzleName:
 	text "Blitzle"
 	done
-
-GnawName:
+VoltSwitchName:
 	text "Volt Switch"
 	done
-
 ThunderJoltName:
 	text "Thunder Jolt"
 	done
-
 ThunderJoltDescription:
 	text "Flip a coin. If tails,take 10 damage"
 	done
-
 MouseName:
 	text "Mouse"
 	done
-
 SparkName:
 	text "Spark"
 	done
-
 SparkDescription:
 	text "This attack also does 10 damage to" 
 	line "1 of your opponent's Benched PKMN."
@@ -1125,10 +1118,6 @@ SurfName:
 
 ShinxName:
 	text "Shinx"
-	done
-
-FlyName:
-	text "Fly"
 	done
 
 GrowlName:
@@ -1587,13 +1576,11 @@ KabutoArmorDescription:
 	done
 
 KabutopsName:
-	text "Delta Kabutops"
+	text "Kabutops"
 	done
-
 SharpSickleName:
 	text "Sharp Sickle"
 	done
-
 AbsorbName:
 	text "Absorb"
 	done
@@ -1601,7 +1588,6 @@ AbsorbName:
 TyrantrumName:
 	text "Tyrantrum"
 	done
-
 PrehistoricPowerName:
 	text "Tyrannical Heart"
 	done
@@ -1767,7 +1753,7 @@ KabutiDescription:
 	done
 
 ElectricalRiotDescription:
-	text "If this PKMN has any <GRASS> energy"
+	text "If this PKMN has any <DARKNESS> energy"
 	line "attached, this attack does +20 more"
 	line "damage. If the defending PKMN is"
 	line "affected by a status Condition, Your"

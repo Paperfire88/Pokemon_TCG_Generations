@@ -1371,23 +1371,18 @@ MayInflictPoisonDescription:
 	text "Flip a coin. If heads, the Defending"
 	line "PKMN is now Poisoned."
 	done
-
 HairyBugName:
 	text "Hairy Bug"
 	done
-
 DartrixName:
 	text "Dartrix"
 	done
-
 DecidueyeName:
-	text "Dedicdueye"
+	text "Decidueye"
 	done
-
 TwineedleName:
 	text "Twineedle"
 	done
-
 DoubleAttackX30Description:
 	text "Flip 2 coins. This attack does 30"
 	line "damage times the number of heads."

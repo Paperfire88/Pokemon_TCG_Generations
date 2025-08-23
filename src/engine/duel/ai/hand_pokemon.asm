@@ -400,22 +400,10 @@ AIDecideEvolution:
 AIDecideSpecialEvolutions:
 ; check if deck applies
 	ld a, [wOpponentDeckID]
-	cp LEGENDARY_DRAGONITE_DECK_ID
-	jr z, .legendary_dragonite
 	cp INVINCIBLE_RONALD_DECK_ID
 	jr z, .invincible_ronald
 	cp LEGENDARY_RONALD_DECK_ID
 	jr z, .legendary_ronald
-	ret
-
-.legendary_dragonite
-	ld hl, wLoadedCard2ID
-	cphl PIGNITE
-	jr z, .charmeleon
-	cphl SNEASEL
-	jr z, .magikarp
-	cphl SLIGGOO
-	jr z, .dragonair
 	ret
 
 ; check if number of energy cards attached to Charmeleon are at least 3
@@ -527,7 +515,7 @@ AIDecideSpecialEvolutions:
 	jr .check_muk
 
 ; determine AI score for the legendary cards
-; Moltres, Zapdos and Articuno
+; Entei, Raikou and Suicune
 AIDecidePlayLegendaryBirds:
 ; check if deck applies
 	ld a, [wOpponentDeckID]

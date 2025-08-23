@@ -454,18 +454,8 @@ HandleAIPkmnPowers:
 
 ; check heal
 	cp16 APPLETUN
-	jr nz, .check_shift
-	call HandleAIHeal
-	jr .next_1
-.check_shift
-	cp16 YANMEGA
-	jr nz, .check_peek
-	call HandleAIShift
-	jr .next_1
-.check_peek
-	cp16 MURKROW
 	jr nz, .check_longdistancehypnosis
-	call HandleAIPeek
+	call HandleAIHeal
 	jr .next_1
 .check_longdistancehypnosis
 	cp16 MUNNA
@@ -474,6 +464,11 @@ HandleAIPkmnPowers:
 	jr .next_1	
 .check_strange_behavior
 	cp16 MALAMAR
+	jr nz, .check_psy_shadow
+	call HandleAIStrangeBehavior
+	jr .next_1
+.check_psy_shadow
+	cp16 COPYCAT
 	jr nz, .check_curse
 	call HandleAIStrangeBehavior
 	jr .next_1
@@ -835,6 +830,41 @@ HandleAIStrangeBehavior:
 	bank1call AIMakeDecision
 	ret
 
+;	c = Play Area location (PLAY_AREA_*) of Malamar.
+HandleAIPsyShadow:
+	ldh [hTemp_ffa0], a
+	ld e, PLAY_AREA_ARENA
+	call GetCardDamageAndMaxHP
+	ld [wce06], a
+	ldh a, [hTemp_ffa0]
+	add DUELVARS_ARENA_CARD_HP
+	call GetTurnDuelistVariable
+	sub 20
+	ret z ; return if Malamar has only 10 HP remaining
+
+	call CheckIfAnyCardIDinLocation
+	ldh [hTemp_ffa0], a
+	jr nc, .zero_score  ; can be jr
+
+	call AIProcessButDontPlayEnergy_SkipEvolution
+	jr nc, .zero_score  ; can be jr
+	ldh a, [hTempPlayAreaLocation_ff9d]
+	ldh [hTempPlayAreaLocation_ffa1], a
+
+	ld a, [wce08]
+	ldh [hTempCardIndex_ff9f], a
+	ld a, OPPACTION_USE_PKMN_POWER
+	bank1call AIMakeDecision
+	xor a
+	ldh [hAIPkmnPowerEffectParam], a
+	ld a, OPPACTION_EXECUTE_PKMN_POWER_EFFECT
+	bank1call AIMakeDecision
+	ld a, OPPACTION_DUEL_MAIN_SCENE
+	bank1call AIMakeDecision
+	ret
+.zero_score
+	or a
+	ret
 ; checks whether AI uses Curse.
 ; input:
 ;	c = Play Area location (PLAY_AREA_*) of Gengar.
@@ -1075,9 +1105,9 @@ HandleAIDamageSwap:
 	call GetCardIDFromDeckIndex
 	cp16 ALAKAZAM
 	jr z, .ok
-	cp16 ZWEILOUS
+	cp16 KADABRA
 	jr z, .ok
-	cp16 DEINO
+	cp16 MALAMAR
 	jr z, .ok
 	cp16 SPIRITOMB
 	ret nz
@@ -1168,13 +1198,15 @@ HandleAIDamageSwap:
 	call GetTurnDuelistVariable
 	push de
 	call GetCardIDFromDeckIndex
-	cp16 AUDINO
+	cp16 KADABRA
 	jr z, .found_candidate
-	cp16 CHATOT
-	jr z, .found_candidate
-	cp16 RAYQUAZA
+	cp16 RIBOMBEE
 	jr z, .found_candidate
 	cp16 SPIRITOMB
+	jr z, .found_candidate
+	cp16 ABRA
+	jr z, .found_candidate
+	cp16 INKAY
 	jr z, .found_candidate
 	pop de
 .next_play_area

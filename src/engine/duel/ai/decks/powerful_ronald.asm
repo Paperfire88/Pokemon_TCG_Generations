@@ -7,7 +7,7 @@ AIActionTable_PowerfulRonald:
 	dw .take_prize
 
 .do_turn
-	jp AIMainTurnLogic
+	jp AIDoTurn_GeneralNoRetreat
 
 .start_duel
 	call InitAIDuelVars
@@ -27,29 +27,17 @@ AIActionTable_PowerfulRonald:
 	jp AIPickPrizeCards
 
 .list_arena
-	dw CHATOT
-	dw ELECTABUZZ_LV35
-	dw HITMONCHAN
-	dw SPIRITOMB
-	dw LICKITUNG
-	dw HITMONLEE
-	dw STANTLER
-	dw ESPEON
-	dw MewtwoCard
-	dw RUFFLET
+	dw DEWPIDER
+	dw BASCULIN
+	dw BRUXISH
+	dw HORSEA
 	dw NULL
 
 .list_bench
-	dw CHATOT
-	dw HITMONLEE
-	dw HITMONCHAN
-	dw STANTLER
-	dw RUFFLET
-	dw ESPEON
-	dw MewtwoCard
-	dw ELECTABUZZ_LV35
-	dw SPIRITOMB
-	dw LICKITUNG
+	dw DEWPIDER
+	dw BASCULIN
+	dw BRUXISH
+	dw HORSEA
 	dw NULL
 
 .list_retreat
@@ -59,21 +47,17 @@ AIActionTable_PowerfulRonald:
 	dw NULL
 
 .list_energy
-	ai_energy ELECTABUZZ_LV35, 2, +1
-	ai_energy HITMONLEE,       3, +1
-	ai_energy HITMONCHAN,      3, +1
-	ai_energy SPIRITOMB,         2, +0
-	ai_energy ESPEON,            3, +0
-	ai_energy MewtwoCard,     2, +0
-	ai_energy RUFFLET,           3, -1
-	ai_energy BRAVIARY,          3, -1
-	ai_energy LICKITUNG,       2, +0
-	ai_energy CHATOT,      4, -1
-	ai_energy STANTLER,          3, +0
+	ai_energy DEWPIDER, 2, +1
+	ai_energy ARAQUANID,       3, +1
+	ai_energy BASCULIN,      2, +0
+	ai_energy BASCULEGION,         2, +1
+	ai_energy BRUXISH,            2, +0
+	ai_energy HORSEA, 2, +1
+	ai_energy SEADRA,       3, +1
 	dw NULL
 
 .list_prize
-	dw COPYCAT
+	dw ENERGY_SEARCH
 	dw ENERGY_REMOVAL
 	dw NULL
 

@@ -124,7 +124,7 @@ NPCHeaderPointers:
 DrMasonNPCHeader:
 	db NPC_DRMASON
 	db SPRITE_OW_DRMASON
-	db SPRITE_ANIM_WHITE_NPC_UP
+	db SPRITE_ANIM_BLUE_NPC_UP
 	db $00
 	dw Script_DrMason
 	tx DrMasonNPCName
@@ -196,7 +196,7 @@ ImakuniNPCHeader:
 SamNPCHeader:
 	db NPC_SAM
 	db SPRITE_OW_TECH
-	db SPRITE_ANIM_BLUE_NPC_UP
+	db SPRITE_ANIM_GREEN_NPC_UP
 	db $00
 	dw Script_Sam
 	tx SamNPCName
@@ -208,7 +208,7 @@ SamNPCHeader:
 Tech1NPCHeader:
 	db NPC_TECH1
 	db SPRITE_OW_TECH
-	db SPRITE_ANIM_BLUE_NPC_UP
+	db SPRITE_ANIM_RED_NPC_UP
 	db $00
 	dw Script_Tech1
 	tx TechNPCName
@@ -472,7 +472,7 @@ AndrewNPCHeader:
 GeneNPCHeader:
 	db NPC_GENE
 	db SPRITE_OW_GENE
-	db SPRITE_ANIM_RED_NPC_UP
+	db SPRITE_ANIM_WHITE_NPC_UP
 	db $00
 	dw Script_Gene
 	tx GeneNPCName
@@ -532,7 +532,7 @@ AmyNPCHeader:
 JenniferNPCHeader:
 	db NPC_JENNIFER
 	db SPRITE_OW_GIRL
-	db SPRITE_ANIM_BLUE_NPC_UP
+	db SPRITE_ANIM_YELLOW_NPC_UP
 	db $00
 	dw Script_Jennifer
 	tx JenniferNPCName
@@ -555,8 +555,8 @@ NicholasNPCHeader:
 
 BrandonNPCHeader:
 	db NPC_BRANDON
-	db SPRITE_OW_HOOD
-	db SPRITE_ANIM_RED_NPC_UP
+	db SPRITE_OW_TECH
+	db SPRITE_ANIM_YELLOW_NPC_UP
 	db $00
 	dw Script_Brandon
 	tx BrandonNPCName
@@ -580,7 +580,7 @@ IsaacNPCHeader:
 BrittanyNPCHeader:
 	db NPC_BRITTANY
 	db SPRITE_OW_GIRL
-	db SPRITE_ANIM_BLUE_NPC_UP
+	db SPRITE_ANIM_GREEN_NPC_UP
 	db $00
 	dw Script_Brittany
 	tx BrittanyNPCName
@@ -652,7 +652,7 @@ DanielNPCHeader:
 StephanieNPCHeader:
 	db NPC_STEPHANIE
 	db SPRITE_OW_GIRL
-	db SPRITE_ANIM_BLUE_NPC_UP
+	db SPRITE_ANIM_PURPLE_NPC_UP
 	db $00
 	dw Script_Stephanie
 	tx StephanieNPCName
@@ -664,7 +664,7 @@ StephanieNPCHeader:
 Murray1NPCHeader:
 	db NPC_MURRAY1
 	db SPRITE_OW_MURRAY
-	db SPRITE_ANIM_PINK_NPC_UP
+	db SPRITE_ANIM_PURPLE_NPC_UP
 	db $00
 	dw Script_Murray
 	tx MurrayNPCName
@@ -676,7 +676,7 @@ Murray1NPCHeader:
 Murray2NPCHeader:
 	db NPC_MURRAY2
 	db SPRITE_OW_MURRAY
-	db SPRITE_ANIM_PINK_NPC_LEFT
+	db SPRITE_ANIM_PURPLE_NPC_LEFT
 	db NPC_FLAG_DIRECTIONLESS
 	dw Script_Murray
 	tx MurrayNPCName
@@ -736,7 +736,7 @@ RickNPCHeader:
 JohnNPCHeader:
 	db NPC_JOHN
 	db SPRITE_OW_LAD
-	db SPRITE_ANIM_GREEN_NPC_UP
+	db SPRITE_ANIM_RED_NPC_UP
 	db $00
 	dw Script_John
 	tx JohnNPCName
@@ -748,7 +748,7 @@ JohnNPCHeader:
 AdamNPCHeader:
 	db NPC_ADAM
 	db SPRITE_OW_SPECS
-	db SPRITE_ANIM_PURPLE_NPC_UP
+	db SPRITE_ANIM_RED_NPC_UP
 	db $00
 	dw Script_Adam
 	tx AdamNPCName
@@ -760,7 +760,7 @@ AdamNPCHeader:
 JonathanNPCHeader:
 	db NPC_JONATHAN
 	db SPRITE_OW_BOY
-	db SPRITE_ANIM_YELLOW_NPC_UP
+	db SPRITE_ANIM_RED_NPC_UP
 	db $00
 	dw Script_Jonathan
 	tx JonathanNPCName
@@ -1312,7 +1312,7 @@ Chap5NPCHeader:
 AaronNPCHeader:
 	db NPC_AARON
 	db SPRITE_OW_TECH
-	db SPRITE_ANIM_BLUE_NPC_UP
+	db SPRITE_ANIM_YELLOW_NPC_UP
 	db $00
 	dw Script_Aaron
 	tx AaronNPCName

@@ -7,7 +7,7 @@ AIActionTable_FireCharge:
 	dw .take_prize
 
 .do_turn
-	jp AIMainTurnLogic
+	jp AIDoTurn_GeneralNoRetreat
 
 .start_duel
 	call InitAIDuelVars
@@ -27,21 +27,15 @@ AIActionTable_FireCharge:
 	jp AIPickPrizeCards
 
 .list_arena
-	dw STUFFUL
-	dw AUDINO
-	dw STANTLER
-	dw MAGMAR
-	dw TOGEKISS
-	dw SIZZLIPEDE
+	dw HOUNDOUR
+	dw TORTUNATOR
+	dw LITWICK
 	dw NULL
 
 .list_bench
-	dw STUFFUL
-	dw AUDINO
-	dw SIZZLIPEDE
-	dw MAGMAR
-	dw TOGEKISS
-	dw STANTLER
+	dw LITWICK
+	dw HOUNDOUR
+	dw TORTUNATOR
 	dw NULL
 
 .list_retreat
@@ -51,18 +45,17 @@ AIActionTable_FireCharge:
 	dw NULL
 
 .list_energy
-	ai_energy SIZZLIPEDE,       3, +0
-	ai_energy CENTISKORCH,   4, +0
-	ai_energy MAGMAR,     3, +0
-	ai_energy TOGEKISS, 3, +0
-	ai_energy STUFFUL, 2, +0
-	ai_energy BEWEAR,      3, +0
-	ai_energy AUDINO,         4, +0
-	ai_energy STANTLER,          3, +0
+	ai_energy HOUNDOUR,       2, +0
+	ai_energy HOUNDOOM,   3, +1
+	ai_energy TORTUNATOR,     3, +1
+	ai_energy LITWICK, 1, +0
+	ai_energy LAMPENT, 2, +1
+	ai_energy CHANDELURE,      3, +1
 	dw NULL
 
 .list_prize
 	dw COPYCAT
+	dw CHANDELURE
 	dw NULL
 
 .store_list_pointers

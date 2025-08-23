@@ -226,9 +226,10 @@ DevolutionBeamName:
 	done
 
 DevolutionBeamDescription:
-	text "Devolve 1 evolved PKMN on Play by"
-	line "putting the highest Stage Evolution" 
-	line "card on it into their owner's hand."
+	text "If the Defending PKMN is an Evolved"
+	line "PKMN: Devolve 1 evolved PKMN on Play"
+	line "by putting the highest evolution on" 
+	line "it into their owner's hand."
 	done
 
 RookideeName:
@@ -270,16 +271,17 @@ HurricaneName:
 	done
 
 HurricaneDescription:
-	text "Put your opponent's Active PKMN and"
-	line "all attached cards into their hand."
+	text "If your didn't KO your Opponent's"
+	line "Active PKMN, Put it and all cards"
+	line "attached to it into their hand."
 	done
 
 ZigzagoonName:
 	text "Zigzagoon"
 	done
 
-RatName:
-	text "Rat"
+RacoonName:
+	text "Racoon"
 	done
 
 LinooneName:
@@ -474,8 +476,9 @@ RetreatAidName:
 	done
 
 RetreatAidDescription:
-	text "As long as this PKMN is in play, you"
-	line "pay 1 <COLORLESS> less to retreat your PKMN."
+	text "As long as this PKMN is on your"
+	line "bench, you pay 1 <COLORLESS> less to retreat"
+	line "your PKMN."
 	done
 
 TriplebirdName:
@@ -760,8 +763,7 @@ SubstituteDollName:
 ClefairyDollDescription:
 	text "Play this card as if it were a 30-HP"
 	line "<COLORLESS> Basic PKMN. this card has no"
-	line "attacks, can't retreat, and can't be"
-	line "Affected by any Status Conditions."
+	line "attacks, and can't retreat."
 	line "If this card is KO, your opponent" 
 	line "can't take any Prize cards for it."
 	done
@@ -1725,25 +1727,20 @@ DarkImpulseDescription:
 	line "Attach a <DARKNESS> Energy From your" 
 	line "Discard pile to it."
 	done
-
 DisconnectName:
 	text "Disconnect"
 	done					
-
 PrimalGuidanceName:
 	text "Primal Guidance"
 	done
-
 PrimalGuidanceDescription:
 	text "When you play this PKMN from your"
 	line "hand, put a card from your discard"
 	line "pile into your hand."
 	done
-
 TimeSpiralName:
 	text "Time Spiral"
 	done	
-
 BurningDownName:
 	text "Burning Down"
 	done

@@ -65,13 +65,13 @@ EkansDescription:
 	done
 
 SneaselDescription:
-	text "Booster Pack: (MYSTERY)"
+	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Neo Genesis 25)"
 	line "OG illustrator: (KEN SUGIMORI)"
 	done
 
 GyaradosDescription:
-	text "Booster Pack: (MYSTERY)"
+	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Secret Wonders 40)"
 	line "OG illustrator: (Kagemaru Himeno)"
 	done
@@ -329,13 +329,13 @@ FlareonLv28Description:
 	line "OG illustrator: (Mitsuhiro Arita)"
 	done
 
-MoltresLv35Description:
+EnteiLv35Description:
 	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Sword & Shield Promos 29)"
 	line "OG illustrator: (KEIICHIRO ITO)"
 	done
 
-MoltresLv37Description:
+EnteiLv37Description:
 	text "Booster Pack: (LEGENDARY Card)"
 	line "OG Set: (Crown Zenith 21)"
 	line "OG illustrator: (Nisota Niso)"
@@ -615,13 +615,13 @@ VikavoltDescription:
 	line "OG illustrator: (Hitoshi Ariga)"
 	done
 
-ZapdosLv64Description:
+RaikouLv64Description:
 	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Silver Tempest 56)"
 	line "OG illustrator: (GOSSAN)"
 	done
 
-ZapdosLv68Description:
+RaikouLv68Description:
 	text "Booster Pack: (LEGENDARY Card)"
 	line "OG Set: (BREAKthrough 55)"
 	line "OG illustrator: (Shin Nagasawa)"
@@ -653,8 +653,8 @@ SandacondaDescription:
 
 MankeyDescription:
 	text "Booster Pack: (MYSTERY)"
-	line "OG Set: (Sword & Shield Promos 245)"
-	line "OG illustrator: (Yuya Oka)"
+	line "OG Set: (Scarlet & Violet 130)"
+	line "OG illustrator: (Shiburingaru)"
 	done
 
 PrimeapeDescription:
@@ -773,7 +773,7 @@ AbraDescription:
 
 KadabraDescription:
 	text "Booster Pack: (LABORATORY)"
-	line "OG Set: (Steam Siege 84)"
+	line "OG Set: (Expedition 84)"
 	line "OG illustrator: (Hajime Kusajima)"
 	done
 
@@ -1023,13 +1023,13 @@ DragonairDescription:
 	line "OG illustrator: (Saya Tsuruta)"
 	done
 
-DragoniteLv41Description:
+LugiaLv41Description:
 	text "Booster Pack: (LEGENDARY Card)"
 	line "OG Set: (Neo Genesis 9)"
 	line "OG illustrator: (Hironobu Yoshida)"
 	done
 
-DragoniteDescription:
+LugiaDescription:
 	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Guardians Rising 96)"
 	line "OG illustrator: (Naoki Saito)"

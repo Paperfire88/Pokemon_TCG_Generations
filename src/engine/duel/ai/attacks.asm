@@ -241,7 +241,7 @@ GetAIScoreOfAttack:
 	jr z, .can_ko
 	jr .check_damage
 .can_ko
-	ld a, 20
+	ld a, 50
 	call AddToAIScore
 
 ; raise AI score by the number of damage counters that this attack deals.
@@ -266,7 +266,7 @@ GetAIScoreOfAttack:
 	ld a, [wAIMaxDamage]
 	or a
 	jr z, .no_max_damage
-	ld a, 2
+	ld a, 5
 	call AddToAIScore
 	xor a
 	ld [wAIAttackIsNonDamaging], a

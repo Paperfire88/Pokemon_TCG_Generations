@@ -1,7 +1,7 @@
 RonaldChallengeCup2Missed2Text:
 	text "The Challenge Cup is over already! "
 	line "Too bad you couldn't enter!"
-	line "The prize belongs to me! <Lv>8 Mew!"
+	line "The prize card belongs to me!"
 	line "You really should enter the next"
 	line "Challenge Cup! But then again, "
 	line "why bother, since I'll also win "
@@ -54,15 +54,15 @@ Clerk12ChallengeCupLostText:
 Clerk12ChallengeCup1ActiveText:
 	text "The first Challenge Cup is"
 	line "now underway!"
-	line "Defeat 3 opponents to win the"
-	line "wonderful prize of <Lv>60 Mewtwo!"
+	line "Defeat 3 opponents to win a"
+	line "wonderful prize!"
 	done
 
 Clerk12ChallengeCup2ActiveText:
 	text "The second Challenge Cup is"
 	line "now under way!"
-	line "Defeat 3 opponents to win the"
-	line "wonderful prize of <Lv>8 Mew!"
+	line "Defeat 3 opponents to win a"
+	line "wonderful prize!"
 	done
 
 Clerk12ChallengeCup3ActiveText:
@@ -150,7 +150,7 @@ RonaldChallengeCup1PlayerLostText:
 	text "Ha ha ha! How about that!?!"
 	line "I win!!"
 	line "2 more opponents to go and"
-	line "the <Lv>8 Mew belongs to me!"
+	line "the prize card belongs to me!"
 	done
 
 Clerk12ChallengeCupRound1PlayerWonText:
@@ -193,14 +193,14 @@ RonaldChallengeCup2BeforeDuelText:
 	text "Hey, <RAMNAME>!"
 	line "I'm not gonna lose to you!"
 	line ""
-	text "<Lv>60 Mewtwo belongs to me!!!"
+	text "that card belongs to me!!!"
 	done
 
 RonaldChallengeCup1BeforeDuelText:
 	text "<RAMNAME>!"
 	line "I'm going to defeat you!"
 	line ""
-	text "<Lv>8 Mew belongs to me!!!"
+	text "that card belongs to me!!!"
 	done
 
 Clerk12ChallengeCupRound3DuelReadyText:
@@ -338,13 +338,13 @@ Text055b:
 Text055c:
 	text "Congratulations! "
 	line "You're the Champ!"
-	line "My Zapdos card belongs to you!"
+	line "My Raikou card belongs to you!"
 	done
 
 Text055d:
 	text "Congratulations!"
 	line "You're the Champ!"
-	line "Please treasure my Zapdos card!"
+	line "Please treasure my Raikou card!"
 	done
 
 Text055e:
@@ -944,7 +944,7 @@ Tech1MasterMedalExplanationText:
 	line "to the computer room in back."
 	line "You can place the Medals in the"
 	line "Auto Deck Machines to See"
-	line "different Deckslits!"
+	line "different Deck list!"
 	done
 
 Tech1AutoDeckMachineExplanationText:

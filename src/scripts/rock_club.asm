@@ -90,7 +90,9 @@ Script_BeatGene:
 	show_medal_received_screen EVENT_BEAT_GENE
 	record_master_win $02
 	print_npc_text Text07a8
-	give_booster_packs BOOSTER_MYSTERY_FIGHTING_COLORLESS, BOOSTER_MYSTERY_FIGHTING_COLORLESS, NO_BOOSTER
+	give_card TYRANITAR
+    show_card_received_screen TYRANITAR
+	give_booster_packs  BOOSTER_EVOLUTION_FIGHTING, BOOSTER_MYSTERY_FIGHTING_COLORLESS, BOOSTER_LABORATORY_FIGHTING
 	print_npc_text Text07a9
 	quit_script_fully
 

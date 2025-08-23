@@ -128,7 +128,7 @@ Script_BeatNikki:
     give_card MEGANIUM
     show_card_received_screen MEGANIUM
 .ows_e7eb
-	give_booster_packs BOOSTER_LABORATORY_NEUTRAL, BOOSTER_LABORATORY_GRASS, BOOSTER_LABORATORY_GRASS
+	give_booster_packs BOOSTER_EVOLUTION_GRASS, BOOSTER_MYSTERY_GRASS_COLORLESS, BOOSTER_LABORATORY_GRASS
 	script_jump Script_LostToNikki.ows_e7f3
 
 Script_LostToNikki:

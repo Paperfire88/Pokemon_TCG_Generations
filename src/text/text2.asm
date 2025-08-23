@@ -48,7 +48,7 @@ UnableToRetreatDueToAcidText:
 
 UnableToUseTrainerDueToHeadacheText:
 	text "Unable to use a Trainer card"
-	line "due to the effects of Headache."
+	line "due to an effect."
 	done
 
 UnableToAttackDueToTailWagText:
@@ -83,12 +83,12 @@ ReceivesDamageDueToStrikesBackText:
 
 UnableToEvolveDueToPrehistoricPowerText:
 	text "Unable to evolve due to the"
-	line "effects of Prehistoric Power."
+	line "effects of Tyranical Heart."
 	done
 
 NoDamageOrEffectDueToFlyText:
 	text "No damage or effect on next Attack"
-	line "due to the effects of Fly."
+	line "due to the effects of Agility."
 	done
 
 NoDamageOrEffectDueToBarrierText:
@@ -103,12 +103,12 @@ NoDamageOrEffectDueToAgilityText:
 
 UnableToUseAttackDueToNShieldText:
 	text "Unable to use this Attack due to"
-	line "the effects of N Shield."
+	line "the effects of Dummy Doll."
 	done
 
 NoDamageOrEffectDueToNShieldText:
 	text "No damage or effect on next Attack"
-	line "due to the effects of N Shield."
+	line "due to the effects of Dummy Doll."
 	done
 
 NoDamageOrEffectDueToTransparencyText:
@@ -266,13 +266,12 @@ ChooseBasicEnergyCardText:
 	done
 
 ChooseNidoranFromDeckText:
-	text "Choose a Nidoran♀ or a"
-	line "Nidoran♂ from the Deck."
+	text "Choose a Pluspower"
+	line "from the Deck."
 	done
 
 ChooseNidoranText:
-	text "Choose a Nidoran♀"
-	line "or a Nidoran♂."
+	text "Choose a Pluspower."
 	done
 
 ChooseBasicFightingPokemonText:
@@ -300,7 +299,8 @@ ChoosePkmnToRemoveDamageCounterText:
 	done
 
 ChooseBasicGrassPokemonText:
-	text "Choose a Basic <GRASS> Pokémon"
+	text "Choose a Basic <GRASS>"
+	line "Pokémon."
 	done
 
 ChooseBasicGrassPokemonFromDeckText:
@@ -431,7 +431,7 @@ PleaseSelectThePlayAreaText:
 	done
 
 NidoranMNidoranFText:
-	text "Nidoran♂ Nidoran♀"
+	text "Pluspower."
 	done
 
 ApplinText:
@@ -469,8 +469,7 @@ PokemonAndAllAttachedCardsReturnedToHandText:
 	done
 
 WasChosenForTheEffectOfAmnesiaText:
-	text "<RAMTEXT> was chosen"
-	line "for the effect of Amnesia."
+	text "<RAMTEXT> was chosen."
 	done
 
 BasicPokemonWasPlacedOnEachBenchText:
@@ -882,10 +881,8 @@ DrawSevenCardsPracticeDuelText:
 	line "Choose your Active Pokémon."
 	line "You can only choose Basic Pokémon"
 	line "as your Active Pokémon,"
-	line "so you can choose either Basculin"
-	line "or Staryu."
-	line "For our practice duel,"
-	line "choose Basculin."
+	line "so you can choose only Basculin"
+	line "in this case."
 	done
 
 ChooseBasculinPracticeDuelText:
@@ -927,7 +924,7 @@ Turn1Instr2PracticeDuelText:
 
 Turn1Instr3PracticeDuelText:
 	text "3. Choose Attack from the Menu"
-	line "   and select Horn Attack."
+	line "   and select Flail."
 	done
 
 Turn2Instr1PracticeDuelText:
@@ -1053,7 +1050,7 @@ Turn1DrMason3PracticeDuelText:
 	text "Finally, attack your opponent by"
 	line "selecting an attack command."
 	line "Choose Attack from the Menu, and"
-	line "select Horn Attack."
+	line "select Flail Attack."
 	done
 
 Turn2DrMason1PracticeDuelText:
@@ -1281,7 +1278,7 @@ GoGoRainDanceDeckName:
 	done
 
 ZappingSelfdestructDeckName:
-	text "Zapping Selfdestruct"
+	text "Zapping Static"
 	done
 
 FlowerPowerDeckName:
@@ -1300,20 +1297,20 @@ FireChargeDeckName:
 	text "Fire Charge"
 	done
 
-LegendaryMoltresDeckName:
-	text "Legendary Moltres"
+LegendaryEnteiDeckName:
+	text "Legendary Entei"
 	done
 
-LegendaryZapdosDeckName:
-	text "Legendary Zapdos"
+LegendaryRaikouDeckName:
+	text "Legendary Raikou"
 	done
 
-LegendaryArticunoDeckName:
-	text "Legendary Articuno"
+LegendarySuicuneDeckName:
+	text "Legendary Suicune"
 	done
 
-LegendaryDragoniteDeckName:
-	text "Legendary Dragonite"
+LegendaryLugiaDeckName:
+	text "Legendary Lugia"
 	done
 
 ImRonaldDeckName:
@@ -1397,7 +1394,7 @@ PikachuDeckName:
 	done
 
 BoomBoomSelfdestructDeckName:
-	text "Boom Boom Selfdestruct"
+	text "Rapid Current"
 	done
 
 PowerGeneratorDeckName:
@@ -1421,7 +1418,7 @@ FlyinPokemonDeckName:
 	done
 
 LovelyNidoranDeckName:
-	text "Lovely Nidoran"
+	text "Lovely Imp's"
 	done
 
 PoisonDeckName:

@@ -66,8 +66,10 @@ Script_BeatMitch:
 	show_medal_received_screen EVENT_BEAT_MITCH
 	record_master_win $01
 	print_npc_text MitchPlayerWonInitial2Text
-	give_booster_packs BOOSTER_LABORATORY_NEUTRAL, BOOSTER_LABORATORY_NEUTRAL, NO_BOOSTER
-	print_npc_text MitchPlayerWonInitial3Text
+	give_card KOMMO_O
+    show_card_received_screen KOMMO_O
+	give_booster_packs  BOOSTER_EVOLUTION_FIGHTING, BOOSTER_MYSTERY_FIGHTING_COLORLESS, BOOSTER_LABORATORY_FIGHTING
+	print_npc_text MitchPlayerWonInitial3Text 
 	quit_script_fully
 
 Script_LostToMitch:

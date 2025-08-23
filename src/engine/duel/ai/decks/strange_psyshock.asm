@@ -7,7 +7,7 @@ AIActionTable_StrangePsyshock:
 	dw .take_prize
 
 .do_turn
-	jp AIMainTurnLogic
+	jp AIDoTurn_GeneralNoRetreat
 
 .start_duel
 	call InitAIDuelVars
@@ -27,46 +27,37 @@ AIActionTable_StrangePsyshock:
 	jp AIPickPrizeCards
 
 .list_arena
-	dw CHATOT
-	dw AUDINO
-	dw KILOWATTREL
+	dw CUTIEFLY
 	dw SPIRITOMB
-	dw DEINO
+	dw ABRA
 	dw INKAY
 	dw NULL
 
 .list_bench
-	dw DEINO
+	dw ABRA
 	dw SPIRITOMB
-	dw CHATOT
-	dw KILOWATTREL
-	dw AUDINO
+	dw CUTIEFLY
 	dw INKAY
 	dw NULL
 
 .list_retreat
-	ai_retreat DEINO,       -3
-	ai_retreat KILOWATTREL,    -3
-	ai_retreat CHATOT, -1
-	ai_retreat AUDINO,    -1
+	ai_retreat ABRA,       -3
+	ai_retreat RIBOMBEE,    -3
+	ai_retreat CUTIEFLY, -1
 	dw NULL
 
 .list_energy
-	ai_energy DEINO,       3, +1
-	ai_energy ZWEILOUS,    3, +0
-	ai_energy ALAKAZAM,   3, +0
+	ai_energy ABRA,       2, +1
+	ai_energy KADABRA,    3, +0
+	ai_energy ALAKAZAM,   3, +1
 	ai_energy SPIRITOMB,    2, +0
-	ai_energy AUDINO,    2, -2
-	ai_energy CHATOT, 4, -2
-	ai_energy KILOWATTREL,    0, -8
+	ai_energy INKAY,	1, 0
 	ai_energy INKAY,	1, +1
 	dw NULL
 
 .list_prize
-	dw COPYCAT
 	dw SPIRITOMB
 	dw ALAKAZAM
-	dw SWITCH
 	dw NULL
 
 .store_list_pointers

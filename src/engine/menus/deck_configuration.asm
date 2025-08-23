@@ -2145,7 +2145,7 @@ DrawDeckName:
 	call CopyListFromHLToDE
 	ld a, [wCurDeck]
 	cp $ff
-	jr z, .blank_deck_name
+	jr c, .blank_deck_name
 
 .print_deck_name
 	ld hl, wDefaultText

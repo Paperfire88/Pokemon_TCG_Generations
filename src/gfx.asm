@@ -1724,9 +1724,9 @@ TogekissCardGfx::
 	INCBIN "gfx/cards/togekiss.attrmap"	
 	INCBIN "gfx/cards/togekiss.2bpp"
 CyclizarCardGfx::
-	INCBIN "gfx/cards/jigglypuff2.pal"
-	INCBIN "gfx/cards/jigglypuff2.attrmap"	
-	INCBIN "gfx/cards/jigglypuff2.2bpp"
+	INCBIN "gfx/cards/cyclizar.pal"
+	INCBIN "gfx/cards/cyclizar.attrmap"	
+	INCBIN "gfx/cards/cyclizar.2bpp"
 StuffulNameGfx::
 	INCBIN "gfx/cards/jigglypuff3.pal"
 	INCBIN "gfx/cards/jigglypuff3.attrmap"
@@ -1822,7 +1822,7 @@ PokemonTraderCardGfx::
 	INCBIN "gfx/cards/pokemontrader.pal"
 	INCBIN "gfx/cards/pokemontrader.attrmap"
 	INCBIN "gfx/cards/pokemontrader.2bpp"	
-PokemonBreederCardGfx::
+RareCandyCardGfx::
 	INCBIN "gfx/cards/pokemonbreeder.pal"
 	INCBIN "gfx/cards/pokemonbreeder.attrmap"
 	INCBIN "gfx/cards/pokemonbreeder.2bpp"	

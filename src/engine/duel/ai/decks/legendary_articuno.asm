@@ -1,4 +1,4 @@
-AIActionTable_LegendaryArticuno:
+AIActionTable_LegendarySuicune:
 	dw .do_turn ; unused
 	dw .do_turn
 	dw .start_duel
@@ -7,7 +7,7 @@ AIActionTable_LegendaryArticuno:
 	dw .take_prize
 
 .do_turn
-	jp AIDoTurn_LegendaryArticuno
+	jp AIDoTurn_GeneralNoRetreat
 
 .start_duel
 	call InitAIDuelVars
@@ -27,20 +27,15 @@ AIActionTable_LegendaryArticuno:
 	jp AIPickPrizeCards
 
 .list_arena
-	dw AUDINO
-	dw CHEWTLE
-	dw DITTO
+	dw HORSEA
 	dw SEEL
-	dw RELICANTH
-	dw SUICUNE
+	dw EEVEE
 	dw NULL
 
 .list_bench
-	dw RELICANTH
+	dw EEVEE
+	dw HORSEA
 	dw SEEL
-	dw CHEWTLE
-	dw AUDINO
-	dw DITTO
 	dw NULL
 
 .list_retreat
@@ -49,18 +44,20 @@ AIActionTable_LegendaryArticuno:
 	dw NULL
 
 .list_energy
-	ai_energy SEEL,          3, +1
-	ai_energy DEWGONG,       4, +0
-	ai_energy CHEWTLE,        3, +0
-	ai_energy RELICANTH, 4, +1
-	ai_energy SUICUNE, 3, +0
-	ai_energy AUDINO,       0, -8
-	ai_energy DITTO,         3, +0
+	ai_energy HORSEA,          2, +1
+	ai_energy SEEL,          1, +0
+	ai_energy DEWGONG,       2, +1
+	ai_energy EEVEE,        2, +0
+	ai_energy GLACEON, 3, +1
+	ai_energy VAPOREON, 3, +2
+	ai_energy SUICUNE, 3, +1
 	dw NULL
 
 .list_prize
 	dw COPYCAT
 	dw SUICUNE
+	dw EEVEE
+	dw GLACEON
 	dw NULL
 
 .store_list_pointers
@@ -72,12 +69,12 @@ AIActionTable_LegendaryArticuno:
 	store_list_pointer wAICardListEnergyBonus, .list_energy
 	ret
 
-; this routine handles how Legendary Articuno
+; this routine handles how Legendary Suicune
 ; prioritizes playing energy cards to each Pokémon.
 ; first, it makes sure that all Chewtle have at least
-; 3 energy cards before moving on to Articuno,
+; 3 energy cards before moving on to Suicune,
 ; and then to Dewgong and Seel
-ScoreLegendaryArticunoCards:
+ScoreLegendarySuicuneCards:
 	call SwapTurn
 	call CountPrizes
 	call SwapTurn
@@ -86,8 +83,8 @@ ScoreLegendaryArticunoCards:
 
 ; player prizes >= 3
 ; if Chewtle has more than half HP and
-; can use second attack, check next for Articuno
-; otherwise, check if Articuno or Dewgong
+; can use second attack, check next for Suicune
+; otherwise, check if Suicune or Dewgong
 ; have more than half HP and can use second attack
 ; and if so, the next Pokémon to check is Chewtle
 	ld de, CHEWTLE
@@ -142,7 +139,7 @@ ScoreLegendaryArticunoCards:
 	ld bc, SEEL
 	jp RaiseAIScoreToAllMatchingIDsInBench
 
-AIDoTurn_LegendaryArticuno:
+AIDoTurn_LegendarySuicune:
 ; initialize variables
 	call InitAITurnVars
 	ld a, AI_TRAINER_CARD_PHASE_01

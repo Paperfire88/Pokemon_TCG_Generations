@@ -12,10 +12,10 @@ DeckAIPointerTable::
 	dw AIActionTable_GeneralNoRetreat        ; LIGHTNING_AND_FIRE_DECK
 	dw AIActionTable_GeneralNoRetreat        ; WATER_AND_FIGHTING_DECK
 	dw AIActionTable_GeneralNoRetreat        ; GRASS_AND_PSYCHIC_DECK
-	dw AIActionTable_LegendaryMoltres    ; LEGENDARY_MOLTRES_DECK
-	dw AIActionTable_LegendaryZapdos     ; LEGENDARY_ZAPDOS_DECK
-	dw AIActionTable_LegendaryArticuno   ; LEGENDARY_ARTICUNO_DECK
-	dw AIActionTable_LegendaryDragonite  ; LEGENDARY_DRAGONITE_DECK
+	dw AIActionTable_LegendaryEntei    ; LEGENDARY_MOLTRES_DECK
+	dw AIActionTable_LegendaryRaikou     ; LEGENDARY_ZAPDOS_DECK
+	dw AIActionTable_LegendarySuicune   ; LEGENDARY_ARTICUNO_DECK
+	dw AIActionTable_LegendaryLugia  ; LEGENDARY_DRAGONITE_DECK
 	dw AIActionTable_FirstStrike         ; FIRST_STRIKE_DECK
 	dw AIActionTable_RockCrusher         ; ROCK_CRUSHER_DECK
 	dw AIActionTable_GoGoRainDance       ; GO_GO_RAIN_DANCE_DECK

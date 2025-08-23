@@ -153,7 +153,9 @@ Script_BeatIsaac:
 	show_medal_received_screen EVENT_BEAT_ISAAC
 	record_master_win $04
 	print_npc_text Text0639
-	give_booster_packs BOOSTER_EVOLUTION_TRAINER, BOOSTER_MYSTERY_LIGHTNING_COLORLESS, BOOSTER_MYSTERY_TRAINER_COLORLESS
+	give_card MAGNEZONE
+    show_card_received_screen MAGNEZONE
+	give_booster_packs BOOSTER_EVOLUTION_TRAINER, BOOSTER_MYSTERY_LIGHTNING_COLORLESS, BOOSTER_LABORATORY_LIGHTNING
 	print_npc_text Text063a
 	quit_script_fully
 

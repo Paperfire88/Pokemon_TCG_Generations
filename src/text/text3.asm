@@ -301,23 +301,23 @@ PsychicMachampText:
 	done
 
 WaterBeetleText:
-	text "Water Beetle"
+	text "???"
 	done
 
-LegendaryMoltresText:
-	text "Legendary Moltres"
+LegendaryEnteiText:
+	text "Legendary Entei"
 	done
 
-LegendaryZapdosText:
-	text "Legendary Zapdos"
+LegendaryRaikouText:
+	text "Legendary Raikou"
 	done
 
-LegendaryArticunoText:
-	text "Legendary Articuno"
+LegendarySuicuneText:
+	text "Legendary Suicune"
 	done
 
-LegendaryDragoniteText:
-	text "Legendary Dragonite"
+LegendaryLugiaText:
+	text "Legendary Lugia"
 	done
 
 MysteriousPokemonText:
@@ -330,23 +330,23 @@ AllFightingPokemonDescriptionText:
 	done
 
 BenchAttackDescriptionText:
-	text "A Deck of Pokémon that can"
-	line "attack the Bench."
+	text "A Deck full of Pokémon that can"
+	line "attack Hard!             -Chris <FIGHTING>"
 	done
 
 BattleContestDescriptionText:
 	text "A Deck which uses Fighting Attacks"
-	line "such as Slash and Punch."
+	line "such as Kicks and Punch. -Jessica <FIGHTING>"
 	done
 
 HeatedBattleDescriptionText:
 	text "A powerful Deck with both Fire"
-	line "and Fighting Pokémon."
+	line "and Fighting Pokémon.  -Michael <FIGHTING>"
 	done
 
 FirstStrikeDescriptionText:
-	text "A Deck for fast and furious "
-	line "attacks."
+	text "A Deck for fast and furious"
+	line "attacks.                 -Mitch <FIGHTING>"
 	done
 
 SqueakingMouseDescriptionText:
@@ -355,23 +355,23 @@ SqueakingMouseDescriptionText:
 	done
 
 GreatQuakeDescriptionText:
-	text "Use Sandaconda's Earthquake"
-	line "to cause great damage."
+	text "Use Tyranitar's Mountain Clash"
+	line "to cause great damage. -Matthew <FIGHTING>"
 	done
 
 BoneAttackDescriptionText:
-	text "A Deck of Cubone and Marowak - "
-	line "A call for help."
+	text "A Deck of Sandile and Rokcruff - "
+	line "A Bitting Deck.         -Andrew <FIGHTING>"
 	done
 
 ExcavationDescriptionText:
-	text "A Deck which creates Pokémon by"
-	line "evolving Mysterious Fossils."
+	text "A Deck with Ground Pokémon"
+	line "from the Deserts!         -Ryan <FIGHTING>"
 	done
 
 RockCrusherDescriptionText:
-	text "A Deck of Rock Pokémon. It's"
-	line "Strong against Lightning Pokémon."
+	text "A Deck of Rock Pokémon. It's Strong"
+	line "against <LIGHTNING> Pokémon.   -Mitch <FIGHTING>"
 	done
 
 BlueWaterDescriptionText:
@@ -381,27 +381,27 @@ BlueWaterDescriptionText:
 
 OnTheBeachDescriptionText:
 	text "A well balanced Deck"
-	line "of Meowth and Water Pokémon!"
+	line "of Water Pokémon!       -Joshua <WATER>"
 	done
 
 ParalyzeDescriptionText:
-	text "Paralyze the opponent's Pokémon:"
-	line "Stop 'em and drop 'em!"
+	text "Grab your opponent's Pokémon:"
+	line "Stop 'em and drop 'em!   -Amanda <WATER>"
 	done
 
 EnergyRemovalDescriptionText:
-	text "Uses Whirlpool and Hyper Beam to"
-	line "remove opponents' Energy cards."
+	text "A Deck of Blue Horror that"
+	line "washes over enemies.        -Sara <WATER>"
 	done
 
 RainDancerDescriptionText:
-	text "Use Rain Dance to attach Water"
-	line "Energy for powerful Attacks!"
+	text "Use Rain Dance to attach <WATER> Energy"
+	line "for powerful Attacks!       -Amy <WATER>"
 	done
 
 CutePokemonDescriptionText:
 	text "A Deck of cute Pokémon such as"
-	line "Pikachu and Eevee."
+	line "Pikachu!               -Jennifer <LIGHTNING>"
 	done
 
 PokemonFluteDescriptionText:
@@ -411,17 +411,17 @@ PokemonFluteDescriptionText:
 
 YellowFlashDescriptionText:
 	text "A deck of Pokémon that use Lightning"
-	line "Energy to zap opponents."
+	line "to zap opponents.     -Nicholas <LIGHTNING>"
 	done
 
 ElectricShockDescriptionText:
-	text "A Deck which Shocks and Paralyzes"
-	line "opponents with its Attacks."
+	text "A Deck which Paralyzes opponents"
+	line "with its Attacks.      -Brandon <LIGHTNING>"
 	done
 
 ZappingSelfdestructDescriptionText:
-	text "Selfdestruct causes great damage "
-	line "- even to the opponent's Bench."
+	text "It Causes great damage to the"
+	line "opponent's Bench.        -Isaac <LIGHTNING>"
 	done
 
 InsectCollectionDescriptionText:
@@ -430,23 +430,23 @@ InsectCollectionDescriptionText:
 	done
 
 JungleDescriptionText:
-	text "A Deck of Grass Pokémon: There "
-	line "are many dangers in the Jungle."
+	text "A Deck of many Pokémon of"
+	line "the Jungle.            -Brittany <GRASS>"
 	done
 
 FlowerGardenDescriptionText:
 	text "A Deck of Flower Pokémon:"
-	line "Beautiful but Dangerous"
+	line "Beautiful but Dangerous -Heather <GRASS>"
 	done
 
 KaleidoscopeDescriptionText:
-	text "Uses YANMEGA's Pokémon Power to"
-	line "change the opponent's Weakness."
+	text "Uses YANMEGA's Attack to defeat"
+	line "the opponent's Pokémon. -Kirsin <GRASS>"
 	done
 
 FlowerPowerDescriptionText:
-	text "A powerful Big Eggsplosion "
-	line "and Energy Transfer combo!"
+	text "A powerful Power Whip and"
+	line "Leaf Transfer combo.    -Nikki <GRASS>"
 	done
 
 PsychicPowerDescriptionText:
@@ -455,28 +455,28 @@ PsychicPowerDescriptionText:
 	done
 
 DreamEaterDusclopsDescriptionText:
-	text "Uses Haunter's Dream Eater"
-	line "to cause great damage!"
+	text "Uses Haunter's Call Back"
+	line "to cause great damage!  -Robert <PSYCHIC>"
 	done
 
 ScavengingMalamarDescriptionText:
-	text "Continually draw Trainer "
-	line "Cards from the Discard Pile!"
+	text "Continually Put the Opponent"
+	line "To Sleep with attacks!  -Daniel <PSYCHIC>"
 	done
 
 StrangePowerDescriptionText:
 	text "Confuse opponents with"
-	line "mysterious power!"
+	line "mysterious power!    -Stephanie <PSYCHIC>"
 	done
 
 StrangePsyshockDescriptionText:
 	text "Use Alakazam's Damage Swap"
-	line "to move damage counters!"
+	line "to move damage counters! -Murray <PSYCHIC>"
 	done
 
 LovelyNidoranDescriptionText:
-	text "Uses Nidoqueen's Boyfriends to cause"
-	line "great damage to the opponent."
+	text "Use Weavile's Dark Pulse to "
+	line "cause a lot damage.      -David <DARKNESS>"
 	done
 
 ScienceCorpsDescriptionText:
@@ -485,23 +485,23 @@ ScienceCorpsDescriptionText:
 	done
 
 FlyinPokemonDescriptionText:
-	text "Pokémon with feathers flock "
-	line "together! Retreating is easy!"
+	text "Pokémon with Wings flock together!"
+	line "Retreating is easy!     -Joseph <DARKNESS>"
 	done
 
 PoisonDescriptionText:
 	text "A Deck that uses Poison to "
-	line "slowly Knock Out the opponent."
+	line "slowly K.O. the opponent. -Erik <DARKNESS>"
 	done
 
 WondersOfScienceDescriptionText:
-	text "Block Pokémon Powers with "
-	line "Muk and attack with Mewtwo!"
+	text "Put an Eternal Sleep with Gengar's"
+	line "Pokémmon Power!            -Rick <DARKNESS>"
 	done
 
 ReplaceEmAllDescriptionText:
 	text "A Deck that shuffles"
-	line "the opponent's cards"
+	line "the opponent's cards  -Jonathan <FIRE>"
 	done
 
 ChariSaurDescriptionText:
@@ -511,32 +511,32 @@ ChariSaurDescriptionText:
 
 TrafficLightDescriptionText:
 	text "Pokémon that can Attack with"
-	line "Fire, Water or Lightning Energy!"
+	line "Burning Fire!             -John <FIRE>"
 	done
 
 FirePokemonDescriptionText:
-	text "With Fire Pokémon like Charizard, "
-	line "Rapidash and Magmar, it's hot!"
+	text "With Fire Pokémon like Emboar, "
+	line "Houndoom and Magmar!      -Adam <FIRE>"
 	done
 
 FireChargeDescriptionText:
-	text "Desperate attacks Damage your "
-	line "opponent and you!"
+	text "Destroy your opponent's with"
+	line "Fierce fire attacks!       -Ken <FIRE>"
 	done
 
 TepigAndFriendsDescriptionText:
-	text "A Fire, Grass and Water Deck:"
-	line "Tepig, Pinsir and Seel"
+	text "A Fire <FIRE> Deck:"
+	line "Tepig, Houndour and Sizzlipede"
 	done
 
 FroakieAndFriendsDescriptionText:
-	text "A Water, Fire, and Lightning Deck:"
-	line "Froakie, Tepig and Pikachu"
+	text "A Water <WATER> Deck:"
+	line "Froakie, Seel and Wingull"
 	done
 
 ChikoritaAndFriendsDescriptionText:
-	text "A Grass, Lightning and Psychic Deck:"
-	line "Chikorita, Pikachu and Abra"
+	text "A Grass <GRASS> Deck:"
+	line "Chikorita, Shroomish and Shelmet"
 	done
 
 PsychicMachampDescriptionText:
@@ -545,28 +545,28 @@ PsychicMachampDescriptionText:
 	done
 
 WaterBeetleDescriptionText:
-	text "An Evolution Deck with Weedle, "
-	line "Nidoran♂ and Bellsprout."
+	text "Perfect."
+	line "                           -Imakuni?"
 	done
 
-LegendaryMoltresDescriptionText:
+LegendaryEnteiDescriptionText:
 	text "Gather Fire Energy with the"
-	line "Legendary Moltres!"
+	line "Legendary Entei!      -Courtney <FIRE>"
 	done
 
-LegendaryZapdosDescriptionText:
+LegendaryRaikouDescriptionText:
 	text "Zap opponents with the"
-	line "Legandary Zapdos!"
+	line "Legandary Raikou!        -Steve <LIGHTNING>"
 	done
 
-LegendaryArticunoDescriptionText:
+LegendarySuicuneDescriptionText:
 	text "Paralyze opponents with the"
-	line "Legendary Articuno!"
+	line "Legendary Suicune!        -Jack <WATER>"
 	done
 
-LegendaryDragoniteDescriptionText:
+LegendaryLugiaDescriptionText:
 	text "Heal your Pokémon with the"
-	line "Legendary Dragonite!"
+	line "Legendary Lugia!           -Rod <COLORLESS>"
 	done
 
 MysteriousPokemonDescriptionText:
@@ -1028,7 +1028,7 @@ PlayerDiarySaveCancelText:
 	done
 
 PlayerStatusMedalsTitleText:
-	text "Master Medals"
+	text "- Master Medals -"
 	done
 
 ConfigMenuTitleText:
@@ -1724,19 +1724,19 @@ JigglypuffTradeCardName:
 	text "<Lv>12 JIGGLYPUFF"
 	done
 
-ZapdosLegendaryCardName:
+RaikouLegendaryCardName:
 	text "<Lv>68 ZAPDOS"
 	done
 
-MoltresLegendaryCardName:
+EnteiLegendaryCardName:
 	text "<Lv>37 MOLTRES"
 	done
 
-ArticunoLegendaryCardName:
+SuicuneLegendaryCardName:
 	text "<Lv>37 ARTICUNO"
 	done
 
-DragoniteLegendaryCardName:
+LugiaLegendaryCardName:
 	text "<Lv>41 DRAGONITE"
 	done
 
@@ -1818,17 +1818,6 @@ Mail1Part1Text:
 	line "Pack! By doing so, you will be able "
 	line "to collect the same cards, making it"
 	line "easier for you to build your Deck."
-	line "Another method for collecting "
-	line "cards is to use CARD POP!"
-	line "When you and a friend use CARD POP!,"
-	line "you will each receive a new card!"
-	line "Once you POP! with a certain"
-	line "friend, you won't be able to POP!"
-	line "with that friend again, so find "
-	line "many friends who own the Pokémon "
-	line "Trading Card Game for Game Boy,"
-	line "and CARD POP! with them to"
-	line "get new cards!"
 	line "Oh, here's something for you..."
 	done
 
@@ -1852,7 +1841,7 @@ Mail2Part1Text:
 	line "for a quick attack, but it's"
 	line "weak against Psychic Pokémon!"
 	line "I suggest you duel him using"
-	line "the Deck from the Psychic Medal"
+	line "a Deck from the Psychic Medal"
 	line "Deck Machine."
 	line "Here's a Booster Pack for you..."
 	done

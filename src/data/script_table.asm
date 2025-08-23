@@ -101,5 +101,7 @@ OverworldScriptTable::
 	dw ScriptCommand_EndScript
 	dw ScriptCommand_EndScript
 	dw ScriptCommand_EndScript
-	dw ScriptCommand_EndScript
+	dw ScriptCommand_PickRareFireCard
+	dw ScriptCommand_PickRareFireCard2
+	dw ScriptCommand_PickRareFireCard3
 	assert_table_length NUM_SCRIPT_COMMANDS

@@ -42,7 +42,7 @@ Script_BeatDavid:
 	start_script
 	set_event EVENT_DAVID_STATE, DAVID_DEFEATED
 	print_npc_text Text0754
-	give_booster_packs BOOSTER_MYSTERY_GRASS_COLORLESS, BOOSTER_MYSTERY_GRASS_COLORLESS, NO_BOOSTER
+	give_booster_packs BOOSTER_MYSTERY_DARKNESS, BOOSTER_LABORATORY_NEUTRAL, NO_BOOSTER
 	print_npc_text Text0755
 	quit_script_fully
 
@@ -65,7 +65,7 @@ Script_Erik:
 Script_BeatErik:
 	start_script
 	print_npc_text Text075b
-	give_booster_packs BOOSTER_EVOLUTION_GRASS, BOOSTER_EVOLUTION_GRASS, NO_BOOSTER
+	give_booster_packs BOOSTER_EVOLUTION_DARKNESS, BOOSTER_LABORATORY_NEUTRAL, NO_BOOSTER
 	print_npc_text Text075c
 	quit_script_fully
 
@@ -95,7 +95,9 @@ Script_BeatRick:
 	show_medal_received_screen EVENT_BEAT_RICK
 	record_master_win $07
 	print_npc_text Text0763
-	give_booster_packs BOOSTER_COLOSSEUM_TRAINER, BOOSTER_EVOLUTION_GRASS, BOOSTER_LABORATORY_TRAINER
+	give_card GENGAR
+    show_card_received_screen GENGAR
+	give_booster_packs BOOSTER_EVOLUTION_DARKNESS, BOOSTER_MYSTERY_DARKNESS, BOOSTER_LABORATORY_DARKNESS
 	print_npc_text Text0764
 	quit_script_fully
 
@@ -117,7 +119,7 @@ Script_LostToRick:
 
 .ows_ecb6
 	print_npc_text Text0769
-	give_booster_packs BOOSTER_COLOSSEUM_TRAINER, BOOSTER_EVOLUTION_GRASS, BOOSTER_LABORATORY_TRAINER
+	give_booster_packs BOOSTER_EVOLUTION_DARKNESS, BOOSTER_MYSTERY_DARKNESS, BOOSTER_LABORATORY_DARKNESS
 	print_npc_text Text076a
 	quit_script_fully
 
@@ -162,7 +164,7 @@ Script_BeatJoseph:
 	set_active_npc_direction WEST
 	max_out_event_value EVENT_BEAT_JOSEPH
 	print_npc_text Text0771
-	give_booster_packs BOOSTER_LABORATORY_GRASS, BOOSTER_LABORATORY_GRASS, NO_BOOSTER
+	give_booster_packs BOOSTER_COLOSSEUM_DARKNESS, BOOSTER_LABORATORY_NEUTRAL, NO_BOOSTER
 	print_npc_text Text0772
 	quit_script_fully
 

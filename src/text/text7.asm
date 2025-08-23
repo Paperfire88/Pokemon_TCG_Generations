@@ -196,7 +196,7 @@ Text05f0:
 	done
 
 Text05f1:
-	text "<RAMNAME> handed his cards to "
+	text "<RAMNAME> handed the cards to "
 	line "Dr. Mason."
 	done
 
@@ -851,7 +851,7 @@ Text0656:
 Text0657:
 	text "A single match with 4 prizes!"
 	line "Come on, my precious ghosts!"
-	line "Let's make his Pokémon disappear!"
+	line "Let's make their Pokémon disappear!"
 	done
 
 Text0658:

@@ -99,7 +99,7 @@ PointerTable_AttackAnimation:
 	dw AttackAnimation_Sing                ; ATK_ANIM_SING
 	dw AttackAnimation_Sing                ; ATK_ANIM_LULLABY
 	dw AttackAnimation_Supersonic          ; ATK_ANIM_SUPERSONIC
-	dw AttackAnimation_Supersonic          ; ATK_ANIM_UNUSED_4D
+	dw AttackAnimation_QuickAttack_NoDamage; ATK_ANIM_UNUSED_4D
 	dw AttackAnimation_PetalDance          ; ATK_ANIM_PETAL_DANCE
 	dw AttackAnimation_Protect             ; ATK_ANIM_PROTECT
 	dw AttackAnimation_Barrier             ; ATK_ANIM_BARRIER
@@ -125,7 +125,7 @@ PointerTable_AttackAnimation:
 	dw AttackAnimation_BigThunder          ; ATK_ANIM_BIG_THUNDER
 	dw AttackAnimation_SolarPower          ; ATK_ANIM_SOLAR_POWER
 	dw AttackAnimation_Hit2                ; ATK_ANIM_POISON_FANG
-	dw AttackAnimation_Hit2                ; ATK_ANIM_UNUSED_67
+	dw AttackAnimation_GlowAttack          ; ATK_ANIM_GLOW_ATTACK
 	dw AttackAnimation_Hit2                ; ATK_ANIM_UNUSED_68
 	dw AttackAnimation_Needles2            ; ATK_ANIM_UNUSED_69
 	dw AttackAnimation_FriendshipSong      ; ATK_ANIM_FRIENDSHIP_SONG
@@ -564,7 +564,10 @@ AttackAnimation_Barrier:
 	anim_player         DUEL_ANIM_GLOW
 	anim_player         DUEL_ANIM_BARRIER
 	anim_end
-
+AttackAnimation_QuickAttack_NoDamage:	
+	anim_player         DUEL_ANIM_GLOW
+	anim_normal         DUEL_ANIM_SPEED
+	anim_end
 AttackAnimation_QuickAttack:
 	anim_player         DUEL_ANIM_GLOW
 	anim_normal         DUEL_ANIM_SPEED
@@ -599,6 +602,7 @@ AttackAnimation_Cry:
 AttackAnimation_Amnesia:
 	anim_player         DUEL_ANIM_GLOW
 	anim_normal         DUEL_ANIM_SHAKE1
+	anim_opponent       DUEL_ANIM_SHOW_DAMAGE
 	anim_opponent       DUEL_ANIM_QUESTION_MARK
 	anim_end
 
@@ -646,6 +650,13 @@ AttackAnimation_GlowEffect:
 	anim_normal         DUEL_ANIM_FLASH
 	anim_end
 
+AttackAnimation_GlowAttack:
+	anim_player         DUEL_ANIM_GLOW
+	anim_normal         DUEL_ANIM_FLASH
+	anim_opponent       DUEL_ANIM_HIT
+	anim_normal         DUEL_ANIM_SHAKE1
+	anim_opponent       DUEL_ANIM_SHOW_DAMAGE
+	anim_end
 AttackAnimation_MirrorMove:
 	anim_player         DUEL_ANIM_GLOW
 	anim_normal         DUEL_ANIM_FLASH
@@ -843,6 +854,8 @@ AttackAnimation_OwnSleep:
 AttackAnimation_SleepingGas:
 	anim_player         DUEL_ANIM_GLOW
 	anim_opponent       DUEL_ANIM_WHITE_GAS
+	anim_normal         DUEL_ANIM_SHAKE1
+	anim_opponent       DUEL_ANIM_SHOW_DAMAGE
 	anim_end
 
 AttackAnimation_QuestionMark:

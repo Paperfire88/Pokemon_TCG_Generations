@@ -384,8 +384,8 @@ PikachuDescription:
 	done	
 RaichuDescription:
 	text "Booster Pack: (COLOSSEUM)"
-	line "OG Set: (Paldea Evolved 63)"
-	line "OG illustrator: (N-DESIGN Inc.)"
+	line "OG Set: (Gym Challenge 11)"
+	line "OG illustrator: (Ken Sugimori)"
 	done	
 ParasiteName:
 	text "Parasite"
@@ -573,7 +573,6 @@ TrapinchAndFriendsDeckName:
 RaltsAndFriendsDeckName:
 	text "Ralts & Friends Deck"
 	done	
-
 PyroarDescription:
 	text "Booster Pack: (EVOLUTION)"
 	line "OG Set: (Paldea Evolved 32)"
@@ -603,9 +602,123 @@ MewDescription:
 DragonPulseName:
 	text "Dragon Pulse"
 	done
-DragonPulseDescription:
-	text "Discard the top 3 cards of your deck"
-	done
 EmeraldBreakName:
 	text "Emerald Break"
+	done
+ChrisFightingClubWouldYouLikeToDuelText:
+	text "Would you like to duel Chris?"
+	done
+StaticBuildupName:
+	text "Static Buildup"
+	done
+FlashPressureName:
+	text "Flash Pressure"
+	done
+DragonPulseDescription:
+	text "Discard the top 3 cards from your"
+	line "Deck. If the defending PKMN is an"
+	line "Evolved PKMN, instead, it does +10"
+	line "Damage and your opponent discards"
+	line "the top 5 cards from their deck."	
+	done
+MercilessName:
+	text "Merciless"
+	done	
+MercilessDescription:
+	text "Also, Do 20 damage to the opponent's"
+	line "PKMN with the lowest remaining HP."
+	done			
+DarkVoidName:
+	text "Dark Void"
+	done
+SkyHighName:
+	text "Sky High"
+	done
+LunarDreamsName:
+	text "Lunar Dreams"
+	done		
+LunarDreamsDescription:
+	text "The Defending PKMN is now Asleep."
+	line "If it was already Asleep, heal 20"
+	line "damage from all of your damaged PKMN"
+	done	
+LunarCressName:
+	text "Lunar Cress"
+	done	
+LeafArrowName:
+	text "Leaf Arrow"
+	done
+LeafArrowDescription:
+	text "Draw a card and do 10 damage to the"
+	line "opponent's benched PKMN with the"
+	line "lowest remaining HP."	
+	done
+SpectralFlamesName:
+	text "Spectral Flames"
+	done
+SpectralFlamesDescription:
+	text "As long as this PKMN is on Play, If"
+	line "another PKMN is Burned, it's also"
+	line "Confused as long as it is burned."
+	done
+BurningVoiceDescription:
+	text "It does +30 damage if the Defending"
+	line "PKMN is Burned. After doing damage:"
+	line "If the Defending PKMN has a PKMN PWR"
+	line "it's now Burned."
+	done
+SharpSickleDescription:
+	text "If the Defending PKMN has a PKMN PWR"
+	line "it does +30 more Damage."
+	done
+MagnemiteAndFriendsDescriptionText:
+	text "A Lightning <LIGHTNING> Deck:"
+	line "Magnemite, Blitzle and Grubbin"
+	done	
+TrapinchAndFriendsDescriptionText:
+	text "A Fighting <FIGHTING> Deck:"
+	line "Trapinch, Cufant and Jangmo-o"
+	done	
+RaltsAndFriendsDescriptionText:
+	text "A Psychic <PSYCHIC> Deck:"
+	line "Ralts, Cutiefly and Duskull"
+	done		
+DeinoAndFriendsDescriptionText:
+	text "A Darkness <DARKNESS> Deck:"
+	line "Deino, Zubat and Impidimp"
+	done			
+PracticeDeckDescriptionText:
+	text "A Simple Practice Deck."
+	line "                             -Sam"
+	done
+
+LightningAndFireDeckDescriptionText:
+	text "A Deck with both Lightning"
+	line "and Fire Pokémon           -Aaron"
+	done
+
+WaterAndFightingDeckDescriptionText:
+	text "A Deck with both Water"
+	line "and Fighting Pokémon       -Aaron"
+	done
+
+GrassAndPsychicDeckDescriptionText:
+	text "A Deck with both Grass"
+	line "and Psychic Pokémon        -Aaron"
+	done
+ADamageCounterWasSetText:
+	text "A Damage Counter was Set!"
+	done	
+DeinoAndFriendsText:
+	text "Deino & Friends"
+	done
+TrapinchAndFriendsText:
+	text "Trapinch & Friends"
+	done			
+RaltsAndFriendsText:
+	text "Ralts & Friends"
+	done		
+ThereAreNoPokemonOrEnergyCardsInDiscardPileText:
+	text "There are no Pokémon or Energy"
+	line "Cards in the Discard Pile."
 	done

@@ -1,4 +1,4 @@
-AIActionTable_LegendaryDragonite:
+AIActionTable_LegendaryLugia:
 	dw .do_turn ; unused
 	dw .do_turn
 	dw .start_duel
@@ -7,7 +7,7 @@ AIActionTable_LegendaryDragonite:
 	dw .take_prize
 
 .do_turn
-	jp AIDoTurn_LegendaryDragonite
+	jp AIDoTurn_GeneralNoRetreat
 
 .start_duel
 	call InitAIDuelVars
@@ -27,19 +27,15 @@ AIActionTable_LegendaryDragonite:
 	jp AIPickPrizeCards
 
 .list_arena
-	dw CHATOT
-	dw CHEWTLE
-	dw TEPIG
+	dw ZIGZAGOON
+	dw HORSEA
 	dw GOOMY
-	dw SNEASEL
 	dw NULL
 
 .list_bench
-	dw TEPIG
-	dw SNEASEL
+	dw ZIGZAGOON
+	dw HORSEA
 	dw GOOMY
-	dw CHEWTLE
-	dw CHATOT
 	dw NULL
 
 .list_retreat
@@ -48,22 +44,19 @@ AIActionTable_LegendaryDragonite:
 	dw NULL
 
 .list_energy
-	ai_energy TEPIG,     3, +1
-	ai_energy PIGNITE,     4, +1
-	ai_energy EMBOAR,      5, +0
-	ai_energy SNEASEL,       3, +1
-	ai_energy WEAVILE,       4, -1
-	ai_energy GOOMY,        2, +0
-	ai_energy SLIGGOO,      4, +0
-	ai_energy LUGIA, 3, -1
-	ai_energy CHATOT,     2, -2
-	ai_energy CHEWTLE,         3, +0
+	ai_energy GOOMY,     2, +0
+	ai_energy SLIGGOO,     3, +1
+	ai_energy GOODRA,      6, +2
+	ai_energy LUGIA,       4, +2
+	ai_energy ZIGZAGOON,        3, +0
+	ai_energy HORSEA,        2, +1
 	dw NULL
 
 .list_prize
-	dw COPYCAT
+	dw HORSEA
 	dw LUGIA
-	dw CHATOT
+	dw SLIGGOO
+	dw GOODRA
 	dw NULL
 
 .store_list_pointers
@@ -75,7 +68,7 @@ AIActionTable_LegendaryDragonite:
 	store_list_pointer wAICardListEnergyBonus, .list_energy
 	ret
 
-AIDoTurn_LegendaryDragonite:
+AIDoTurn_LegendaryLugia:
 ; initialize variables
 	call InitAITurnVars
 	ld a, AI_TRAINER_CARD_PHASE_01

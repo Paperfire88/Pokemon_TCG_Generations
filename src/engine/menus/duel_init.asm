@@ -104,16 +104,16 @@ OpponentTitlesAndDeckNames:
 	tx GrassAndPsychicDeckName
 
 	tx GrandMasterText
-	tx LegendaryMoltresDeckName
+	tx LegendaryEnteiDeckName
 
 	tx GrandMasterText
-	tx LegendaryZapdosDeckName
+	tx LegendaryRaikouDeckName
 
 	tx GrandMasterText
-	tx LegendaryArticunoDeckName
+	tx LegendarySuicuneDeckName
 
 	tx GrandMasterText
-	tx LegendaryDragoniteDeckName
+	tx LegendaryLugiaDeckName
 
 	tx FightingClubMasterText
 	tx FirstStrikeDeckName

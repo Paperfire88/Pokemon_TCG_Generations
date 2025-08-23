@@ -1431,6 +1431,24 @@ ScriptCommand_OpenMenu:
 	call PauseMenu
 	jp IncreaseScriptPointerBy1
 
+ScriptCommand_PickRareFireCard3:
+	ld a, (FireRareCards.end - FireRareCards) / 4 - 2
+	call Random
+	add 2
+	ld hl, FireRareCards
+	jp ScriptCommand_PickChallengeCupPrizeCard.get_card_from_list
+ScriptCommand_PickRareFireCard2:
+	ld a, (FireRareCards.end - FireRareCards) / 4 - 2
+	call Random
+	add 2
+	ld hl, FireRareCards
+	jp ScriptCommand_PickChallengeCupPrizeCard.get_card_from_list
+ScriptCommand_PickRareFireCard:
+	ld a, (FireRareCards.end - FireRareCards) / 4 - 2
+	call Random
+	add 2
+	ld hl, FireRareCards
+	jp ScriptCommand_PickChallengeCupPrizeCard.get_card_from_list
 ScriptCommand_PickChallengeCupPrizeCard:
 	get_event_value EVENT_CHALLENGE_CUP_NUMBER
 	dec a
@@ -1483,7 +1501,6 @@ ChallengeCupPrizeCards:
 	dw SUPER_ENERGY_RETRIEVAL
 	tx SuperEnergyRetrievalTradeCardName
 .end
-
 ScriptCommand_PickLegendaryCard:
 	get_event_value EVENT_LEGENDARY_CARDS_RECEIVED_FLAGS
 	ld e, a
@@ -1515,16 +1532,16 @@ ScriptCommand_PickLegendaryCard:
 
 LegendaryCards:
 	dw RAIKOU
-	tx ZapdosLegendaryCardName
+	tx RaikouLegendaryCardName
 
 	dw ENTEI
-	tx MoltresLegendaryCardName
+	tx EnteiLegendaryCardName
 
 	dw SUICUNE
-	tx ArticunoLegendaryCardName
+	tx SuicuneLegendaryCardName
 
 	dw LUGIA
-	tx DragoniteLegendaryCardName
+	tx LugiaLegendaryCardName
 
 LegendaryCardEvents:
 	db EVENT_RECEIVED_ZAPDOS
@@ -1994,7 +2011,26 @@ Func_d4fb:
 	ld c, CHALLENGE_CUP_OVER
 	set_event_value EVENT_CHALLENGE_CUP_1_STATE
 	ret
+FireRareCards:
 
+	dw DRUDDIGON
+	tx MewTradeCardName
+
+	dw EMBOAR
+	tx HoohName
+
+	dw FLAREON
+	tx CresseliaName
+
+	dw CHANDELURE
+	tx DarkraiName
+
+	dw SKELEDIRGE
+	tx CelebiName
+
+	dw SALAMENCE
+	tx ImakuniName
+.end
 INCLUDE "scripts/mason_laboratory.asm"
 INCLUDE "scripts/deck_machine_room.asm"
 

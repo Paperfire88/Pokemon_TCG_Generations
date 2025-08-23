@@ -27,27 +27,27 @@ AIActionTable_LegendaryRonald:
 	jp AIPickPrizeCards
 
 .list_arena
+	dw ZIGZAGOON
 	dw CHATOT
-	dw GOOMY
-	dw EEVEE
+	dw RAYQUAZA
 	dw RAIKOU
 	dw SUICUNE
 	dw ENTEI
 	dw NULL
 
 .list_bench
+	dw ZIGZAGOON
 	dw CHATOT
-	dw GOOMY
-	dw EEVEE
+	dw RAYQUAZA
 	dw NULL
 
 .list_play_hand
-	dw ENTEI
-	dw RAIKOU
 	dw CHATOT
-	dw GOOMY
-	dw EEVEE
+	dw RAYQUAZA
+	dw RAIKOU
 	dw SUICUNE
+	dw ENTEI
+	dw LUGIA
 	dw NULL
 
 .list_retreat
@@ -55,25 +55,21 @@ AIActionTable_LegendaryRonald:
 	dw NULL
 
 .list_energy
-	ai_energy NUMEL,   3, +0
-	ai_energy ENTEI,   3, +0
-	ai_energy DREDNAW,  3, +0
-	ai_energy SUICUNE,  0, -8
-	ai_energy MANECTRIC,   4, +0
-	ai_energy RAIKOU,    0, -8
-	ai_energy CHATOT,     4, -1
-	ai_energy EEVEE,          3, +0
-	ai_energy GOOMY,        3, +0
-	ai_energy SLIGGOO,      4, +0
-	ai_energy LUGIA, 3, +0
+	ai_energy RAYQUAZA,   4, +1
+	ai_energy ENTEI,   3, +1
+	ai_energy SUICUNE,  3, +0
+	ai_energy RAIKOU,    3, +0
+	ai_energy CHATOT,     2, +0
+	ai_energy ZIGZAGOON, 1, +0
+	ai_energy LUGIA,        3, +0
+	ai_energy CELEBI,      0, -8
 	dw NULL
 
 .list_prize
 	dw ENTEI
-	dw SUICUNE
-	dw RAIKOU
-	dw LUGIA
-	dw COPYCAT
+	dw RAYQUAZA
+	dw ZIGZAGOON
+	dw CHATOT
 	dw NULL
 
 .store_list_pointers
@@ -96,7 +92,7 @@ AIDoTurn_LegendaryRonald:
 	ld a, AI_TRAINER_CARD_PHASE_04
 	call AIProcessHandTrainerCards
 
-; check if AI can play MoltresLv37
+; check if AI can play EnteiLv37
 ; from hand and if so, play it.
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
 	call GetTurnDuelistVariable
@@ -111,7 +107,7 @@ AIDoTurn_LegendaryRonald:
 	jr c, .skip_moltres_1 ; skip if Muk in play
 	ld de, ENTEI
 	call LookForCardIDInHandList_Bank5
-	jr nc, .skip_moltres_1 ; skip if no MoltresLv37 in hand
+	jr nc, .skip_moltres_1 ; skip if no EnteiLv37 in hand
 	ldh [hTemp_ffa0], a
 	ld a, OPPACTION_PLAY_BASIC_PKMN
 	bank1call AIMakeDecision
@@ -150,7 +146,7 @@ AIDoTurn_LegendaryRonald:
 	ld a, AI_TRAINER_CARD_PHASE_04
 	call AIProcessHandTrainerCards
 
-; check if AI can play MoltresLv37
+; check if AI can play EnteiLv37
 ; from hand and if so, play it.
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
 	call GetTurnDuelistVariable
@@ -165,7 +161,7 @@ AIDoTurn_LegendaryRonald:
 	jr c, .skip_moltres_2 ; skip if Muk in play
 	ld de, ENTEI
 	call LookForCardIDInHandList_Bank5
-	jr nc, .skip_moltres_2 ; skip if no MoltresLv37 in hand
+	jr nc, .skip_moltres_2 ; skip if no EnteiLv37 in hand
 	ldh [hTemp_ffa0], a
 	ld a, OPPACTION_PLAY_BASIC_PKMN
 	bank1call AIMakeDecision

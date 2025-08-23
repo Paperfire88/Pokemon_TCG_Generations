@@ -7,7 +7,7 @@ AIActionTable_FirstStrike:
 	dw .take_prize
 
 .do_turn
-	jp AIMainTurnLogic
+	jp AIDoTurn_GeneralNoRetreat
 
 .start_duel
 	call InitAIDuelVars
@@ -28,37 +28,35 @@ AIActionTable_FirstStrike:
 
 .list_arena
 	dw HITMONCHAN
-	dw SANDILE
 	dw HITMONLEE
-	dw CROAGUNK
+	dw HITMONTOP
+	dw JANGMO_O
 	dw NULL
 
 .list_bench
-	dw SANDILE
-	dw HITMONLEE
 	dw HITMONCHAN
-	dw CROAGUNK
+	dw HITMONLEE
+	dw JANGMO_O
 	dw NULL
 
 .list_retreat
-	ai_retreat SANDILE,  -1
+	ai_retreat JANGMO_O,  -2
 	ai_retreat KROKOROK, -1
 	ai_retreat CROAGUNK,  -2
 	dw NULL
 
 .list_energy
-	ai_energy SANDILE,     3, +0
-	ai_energy KROKOROK,    4, +0
-	ai_energy KROOKODILE,    4, -1
+	ai_energy JANGMO_O,     2, +0
+	ai_energy HAKAMO_O,    2, +1
+	ai_energy KOMMO_O,    4, +1
 	ai_energy HITMONCHAN, 3, +0
 	ai_energy HITMONLEE,  3, +0
-	ai_energy CROAGUNK,     2, -1
-	ai_energy TOXICROAK,   3, -1
+	ai_energy HITMONTOP,    3, +0
 	dw NULL
 
 .list_prize
-	dw HITMONLEE
-	dw HITMONCHAN
+	dw KOMMO_O
+	dw RARE_CANDY
 	dw NULL
 
 .store_list_pointers

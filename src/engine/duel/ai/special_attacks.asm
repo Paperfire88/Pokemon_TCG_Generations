@@ -11,31 +11,39 @@ HandleSpecialAIAttacks:
 	call GetCardIDFromDeckIndex
 
 	cp16 SHELMET
-	jp z, .NidoranFCallForFamily
-	cp16 APPLIN
 	jp z, .CallForFamily
-	cp16 BOUNSWEET
+	cp16 WOOPER
+	jp z, .CallForFamily
+	cp16 STUFFUL
+	jp z, .CallForFamily
+	cp16 DARUMAKA
+	jp z, .CallForFamily
+	cp16 CHEWTLE
+	jp z, .CallForFamily
+	cp16 EMOLGA
+	jp z, .CallForFamily
+	cp16 BLIPBUG
 	jp z, .CallForFamily
 	cp16 YANMA
 	jp z, .Teleport
 	cp16 SCYTHER
 	jp z, .SwordsDanceAndFocusEnergy
-	cp16 CLAUNCHER
-	jp z, .CallForFamily
 	cp16 DREDNAW
 	jp z, .SwordsDanceAndFocusEnergy
 	cp16 MANECTRIC
 	jp z, .ChainLightning
-	cp16 TYRANITAR
-	jp z, .CallForFriend
+	cp16 PUPITAR
+	jp z, .Tyranitar
 	cp16 MEW
 	jp z, .DevolutionBeam
 	cp16 TOGEPI
 	jp z, .FriendshipSong
 	cp16 PORYGON
 	jp z, .Conversion
-	cp16 CRESSELIA
-	jp z, .EnergyAbsorption
+	cp16 ELECTABUZZ
+	jp z, .Plasma
+	cp16 RIOLU
+	jp z, .Wave
 	cp16 MEWTWO_LV60
 	jp z, .EnergyAbsorption
 	cp16 RAIKOU
@@ -79,9 +87,6 @@ HandleSpecialAIAttacks:
 ; if any of card ID in a is found in deck,
 ; return a score of $80 + slots available in bench.
 .CallForFamily:
-	ld a, CARD_LOCATION_DECK
-	call CheckIfAnyCardIDinLocation
-	jr nc, .zero_score
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
 	call GetTurnDuelistVariable
 	cp MAX_BENCH_POKEMON
@@ -146,11 +151,21 @@ HandleSpecialAIAttacks:
 	add $80
 	ret
 
+.Tyranitar
+	ld de, TYRANITAR
+	ld a, CARD_LOCATION_DECK
+	call CheckIfAnyCardIDinLocation
+	jr c, .found_tyra
+	jp .zero_score
+.found_tyra	
+	add $80
+	ret
+
 ; if any basic cards are found in deck,
 ; return a score of $80 + slots available in bench.
 .FriendshipSong:
 	call CheckIfAnyBasicPokemonInDeck
-	jr nc, .zero_score
+	jp nc, .zero_score
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
 	call GetTurnDuelistVariable
 	cp MAX_PLAY_AREA_POKEMON
@@ -266,6 +281,24 @@ HandleSpecialAIAttacks:
 	jp nc, .zero_score
 	ld a, $82
 	ret
+; if any Psychic Energy is found in the Discard Pile,
+; return a score of $80 + 2.
+.Plasma:
+	ld de, LIGHTNING_ENERGY
+	ld a, CARD_LOCATION_DISCARD_PILE
+	call CheckIfAnyCardIDinLocation
+	jp nc, .zero_score
+	ld a, $82
+	ret		
+; if any Psychic Energy is found in the Discard Pile,
+; return a score of $80 + 2.
+.Wave:
+	ld de, FIGHTING_ENERGY
+	ld a, CARD_LOCATION_DISCARD_PILE
+	call CheckIfAnyCardIDinLocation
+	jp nc, .zero_score
+	ld a, $82
+	ret	
 
 .DarkRevival
 	call SwapTurn

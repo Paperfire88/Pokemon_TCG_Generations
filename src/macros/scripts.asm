@@ -106,7 +106,9 @@ ENDM
 	const ScriptCommand_EndScript7_index                                     ; $62
 	const ScriptCommand_EndScript8_index                                     ; $63
 	const ScriptCommand_EndScript9_index                                     ; $64
-	const ScriptCommand_EndScript10_index                                    ; $65
+	const ScriptCommand_PickRareFireCard_index                      		 ; $65
+	const ScriptCommand_PickRareFireCard_index2                      		 ; $65
+	const ScriptCommand_PickRareFireCard_index3                      		 ; $65
 
 DEF NUM_SCRIPT_COMMANDS EQU const_value
 
@@ -452,6 +454,9 @@ ENDM
 ; Picks the Challenge Cup prize card
 MACRO pick_challenge_cup_prize_card
 	run_command ScriptCommand_PickChallengeCupPrizeCard
+ENDM
+MACRO pick_fire_rare_card
+	run_command ScriptCommand_PickRareFireCard
 ENDM
 
 ; Closes Advanced TextBoxes then Ends Script Loop

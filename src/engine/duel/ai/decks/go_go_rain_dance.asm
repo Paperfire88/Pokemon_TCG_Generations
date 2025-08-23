@@ -7,7 +7,7 @@ AIActionTable_GoGoRainDance:
 	dw .take_prize
 
 .do_turn
-	jp AIMainTurnLogic
+	jp AIDoTurn_GeneralNoRetreat
 
 .start_duel
 	call InitAIDuelVars
@@ -27,17 +27,15 @@ AIActionTable_GoGoRainDance:
 	jp AIPickPrizeCards
 
 .list_arena
-	dw CHEWTLE
 	dw HORSEA
-	dw BASCULIN
+	dw WINGULL
 	dw FROAKIE
 	dw NULL
 
 .list_bench
 	dw FROAKIE
 	dw HORSEA
-	dw BASCULIN
-	dw CHEWTLE
+	dw WINGULL
 	dw NULL
 
 .list_retreat
@@ -48,19 +46,16 @@ AIActionTable_GoGoRainDance:
 
 .list_energy
 	ai_energy FROAKIE,  2, +0
-	ai_energy FROGADIER, 3, +0
-	ai_energy GRENINJA, 5, +0
-	ai_energy BASCULIN,   1, +0
-	ai_energy BASCULEGION,   2, +0
-	ai_energy HORSEA,    2, +0
+	ai_energy FROGADIER, 3, +1
+	ai_energy GRENINJA, 6, +3
+	ai_energy WINGULL,   2, +1
+	ai_energy HORSEA,    2, +1
 	ai_energy SEADRA,    3, +0
-	ai_energy CHEWTLE,    3, +0
+	ai_energy KINGDRA,    6, +3
 	dw NULL
 
 .list_prize
-	dw COPYCAT
-	dw ENERGY_RETRIEVAL
-	dw SUPER_ENERGY_RETRIEVAL
+	dw KINGDRA
 	dw GRENINJA
 	dw NULL
 

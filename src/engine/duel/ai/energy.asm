@@ -96,8 +96,8 @@ AIProcessEnergyCards:
 	dec b
 	jr nz, .loop
 
-; Legendary Articuno Deck has its own energy card logic
-	call HandleLegendaryArticunoEnergyScoring
+; Legendary Suicune Deck has its own energy card logic
+	call HandleLegendarySuicuneEnergyScoring
 
 ; start the main Play Area loop
 	ld b, PLAY_AREA_ARENA
@@ -454,7 +454,7 @@ DetermineAIScoreOfAttackEnergyRequirement:
 
 ; checks if there is surplus energy for attack
 ; that discards attached energy card.
-; if current card is ZapdosLv64, don't add to score.
+; if current card is RaikouLv64, don't add to score.
 ; if there is no surplus energy, encourage playing energy.
 .discard_energy
 	ld hl, wLoadedCard1ID 
@@ -683,13 +683,13 @@ CheckIfEvolutionNeedsEnergyForAttack:
 
 ; returns in e the card ID of the energy required for
 ; the Discard/Energy Boost attack loaded in wSelectedAttack.
-; if it's ZapdosLv64's Thunderbolt attack, return no carry.
+; if it's RaikouLv64's Thunderbolt attack, return no carry.
 ; if it's Charizard's Fire Spin or Exeggutor's Big Eggsplosion
 ; attack, don't return energy card ID, but set carry.
 ; output:
 ;	b = 1 if needs color energy, 0 otherwise;
 ;	c = 1 if only needs colorless energy, 0 otherwise;
-;	carry set if not ZapdosLv64's Thunderbolt attack.
+;	carry set if not RaikouLv64's Thunderbolt attack.
 GetEnergyCardForDiscardOrEnergyBoostAttack:
 ; load card ID and check selected attack index.
 	ldh a, [hTempPlayAreaLocation_ff9d]
@@ -700,7 +700,7 @@ GetEnergyCardForDiscardOrEnergyBoostAttack:
 	or a
 	jr z, .first_attack
 
-; check if second attack is ZapdosLv64's Thunderbolt,
+; check if second attack is RaikouLv64's Thunderbolt,
 ; Charizard's Fire Spin or Exeggutor's Big Eggsplosion,
 ; for these to be treated differently.
 ; for both attacks, load its energy cost.
@@ -709,7 +709,7 @@ GetEnergyCardForDiscardOrEnergyBoostAttack:
 	jr z, .zapdos2
 	cphl EMBOAR
 	jr z, .charizard_or_exeggutor
-	cphl FERROTHORN
+	cphl TANGROWTH
 	jr z, .charizard_or_exeggutor
 	ld hl, wLoadedCard2Atk2EnergyCost
 	jr .fire
@@ -767,7 +767,7 @@ GetEnergyCardForDiscardOrEnergyBoostAttack:
 	scf
 	ret
 
-; for ZapdosLv64's Thunderbolt attack, return with no carry.
+; for RaikouLv64's Thunderbolt attack, return with no carry.
 .zapdos2
 	or a
 	ret
@@ -850,7 +850,7 @@ AITryToPlayEnergyCard:
 
 ; for attacks that discard energy or get boost for
 ; additional energy cards, get the energy card ID required by attack.
-; if it's ZapdosLv64's Thunderbolt attack, return.
+; if it's RaikouLv64's Thunderbolt attack, return.
 .energy_boost_or_discard_energy
 	call GetEnergyCardForDiscardOrEnergyBoostAttack
 	ret nc
@@ -922,6 +922,8 @@ AITryToPlayEnergyCard:
 .play_energy_card
 	ldh a, [hTempPlayAreaLocation_ff9d]
 	ldh [hTempPlayAreaLocation_ffa1], a
+	ld a, TRUE
+	ld [wAlreadyPlayedEnergy], a
 	ld a, OPPACTION_PLAY_ENERGY
 	bank1call AIMakeDecision
 	scf
@@ -971,7 +973,7 @@ CheckSpecificDecksToAttachDoubleColorless:
 	or a
 	ret
 
-; if playing Legendary Dragonite deck,
+; if playing Legendary Lugia deck,
 ; check for Tepig and Dratini.
 .legendary_dragonite_deck
 	call .GetArenaCardID

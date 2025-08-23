@@ -7,7 +7,7 @@ AIActionTable_WondersOfScience:
 	dw .take_prize
 
 .do_turn
-	jp AIMainTurnLogic
+	jp AIDoTurn_GeneralNoRetreat
 
 .start_duel
 	call InitAIDuelVars
@@ -27,39 +27,35 @@ AIActionTable_WondersOfScience:
 	jp AIPickPrizeCards
 
 .list_arena
-	dw MewtwoCard
-	dw CRESSELIA
-	dw MEWTWO_LV60
-	dw PHANTUMP
-	dw FERROSEED
-	dw PORYGON
+	dw IMPIDIMP
+	dw GASTLY
+	dw WOOPER
+	dw NIHILEGO
 	dw NULL
 
 .list_bench
-	dw PHANTUMP
-	dw FERROSEED
-	dw CRESSELIA
-	dw MEWTWO_LV60
-	dw MewtwoCard
-	dw PORYGON
+	dw GASTLY
+	dw WOOPER
+	dw IMPIDIMP
+	dw NIHILEGO
 	dw NULL
 
 .list_retreat
 	dw NULL
 
 .list_energy
-	ai_energy PHANTUMP,          3, +0
-	ai_energy TREVENANT,             4, +0
-	ai_energy FERROSEED,         2, +0
-	ai_energy FERROTHORN,         3, +0
-	ai_energy MewtwoCard,     2, -1
-	ai_energy CRESSELIA, 2, -1
-	ai_energy MEWTWO_LV60,     2, -1
-	ai_energy PORYGON,         2, -1
+	ai_energy GASTLY,          2, +1
+	ai_energy HAUNTER,          2, +1
+	ai_energy GENGAR,             3, +1
+	ai_energy WOOPER,         2, +0
+	ai_energy CLODSIRE,         3, +1
+	ai_energy WOOPER,         2, +1
+	ai_energy NIHILEGO,         1, +0
 	dw NULL
 
 .list_prize
-	dw TREVENANT
+	dw GENGAR
+	dw RARE_CANDY
 	dw NULL
 
 .store_list_pointers

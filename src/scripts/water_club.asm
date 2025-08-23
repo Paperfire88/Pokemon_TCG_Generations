@@ -292,8 +292,10 @@ Script_BeatAmy:
 	show_medal_received_screen EVENT_BEAT_AMY
 	record_master_win $03
 	print_npc_text AmyGivesMedal2Text
+	give_card GRENINJA
+    show_card_received_screen GRENINJA
 .give_booster_packs
-	give_booster_packs BOOSTER_COLOSSEUM_WATER, BOOSTER_MYSTERY_TRAINER_COLORLESS, BOOSTER_LABORATORY_WATER
+	give_booster_packs BOOSTER_EVOLUTION_WATER, BOOSTER_MYSTERY_WATER_COLORLESS, BOOSTER_LABORATORY_WATER
 	print_npc_text AmyPlayerWon2Text
 	jump_if_active_npc_coords_match 20, 4, Script_LostToAmy.ows_e34e
 	quit_script_fully

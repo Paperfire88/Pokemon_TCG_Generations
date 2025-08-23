@@ -365,8 +365,8 @@ GrassClubLobbyObjects:
 
 	db NORTH, 24, 2
 	dw PrintInteractableObjectText
-	tx GrassPokemonPokemonBreederBookText
-	tx GrassPokemonPokemonBreederBookName
+	tx GrassPokemonRareCandyBookText
+	tx GrassPokemonRareCandyBookName
 
 	db NORTH, 2, 8
 	dw PCMenu

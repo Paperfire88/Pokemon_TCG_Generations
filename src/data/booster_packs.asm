@@ -339,7 +339,21 @@ BoosterPack_MysteryTrainerColorless::
 	db 16 ; Colorless Type Chance
 	db 48 ; Trainer Card Chance
 	db 0 ; Energy Card Chance
+BoosterPack_MysteryPsychic::
+	booster_set MYSTERY ; booster pack set
+	dw GeneratePsychicEnergy ; energy generation function
 
+; Card Type Chances
+	db 16 ; Grass Type Chance
+	db 16 ; Fire Type Chance
+	db 16 ; Water Type Chance
+	db 16 ; Lightning Type Chance
+	db 16 ; Fighting Type Chance
+	db 48 ; Psychic Type Chance
+	db 16 ; Darkness Type Chance
+	db 16 ; Colorless Type Chance
+	db 16 ; Trainer Card Chance
+	db  0 ; Energy Card Chance
 BoosterPack_LaboratoryMostlyNeutral::
 	booster_set LABORATORY ; booster pack set
 	dw NULL ; energy generation function
@@ -390,7 +404,7 @@ BoosterPack_LaboratoryWater::
 
 BoosterPack_LaboratoryPsychic::
 	booster_set LABORATORY ; booster pack set
-	dw NULL ; energy generation function
+	dw GeneratePsychicEnergy ; energy generation function
 
 ; Card Type Chances
 	db 16 ; Grass Type Chance
@@ -404,6 +418,36 @@ BoosterPack_LaboratoryPsychic::
 	db 16 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
 
+BoosterPack_LaboratoryFighting::
+	booster_set LABORATORY ; booster pack set
+	dw GenerateFightingEnergy ; energy generation function
+
+; Card Type Chances
+	db 16 ; Grass Type Chance
+	db 16 ; Fire Type Chance
+	db 16 ; Water Type Chance
+	db 16 ; Lightning Type Chance
+	db 48 ; Fighting Type Chance
+	db 16 ; Psychic Type Chance
+	db 16 ; Darkness Type Chance
+	db 16 ; Colorless Type Chance
+	db 16 ; Trainer Card Chance
+	db  0 ; Energy Card Chance
+BoosterPack_LaboratoryLightning::
+	booster_set LABORATORY ; booster pack set
+	dw GenerateLightningEnergy ; energy generation function
+
+; Card Type Chances
+	db 16 ; Grass Type Chance
+	db 16 ; Fire Type Chance
+	db 16 ; Water Type Chance
+	db 48 ; Lightning Type Chance
+	db 16 ; Fighting Type Chance
+	db 16 ; Psychic Type Chance
+	db 16 ; Darkness Type Chance
+	db 16 ; Colorless Type Chance
+	db 16 ; Trainer Card Chance
+	db  0 ; Energy Card Chance
 BoosterPack_LaboratoryTrainer::
 	booster_set LABORATORY ; booster pack set
 	dw NULL ; energy generation function
@@ -515,4 +559,67 @@ BoosterPack_LaboratoryFire::
 	db 16 ; Colorless Type Chance
 	db 16 ; Trainer Card Chance
 	db  0 ; Energy Card Chance	
-	
+
+BoosterPack_ColosseumDarkness::
+	booster_set COLOSSEUM ; booster pack set
+	dw GenerateDarknessEnergy ; energy generation function
+
+; Card Type Chances
+	db 16 ; Grass Type Chance
+	db 16 ; Fire Type Chance
+	db 16 ; Water Type Chance
+	db 16 ; Lightning Type Chance
+	db 16 ; Fighting Type Chance
+	db 16 ; Psychic Type Chance
+	db 48 ; Darkness Type Chance
+	db 16 ; Colorless Type Chance
+	db 16 ; Trainer Card Chance
+	db  0 ; Energy Card Chance
+
+BoosterPack_EvolutionDarkness::
+	booster_set EVOLUTION ; booster pack set
+	dw GenerateDarknessEnergy ; energy generation function
+
+; Card Type Chances
+	db 16 ; Grass Type Chance
+	db 16 ; Fire Type Chance
+	db 16 ; Water Type Chance
+	db 16 ; Lightning Type Chance
+	db 16 ; Fighting Type Chance
+	db 16 ; Psychic Type Chance
+	db 48 ; Darkness Type Chance
+	db 16 ; Colorless Type Chance
+	db 16 ; Trainer Card Chance
+	db  0 ; Energy Card Chance
+
+BoosterPack_MysteryDarkness::
+	booster_set MYSTERY ; booster pack set
+	dw GenerateDarknessEnergy ; energy generation function
+
+; Card Type Chances
+	db 16 ; Grass Type Chance
+	db 16 ; Fire Type Chance
+	db 16 ; Water Type Chance
+	db 16 ; Lightning Type Chance
+	db 16 ; Fighting Type Chance
+	db 16 ; Psychic Type Chance
+	db 48 ; Darkness Type Chance
+	db 16 ; Colorless Type Chance
+	db 16 ; Trainer Card Chance
+	db  0 ; Energy Card Chance
+
+BoosterPack_LaboratoryDarkness::
+	booster_set LABORATORY ; booster pack set
+	dw GenerateDarknessEnergy ; energy generation function
+
+; Card Type Chances
+	db 16 ; Grass Type Chance
+	db 16 ; Fire Type Chance
+	db 16 ; Water Type Chance
+	db 16 ; Lightning Type Chance
+	db 16 ; Fighting Type Chance
+	db 16 ; Psychic Type Chance
+	db 48 ; Darkness Type Chance
+	db 16 ; Colorless Type Chance
+	db 16 ; Trainer Card Chance
+	db  0 ; Energy Card Chance	

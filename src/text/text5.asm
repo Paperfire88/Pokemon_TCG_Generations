@@ -206,28 +206,28 @@ CombosBookText:
 	done
 
 EnergyTransBookName:
-	text "Energy Trans"
+	text "Leaf Trans"
 	done
 
 EnergyTransBookText:
-	text "What if you place Exeggutor in the"
+	text "What if you play Tangrowth in the"
 	line "arena, but you don't have any Energy"
-	line "cards? In this case, use Venusaur's"
-	line "Energy Trans to transfer Grass"
-	line "Energy and use Big Eggsplosion! If"
-	line "you attach 8 Energy cards, you can"
-	line "give your opponent up to 160 damage."
+	line "cards? In this case, use Meganium's"
+	line "Leaf Trans to transfer Grass"
+	line "Energy and use Power Whip! If you"
+	line "attach 8 Energy cards, you can deal"
+	line "up to 160 damage in a single hit."
 	done
 
 ToxicGasBookName:
-	text "Toxic Gas"
+	text "The Forest Curse"
 	done
 
 ToxicGasBookText:
-	text "Muk's Toxic Gas is very powerful!"
-	line "It can block all Pokémon Powers!"
-	line "But be careful because it also"
-	line "blocks your own Pokémon's Powers!"
+	text "Trevenant's Forest Curse is very"
+	line "powerful! It can block all Pokémon"
+	line "Powers! But be careful because it"
+	line "also blocks your own Powers!"
 	done
 
 RainDanceBookName:
@@ -235,7 +235,7 @@ RainDanceBookName:
 	done
 
 RainDanceBookText:
-	text "Blastoise's Pokémon Power, Rain "
+	text "Greninja's Pokémon Power, Rain "
 	line "Dance, is a great boon for your"
 	line "Water Pokémon! You can attach "
 	line "as many Water Energy cards as "
@@ -244,16 +244,15 @@ RainDanceBookText:
 	done
 
 SelfdestructBookName:
-	text "Selfdestruct"
+	text "Fire Starter"
 	done
 
 SelfdestructBookText:
-	text "It's a good idea to use Defender"
-	line "when attacking with Selfdestruct."
-	line "That way, you'll be able to give"
-	line "major damage to your opponent's "
-	line "Active and Benched Pokémon without "
-	line "your Pokémon getting knocked out."
+	text "Emboar's Pokémon Power, Fire Starter"
+	line "is a great way to Recover your"
+	line "discarted Fire Energy cards!"
+	line "Re-ignite your benched Pokémon and"
+	line "attack with a fierce force."
 	done
 
 DamageSwapBookName:
@@ -264,12 +263,11 @@ DamageSwapBookText:
 	text "You can use Alakazam's Damage Swap"
 	line "to move damage counters off of a"
 	line "Pokémon that is almost knocked out,"
-	line "or you can create a combo by"
-	line "combining it with Rayquaza and"
+	line "or you can create a combo with"
 	line "Scoop Up. Keep moving damage "
-	line "counters to Rayquaza and use Scoop "
-	line "Up to return Rayquaza to your hand."
-	line "Then put Rayquaza back in play. You"
+	line "counters to a Pokémon and use Scoop"
+	line "Up to return it to your hand."
+	line "Then play that Pokémon again. You"
 	line "will have lost all damage counters!"
 	done
 
@@ -286,18 +284,17 @@ HyperBeamBookText:
 	done
 
 PrehistoricPowerBookName:
-	text "Prehistoric Power"
+	text "Tyrannical Power"
 	done
 
 PrehistoricPowerBookText:
-	text "Use Aerodactyl's Prehistoric Power"
+	text "Use Tyrantrum's Tyrannical Heart"
 	line "to block your opponent's Pokémon"
 	line "from evolving. Your own Pokémon "
 	line "can't evolve? In that case, use"
-	line "Devolution Spray on Aerodactyl "
-	line "and turn it back into a "
-	line "Mysterious Fossil. Then you'll "
-	line "be able to evolve your Pokémon!"
+	line "Devolution Spray on Tyrantrum and"
+	line "turn it back into a Tyrunt. Then"
+	line "you'll be able to evolve Pokémon!"
 	done
 
 PhantomCardsBookName:
@@ -346,17 +343,15 @@ DrawingDesiredCardsBookText:
 	line "certain card! Item Finder and"
 	line "Poké Ball will also help!"
 	done
-
 RetreatingBookName:
 	text "Retreating"
 	done
-
 RetreatingBookText:
 	text "Retreating your Active Pokémon to"
 	line "the Bench is a good strategy in"
 	line "certain situations! Retreating a "
 	line "Pokémon requires Energy cards."
-	line "Dodrio's Retreat Aid decreases the "
+	line "Braviary's Retreat Aid decreases the"
 	line "number of Energy cards required to"
 	line "retreat. If you retreat right away,"
 	line "your Pokémon won't get knocked out!"
@@ -551,15 +546,15 @@ PoisonBookText:
 	line "are other ways of healing it."
 	done
 
-GrassPokemonPokemonBreederBookName:
-	text "Grass Pokémon & Pokémon Breeder"
+GrassPokemonRareCandyBookName:
+	text "Grass Pokémon & Rare Candy"
 	done
 
-GrassPokemonPokemonBreederBookText:
+GrassPokemonRareCandyBookText:
 	text "Many Grass Pokémon are capable of"
 	line "evolving to Stage 2 Pokémon."
-	line "Use the Trainer Card, Pokémon"
-	line "Breeder, to evolve Pokémon quickly."
+	line "Use the Trainer Card, Rare Candy,"
+	line "to evolve Pokémon quickly."
 	line "You'll be able to use powerful"
 	line "attacks early in the game."
 	done
@@ -685,7 +680,7 @@ OriginalGameBoyCardsBookText:
 	line "for Game Boy includes many "
 	line "original cards, like the "
 	line ""
-	text "<Lv>14 Meowth with the Cat Punch "
+	text "<Lv>12 Meowth with the Pay Day "
 	line "attack. There are many new cards,"
 	line "so go search them out!"
 	done
@@ -735,7 +730,7 @@ LegendaryPokemonCardsVol1BookName:
 
 LegendaryPokemonCardsVol1BookText:
 	text "The first of the Legendary Pokémon"
-	line "Cards is <Lv>37 Moltres. With"
+	line "Cards is <Lv>37 Entei. With"
 	line "Firegiver, you can place Fire"
 	line "Energy cards in your hand! Also,"
 	line "Dive Bomb is a powerful attack!"
@@ -749,7 +744,7 @@ LegendaryPokemonCardsVol2BookName:
 
 LegendaryPokemonCardsVol2BookText:
 	text "The second Legendary Pokémon Card"
-	line "is <Lv>68 Zapdos. With Peal of"
+	line "is <Lv>68 Raikou. With Peal of"
 	line "Thunder, just putting this card on"
 	line "the bench causes damage!"
 	line "Also, Big Thunder is a powerful"
@@ -763,7 +758,7 @@ LegendaryPokemonCardsVol3BookName:
 
 LegendaryPokemonCardsVol3BookText:
 	text "The third Legendary Pokémon Card"
-	line "is <Lv>37 Articuno. Its Quickfreeze"
+	line "is <Lv>37 Suicune. Its Quickfreeze"
 	line "will paralyze opponents' Pokémon"
 	line "when the card is put in play!"
 	line "Also, Ice Breath is a powerful"
@@ -777,7 +772,7 @@ LegendaryPokemonCardsVol4BookName:
 
 LegendaryPokemonCardsVol4BookText:
 	text "The fourth Legendary Pokémon Card"
-	line "is <Lv>41 Dragonite. Its Healing"
+	line "is <Lv>41 Lugia. Its Healing"
 	line "Wind will heal damage done to "
 	line "Pokémon when this card is played!"
 	line "Also, Slam is a powerful attack!"
@@ -1012,44 +1007,34 @@ RonaldChallengeCup2Missed1Text:
 	text "Hey, <RAMNAME>!"
 	line "What are you doing here?"
 	done
-
 LuckyFindCheckText:
 	text "Effect check! If Heads, add"
 	line "that Trainer Card to the hand."
 	done
-
 DontapplyweaknessDescription:
 	line "(Don't apply Weakness and/or"
 	line "Resistance for Benched PKMN.)"
 	done
-
 Sended2CardfromDecktoDiscardPile:
 	text "2 Basic Energy Cards were" 
-	line "sent to your Discard Pile.           "
-	ret
-
+	line "sent to your Discard Pile."
+	done
 MoonStoneName:
 	text "Moon Stone"
 	done
-
 MoonStoneDescription:
 	text "Search your deck for a <COLORLESS> Evolution" 
 	line "card, reveal it, and add it to your"
 	line "hand. Shuffle your deck."
 	done
-
 ChooseColorlessEvolutionFromDeckText:
 	text "Choose a <COLORLESS> Evolution card"
 	line "from your deck."
 	done	
-
 ChooseColorlessEvolutionCardText:
 	text "Choose an <COLORLESS>"
 	line "Evolution PKMN."
 	done
 EvolutionaryLightName:
 	text "Evolutionary Light"
-	done
-ChrisFightingClubWouldYouLikeToDuelText:
-	text "Would you like to duel Chris?"
 	done

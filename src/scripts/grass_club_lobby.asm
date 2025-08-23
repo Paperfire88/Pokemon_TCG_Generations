@@ -77,7 +77,7 @@ Script_Lass2:
 
 .ows_e66a
 	test_if_event_equal EVENT_LASS2_TRADE_STATE, LASS2_TRADE_2_AVAILABLE
-	print_variable_npc_text Text06f4, Text06f5
+	print_text Text06f5
 	set_event EVENT_LASS2_TRADE_STATE, LASS2_TRADE_2_OFFERED
 	ask_question_jump Text06ed, .ows_e67f
 	print_text_quit_fully Text06f6

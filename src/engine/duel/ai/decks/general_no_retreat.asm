@@ -38,7 +38,10 @@ AIDoTurn_GeneralNoRetreat:
 	farcall HandleAICowardice
 ; process Trainer cards
 ; phase 2 through 4.
+	call AIDecidePlayPokemonCard
 	ld a, AI_TRAINER_CARD_PHASE_02
+	call AIProcessHandTrainerCards
+	ld a, AI_TRAINER_CARD_PHASE_03
 	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_03
 	call AIProcessHandTrainerCards
@@ -46,7 +49,6 @@ AIDoTurn_GeneralNoRetreat:
 	call AIProcessHandTrainerCards
 ; play Pokemon from hand
 	call AIDecidePlayPokemonCard
-	ret c ; return if turn ended
 ; process Trainer cards
 ; phase 5 through 12.
 	ld a, AI_TRAINER_CARD_PHASE_05
@@ -57,6 +59,7 @@ AIDoTurn_GeneralNoRetreat:
 	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_08
 	call AIProcessHandTrainerCards
+	call AIProcessRetreat
 	ld a, AI_TRAINER_CARD_PHASE_10
 	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_11
@@ -87,13 +90,20 @@ AIDoTurn_GeneralNoRetreat:
 	ld a, [wPreviousAIFlags]
 	and AI_FLAG_USED_PROFESSOR_OAK
 	jr z, .try_attack
+	call AIDecidePlayPokemonCard
 	ld a, AI_TRAINER_CARD_PHASE_01
 	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_02
 	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_03
 	call AIProcessHandTrainerCards
+	ld a, AI_TRAINER_CARD_PHASE_03
+	call AIProcessHandTrainerCards
+	ld a, [wPreviousAIFlags]
+	and AI_FLAG_USED_PROFESSOR_OAK
+	jr z, .pkmn_card
 	ld a, AI_TRAINER_CARD_PHASE_04
+.pkmn_card	
 	call AIProcessHandTrainerCards
 	call AIDecidePlayPokemonCard
 	ret c ; return if turn ended
@@ -105,6 +115,7 @@ AIDoTurn_GeneralNoRetreat:
 	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_08
 	call AIProcessHandTrainerCards
+	call AIProcessRetreat
 	ld a, AI_TRAINER_CARD_PHASE_10
 	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_11

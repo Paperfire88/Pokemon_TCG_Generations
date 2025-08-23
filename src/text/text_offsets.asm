@@ -451,10 +451,10 @@ TextOffsets::
 	textpointer StrangePsyshockDeckName
 	textpointer WondersofScienceDeckName
 	textpointer FireChargeDeckName
-	textpointer LegendaryMoltresDeckName
-	textpointer LegendaryZapdosDeckName
-	textpointer LegendaryArticunoDeckName
-	textpointer LegendaryDragoniteDeckName
+	textpointer LegendaryEnteiDeckName
+	textpointer LegendaryRaikouDeckName
+	textpointer LegendarySuicuneDeckName
+	textpointer LegendaryLugiaDeckName
 	textpointer ImRonaldDeckName
 	textpointer PowerfulRonaldDeckName
 	textpointer InvincibleRonaldDeckName
@@ -637,10 +637,10 @@ TextOffsets::
 	textpointer ChikoritaAndFriendsText
 	textpointer PsychicMachampText
 	textpointer WaterBeetleText
-	textpointer LegendaryMoltresText
-	textpointer LegendaryZapdosText
-	textpointer LegendaryArticunoText
-	textpointer LegendaryDragoniteText
+	textpointer LegendaryEnteiText
+	textpointer LegendaryRaikouText
+	textpointer LegendarySuicuneText
+	textpointer LegendaryLugiaText
 	textpointer MysteriousPokemonText
 	textpointer AllFightingPokemonDescriptionText
 	textpointer BenchAttackDescriptionText
@@ -687,10 +687,10 @@ TextOffsets::
 	textpointer ChikoritaAndFriendsDescriptionText
 	textpointer PsychicMachampDescriptionText
 	textpointer WaterBeetleDescriptionText
-	textpointer LegendaryMoltresDescriptionText
-	textpointer LegendaryZapdosDescriptionText
-	textpointer LegendaryArticunoDescriptionText
-	textpointer LegendaryDragoniteDescriptionText
+	textpointer LegendaryEnteiDescriptionText
+	textpointer LegendaryRaikouDescriptionText
+	textpointer LegendarySuicuneDescriptionText
+	textpointer LegendaryLugiaDescriptionText
 	textpointer MysteriousPokemonDescriptionText
 	textpointer PokemonCardGlossaryText
 	textpointer GlossaryMenuPage1Text
@@ -917,10 +917,10 @@ TextOffsets::
 	textpointer ElectabuzzTradeCardName
 	textpointer SlowpokeTradeCardName
 	textpointer JigglypuffTradeCardName
-	textpointer ZapdosLegendaryCardName
-	textpointer MoltresLegendaryCardName
-	textpointer ArticunoLegendaryCardName
-	textpointer DragoniteLegendaryCardName
+	textpointer RaikouLegendaryCardName
+	textpointer EnteiLegendaryCardName
+	textpointer SuicuneLegendaryCardName
+	textpointer LugiaLegendaryCardName
 	textpointer SuperEnergyRetrievalTradeCardName
 	textpointer FlyingPikachuTradeCardName
 	textpointer LightningAndFireDeckChoiceText
@@ -1158,8 +1158,8 @@ TextOffsets::
 	textpointer GrassPokemonBookText
 	textpointer PoisonBookName
 	textpointer PoisonBookText
-	textpointer GrassPokemonPokemonBreederBookName
-	textpointer GrassPokemonPokemonBreederBookText
+	textpointer GrassPokemonRareCandyBookName
+	textpointer GrassPokemonRareCandyBookText
 	textpointer PsychicPokemonBookName
 	textpointer PsychicPokemonBookText
 	textpointer SleepBookName
@@ -2207,10 +2207,10 @@ TextOffsets::
 	textpointer WildfireName
 	textpointer WildfireDescription
 	textpointer SkillDiveName
-	textpointer MoltresLv35Description
+	textpointer EnteiLv35Description
 	textpointer FiregiverName
 	textpointer FiregiverDescription
-	textpointer MoltresLv37Description
+	textpointer EnteiLv37Description
 	textpointer FroakieName
 	textpointer BubbleName
 	textpointer TinyTurtleName
@@ -2341,7 +2341,7 @@ TextOffsets::
 	textpointer IceBreathDescription
 	textpointer SuicuneDescription
 	textpointer BlitzleName
-	textpointer GnawName
+	textpointer VoltSwitchName
 	textpointer ThunderJoltName
 	textpointer ThunderJoltDescription
 	textpointer MouseName
@@ -2353,7 +2353,6 @@ TextOffsets::
 	textpointer ThundershockName
 	textpointer HelioptileDescription
 	textpointer ShinxName
-	textpointer FlyName
 	textpointer ShinxDescription
 	textpointer LuxioName
 	textpointer SurfName
@@ -2410,12 +2409,12 @@ TextOffsets::
 	textpointer VikavoltDescription
 	textpointer ThunderboltName
 	textpointer ThunderboltDescription
-	textpointer ZapdosLv64Description
+	textpointer RaikouLv64Description
 	textpointer PealOfThunderName
 	textpointer PealOfThunderDescription
 	textpointer BigThunderName
 	textpointer BigThunderDescription
-	textpointer ZapdosLv68Description
+	textpointer RaikouLv68Description
 	textpointer SandAttackName
 	textpointer MeowthDescription
 	textpointer PerrserkerName
@@ -2615,7 +2614,7 @@ TextOffsets::
 	textpointer HurricaneDescription
 	textpointer PorygonZDescription
 	textpointer ZigzagoonName
-	textpointer RatName
+	textpointer RacoonName
 	textpointer RattataDescription
 	textpointer LinooneName
 	textpointer SuperFangName
@@ -2725,11 +2724,11 @@ TextOffsets::
 	textpointer GoodraName
 	textpointer HealingWindName
 	textpointer HealingWindDescription
-	textpointer DragoniteLv41Description
+	textpointer LugiaLv41Description
 	textpointer StepInName
 	textpointer StepInDescription
 	textpointer DoubleAttackX40Description
-	textpointer DragoniteDescription
+	textpointer LugiaDescription
 	textpointer ProfessorOakName
 	textpointer ProfessorOakDescription
 	textpointer ImposterProfessorOakName
@@ -3912,5 +3911,31 @@ TextOffsets::
 	textpointer BlandeName
 	textpointer EmotionName
 	textpointer DragonPulseName
+	textpointer EmeraldBreakName
+	textpointer BurnCheckText
+	textpointer StaticBuildupName
 	textpointer DragonPulseDescription
-	textpointer EmeraldBreak
+	textpointer SkyHighName
+	textpointer LunarDreamsName
+	textpointer LunarDreamsDescription
+	textpointer LunarCressName
+	textpointer LeafArrowName
+	textpointer LeafArrowDescription
+	textpointer SpectralFlamesName
+	textpointer SpectralFlamesDescription
+	textpointer BurningVoiceDescription
+	textpointer SharpSickleDescription
+	textpointer MagnemiteAndFriendsDescriptionText
+	textpointer TrapinchAndFriendsDescriptionText
+	textpointer RaltsAndFriendsDescriptionText
+	textpointer DeinoAndFriendsDescriptionText
+	textpointer FlashPressureName
+	textpointer PracticeDeckDescriptionText
+	textpointer LightningAndFireDeckDescriptionText
+	textpointer WaterAndFightingDeckDescriptionText
+	textpointer GrassAndPsychicDeckDescriptionText
+	textpointer ADamageCounterWasSetText
+	textpointer DeinoAndFriendsText
+	textpointer RaltsAndFriendsText
+	textpointer TrapinchAndFriendsText
+	textpointer ThereAreNoPokemonOrEnergyCardsInDiscardPileText

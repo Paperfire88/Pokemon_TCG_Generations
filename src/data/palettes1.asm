@@ -1286,42 +1286,42 @@ Palette28::
 Palette29::
 	db 2, %11010011, %11100011
 	db 8
-
+;Blue
 	rgb  6, 14, 11
 	rgb 30, 27, 24
 	rgb  6, 15, 25
 	rgb  0,  0,  0
-
+;Pink
 	rgb  6, 14, 11
 	rgb 30, 27, 24
 	rgb 30, 13, 18
 	rgb  0,  0,  0
-
+;Yellow
 	rgb  6, 14, 11
 	rgb 30, 27, 24
-	rgb 28, 24,  5
+	rgb 30, 24,  0
 	rgb  0,  0,  0
-
+;Green
 	rgb  6, 14, 11
 	rgb 30, 27, 24
 	rgb  4, 19,  3
 	rgb  0,  0,  0
-
+;Red
 	rgb  6, 14, 11
 	rgb 30, 27, 24
 	rgb 30,  5,  9
 	rgb  0,  0,  0
-
+;Purple
 	rgb  6, 14, 11
 	rgb 30, 27, 24
 	rgb 15,  8, 26
 	rgb  0,  0,  0
-
+;White
 	rgb  6, 14, 11
 	rgb 30, 27, 24
 	rgb 31, 31, 31
 	rgb  0,  0,  0
-
+;Indigo
 	rgb  6, 14, 11
 	rgb 30, 27, 24
 	rgb  9,  9, 27

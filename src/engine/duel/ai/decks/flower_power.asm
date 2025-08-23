@@ -7,7 +7,7 @@ AIActionTable_FlowerPower:
 	dw .take_prize
 
 .do_turn
-	jp AIMainTurnLogic
+	jp AIDoTurn_GeneralNoRetreat 
 
 .start_duel
 	call InitAIDuelVars
@@ -28,14 +28,13 @@ AIActionTable_FlowerPower:
 
 .list_arena
 	dw APPLIN
-	dw SNOVER
+	dw TANGELA
 	dw CHIKORITA
 	dw NULL
 
 .list_bench
 	dw CHIKORITA
-	dw SNOVER
-	dw APPLIN
+	dw TANGELA
 	dw NULL
 
 .list_retreat
@@ -46,18 +45,19 @@ AIActionTable_FlowerPower:
 	dw NULL
 
 .list_energy
-	ai_energy CHIKORITA,      3, +0
-	ai_energy BAYLEEF,        4, +0
-	ai_energy MEGANIUM,  4, +0
+	ai_energy CHIKORITA,      2, +0
+	ai_energy BAYLEEF,        3, +1
+	ai_energy MEGANIUM,  4, +1
 	ai_energy APPLIN,         2, +0
 	ai_energy FLAPPLE,          3, -1
 	ai_energy APPLETUN,      3, -1
-	ai_energy SNOVER,      3, +0
-	ai_energy ABOMASNOW,     22, +0
+	ai_energy TANGELA,      2, +0
+	ai_energy TANGROWTH,     22, +1
 	dw NULL
 
 .list_prize
 	dw MEGANIUM
+	dw RARE_CANDY
 	dw NULL
 
 .store_list_pointers

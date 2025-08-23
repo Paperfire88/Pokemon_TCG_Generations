@@ -2196,7 +2196,9 @@ Func_4f2d:
 	jr z, .skip_draw_scene
 	call ZeroObjectPositionsAndToggleOAMCopy
 	call EmptyScreen
+	call SetDefaultConsolePalettes
 	call DrawDuelistPortraitsAndNames
+	call LoadDuelDrawCardsScreenTiles
 .skip_draw_scene
 	ld a, SHUFFLE_DECK
 	ld [wDuelDisplayedScreen], a
@@ -2559,8 +2561,6 @@ PracticeDuelActionTable:
 	dw NULL
 	dw PracticeDuel_DrawSevenCards
 	dw PracticeDuel_PlayBasculin
-	dw PracticeDuel_PutStaryuInBench
-	dw PracticeDuel_VerifyInitialPlay
 	dw PracticeDuel_DonePuttingOnBench
 	dw PracticeDuel_PrintTurnInstructions
 	dw PracticeDuel_VerifyPlayerTurnActions
@@ -2577,28 +2577,14 @@ PracticeDuel_DrawSevenCards:
 PracticeDuel_PlayBasculin:
 	ld hl, wLoadedCard1ID
 	cphl BASCULIN
-	ret z
+	ret nz
 	ldtx hl, ChooseBasculinPracticeDuelText
 	ldtx de, DrMasonText ; unnecessary
 	scf
 	jp PrintPracticeDuelDrMasonInstructions
 
-PracticeDuel_PutStaryuInBench:
-	call DisplayPracticeDuelPlayerHandScreen
-	call EnableLCD
-	ldtx hl, PutPokemonOnBenchPracticeDuelText
-	jp PrintPracticeDuelDrMasonInstructions
-
-PracticeDuel_VerifyInitialPlay:
-	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-	call GetTurnDuelistVariable
-	cp 2
-	ret z
-	ldtx hl, ChooseStaryuPracticeDuelText
-	scf
-	jp PrintPracticeDuelDrMasonInstructions
-
 PracticeDuel_DonePuttingOnBench:
+	scf
 	call DisplayPracticeDuelPlayerHandScreen
 	call EnableLCD
 	ld a, $ff
@@ -2636,8 +2622,6 @@ PracticeDuel_VerifyPlayerTurnActions:
 ;	fallthrough
 
 PracticeDuel_RepeatInstructions:
-	ldtx hl, FollowMyGuidancePracticeDuelText
-	call PrintPracticeDuelDrMasonInstructions
 	; restart the turn from the saved data of the previous turn
 	ld a, $02
 	call BankswitchSRAM
@@ -2849,20 +2833,12 @@ PracticeDuelTurnVerificationPointerTable:
 PracticeDuelVerify_Turn1:
 	ld hl, wTempCardID_ccc2
 	cphl BASCULIN
-	jp nz, ReturnWrongAction
+	jp z, ReturnWrongAction
 	ret
 
 PracticeDuelVerify_Turn2:
 	ld hl, wTempCardID_ccc2
 	cphl BASCULEGION
-	jp nz, ReturnWrongAction
-	ld a, [wSelectedAttack]
-	cp 1
-	jp nz, ReturnWrongAction
-	ld e, PLAY_AREA_ARENA
-	call GetPlayAreaCardAttachedEnergies
-	ld a, [wAttachedEnergies + PSYCHIC]
-	or a
 	jp z, ReturnWrongAction
 	ret
 
@@ -3106,7 +3082,19 @@ DrawCardListScreenLayout:
 	ret z
 	or a
 	ret
-
+DisplayCardList_PrintText:
+    push hl
+    push de
+    call InitAndDrawCardListScreenLayout_MenuTypeSelectCheck
+    pop de
+    pop hl
+    call SetCardListHeaderText
+    jp DisplayCardList
+InitAndDrawCardListScreenLayout_MenuTypeSelectCheck:
+    call InitAndDrawCardListScreenLayout
+    ld a, SELECT_CHECK
+    ld [wCardListItemSelectionMenuType], a
+    ret		
 ; displays a list of cards and handles input in order to navigate through the list,
 ; select a card, open a card page, etc.
 ; input:
@@ -4821,6 +4809,7 @@ Func_61a1:
 ; also print the play area locations (ACT/BPx indicators) for each of the six slots.
 ; return the value of wNumPlayAreaItems (as returned from PrintPlayAreaCardList) in a.
 PrintPlayAreaCardList_EnableLCD:
+	call SetDefaultConsolePalettes
 	ld a, PLAY_AREA_CARD_LIST
 	ld [wDuelDisplayedScreen], a
 	call PrintPlayAreaCardList
@@ -5367,6 +5356,7 @@ DisplayUsePokemonPowerScreen::
 	call EmptyScreen
 	call LoadDuelCardSymbolTiles
 	call LoadDuelCheckPokemonScreenTiles
+	call SetDefaultConsolePalettes
 	call PrintPlayAreaCardInformationAndLocation
 	lb de, 1, 4
 	call InitTextPrinting
@@ -7767,6 +7757,6 @@ HandleOnPlayEnergyEffects:
 	ret nz
 	call SwapTurn
 	ld e, PLAY_AREA_ARENA
-	call SwapTurn
   	farcall Put1DamageCounterOnTarget
+	call SwapTurn
 	ret

@@ -517,8 +517,6 @@ HitmonSearch_PlayerSelectEffect:
 
 	call CreateDeckCardList
 	ldtx hl, ChooseAHitmonFromDeckText
-	ldtx bc, HitmonchanName
-	ld de, SEARCHEFFECT_HITMON
 
 ; draw Deck list interface and print text
 	bank1call Func_5591
@@ -530,14 +528,11 @@ HitmonSearch_PlayerSelectEffect:
 	bank1call DisplayCardList
 	jr c, .pressed_b
 	call GetCardIDFromDeckIndex
-	ld bc, HITMONCHAN
-	call CompareDEtoBC
+	cp16 HITMONCHAN
 	jr z, .selected_nidoran
-	ld bc, HITMONLEE
-	call CompareDEtoBC
+	cp16 HITMONLEE
 	jr z, .selected_nidoran
-	ld bc, HITMONTOP
-	call CompareDEtoBC
+	cp16 HITMONTOP
 	jr nz, .loop ; .play_sfx would be more appropriate here
 
 .selected_nidoran
@@ -599,35 +594,7 @@ HitmonSearch_AISelectEffect:
 	cp HITMONTOP
 	jr nz, .loop_deck
 .found
-	ret
-
-Burstinginferno_DiscardDeckEffect1:
-	ldh a, [hTemp_ffa0]
-	ld c, a
-	ld b, $00
-	sub [hl]
-	cp c
-	jr nc, .start_discard
-	; only discard number of cards that are left in deck
-	ld c, a
-
-.start_discard
-	push bc
-	inc c
-	jr .check_remaining
-
-.loop
-	ld a, 20
-	call AddToDamage
-.check_remaining
-	dec c
-	jr nz, .loop
-	ret
-
-Burstinginferno_AIEffect:
-	ld a, 70
-	lb de, 70, 70
-	jp SetExpectedAIDamage		
+	ret	
 
 Stage1Search_DeckCheck:
 	ld a, DUELVARS_NUMBER_OF_CARDS_NOT_IN_DECK
@@ -952,8 +919,6 @@ MarowakCallForFamily_PlayerSelectEffect2:
 	ldtx hl, ChooseBasicFightingPokemonFromDeckText
 	ldtx bc, FightingPokemonDeckText
 	ld d, SEARCHEFFECT_BASIC_FIGHTING
-	farcall LookForCardsInDeck
-	ret c
 
 ; draw Deck list interface and print text
 	bank1call Func_5591
@@ -1321,8 +1286,6 @@ FindFighting:
 	ldtx hl, ChooseFightingPKMNCardFromDeckText
 	ldtx bc, FightingPokemonText
 	lb de, SEARCHEFFECT_FIGHTING, 0
-	farcall LookForCardsInDeck
-	jr c, .exit ; no Trainer cards in the deck
 
 ; draw deck list interface and print text
 	bank1call Func_5591
@@ -1740,7 +1703,7 @@ use_pokemon_powerEffect:
 	ret
 
 RodEffect2:
-  farcall CreateNoTrainerCardListFromDiscardPile
+  call CreateNoTrainerCardListFromDiscardPile
   ld a, 3
   ld [hTempCardIndex_ff9f], a
   ld a, $ff
@@ -1766,10 +1729,10 @@ RodEffect2:
   jr .done
 
 .store_selected_card
+	farcall RemoveCardFromDuelTempList
   farcall GetNextPositionInTempList_TrainerEffects
 	ldh a, [hTempCardIndex_ff98]
 	ld [hl], a
-	farcall RemoveCardFromDuelTempList
 	jr c, .done
   ld a, [hTempCardIndex_ff9f]
   ld b, a
@@ -2945,13 +2908,10 @@ MysteriousFossil_PlayerSelection:
 	ret c ; skip showing deck
 
 	bank1call Func_5591
-	ldtx hl, ChooseBasicEnergyCardText
-	ldtx de, DuelistDeckText
-	bank1call SetCardListHeaderText
 .loop
   bank1call InitAndDrawCardListScreenLayout
   ldtx hl, PleaseSelectCardText
-  ldtx de, PlayerDiscardPileText
+  ldtx de, DuelistDeckText
   bank1call SetCardListHeaderText
   ld a, [wDuelTempList]
   cp $ff
@@ -3133,7 +3093,7 @@ MAGMAR_PlayerSelectEffect:
 
 	call CreateDeckCardList
 	ldtx hl, ChooseaMagmarFromDeckText
-	ldtx bc, PikachuName
+	ldtx bc, MagmarName
 	ld de, MAGMAR
 	farcall LookForCardsInDeck
 	ret c
@@ -3270,31 +3230,6 @@ Subs_AISelectEffect:
 .found
 	ret
 
-CheckIfyouhave3orMoreEvolvedPKMNinBench2:
-	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-	call GetTurnDuelistVariable
-	ld d, a
-	ld e, PLAY_AREA_BENCH_1
-	ld c, 0
-
-; go through every Pokemon in the Play Area, add 10 per injured mon.
-.loop_play_area
-; check its damage
-	ld a, e
-	ldh [hTempPlayAreaLocation_ff9d], a
-	cp	STAGE2
-	or a
-	jr z, .next_pkmn ; if no damage, skip Pokemon
-
-; add to damage
-	inc c
-.next_pkmn
-	inc e
-	dec d
-	jr nz, .loop_play_area
-	ld a, c
-	ret
-
 TotalRetreatCost_10xDamageEffect2:
     ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
     farcall GetTurnDuelistVariable
@@ -3397,7 +3332,7 @@ ELECTABUZZ_PlayerSelectEffect:
 	bank1call DisplayCardList
 	jr c, .pressed_b
 	call GetCardIDFromDeckIndex
-	cp16 ELECTABUZZ_LV35
+	cp16 ELECTABUZZ
 	jr nz, .play_sfx
 
 ; Krabby was selected
@@ -3422,7 +3357,7 @@ ELECTABUZZ_PlayerSelectEffect:
 	jr nz, .next
 	ld a, l
 	call GetCardIDFromDeckIndex
-	cp16 ELECTABUZZ_LV35
+	cp16 ELECTABUZZ
 	jr z, .play_sfx ; found Krabby, go back to top loop
 .next
 	inc l
@@ -3619,3 +3554,17 @@ AI3orMoreRetreatCost:
 	cp 3
 	jr nz, .loop_deck ; card isn't a Trainer card
 	ret ; Trainer card found	
+
+TYRANITAR_AISelectEffect2:
+	call CreateDeckCardList
+	ld hl, wDuelTempList
+.loop_deck
+	ld a, [hli]
+	ldh [hTemp_ffa0], a
+	cp $ff
+	ret z ; none found
+	call GetCardIDFromDeckIndex
+	cp16 TYRANITAR
+	jr nz, .loop_deck
+.found
+	ret

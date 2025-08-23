@@ -7,7 +7,7 @@ AIActionTable_RockCrusher:
 	dw .take_prize
 
 .do_turn
-	jp AIMainTurnLogic
+	jp AIDoTurn_GeneralNoRetreat
 
 .start_duel
 	call InitAIDuelVars
@@ -27,36 +27,38 @@ AIActionTable_RockCrusher:
 	jp AIPickPrizeCards
 
 .list_arena
-	dw CUFANT
-	dw HAWLUCHA
-	dw TRAPINCH
-	dw SILICOBRA
+	dw ROCKRUFF
+	dw LARVITAR
+	dw MEOWTH
 	dw NULL
 
 .list_bench
-	dw SILICOBRA
-	dw TRAPINCH
-	dw CUFANT
-	dw HAWLUCHA
+	dw ROCKRUFF
+	dw LARVITAR
+	dw MEOWTH
 	dw NULL
 
 .list_retreat
-	ai_retreat SILICOBRA, -1
+	ai_retreat TYRANITAR, -1
+	ai_retreat PERRSERKER, -1
+	ai_retreat LYCANROC, +0
 	dw NULL
 
 .list_energy
-	ai_energy SILICOBRA,  3, +1
-	ai_energy SANDACONDA,  4, +0
-	ai_energy TRAPINCH,  2, +1
-	ai_energy VIBRAVA, 3, +0
-	ai_energy FLYGON,    4, +0
-	ai_energy HAWLUCHA,     2, -1
-	ai_energy CUFANT,  3, +0
+	ai_energy ROCKRUFF,  2, +1
+	ai_energy LYCANROC,  3, +1
+	ai_energy LARVITAR,  2, +1
+	ai_energy PUPITAR, 3, +2
+	ai_energy TYRANITAR,    4, +2
+	ai_energy MEOWTH,  2, +1
+	ai_energy PERRSERKER,  3, +1
 	dw NULL
 
 .list_prize
 	dw ENERGY_REMOVAL
-	dw CUFANT
+	dw PERRSERKER
+	dw TYRANITAR
+	dw POTION
 	dw NULL
 
 .store_list_pointers

@@ -193,24 +193,31 @@ CheckIfEnergyIsUseful:
 	ld hl, wTempCardID 
 
 	ld bc, PSYCHIC_ENERGY
-	cphl SNOVER
+	cphl BASCULIN
 	jp z, .check_energy
-	cphl ABOMASNOW
+	cphl BASCULEGION
 	jp z, .check_energy
-	cphl TOXEL
-	jp z, .check_energy
+
+	ld bc, FIGHTING_ENERGY
 	cphl TYMPOLE
 	jp z, .check_energy
 	cphl PALPITOAD
 	jp z, .check_energy
 	cphl SEISMITOAD
 	jp z, .check_energy
+	cphl BRELOOM
+	jp z, .check_energy
 
 	ld bc, WATER_ENERGY
-	cphl LUXIO
-	jr z, .check_energy
-	cphl LUXRAY
-	jr z, .check_energy
+	cphl ABOMASNOW
+	jp z, .check_energy
+	cphl BIBAREL
+	jp z, .check_energy
+
+
+	ld bc, LIGHTNING_ENERGY
+	cphl KOMMO_O
+	jp z, .check_energy
 
 	cphl EEVEE
 	jr nz, .check_type
@@ -1949,8 +1956,10 @@ AISelectSpecialAttackParameters:
 	call GetCardIDFromDeckIndex
 	cp16 MEW
 	jp z, .DevolutionBeam
-	cp16 CRESSELIA
-	jp z, .EnergyAbsorption
+	cp16 ELECTABUZZ
+	jp z, .Plasma
+	cp16 RIOLU
+	jp z, .Wave
 	cp16 MEWTWO_LV60
 	jp z, .EnergyAbsorption
 	cp16 ABOMASNOW
@@ -1970,9 +1979,9 @@ AISelectSpecialAttackParameters:
 	cp16 ROCKRUFF
 	jp z, .EnergySpikeFighting
 	cp16 CUTIEFLY
-	jr z, .EnergySpikePsychic
+	jp z, .EnergySpikePsychic
 	cp16 IMPIDIMP
-	jr z, .EnergySpikeDarkness
+	jp z, .EnergySpikeDarkness
 	; fallthrough
 
 .no_carry
@@ -1995,7 +2004,43 @@ AISelectSpecialAttackParameters:
 .set_carry_1
 	scf
 	ret
+.Plasma
+; in case selected attack is Energy Absorption
+; make list from energy cards in Discard Pile
+	ld a, [wSelectedAttack]
+	or a
+	jp nz, .no_carry  ; can be jr
 
+	ld a, $ff
+	ldh [hTempPlayAreaLocation_ffa1], a
+	ldh [hTempRetreatCostCards], a
+
+; search for Psychic energy cards in Discard Pile
+	ld de, LIGHTNING_ENERGY
+	ld a, CARD_LOCATION_DISCARD_PILE
+	call CheckIfAnyCardIDinLocation
+	ldh [hTemp_ffa0], a
+	farcall CreateEnergyCardListFromDiscardPile_AllEnergy
+	jp .ld_hl
+
+.Wave
+; in case selected attack is Energy Absorption
+; make list from energy cards in Discard Pile
+	ld a, [wSelectedAttack]
+	or a
+	jp nz, .no_carry  ; can be jr
+
+	ld a, $ff
+	ldh [hTempPlayAreaLocation_ffa1], a
+	ldh [hTempRetreatCostCards], a
+
+; search for Psychic energy cards in Discard Pile
+	ld de, FIGHTING_ENERGY
+	ld a, CARD_LOCATION_DISCARD_PILE
+	call CheckIfAnyCardIDinLocation
+	ldh [hTemp_ffa0], a
+	farcall CreateEnergyCardListFromDiscardPile_AllEnergy
+	jr .ld_hl
 .EnergyAbsorption
 ; in case selected attack is Energy Absorption
 ; make list from energy cards in Discard Pile
@@ -2020,6 +2065,7 @@ AISelectSpecialAttackParameters:
 ; and another one is in hTemp_ffa0,
 ; then any other energy card would account
 ; for the Energy Cost of Psyburn.
+.ld_hl
 	ld hl, wDuelTempList
 .loop_energy_cards
 	ld a, [hli]
@@ -2046,7 +2092,7 @@ AISelectSpecialAttackParameters:
 	or a
 	jp nz, .no_carry  ; can be jr
 	call AIDecideBenchPokemonToSwitchTo
-	jr c, .no_carry
+	jp c, .no_carry
 	ldh [hTemp_ffa0], a
 	scf
 	ret
@@ -2773,11 +2819,11 @@ Func_175a8:
 	ret
 
 ; handle how AI scores giving out Energy Cards
-; when using Legendary Articuno deck
-HandleLegendaryArticunoEnergyScoring:
+; when using Legendary Suicune deck
+HandleLegendarySuicuneEnergyScoring:
 	ld a, [wOpponentDeckID]
 	cp LEGENDARY_ARTICUNO_DECK_ID
 	jr z, .articuno_deck
 	ret
 .articuno_deck
-	jp ScoreLegendaryArticunoCards
+	jp ScoreLegendarySuicuneCards

@@ -1,4 +1,4 @@
-AIActionTable_LegendaryZapdos:
+AIActionTable_LegendaryRaikou:
 	dw .do_turn ; unused
 	dw .do_turn
 	dw .start_duel
@@ -7,7 +7,7 @@ AIActionTable_LegendaryZapdos:
 	dw .take_prize
 
 .do_turn
-	jp AIDoTurn_LegendaryZapdos
+	jp AIDoTurn_GeneralNoRetreat
 
 .start_duel
 	call InitAIDuelVars
@@ -27,41 +27,35 @@ AIActionTable_LegendaryZapdos:
 	jp AIPickPrizeCards
 
 .list_arena
-	dw ELECTABUZZ_LV35
-	dw TOXEL
-	dw EEVEE
-	dw VIKAVOLT
-	dw ZERAORA
-	dw RAIKOU
+	dw SHINX
+	dw EMOLGA
+	dw BLITZLE
 	dw NULL
 
 .list_bench
-	dw ZERAORA
-	dw VIKAVOLT
-	dw EEVEE
-	dw TOXEL
-	dw ELECTABUZZ_LV35
+	dw SHINX
+	dw EMOLGA
+	dw BLITZLE
 	dw NULL
 
 .list_retreat
 	ai_retreat EEVEE,           -5
 	ai_retreat TOXEL,         -5
-	ai_retreat ELECTABUZZ_LV35, -5
+	ai_retreat ELECTABUZZ, -5
 	dw NULL
 
 .list_energy
-	ai_energy TOXEL,         1, -1
-	ai_energy TOXTRICITY,  3, +0
-	ai_energy ELECTABUZZ_LV35, 2, -1
-	ai_energy JOLTEON_LV29,    3, +1
-	ai_energy VIKAVOLT,     4, +2
-	ai_energy ZERAORA,     4, +2
+	ai_energy TOXEL,         2, +0
+	ai_energy LUXIO,  3, +1
+	ai_energy LUXRAY, 3, +1
+	ai_energy EMOLGA,    2, +0
+	ai_energy BLITZLE,     2, +1
+	ai_energy ZEBSTRIKA,     3, +1
 	ai_energy RAIKOU,     3, +1
-	ai_energy EEVEE,           3, +0
 	dw NULL
 
 .list_prize
-	dw COPYCAT
+	dw BLITZLE
 	dw RAIKOU
 	dw NULL
 
@@ -74,7 +68,7 @@ AIActionTable_LegendaryZapdos:
 	store_list_pointer wAICardListEnergyBonus, .list_energy
 	ret
 
-AIDoTurn_LegendaryZapdos:
+AIDoTurn_LegendaryRaikou:
 ; initialize variables
 	call InitAITurnVars
 	farcall HandleAIAntiMewtwoDeckStrategy
@@ -112,7 +106,7 @@ AIDoTurn_LegendaryZapdos:
 	jr nc, .attach_normally
 	jr .voltorb_or_electabuzz
 .check_electabuzz
-	cp16 ELECTABUZZ_LV35
+	cp16 ELECTABUZZ
 	jr nz, .attach_normally
 
 .voltorb_or_electabuzz

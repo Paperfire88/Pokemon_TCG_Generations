@@ -7,7 +7,7 @@ AIActionTable_ImRonald:
 	dw .take_prize
 
 .do_turn
-	jp AIMainTurnLogic
+	jp AIDoTurn_GeneralNoRetreat
 
 .start_duel
 	call InitAIDuelVars
@@ -27,42 +27,37 @@ AIActionTable_ImRonald:
 	jp AIPickPrizeCards
 
 .list_arena
-	dw CHEWTLE
-	dw SEEL
 	dw TEPIG
-	dw LARVITAR
-	dw FROAKIE
 	dw SIZZLIPEDE
+	dw ZIGZAGOON
 	dw NULL
 
 .list_bench
 	dw TEPIG
-	dw FROAKIE
-	dw SEEL
-	dw LARVITAR
 	dw SIZZLIPEDE
-	dw CHEWTLE
+	dw DRAMPA
+	dw ZIGZAGOON
 	dw NULL
 
 .list_retreat
+	ai_retreat TOGEKISS, -1
+	ai_retreat AUDINO,         -1
+	ai_retreat SIZZLIPEDE,       -1
 	dw NULL
 
 .list_energy
-	ai_energy TEPIG,     3, +0
-	ai_energy PIGNITE,     5, +0
-	ai_energy SIZZLIPEDE,      2, +0
-	ai_energy CENTISKORCH,  4, +0
-	ai_energy FROAKIE,       2, +0
-	ai_energy FROGADIER,      3, +0
-	ai_energy SEEL,           3, +0
-	ai_energy DEWGONG,        4, +0
-	ai_energy CHEWTLE,         3, +0
-	ai_energy LARVITAR,         3, +0
-	ai_energy TYRANITAR,   3, +0
+	ai_energy TEPIG,       2, +1
+	ai_energy PIGNITE,   3, +1
+	ai_energy DRAMPA,     3, +0
+	ai_energy SIZZLIPEDE, 2, +1
+	ai_energy CENTISKORCH, 3, +1
+	ai_energy ZIGZAGOON,      1, +0
+	ai_energy LINOONE,      1, +0
 	dw NULL
 
 .list_prize
-	dw CHEWTLE
+	dw SIZZLIPEDE
+	dw ENERGY_REMOVAL
 	dw NULL
 
 .store_list_pointers

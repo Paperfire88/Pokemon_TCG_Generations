@@ -78,6 +78,7 @@ MACRO cp16
 ENDM
 
 MACRO cphl
+	inc hl
 	ld a, [hld]
 	cp HIGH(\1)
 	jr nz, :+

@@ -24,14 +24,14 @@ ImpidimpCard:
 	db ATK_ANIM_GLOW_EFFECT ; animation
 
 	; attack 1
-	energy DARKNESS, 1 ; energies
+	energy COLORLESS, 1 ; energies
 	tx ScoutName ; name
 	tx ScoutDescription ; description
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
 	dw ScoutEffectCommands ; effect commands
-	db NONE ; flags 1
+	db DAMAGE_TO_OPPONENT_BENCH_F ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
@@ -46,7 +46,7 @@ ImpidimpCard:
 	db 2, 11 ; length
 	dw 22 * 10 ; weight
 	tx ImpidimpDescription ; description
-	db 19
+	db 16
 
 MorgremCard:
 	db TYPE_PKMN_DARKNESS ; type
@@ -113,7 +113,7 @@ GrimmsnarlCard:
 	energy 0 ; energies
 	tx DarkOathName ; name
 	tx DarkOathDescription ; description
-	dw NONE ; description (cont)
+	tx PKMNPowerCondition ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw jfEffectCommands ; effect commands
@@ -167,7 +167,7 @@ PawniardCard:
 	db 0 ; damage
 	db RESIDUAL ; category
 	dw SharpenEffectCommands ; effect commands
-	db NONE ; flags 1
+	db DAMAGE_TO_OPPONENT_BENCH_F ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
@@ -181,7 +181,7 @@ PawniardCard:
 	db 20 ; damage
 	db DAMAGE_NORMAL ; category
 	dw NONE ; effect commands
-	db NONE ; flags 1
+	db DAMAGE_TO_OPPONENT_BENCH_F ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
@@ -217,7 +217,7 @@ BisharpCard:
 	db 0 ; damage
 	db DAMAGE_NORMAL ; category
 	dw MetalSoundEffectCommands ; effect commands
-	db NONE ; flags 1
+	db INFLICT_CONFUSION ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
@@ -230,7 +230,7 @@ BisharpCard:
 	dw NONE ; description (cont)
 	db 40 ; damage
 	db DAMAGE_PLUS ; category
-	dw TripleKickEffectCommands ; effect commands
+	dw SuckerPunchEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -271,7 +271,7 @@ AbraCard:
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_GLOW_EFFECT ; animation
+	db ATK_ANIM_GLOW_ATTACK ; animation
 
 	; attack 2
 	energy PSYCHIC, 1, COLORLESS, 1 ; energies
@@ -281,8 +281,8 @@ AbraCard:
 	db 20 ; damage
 	db DAMAGE_NORMAL ; category
 	dw AbraConfusionEffectCommands ; effect commands
-	db NONE ; flags 1
-	db NONE ; flags 2
+	db INFLICT_CONFUSION ; flags 1
+	db ATTACHED_ENERGY_BOOST_F ; flags 2
 	db NONE ; flags 3
 	db 0
 	db ATK_ANIM_PSYCHIC_HIT ; animation
@@ -296,7 +296,7 @@ AbraCard:
 	db 2, 11 ; length
 	dw 43 * 10 ; weight
 	tx AbraDescription ; description
-	db 19
+	db 16
 
 KadabraCard:
 	db TYPE_PKMN_PSYCHIC ; type
@@ -331,8 +331,8 @@ KadabraCard:
 	db 30 ; damage
 	db DAMAGE_PLUS ; category
 	dw SuperPsiEffectCommands ; effect commands
-	db NONE ; flags 1
-	db NONE ; flags 2
+	db INFLICT_CONFUSION ; flags 1
+	db ATTACHED_ENERGY_BOOST_F ; flags 2
 	db NONE ; flags 3
 	db 10
 	db ATK_ANIM_PSYCHIC_HIT ; animation
@@ -346,7 +346,7 @@ KadabraCard:
 	db 4, 3 ; length
 	dw 125 * 10 ; weight
 	tx KadabraDescription ; description
-	db 19
+	db 16
 
 AlakazamCard:
 	db TYPE_PKMN_PSYCHIC ; type
@@ -381,8 +381,8 @@ AlakazamCard:
 	db 40 ; damage
 	db DAMAGE_PLUS ; category
 	dw PsychicZenEffectCommands ; effect commands
-	db NONE ; flags 1
-	db NONE ; flags 2
+	db INFLICT_CONFUSION ; flags 1
+	db ATTACHED_ENERGY_BOOST_F ; flags 2
 	db NONE ; flags 3
 	db 0
 	db ATK_ANIM_PSYCHIC_HIT ; animation
@@ -417,14 +417,14 @@ GastlyCard:
 	db 0 ; damage
 	db RESIDUAL ; category
 	dw SleepingPoisonEffectCommands ; effect commands
-	db INFLICT_POISON/INFLICT_SLEEP ; flags 1
+	db DAMAGE_TO_OPPONENT_BENCH ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
 	db ATK_ANIM_SLEEPING_GAS ; animatio
 
 	; attack 1
-	energy DARKNESS, 2 ; energies
+	energy DARKNESS, 1, COLORLESS, 1 ; energies
 	tx SpookifyName ; name
 	tx SpookifyDescription ; description
 	dw NONE ; description (cont)
@@ -446,7 +446,7 @@ GastlyCard:
 	db 2, 11 ; length
 	dw 22 * 10 ; weight
 	tx GastlyDescription ; description
-	db 19
+	db 16
 
 HaunterCard:
 	db TYPE_PKMN_DARKNESS ; type
@@ -481,7 +481,7 @@ HaunterCard:
 	db 20 ; damage
 	db DAMAGE_PLUS ; category
 	dw PoltergeistEffectCommands ; effect commands
-	db NONE ; flags 1
+	db DAMAGE_TO_OPPONENT_BENCH ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
@@ -496,7 +496,7 @@ HaunterCard:
 	db 2, 11 ; length
 	dw 22 * 10 ; weight
 	tx HaunterDescription ; description
-	db 19
+	db 16
 
 GengarCard:
 	db TYPE_PKMN_DARKNESS ; type
@@ -513,7 +513,7 @@ GengarCard:
     energy 0 ; energies
     tx DeepSleepName ; name
     tx DeepSleepDescription ; description
-    dw NONE ; description (cont)
+	tx PKMNPowerCondition ; description (cont)
     db 0 ; damage
     db POKEMON_POWER ; category
     dw DeepSleepEffectCommands ; effect commands
@@ -524,7 +524,7 @@ GengarCard:
     db ATK_ANIM_PKMN_POWER_1
 
 	; attack 3
-	energy DARKNESS, 3, ; energies
+	energy DARKNESS, 2, COLORLESS, 1, ; energies
 	tx PoltergeistName ; name
 	tx PoltergeistDescription ; description
 	dw NONE ; description (cont)
@@ -604,7 +604,7 @@ ElectabuzzLv35Card:
 	tx ElectabuzzName ; name
 	db DIAMOND ; rarity
 	db EVOLUTION | NONE ; sets
-	dw ELECTABUZZ_LV35
+	dw ELECTABUZZ
 	db 60 ; hp
 	db BASIC ; stage
 	dw NONE ; pre-evo name
@@ -774,7 +774,7 @@ PikachuCard:
 	db ATK_ANIM_THUNDERSHOCK ; animation
 
 	; attack 2
-	energy LIGHTNING, 3 ; energies
+	energy LIGHTNING, 2, COLORLESS, 1 ; energies
 	tx VoltTackleName ; name
 	tx VoltTackleDescription ; description
 	dw NONE ; description (cont)
@@ -824,7 +824,7 @@ RaichuCard:
 	db ATK_ANIM_HIT_EFFECT ; animation
 
 	; attack 2
-	energy LIGHTNING, 4 ; energies
+	energy LIGHTNING, 3, COLORLESS, 1 ; energies
 	tx CircleCircuitName ; name
 	tx CircleCircuitDescription ; description
 	dw NONE ; description (cont)
@@ -919,7 +919,7 @@ RioluCard:
 	dw VacuumEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
-	db NONE ; flags 3
+	db SPECIAL_AI_HANDLING ; flags 3
 	db 0
 	db ATK_ANIM_GLOW_EFFECT ; animation
 
@@ -963,7 +963,7 @@ LucarioCard:
 	energy 0 ; energies
 	tx PrecognitiveAuraName ; name
 	tx PrecognitiveAuraDescription ; description
-	dw NONE ; description (cont)
+	tx PKMNPowerCondition ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw GigaMagnetEffectCommands ; effect commands
@@ -1013,7 +1013,7 @@ LeafeonCard:
 	energy 0 ; energies
 	tx GreeningCellsName ; name
 	tx GreeningCellsDescription ; description
-	dw NONE ; description (cont)
+	tx PKMNPowerCondition ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw GreeningCellsEffectCommands ; effect commands
@@ -1063,7 +1063,7 @@ GlaceonCard:
 	energy 0 ; energies
 	tx FreezingGazeName ; name
 	tx FreezingGazeDescription ; description
-	dw NONE ; description (cont)
+	tx PKMNPowerCondition ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw FreezingGazeEffectCommands ; effect commands
@@ -1081,7 +1081,7 @@ GlaceonCard:
 	db 40 ; damage
 	db DAMAGE_NORMAL ; category
 	dw PillarEffectCommands ; effect commands
-	db NONE ; flags 1
+	db DAMAGE_TO_OPPONENT_BENCH_F ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
@@ -1113,7 +1113,7 @@ SylveonCard:
 	energy 0 ; energies
 	tx MagicalRibbonName ; name
 	tx MagicalRibbonDescription ; description
-	dw NONE ; description (cont)
+	tx PKMNPowerCondition ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw DevoFlashEffectCommands ; effect commands
@@ -1363,7 +1363,7 @@ SwampertCard:
 	energy 0 ; energies
 	tx EnergyDrawName ; name
 	tx EnergyDrawDescription ; description
-	dw NONE ; description (cont)
+	tx PKMNPowerCondition ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw EnergyDrawEffectCommands ; effect commands
@@ -1412,14 +1412,14 @@ TyrogueCard:
 	; attack 1
 	energy 0 ; energies
 	tx StrangeEvolutionName ; name
-	tx StrangeEvolutionPichuDescription ; description
+	tx StrangeEvolutionTyrogueDescription ; description
 	dw NONE ; description (cont)
 	db 0 ; damage
 	db COSTLESS ; category
 	dw StrangeEvolutionTyrogueEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
-	db NONE ; flags 3
+	db SPECIAL_AI_HANDLING ; flags 3
 	db 0
 	db ATK_ANIM_GLOW_EFFECT ; animation
 
@@ -1474,7 +1474,7 @@ HitmontopCard:
 	db ATK_ANIM_QUICK_ATTACK ; animation
 
 	; attack 2
-	energy FIGHTING, 3 ; energies
+	energy FIGHTING, 2, COLORLESS, 1 ; energies
 	tx TripleKickName; name
 	tx TripleKickDescription ; description
 	dw NONE ; description (cont)
@@ -1496,7 +1496,7 @@ HitmontopCard:
 	db 2, 11 ; length
 	dw 22 * 10 ; weight
 	tx HitmontopDescription ; description
-	db 0
+	db 16
 
 LitwickCard:
 	db TYPE_PKMN_FIRE ; type
@@ -1510,6 +1510,20 @@ LitwickCard:
 	dw NONE ; pre-evo name
 
 	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx KindlingPanicName ; name
+	tx Discard1cardfromTopOPDescription ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw KindlingPanicEffectCommands ; effect commands
+	db NONE ; flags 1
+	db FLAG_2_BIT_5 ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_GLOW_EFFECT ; animation
+
+	; attack 2
 	energy FIRE, 1 ; energies
 	tx WillOWispName ; name
 	tx InflictBurnDescription ; description
@@ -1523,20 +1537,6 @@ LitwickCard:
 	db 0
 	db ATK_ANIM_SMALL_FLAME ; animation
 
-	; attack 2
-	energy FIRE, 1 ; energies
-	tx KindlingPanicName ; name
-	tx Discard1cardfromTopOPDescription ; description
-	dw NONE ; description (cont)
-	db 0 ; damage
-	db RESIDUAL ; category
-	dw KindlingPanicEffectCommands ; effect commands
-	db NONE ; flags 1
-	db FLAG_2_BIT_5 ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_GLOW_EFFECT ; animation
-
 	db 0 ; retreat cost
 	db WR_PSYCHIC ; weakness
 	db NONE ; resistance
@@ -1546,7 +1546,7 @@ LitwickCard:
 	db 2, 0 ; length
 	dw 19 * 10 ; weight
 	tx LitwickDescription ; description
-	db 19
+	db 16
 
 LampentCard:
 	db TYPE_PKMN_FIRE ; type
@@ -1560,7 +1560,7 @@ LampentCard:
 	tx LitwickName ; pre-evo name
 
 	; attack 1
-	energy FIRE, 2 ; energies
+	energy FIRE, 1, COLORLESS, 1 ; energies
 	tx LuringGlowName ; name
 	tx LuringGlowDescription ; description
 	dw NONE ; description (cont)
@@ -1613,7 +1613,7 @@ ChandelureCard:
 	energy 0 ; energies
 	tx BurningDownName ; name
 	tx BurningDownDescription ; description
-	dw NONE ; description (cont)
+	tx PKMNPowerCondition ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw Mills3EffectCommands ; effect commands
@@ -1624,7 +1624,7 @@ ChandelureCard:
 	db ATK_ANIM_GLOW_EFFECT ; animations
 
 	; attack 2
-	energy FIRE, 3 ; energies
+	energy FIRE, 2, COLORLESS, 1 ; energies
 	tx SoulBurnerName ; name
 	tx SoulBurnerDescription ; description
 	dw NONE ; description (cont)
@@ -1662,7 +1662,7 @@ MagbyCard:
 	; attack 1
 	energy 0 ; energies
 	tx StrangeEvolutionName ; name
-	tx StrangeEvolutionPichuDescription ; description
+	tx StrangeEvolutionMagmarDescription ; description
 	dw NONE ; description (cont)
 	db 0 ; damage
 	db COSTLESS ; category
@@ -1835,7 +1835,7 @@ DarkraiCard:
 	db NONE ; flags 2
 	db SPECIAL_AI_HANDLING ; flags 3
 	db 0
-	db NONE ; animation
+	db ATK_ANIM_DARK_MIND ; animation
 
 	db 2 ; retreat cost
 	db WR_FIGHTING ; weakness
@@ -2046,7 +2046,7 @@ TinkatinkCard:
 	db 2, 11 ; length
 	dw 43 * 10 ; weight
 	tx TinkatinkDescription ; description
-	db 19
+	db 16
 
 TinkatuffCard:
 	db TYPE_PKMN_PSYCHIC ; type
@@ -2096,7 +2096,7 @@ TinkatuffCard:
 	db 4, 3 ; length
 	dw 125 * 10 ; weight
 	tx TinkatuffDescription ; description
-	db 19
+	db 16
 
 TinkatonCard:
 	db TYPE_PKMN_PSYCHIC ; type
@@ -2188,8 +2188,8 @@ SalanditCard:
 	db ATK_ANIM_HIT ; animation
 
 	db 1 ; retreat cost
-	db WR_FIGHTING ; weakness
-	db WR_PSYCHIC ; resistance
+	db WR_PSYCHIC ; weakness
+	db NONE ; resistance
 	tx ToxicName ; category
 	db 55 ; Pokedex number
 	db 12 ; level
@@ -2238,8 +2238,8 @@ Salazzle:
 	db ATK_ANIM_BIG_FLAME ; animation
 
 	db 1 ; retreat cost
-	db WR_FIGHTING ; weakness
-	db WR_FIRE ; resistance
+	db WR_PSYCHIC ; weakness
+	db WR_DARKNESS ; resistance
 	tx ToxicName ; category
 	db 90 ; Pokedex number
 	db 45 ; level

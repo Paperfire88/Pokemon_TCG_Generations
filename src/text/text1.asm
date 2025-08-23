@@ -447,7 +447,7 @@ ThereAreNoBasicPokemonInHand:
 
 NeitherPlayerHasBasicPkmnText:
 	text "Neither player has any Basic"
-	line "Pokémon in his or her hand."
+	line "Pokémon on their hand."
 	done
 
 ReturnCardsToDeckAndDrawAgainText:
@@ -561,7 +561,7 @@ HavePokemonPowerText:
 
 UnableToUsePkmnPowerDueToToxicGasText:
 	text "Unable to us Pokémon Power due to"
-	line "the effect of Toxic Gas."
+	line "the effect of Forest Curse."
 	done
 
 PlayCheck1Text:

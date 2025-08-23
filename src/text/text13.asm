@@ -115,9 +115,10 @@ MindReportDescription:
 	done
 
 TimeStreamDescription:
-	text "Devolve 1 evolved PKMN on Play by"
-	line "putting the highest Stage Evolution" 
-	line "card on it into their owner's hand."
+	text "If the Defending PKMN is an Evolved"
+	line "PKMN: Devolve 1 evolved PKMN on Play"
+	line "by putting the highest evolution on" 
+	line "it into their owner's hand."
 	line "If [MYSTERIOUS FOSSIL] is in play,"
 	line "Your opponent shuffles their hand"
 	line "into their deck, then draws 4 cards."
@@ -698,6 +699,11 @@ PokemonsBurnCheckText:
     line "<RAMTEXT> is still Burned."
     done
 
+BurnCheckText:
+	text "Burn check! If Heads,"
+	line "opponent is Burned."
+	done
+
 IsStillBurnedText:
     text "<RAMTEXT> is"
     line "still Burned."
@@ -942,12 +948,10 @@ RollingTackleName:
 IgniteName:
 	text "Ignite"
 	done
-
 IgniteDescription:
 	text "If the Defending PKMN has a PKMN PWR"
 	line "it's now Burned."
 	done
-
 StrangeEvolutionMagmarDescription:
 	text "Heal all damage, Status Conditions"
 	line "and/or Effects affecting this PKMN."
@@ -1011,7 +1015,7 @@ WaterSplashName:
 
 WaterSplashDescription:
 	text "You can Bounce 1 <WATER> Energy card"
-	line "attached to his PKMN to your hand;"
+	line "attached to this PKMN to your hand;"
 	line "this attack does +20 damage."
 	done
 
@@ -1084,7 +1088,6 @@ MudslideDescription:
 	text "Discard the top 3 cards from your"
 	line "Deck."
 	done
-
 ChooseEnergyCardToDiscardFromHandText:
 	text "Choose the Energy card to discard."
 	done
@@ -1123,8 +1126,9 @@ MagneticBombName:
 
 MagneticBombDescription:
 	text "The Defending PKMN is now Confused."
-	line "If this PKMN has more Energy attach"
-	line "than it, this attack does +20 damage"
+	line "If it has the same amount or more"
+	line "Energy attached than this PKMN,"
+	line "this attack does +20 damage."
 	done
 
 ElekidName:
@@ -1234,10 +1238,10 @@ MountainClashName:
 	done
 
 MountainClashDescription:
-	text "Does +10 for each <COLORLESS> in each of your"
-	line "PKMN Retreat Cost."
+	text "Does 10 damage for each <COLORLESS> in each"
+	line "of your PKMN Retreat Cost. Then, put"
+	line "1 damage counter on this card."
 	done
-
 SandCrushName:
 	text "Sand Crush"
 	done
@@ -1503,7 +1507,7 @@ SpiritBreakName:
 SpiritBreakDescription:
 	text "If the defending PKMN has a Retreat"
 	line "cost of 3 or more <COLORLESS>, Discard an"
-	line "Energy, from the Defending PKMN." 
+	line "Energy from the Defending PKMN." 
 	done
 
 DarkOathName:
@@ -1511,9 +1515,9 @@ DarkOathName:
 	done
 
 DarkOathDescription:
-	text "Once per turn, The Defending PKMN"
+	text "Once per turn, The Defending PKMN's"
 	line "Retreat cost is 1 <COLORLESS> More until the"
-	line "end of the next turn.if its Retreat"
+	line "end of the next turn, if its Retreat"
 	line "becomes 3 or more, Draw a card."
 	done
 
@@ -1559,16 +1563,4 @@ DarkPulseName:
 DarkPulseDescription:
 	text "Does 10 damage for each <DARKNESS> Energy"
 	line "attached to all of your PKMN."
-	done
-
-MercilessName:
-	text "Merciless"
-	done	
-MercilessDescription:
-	text "Also, Do 20 damage to the opponent's"
-	line "benched PKMN with the lowest"
-	line "remaining HP."
-	done			
-DarkVoidName:
-	text "Dark Void"
 	done

@@ -17,8 +17,8 @@ TerasparkDescription:
 
 TreasureRushDescription:
 	text "Does +10 damage for Each Card"
-	line "in your hand. Then, This PKMN takes"
-	line "20 Damage."	
+	line "in your hand (Up to 10). Then,"
+	line "This PKMN takes 20 Damage."	
 	done
 
 SuctionHealName:
@@ -101,8 +101,6 @@ EnergyCrushDescription:
 	line "Then, You can Switch this PKMN with"
 	line "1 of your Benched pkmn."
 	done
-
-
 BurstinginfernoName:
 	text "Bursting Inferno"
 	done
@@ -339,9 +337,9 @@ ComputingProwessName:
 	done
 
 ComputingProwessDescription:
-	text "Look at the top 3 cards of your Deck"
-	line "Choose 1 of them, and add it to your"
-	line "Hand. Then, shuffle your deck."
+	text "Look at the top 3 cards of your"
+	line "Deck.Choose 1 of them, and add it to"
+	line "your Hand. Then, shuffle your deck."
 	done
 
 DreamWaltzName:
@@ -1613,9 +1611,9 @@ VineInviteName:
 VineInviteDescription:
 	text "After doing damage, Switch in 1 of"
 	line "your opponent's Benched PKMN to the"
-	line "Active Spot. Then, That PKMN Retreat"
-	line "cost is 1 <COLORLESS> More until the end of"
-	line "the next turn."
+	line "Active Spot.Then, The Defending PKMN"
+	line "Retreat cost is 1 <COLORLESS> More until the"
+	line "end of the next turn."
 	done
 
 DreamMistName:
@@ -1748,22 +1746,18 @@ SunshineCallDescription:
 	line "put it into your hand. Then, shuffle"
 	line "your deck."
 	done
-
 GreenForceName:
 	text "Sun Absorb"
 	done
-
 GreenForceDescription:
 	text "Heal damage from this PKMN equal to"
 	line "half the damage done (Rounded Up)."
-	line "If this pkmn has 3 or more<GRASS> energy"
+	line "If this pkmn has 4 or more<GRASS> energy"
 	line "attached, Draw a card."
 	done
-
 AstonishName:
 	text "Astonish"
 	done
-
 AstonishDescription:
 	text "Choose a random card from your" 
 	line "opponent's hand. they reveal it and" 
