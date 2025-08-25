@@ -2252,7 +2252,11 @@ MoonStoneCard:
 	db TYPE_TRAINER ; type
 	gfx MoonStoneCardGfx ; gfx
 	tx MoonStoneName ; name
+	IF LC_CHALLENGE == 1 ; If LC is active, then change rarity.
+	db DIAMOND ; rarity
+	ELSE
 	db CIRCLE ; rarity
+	ENDC
 	db EVOLUTION | NONE ; sets
 	dw MOON_STONE
 	dw ColorlessEvolutionPkmnSearchEffectCommands ; effect commands

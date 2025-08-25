@@ -15,7 +15,6 @@ Script_fbe1:
 
 Script_fbf1:
 	start_script
-	jump_if_event_true EVENT_RECEIVED_LEGENDARY_CARDS, .ows_fc10
 	max_out_event_value EVENT_RECEIVED_LEGENDARY_CARDS
 	print_text Text05b8
 	give_card RAIKOU

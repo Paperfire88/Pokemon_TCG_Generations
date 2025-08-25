@@ -206,12 +206,21 @@ Text06a1:
 	done
 
 FoundLv9SlowpokeText:
+	IF LC_CHALLENGE == 0
 	text "<RAMNAME>"
 	line "checked the wall!"
 	line ""
 	text "<RAMNAME>"
 	line "found a <Lv>93 Ho-oH!"
 	done
+	ELSE
+	text "<RAMNAME>"
+	line "checked the wall!"
+	line ""
+	text "<RAMNAME>"
+	line "found a DOUBLE COLORLESS ENERGY!"
+	done
+	ENDC
 
 Text06a3:
 	text "I'm burning with Pokémon "

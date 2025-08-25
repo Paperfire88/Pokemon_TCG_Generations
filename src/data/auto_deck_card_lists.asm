@@ -891,7 +891,31 @@ FireChargeCardList:
 	deck_list_end
 
 TepigAndFriendsCardList:
-	; deck_list_start
+	IF LC_CHALLENGE == 1 ;Only Commons Deck
+	deck_list_start
+	card_item FIRE_ENERGY,    21
+	card_item TEPIG,        4
+	card_item HOUNDOUR,         3
+	card_item DARUMAKA,         2
+	card_item NUMEL,         2
+	card_item LITLEO,     2
+	card_item SIZZLIPEDE,     2
+	card_item ZIGZAGOON,             2
+	card_item ROOKIDEE,          2
+	card_item BIDOOF,           2
+	card_item TOGEPI,          2
+	card_item BILL,              3
+	card_item SWITCH,            1
+	card_item POTION,            2
+	card_item FULL_HEAL,         2
+	card_item ENERGY_SEARCH,         2
+	card_item ENERGY_RETRIEVAL,         2
+	card_item POKE_BALL,         2
+	card_item POKEDEX,         2
+	deck_list_end
+	tx TepigAndFriendsDeckName
+	ELSE
+	deck_list_start
 	card_item FIRE_ENERGY,    20
 	card_item TEPIG,        3
 	card_item PIGNITE,          2
@@ -917,7 +941,9 @@ TepigAndFriendsCardList:
 	card_item POKE_BALL,         2
 	card_item POKEDEX,         2
 	card_item RECYCLE,         1
-	;deck_list_end
+	deck_list_end
+	tx TepigAndFriendsDeckName
+	ENDC	
 	db 0 ; end of list
 
 FroakieAndFriendsCardList:

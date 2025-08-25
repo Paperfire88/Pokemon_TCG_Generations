@@ -252,7 +252,11 @@ SilcoonCard:
 	db TYPE_PKMN_GRASS ; type
 	gfx SilcoonCardGfx ; gfx
 	tx SilcoonName ; name
+	IF LC_CHALLENGE == 1 ; If LC is active, then change rarity.
+	db DIAMOND ; rarity
+	ELSE
 	db CIRCLE ; rarity
+	ENDC
 	db EVOLUTION | NONE ; sets
 	dw SILCOON
 	db 60 ; hp
@@ -2054,7 +2058,7 @@ SizzlipedeCard:
 	db TYPE_PKMN_FIRE ; type
 	gfx SizzlipedeCardGfx ; gfx
 	tx SizzlipedeName ; name
-	db DIAMOND ; rarity
+	db CIRCLE ; rarity
 	db COLOSSEUM | NONE ; sets
 	dw SIZZLIPEDE
 	db 40 ; hp
@@ -5506,7 +5510,7 @@ CharjabugCard:
 	db TYPE_PKMN_LIGHTNING ; type
 	gfx CharjabugCardGfx ; gfx
 	tx CharjabugName ; name
-	db CIRCLE ; rarity
+	db DIAMOND ; rarity
 	db MYSTERY | NONE ; sets
 	dw CHARJABUG
 	db 70 ; hp
@@ -6356,7 +6360,11 @@ HawluchaCard:
 	db TYPE_PKMN_FIGHTING ; type
 	gfx HawluchaCardGfx ; gfx
 	tx HawluchaName ; name
+	IF LC_CHALLENGE == 1 ; If LC is active, then change rarity.
+	db DIAMOND ; rarity
+	ELSE
 	db CIRCLE ; rarity
+	ENDC
 	db MYSTERY | NONE ; sets
 	dw HAWLUCHA
 	db 60 ; hp
@@ -8807,7 +8815,11 @@ CascoonCard:
 	db TYPE_PKMN_DARKNESS ; type
 	gfx CascoonCardGfx ; gfx
 	tx CascoonName ; name
+	IF LC_CHALLENGE == 1 ; If LC is active, then change rarity.
+	db DIAMOND ; rarity
+	ELSE
 	db CIRCLE ; rarity
+	ENDC
 	db EVOLUTION | NONE ; sets
 	dw CASCOON
 	db 70 ; hp
@@ -11258,7 +11270,11 @@ EnergyRetrievalCard:
 	db TYPE_TRAINER ; type
 	gfx EnergyRetrievalCardGfx ; gfx
 	tx EnergyRetrievalName ; name
+	IF LC_CHALLENGE == 1 ; If LC is active, then change rarity.
+	db CIRCLE ; rarity
+	ELSE
 	db DIAMOND ; rarity
+	ENDC
 	db EVOLUTION | NONE ; sets
 	dw ENERGY_RETRIEVAL
 	dw EnergyRetrievalEffectCommands ; effect commands
@@ -11456,7 +11472,11 @@ FullHealCard:
 	db TYPE_TRAINER ; type
 	gfx FullHealCardGfx ; gfx
 	tx FullHealName ; name
+	IF LC_CHALLENGE == 1 ; If LC is active, then change rarity.
+	db CIRCLE ; rarity
+	ELSE
 	db DIAMOND ; rarity
+	ENDC
 	db COLOSSEUM | NONE ; sets
 	dw FULL_HEAL
 	dw FullHealEffectCommands ; effect commands

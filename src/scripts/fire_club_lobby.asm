@@ -210,11 +210,17 @@ Script_ee76:
 
 .ows_ee7d
 	set_event EVENT_LAD2_STATE, LAD2_SLOWPOKE_GONE
+	IF LC_CHALLENGE == 1
+	print_text FoundLv9SlowpokeText
+	give_card DOUBLE_COLORLESS_ENERGY
+	show_card_received_screen DOUBLE_COLORLESS_ENERGY
+	quit_script_fully
+	ELSE
 	print_text FoundLv9SlowpokeText
 	give_card HOOH
 	show_card_received_screen HOOH
 	quit_script_fully
-
+	ENDC
 Script_Mania:
 	start_script
 	test_if_event_false EVENT_RECEIVED_LEGENDARY_CARDS

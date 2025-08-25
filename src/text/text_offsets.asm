@@ -2195,7 +2195,6 @@ TextOffsets::
 	textpointer SpitfireName
 	textpointer MagmarLv24Description
 	textpointer SmokescreenName
-	textpointer MagmarLv31Description
 	textpointer FlareonName
 	textpointer EeveeName
 	textpointer BiteName

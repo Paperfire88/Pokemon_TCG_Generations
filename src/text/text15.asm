@@ -306,15 +306,9 @@ DarmanitanDescription:
 	done
 
 MagmarLv24Description:
-	text "Booster Pack: (MYSTERY)"
+	text "Booster Pack: (EVOLUTION)"
 	line "OG Set: (Cosmic Eclipse 36)"
 	line "OG illustrator: (HYOGONOSUKE)"
-	done
-
-MagmarLv31Description:
-	text "Booster Pack: (MYSTERY)"
-	line "OG Set: (Phantom Forces 12)"
-	line "OG illustrator: (Naoki Saito)"
 	done
 
 NumelDescription:

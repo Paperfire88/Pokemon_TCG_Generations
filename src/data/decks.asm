@@ -5,12 +5,21 @@ DeckPointers::
 	dw SamsPracticeDeck
 	dw PracticePlayerDeck
 	dw SamsPracticeDeck
+	IF LC_CHALLENGE == 1
+	dw TepigAndFriendsDeckLC
+	dw TepigExtraDeck
+	dw FroakieAndFriendsDeckLC
+	dw FroakieExtraDeck
+	dw ChikoritaAndFriendsDeckLC
+	dw ChikoritaExtraDeck
+	ELSE
 	dw TepigAndFriendsDeck
 	dw TepigExtraDeck
 	dw FroakieAndFriendsDeck
 	dw FroakieExtraDeck
 	dw ChikoritaAndFriendsDeck
 	dw ChikoritaExtraDeck
+	endc
 	dw LightningAndFireDeck
 	dw WaterAndFightingDeck
 	dw GrassAndPsychicDeck
@@ -55,6 +64,16 @@ DeckPointers::
 	dw FlamethrowerDeck
 	dw ReshuffleDeck
 	dw ImakuniDeck
+	IF LC_CHALLENGE == 1
+	dw DeinoAndFriendsDeckLC
+	dw DeinoExtraDeck
+	dw MagnemiteAndFriendsDeckLC
+	dw MagnemiteExtraDeck
+	dw TrapinchAndFriendsDeckLC
+	dw TrapinchExtraDeck
+	dw RaltsAndFriendsDeckLC
+	dw RaltsExtraDeck
+	ELSE
 	dw DeinoAndFriendsDeck
 	dw DeinoExtraDeck
 	dw MagnemiteAndFriendsDeck
@@ -63,6 +82,7 @@ DeckPointers::
 	dw TrapinchExtraDeck
 	dw RaltsAndFriendsDeck
 	dw RaltsExtraDeck
+	ENDC
 	dw NULL
 	assert_table_length NUM_VALID_DECKS + 1
 
@@ -1907,26 +1927,162 @@ RaltsExtraDeck:
 
 TepigAndFriendsDeckLC:
 	deck_list_start
-	card_item FIRE_ENERGY,    20
-	card_item TEPIG,        3
-	card_item HOUNDOUR,         2
-	card_item DARUMAKA,         2
-	card_item NUMEL,         2
-	card_item LITLEO,     2
-	card_item SIZZLIPEDE,     2
-	card_item ZIGZAGOON,         3
-	card_item ROOKIDEE,          3
-	card_item BIDOOF,           3
-	card_item TOGEPI,          3
-	card_item BILL,              2
-	card_item SWITCH,            1
-	card_item REVIVE,   1
-	card_item POKEMON_FLUTE,         1
-	card_item POTION,            2
-	card_item FULL_HEAL,         2
-	card_item ENERGY_SEARCH,         1
-	card_item ENERGY_RETRIEVAL,         1
-	card_item POKE_BALL,         2
-	card_item POKEDEX,         2
+	card_item FIRE_ENERGY,    21
+    card_item TEPIG,        4
+    card_item HOUNDOUR,         3
+    card_item DARUMAKA,         2
+    card_item NUMEL,         2
+    card_item LITLEO,     2
+    card_item SIZZLIPEDE,     2
+    card_item ZIGZAGOON,             2
+    card_item ROOKIDEE,          2
+    card_item BIDOOF,           2
+    card_item TOGEPI,          2
+    card_item BILL,              3
+    card_item SWITCH,            1
+    card_item POTION,            2
+    card_item FULL_HEAL,         2
+    card_item ENERGY_SEARCH,         2
+    card_item ENERGY_RETRIEVAL,         2
+    card_item POKE_BALL,         2
+    card_item POKEDEX,         2
 	deck_list_end
 	tx TepigAndFriendsDeckName
+FroakieAndFriendsDeckLC:
+	deck_list_start
+    card_item WATER_ENERGY,    21
+    card_item FROAKIE,        4
+    card_item DEWPIDER,         3
+    card_item CHEWTLE,         2
+    card_item SEEL,         2
+    card_item BUIZEL,     2
+    card_item HORSEA,     2
+    card_item ZIGZAGOON,             2
+    card_item ROOKIDEE,          2
+    card_item BIDOOF,           2
+    card_item TOGEPI,          2
+    card_item BILL,              3
+    card_item SWITCH,            1
+    card_item POTION,            2
+    card_item FULL_HEAL,         2
+    card_item ENERGY_SEARCH,         2
+    card_item ENERGY_RETRIEVAL,         2
+    card_item POKE_BALL,         2
+    card_item POKEDEX,         2
+    deck_list_end
+    tx FroakieAndFriendsDeckName
+ChikoritaAndFriendsDeckLC:
+	deck_list_start
+    card_item GRASS_ENERGY,    21
+    card_item CHIKORITA,        4
+    card_item WURMPLE,        3
+    card_item SHELMET,         2
+    card_item KARRABLAST,         2
+    card_item TANGELA,     2
+    card_item SHROOMISH,     2
+    card_item ZIGZAGOON,             2
+    card_item ROOKIDEE,          2
+    card_item BIDOOF,           2
+    card_item TOGEPI,          2
+    card_item BILL,              3
+    card_item SWITCH,            1
+    card_item POTION,            2
+    card_item FULL_HEAL,         2
+    card_item ENERGY_SEARCH,         2
+    card_item ENERGY_RETRIEVAL,         2
+    card_item POKE_BALL,         2
+    card_item POKEDEX,         2
+    deck_list_end
+    tx ChikoritaAndFriendsDeckName
+DeinoAndFriendsDeckLC:
+    deck_list_start
+    card_item DARKNESS_ENERGY,    21
+    card_item DEINO,        4
+    card_item WOOPER,         2
+    card_item ZUBAT,         2
+    card_item SKRELP,         3
+    card_item PAWNIARD,     2
+    card_item IMPIDIMP,     2
+    card_item ZIGZAGOON,             2
+    card_item ROOKIDEE,          2
+    card_item BIDOOF,           2
+    card_item TOGEPI,          2
+    card_item BILL,              3
+    card_item SWITCH,            1
+    card_item POTION,            2
+    card_item FULL_HEAL,         2
+    card_item ENERGY_SEARCH,         2
+    card_item ENERGY_RETRIEVAL,         2
+    card_item POKE_BALL,         2
+    card_item POKEDEX,         2
+    deck_list_end
+    tx DeinoAndFriendsDeckName
+MagnemiteAndFriendsDeckLC:
+    deck_list_start
+    card_item LIGHTNING_ENERGY,    21
+    card_item MAGNEMITE,        4
+    card_item GRUBBIN,         3
+    card_item EMOLGA,         2
+    card_item TYNAMO,         2
+    card_item SHINX,     2
+    card_item BLITZLE,     2
+    card_item ZIGZAGOON,             2
+    card_item ROOKIDEE,          2
+    card_item BIDOOF,           2
+    card_item TOGEPI,          2
+    card_item BILL,              3
+    card_item SWITCH,            1
+    card_item POTION,            2
+    card_item FULL_HEAL,         2
+    card_item ENERGY_SEARCH,         2
+    card_item ENERGY_RETRIEVAL,         2
+    card_item POKE_BALL,         2
+    card_item POKEDEX,         2
+    deck_list_end
+	tx MagnemiteAndFriendsDeckName
+TrapinchAndFriendsDeckLC:
+    deck_list_start
+    card_item FIGHTING_ENERGY,    21
+    card_item TRAPINCH,        4
+    card_item MEOWTH,         3
+    card_item CUFANT,         2
+    card_item SILICOBRA,         2
+    card_item JANGMO_O,     2
+    card_item ROCKRUFF,     2
+    card_item ZIGZAGOON,             2
+    card_item ROOKIDEE,          2
+    card_item BIDOOF,           2
+    card_item TOGEPI,          2
+    card_item BILL,              3
+    card_item SWITCH,            1
+    card_item POTION,            2
+    card_item FULL_HEAL,         2
+    card_item ENERGY_SEARCH,         2
+    card_item ENERGY_RETRIEVAL,         2
+    card_item POKE_BALL,         2
+    card_item POKEDEX,         2
+    deck_list_end
+    tx TrapinchAndFriendsDeckName
+RaltsAndFriendsDeckLC:	
+    deck_list_start
+    card_item PSYCHIC_ENERGY,    21
+    card_item RALTS,        4
+    card_item MUNNA,         2
+    card_item BLIPBUG,         3
+    card_item ABRA,         2
+    card_item DUSKULL,     2
+    card_item CUTIEFLY,     2
+    card_item ZIGZAGOON,             2
+    card_item ROOKIDEE,          2
+    card_item BIDOOF,           2
+    card_item TOGEPI,          2
+    card_item BILL,              3
+    card_item SWITCH,            1
+    card_item POTION,            2
+    card_item FULL_HEAL,         2
+    card_item ENERGY_SEARCH,         2
+    card_item ENERGY_RETRIEVAL,         2
+    card_item POKE_BALL,         2
+    card_item POKEDEX,         2
+    deck_list_end
+    tx RaltsAndFriendsDeckName

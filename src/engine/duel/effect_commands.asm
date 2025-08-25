@@ -87,10 +87,6 @@ FlappleFoulOdorEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, FoulOdorEffect
 	db  $00
 
-DiscardtopCardsffectCommands:
-	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, StiffenEffect
-	db  $00
-
 KakunaPoisonPowderEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Poison50PercentEffect
 	dbw EFFECTCMDTYPE_AI, MayInflictPoison_AIEffect
@@ -121,29 +117,23 @@ BeedrillPoisonStingEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Poison50PercentEffect
 	dbw EFFECTCMDTYPE_AI, MayInflictPoison_AIEffect
 	db  $00
-
 ExeggcuteLeechSeedEffectCommands:
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, ExeggcuteLeechSeedEffect
 	db  $00
-
 KoffingFoulGasEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, FoulGas_PoisonOrConfusionEffect
 	dbw EFFECTCMDTYPE_AI, FoulGas_AIEffect
 	db  $00
-
 MetapodStiffenEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, StiffenEffect
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, FetchEffect
 	db  $00
-
 MetapodStunSporeEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Paralysis50PercentEffect
 	db  $00
-
 ApplinStunSporeEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Paralysis50PercentEffect
 	db  $00
-
 ExeggutorTeleportEffectCommands:
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Teleport_SwitchEffect
 	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, Teleport_PlayerSelectEffect

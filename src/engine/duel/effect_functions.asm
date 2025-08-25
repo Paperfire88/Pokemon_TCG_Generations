@@ -9367,7 +9367,8 @@ EntrapEffect:
 	call Opp_CheckBench
 	ret c ; has no Bench Pokemon
 	call CompareBenchPKMNEffect
-	call nz, BillEffect
+	cp b
+	call nc, BillEffect
 	;fallthrough
 IncreaseRetreatCostEffect:
     ld a, SUBSTATUS2_RETREAT_PLUS_1
@@ -10604,21 +10605,19 @@ RodEffect:
 
 FirePaybackEffect:
 	call CompareBenchPKMNEffect
-	ret z
-	sub b
-	call SetDamageToATimes20
-	call AddToDamage
-	jp Add40damageEffect
-
+	cp b
+	ret c
+	dec a
+	add a
+	call ATimes10
+	jp AddToDamage
 CompareBenchPKMNEffect:
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
 	call GetTurnDuelistVariable
-	dec a ; don't count arena card
 	ld b, a
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
 	call GetNonTurnDuelistVariable
 	dec a
-	cp b
 	ret
 
 ExtraDamageIfDEnergiesEffect:

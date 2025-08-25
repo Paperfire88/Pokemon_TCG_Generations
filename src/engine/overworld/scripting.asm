@@ -1737,6 +1737,10 @@ ScriptCommand_OpenDeckMachine:
 	jr z, .asm_d360
 	dec a
 	ld [wCurAutoDeckMachine], a
+	IF MAX_NUM_SAME_NAME_CARDS == 1
+	jr .asm_d364
+	ELSE
+	ENDC
 	farcall HandleAutoDeckMenu
 	jr .asm_d364
 .asm_d360
