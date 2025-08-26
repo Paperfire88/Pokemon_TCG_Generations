@@ -433,6 +433,7 @@ ENDM
 	txsymbol FIGHTING   ; $05
 	txsymbol PSYCHIC    ; $06
 	txsymbol DARKNESS
+	txsymbol METAL      
 	txsymbol COLORLESS  ; $07
 	txsymbol POISONED   ; $08
 	txsymbol ASLEEP     ; $09
@@ -440,7 +441,6 @@ ENDM
 	txsymbol PARALYZED  ; $0b
 	txsymbol CURSOR_U   ; $0c
 	txsymbol POKEMON    ; $0d
-	txsymbol ATK_DESCR  ; $0e
 	txsymbol CURSOR_R   ; $0f
 	txsymbol HP         ; $10
 	txsymbol Lv         ; $11
@@ -474,3 +474,5 @@ ENDM
 	txsymbol CURSOR_D   ; $2e
 	txsymbol PRIZE      ; $2f
 	txsymbol BURNED     ; $30
+	txsymbol ATK_DESCR  ; $0e
+	

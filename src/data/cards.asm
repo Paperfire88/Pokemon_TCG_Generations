@@ -652,106 +652,6 @@ IllumiseCard:
 	tx IllumiseDescription ; description
 	db 0
 
-KarrablastCard:
-	db TYPE_PKMN_GRASS ; type
-	gfx KarrablastCardGfx ; gfx
-	tx KarrablastName ; name
-	db CIRCLE ; rarity
-	db COLOSSEUM | NONE ; sets
-	dw KARRABLAST
-	db 50 ; hp
-	db BASIC ; stage
-	dw NONE ; pre-evo name
-
-	; attack 1
-	energy 0 ; energies
-	tx StepInName ; name
-	tx StepInDescription ; description
-	dw NONE ; description (cont)
-	db 0 ; damage
-	db POKEMON_POWER ; category
-	dw LugiaStepInEffectCommands ; effect commands
-	db NONE ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_GLOW_EFFECT ; animation
-
-	; attack 2
-	energy GRASS, 1 ; energies
-	tx HornHazardName ; name
-	tx MayDoNothingDescription ; description
-	dw NONE ; description (cont)
-	db 30 ; damage
-	db DAMAGE_NORMAL ; category
-	dw NidoranMHornHazardEffectCommands ; effect commands
-	db NONE ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_NONE ; animation
-
-	db 1 ; retreat cost
-	db WR_FIRE ; weakness
-	db NONE ; resistance
-	tx ClampingName ; category
-	db 15 ; Pokedex number
-	db 20 ; level
-	db 1, 4 ; length
-	dw 15 * 10 ; weight
-	tx KarrablastDescription ; description
-	db 16
-
-EscavalierCard:
-	db TYPE_PKMN_GRASS ; type
-	gfx EscavalierCardGfx ; gfx
-	tx EscavalierName ; name
-	db DIAMOND ; rarity
-	db COLOSSEUM | NONE ; sets
-	dw ESCAVALIER
-	db 80 ; hp
-	db STAGE1 ; stage
-	tx KarrablastName ; pre-evo name
-
-	; attack 1
-	energy GRASS, 1, COLORLESS, 1 ; energies
-	tx TwineedleName ; name
-	tx TwineedleDescription ; description
-	dw NONE ; description (cont)
-	db 30 ; damage
-	db DAMAGE_X ; category
-	dw TwineedleEffectCommands ; effect commands
-	db INFLICT_POISON ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_NEEDLES ; animation
-
-	; attack 2
-	energy COLORLESS, 2, FIGHTING, 1 ; energies
-	tx IronTackleName ; name
-	tx IronTackleDescription ; description
-	dw NONE ; description (cont)
-	db 50 ; damage
-	db DAMAGE_NORMAL ; category
-	dw IronTackleEffectCommands ; effect commands
-	db NONE ; flags 1
-	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_DRILL ; animation
-
-	db 2 ; retreat cost
-	db WR_FIRE ; weakness
-	db WR_GRASS ; resistance
-	tx CavalryName ; category
-	db 16 ; Pokedex number
-	db 45 ; level
-	db 2, 11 ; length
-	dw 43 * 10 ; weight
-	tx EscavalierDescription ; description
-	db 0
-
 VolbeatCard:
 	db TYPE_PKMN_GRASS ; type
 	gfx VolbeatCardGfx ; gfx
@@ -1502,106 +1402,6 @@ AbomasnowCard:
 	tx ExeggutorDescription ; description
 	db 0
 
-FerroseedCard:
-	db TYPE_PKMN_GRASS ; type
-	gfx FerroseedCardGfx ; gfx
-	tx FerroseedName ; name
-	db CIRCLE ; rarity
-	db EVOLUTION | NONE ; sets
-	dw FERROSEED
-	db 60 ; hp
-	db BASIC ; stage
-	dw NONE ; pre-evo name
-
-	; attack 1
-	energy COLORLESS, 1 ; energies
-	tx RollingTackleName ; name
-	tx TerrorStrikeDescription ; description
-	dw NONE ; description (cont)
-	db 10 ; damage
-	db DAMAGE_NORMAL ; category
-	dw ArbokTerrorStrikeEffectCommands ; effect commands
-	db NONE ; flags 1
-	db SWITCH_OPPONENT_POKEMON ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_HIT ; animation
-
-	; attack 2
-	energy GRASS, 1, COLORLESS, 1, ; energies
-	tx PinMissileName ; name
-	tx TripleAttackX20Description ; description
-	dw NONE ; description (cont)
-	db 20 ; damage
-	db DAMAGE_X ; category
-	dw PerrserkerFurySwipesEffectCommands ; effect commands
-	db NONE ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_NEEDLES; animation
-
-	db 2 ; retreat cost
-	db WR_FIRE ; weakness
-	db WR_DARKNESS ; resistance
-	tx ThornSeedName ; category
-	db 36 ; Pokedex number
-	db 23 ; level
-	db 2, 0 ; length
-	dw 2 * 10 ; weight
-	tx FerroseedDescription ; description
-	db 16
-
-FerrothornCard:
-	db TYPE_PKMN_GRASS ; type
-	gfx FerrothornCardGfx ; gfx
-	tx FerrothornName ; name
-	db DIAMOND ; rarity
-	db EVOLUTION | NONE ; sets
-	dw FERROTHORN
-	db 80 ; hp
-	db STAGE1 ; stage
-	tx FerroseedName ; pre-evo name
-
-	; attack 1
-	energy 0 ; energies
-	tx SpikesName ; name
-	tx SpikesDescription ; description
-	tx PKMNPowerCondition2 ; description (cont)
-	db 0 ; damage
-	db POKEMON_POWER ; category
-	dw OmanyteClairvoyanceEffectCommands ; effect commands
-	db NONE ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_SOLAR_POWER ; animation
-
-	; attack 2
-	energy GRASS, 1, COLORLESS, 2 ; energies
-	tx GaleName ; name
-	tx GaleDescription ; description
-	dw NONE ; description (cont)
-	db 30 ; damage
-	db DAMAGE_NORMAL ; category
-	dw PidgeotGaleEffectCommands ; effect commands
-	db NONE ; flags 1
-	db SWITCH_OPPONENT_POKEMON | FLAG_2_BIT_7 ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_GLOW_ATTACK ; animation
-
-	db 2 ; retreat cost
-	db WR_FIRE ; weakness
-	db WR_DARKNESS ; resistance
-	tx ThornPodName ; category
-	db 37 ; Pokedex number
-	db 57 ; level
-	db 3, 11 ; length
-	dw 21 * 10 ; weight
-	tx FerrothornDescription ; description
-	db 0
-
 TangelaLv8Card:
 	db TYPE_PKMN_GRASS ; type
 	gfx TangelaLv8CardGfx ; gfx
@@ -1753,7 +1553,7 @@ ScytherCard:
 	db 16
 
 ScizorCard:
-	db TYPE_PKMN_FIGHTING ; type
+	db TYPE_PKMN_METAL ; type
 	gfx ScizorCardGfx ; gfx
 	tx ScizorName ; name
 	db STAR ; rarity
@@ -1764,7 +1564,7 @@ ScizorCard:
 	tx ScytherName ; pre-evo name
 
 	; attack 1
-	energy COLORLESS, 1, FIGHTING, 1 ; energies
+	energy COLORLESS, 1, METAL, 1 ; energies
 	tx SteelWingName ; name
 	tx SteelWingDescription ; description
 	dw NONE ; description (cont)
@@ -1778,7 +1578,7 @@ ScizorCard:
 	db ATK_ANIM_HIT ; animation
 
 	; attack 2
-	energy COLORLESS, 2, GRASS, 1 ; energies
+	energy COLORLESS, 2, METAL, 1 ; energies
 	tx XScissorName ; name
 	tx XScissorDescription ; description
 	dw NONE ; description (cont)
@@ -5857,105 +5657,6 @@ EelektrossCard:
 	db 0
 
 ;--Fightning--
-MeowthCard:
-	db TYPE_PKMN_FIGHTING ; type
-	gfx MeowthCardGfx ; gfx
-	tx MeowthName ; name
-	db CIRCLE ; rarity
-	db MYSTERY | NONE ; sets
-	dw MEOWTH
-	db 40 ; hp
-	db BASIC ; stage
-	dw NONE ; pre-evo name
-
-	; attack 1
-	energy COLORLESS, 1 ; energies
-	tx PayDayName ; name
-	tx PayDayDescription ; description
-	dw NONE ; description (cont)
-	db 10 ; damage
-	db DAMAGE_NORMAL ; category
-	dw MeowthPayDayEffectCommands ; effect commands
-	db DRAW_CARD ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_HIT ; animation
-
-	; attack 2
-	energy FIGHTING, 1, COLORLESS, 1 ; energies
-	tx BarrierName ; name
-	tx ThunderpunchDescription ; description
-	dw NONE ; description (cont)
-	db 20 ; damage
-	db DAMAGE_PLUS ; category
-	dw ElectabuzzThunderpunchEffectCommands ; effect commands
-	db LOW_RECOIL ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_MULTIPLE_SLASH ; animation
-
-	db 1 ; retreat cost
-	db WR_FIRE ; weakness
-	db NONE ; resistance
-	tx ScratchCatName ; category
-	db 126 ; Pokedex number
-	db 12 ; level
-	db 2, 0 ; length
-	dw 26 * 10 ; weight
-	tx MeowthDescription ; description
-	db 16
-
-PerrserkerCard:
-	db TYPE_PKMN_FIGHTING ; type
-	gfx PerrserkerCardGfx ; gfx
-	tx PerrserkerName ; name
-	db DIAMOND ; rarity
-	db MYSTERY | NONE ; sets
-	dw PERRSERKER
-	db 70 ; hp
-	db STAGE1 ; stage
-	tx MeowthName ; pre-evo name
-
-	; attack 1
-	energy FIGHTING, 1 ; energies
-	tx ShareLootName ; name
-	tx ShareLootDescription ; description
-	dw NONE ; description (cont)
-	db 10 ; damage
-	db DAMAGE_NORMAL ; category
-	dw ShareLootEffectCommands ; effect commands
-	db NONE ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 2
-	db ATK_ANIM_HIT ; animation
-
-	energy COLORLESS, 1, FIGHTING, 2 ; energies
-	tx TreasureRushName ; name
-	tx TreasureRushDescription ; description
-	dw NONE ; description (cont)
-	db 10 ; damage
-	db DAMAGE_PLUS ; category
-	dw TreasureRushEffectCommands ; effect commands
-	db NONE ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_HIT ; animation
-
-	db 2 ; retreat cost
-	db WR_FIRE ; weakness
-	db WR_GRASS ; resistance
-	tx VikingName ; category
-	db 127 ; Pokedex number
-	db 33 ; level
-	db 3, 3 ; length
-	dw 65 * 10 ; weight
-	tx PerrserkerDescription ; description
-	db 0
-
 SilicobraCard:
 	db TYPE_PKMN_FIGHTING ; type
 	gfx SilicobraCardGfx ; gfx
@@ -6658,106 +6359,6 @@ HitmonchanCard:
 	db 4, 7 ; length
 	dw 111 * 10 ; weight
 	tx HitmonchanDescription ; description
-	db 0
-
-CufantCard:
-	db TYPE_PKMN_FIGHTING ; type
-	gfx CufantCardGfx ; gfx
-	tx CufantName ; name
-	db CIRCLE ; rarity
-	db LABORATORY | NONE ; sets
-	dw CUFANT
-	db 60 ; hp
-	db BASIC ; stage
-	dw NONE ; pre-evo name
-
-	; attack 1
-	energy FIGHTING, 1 ; energies
-	tx CallforFriendName ; name
-	tx CallforFriendDescription ; description
-	dw NONE ; description (cont)
-	db 0 ; damage
-	db RESIDUAL ; category
-	dw MarowakCallforFriendEffectCommands ; effect commands
-	db DAMAGE_TO_OPPONENT_BENCH ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_GLOW_EFFECT ; animation
-
-	; attack 1
-	energy FIGHTING, 1, COLORLESS, 1 ; energies
-	tx StompOffName ; name
-	tx StompOffDescription ; description
-	dw NONE ; description (cont)
-	db 30 ; damage
-	db DAMAGE_NORMAL ; category
-	dw StompOffEffectCommands ; effect commands
-	db LOW_RECOIL ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_HIT_RECOIL ; animation
-
-	db 2 ; retreat cost
-	db WR_FIRE ; weakness
-	db NONE ; resistance
-	tx CopperdermName ; category
-	db 144 ; Pokedex number
-	db 18 ; level
-	db 3, 3 ; length
-	dw 254 * 10 ; weight
-	tx RhyhornDescription ; description
-	db 16
-
-CopperajahCard:
-	db TYPE_PKMN_FIGHTING ; type
-	gfx CopperajahCardGfx ; gfx
-	tx CopperajahName ; name
-	db STAR ; rarity
-	db LABORATORY | NONE ; sets
-	dw COPPERAJAH
-	db 100 ; hp
-	db STAGE1 ; stage
-	tx CufantName ; pre-evo name
-
-	; attack 1
-	energy FIGHTING, 1, COLORLESS, 1 ; energies
-	tx DigDrainName ; name
-	tx ButterfreesMegaDrainDescription ; description
-	dw NONE ; description (cont)
-	db 30 ; damage
-	db DAMAGE_NORMAL ; category
-	dw AbsorbEffectCommands ; effect commands
-	db NONE ; flags 1
-	db HEAL_USER ; flags 2
-	db NONE ; flags 3
-	db 2
-	db ATK_ANIM_DRAIN ; animation
-
-	; attack 2
-	energy FIGHTING, 2, COLORLESS, 2 ; energies
-	tx AdamantinePressName ; name
-	tx AdamantinePressDescription ; description
-	dw NONE ; description (cont)
-	db 60 ; damage
-	db DAMAGE_NORMAL ; category
-	dw AdamantinePressEffectCommands ; effect commands
-	db NONE ; flags 1
-	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
-	db NONE ; flags 3
-	db 30
-	db ATK_ANIM_HIT ; animation
-
-	db 3 ; retreat cost
-	db WR_FIRE ; weakness
-	db WR_GRASS ; resistance
-	tx CopperdermName ; category
-	db 145 ; Pokedex number
-	db 48 ; level
-	db 6, 3 ; length
-	dw 265 * 10 ; weight
-	tx RhydonDescription ; description
 	db 0
 
 KabutoCard:
@@ -7960,156 +7561,6 @@ CarbinkCard:
 	dw 9 * 10 ; weight
 	tx CarbinkDescription ; description
 	db 0
-
-BeldumCard:
-	db TYPE_PKMN_PSYCHIC ; type
-	gfx BeldumCardGfx ; gfx
-	tx BeldumName ; name
-	db CIRCLE ; rarity
-	db LABORATORY | NONE ; sets
-	dw BELDUM
-	db 50 ; hp
-	db BASIC ; stage
-	dw NONE ; pre-evo name
-	
-	; attack 1
-	energy COLORLESS, 1 ; energies
-	tx AllureName ; name
-	tx FetchDescription ; description
-	dw NONE ; description (cont)
-	db 0 ; damage
-	db RESIDUAL ; category
-	dw KangaskhanFetchEffectCommands ; effect commands
-	db DRAW_CARD ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_GLOW_EFFECT ; animation
-
-	; attack 2
-	energy COLORLESS, 1, PSYCHIC, 1 ; energies
-	tx TakeDownName ; name
-	tx ThunderJoltDescription ; description
-	dw NONE ; description (cont)
-	db 30 ; damage
-	db DAMAGE_NORMAL ; category
-	dw PikachuThunderJoltEffectCommands ; effect commands
-	db LOW_RECOIL ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_HIT_RECOIL ; animation
-
-	db 1 ; retreat cost
-	db WR_DARKNESS ; weakness
-	db NONE ; resistance
-	tx IronBallName ; category
-	db 169 ; Pokedex number
-	db 16 ; level
-	db 1, 4 ; length
-	dw 9 * 10 ; weight
-	tx BeldumDescription ; description
-	db 16
-
-MetangCard:
-	db TYPE_PKMN_PSYCHIC ; type
-	gfx MetangCardGfx ; gfx
-	tx MetangName ; name
-	db DIAMOND ; rarity
-	db LABORATORY | NONE ; sets
-	dw METANG
-	db 80 ; hp
-	db STAGE1 ; stage
-	tx BeldumName ; pre-evo name
-
-	; attack 1
-	energy PSYCHIC, 1 ; energies
-	tx ComputingProwessName ; name
-	tx ComputingProwessDescription ; description
-	dw NONE ; description (cont)
-	db 0 ; damage
-	db RESIDUAL ; category
-	dw UltravisionEffectCommands ; effect commands
-	db NONE ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_GLOW_EFFECT	 ; animation
-	
-	; attack 2
-	energy PSYCHIC, 1, COLORLESS, 2 ; energies
-	tx PsychicName ; name
-	tx PsychicDescription ; description
-	dw NONE ; description (cont)
-	db 30 ; damage
-	db DAMAGE_PLUS ; category
-	dw MewtwoPsychicEffectCommands ; effect commands
-	db NONE ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_PSYCHIC_HIT ; animation
-
-	db 2 ; retreat cost
-	db WR_DARKNESS ; weakness
-	db WR_PSYCHIC ; resistance
-	tx IronClawName ; category
-	db 170 ; Pokedex number
-	db 38 ; level
-	db 1, 4 ; length
-	dw 9 * 10 ; weight
-	tx MetangDescription ; description
-	db 16
-
-MetagrossCard:
-	db TYPE_PKMN_PSYCHIC ; type
-	gfx MetagrossCardGfx ; gfx
-	tx MetagrossName ; name
-	db STAR ; rarity
-	db LABORATORY | NONE ; sets
-	dw METAGROSS
-	db 120 ; hp
-	db STAGE2 ; stage
-	tx MetangName ; pre-evo name
-
-	; attack 1
-	energy PSYCHIC, 1, COLORLESS, 1 ; energies
-	tx MetalReversalName ; name
-	tx MetalReversalDescription ; description
-	dw NONE ; description (cont)
-	db 30 ; damage
-	db DAMAGE_NORMAL ; category
-	dw BossOrdersEffectCommands ; effect commands
-	db NONE ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_HIT ; animation
-	
-	; attack 2
-	energy PSYCHIC, 1, COLORLESS, 2, ; energies
-	tx MeteorMashName ; RequiemName
-	tx MeteorMashDescription ; description
-	dw NONE ; description (cont)
-	db 30 ; damage
-	db DAMAGE_PLUS ; category
-	dw MeteorMashEffectCommands ; effect commands
-	db NONE ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_PUNCH ; animation
-
-	db 3 ; retreat cost
-	db WR_DARKNESS ; weakness
-	db WR_PSYCHIC ; resistance
-	tx IronLegName ; category
-	db 171 ; Pokedex number
-	db 68 ; level
-	db 1, 4 ; length
-	dw 9 * 10 ; weight
-	tx MetagrossDescription ; description
-	db 0		
 
 MunnaCard:
 	db TYPE_PKMN_PSYCHIC ; type
@@ -10216,56 +9667,6 @@ BibarelCard:
 	tx PersianDescription ; description
 	db 0
 
-RayquazaCard:
-	db TYPE_PKMN_COLORLESS ; type
-	gfx RayquazaCardGfx ; gfx
-	tx RayquazaName ; name
-	db PROMOSTAR ; rarity
-	db PROMOTIONAL | PRO ; sets
-	dw RAYQUAZA
-	db 80 ; hp
-	db BASIC ; stage
-	dw NONE ; pre-evo name
-
-	; attack 1
-	energy COLORLESS, 1 ; energies
-	tx DragonPulseName ; name
-	tx DragonPulseDescription ; description
-	dw NONE ; description (cont)
-	db 10 ; damage
-	db DAMAGE_PLUS ; category
-	dw DragonPulseEffectCommands ; effect commands
-	db NONE ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_QUICK_ATTACK ; animation
-
-	; attack 2
-	energy COLORLESS, 4 ; energies
-	tx EmeraldBreakName ; name
-	tx DoTheWaveDescription ; description
-	dw NONE ; description (cont)
-	db 10 ; damage
-	db DAMAGE_PLUS ; category
-	dw WigglytuffDoTheWaveEffectCommands ; effect commands
-	db NONE ; flags 1
-	db ATTACHED_ENERGY_BOOST_F ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_HIT ; animation
-
-	db 2 ; retreat cost
-	db NONE ; weakness
-	db NONE ; resistance
-	tx SkyHighName ; category
-	db 195 ; Pokedex number
-	db 95 ; level
-	db 2, 7 ; length
-	dw 33 * 10 ; weight
-	tx RayquazaDescription ; description
-	db 3
-
 RuffletCard:
 	db TYPE_PKMN_COLORLESS ; type
 	gfx RuffletCardGfx ; gfx
@@ -11144,6 +10545,16 @@ DarknessEnergyCard:
 	tx DarknessEnergyDescription ; description
 	dw NONE ; description (cont)
 
+MetalEnergyCard:
+	db TYPE_ENERGY_METAL ; type
+	gfx MetalEnergyCardGfx ; gfx
+	tx MetalEnergyName ; name
+	db CIRCLE ; rarity
+	db ENERGY | NONE ; sets
+	dw METAL_ENERGY
+	dw MetalEnergyEffectCommands ; effect commands
+	tx MetalEnergyDescription ; description
+	dw NONE ; description (cont)
 DoubleColorlessEnergyCard:
 	db TYPE_ENERGY_DOUBLE_COLORLESS ; type
 	gfx DoubleColorlessEnergyCardGfx ; gfx

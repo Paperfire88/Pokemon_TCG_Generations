@@ -722,3 +722,10 @@ ThereAreNoPokemonOrEnergyCardsInDiscardPileText:
 	text "There are no Pokémon or Energy"
 	line "Cards in the Discard Pile."
 	done
+MetalEnergyName:
+	text "Metal Energy"
+	done	
+
+MetalEnergyDescription:
+	text "Provides 1 <METAL> Energy."	
+	done	

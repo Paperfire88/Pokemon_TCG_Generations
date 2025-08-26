@@ -421,7 +421,7 @@ wEnergyDiscardPlayAreaLocation:: ; cbe0
 wOpponentTurnEnded:: ; cbe1
 	ds $1
 
-	ds $5
+	ds $5 ; Down from 5
 
 ; if non-zero, duel menu input is not checked
 wDebugSkipDuelMenuInput:: ; cbe7
@@ -465,14 +465,6 @@ wDuelMainSceneSelectHotkeyAction:: ; cbff
 	ds $1
 
 wPracticeDuelTurn:: ; cc00
-	ds $1
-
-; pointer from PracticeDuelTextPointerTable
-wPracticeDuelTextPointer:: ; cc01
-	ds $2
-
-; used to print a Pokemon card's length in feet and inches
-wPokemonLengthPrintOffset:: ; cc03
 	ds $1
 
 ; used when opening the card page of an attack when attacking,
@@ -863,14 +855,9 @@ wCoinTossDuelistType:: ; cd9e
 wCoinTossNumTossed:: ; cd9f
 	ds $1
 
-	ds $5
+	ds $3
 
 wAIDuelVars::
-; saves the prizes that the AI already used Peek on
-; each bit corresponds to a Prize card
-wAIPeekedPrizes:: ; cda5
-	ds $1
-
 ; this is used by AI in order to determine whether
 ; it should use Pokedex Trainer card.
 ; starts with 5 when Duel starts and counts up by 1 every turn.

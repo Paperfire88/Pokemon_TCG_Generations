@@ -1293,11 +1293,12 @@ _CheckIfEnoughEnergiesToAttack:
 	inc de
 	dec c
 	jr nz, .next_energy_type_pair
-  	ld a, [de]  ; darkness and colorless pair
-  	swap a
-  	call CheckIfEnoughEnergiesOfType
-  	jr c, .not_usable_or_not_enough_energies
+  	; ld a, [de]  ; darkness and colorless pair
+  	; swap a
+  	; call CheckIfEnoughEnergiesOfType
+  	; jr c, .not_usable_or_not_enough_energies
   	ld a, [de] ; colorless energy
+	swap a
   	and $f
   	ld b, a  ; colorless energy cost
 	ld a, [wAttachedEnergiesAccum]
@@ -2724,9 +2725,6 @@ PrintPracticeDuelInstructions:
 	xor a
 	ld [wPracticeDuelTextY], a
 	ld a, l
-	ld [wPracticeDuelTextPointer], a
-	ld a, h
-	ld [wPracticeDuelTextPointer + 1], a
 .print_instructions_loop
 	call PrintNextPracticeDuelInstruction
 	ld a, [hli]
@@ -2799,7 +2797,6 @@ PrintNextPracticeDuelInstruction:
 	ldh [hffb0], a
 	push hl
 	call PrintPracticeDuelInstructionsTextBoxLabel
-	ld hl, wPracticeDuelTextPointer
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
@@ -4492,17 +4489,14 @@ PrintPokemonCardLength:
 	call TwoByteNumberToTxSymbol_TrimLeadingZeros_Bank1
 	ld a, b
 	inc a
-	ld [wPokemonLengthPrintOffset], a
 	pop bc
 	push bc
 	push hl
 	call BCCoordToBGMap0Address
-	ld a, [wPokemonLengthPrintOffset]
 	ld b, a
 	pop hl
 	call SafeCopyDataHLtoDE
 	pop bc
-	ld a, [wPokemonLengthPrintOffset]
 	add b
 	ld b, a
 	pop hl

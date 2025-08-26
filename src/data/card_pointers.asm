@@ -8,6 +8,7 @@ CardPointers::
 	dab FightingEnergyCard
 	dab PsychicEnergyCard
 	dab DarknessEnergyCard
+	dab MetalEnergyCard
 	dab DoubleColorlessEnergyCard
 	dab ChikoritaCard
 	dab BayleefCard

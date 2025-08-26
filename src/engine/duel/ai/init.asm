@@ -4,8 +4,6 @@ InitAIDuelVars:
 	call ClearMemory_Bank5
 	ld a, 5
 	ld [wAIPokedexCounter], a
-	ld a, $ff
-	ld [wAIPeekedPrizes], a
 	ret
 
 ; initializes some variables and sets value of wAIBarrierFlagCounter.

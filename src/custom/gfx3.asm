@@ -70,3 +70,7 @@ ElectivireCardGfx::
 	INCBIN "gfx/cards/Electivire.pal"	
 	INCBIN "gfx/cards/Electivire.attrmap"	
 	INCBIN "gfx/cards/Electivire.2bpp"
+MetalEnergyCardGfx::
+	INCBIN "gfx/cards/metalenergy.pal"	
+	INCBIN "gfx/cards/metalenergy.attrmap"
+	INCBIN "gfx/cards/metalenergy.2bpp"

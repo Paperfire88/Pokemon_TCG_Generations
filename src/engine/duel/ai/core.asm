@@ -239,6 +239,9 @@ CheckIfEnergyIsUseful:
 	ld bc, DARKNESS_ENERGY
 	call CompareDEtoBC
 	jr z, .set_carry
+	ld bc, METAL_ENERGY
+	call CompareDEtoBC
+	jr z, .set_carry
 
 .check_type
 	call GetCardType
@@ -558,6 +561,7 @@ ConvertColorToEnergyCardID:
 	dw FIGHTING_ENERGY
 	dw PSYCHIC_ENERGY
 	dw DARKNESS_ENERGY
+	dw METAL_ENERGY
 	dw DOUBLE_COLORLESS_ENERGY
 
 ; return carry depending on card index in a:
@@ -1500,7 +1504,7 @@ CheckEnergyFlagsNeededInList:
 .next_card
 	ld a, [hli]
 	cp $ff
-	jr z, .no_carry
+	jp z, .no_carry
 	call GetCardIDFromDeckIndex
 
 ; fire
@@ -1535,18 +1539,23 @@ CheckEnergyFlagsNeededInList:
 	jr .check_energy
 .darkness
 	cp16 DARKNESS_ENERGY
-	jr nz, .colorless
+	jr nz, .metal
 	ld a, DARKNESS_F
-	jr .check_energy	
+	jr .check_energy
+.metal
+	cp16 METAL_ENERGY
+	jr nz, .colorless
+	ld a, METAL_F
+	jr .check_energy		
 .colorless
 	cp16 DOUBLE_COLORLESS_ENERGY
-	jr nz, .next_card
+	jp nz, .next_card
 	ld a, COLORLESS_F
 
 ; if energy card matches required energy, return carry
 .check_energy
 	and c
-	jr z, .next_card
+	jp z, .next_card
 	scf
 	ret
 .no_carry
@@ -1632,10 +1641,18 @@ GetEnergyCostBits:
 	ld a, [hli]
 	ld b, a
 	and $f0
-	jr z, .colorless
+	jr z, .metal
 	ld a, DARKNESS_F
 	or c
 	ld c, a
+.metal
+	ld a, [hli]
+	ld b, a
+	and $f0
+	jr z, .colorless
+	ld a, METAL_F
+	or c
+	ld c, a	
 .colorless
 	ld a, b
 	and $0f

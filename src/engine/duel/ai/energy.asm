@@ -756,9 +756,16 @@ GetEnergyCardForDiscardOrEnergyBoostAttack:
 	ld a, [hli]
 	ld b, a
 	and $f0
-	jr z, .psychic
+	jr z, .metal
 	ld de, DARKNESS_ENERGY
-	jr .set_carry	
+	jr .set_carry
+.metal
+	ld a, [hli]
+	ld b, a
+	and $f0
+	jr z, .psychic
+	ld de, METAL_ENERGY
+	jr .set_carry		
 .psychic
 	ld de, PSYCHIC_ENERGY
 

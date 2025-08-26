@@ -948,55 +948,43 @@ TrainerCardAsPokemonEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, TrainerCardAsPokemon_DiscardEffect
 	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, TrainerCardAsPokemon_PlayerSelectSwitch
 	db  $00
-
 LugiaHealingWindEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, HealingWind_InitialEffect
 	dbw EFFECTCMDTYPE_PKMN_POWER_TRIGGER, HealingWind_PlayAreaHealEffect
 	db  $00
-
 MeowthCatPunchEffectCommands:
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, CatPunchEffect
 	db  $00
-
 DittoMorphEffectCommands:
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, MorphEffect
 	db  $00
-
 PidgeotGaleEffectCommands:
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Gale_SwitchEffect
 	db  $00
-
 JigglypuffFriendshipSongEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Max_BenchCheck
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, FriendshipSong_AddToBench50PercentEffect
 	db  $00
-
 JigglypuffExpandEffectCommands:
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, ExpandEffect
 	db  $00
-
 DoubleColorlessEnergyEffectCommands:
 	db  $00
-
 PsychicEnergyEffectCommands:
 	db  $00
-
 FightingEnergyEffectCommands:
 	db  $00
-
 LightningEnergyEffectCommands:
 	db  $00
-
 WaterEnergyEffectCommands:
 	db  $00
-
 FireEnergyEffectCommands:
 	db  $00
-
 GrassEnergyEffectCommands:
 	db  $00
-
 DarknessEnergyEffectCommands:
+	db  $00	
+MetalEnergyEffectCommands:
 	db  $00	
 
 SuperPotionEffectCommands:

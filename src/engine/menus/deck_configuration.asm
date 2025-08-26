@@ -966,9 +966,9 @@ DrawCardTypeIcons:
 	db ICON_TILE_FIGHTING,   8, 2
 	db ICON_TILE_PSYCHIC,   10, 2
 	db ICON_TILE_DARKNESS,   12, 2
-	db ICON_TILE_COLORLESS, 14, 2
-	db ICON_TILE_TRAINER,   16, 2
-	db ICON_TILE_ENERGY,	18,	2
+	db ICON_TILE_METAL,	14,	2
+	db ICON_TILE_COLORLESS, 16, 2
+	db ICON_TILE_TRAINER,   18, 2
 	db $00
 
 DeckBuildMenuData:
@@ -1039,6 +1039,12 @@ CreateFilteredCardList:
 	cp FILTER_ENERGY
 	jr z, .check_energy
 	ld a, c
+; OATS begin custom logic to include energy and pokemon in the same filter
+   	cp TYPE_TRAINER
+   	jr nc, .normal_card_check  ; it's a trainer card
+   	and TYPE_PKMN  ; treat pokemon and energy as the same thing
+; OATS end custom logic
+.normal_card_check
 	cp b
 	jr nz, .loop_card_ids
 	jr .add_card
@@ -1377,6 +1383,12 @@ CountNumberOfCardsOfType:
 	cp FILTER_ENERGY
 	jr z, .check_energy
 	ld a, l
+	; OATS begin custom logic to include energy and pokemon in the same filter
+   	cp TYPE_TRAINER
+   	jr nc, .normal_card_check  ; it's a trainer card
+   	and TYPE_PKMN  ; treat pokemon and energy as the same thing
+; OATS end custom logic
+.normal_card_check
 	pop hl
 	cp b
 	jr nz, .loop_cards
@@ -1475,9 +1487,9 @@ CardTypeFilters:
 	db FILTER_FIGHTING
 	db FILTER_PSYCHIC
 	db FILTER_DARKNESS
+	db FILTER_METAL
 	db FILTER_COLORLESS
 	db FILTER_TRAINER
-	db FILTER_ENERGY
 	db -1 ; end of list
 
 ; counts all the cards from each card type
@@ -3048,7 +3060,7 @@ GetCardTypeIconPalette:
 	db ICON_TILE_PSYCHIC,         $4
 	db ICON_TILE_DARKNESS,		  $0
 	db ICON_TILE_COLORLESS,       $0
-	db ICON_TILE_ENERGY,          $3
+	db ICON_TILE_METAL,          $0
 	db ICON_TILE_BASIC_POKEMON,   $3
 	db ICON_TILE_STAGE_1_POKEMON, $3
 	db ICON_TILE_STAGE_2_POKEMON, $2

@@ -16,9 +16,9 @@ TerasparkDescription:
 	done
 
 TreasureRushDescription:
-	text "Does +10 damage for Each Card"
-	line "in your hand (Up to 10). Then,"
-	line "This PKMN takes 20 Damage."	
+	text "Does +10 damage for Each Card in"
+	line "your hand (Up to 10).Then, This PKMN"
+	line "takes 20 Damage."	
 	done
 
 SuctionHealName:

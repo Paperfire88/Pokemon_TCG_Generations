@@ -629,3 +629,5 @@ BoosterPack_LaboratoryDarkness::
 	db 16 ; Colorless Type Chance
 	db 16 ; Trainer Card Chance
 	db  0 ; Energy Card Chance	
+
+	

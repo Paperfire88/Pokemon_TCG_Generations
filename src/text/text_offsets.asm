@@ -3938,3 +3938,5 @@ TextOffsets::
 	textpointer RaltsAndFriendsText
 	textpointer TrapinchAndFriendsText
 	textpointer ThereAreNoPokemonOrEnergyCardsInDiscardPileText
+	textpointer MetalEnergyDescription
+	textpointer MetalEnergyName

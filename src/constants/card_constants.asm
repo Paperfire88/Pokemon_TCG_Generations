@@ -6,6 +6,7 @@
 	const FIGHTING_ENERGY             ; $05
 	const PSYCHIC_ENERGY              ; $06
 	const DARKNESS_ENERGY              ; $06
+	const METAL_ENERGY
 	const DOUBLE_COLORLESS_ENERGY     ; $07
 	const CHIKORITA                   ; $08
 	const BAYLEEF                     ; $09

@@ -50,19 +50,32 @@ MACRO textpointer
 ENDM
 
 MACRO energy
-	DEF en = 0
-	IF _NARG > 1
-		REPT _NARG / 2
-			DEF x = 4 - 8 * ((\1) % 2)
-			DEF en += \2 << (((\1) * 4) + x)
-			SHIFT 2
+	DEF en = 0 ; count of energies $00 - $07
+	DEF en2 = 0 ; count of energies $08+
+	DEF nt = NUM_TYPES/2
+	DEF et = nt - 4
+	IF _NARG > 1 ; If there is more than one argument, do the loop for each argument
+		REPT _NARG / 2 ; Repeat half the times of number of arguments
+			IF \1 > 7
+				DEF i = \1 - 8
+				DEF x = 4 - 8 * ((i) % 2)
+				DEF en2 += \2 << (((i) * 4) + x)
+			ELSE
+				DEF x = 4 - 8 * ((\1) % 2)
+				DEF en += \2 << (((\1) * 4) + x)
+			ENDC
+			SHIFT 2 ; Shift 2 - moves from argument 1 to argument 3
 		ENDR
-		REPT NUM_TYPES / 2
+		REPT 4 ; Repeat for energy pairs $00-07
 			db LOW(en)
 			DEF en >>= 8
 		ENDR
-	ELSE
-		db 0, 0, 0, 0
+	REPT et ; Repeat for energy pairs above $07
+			db LOW(en2)
+			DEF en2 >>= 8
+		ENDR
+	ELSE ; If there is only 1 or less arguments, set all five values to 0
+		db 0, 0, 0, 0, 0
 	ENDC
 ENDM
 

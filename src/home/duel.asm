@@ -1914,6 +1914,12 @@ ApplyDamageModifiers_DamageToTarget::
 ; convert a color to its equivalent WR_* (weakness/resistance) value
 TranslateColorToWR::
 	push hl
+	cp COLORLESS ; TODO - types beyond $07 will break the bitwise operations used for W/R values so a more robust system will need to be introduced
+	jr nz, .got_color
+	ld a, 0
+	pop hl
+	ret
+.got_color
 	add LOW(InvertedPowersOf2)
 	ld l, a
 	ld a, HIGH(InvertedPowersOf2)
