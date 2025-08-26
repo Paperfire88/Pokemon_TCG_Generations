@@ -2098,6 +2098,10 @@ MindReportEffectCommands:
 	dbw EFFECTCMDTYPE_PKMN_POWER_TRIGGER, MindReportEffect
 	db  $00
 
+RibbonEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Quickfreeze_InitialEffect
+	dbw EFFECTCMDTYPE_PKMN_POWER_TRIGGER, RibbonCheck
+	db  $00
 TimeStreamEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, DevolutionBeam_CheckPlayArea
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, DevolutionBeam_PlayerSelectEffect

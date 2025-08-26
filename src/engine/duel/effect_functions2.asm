@@ -1702,8 +1702,13 @@ use_pokemon_powerEffect:
 	call DrawWideTextBox_WaitForInput
 	ret
 
+RibbonEffect:
+	farcall CreatePokemonCardListFromDiscardPile
+	call RodEffect2.select_3
+	jp SelectedDiscardPileCards_IntoHandEffect2
 RodEffect2:
   call CreateNoTrainerCardListFromDiscardPile
+.select_3  
   ld a, 3
   ld [hTempCardIndex_ff9f], a
   ld a, $ff
@@ -1810,6 +1815,19 @@ SelectedDiscardPileCards_ShuffleIntoDeckEffect2:
 	farcall Func_2c0bd
   ret  
 
+SelectedDiscardPileCards_IntoHandEffect2:
+  ld hl, hTempList
+  ld de, wDuelTempList
+.loop
+  ld a, [hli]
+  ld [de], a
+  inc de
+  cp $ff
+  ret z
+; this is kinda dumb and can probably be abbreviated
+  farcall MoveDiscardPileCardToHand
+    farcall AddCardToHand
+  jr .loop
 EnergyRetrieval_PlayerDiscardPileSelection2:
 	ld a, 1 ; start at 1 due to card selected from hand
 	ldh [hCurSelectionItem], a
@@ -2199,10 +2217,10 @@ CreateNoTrainerCardListFromDiscardPile:
 	or a
 	ret
 .no_trainers
-	ldtx hl, ThereAreNoTrainerCardsInDiscardPileText
+	ldtx hl, ThereAreNoPokemonOrEnergyCardsInDiscardPileText
 	scf
 	ret
-	
+
 PlayerYesNoEffect2:
 	farcall IsPlayerTurn
 	jp nc, .ia

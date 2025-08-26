@@ -3938,3 +3938,4 @@ TextOffsets::
 	textpointer RaltsAndFriendsText
 	textpointer TrapinchAndFriendsText
 	textpointer ThereAreNoPokemonOrEnergyCardsInDiscardPileText
+	textpointer ThereAreNoPokemonCardsInDiscardPileText

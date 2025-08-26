@@ -722,3 +722,7 @@ ThereAreNoPokemonOrEnergyCardsInDiscardPileText:
 	text "There are no Pokémon or Energy"
 	line "Cards in the Discard Pile."
 	done
+ThereAreNoPokemonCardsInDiscardPileText:
+	text "There are no Pokémon Cards"
+	line "in the Discard Pile."
+	done

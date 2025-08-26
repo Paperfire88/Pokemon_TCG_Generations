@@ -783,8 +783,8 @@ VolbeatCard:
 	tx ElectricalRendDescription ; description
 	dw NONE ; description (cont)
 	db 10 ; damage
-	db DAMAGE_NORMAL ; category
-	dw PoisonBoostEffectCommands ; effect commands
+	db DAMAGE_PLUS ; category
+	dw Do30moreIfDFPStatusedEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3

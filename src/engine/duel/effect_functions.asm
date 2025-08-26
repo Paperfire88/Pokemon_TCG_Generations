@@ -4130,11 +4130,16 @@ SpacingOut_HealEffect:
 	add 10
 	ld [hl], a
 	ret
+RibbonCheck:	
+	call CreatePokemonCardListFromDiscardPile
+	ldtx hl, ThereAreNoPokemonOrEnergyCardsInDiscardPileText
+	ret c
+	farcall RibbonEffect
+	ret
 SuperRodCheck:
 	farcall CreateNoTrainerCardListFromDiscardPile
 	ldtx hl, ThereAreNoPokemonOrEnergyCardsInDiscardPileText ; this is redundant
 	ret
-; sets carry if no Trainer cards in the Discard Pile.
 Scavenge_CheckDiscardPile:
 	call Psychic_CheckEnergy
 	ret c ; return if no Psychic energy attached
@@ -9937,7 +9942,9 @@ Riptide_PlayerSelectEffect:
 SelectedDiscardPileCards_ShuffleIntoDeckEffect:
 	farcall SelectedDiscardPileCards_ShuffleIntoDeckEffect2
 	ret
-
+SelectedDiscardPileCards_IntoHandEffect:
+	farcall SelectedDiscardPileCards_IntoHandEffect2
+	ret
 DragonVortex_DamageBoostEffect:
 	ld c, 0
 	ld hl, hTempList

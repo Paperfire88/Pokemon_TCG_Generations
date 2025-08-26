@@ -1116,7 +1116,7 @@ SylveonCard:
 	tx PKMNPowerCondition ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
-	dw DevoFlashEffectCommands ; effect commands
+	dw RibbonEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
