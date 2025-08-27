@@ -6912,106 +6912,6 @@ GardevoirCard:
 	tx GardevoirDescription ; description
 	db 0		
 
-InkayCard:
-	db TYPE_PKMN_PSYCHIC ; type
-	gfx InkayCardGfx ; gfx
-	tx InkayName ; name
-	db CIRCLE ; rarity
-	db LABORATORY | NONE ; sets
-	dw INKAY
-	db 50 ; hp
-	db BASIC ; stage
-	dw NONE ; pre-evo name
-
-	; attack 1
-	energy PSYCHIC, 1 ; energies
-	tx RipOffName ; name
-	tx AstonishDescription ; description
-	dw NONE ; description (cont)
-	db 0 ; damage
-	db RESIDUAL ; category
-	dw AstonishEffectCommands ; effect commands
-	db NONE ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_GLOW_EFFECT ; animation
-
-	; attack 2
-	energy COLORLESS, 1 ; energies
-	tx ConfusionWaveName ; name
-	tx FoulOdorDescription ; description
-	dw NONE ; description (cont)
-	db 10 ; damage
-	db DAMAGE_NORMAL ; category
-	dw FlappleFoulOdorEffectCommands ; effect commands
-	db INFLICT_CONFUSION ; flags 1
-	db FLAG_2_BIT_7 ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_FOUL_ODOR ; animation
-
-	db 1 ; retreat cost
-	db WR_GRASS ; weakness
-	db NONE ; resistance
-	tx RevolvingName ; category
-	db 156 ; Pokedex number
-	db 18 ; level
-	db 3, 11 ; length
-	dw 79 * 10 ; weight
-	tx BruxishDescription ; description
-	db 16
-
-MalamarCard:
-	db TYPE_PKMN_PSYCHIC ; type
-	gfx MalamarCardGfx ; gfx
-	tx MalamarName ; name
-	db DIAMOND ; rarity
-	db LABORATORY | NONE ; sets
-	dw MALAMAR
-	db 70 ; hp
-	db STAGE1 ; stage
-	tx InkayName ; pre-evo name
-
-	; attack 1
-	energy 0 ; energies
-	tx ContraryBehaviorName ; name
-	tx StrangeBehaviorDescription ; description
-	tx PKMNPowerCondition2 ; description (cont)
-	db 0 ; damage
-	db POKEMON_POWER ; category
-	dw MalamarStrangeBehaviorEffectCommands ; effect commands
-	db NONE ; flags 1
-	db FLAG_2_BIT_6 ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_PKMN_POWER_1 ; animation
-
-	; attack 2
-	energy PSYCHIC, 2 ; energies
-	tx MaliceTentaclesName ; name
-	tx MaliceTentaclesDescription ; description
-	dw NONE ; description (cont)
-	db 20 ; damage
-	db DAMAGE_NORMAL ; category
-	dw MaliceTentacleEffectCommands ; effect commands
-	db INFLICT_CONFUSION	 ; flags 1
-	db NONE ; flags 2
-	db BOOST_IF_TAKEN_DAMAGE ; flags 3
-	db 0
-	db ATK_ANIM_HIT ; animation
-
-	db 1 ; retreat cost
-	db WR_GRASS ; weakness
-	db WR_PSYCHIC ; resistance
-	tx OverturningName ; category
-	db 157 ; Pokedex number
-	db 36 ; level
-	db 5, 3 ; length
-	dw 173 * 10 ; weight
-	tx MalamarDescription ; description
-	db 0
-
 DuskullCard:
 	db TYPE_PKMN_PSYCHIC ; type
 	gfx DuskullCardGfx ; gfx
@@ -8565,6 +8465,106 @@ DrapionCard:
 	dw 9 * 10 ; weight
 	tx MimikyuDescription ; description
 	db 0		
+
+InkayCard:
+	db TYPE_PKMN_DARKNESS ; type
+	gfx InkayCardGfx ; gfx
+	tx InkayName ; name
+	db CIRCLE ; rarity
+	db LABORATORY | NONE ; sets
+	dw INKAY
+	db 50 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy PSYCHIC, 1 ; energies
+	tx RipOffName ; name
+	tx AstonishDescription ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw AstonishEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_GLOW_EFFECT ; animation
+
+	; attack 2
+	energy COLORLESS, 1 ; energies
+	tx ConfusionWaveName ; name
+	tx FoulOdorDescription ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_NORMAL ; category
+	dw FlappleFoulOdorEffectCommands ; effect commands
+	db INFLICT_CONFUSION ; flags 1
+	db FLAG_2_BIT_7 ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_FOUL_ODOR ; animation
+
+	db 1 ; retreat cost
+	db WR_GRASS ; weakness
+	db NONE ; resistance
+	tx RevolvingName ; category
+	db 156 ; Pokedex number
+	db 18 ; level
+	db 3, 11 ; length
+	dw 79 * 10 ; weight
+	tx BruxishDescription ; description
+	db 16
+
+MalamarCard:
+	db TYPE_PKMN_DARKNESS ; type
+	gfx MalamarCardGfx ; gfx
+	tx MalamarName ; name
+	db DIAMOND ; rarity
+	db LABORATORY | NONE ; sets
+	dw MALAMAR
+	db 70 ; hp
+	db STAGE1 ; stage
+	tx InkayName ; pre-evo name
+
+	; attack 1
+	energy 0 ; energies
+	tx ContraryBehaviorName ; name
+	tx StrangeBehaviorDescription ; description
+	tx PKMNPowerCondition2 ; description (cont)
+	db 0 ; damage
+	db POKEMON_POWER ; category
+	dw MalamarStrangeBehaviorEffectCommands ; effect commands
+	db NONE ; flags 1
+	db FLAG_2_BIT_6 ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_PKMN_POWER_1 ; animation
+
+	; attack 2
+	energy PSYCHIC, 2 ; energies
+	tx MaliceTentaclesName ; name
+	tx MaliceTentaclesDescription ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw MaliceTentacleEffectCommands ; effect commands
+	db INFLICT_CONFUSION	 ; flags 1
+	db NONE ; flags 2
+	db BOOST_IF_TAKEN_DAMAGE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	db 1 ; retreat cost
+	db WR_GRASS ; weakness
+	db WR_PSYCHIC ; resistance
+	tx OverturningName ; category
+	db 157 ; Pokedex number
+	db 36 ; level
+	db 5, 3 ; length
+	dw 173 * 10 ; weight
+	tx MalamarDescription ; description
+	db 0
 
 ZubatCard:
 	db TYPE_PKMN_DARKNESS ; type

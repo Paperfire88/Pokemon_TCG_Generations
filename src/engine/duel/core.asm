@@ -5220,7 +5220,7 @@ PrintPlayAreaCardAttachedEnergies:
 	pop bc
 	call BCCoordToBGMap0Address
 	ld hl, wDefaultText
-	ld b, NUM_TYPES
+	ld b, 8
 	jp SafeCopyDataHLtoDE
 
 DisplayPlayAreaScreenToUsePkmnPower:
