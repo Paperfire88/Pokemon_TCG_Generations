@@ -861,7 +861,7 @@ DrawPlayArea_BenchCards:
 	ret z
 
 	push bc
-	ld a, $f4 ; empty bench slot tile
+	ld a, $e0 ; empty bench slot tile
 	lb hl, 1, 2
 	lb bc, 2, 2
 	call FillRectangle

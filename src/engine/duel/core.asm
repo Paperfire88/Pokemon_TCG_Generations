@@ -2491,7 +2491,7 @@ DrawDuelHUD:
 	or a
 	jr z, .check_defender
 	ld a, SYM_PLUSPOWER
-	call WriteByteToBGMap0
+	call WriteVRAM1ByteToBGMap0
 	inc b
 	ld a, [hl] ; number of attached Pluspower
 	add SYM_0
@@ -2504,7 +2504,7 @@ DrawDuelHUD:
 	jr z, .done
 	inc c
 	ld a, SYM_DEFENDER
-	call WriteByteToBGMap0
+	call WriteVRAM1ByteToBGMap0
 	inc b
 	ld a, [hl] ; number of attached Defender
 	add SYM_0
@@ -5096,7 +5096,7 @@ PrintPlayAreaCardHeader:
 	ld c, a
 	ld b, 15
 	ld a, SYM_PLUSPOWER
-	call WriteByteToBGMap0
+	call WriteVRAM1ByteToBGMap0
 	inc b
 	ld a, [hl]
 	add SYM_0
@@ -5112,7 +5112,7 @@ PrintPlayAreaCardHeader:
 	ld c, a
 	ld b, 17
 	ld a, SYM_DEFENDER
-	call WriteByteToBGMap0
+	call WriteVRAM1ByteToBGMap0
 	inc b
 	ld a, [hl]
 	add SYM_0

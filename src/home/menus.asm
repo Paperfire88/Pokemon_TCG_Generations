@@ -642,7 +642,7 @@ DrawCardSymbol::
 	lb bc, 2, 2
 	lb hl, 0, 0
 	call BankswitchVRAM1
-	call FillRectangle
+	call FillVRAM1Rectangle
 	call BankswitchVRAM0
 	pop hl
 	ld a, [hl]
@@ -656,19 +656,19 @@ DrawCardSymbol::
 
 CardSymbolTable::
 ; starting tile number, cgb palette (grey, yellow/red, green/blue, pink/orange)
-	db $e0, $2 ; TYPE_ENERGY_FIRE
-	db $e4, $3 ; TYPE_ENERGY_GRASS
-	db $e8, $2 ; TYPE_ENERGY_LIGHTNING
-	db $ec, $3 ; TYPE_ENERGY_WATER
-	db $f0, $4 ; TYPE_ENERGY_PSYCHIC
-	db $f4, $4 ; TYPE_ENERGY_FIGHTING
-	db $f8, $0 ; TYPE_DARKNESS
-	db $ec, $0 ; TYPE_ENERGY_METAL
-	db $fc, $0 ; TYPE_ENERGY_DOUBLE_COLORLESS
-	db $d0, $3 ; TYPE_PKMN_*, Basic
-	db $d4, $3 ; TYPE_PKMN_*, Stage 1
-	db $d8, $2 ; TYPE_PKMN_*, Stage 2
-	db $dc, $3 ; TYPE_TRAINER
+	db $c0, $01 ; TYPE_ENERGY_FIRE
+	db $c4, $02 ; TYPE_ENERGY_GRASS
+	db $c8, $01 ; TYPE_ENERGY_LIGHTNING
+	db $cc, $02 ; TYPE_ENERGY_WATER
+	db $d0, $03 ; TYPE_ENERGY_PSYCHIC
+	db $d4, $03 ; TYPE_ENERGY_FIGHTING
+	db $d8, $00 ; TYPE_ENERGY_DARKNESS
+	db $dc, $0 ; TYPE_ENERGY_METAL
+	db $e0, $00 ; TYPE_ENERGY_DOUBLE_COLORLESS
+	db $b0, $03 ; TYPE_PKMN_*, Basic
+	db $b4, $03 ; TYPE_PKMN_*, Stage 1
+	db $b8, $02 ; TYPE_PKMN_*, Stage 2
+	db $bc, $03 ; TYPE_TRAINER
 
 ; copy the name and level of the card at wLoadedCard1 to wDefaultText
 ; a = length in number of tiles (the resulting string will be padded with spaces to match it)

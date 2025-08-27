@@ -952,7 +952,7 @@ DrawCardTypeIcons:
 	lb bc, 2, 2
 	lb hl, 0, 0
 	call BankswitchVRAM1
-	call FillRectangle
+	call FillVRAM1Rectangle
 	call BankswitchVRAM0
 	pop hl
 	ret
@@ -3021,7 +3021,7 @@ PrintConfirmationCardList:
 	lb bc, 2, 2
 	lb hl, 0, 0
 	call BankswitchVRAM1
-	call FillRectangle
+	call FillVRAM1Rectangle
 	call BankswitchVRAM0
 	pop bc
 	pop de

@@ -47,7 +47,10 @@ WriteDataBlockToBGMap0::
 	ld b, 0
 	add hl, bc ; point to next structure
 	ret
-
+; extended version of function to make it more efficient
+; to write tiles from VRAM Bank 1 to the BG Map
+WriteVRAM1ByteToBGMap0::
+	call BankswitchVRAM1
 ; writes a to [v*BGMap0 + BG_MAP_WIDTH * c + b]
 WriteByteToBGMap0::
 	push af
@@ -61,6 +64,18 @@ WriteByteToBGMap0::
 	push af
 	call BCCoordToBGMap0Address
 	pop af
+	; if we're in VRAM Bank 1, then we need to not only
+	; write the tile to BG Map 0 but also write to the
+	; attributes in BG Map 1 to say the tile is in Bank 1
+	push af
+	ld a, [rVBK] 
+	cp $ff
+	jr nz, .skip_attributes
+	ld a, $08 ; sets the attributes of the tile to read from VRAM 1 with palette BG0 - TODO - see whether there's tiles that SHOULDN'T have this palette, but I'm pretty sure it's only drawing icons so it should be ok. Consider adding palettes to icons, might look nice
+	ld [de], a
+.skip_attributes
+	pop af
+	call BankswitchVRAM0
 	ld [de], a
 	pop bc
 	pop de
@@ -68,6 +83,10 @@ WriteByteToBGMap0::
 	ret
 .lcd_on
 	pop af
+;	fallthrough
+
+; writes a to [v*BGMap0 + BG_MAP_WIDTH * c + b] during hblank
+HblankWriteByteToBGMap0::
 	push hl
 	push de
 	push bc
@@ -76,6 +95,18 @@ WriteByteToBGMap0::
 	ld [hl], a
 	call BCCoordToBGMap0Address
 	pop hl
+; if we're in VRAM Bank 1, then we need to not only
+; write the tile to BG Map 0 but also write to the
+; attributes in BG Map 1 to say the tile is in Bank 1
+	push af
+	ld a, [rVBK] 
+	cp $ff
+	jr nz, .skip_attributes
+	ld a, $08
+	ld [de], a
+.skip_attributes
+	pop af
+	call BankswitchVRAM0	
 	ld b, 1
 	call HblankCopyDataHLtoDE
 	pop bc
