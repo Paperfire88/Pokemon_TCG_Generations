@@ -4954,7 +4954,10 @@ AIDecide_Gambler:
 	ld a, [wOpponentDeckID]
 	cp IMAKUNI_DECK_ID
 	jr z, .imakuni
-	jr .set_carry
+	ld a, DUELVARS_NUMBER_OF_CARDS_IN_HAND
+	call GetTurnDuelistVariable
+	cp 5 
+	jr c, .set_carry
 
 ; check if flag is set for Player using MewtwoLv53 only deck
 	ld a, [wAIBarrierFlagCounter]

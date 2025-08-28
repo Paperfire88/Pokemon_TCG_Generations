@@ -39,8 +39,8 @@ AIActionTable_LegendarySuicune:
 	dw NULL
 
 .list_retreat
-	ai_retreat SEEL,  -3
-	ai_retreat DITTO, -3
+	ai_retreat DEWGONG,  -3
+	ai_retreat SUICUNE, -3
 	dw NULL
 
 .list_energy

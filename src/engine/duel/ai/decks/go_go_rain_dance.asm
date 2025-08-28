@@ -39,8 +39,8 @@ AIActionTable_GoGoRainDance:
 	dw NULL
 
 .list_retreat
-	ai_retreat FROAKIE,  -3
-	ai_retreat FROGADIER, -2
+	ai_retreat GRENINJA,  -3
+	ai_retreat KINGDRA, -2
 	ai_retreat HORSEA,    -1
 	dw NULL
 

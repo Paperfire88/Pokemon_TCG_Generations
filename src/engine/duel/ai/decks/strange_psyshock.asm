@@ -41,21 +41,23 @@ AIActionTable_StrangePsyshock:
 	dw NULL
 
 .list_retreat
-	ai_retreat ABRA,       -3
-	ai_retreat RIBOMBEE,    -3
+	ai_retreat KADABRA,       -3
+	ai_retreat ALAKAZAM,    -3
 	ai_retreat CUTIEFLY, -1
 	dw NULL
 
 .list_energy
-	ai_energy ABRA,       2, +1
+	ai_energy ABRA,       2, +2
 	ai_energy KADABRA,    3, +0
 	ai_energy ALAKAZAM,   3, +1
+	ai_energy CUTIEFLY, 1, -1
 	ai_energy SPIRITOMB,    2, +0
 	ai_energy INKAY,	1, 0
-	ai_energy INKAY,	1, +1
+	ai_energy MALAMAR,	1, +1
 	dw NULL
 
 .list_prize
+	dw ABRA
 	dw SPIRITOMB
 	dw ALAKAZAM
 	dw NULL

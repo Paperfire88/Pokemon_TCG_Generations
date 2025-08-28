@@ -51,6 +51,7 @@ MainDuelLoop:
 	call HandleTurn
 
 .between_turns
+	call UpdateRNGSources
 	ld a, [wDuelFinished]
 	or a
 	jr nz, .duel_finished

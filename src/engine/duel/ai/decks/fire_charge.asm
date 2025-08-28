@@ -39,9 +39,8 @@ AIActionTable_FireCharge:
 	dw NULL
 
 .list_retreat
-	ai_retreat TOGEKISS, -1
-	ai_retreat AUDINO,         -1
-	ai_retreat SIZZLIPEDE,       -1
+	ai_retreat HOUNDOUR, -1
+	ai_retreat TORTUNATOR,       -1
 	dw NULL
 
 .list_energy

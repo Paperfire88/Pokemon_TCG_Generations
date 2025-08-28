@@ -39,8 +39,8 @@ AIActionTable_LegendaryLugia:
 	dw NULL
 
 .list_retreat
-	ai_retreat TEPIG, -1
-	ai_retreat SNEASEL,   -5
+	ai_retreat GOOMY, -1
+	ai_retreat GOODRA,   -5
 	dw NULL
 
 .list_energy

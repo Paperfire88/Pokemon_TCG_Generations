@@ -47,10 +47,6 @@ AIDoTurn_GeneralNoRetreat:
 	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_04
 	call AIProcessHandTrainerCards
-; play Pokemon from hand
-	call AIDecidePlayPokemonCard
-; process Trainer cards
-; phase 5 through 12.
 	ld a, AI_TRAINER_CARD_PHASE_05
 	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_06
@@ -59,7 +55,7 @@ AIDoTurn_GeneralNoRetreat:
 	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_08
 	call AIProcessHandTrainerCards
-	call AIProcessRetreat
+	farcall AIProcessRetreat
 	ld a, AI_TRAINER_CARD_PHASE_10
 	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_11
@@ -115,7 +111,7 @@ AIDoTurn_GeneralNoRetreat:
 	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_08
 	call AIProcessHandTrainerCards
-	call AIProcessRetreat
+	farcall AIProcessRetreat
 	ld a, AI_TRAINER_CARD_PHASE_10
 	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_11

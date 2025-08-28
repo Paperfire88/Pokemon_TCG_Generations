@@ -1571,5 +1571,5 @@ MalamarName:
 	done
 
 ContraryBehaviorName:
-	text "Contrary Beheavior"
+	text "Contrary Behavior"
 	done
