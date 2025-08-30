@@ -42,7 +42,8 @@ AIActionTable_LegendaryEntei:
 	dw NULL
 
 .list_retreat
-	ai_retreat HOUNDOUR,    -5
+	ai_retreat HOUNDOUR,    -1
+	ai_retreat SALANDIT,	-1
 	dw NULL
 
 .list_energy

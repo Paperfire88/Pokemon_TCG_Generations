@@ -70,7 +70,7 @@ SneaselDescription:
 	line "OG illustrator: (KEN SUGIMORI)"
 	done
 
-GyaradosDescription:
+WeavileDescription:
 	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Secret Wonders 40)"
 	line "OG illustrator: (Kagemaru Himeno)"

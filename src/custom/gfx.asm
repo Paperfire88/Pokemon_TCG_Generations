@@ -1,19 +1,3 @@
-EspeonCardGfx::
-	INCBIN "gfx/cards/espeon.pal"
-	INCBIN "gfx/cards/espeon.attrmap"	
-	INCBIN "gfx/cards/espeon.2bpp"
-VolbeatCardGfx::
-	INCBIN "gfx/cards/volbeat.pal"	
-	INCBIN "gfx/cards/volbeat.attrmap"
-	INCBIN "gfx/cards/volbeat.2bpp"	
-KilowattrelCardGfx::
-	INCBIN "gfx/cards/kilowattrel.pal"	
-	INCBIN "gfx/cards/kilowattrel.attrmap"
-	INCBIN "gfx/cards/kilowattrel.2bpp"	
-DunsparceCardGfx::
-	INCBIN "gfx/cards/dunsparce.pal"	
-	INCBIN "gfx/cards/dunsparce.attrmap"	
-	INCBIN "gfx/cards/dunsparce.2bpp"
 TynamoCardGfx:
 	INCBIN "gfx/cards/tynamo.pal"
 	INCBIN "gfx/cards/tynamo.attrmap"	
@@ -34,26 +18,6 @@ DarknessCardGfx:
 	INCBIN "gfx/cards/darkness.pal"	
 	INCBIN "gfx/cards/darkness.attrmap"	
 	INCBIN "gfx/cards/darkness.2bpp"
-Porygon2CardGfx:
-	INCBIN "gfx/cards/porygon2.pal"		
-	INCBIN "gfx/cards/porygon2.attrmap"	
-	INCBIN "gfx/cards/porygon2.2bpp"
-PorygonZCardGfx:
-	INCBIN "gfx/cards/porygonz.pal"		
-	INCBIN "gfx/cards/porygonz.attrmap"	
-	INCBIN "gfx/cards/porygonz.2bpp"
-CarbinkCardGfx:
-	INCBIN "gfx/cards/carbink.pal"			
-	INCBIN "gfx/cards/carbink.attrmap"	
-	INCBIN "gfx/cards/carbink.2bpp"
-SkorupiCardGfx:
-	INCBIN "gfx/cards/skorupi.pal"	
-	INCBIN "gfx/cards/skorupi.attrmap"
-	INCBIN "gfx/cards/skorupi.2bpp"	
-DrapionCardGfx:
-	INCBIN "gfx/cards/drapion.pal"		
-	INCBIN "gfx/cards/drapion.attrmap"	
-	INCBIN "gfx/cards/drapion.2bpp"
 FuecocoCardGfx:
 	INCBIN "gfx/cards/fuecoco.pal"			
 	INCBIN "gfx/cards/fuecoco.attrmap"	
@@ -74,3 +38,39 @@ MetangCardGfx:
 	INCBIN "gfx/cards/metang.pal"	
 	INCBIN "gfx/cards/metang.attrmap"	
 	INCBIN "gfx/cards/metang.2bpp"
+ShelgonCardGfx:
+	INCBIN "gfx/cards/shelgon.pal"	
+	INCBIN "gfx/cards/shelgon.attrmap"	
+	INCBIN "gfx/cards/shelgon.2bpp"
+SalamanceCardGfx:
+	INCBIN "gfx/cards/salamence.pal"
+	INCBIN "gfx/cards/salamence.attrmap"
+	INCBIN "gfx/cards/salamence.2bpp"	
+RockruffCardGfx:
+	INCBIN "gfx/cards/rockruff.pal"	
+	INCBIN "gfx/cards/rockruff.attrmap"	
+	INCBIN "gfx/cards/rockruff.2bpp"
+LycanrocCardGfx:
+	INCBIN "gfx/cards/lycanroc.pal"
+	INCBIN "gfx/cards/lycanroc.attrmap"	
+	INCBIN "gfx/cards/lycanroc.2bpp"
+LycanrocMCardGfx:
+	INCBIN "gfx/cards/lycanrocM.pal"	
+	INCBIN "gfx/cards/lycanrocM.attrmap"	
+	INCBIN "gfx/cards/lycanrocM.2bpp"
+WattrelCardGfx:
+	INCBIN "gfx/cards/wattrel.pal"	    
+	INCBIN "gfx/cards/wattrel.attrmap"	
+	INCBIN "gfx/cards/wattrel.2bpp"
+DruddigonCardGfx:
+	INCBIN "gfx/cards/druddigon.pal"	
+	INCBIN "gfx/cards/druddigon.attrmap"
+	INCBIN "gfx/cards/druddigon.2bpp"	
+HoohCardGfx:
+	INCBIN "gfx/cards/ho-oh.pal"
+	INCBIN "gfx/cards/ho-oh.attrmap"
+	INCBIN "gfx/cards/ho-oh.2bpp"	
+MunnaCardGfx:
+	INCBIN "gfx/cards/munna.pal"	
+	INCBIN "gfx/cards/munna.attrmap"	
+	INCBIN "gfx/cards/munna.2bpp"

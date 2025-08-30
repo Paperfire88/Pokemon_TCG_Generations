@@ -10,6 +10,7 @@ CardPointers::
 	dab DarknessEnergyCard
 	dab MetalEnergyCard
 	dab DoubleColorlessEnergyCard
+	;Grass
 	dab ChikoritaCard
 	dab BayleefCard
 	dab MeganiumCard
@@ -46,6 +47,7 @@ CardPointers::
 	dab TangrowthCard	
 	dab ScytherCard
 	dab LeafeonCard
+	;Fire
 	dab TepigCard
 	dab PigniteCard
 	dab EmboarCard
@@ -78,6 +80,7 @@ CardPointers::
 	dab DruddigonCard
 	dab EnteiCard
 	dab HoohCard
+	;Water
 	dab FroakieCard
 	dab FrogadierCard
 	dab GreninjaCard
@@ -106,11 +109,14 @@ CardPointers::
 	dab MudkipCard
 	dab MarshtompCard
 	dab SwampertCard
+	dab MagikarpCard
+	dab GyaradosCard
 	dab VaporeonLv42Card
 	dab GlaceonCard
 	dab OmanyteCard
 	dab OmastarCard
 	dab SuicuneCard
+	;Lightning
 	dab MagnemiteLv13Card
 	dab MagnetonLv28Card
 	dab MagnezoneCard	
@@ -144,6 +150,7 @@ CardPointers::
 	dab EelektrossCard
 	dab ZeraoraCard
 	dab RaikouCard	
+	; Fighting
 	dab SandileCard
 	dab KrokorokCard
 	dab KrookodileCard
@@ -178,6 +185,7 @@ CardPointers::
 	dab TyrantrumCard
 	dab ScizorCard
 	dab GalladeCard
+	;Psychic
 	dab RaltsCard
 	dab KirliaCard
 	dab GardevoirCard
@@ -211,6 +219,7 @@ CardPointers::
 	dab CresseliaCard
 	dab MewLv23Card
 	dab MewtwoCard
+	;Darkness
 	dab DeinoCard
 	dab ZweilousCard
 	dab HydreigonCard
@@ -226,6 +235,9 @@ CardPointers::
 	dab ToxtricityLv42Card
 	dab SkorupiCard
 	dab DrapionCard
+	dab VenipedeCard
+	dab WhirlipedeCard
+	dab ScolipedeCard
 	dab CroagunkCard
 	dab ToxicroakCard
 	dab ImpidimpCard
@@ -243,6 +255,7 @@ CardPointers::
 	dab WeavileCard
 	dab NihilegoCard
 	dab DarkraiCard
+	;Colorless
 	dab RookideeCard
 	dab CorvisquireCard
 	dab CorviknightCard
@@ -276,6 +289,7 @@ CardPointers::
 	dab GoodraCard
 	dab RayquazaCard
 	dab LugiaCard
+	;Trainers
 	dab ProfessorOakCard
 	dab ImposterProfessorOakCard
 	dab BillCard

@@ -1408,7 +1408,7 @@ CallBackName:
 	text "Call Back"
 	done
 
-GyaradosName:
+WeavileName:
 	text "Weavile"
 	done
 
@@ -1571,5 +1571,5 @@ MalamarName:
 	done
 
 ContraryBehaviorName:
-	text "Contrary Beheavior"
+	text "Contrary Behavior"
 	done

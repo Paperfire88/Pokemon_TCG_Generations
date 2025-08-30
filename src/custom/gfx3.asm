@@ -1,39 +1,3 @@
-LitleoCardGfx:
-	INCBIN "gfx/cards/litleo.pal"	
-	INCBIN "gfx/cards/litleo.attrmap"	
-	INCBIN "gfx/cards/litleo.2bpp"	
-PyroarCardGfx:
-	INCBIN "gfx/cards/pyroar.pal"  
-	INCBIN "gfx/cards/pyroar.attrmap"	
-	INCBIN "gfx/cards/pyroar.2bpp"
-GalladeCardGfx:
-	INCBIN "gfx/cards/gallade.pal"      
-	INCBIN "gfx/cards/gallade.attrmap"	
-	INCBIN "gfx/cards/gallade.2bpp"
-ImpidimpCardGfx:
-	INCBIN "gfx/cards/impidimp.pal"
-	INCBIN "gfx/cards/impidimp.attrmap"	
-	INCBIN "gfx/cards/impidimp.2bpp"
-MorgremCardGfx:
-	INCBIN "gfx/cards/morgrem.pal"	
-	INCBIN "gfx/cards/morgrem.attrmap"
-	INCBIN "gfx/cards/morgrem.2bpp"	
-GrimmsnarlCardGfx:
-	INCBIN "gfx/cards/grimmsnarl.pal"	
-	INCBIN "gfx/cards/grimmsnarl.attrmap"	
-	INCBIN "gfx/cards/grimmsnarl.2bpp"
-KingdraGfx:
-	INCBIN "gfx/cards/kingdra.pal"	
-	INCBIN "gfx/cards/kingdra.attrmap"	
-	INCBIN "gfx/cards/kingdra.2bpp"
-PawniardCardGfx:
-	INCBIN "gfx/cards/pawniard.pal"
-	INCBIN "gfx/cards/pawniard.attrmap"	
-	INCBIN "gfx/cards/pawniard.2bpp"
-BisharpCardGfx:
-	INCBIN "gfx/cards/bisharp.pal"	
-	INCBIN "gfx/cards/bisharp.attrmap"	
-	INCBIN "gfx/cards/bisharp.2bpp"
 MoonStoneCardGfx:
 	INCBIN "gfx/cards/moonstone.pal"
 	INCBIN "gfx/cards/moonstone.attrmap"
@@ -74,3 +38,40 @@ MetalEnergyCardGfx::
 	INCBIN "gfx/cards/metalenergy.pal"	
 	INCBIN "gfx/cards/metalenergy.attrmap"
 	INCBIN "gfx/cards/metalenergy.2bpp"
+PichuCardGfx::
+	INCBIN "gfx/cards/pichu.pal"
+	INCBIN "gfx/cards/pichu.attrmap"	
+	INCBIN "gfx/cards/pichu.2bpp"
+PikachuCardGfx::
+	INCBIN "gfx/cards/pikachu.pal"
+	INCBIN "gfx/cards/pikachu.attrmap"	
+	INCBIN "gfx/cards/pikachu.2bpp"
+RaichuCardGfx::
+	INCBIN "gfx/cards/raichu.pal"
+	INCBIN "gfx/cards/raichu.attrmap"	
+	INCBIN "gfx/cards/raichu.2bpp"
+RioluCardGfx::
+	INCBIN "gfx/cards/riolu.pal"
+	INCBIN "gfx/cards/riolu.attrmap"	
+	INCBIN "gfx/cards/riolu.2bpp"
+LeafeonCardGfx::
+	INCBIN "gfx/cards/leafeon.pal"
+	INCBIN "gfx/cards/leafeon.attrmap"	
+	INCBIN "gfx/cards/leafeon.2bpp"
+GlaceonCardGfx::
+	INCBIN "gfx/cards/glaceon.pal"
+	INCBIN "gfx/cards/glaceon.attrmap"	
+	INCBIN "gfx/cards/glaceon.2bpp"
+SylveonCardGfx::
+	INCBIN "gfx/cards/sylveon.pal"
+	INCBIN "gfx/cards/sylveon.attrmap"
+	INCBIN "gfx/cards/sylveon.2bpp"	
+WooperCardGfx::
+	INCBIN "gfx/cards/wooper.pal"
+	INCBIN "gfx/cards/wooper.attrmap"	
+	INCBIN "gfx/cards/wooper.2bpp"
+ClodsireCardGfx::
+	INCBIN "gfx/cards/clodsire.pal"
+	INCBIN "gfx/cards/clodsire.attrmap"	
+	INCBIN "gfx/cards/clodsire.2bpp"
+	

@@ -40,9 +40,9 @@ AIActionTable_FirstStrike:
 	dw NULL
 
 .list_retreat
-	ai_retreat JANGMO_O,  -2
-	ai_retreat KROKOROK, -1
-	ai_retreat CROAGUNK,  -2
+	ai_retreat JANGMO_O,  -1
+	ai_retreat HITMONCHAN, -1
+	ai_retreat KOMMO_O,  -2
 	dw NULL
 
 .list_energy

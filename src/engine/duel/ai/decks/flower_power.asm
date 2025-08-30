@@ -38,10 +38,8 @@ AIActionTable_FlowerPower:
 	dw NULL
 
 .list_retreat
-	ai_retreat FLAPPLE,     -2
-	ai_retreat APPLETUN, -2
-	ai_retreat CHIKORITA, -2
-	ai_retreat BAYLEEF,   -2
+	ai_retreat TANGROWTH,     -2
+	ai_retreat MEGANIUM,   -2
 	dw NULL
 
 .list_energy

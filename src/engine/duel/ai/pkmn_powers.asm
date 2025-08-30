@@ -1061,7 +1061,7 @@ HandleAIDamageSwap:
 	ld a, [wce06]
 	ld e, a
 .loop_damage
-	ld d, 30
+	ld d, 20
 .small_delay_loop
 	call DoFrame
 	dec d

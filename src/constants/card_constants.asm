@@ -104,6 +104,8 @@
 	const MUDKIP
 	const MARSHTOMP
 	const SWAMPERT
+	const MAGIKARP
+	const GYARADOS	
 	const VAPOREON               ; $5b
 	const GLACEON                     ; $2e
 	const OMANYTE                     ; $5c
@@ -224,6 +226,9 @@
 	const TOXTRICITY_LOW              ; $6f
 	const SKORUPI
 	const DRAPION
+	const VENIPEDE
+	const WHIRLIPEDE
+	const SCOLIPEDE
 	const CROAGUNK                      ; $7b
 	const TOXICROAK                    ; $7c
 	const IMPIDIMP

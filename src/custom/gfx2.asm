@@ -1,39 +1,3 @@
-ShelgonCardGfx:
-	INCBIN "gfx/cards/shelgon.pal"	
-	INCBIN "gfx/cards/shelgon.attrmap"	
-	INCBIN "gfx/cards/shelgon.2bpp"
-SalamanceCardGfx:
-	INCBIN "gfx/cards/salamence.pal"
-	INCBIN "gfx/cards/salamence.attrmap"
-	INCBIN "gfx/cards/salamence.2bpp"	
-RockruffCardGfx:
-	INCBIN "gfx/cards/rockruff.pal"	
-	INCBIN "gfx/cards/rockruff.attrmap"	
-	INCBIN "gfx/cards/rockruff.2bpp"
-LycanrocCardGfx:
-	INCBIN "gfx/cards/lycanroc.pal"
-	INCBIN "gfx/cards/lycanroc.attrmap"	
-	INCBIN "gfx/cards/lycanroc.2bpp"
-LycanrocMCardGfx:
-	INCBIN "gfx/cards/lycanrocM.pal"	
-	INCBIN "gfx/cards/lycanrocM.attrmap"	
-	INCBIN "gfx/cards/lycanrocM.2bpp"
-WattrelCardGfx:
-	INCBIN "gfx/cards/wattrel.pal"	    
-	INCBIN "gfx/cards/wattrel.attrmap"	
-	INCBIN "gfx/cards/wattrel.2bpp"
-DruddigonCardGfx:
-	INCBIN "gfx/cards/druddigon.pal"	
-	INCBIN "gfx/cards/druddigon.attrmap"
-	INCBIN "gfx/cards/druddigon.2bpp"	
-HoohCardGfx:
-	INCBIN "gfx/cards/ho-oh.pal"
-	INCBIN "gfx/cards/ho-oh.attrmap"
-	INCBIN "gfx/cards/ho-oh.2bpp"	
-MunnaCardGfx:
-	INCBIN "gfx/cards/munna.pal"	
-	INCBIN "gfx/cards/munna.attrmap"	
-	INCBIN "gfx/cards/munna.2bpp"
 MusharnaCardGfx:
 	INCBIN "gfx/cards/musharna.pal"    
 	INCBIN "gfx/cards/musharna.attrmap"	
@@ -74,3 +38,40 @@ BlipbugCardGfx:
 	INCBIN "gfx/cards/blipbug.pal"  		
 	INCBIN "gfx/cards/blipbug.attrmap"
 	INCBIN "gfx/cards/blipbug.2bpp"	
+LitleoCardGfx:
+	INCBIN "gfx/cards/litleo.pal"	
+	INCBIN "gfx/cards/litleo.attrmap"	
+	INCBIN "gfx/cards/litleo.2bpp"	
+PyroarCardGfx:
+	INCBIN "gfx/cards/pyroar.pal"  
+	INCBIN "gfx/cards/pyroar.attrmap"	
+	INCBIN "gfx/cards/pyroar.2bpp"
+GalladeCardGfx:
+	INCBIN "gfx/cards/gallade.pal"      
+	INCBIN "gfx/cards/gallade.attrmap"	
+	INCBIN "gfx/cards/gallade.2bpp"
+ImpidimpCardGfx:
+	INCBIN "gfx/cards/impidimp.pal"
+	INCBIN "gfx/cards/impidimp.attrmap"	
+	INCBIN "gfx/cards/impidimp.2bpp"
+MorgremCardGfx:
+	INCBIN "gfx/cards/morgrem.pal"	
+	INCBIN "gfx/cards/morgrem.attrmap"
+	INCBIN "gfx/cards/morgrem.2bpp"	
+GrimmsnarlCardGfx:
+	INCBIN "gfx/cards/grimmsnarl.pal"	
+	INCBIN "gfx/cards/grimmsnarl.attrmap"	
+	INCBIN "gfx/cards/grimmsnarl.2bpp"
+KingdraGfx:
+	INCBIN "gfx/cards/kingdra.pal"	
+	INCBIN "gfx/cards/kingdra.attrmap"	
+	INCBIN "gfx/cards/kingdra.2bpp"
+PawniardCardGfx:
+	INCBIN "gfx/cards/pawniard.pal"
+	INCBIN "gfx/cards/pawniard.attrmap"	
+	INCBIN "gfx/cards/pawniard.2bpp"
+BisharpCardGfx:
+	INCBIN "gfx/cards/bisharp.pal"	
+	INCBIN "gfx/cards/bisharp.attrmap"	
+	INCBIN "gfx/cards/bisharp.2bpp"
+	

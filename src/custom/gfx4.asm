@@ -1,39 +1,3 @@
-PichuCardGfx::
-	INCBIN "gfx/cards/pichu.pal"
-	INCBIN "gfx/cards/pichu.attrmap"	
-	INCBIN "gfx/cards/pichu.2bpp"
-PikachuCardGfx::
-	INCBIN "gfx/cards/pikachu.pal"
-	INCBIN "gfx/cards/pikachu.attrmap"	
-	INCBIN "gfx/cards/pikachu.2bpp"
-RaichuCardGfx::
-	INCBIN "gfx/cards/raichu.pal"
-	INCBIN "gfx/cards/raichu.attrmap"	
-	INCBIN "gfx/cards/raichu.2bpp"
-RioluCardGfx::
-	INCBIN "gfx/cards/riolu.pal"
-	INCBIN "gfx/cards/riolu.attrmap"	
-	INCBIN "gfx/cards/riolu.2bpp"
-LeafeonCardGfx::
-	INCBIN "gfx/cards/leafeon.pal"
-	INCBIN "gfx/cards/leafeon.attrmap"	
-	INCBIN "gfx/cards/leafeon.2bpp"
-GlaceonCardGfx::
-	INCBIN "gfx/cards/glaceon.pal"
-	INCBIN "gfx/cards/glaceon.attrmap"	
-	INCBIN "gfx/cards/glaceon.2bpp"
-SylveonCardGfx::
-	INCBIN "gfx/cards/sylveon.pal"
-	INCBIN "gfx/cards/sylveon.attrmap"
-	INCBIN "gfx/cards/sylveon.2bpp"	
-WooperCardGfx::
-	INCBIN "gfx/cards/wooper.pal"
-	INCBIN "gfx/cards/wooper.attrmap"	
-	INCBIN "gfx/cards/wooper.2bpp"
-ClodsireCardGfx::
-	INCBIN "gfx/cards/clodsire.pal"
-	INCBIN "gfx/cards/clodsire.attrmap"	
-	INCBIN "gfx/cards/clodsire.2bpp"
 MudkipCardGfx::
 	INCBIN "gfx/cards/mudkip.pal"
 	INCBIN "gfx/cards/mudkip.attrmap"	
@@ -74,3 +38,39 @@ Jangmo_oCardGfx::
 	INCBIN "gfx/cards/jangmo_o.pal"
 	INCBIN "gfx/cards/jangmo_o.attrmap"	
 	INCBIN "gfx/cards/jangmo_o.2bpp"
+MagbyCardGfx::
+	INCBIN "gfx/cards/magby.pal"	
+	INCBIN "gfx/cards/magby.attrmap"
+	INCBIN "gfx/cards/magby.2bpp"	
+ElekidCardGfx::
+	INCBIN "gfx/cards/elekid.pal"	
+	INCBIN "gfx/cards/elekid.attrmap"
+	INCBIN "gfx/cards/elekid.2bpp"	
+TinkatinkCardGfx::
+	INCBIN "gfx/cards/tinkatink.pal"	
+	INCBIN "gfx/cards/tinkatink.attrmap"	
+	INCBIN "gfx/cards/tinkatink.2bpp"
+TinkatuffCardGfx::
+	INCBIN "gfx/cards/tinkatuff.pal"
+	INCBIN "gfx/cards/tinkatuff.attrmap"
+	INCBIN "gfx/cards/tinkatuff.2bpp"	
+TinkatonCardGfx::
+	INCBIN "gfx/cards/tinkaton.pal"
+	INCBIN "gfx/cards/tinkaton.attrmap"
+	INCBIN "gfx/cards/tinkaton.2bpp"	
+SalanditCardGfx::
+	INCBIN "gfx/cards/salandit.pal"
+	INCBIN "gfx/cards/salandit.attrmap"	
+	INCBIN "gfx/cards/salandit.2bpp"
+AccelgorCardGfx::
+	INCBIN "gfx/cards/accelgor.pal"
+	INCBIN "gfx/cards/accelgor.attrmap"	
+	INCBIN "gfx/cards/accelgor.2bpp"
+DecidueyeCardGfx::
+	INCBIN "gfx/cards/decidueye.pal"
+	INCBIN "gfx/cards/decidueye.attrmap"
+	INCBIN "gfx/cards/decidueye.2bpp"
+CascoonCardGfx::
+	INCBIN "gfx/cards/ekans.pal"
+	INCBIN "gfx/cards/ekans.attrmap"
+	INCBIN "gfx/cards/ekans.2bpp"	

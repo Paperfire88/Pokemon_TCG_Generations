@@ -2306,11 +2306,11 @@ TextOffsets::
 	textpointer MagikarpsFlailDescription
 	textpointer FishName
 	textpointer SneaselDescription
-	textpointer GyaradosName
+	textpointer WeavileName
 	textpointer DragonRageName
 	textpointer LiquidationName
 	textpointer AtrociousName
-	textpointer GyaradosDescription
+	textpointer WeavileDescription
 	textpointer ChewtleName
 	textpointer TransportName
 	textpointer ChewtleDescription
@@ -3940,3 +3940,15 @@ TextOffsets::
 	textpointer ThereAreNoPokemonOrEnergyCardsInDiscardPileText
 	textpointer MetalEnergyDescription
 	textpointer MetalEnergyName
+	textpointer VenipedeName
+	textpointer VenipedeDescription
+	textpointer WhirlipedeName
+	textpointer WhirlipedeDescription
+	textpointer ScolipedeName
+	textpointer ScolipedeDescription
+	textpointer CentipedeName
+	textpointer MagikarpName
+	textpointer MagikarpDescription
+	textpointer GyaradosName
+	textpointer GyaradosDescription
+	textpointer AtrociusName

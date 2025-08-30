@@ -40,6 +40,7 @@ AIActionTable_ZappingSelfdestruct:
 
 .list_retreat
 	ai_retreat MAGNEZONE, -1
+	ai_retreat ELECTIVIRE, -1
 	dw NULL
 
 .list_energy
@@ -53,7 +54,7 @@ AIActionTable_ZappingSelfdestruct:
 	dw NULL
 
 .list_prize
-	dw POKEMON_COMMUNICATION
+	dw MAGNEMITE
 	dw BLITZLE
 	dw NULL
 

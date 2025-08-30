@@ -51,6 +51,7 @@ MainDuelLoop:
 	call HandleTurn
 
 .between_turns
+	call UpdateRNGSources
 	ld a, [wDuelFinished]
 	or a
 	jr nz, .duel_finished
@@ -4096,7 +4097,7 @@ PrintCardPageWeaknessesOrResistances:
 	; which bits are set and therefore which WR_* values are active.
 	; a is kept updated with the equivalent TYPE_* constant.
 	inc a
-	cp 8
+	cp 9
 	jr nc, .done
 	rl d
 	jr nc, .loop

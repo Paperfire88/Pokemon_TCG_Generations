@@ -1,36 +1,4 @@
-SandileCardGfx::
-	INCBIN "gfx/cards/sandile.pal"
-	INCBIN "gfx/cards/sandile.attrmap"
-	INCBIN "gfx/cards/sandile.2bpp"
-KrokorokCardGfx::
-	INCBIN "gfx/cards/machoke.pal"
-	INCBIN "gfx/cards/machoke.attrmap"
-	INCBIN "gfx/cards/machoke.2bpp"	
-InkayCardGfx::
-	INCBIN "gfx/cards/slowpoke2.pal"
-	INCBIN "gfx/cards/slowpoke2.attrmap"
-	INCBIN "gfx/cards/slowpoke2.2bpp"
-MalamarCardGfx::
-	INCBIN "gfx/cards/malamar.pal"
-	INCBIN "gfx/cards/malamar.attrmap"
-	INCBIN "gfx/cards/malamar.2bpp"
-EeveeCardGfx::
-	INCBIN "gfx/cards/eevee.pal"
-	INCBIN "gfx/cards/eevee.attrmap"	
-	INCBIN "gfx/cards/eevee.2bpp"
-PorygonCardGfx::
-	INCBIN "gfx/cards/porygon.pal"
-	INCBIN "gfx/cards/porygon.attrmap"	
-	INCBIN "gfx/cards/porygon.2bpp"
-QuickBallCardGfx::
-	INCBIN "gfx/cards/quick_ball.pal"
-	INCBIN "gfx/cards/quick_ball.attrmap"	
-	INCBIN "gfx/cards/quick_ball.2bpp"
-SwitchCardGfx::
-	INCBIN "gfx/cards/switch.pal"
-	INCBIN "gfx/cards/switch.attrmap"
-	INCBIN "gfx/cards/switch.2bpp"	
-SneaselCardGfx::
+SneaselCardGfx:: ;12/19
 	INCBIN "gfx/cards/sneasel.pal"
 	INCBIN "gfx/cards/sneasel.attrmap"	
 	INCBIN "gfx/cards/sneasel.2bpp"
@@ -42,10 +10,6 @@ MetagrossCardGfx:
 	INCBIN "gfx/cards/metagross.pal"
 	INCBIN "gfx/cards/metagross.attrmap"
 	INCBIN "gfx/cards/metagross.2bpp"	
-BagonCardGfx:
-	INCBIN "gfx/cards/bagon.pal"			
-	INCBIN "gfx/cards/bagon.attrmap"
-	INCBIN "gfx/cards/bagon.2bpp"	
 DottlerCardGfx:
 	INCBIN "gfx/cards/dottler.pal"	
 	INCBIN "gfx/cards/dottler.attrmap"	
@@ -74,3 +38,11 @@ BasculegionGfx::
 	INCBIN "gfx/cards/seaking.pal"
 	INCBIN "gfx/cards/seaking.attrmap"	
 	INCBIN "gfx/cards/seaking.2bpp"
+MagikarpCardGfx::	
+	INCBIN "gfx/cards/magikarp.pal"
+	INCBIN "gfx/cards/magikarp.attrmap"	
+	INCBIN "gfx/cards/magikarp.2bpp"	
+GyaradosCardGfx::	
+	INCBIN "gfx/cards/gyarados.pal"
+	INCBIN "gfx/cards/gyarados.attrmap"	
+	INCBIN "gfx/cards/gyarados.2bpp"	

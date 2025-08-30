@@ -1,39 +1,3 @@
-MagbyCardGfx::
-	INCBIN "gfx/cards/magby.pal"	
-	INCBIN "gfx/cards/magby.attrmap"
-	INCBIN "gfx/cards/magby.2bpp"	
-ElekidCardGfx::
-	INCBIN "gfx/cards/elekid.pal"	
-	INCBIN "gfx/cards/elekid.attrmap"
-	INCBIN "gfx/cards/elekid.2bpp"	
-TinkatinkCardGfx::
-	INCBIN "gfx/cards/tinkatink.pal"	
-	INCBIN "gfx/cards/tinkatink.attrmap"	
-	INCBIN "gfx/cards/tinkatink.2bpp"
-TinkatuffCardGfx::
-	INCBIN "gfx/cards/tinkatuff.pal"
-	INCBIN "gfx/cards/tinkatuff.attrmap"
-	INCBIN "gfx/cards/tinkatuff.2bpp"	
-TinkatonCardGfx::
-	INCBIN "gfx/cards/tinkaton.pal"
-	INCBIN "gfx/cards/tinkaton.attrmap"
-	INCBIN "gfx/cards/tinkaton.2bpp"	
-SalanditCardGfx::
-	INCBIN "gfx/cards/salandit.pal"
-	INCBIN "gfx/cards/salandit.attrmap"	
-	INCBIN "gfx/cards/salandit.2bpp"
-AccelgorCardGfx::
-	INCBIN "gfx/cards/accelgor.pal"
-	INCBIN "gfx/cards/accelgor.attrmap"	
-	INCBIN "gfx/cards/accelgor.2bpp"
-DecidueyeCardGfx::
-	INCBIN "gfx/cards/decidueye.pal"
-	INCBIN "gfx/cards/decidueye.attrmap"
-	INCBIN "gfx/cards/decidueye.2bpp"
-CascoonCardGfx::
-	INCBIN "gfx/cards/ekans.pal"
-	INCBIN "gfx/cards/ekans.attrmap"
-	INCBIN "gfx/cards/ekans.2bpp"
 DustoxCardGfx::
 	INCBIN "gfx/cards/dustox.pal"
 	INCBIN "gfx/cards/dustox.attrmap"
@@ -74,3 +38,39 @@ BasculinCardGfx::
 	INCBIN "gfx/cards/goldeen.pal"
 	INCBIN "gfx/cards/goldeen.attrmap"
 	INCBIN "gfx/cards/goldeen.2bpp"
+SandileCardGfx::
+	INCBIN "gfx/cards/sandile.pal"
+	INCBIN "gfx/cards/sandile.attrmap"
+	INCBIN "gfx/cards/sandile.2bpp"
+KrokorokCardGfx::
+	INCBIN "gfx/cards/machoke.pal"
+	INCBIN "gfx/cards/machoke.attrmap"
+	INCBIN "gfx/cards/machoke.2bpp"	
+InkayCardGfx::
+	INCBIN "gfx/cards/slowpoke2.pal"
+	INCBIN "gfx/cards/slowpoke2.attrmap"
+	INCBIN "gfx/cards/slowpoke2.2bpp"
+MalamarCardGfx::
+	INCBIN "gfx/cards/malamar.pal"
+	INCBIN "gfx/cards/malamar.attrmap"
+	INCBIN "gfx/cards/malamar.2bpp"
+EeveeCardGfx::
+	INCBIN "gfx/cards/eevee.pal"
+	INCBIN "gfx/cards/eevee.attrmap"	
+	INCBIN "gfx/cards/eevee.2bpp"
+PorygonCardGfx::
+	INCBIN "gfx/cards/porygon.pal"
+	INCBIN "gfx/cards/porygon.attrmap"	
+	INCBIN "gfx/cards/porygon.2bpp"
+QuickBallCardGfx::
+	INCBIN "gfx/cards/quick_ball.pal"
+	INCBIN "gfx/cards/quick_ball.attrmap"	
+	INCBIN "gfx/cards/quick_ball.2bpp"
+SwitchCardGfx::
+	INCBIN "gfx/cards/switch.pal"
+	INCBIN "gfx/cards/switch.attrmap"
+	INCBIN "gfx/cards/switch.2bpp"	
+BagonCardGfx:
+	INCBIN "gfx/cards/bagon.pal"			
+	INCBIN "gfx/cards/bagon.attrmap"
+	INCBIN "gfx/cards/bagon.2bpp"	

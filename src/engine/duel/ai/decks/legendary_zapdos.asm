@@ -39,9 +39,8 @@ AIActionTable_LegendaryRaikou:
 	dw NULL
 
 .list_retreat
-	ai_retreat EEVEE,           -5
-	ai_retreat TOXEL,         -5
-	ai_retreat ELECTABUZZ, -5
+	ai_retreat RAIKOU,         -5
+	ai_retreat ZEBSTRIKA, -5
 	dw NULL
 
 .list_energy

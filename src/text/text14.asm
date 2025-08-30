@@ -725,7 +725,52 @@ ThereAreNoPokemonOrEnergyCardsInDiscardPileText:
 MetalEnergyName:
 	text "Metal Energy"
 	done	
-
 MetalEnergyDescription:
 	text "Provides 1 <METAL> Energy."	
+	done	
+VenipedeName:
+	text "Venipede"
+	done
+VenipedeDescription:
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (XY 51)"
+	line "OG illustrator: (sui)"
+	done
+WhirlipedeName:
+	text "Whirlipede"
+	done
+WhirlipedeDescription:
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Twilight Masquerade 116)"
+	line "OG illustrator: (Krgc)"
+	done	
+ScolipedeName:
+	text "Scolipede"
+	done	
+ScolipedeDescription:
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Twilight Masquerade 117)"
+	line "OG illustrator: (Shiburingaru)"
+	done
+CentipedeName:
+	text "Centipede"
+	done	
+MagikarpName:
+	text "Magikarp"
+	done
+MagikarpDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (XY Promos 143)"
+	line "OG illustrator: (Saya Tsuruta)"	
+	done
+GyaradosName:
+	text "Gyarados"
+	done
+GyaradosDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Gym Challenge 13)"
+	line "OG illustrator: (Ken Sugimori)"	
+	done
+AtrociusName:
+	text "Atrocius"
 	done	

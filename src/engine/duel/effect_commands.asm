@@ -289,7 +289,7 @@ VaporeonHydroPumpEffectCommands:
 	dbw EFFECTCMDTYPE_AI, HydroPumpEffect2
 	db  $00
 
-GyaradosBubblebeamEffectCommands:
+WeavileBubblebeamEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, DamageincreseretreatcostEffect
 	dbw EFFECTCMDTYPE_AI, Low_AIEffect
 	db  $00

@@ -51,7 +51,7 @@ AIActionTable_LegendaryRonald:
 	dw NULL
 
 .list_retreat
-	ai_retreat EEVEE, -2
+	ai_retreat CHATOT, -1
 	dw NULL
 
 .list_energy
