@@ -1396,7 +1396,7 @@ CascoonName:
 	text "Cascoon"
 	done
 
-SnakeName:
+Name:
 	text "Snake"
 	done
 

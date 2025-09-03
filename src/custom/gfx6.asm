@@ -1,4 +1,4 @@
-SneaselCardGfx:: ;12/19
+SneaselCardGfx:: ;19/19
 	INCBIN "gfx/cards/sneasel.pal"
 	INCBIN "gfx/cards/sneasel.attrmap"	
 	INCBIN "gfx/cards/sneasel.2bpp"
@@ -46,3 +46,31 @@ GyaradosCardGfx::
 	INCBIN "gfx/cards/gyarados.pal"
 	INCBIN "gfx/cards/gyarados.attrmap"	
 	INCBIN "gfx/cards/gyarados.2bpp"	
+HonedgeCardGfx::
+	INCBIN "gfx/cards/honedge.pal"
+	INCBIN "gfx/cards/honedge.attrmap"	
+	INCBIN "gfx/cards/honedge.2bpp"
+DoubladeCardGfx::	
+	INCBIN "gfx/cards/doublade.pal"
+	INCBIN "gfx/cards/doublade.attrmap"	
+	INCBIN "gfx/cards/doublade.2bpp"	
+AegislashCardGfx::	
+	INCBIN "gfx/cards/aegislash.pal"
+	INCBIN "gfx/cards/aegislash.attrmap"	
+	INCBIN "gfx/cards/aegislash.2bpp"		
+NatuCardGfx::	
+	INCBIN "gfx/cards/natu.pal"
+	INCBIN "gfx/cards/natu.attrmap"	
+	INCBIN "gfx/cards/natu.2bpp"	
+XatuCardGfx::	
+	INCBIN "gfx/cards/xatu.pal"
+	INCBIN "gfx/cards/xatu.attrmap"	
+	INCBIN "gfx/cards/xatu.2bpp"
+OnixCardGfx::	
+	INCBIN "gfx/cards/onix.pal"
+	INCBIN "gfx/cards/onix.attrmap"	
+	INCBIN "gfx/cards/onix.2bpp"	
+SteelixCardGfx::	
+	INCBIN "gfx/cards/steelix.pal"
+	INCBIN "gfx/cards/steelix.attrmap"	
+	INCBIN "gfx/cards/steelix.2bpp"		

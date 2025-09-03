@@ -2388,7 +2388,7 @@ DrawDuelHUD:
 	ld a, e
 	or a
 	jr z, .go
-	ld d, 15 ; player's info icons start in the 15th tile to the right
+	ld d, 12 ; player's info icons start in the 15th tile to the right
 .go
 	push de
 	pop bc
@@ -2410,7 +2410,26 @@ DrawDuelHUD:
 	call CountPrizes
 	add SYM_0
 	call WriteByteToBGMap0
+	inc b
 
+	ld a, SYM_HAND_CARDS
+	call WriteByteToBGMap0
+	inc b
+	ld a, DUELVARS_NUMBER_OF_CARDS_IN_HAND
+	call GetTurnDuelistVariable
+	cp 10
+	jr c,.no10
+	ld a, 9
+	add SYM_0
+	call WriteByteToBGMap0
+	inc b
+	ld a, SYM_PLUS
+	call WriteByteToBGMap0
+	jr .fin
+.no10	
+	add SYM_0
+	call WriteByteToBGMap0
+.fin
 	; print the arena Pokemon card name and level text
 	pop de
 	ld a, DUELVARS_ARENA_CARD
@@ -4062,7 +4081,7 @@ PrintAttackOrPkmnPowerInformation:
 	pop bc
 	ret
 .print_Resd	
-	; print "PKMN PWR" at 2,e
+	; print the costless symbol
 	ld d, 2
 	ldtx hl, CeroCostText
 	call InitTextPrinting_ProcessTextFromID

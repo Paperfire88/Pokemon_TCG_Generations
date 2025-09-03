@@ -243,43 +243,30 @@ StrangePowerText:
 StrangePsyshockText:
 	text "Strange Psyshock"
 	done
-
-LovelyNidoranText:
-	text "Lovely Nidoran"
-	done
-
 ScienceCorpsText:
 	text "Science Corps"
 	done
-
 FlyinPokemonText:
 	text "Flyin' Pokémon"
 	done
-
 PoisonText:
 	text "Poison"
 	done
-
 WondersOfScienceText:
 	text "Wonders of Science"
 	done
-
 ReplaceEmAllText:
 	text "Replace 'Em All"
 	done
-
 ChariSaurText:
 	text "Chari-Saur"
 	done
-
 TrafficLightText:
 	text "Traffic Light"
 	done
-
 FirePokemonDeckText:
 	text "Fire Pokémon"
 	done
-
 FireChargeText:
 	text "Fire Charge"
 	done

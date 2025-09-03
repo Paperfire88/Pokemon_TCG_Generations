@@ -106,6 +106,8 @@
 	const SWAMPERT
 	const MAGIKARP
 	const GYARADOS	
+	const WIMPOD
+	const GOLISOPOD
 	const VAPOREON               ; $5b
 	const GLACEON                     ; $2e
 	const OMANYTE                     ; $5c
@@ -138,6 +140,9 @@
 	const MANECTRIC                ; $72
 	const WATTREL
 	const KILOWATTREL                     ; $be
+	const MAREEP
+	const FLAAFFY
+	const AMPHAROS
 	const JOLTEON_LV29                ; $73
 	const TYNAMO                      ; $e6
 	const EELEKTRIK				      ; $e8
@@ -204,6 +209,8 @@
 	const MIMIKYU                     ; $a0
 	const CUTIEFLY
 	const RIBOMBEE
+	const NATU
+	const XATU
 	const BELDUM
 	const METANG
 	const METAGROSS
@@ -246,6 +253,17 @@
 	const WEAVILE                    ; $58
 	const NIHILEGO
 	const DARKRAI
+	;Steel
+	const ARON
+	const LAIRON
+	const AGGRON
+	const ONIX
+	const STEELIX
+	const HONEDGE
+	const DOUBLADE
+	const AEGISLASH
+	const MELTAN
+	const MELMETAL
 	const ROOKIDEE                      ; $a3
 	const CORVISQUIRE                   ; $a4
 	const CORVIKNIGHT                ; $a5

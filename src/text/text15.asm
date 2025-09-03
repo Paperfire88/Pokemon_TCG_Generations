@@ -693,8 +693,8 @@ GolemDescription:
 	line "OG illustrator: (Kouki Saitou)"
 	done
 
-OnixDescription:
-	text "Booster Pack: (MYSTERY)"
+Hawlucha:
+	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (Scarlet & Violet 118)"
 	line "OG illustrator: (GOSSAN)"
 	done
@@ -760,19 +760,19 @@ AerodactylDescription:
 	done
 	
 AbraDescription:
-	text "Booster Pack: (LABORATORY)"
+	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (Expedition 93)"
 	line "OG illustrator: (Hajime Kusajima)"
 	done
 
 KadabraDescription:
-	text "Booster Pack: (LABORATORY)"
+	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (Expedition 84)"
 	line "OG illustrator: (Hajime Kusajima)"
 	done
 
 AlakazamDescription:
-	text "Booster Pack: (LABORATORY)"
+	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (Gym Challenge 16)"
 	line "OG illustrator: (Ken Sugimori)"
 	done

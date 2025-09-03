@@ -1972,11 +1972,9 @@ SECTION "Gfx 13", ROMX
 MintGfx::
 	dw 36
 	INCBIN "gfx/duelists/mint.2bpp"
-
 OWMintGfx::
 	dw $14
 	INCBIN "gfx/overworld_sprites/mint.2bpp"	
-
 Palette161::
 	db 0
 	db 1
@@ -1994,7 +1992,6 @@ Palette162::
 	rgb 28, 28, 24
 	rgb  14, 11, 24
 	rgb  1,  0,  5
-
 DarknessGfx::
 	dw $a2
 	INCBIN "gfx/titlescreen/energies/darkness.2bpp"	

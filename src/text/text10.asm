@@ -1421,19 +1421,15 @@ DragonEnergyName:
 MegatonName:
 	text "Megaton"
 	done
-
 HawluchaName:
 	text "Hawlucha"
 	done
-
 RockSnakeName:
-	text "Wrestling"
+	text "Rock Snake"
 	done
-
 LarvitarName:
 	text "Larvitar"
 	done
-
 SnivelName:
 	text "Snivel"
 	done

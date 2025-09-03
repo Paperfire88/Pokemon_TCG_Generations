@@ -474,5 +474,6 @@ ENDM
 	txsymbol CURSOR_D   ; $2e
 	txsymbol PRIZE      ; $2f
 	txsymbol BURNED     ; $30
-	txsymbol ATK_DESCR  ; $0e
-	
+	txsymbol ATK_DESCR  ; $31
+	txsymbol HAND_CARDS ; $32
+	txsymbol DECK		; $33

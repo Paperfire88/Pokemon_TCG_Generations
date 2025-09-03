@@ -3059,8 +3059,8 @@ GetCardTypeIconPalette:
 	db ICON_TILE_FIGHTING,        $4
 	db ICON_TILE_PSYCHIC,         $4
 	db ICON_TILE_DARKNESS,		  $0
+	db ICON_TILE_METAL,           $0
 	db ICON_TILE_COLORLESS,       $0
-	db ICON_TILE_METAL,          $0
 	db ICON_TILE_BASIC_POKEMON,   $3
 	db ICON_TILE_STAGE_1_POKEMON, $3
 	db ICON_TILE_STAGE_2_POKEMON, $2

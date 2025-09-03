@@ -870,8 +870,8 @@ SoftTissueName:
 	text "Soft Tissue"
 	done	
 
-LandSnakeName:
-	text "Land Snake"
+IronSnakeName:
+	text "Iron Snake"
 	done	
 
 IronBallName:

@@ -43,8 +43,6 @@ AIDoTurn_GeneralNoRetreat:
 	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_03
 	call AIProcessHandTrainerCards
-	ld a, AI_TRAINER_CARD_PHASE_03
-	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_04
 	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_05
@@ -90,8 +88,6 @@ AIDoTurn_GeneralNoRetreat:
 	ld a, AI_TRAINER_CARD_PHASE_01
 	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_02
-	call AIProcessHandTrainerCards
-	ld a, AI_TRAINER_CARD_PHASE_03
 	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_03
 	call AIProcessHandTrainerCards

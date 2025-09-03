@@ -732,7 +732,7 @@ VenipedeName:
 	text "Venipede"
 	done
 VenipedeDescription:
-	text "Booster Pack: (COLOSSEUM)"
+	text "Booster Pack: (EVOLUTION)"
 	line "OG Set: (XY 51)"
 	line "OG illustrator: (sui)"
 	done
@@ -740,7 +740,7 @@ WhirlipedeName:
 	text "Whirlipede"
 	done
 WhirlipedeDescription:
-	text "Booster Pack: (COLOSSEUM)"
+	text "Booster Pack: (EVOLUTION)"
 	line "OG Set: (Twilight Masquerade 116)"
 	line "OG illustrator: (Krgc)"
 	done	
@@ -748,7 +748,7 @@ ScolipedeName:
 	text "Scolipede"
 	done	
 ScolipedeDescription:
-	text "Booster Pack: (COLOSSEUM)"
+	text "Booster Pack: (EVOLUTION)"
 	line "OG Set: (Twilight Masquerade 117)"
 	line "OG illustrator: (Shiburingaru)"
 	done
@@ -774,3 +774,154 @@ GyaradosDescription:
 AtrociusName:
 	text "Atrocius"
 	done	
+SwordName:
+	text "Sword"
+	done	
+HonedgeName:
+	text "Honedge"
+	done	
+HonedgeDescription:
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Battle Styles 105)"
+	line "OG illustrator: (sowsow)"	
+	done
+DoubladeName:
+	text "Doublade"
+	done
+DoubladeDescription:
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Primal Clash 99)"
+	line "OG illustrator: (Kanako Eo)"	
+	done	
+AegislashName:
+	text "Aegislash"
+	done
+AegislashDescription:
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Paradox Rift 135)"
+	line "OG illustrator: (toriyufu)"	
+	done
+NatuName:
+	text "Natu"
+	done
+NatuDescription:	
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Sandstorm 69)"
+	line "OG illustrator: (Kouki Saitou)"
+	done	
+XatuName:
+	text "Xatu"
+	done
+XatuDescription:	
+	text "Booster Pack: (LABORATORY)"
+	line "OG Set: (Skyridge 35)"
+	line "OG illustrator: (Atsuko Nishida)"
+	done	
+OnixName:
+	text "Onix"
+	done
+OnixDescription:	
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Fusion Strike 138)"
+	line "OG illustrator: (KEIICHIRO ITO)"
+	done	
+SteelixName:
+	text "Steelix"
+	done
+SteelixDescription:	
+	text "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Stormfront 28)"
+	line "OG illustrator: (Naoyo Kimura)"
+	done		
+SnakeName:
+	text "Snake"
+	done
+MareepName:
+	text "Mareep"
+	done
+MareepDescription:	
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Lost Thunder 76)"
+	line "OG illustrator: (0313)"
+	done
+WoolName:
+	text "Wool"
+	done
+FlaaffyName:
+	text "Flaaffy"
+	done
+FlaaffyDescription:	
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (HeartGold & SoulSilver 42)"
+	line "OG illustrator: (Masakazu Fukuda)"
+	done
+AmpharosName:
+	text "Ampharos"
+	done
+AmpharosDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Steam Siege 40)"
+	line "OG illustrator: (Kanako Eo)"
+	done	
+WimpodName:
+	text "Wimpod"
+	done
+WimpodDescription:	
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Darkness Ablaze 17)"
+	line "OG illustrator: (MAHOU)"
+	done
+GolisopodName:
+	text "Golisopod"
+	done
+GolisopodDescription:
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Paradox Rift 50)"
+	line "OG illustrator: (N-DESIGN Inc.)"
+	done		
+HardScaleName:
+	text "Hard Scale"
+	done	
+HexNutName:
+	text "Hex Nut"
+	done
+MeltanName:
+	text "Meltan"
+	done
+MeltanDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Temporal Forces 116)"
+	line "OG illustrator: (Taiga Kayama)"
+	done
+MelmetalName:
+	text "Melmetal"
+	done	
+MelmetalDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Sun & Moon Promos 181)"
+	line "OG illustrator: (TOKIYA)"
+	done
+AronName:
+	text "Aron"
+	done
+AronDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Undaunted 42)"
+	line "OG illustrator: (match)"
+	done
+LaironName:
+	text "Lairon"
+	done
+LaironDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Undaunted 29)"
+	line "OG illustrator: (match)"
+	done	
+AggronName:
+	text "Aggron"
+	done
+AggronDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Ruby & Sapphire 1)"
+	line "OG illustrator: (Mitsuhiro Arita)"
+	done

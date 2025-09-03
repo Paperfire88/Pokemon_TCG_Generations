@@ -622,7 +622,6 @@ TextOffsets::
 	textpointer ScavengingMalamarText
 	textpointer StrangePowerText
 	textpointer StrangePsyshockText
-	textpointer LovelyNidoranText
 	textpointer ScienceCorpsText
 	textpointer FlyinPokemonText
 	textpointer PoisonText
@@ -2466,7 +2465,7 @@ TextOffsets::
 	textpointer GolemDescription
 	textpointer HawluchaName
 	textpointer RockSnakeName
-	textpointer OnixDescription
+	textpointer Hawlucha
 	textpointer LarvitarName
 	textpointer SnivelName
 	textpointer SnivelDescription
@@ -3235,7 +3234,7 @@ TextOffsets::
 	textpointer BigHornName; 0x0cff	
 	textpointer MountName; 0x0cff	
 	textpointer SoftTissueName; 0x0cff	
-	textpointer LandSnakeName; 0x0cff	
+	textpointer IronSnakeName; 0x0cff	
 	textpointer IronBallName; 0x0cff	
 	textpointer IronClawName; 0x0cff	
 	textpointer IronLegName; 0x0cff	
@@ -3952,3 +3951,42 @@ TextOffsets::
 	textpointer GyaradosName
 	textpointer GyaradosDescription
 	textpointer AtrociusName
+	textpointer SwordName
+	textpointer HonedgeName
+	textpointer HonedgeDescription
+	textpointer DoubladeName
+	textpointer DoubladeDescription
+	textpointer AegislashName
+	textpointer AegislashDescription
+	textpointer NatuName
+	textpointer NatuDescription
+	textpointer XatuName
+	textpointer XatuDescription
+	textpointer OnixName
+	textpointer OnixDescription
+	textpointer SteelixName
+	textpointer SteelixDescription
+	textpointer WoolName
+	textpointer MareepName
+	textpointer MareepDescription
+	textpointer FlaaffyName
+	textpointer FlaaffyDescription
+	textpointer AmpharosName
+	textpointer AmpharosDescription
+	textpointer WimpodName
+	textpointer WimpodDescription
+	textpointer GolisopodName
+	textpointer GolisopodDescription
+	textpointer HardScaleName
+	textpointer HexNutName
+	textpointer MeltanName
+	textpointer MeltanDescription
+	textpointer MelmetalName
+	textpointer MelmetalDescription
+	textpointer AronName
+	textpointer AronDescription
+	textpointer LaironName
+	textpointer LaironDescription
+	textpointer AggronName
+	textpointer AggronDescription
+	

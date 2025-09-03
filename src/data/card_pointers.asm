@@ -111,6 +111,8 @@ CardPointers::
 	dab SwampertCard
 	dab MagikarpCard
 	dab GyaradosCard
+	dab WimpodCard
+	dab GolisopodCard
 	dab VaporeonLv42Card
 	dab GlaceonCard
 	dab OmanyteCard
@@ -144,6 +146,9 @@ CardPointers::
 	dab ManectricCard
 	dab WattrelCard
 	dab KilowattrelCard
+	dab MareepCard
+	dab FlaaffyCard
+	dab AmpharosCard
 	dab JolteonLv29Card
 	dab TynamoCard
 	dab EelektrikCard
@@ -212,6 +217,8 @@ CardPointers::
 	dab MimikyuCard
 	dab CutieflyCard
 	dab RibombeeCard
+	dab NatuCard
+	dab XatuCard
 	dab BeldumCard
 	dab MetangCard
 	dab MetagrossCard
@@ -255,6 +262,17 @@ CardPointers::
 	dab WeavileCard
 	dab NihilegoCard
 	dab DarkraiCard
+	;Metal
+	dab AronCard
+	dab LaironCard
+	dab AggronCard
+	dab OnixCard
+	dab SteelixCard
+	dab HonedgeCard
+	dab DoubladeCard
+	dab AegislashCard
+	dab MeltanCard
+	dab MelmetalCard
 	;Colorless
 	dab RookideeCard
 	dab CorvisquireCard
