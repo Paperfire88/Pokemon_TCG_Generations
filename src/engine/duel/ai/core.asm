@@ -1544,13 +1544,7 @@ CheckEnergyFlagsNeededInList:
 	jr .check_energy
 .metal
 	cp16 METAL_ENERGY
-	jr nz, .colorless
 	ld a, METAL_F
-	jr .check_energy		
-.colorless
-	cp16 DOUBLE_COLORLESS_ENERGY
-	jp nz, .next_card
-	ld a, COLORLESS_F
 
 ; if energy card matches required energy, return carry
 .check_energy

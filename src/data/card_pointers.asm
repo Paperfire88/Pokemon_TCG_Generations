@@ -46,6 +46,11 @@ CardPointers::
 	dab TangelaLv8Card
 	dab TangrowthCard	
 	dab ScytherCard
+	dab GrookeyCard
+	dab ThwackeyCard
+	dab RillaboomCard
+	dab RoseliaCard
+	dab RoseradeCard
 	dab LeafeonCard
 	;Fire
 	dab TepigCard
@@ -57,6 +62,9 @@ CardPointers::
 	dab CentiskorchCard
 	dab NumelCard
 	dab CameruptCard
+	dab FletchlingCard
+	dab FletchinderCard
+	dab TalonflameCard
 	dab LitwickCard
 	dab LampentCard
 	dab ChandelureCard
@@ -78,6 +86,9 @@ CardPointers::
 	dab ShelgonCard
 	dab SalamenceCard
 	dab DruddigonCard
+	dab CharmanderCard
+	dab CharmeleonCard
+	dab CharizardCard
 	dab EnteiCard
 	dab HoohCard
 	;Water
@@ -89,6 +100,9 @@ CardPointers::
 	dab FloatzelCard
 	dab SeelCard
 	dab DewgongCard
+	dab SnoruntCard
+	dab GlalieCard
+	dab FroslassCard
 	dab TympoleCard
 	dab PalpitoadCard
 	dab SeismitoadCard
@@ -115,8 +129,12 @@ CardPointers::
 	dab GolisopodCard
 	dab VaporeonLv42Card
 	dab GlaceonCard
+	dab SwinubCard
+	dab PiloswineCard
+	dab MamoswineCard
 	dab OmanyteCard
 	dab OmastarCard
+	dab RegiceCard
 	dab SuicuneCard
 	;Lightning
 	dab MagnemiteLv13Card
@@ -149,20 +167,28 @@ CardPointers::
 	dab MareepCard
 	dab FlaaffyCard
 	dab AmpharosCard
+	dab JoltikCard
+	dab GalvantulaCard
 	dab JolteonLv29Card
 	dab TynamoCard
 	dab EelektrikCard
 	dab EelektrossCard
 	dab ZeraoraCard
+	dab RegielekiCard
 	dab RaikouCard	
 	; Fighting
 	dab SandileCard
 	dab KrokorokCard
 	dab KrookodileCard
+	dab ClobbopusCard
+	dab GrapploctCard
 	dab MeowthCard
 	dab PerrserkerCard
 	dab SilicobraCard
 	dab SandacondaCard
+	dab MankeyCard
+	dab PrimeapeCard
+	dab AnnihilapeCard
 	dab TrapinchCard
 	dab VibravaCard
 	dab FlygonCard
@@ -171,6 +197,9 @@ CardPointers::
 	dab RockruffCard
 	dab LycanrocCard
 	dab LycanrocMCard
+	dab NacliCard
+	dab NaclstackCard
+	dab GarganaclCard
 	dab LarvitarCard
 	dab PupitarCard
 	dab TyranitarCard
@@ -190,6 +219,7 @@ CardPointers::
 	dab TyrantrumCard
 	dab ScizorCard
 	dab GalladeCard
+	dab RegirockCard
 	;Psychic
 	dab RaltsCard
 	dab KirliaCard
@@ -214,15 +244,27 @@ CardPointers::
 	dab AbraCard
 	dab KadabraCard
 	dab AlakazamCard
+	dab RellorCard
+	dab RabscaCard
 	dab MimikyuCard
 	dab CutieflyCard
 	dab RibombeeCard
 	dab NatuCard
 	dab XatuCard
+	dab GothitaCard
+	dab GothoritaCard
+	dab GothitelleCard
 	dab BeldumCard
 	dab MetangCard
 	dab MetagrossCard
+	dab PumpkabooCard
+	dab GourgeistCard
+	dab GolettCard
+	dab GolurkCard
 	dab EspeonCard
+	dab DreepyCard
+	dab DrakloakCard
+	dab DragapultCard
 	dab CresseliaCard
 	dab MewLv23Card
 	dab MewtwoCard
@@ -236,6 +278,8 @@ CardPointers::
 	dab DragalgeCard
 	dab CascoonCard
 	dab DustoxCard
+	dab ZoruaCard
+	dab ZoroarkCard
 	dab ZubatCard
 	dab GolbatCard
 	dab CrobatCard
@@ -247,9 +291,13 @@ CardPointers::
 	dab ScolipedeCard
 	dab CroagunkCard
 	dab ToxicroakCard
+	dab CorphishCard
+	dab CrawdauntCard
 	dab ImpidimpCard
 	dab	MorgremCard
 	dab	GrimmsnarlCard
+	dab NymbleCard
+	dab LokixCard
 	dab WooperCard
 	dab ClodsireCard
 	dab PawniardCard
@@ -266,13 +314,25 @@ CardPointers::
 	dab AronCard
 	dab LaironCard
 	dab AggronCard
+	dab BronzorCard
+	dab BronzongCard
 	dab OnixCard
 	dab SteelixCard
+	dab GimmighoulCard
+	dab GholdengoCard
+	dab SandshrewCard
+	dab SandslashCard
+	dab KlinkCard
+	dab KlangCard
+	dab KlinklangCard
+	dab SkarmoryCard
 	dab HonedgeCard
 	dab DoubladeCard
 	dab AegislashCard
 	dab MeltanCard
 	dab MelmetalCard
+	dab JirachiCard
+	dab RegisteelCard
 	;Colorless
 	dab RookideeCard
 	dab CorvisquireCard
@@ -305,6 +365,8 @@ CardPointers::
 	dab GoomyCard
 	dab SliggooCard
 	dab GoodraCard
+	dab RegidragoCard
+	dab RegigigasCard
 	dab RayquazaCard
 	dab LugiaCard
 	;Trainers

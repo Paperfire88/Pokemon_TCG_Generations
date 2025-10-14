@@ -454,6 +454,66 @@ TYRANITAR_PlayerSelectEffect:
 	or a
 	ret
 
+Gyarados_PlayerSelectEffect:
+	ld a, $ff
+	ldh [hTemp_ffa0], a
+
+	call CreateDeckCardList
+	ldtx hl, ChooseAGyaradosFromDeckText
+	ldtx bc, GyaradosName
+	ld de, GYARADOS
+	farcall LookForCardsInDeck
+	ret c
+
+; draw Deck list interface and print text
+	bank1call Func_5591
+	ldtx hl, ChooseAGyaradosText
+	ldtx de, DuelistDeckText
+	bank1call SetCardListHeaderText
+
+.loop
+	bank1call DisplayCardList
+	jr c, .pressed_b
+	call GetCardIDFromDeckIndex
+	cp16 GYARADOS
+	jr nz, .play_sfx
+
+; Krabby was selected
+	ldh a, [hTempCardIndex_ff98]
+	ldh [hTemp_ffa0], a
+	or a
+	ret
+
+.play_sfx
+	; play SFX and loop back
+	call Func_3794
+	jr .loop
+
+.pressed_b
+; figure if Player can exit the screen without selecting,
+; that is, if the Deck has no Krabby card.
+	ld a, DUELVARS_CARD_LOCATIONS
+	call GetTurnDuelistVariable
+.loop_b_press
+	ld a, [hl]
+	cp CARD_LOCATION_DECK
+	jr nz, .next
+	ld a, l
+	call GetCardIDFromDeckIndex
+	cp16 TYRANITAR
+	jr z, .play_sfx ; found Krabby, go back to top loop
+.next
+	inc l
+	ld a, l
+	cp DECK_SIZE
+	jr c, .loop_b_press
+
+; no Krabby in Deck, can safely exit screen
+	ld a, $ff
+	ldh [hTemp_ffa0], a
+	or a
+	ret
+
 PIKACHU_PlayerSelectEffect:
 	ld a, $ff
 	ldh [hTemp_ffa0], a
@@ -3568,3 +3628,16 @@ TYRANITAR_AISelectEffect2:
 	jr nz, .loop_deck
 .found
 	ret
+Gyarados_AISelectEffect2:
+	call CreateDeckCardList
+	ld hl, wDuelTempList
+.loop_deck
+	ld a, [hli]
+	ldh [hTemp_ffa0], a
+	cp $ff
+	ret z ; none found
+	call GetCardIDFromDeckIndex
+	cp16 GYARADOS
+	jr nz, .loop_deck
+.found
+	ret	

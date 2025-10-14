@@ -656,6 +656,7 @@ BoosterDataJumptable:
 	dw BoosterPack_EvolutionDarkness
 	dw BoosterPack_MysteryDarkness
 	dw BoosterPack_LaboratoryDarkness
+	dw BoosterPack_IsleNeutral
 	assert_table_length NUM_BOOSTERS
 
 ; load rarity amounts of the booster pack set at [wBoosterData_Set] to wBoosterData*Amount

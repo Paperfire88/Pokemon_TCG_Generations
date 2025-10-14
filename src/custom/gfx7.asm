@@ -1,4 +1,4 @@
-;10/19
+;19/19
 MareepCardGfx::	
 	INCBIN "gfx/cards/mareep.pal"
 	INCBIN "gfx/cards/mareep.attrmap"	
@@ -39,3 +39,39 @@ AggronCardGfx::
 	INCBIN "gfx/cards/aggron.pal"
 	INCBIN "gfx/cards/aggron.attrmap"	
 	INCBIN "gfx/cards/aggron.2bpp"				
+IsleGfx::
+	dw 96
+	INCBIN "gfx/booster_packs/isle.2bpp"
+IsleTilemap::
+	INCBIN "data/maps/tiles/dimensions/laboratory.dimensions"
+	dw NULL
+	db TRUE ; cgb mode
+	INCBIN "data/maps/tiles/cgb/laboratory.bgmap.lz"
+BronzorCardGfx::	
+	INCBIN "gfx/cards/bronzor.pal"
+	INCBIN "gfx/cards/bronzor.attrmap"	
+	INCBIN "gfx/cards/bronzor.2bpp"
+BronzongCardGfx::	
+	INCBIN "gfx/cards/bronzong.pal"
+	INCBIN "gfx/cards/bronzong.attrmap"	
+	INCBIN "gfx/cards/bronzong.2bpp"	
+ClobbopusCardGfx::	
+	INCBIN "gfx/cards/clobbopus.pal"
+	INCBIN "gfx/cards/clobbopus.attrmap"	
+	INCBIN "gfx/cards/clobbopus.2bpp"
+GrapploctCardGfx::	
+	INCBIN "gfx/cards/grapploct.pal"
+	INCBIN "gfx/cards/grapploct.attrmap"	
+	INCBIN "gfx/cards/grapploct.2bpp"		
+CharmanderCardGfx::
+	INCBIN "gfx/cards/charmander.pal"
+	INCBIN "gfx/cards/charmander.attrmap"
+	INCBIN "gfx/cards/charmander.2bpp"	
+CharmeleonCardGfx::
+	INCBIN "gfx/cards/charmeleon.pal"
+	INCBIN "gfx/cards/charmeleon.attrmap"
+	INCBIN "gfx/cards/charmeleon.2bpp"
+CharizardCardGfx::
+	INCBIN "gfx/cards/charizard.pal"
+	INCBIN "gfx/cards/charizard.attrmap"
+	INCBIN "gfx/cards/charizard.2bpp"		

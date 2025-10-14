@@ -132,7 +132,7 @@ _CalculateDamage_VersusDefendingPokemon:
 	jr nc, .vulnerable
 	; invulnerable to damage
 	ld de, $0
-	jr .done
+	jp .done
 .vulnerable
 	ldh a, [hTempPlayAreaLocation_ff9d]
 	or a
@@ -153,8 +153,26 @@ _CalculateDamage_VersusDefendingPokemon:
 	and b
 	jr z, .not_weak
 	; double de
-	sla e
-	rl d
+	ld a, DUELVARS_ARENA_CARD_STAGE
+	call LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Rarity]
+	cp DIAMOND
+	jr z, .stage1
+	cp STAR
+	jr z, .stage2
+	cp PROMOSTAR
+	jr z, .stage2
+	ld hl, 10
+	jr .next
+.stage1	
+	ld hl, 20
+	jr .next
+.stage2
+	ld hl, 30	
+.next
+	add hl, de
+	ld e, l
+	ld d, h
 
 .not_weak
 ; handle resistance
@@ -163,11 +181,24 @@ _CalculateDamage_VersusDefendingPokemon:
 	call SwapTurn
 	and b
 	jr z, .not_resistant
-	ld hl, -30
+	ld a, [wLoadedCard2Rarity]
+	cp DIAMOND
+	jr z, .stage1b
+	cp STAR
+	jr z, .stage2b
+	cp PROMOSTAR
+	jr z, .stage2b
+	ld hl, -10
+	jr .nextb
+.stage1b	
+	ld hl, -20
+	jr .nextb
+.stage2b
+	ld hl, -30	
+.nextb
 	add hl, de
 	ld e, l
 	ld d, h
-
 .not_resistant
 	; apply pluspower and defender boosts
 	call ApplyFightingFury
@@ -359,7 +390,7 @@ CalculateDamage_FromDefendingPokemon:
 	call HandleDoubleDamageSubstatus
 	bit UNAFFECTED_BY_WEAKNESS_RESISTANCE_F, d
 	res UNAFFECTED_BY_WEAKNESS_RESISTANCE_F, d
-	jr nz, .not_resistant
+	jp nz, .not_resistant
 
 ; handle weakness
 	call GetArenaCardColor
@@ -384,9 +415,26 @@ CalculateDamage_FromDefendingPokemon:
 	and b
 	jr z, .not_weak
 	; double de
-	sla e
-	rl d
-
+	ld a, DUELVARS_ARENA_CARD_STAGE
+	call LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Rarity]
+	cp DIAMOND
+	jr z, .stage1
+	cp STAR
+	jr z, .stage2
+	cp PROMOSTAR
+	jr z, .stage2
+	ld hl, 10
+	jr .next
+.stage1	
+	ld hl, 20
+	jr .next
+.stage2
+	ld hl, 30	
+.next
+	add hl, de
+	ld e, l
+	ld d, h
 .not_weak
 ; handle resistance
 	ldh a, [hTempPlayAreaLocation_ff9d]
@@ -406,7 +454,23 @@ CalculateDamage_FromDefendingPokemon:
 .unchanged_res
 	and b
 	jr z, .not_resistant
-	ld hl, -30
+	ld a, DUELVARS_ARENA_CARD_STAGE
+	call LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Rarity]
+	cp DIAMOND
+	jr z, .stage1b
+	cp STAR
+	jr z, .stage2b
+	cp PROMOSTAR
+	jr z, .stage2b
+	ld hl, -10
+	jr .nextb
+.stage1b	
+	ld hl, -20
+	jr .nextb
+.stage2b
+	ld hl, -30	
+.nextb
 	add hl, de
 	ld e, l
 	ld d, h

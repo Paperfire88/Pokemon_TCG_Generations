@@ -80,4 +80,5 @@ Tilesets:
 	tileset StephanieGfx,                   36 ; TILESET_STEPHANIE
 	tileset AaronGfx,                       36 ; TILESET_AARON
 	tileset MintGfx,                        36 ; TILESET_MINT
+	tileset IsleGfx,                    	96 ; TILESET_ISLE
 	assert_table_length NUM_TILESETS

@@ -96,6 +96,8 @@ HandleDamageReductionExceptSubstatus2::
 	jr z, .prevent_less_than_30_damage ; invisible wall
 	cphl KABUTO
 	jr z, .halve_damage2 ; kabuto armor
+	cphl GLALIE
+	jr z, .ice_wall ; kabuto armor
 	ret
 .no_damage
 	ld de, 0
@@ -106,6 +108,11 @@ HandleDamageReductionExceptSubstatus2::
 	ld e, l
 	ld d, h
 	ret
+.ice_wall
+	ld a, DUELVARS_ARENA_CARD_STATUS
+	call GetTurnDuelistVariable
+	or a
+	ret z	
 .reduce_damage_by_20
 	ld hl, -20
 	add hl, de
@@ -147,7 +154,6 @@ HandleDamageReductionExceptSubstatus2::
 	ld e, l
 	ld d, h
 	ret
-
 ; check for Invisible Wall, Kabuto Armor, NShield, or Transparency, in order to
 ; possibly reduce or make zero the damage at de.
 HandleDamageReductionOrNoDamageFromPkmnPowerEffects::

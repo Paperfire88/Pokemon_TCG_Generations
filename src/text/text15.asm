@@ -439,13 +439,13 @@ SeadraDescription:
 	done
 
 BasculinDescription:
-	text "Booster Pack: (MYSTERY)"
+	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Emerging Powers 25)"
 	line "OG illustrator: (Akira Komayama)"
 	done
 
 BasculegionDescription:
-	text "Booster Pack: (MYSTERY)"
+	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Sword & Shield Promos 205)"
 	line "OG illustrator: (Pani Kobayashi)"
 	done
@@ -472,19 +472,19 @@ VaporeonLv42Description:
 	done
 
 OmanyteDescription:
-	text "Booster Pack: (LABORATORY)"
+	text "Booster Pack: (LOST ISLE)"
 	line "OG Set: (Neo Destiny 37)"
 	line "OG illustrator: (Tomokazu Komiya)"
 	done
 
 OmastarDescription:
-	text "Booster Pack: (LABORATORY)"
+	text "Booster Pack: (LOST ISLE)"
 	line "OG Set: (Arceus 23)"
 	line "OG illustrator: (Hajime Kusajima)"
 	done
 
 RelicanthDescription:
-	text "Booster Pack: (LABORATORY)"
+	text "Booster Pack: (LOST ISLE)"
 	line "OG Set: (Darkness Ablaze 40)"
 	line "OG illustrator: (MAHOU)"
 	done
@@ -645,13 +645,13 @@ SandacondaDescription:
 	line "OG illustrator: (nagimiso)"
 	done
 
-MankeyDescription:
+CroagunkDescription:
 	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Scarlet & Violet 130)"
 	line "OG illustrator: (Shiburingaru)"
 	done
 
-PrimeapeDescription:
+ToxicroakDescription:
 	text "Booster Pack: (MYSTERY)"
 	line "OG Set: (Sword & Shield 124)"
 	line "OG illustrator: (Ryuta Fuse)"
@@ -742,19 +742,19 @@ RhydonDescription:
 	done
 
 KabutoDescription:
-	text "Booster Pack: (LABORATORY)"
+	text "Booster Pack: (LOST ISLE)"
 	line "OG Set: (Power Keepers 51)"
 	line "OG illustrator: (Ken SUGIMORI)"
 	done
 
 KabutopsDescription:
-	text "Booster Pack: (LABORATORY)"
+	text "Booster Pack: (LOST ISLE)"
 	line "OG Set: (Holon Phantoms 9)"
 	line "OG illustrator: (Masakazu Fukuda)"
 	done
 
 AerodactylDescription:
-	text "Booster Pack: (LABORATORY)"
+	text "Booster Pack: (LOST ISLE)"
 	line "OG Set: (XY Promos 70)"
 	line "OG illustrator: (Eske Yoshinob)"
 	done

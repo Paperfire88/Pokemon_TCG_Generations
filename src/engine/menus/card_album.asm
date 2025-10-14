@@ -247,9 +247,14 @@ CreateCardSetListAndInitListCoords:
 .GetEntryPrefix
 	push af
 	cp CARD_SET_PROMOTIONAL
-	jr nz, .laboratory
+	jr nz, .isle
 	lb de, 3, "FW3_P"
 	jr .got_prefix
+.isle
+	cp CARD_SET_ISLE
+	jr nz, .laboratory
+	lb de, 3, "FW3_E"
+	jr .got_prefix	
 .laboratory
 	cp CARD_SET_LABORATORY
 	jr nz, .mystery
@@ -773,8 +778,8 @@ CardAlbum:
 
 .BoosterPackMenuParams:
 	db 3, 3 ; cursor x, cursor y
-	db 2 ; y displacement between items
-	db 5 ; number of items
+	db 1 ; y displacement between items
+	db 6 ; number of items
 	db SYM_CURSOR_R ; cursor tile number
 	db SYM_SPACE ; tile behind cursor
 	dw NULL ; function pointer if non-0
@@ -826,9 +831,9 @@ CardAlbum:
 ; print the total number of cards that are in the Card Set
 	ld a, [wSelectedCardSet]
 	cp CARD_SET_PROMOTIONAL
-	jr nz, .check_laboratory
+	jr nz, .check_isle
 ; promotional
-	ldtx hl, Item5PromotionalCardText
+	ldtx hl, Item6PromotionalCardText
 	ld e, NUM_CARDS_PROMOTIONAL - 2 ; minus the phantom cards
 	ld a, [wOwnedPhantomCardFlags]
 	bit VENUSAUR_OWNED_PHANTOM_F, a
@@ -839,6 +844,12 @@ CardAlbum:
 	jr z, .has_card_set_count
 	inc e
 	jr .has_card_set_count
+.check_isle
+	cp CARD_SET_ISLE
+	jr nz, .check_laboratory
+	ldtx hl, Item5LostIsleText
+	ld e, NUM_CARDS_ISLE
+	jr .has_card_set_count	
 .check_laboratory
 	cp CARD_SET_LABORATORY
 	jr nz, .check_mystery
@@ -956,7 +967,7 @@ CardAlbum:
 	; still has no promotional, print empty Card Set name
 	ld a, TRUE
 	ld [wUnavailableAlbumCardSets + CARD_SET_PROMOTIONAL], a
-	lb de, 5, 11
+	lb de, 5, 8
 	call InitTextPrinting
 	ldtx hl, EmptyPromotionalCardText
 	call ProcessTextFromID
@@ -975,8 +986,9 @@ CardAlbum:
 .BoosterPacksMenuData
 	textitem 7,  1, BoosterPackTitleText
 	textitem 5,  3, Item1ColosseumText
-	textitem 5,  5, Item2EvolutionText
-	textitem 5,  7, Item3MysteryText
-	textitem 5,  9, Item4LaboratoryText
-	textitem 5, 11, Item5PromotionalCardText
+	textitem 5,  4, Item2EvolutionText
+	textitem 5,  5, Item3MysteryText
+	textitem 5,  6, Item4LaboratoryText
+	textitem 5,  7, Item5LostIsleText
+	textitem 5, 8, Item6PromotionalCardText
 	db $ff

@@ -1,11 +1,3 @@
-FlipTurnDescription:
-	text "This attack does +10 damage for each"
-	line "extra <WATER> energy attached to this"
-	line "pkmn (in addition to its attack cost"
-	line "and up to +30 damage). then, you can"
-	line "Switch-out this Pkmn." 
-	done
-
 TerasparkDescription:
 	text "Discard 2 Energy Cards attached to"
 	line "this PKMN to use this attack. Then,"
@@ -92,7 +84,7 @@ NuzzleDescription:
 RainbowBurnDescription:
 	text "Does +10 damage for each different"
 	line "type of Energy attached to this Pkmn"
-	line "(<WATER><FIRE><GRASS><LIGHTNING><FIGHTING><PSYCHIC><DARKNESS>)."
+	line "(<WATER><FIRE><GRASS><LIGHTNING><FIGHTING><PSYCHIC><DARKNESS><METAL>)."
 	done		
 
 EnergyCrushDescription:
@@ -1328,7 +1320,7 @@ EelektrossDescription:
 	done
 
 TyruntDescription:
-	text "Booster Pack: (LABORATORY)"
+	text "Booster Pack: (LOST ISLE)"
 	line "OG Set: (Furious Fists 61)"
 	line "OG illustrator: (5ban Graphics)"
 	done    
@@ -1452,9 +1444,8 @@ ChooseATyranitarText:
 	text "Choose a Tyranitar."
 	done
 
-PokemonEvolvedIntoTyranitarText:
-	text "Your actived PKMN evolved"
-	line "into Tyranitar."
+ActivePokemonEvolvedText:
+	text "The Active PKMN evolved!"
 	done
 
 ForWHATText:

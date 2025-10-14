@@ -546,7 +546,7 @@ TextOffsets::
 	textpointer Item2EvolutionText
 	textpointer Item3MysteryText
 	textpointer Item4LaboratoryText
-	textpointer Item5PromotionalCardText
+	textpointer Item6PromotionalCardText
 	textpointer ViewWhichCardFileText
 	textpointer EmptyPromotionalCardText
 	textpointer SCardsText
@@ -2297,7 +2297,7 @@ TextOffsets::
 	textpointer AraquanidName
 	textpointer RecoverName
 	textpointer StarmiesRecoverDescription
-	textpointer StarFreezeName
+	textpointer PowderSnowName
 	textpointer MysteriousName
 	textpointer AraquanidDescription
 	textpointer SneaselName
@@ -2357,7 +2357,7 @@ TextOffsets::
 	textpointer LuxioDescription
 	textpointer ZebstrikaName
 	textpointer ThunderName
-	textpointer RaichusThunderDescription
+	textpointer DoubleEdgeDescription
 	textpointer ZebstrikaDescription
 	textpointer GigashockName
 	textpointer GigashockDescription
@@ -2429,11 +2429,11 @@ TextOffsets::
 	textpointer CroagunkName
 	textpointer PeekName
 	textpointer PeekDescription
-	textpointer MankeyDescription
+	textpointer CroagunkDescription
 	textpointer ToxicroakName
 	textpointer TantrumName
 	textpointer TantrumDescription
-	textpointer PrimeapeDescription
+	textpointer ToxicroakDescription
 	textpointer SandileName
 	textpointer LowKickName
 	textpointer SuperpowerName
@@ -3032,7 +3032,6 @@ TextOffsets::
 	textpointer DownDrawDescription				; 0x0cb5	
 	textpointer MachPunchDescription				; 0x0cb6	
 	textpointer FlipTurnName				; 0x0cb7
-	textpointer FlipTurnDescription				; 0x0cb8	
 	textpointer	TerasparkDescription; 0x0cb9
 	textpointer	TreasureRushDescription; 0x0cca
 	textpointer	SuctionHealName; 0x0ccb
@@ -3340,7 +3339,7 @@ TextOffsets::
 	textpointer	ChooseATyranitarFromDeckText
 	textpointer	ChooseATyranitarText
 	textpointer	ExplosiveEvolutionName
-	textpointer	PokemonEvolvedIntoTyranitarText
+	textpointer	ActivePokemonEvolvedText
 	textpointer	ForWHATText
 	textpointer	StompOffName
 	textpointer StompOffDescription
@@ -3989,4 +3988,184 @@ TextOffsets::
 	textpointer LaironDescription
 	textpointer AggronName
 	textpointer AggronDescription
-	
+	textpointer IsleBoosterText
+	textpointer Item5LostIsleText
+	textpointer BronzeName
+	textpointer BronzorName
+	textpointer BronzorDescription
+	textpointer BronzongName
+	textpointer BronzongDescription
+	textpointer ClobbopusName
+	textpointer ClobbopusDescription
+	textpointer GrapploctName
+	textpointer GrapploctDescription
+	textpointer JujitsuName
+	textpointer CharmanderName
+	textpointer CharmanderDescription
+	textpointer CharmeleonName
+	textpointer CharmeleonDescription
+	textpointer CharizardName
+	textpointer CharizardDescription
+	textpointer PumpkabooName
+	textpointer PumpkabooDescription
+	textpointer PumpkinName
+	textpointer GourgeistName
+	textpointer GourgeistDescription
+	textpointer GolettName
+	textpointer GolettDescription
+	textpointer GolurkName
+	textpointer GolurkDescription
+	textpointer AutomatonName
+	textpointer GrookeyName
+	textpointer GrookeyDescription
+	textpointer ThwackeyName
+	textpointer ThwackeyDescription
+	textpointer RillaboomName
+	textpointer RillaboomDescription
+	textpointer DrummerName
+	textpointer SnoruntName
+	textpointer SnoruntDescription
+	textpointer GlalieName
+	textpointer GlalieDescription
+	textpointer FroslassName
+	textpointer FroslassDescription
+	textpointer SaltName
+	textpointer NacliName
+	textpointer NacliDescription
+	textpointer NaclstackName
+	textpointer NaclstackDescription
+	textpointer GarganaclName
+	textpointer GarganaclDescription
+	textpointer RuffianName
+	textpointer CorphishName
+	textpointer CorphishDescription
+	textpointer CrawdauntName
+	textpointer CrawdauntDescription
+	textpointer SandshrewName
+	textpointer SandshrewDescription
+	textpointer SandslashName
+	textpointer SandslashDescription
+	textpointer RoseliaName
+	textpointer RoseliaDescription
+	textpointer RoseradeName
+	textpointer RoseradeDescription
+	textpointer ThornName
+	textpointer GothitaName
+	textpointer GothitaDescription
+	textpointer GothoritaName
+	textpointer GothoritaDescription
+	textpointer GothitelleName
+	textpointer GothitelleDescription
+	textpointer AstralName
+	textpointer SkarmoryName
+	textpointer SkarmoryDescription
+	textpointer JirachiName
+	textpointer JirachiDescription
+	textpointer WishName
+	textpointer JoltikName
+	textpointer JoltikDescription
+	textpointer GalvantulaName
+	textpointer GalvantulaDescription
+	textpointer EleSpiderName
+	textpointer RegielekiName
+	textpointer RegielekiDescription
+	textpointer RegidragoName
+	textpointer RegidragoDescription
+	textpointer RegisteelName
+	textpointer RegisteelDescription
+	textpointer RegirockName
+	textpointer RegirockDescription
+	textpointer RegiceName
+	textpointer RegiceDescription
+	textpointer RegigigasName
+	textpointer RegigigasDescription
+	textpointer ColosalName
+	textpointer PetalSpikeName
+	textpointer PetalSpikeDescription
+	textpointer AssassinsRoseName
+	textpointer AssassinsRoseDescription
+	textpointer FirstImpressionName
+	textpointer FirstImpressionDescription
+	textpointer FlipTurnDescription
+	textpointer BlastBurnName
+	textpointer BlastBurnDescription
+	textpointer IceWallName
+	textpointer IceWallDescription
+	textpointer CryoMouthName
+	textpointer CryoMouthDescription
+	textpointer SilentFateName
+	textpointer SilentFateDescription
+	textpointer CryoBlizzardName
+	textpointer CryoBlizzardDescription
+	textpointer RapidEvolutionName
+	textpointer RapidEvolutionDescription
+	textpointer ChooseAGyaradosFromDeckText
+	textpointer ChooseAGyaradosText
+	textpointer TailRevengeName
+	textpointer TailRevengeDescription
+	textpointer MankeyName
+	textpointer MankeyDescription
+	textpointer PrimeapeName
+	textpointer PrimeapeDescription
+	textpointer AnnihilapeName
+	textpointer AnnihilapeDescription
+	textpointer PigMonkeyName
+	textpointer WaveCrashName
+	textpointer WaveCrashDescription
+	textpointer NymbleName
+	textpointer NymbleDescription
+	textpointer LokixName
+	textpointer LokixDescription
+	textpointer GrasshopperName
+	textpointer DreepyName
+	textpointer DreepyDescription
+	textpointer DrakloakName
+	textpointer DrakloakDescription
+	textpointer DragapultName
+	textpointer DragapultDescription
+	textpointer StealthName
+	textpointer Plus10Text
+	textpointer Plus20Text
+	textpointer Plus30Text
+	textpointer Minus10Text
+	textpointer Minus20Text
+	textpointer Minus30Text
+	textpointer CobwebTripName
+	textpointer ElectrowebName
+	textpointer ElectrowebDescription
+	textpointer FletchlingName
+	textpointer FletchlingDescription
+	textpointer FletchinderName
+	textpointer FletchinderDescription
+	textpointer TalonflameName
+	textpointer TalonflameDescription
+	textpointer ScorchingName
+	textpointer ZoruaName
+	textpointer ZoruaDescription
+	textpointer ZoroarkName
+	textpointer ZoroarkDescription
+	textpointer IllusionName
+	textpointer GearName
+	textpointer KlinkName
+	textpointer KlinkDescription
+	textpointer KlangName
+	textpointer KlangDescription
+	textpointer KlinklangName
+	textpointer KlinklangDescription
+	textpointer SwinubName
+	textpointer SwinubDescription
+	textpointer PiloswineName
+	textpointer PiloswineDescription
+	textpointer MamoswineName
+	textpointer MamoswineDescription
+	textpointer SwineName
+	textpointer RellorName
+	textpointer RellorDescription
+	textpointer RabscaName
+	textpointer RabscaDescription
+	textpointer RollingName
+	textpointer CoinName
+	textpointer GimmighoulName
+	textpointer GimmighoulDescription
+	textpointer GholdengoName
+	textpointer GholdengoDescription

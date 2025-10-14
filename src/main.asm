@@ -176,6 +176,12 @@ SECTION "Custom Gfx6", ROMX
 INCLUDE "custom/gfx6.asm"
 SECTION "Custom Gfx7", ROMX
 INCLUDE "custom/gfx7.asm"
+SECTION "Custom Gfx8", ROMX
+INCLUDE "custom/gfx8.asm"
+SECTION "Custom Gfx9", ROMX
+INCLUDE "custom/gfx9.asm"
+SECTION "Custom Gfx10", ROMX
+INCLUDE "custom/gfx10.asm"
 
 SECTION "Gfx", ROMX
 INCLUDE "engine/gfx/gfx_table_pointers.asm"

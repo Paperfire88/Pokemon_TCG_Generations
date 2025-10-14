@@ -62,4 +62,5 @@ Tilemaps:
 	tilemap CopyrightTilemap,                  TILESET_COPYRIGHT                   ; TILEMAP_COPYRIGHT
 	tilemap NintendoTilemap,                   TILESET_NINTENDO                    ; TILEMAP_NINTENDO
 	tilemap CompaniesTilemap,                  TILESET_COMPANIES                   ; TILEMAP_COMPANIES
+	tilemap IsleTilemap,                       TILESET_ISLE                        ; TILEMAP_ISLE
 	assert_table_length NUM_TILEMAPS

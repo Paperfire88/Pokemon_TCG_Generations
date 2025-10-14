@@ -17,5 +17,6 @@
 	const SCENE_COMPANIES                     ; $0f
 	const SCENE_COPYRIGHT                     ; $10
 	const SCENE_COLOR_PALETTE                 ; $11
+	const SCENE_ISLE_BOOSTER		  		  ; $1c
 
 DEF NUM_SCENES EQU const_value

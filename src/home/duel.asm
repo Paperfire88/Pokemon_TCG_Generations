@@ -1200,6 +1200,12 @@ SwapPlayAreaPokemon::
 	pop hl
 	pop de
 	pop bc
+	ld a, SUBSTATUS1_SWITCHED_IN
+	push af
+	ld a, DUELVARS_ARENA_CARD_SUBSTATUS1
+	call GetTurnDuelistVariable
+	pop af
+	ld [hli], a
 	ret
 
 .swap_duelvar
@@ -1881,8 +1887,26 @@ ApplyDamageModifiers_DamageToTarget::
 	call SwapTurn
 	and b
 	jr z, .not_weak
-	sla e
-	rl d
+	ld a, DUELVARS_ARENA_CARD_STAGE
+	call LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Rarity]
+	cp DIAMOND
+	jr z, .stage1
+	cp STAR
+	jr z, .stage2
+	cp PROMOSTAR
+	jr z, .stage2
+	ld hl, 10
+	jr .next
+.stage1	
+	ld hl, 20
+	jr .next
+.stage2
+	ld hl, 30	
+.next
+	add hl, de
+	ld e, l
+	ld d, h
 	ld hl, wDamageEffectiveness
 	set WEAKNESS, [hl]
 .not_weak
@@ -1891,7 +1915,23 @@ ApplyDamageModifiers_DamageToTarget::
 	call SwapTurn
 	and b
 	jr z, .check_pluspower_and_defender ; jump if not resistant
-	ld hl, -30
+	ld a, DUELVARS_ARENA_CARD_STAGE
+	call LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Rarity]
+	cp DIAMOND
+	jr z, .stage1b
+	cp STAR
+	jr z, .stage2b
+	cp PROMOSTAR
+	jr z, .stage2b
+	ld hl, -10
+	jr .nextb
+.stage1b	
+	ld hl, -20
+	jr .nextb
+.stage2b
+	ld hl, -30	
+.nextb
 	add hl, de
 	ld e, l
 	ld d, h
@@ -1953,15 +1993,49 @@ ApplyDamageModifiers_DamageToSelf::
 	call GetArenaCardWeakness
 	and b
 	jr z, .not_weak
-	sla e
-	rl d
+	ld a, DUELVARS_ARENA_CARD_STAGE
+	call LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Rarity]
+	cp DIAMOND
+	jr z, .stage1
+	cp STAR
+	jr z, .stage2
+	cp PROMOSTAR
+	jr z, .stage2
+	ld hl, 10
+	jr .next
+.stage1	
+	ld hl, 20
+	jr .next
+.stage2
+	ld hl, 30	
+.next
+	add hl, de
+	ld e, l
+	ld d, h
 	ld hl, wDamageEffectiveness
 	set WEAKNESS, [hl]
 .not_weak
 	call GetArenaCardResistance
 	and b
 	jr z, .not_resistant
-	ld hl, -30
+	ld a, DUELVARS_ARENA_CARD_STAGE
+	call LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Rarity]
+	cp DIAMOND
+	jr z, .stage1b
+	cp STAR
+	jr z, .stage2b
+	cp PROMOSTAR
+	jr z, .stage2b
+	ld hl, -10
+	jr .nextb
+.stage1b	
+	ld hl, -20
+	jr .nextb
+.stage2b
+	ld hl, -30	
+.nextb
 	add hl, de
 	ld e, l
 	ld d, h

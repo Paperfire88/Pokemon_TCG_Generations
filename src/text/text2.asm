@@ -1682,23 +1682,21 @@ Item1ColosseumText:
 Item2EvolutionText:
 	text "2. Evolution"
 	done
-
 Item3MysteryText:
 	text "3. Mystery"
 	done
-
 Item4LaboratoryText:
 	text "4. Laboratory"
 	done
-
-Item5PromotionalCardText:
-	text "5. Promotional Card"
+Item5LostIsleText:
+	text "5. Lost Isle"
 	done
-
+Item6PromotionalCardText:
+	text "6. Promotional Card"
+	done
 ViewWhichCardFileText:
 	text "View which Card File?"
 	done
-
 EmptyPromotionalCardText:
 	textfw "----------"
 	done

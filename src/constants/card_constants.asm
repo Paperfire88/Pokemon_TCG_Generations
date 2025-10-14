@@ -43,6 +43,11 @@
 	const TANGELA                 ; $2c
 	const TANGROWTH                ; $2d
 	const SCYTHER                     ; $2e
+	const GROOKEY
+	const THWACKEY
+	const RILLABOOM
+	const ROSELIA
+	const ROSERADE
 	const LEAFEON                     ; $2e
 	const TEPIG                  ; $30
 	const PIGNITE                  ; $31
@@ -53,6 +58,9 @@
 	const CENTISKORCH               ; $38
 	const NUMEL                ; $3d
 	const CAMERUPT               ; $37
+	const FLETCHLING
+	const FLETCHINDER
+	const TALONFLAME
 	const LITWICK
 	const LAMPENT
 	const CHANDELURE
@@ -74,6 +82,9 @@
 	const SHELGON                ; $3f
 	const SALAMENCE                ; $40
 	const DRUDDIGON
+	const CHARMANDER
+	const CHARMELEON
+	const CHARIZARD
 	const ENTEI                ; $40
 	const HOOH
 	const FROAKIE                    ; $41
@@ -84,6 +95,9 @@
 	const FLOATZEL                     ; $45
 	const SEEL                        ; $4b
 	const DEWGONG                     ; $4c
+	const SNORUNT
+	const GLALIE
+	const FROSLASS
 	const TYMPOLE                     ; $46
 	const PALPITOAD                   ; $47
 	const SEISMITOAD                   ; $48
@@ -110,8 +124,12 @@
 	const GOLISOPOD
 	const VAPOREON               ; $5b
 	const GLACEON                     ; $2e
+	const SWINUB
+	const PILOSWINE
+	const MAMOSWINE
 	const OMANYTE                     ; $5c
 	const OMASTAR                     ; $5d
+	const REGICE
 	const SUICUNE               ; $
 	const MAGNEMITE              ; $69
 	const MAGNETON               ; $6b
@@ -143,19 +161,27 @@
 	const MAREEP
 	const FLAAFFY
 	const AMPHAROS
+	const JOLTIK
+	const GALVANTULA
 	const JOLTEON_LV29                ; $73
 	const TYNAMO                      ; $e6
 	const EELEKTRIK				      ; $e8
 	const EELEKTROSS				  ; $e7
 	const ZERAORA                 ; $75
+	const REGIELEKI
 	const RAIKOU                 ; $76
 	const SANDILE                      ; $7d
 	const KROKOROK                     ; $7e
 	const KROOKODILE                     ; $7f
+	const CLOBBOPUS
+	const GRAPPLOCT
 	const MEOWTH                   ; $77
 	const PERRSERKER                   ; $78
 	const SILICOBRA                     ; $79
 	const SANDACONDA                     ; $7a
+	const MANKEY
+	const PRIMEAPE
+	const ANNIHILAPE
 	const TRAPINCH                     ; $80
 	const VIBRAVA                    ; $81
 	const FLYGON                       ; $82
@@ -164,6 +190,9 @@
 	const ROCKRUFF                      ; $8b
 	const LYCANROC                    ; $8c
 	const LYCANROCM                  ; $8d
+	const NACLI                      ; $84
+	const NACLSTACK                ; $86
+	const GARGANACL                ; $85
 	const LARVITAR                      ; $84
 	const PUPITAR                ; $86
 	const TYRANITAR                ; $85
@@ -182,6 +211,7 @@
 	const TYRUNT
 	const TYRANTRUM                  ; $8d
 	const SCIZOR                      ; $2f
+	const REGIROCK
 	const GALLADE
 	const RALTS
 	const KIRLIA
@@ -206,15 +236,27 @@
 	const ABRA
 	const KADABRA
 	const ALAKAZAM
+	const RELLOR
+	const RABSCA
 	const MIMIKYU                     ; $a0
 	const CUTIEFLY
 	const RIBOMBEE
 	const NATU
 	const XATU
+	const GOTHITA
+	const GOTHORITA
+	const GOTHITELLE
 	const BELDUM
 	const METANG
 	const METAGROSS
+	const PUMPKABOO
+	const GOURGEIST
+	const GOLETT
+	const GOLURK
 	const ESPEON                        ; $9c
+	const DREEPY
+	const DRAKLOAK
+	const DRAGAPULT
 	const CRESSELIA             ; $9f
 	const MEW                    ; $a2
 	const MEWTWO_LV60                 ; $9e
@@ -227,6 +269,8 @@
 	const DRAGALGE                  ; $4a
 	const CASCOON                       ; $12
 	const DUSTOX                       ; $13
+	const ZORUA
+	const ZOROARK
 	const ZUBAT                       ; $1a
 	const GOLBAT                      ; $1b
 	const CROBAT					  ;
@@ -238,9 +282,13 @@
 	const SCOLIPEDE
 	const CROAGUNK                      ; $7b
 	const TOXICROAK                    ; $7c
+	const CORPHISH
+	const CRAWDAUNT
 	const IMPIDIMP
 	const MORGREM
 	const GRIMMSNARL
+	const NYMBLE
+	const LOKIX
 	const WOOPER
 	const CLODSIRE
 	const PAWNIARD
@@ -253,17 +301,29 @@
 	const WEAVILE                    ; $58
 	const NIHILEGO
 	const DARKRAI
-	;Steel
+	;Metal
 	const ARON
 	const LAIRON
 	const AGGRON
+	const BRONZOR
+	const BRONZONG
 	const ONIX
 	const STEELIX
+	const GIMMIGHOUL
+	const GHOLDENGO
+	const SANDSHREW
+	const SANDSLASH
+	const KLINK
+	const KLANG
+	const KLINKLANG
+	const SKARMORY
 	const HONEDGE
 	const DOUBLADE
 	const AEGISLASH
 	const MELTAN
 	const MELMETAL
+	const JIRACHI
+	const REGISTEEL
 	const ROOKIDEE                      ; $a3
 	const CORVISQUIRE                   ; $a4
 	const CORVIKNIGHT                ; $a5
@@ -295,6 +355,8 @@
 	const GOOMY                     ; $bf
 	const SLIGGOO                   ; $c0
 	const GOODRA              ; $c2
+	const REGIDRAGO
+	const REGIGIGAS
 	const RAYQUAZA                   ; $b4
 	const LUGIA              ; $c1
 	const PROFESSOR_OAK               ; $c3

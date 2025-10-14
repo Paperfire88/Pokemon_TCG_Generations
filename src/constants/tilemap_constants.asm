@@ -54,5 +54,6 @@
 	const TILEMAP_COPYRIGHT                        ; $34
 	const TILEMAP_NINTENDO                         ; $35
 	const TILEMAP_COMPANIES                        ; $36
+	const TILEMAP_ISLE	                           ; $37
 
 DEF NUM_TILEMAPS EQU const_value

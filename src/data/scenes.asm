@@ -18,6 +18,7 @@ ScenePointers:
 	dw Scene_Companies
 	dw Scene_Copyright
 	dw Scene_ColorPalette
+	dw Scene_IsleBooster
 	assert_table_length NUM_SCENES
 
 ; format:
@@ -131,3 +132,11 @@ Scene_Copyright:
 	db PALETTE_26, $00
 	db TILEMAP_COPYRIGHT, $00, $00
 	db $00
+
+Scene_IsleBooster: 
+	db PALETTE_104, $01
+	db TILEMAP_ISLE, $80, $00
+	db SPRITE_BOOSTER_PACK_OAM
+	db PALETTE_117, $00
+	db SPRITE_ANIM_189, $00, $00
+	dw $00

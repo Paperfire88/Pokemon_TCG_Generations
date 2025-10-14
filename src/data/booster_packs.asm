@@ -7,11 +7,13 @@ IF LC_CHALLENGE == 1
 	db 1, 10, 0, 0 ; EVOLUTION
 	db 0, 11, 0, 0 ; MYSTERY
 	db 0, 11, 0, 0 ; LABORATORY
+	db 0, 11, 0, 0 ; LOST_ISLE
 ELSE
 	db 1, 5, 4, 1 ; COLOSSEUM
 	db 1, 5, 4, 1 ; EVOLUTION
 	db 0, 6, 4, 1 ; MYSTERY
 	db 0, 6, 4, 1 ; LABORATORY
+	db 0, 6, 4, 1 ; LOST_ISLE
 ENDC
 MACRO booster_set
 	db \1 >> 4
@@ -26,11 +28,10 @@ ENDM
 ; the type of that card are reduced by the original average of all 8 types (capping the result at 1).
 ; This average always outputs 17 (except for the energy-only packs).
 
-BoosterPack_ColosseumNeutral::
-	booster_set COLOSSEUM ; booster pack set
+BoosterPack_IsleNeutral::
+	booster_set LOST_ISLE ; booster pack set
 	dw GenerateRandomEnergy ; energy generation function
-
-; Card Type Chances
+	
 	db 20 ; Grass Type Chance
 	db 20 ; Fire Type Chance
 	db 20 ; Water Type Chance
@@ -38,6 +39,22 @@ BoosterPack_ColosseumNeutral::
 	db 20 ; Fighting Type Chance
 	db 20 ; Psychic Type Chance
 	db 20 ; Darkness Type Chance
+	db 20 ; Metal Type Chance
+	db 20 ; Colorless Type Chance
+	db 20 ; Trainer Card Chance
+	db  0 ; Energy Card Chance
+BoosterPack_ColosseumNeutral::
+	booster_set COLOSSEUM ; booster pack set
+	dw GenerateRandomEnergy ; energy generation function
+
+	db 20 ; Grass Type Chance
+	db 20 ; Fire Type Chance
+	db 20 ; Water Type Chance
+	db 20 ; Lightning Type Chance
+	db 20 ; Fighting Type Chance
+	db 20 ; Psychic Type Chance
+	db 20 ; Darkness Type Chance
+	db 20 ; Metal Type Chance
 	db 20 ; Colorless Type Chance
 	db 20 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
@@ -629,5 +646,3 @@ BoosterPack_LaboratoryDarkness::
 	db 16 ; Colorless Type Chance
 	db 16 ; Trainer Card Chance
 	db  0 ; Energy Card Chance	
-
-	

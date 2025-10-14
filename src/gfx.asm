@@ -1262,15 +1262,15 @@ ScizorCardGfx::
 	INCBIN "gfx/cards/scizor.attrmap"
 	INCBIN "gfx/cards/scizor.2bpp"	
 TepigCardGfx::
-	INCBIN "gfx/cards/charmander.pal"
-	INCBIN "gfx/cards/charmander.attrmap"
-	INCBIN "gfx/cards/charmander.2bpp"	
+	INCBIN "gfx/cards/tepig.pal"
+	INCBIN "gfx/cards/tepig.attrmap"
+	INCBIN "gfx/cards/tepig.2bpp"	
 	ds $58
 SECTION "Card Gfx 3", ROMX
 PigniteCardGfx::
-	INCBIN "gfx/cards/charmeleon.pal"
-	INCBIN "gfx/cards/charmeleon.attrmap"
-	INCBIN "gfx/cards/charmeleon.2bpp"
+	INCBIN "gfx/cards/pignite.pal"
+	INCBIN "gfx/cards/pignite.attrmap"
+	INCBIN "gfx/cards/pignite.2bpp"
 EmboarCardGfx::
 	INCBIN "gfx/cards/emboar.pal"
 	INCBIN "gfx/cards/emboar.attrmap"
@@ -1522,13 +1522,13 @@ RaikouCardGfx::
 	INCBIN "gfx/cards/raikou.attrmap"
 	INCBIN "gfx/cards/raikou.2bpp"
 MeowthCardGfx::
-	INCBIN "gfx/cards/sandshrew.pal"
-	INCBIN "gfx/cards/sandshrew.attrmap"
-	INCBIN "gfx/cards/sandshrew.2bpp"
+	INCBIN "gfx/cards/meowth.pal"
+	INCBIN "gfx/cards/meowth.attrmap"
+	INCBIN "gfx/cards/meowth.2bpp"
 PerrserkerCardGfx::
-	INCBIN "gfx/cards/sandslash.pal"
-	INCBIN "gfx/cards/sandslash.attrmap"
-	INCBIN "gfx/cards/sandslash.2bpp"
+	INCBIN "gfx/cards/perrserker.pal"
+	INCBIN "gfx/cards/perrserker.attrmap"
+	INCBIN "gfx/cards/perrserker.2bpp"
 SilicobraCardGfx::
 	INCBIN "gfx/cards/silicobra.pal"
 	INCBIN "gfx/cards/silicobra.attrmap"
@@ -1538,9 +1538,9 @@ SandacondaCardGfx::
 	INCBIN "gfx/cards/dugtrio.attrmap"
 	INCBIN "gfx/cards/dugtrio.2bpp"
 CroagunkCardGfx::
-	INCBIN "gfx/cards/mankey.pal"
-	INCBIN "gfx/cards/mankey.attrmap"
-	INCBIN "gfx/cards/mankey.2bpp"
+	INCBIN "gfx/cards/croagunk.pal"
+	INCBIN "gfx/cards/croagunk.attrmap"
+	INCBIN "gfx/cards/croagunk.2bpp"
 ToxicroakCardGfx::
 	INCBIN "gfx/cards/toxicroak.pal"
 	INCBIN "gfx/cards/toxicroak.attrmap"

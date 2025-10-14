@@ -759,7 +759,7 @@ MagikarpName:
 	text "Magikarp"
 	done
 MagikarpDescription:
-	text "Booster Pack: (EVOLUTION)"
+	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (XY Promos 143)"
 	line "OG illustrator: (Saya Tsuruta)"	
 	done
@@ -767,7 +767,7 @@ GyaradosName:
 	text "Gyarados"
 	done
 GyaradosDescription:
-	text "Booster Pack: (EVOLUTION)"
+	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Gym Challenge 13)"
 	line "OG illustrator: (Ken Sugimori)"	
 	done
@@ -867,7 +867,7 @@ WimpodName:
 	text "Wimpod"
 	done
 WimpodDescription:	
-	text "Booster Pack: (MYSTERY)"
+	text "Booster Pack: (LOST ISLE)"
 	line "OG Set: (Darkness Ablaze 17)"
 	line "OG illustrator: (MAHOU)"
 	done
@@ -875,7 +875,7 @@ GolisopodName:
 	text "Golisopod"
 	done
 GolisopodDescription:
-	text "Booster Pack: (MYSTERY)"
+	text "Booster Pack: (LOST ISLE)"
 	line "OG Set: (Paradox Rift 50)"
 	line "OG illustrator: (N-DESIGN Inc.)"
 	done		
@@ -924,4 +924,371 @@ AggronDescription:
 	text "Booster Pack: (EVOLUTION)"
 	line "OG Set: (Ruby & Sapphire 1)"
 	line "OG illustrator: (Mitsuhiro Arita)"
+	done
+IsleBoosterText:
+	text "LOST ISLE"
+	done
+BronzorName:
+	text "Bronzor"
+	done
+BronzorDescription:		
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Prismatic Evolutions 66)"
+	line "OG illustrator: (Souichirou Gunjima)"
+	done
+BronzongName:
+	text "Bronzong"
+	done
+BronzongDescription:		
+	text "Booster Pack: (MYSTERY)"
+	line "OG Set: (Rebel Clash 130)"
+	line "OG illustrator: (MAHOU)"
+	done	
+BronzeName:	
+	text "Bronze"
+	done	
+ClobbopusName:
+	text "Clobbopus"
+	done
+ClobbopusDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Fusion Strike 152)"
+	line "OG illustrator: (Mizue)"
+	done		
+GrapploctName:
+	text "Grapploct"
+	done
+GrapploctDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Vivid Voltage 101)"
+	line "OG illustrator: (Hitoshi Ariga)"
+	done			
+JujitsuName:
+	text "Jujitsu"
+	done	
+CharmanderName:
+	text "Charmander"
+	done
+CharmanderDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Gym Challenge 60)"
+	line "OG illustrator: (Ken Sugimori)"
+	done
+CharmeleonName:
+	text "Charmeleon"
+	done
+CharmeleonDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Gym Challenge 31)"
+	line "OG illustrator: (Ken Sugimori)"
+	done	
+CharizardName:
+	text "Charizard"
+	done			
+CharizardDescription:
+	text "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Diamond & Pearl Promos 45)"
+	line "OG illustrator: (Wataru Kawahara)"
+	done
+PumpkabooName:
+	text "Pumpkaboo"
+	done
+PumpkabooDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Diamond & Pearl Promos 45)"
+	line "OG illustrator: (Wataru Kawahara)"
+	done	
+GourgeistName:
+	text "Gourgeist"
+	done
+GourgeistDescription:		
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Evolving Skies 77)"
+	line "OG illustrator: (Megumi Higuchi)"
+	done
+PumpkinName:
+	text "Pumpkin"
+	done
+GolettName:
+	text "Golett"
+	done
+GolettDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Darkness Ablaze 76)"
+	line "OG illustrator: (Ryuta Fuse)"
+	done
+GolurkName:
+	text "Golurk"
+	done		
+GolurkDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Chilling Reign 66)"
+	line "OG illustrator: (Teeziro)"
+	done
+AutomatonName:
+	text "Automaton"
+	done		
+GrookeyName:
+	text "Grookey"
+	done
+GrookeyDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Sword & Shield 11)"
+	line "OG illustrator: (Kouki Saitou)"
+	done
+ThwackeyName:
+	text "Thwackey"
+	done
+ThwackeyDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Twilight Masquerade 15)"
+	line "OG illustrator: (GOSSAN)"
+	done	
+RillaboomName:
+	text "Rillaboom"
+	done		
+RillaboomDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Twilight Masquerade 15)"
+	line "OG illustrator: (GOSSAN)"
+	done	
+DrummerName:
+	text "Drummer"
+	done	
+SnoruntName:
+	text "Snorunt"
+	done
+SnoruntDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Crown Zenith 34)"
+	line "OG illustrator: (otumami)"
+	done
+GlalieName:
+	text "Glalie"
+	done
+GlalieDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Arceus 18)"
+	line "OG illustrator: (Hiroki Fuchino)"
+	done
+FroslassName:
+	text "Froslass"
+	done
+FroslassDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Twilight Masquerade 53)"
+	line "OG illustrator: (Makura Tami)"
+	done
+SaltName:
+	text "Salt"
+	done
+NacliName:
+	text "Nacli"
+	done
+NacliDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Paldea Evolved 120)"
+	line "OG illustrator: (yuu)"
+	line "Pixel Art by: (KingKoopa)"
+	done 	
+NaclstackName:
+	text "Nacklstack"
+	done
+NaclstackDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Paldea Evolved 122)"
+	line "OG illustrator: (GIDORA)"
+	line "Pixel Art by: (KingKoopa)"
+	done 	
+GarganaclName:
+	text "Garganacl"
+	done
+GarganaclDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Paldea Evolved 123)"
+	line "OG illustrator: (Anesaki Dynamic)"
+	line "Pixel Art by: (KingKoopa)"
+	done 		
+
+RuffianName:
+	text "Ruffian"
+	done
+CorphishName:
+	text "Corphish"
+	done
+CorphishDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Twilight Masquerade 53)"
+	line "OG illustrator: (Makura Tami)"
+	done	
+CrawdauntName:
+	text "Crawdaunt"
+	done
+CrawdauntDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Mega Evolution 37)"
+	line "OG illustrator: (Kawayoo)"
+	done			
+SandshrewName:
+	text "Sandshrew"
+	done
+SandshrewDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Guardians Rising 19a)"
+	line "OG illustrator: (Hideki Ishikawa)"
+	done	
+SandslashName:
+	text "Sandslash"
+	done	
+SandslashDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Sun & Moon Promos 18)"
+	line "OG illustrator: (TOKIYA)"
+	done	
+RoseliaName:
+	text "Roselia"
+	done
+RoseliaDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Destined Rivals 7)"
+	line "OG illustrator: (nisimono)"
+	done		
+RoseradeName:
+	text "Roserade"
+	done	
+RoseradeDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Supreme Victors 40)"
+	line "OG illustrator: (kawayoo)"
+	done			
+ThornName:
+	text "Thorn"
+	done	
+GothitaName:
+	text "Gothita"
+	done
+GothitaDescription:	
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Legendary Treasures 69)"
+	line "OG illustrator: (TOKIYA)"
+	done	
+GothoritaName:
+	text "Gothorita"
+	done
+GothoritaDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Legendary Treasures 71)"
+	line "OG illustrator: (kirisAki)"
+	done	
+GothitelleName:
+	text "Gothitelle"
+	done	
+GothitelleDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Darkness Ablaze 75)"
+	line "OG illustrator: (Eri Yamaki)"
+	done				
+AstralName:
+	text "Astral"
+	done	
+
+SkarmoryName:
+	text "Skarmory"
+	done
+SkarmoryDescription:	
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Dragon 21)"
+	line "OG illustrator: (Hisao Nakamura)"
+	done
+JirachiName:
+	text "Jirachi"
+	done
+JirachiDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Roaring Skies 42)"
+	line "OG illustrator: (Sanosuke Sakuma)"
+	done		
+WishName:
+	text "Wish"
+	done	
+JoltikName:
+	text "Joltik"
+	done
+JoltikDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Stellar Crown 50)"
+	line "OG illustrator: (Nisota Niso)"
+	done	
+GalvantulaName:
+	text "Galvantula"
+	done
+GalvantulaDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Steam Siege 42)"
+	line "OG illustrator: (match)"
+	done		
+EleSpiderName:
+	text "Ele-Spider"
+	done
+RegielekiName:
+	text "Regieleki"
+	done
+RegielekiDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Astral Radiance 51)"
+	line "OG illustrator: (Shiburingaru)"
+	done	
+RegidragoName:
+	text "Regidrago"
+	done
+RegidragoDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Astral Radiance 118)"
+	line "OG illustrator: (DOM)"
+	done	
+RegisteelName:
+	text "Registeel"
+	done
+RegisteelDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Legend Maker 92)"
+	line "OG illustrator: (Masakazu Fukuda)"
+	done		
+RegirockName:
+	text "Regirock"
+	done
+RegirockDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Legend Maker 91)"
+	line "OG illustrator: (Masakazu Fukuda)"
+	done		
+RegiceName:
+	text "Regice"
+	done
+RegiceDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Legend Maker 90)"
+	line "OG illustrator: (Masakazu Fukuda)"
+	done		
+RegigigasName:
+	text "Regigigas"
+	done	
+RegigigasDescription:
+	text "Booster Pack: (PROMO)"
+	line "OG Set: (Prismatic Evolutions 86)"
+	line "OG illustrator: (chibi)"
+	done							
+ColosalName:
+	text "Colosal"
+	done	
+PetalSpikeName:
+	text "Petal Spike"
+	done
+PetalSpikeDescription:
+	text "The Defending PKMN is now Sleep."
+	line "If you healed HP this turn, it's now"
+	line "also Poisoned."	
+	done	
+AssassinsRoseName:
+	text "Assassin's Rose"
 	done

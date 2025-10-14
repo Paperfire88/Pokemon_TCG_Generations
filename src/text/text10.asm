@@ -860,7 +860,7 @@ StarmiesRecoverDescription:
 	line "Heal all damage from this card."
 	done
 
-StarFreezeName:
+PowderSnowName:
 	text "Powder Snow"
 	done
 
@@ -1103,7 +1103,7 @@ ThunderName:
 	text "Thunder"
 	done
 
-RaichusThunderDescription:
+DoubleEdgeDescription:
 	text "Flip a coin. If tails, take 30"
 	line "damage."
 	done

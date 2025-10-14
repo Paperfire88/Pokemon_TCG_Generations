@@ -4126,6 +4126,48 @@ PrintCardPageWeaknessesOrResistances:
 	pop af
 	jr .loop
 .done
+	push af
+	ld a, [wLoadedCard1Weakness]
+	cp NONE
+	jr z, .exit
+	ld a, [wLoadedCard1Rarity]
+	cp DIAMOND
+	jr z, .stage1
+	cp STAR
+	jr z, .stage2
+	cp PROMOSTAR
+	jr z, .stage2
+	ld hl, CardPageWeaknessTextData3
+	jr .next
+.stage1	
+	ld hl, CardPageWeaknessTextData2
+	jr .next
+.stage2
+	ld hl, CardPageWeaknessTextData
+.next	
+	call PlaceTextItems
+.exit	
+	ld a, [wLoadedCard1Resistance]
+	cp NONE
+	jr z, .exitb
+	ld a, [wLoadedCard1Rarity]
+	cp DIAMOND
+	jr z, .stage1b
+	cp STAR
+	jr z, .stage2b
+	cp PROMOSTAR
+	jr z, .stage2b
+	ld hl, CardPageResistanceTextData3
+	jr .nextb
+.stage1b	
+	ld hl, CardPageResistanceTextData2
+	jr .nextb
+.stage2b
+	ld hl, CardPageResistanceTextData
+.nextb	
+	call PlaceTextItems	
+.exitb
+	pop af
 	pop de
 	pop bc
 	ret
@@ -4169,7 +4211,24 @@ CardPageRetreatWRTextData:
 	textitem 1, 15, WeaknessText
 	textitem 1, 16, ResistanceText
 	db $ff
-
+CardPageWeaknessTextData:	
+	textitem 10, 15, Plus30Text
+	db $ff
+CardPageWeaknessTextData2:	
+	textitem 10, 15, Plus20Text
+	db $ff
+CardPageWeaknessTextData3:	
+	textitem 10, 15, Plus10Text
+	db $ff	
+CardPageResistanceTextData:	
+	textitem 10, 16, Minus30Text	
+	db $ff
+CardPageResistanceTextData2:	
+	textitem 10, 16, Minus20Text
+	db $ff
+CardPageResistanceTextData3:	
+	textitem 10, 16, Minus10Text
+	db $ff	
 CardPageLvHPNoTextTileData:
 	db 11,  2, SYM_Lv, 0
 	db 15,  2, SYM_HP, 0
