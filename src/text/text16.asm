@@ -47,8 +47,8 @@ SilentFateName:
 	done
 SilentFateDescription:	
 	text "The Defending PKMN is now Asleep."
-	line "[If the Defending PKMN has a PKMN"
-	line "PWR, it is also Burned.]"
+	line "[If it has a PKMN PWR, it's also"
+	line "Burned.]"
 	done
 CryoBlizzardName:
 	text "Cryo Blizzard"
@@ -331,4 +331,44 @@ GholdengoDescription:
 	done			
 CoinName:
 	text "Coin"
+	done
+NitroDrawName:
+	text "Nitro Draw"
+	done
+NitroDrawDescription:	
+	text "Once per turn,you may discard a <FIRE> "
+	line "Energy from your Active PKMN, then,"
+	line "draw 4 cards."
+	done
+LarvestaName:
+	text "Larvesta"
+	done	
+LarvestaDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Shining Legends 12)"
+	line "OG illustrator: (kawayoo)"
+	done
+VolcaronaName:
+	text "Volcarona"
+	done
+VolcaronaDescription:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Chilling Reign 24)"
+	line "OG illustrator: (Mika Pikazo)"
+	done	
+IcicleCrashName:
+	text "Icicle Crash"	
+	done
+IcicleCrashDescription:
+	text "Don't apply Weakness/Resistance for"
+	line "this attack. If the total retreat"
+	line "cost of all your PKMN is 10 or More,"
+	line "the defending PKMN it's now Confused"
+	line "and it does +20 more damage."
+	done
+IceFangName:
+	text "Ice Fang"
+	done
+ChargeDashName:
+	text "Charge Dash"
 	done

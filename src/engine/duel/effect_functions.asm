@@ -4921,24 +4921,26 @@ Gigashock_BenchDamageEffect:
 	jr .loop_selection
 .done
 	jp SwapTurn
-
 Sonicboom_UnaffectedByColorEffect:
 	ld hl, wDamage + 1
 	set UNAFFECTED_BY_WEAKNESS_RESISTANCE_F, [hl]
-	ret
-
+	;falltrough
 Sonicboom_NullEffect:
 	ret
-
+IcicleCrashEffect:	
+	call Sonicboom_UnaffectedByColorEffect
+	farcall TotalRetreatCost_10xDamageEffect2
+	cp 10
+	ret c
+	call ConfusionEffect
+	jp Add20damageEffect	
 PealOfThunder_InitialEffect:
 	jp SetCarryEF
-
 PealOfThunder_RandomlyDamageEffect:
 	ld de, 30 ; damage to inflict
 	call RandomlyDamagePlayAreaPokemon
 	bank1call Func_6e49
 	ret
-
 ; randomly damages a Pokemon in play, except
 ; card that is in [hTempPlayAreaLocation_ff9d].
 ; plays thunder animation when Play Area is shown.
@@ -7367,6 +7369,16 @@ CheckHealed:
 	call GetTurnDuelistVariable
 	and HEALED_THIS_TURN
 	ret	
+NitroDrawEffect:
+	call SetUsedPokemonPowerThisTurn
+	call PlayerPickFireEnergyCardToDiscard
+	call DiscardSelectedEnergyEffect
+	ret c
+	call GlowAnimationsEffect
+	;falltrough
+Draw4Effect:
+	ld c, 4
+	jr BillEffect.loop_draw	
 AquaWindEffect:
 	call CheckHealed
 	ret z
@@ -10300,14 +10312,13 @@ MagnetismEffect:
 
 TotalRetreatCost_10xDamageEffect:
 	farcall TotalRetreatCost_10xDamageEffect2
-	ret
-
+	call ATimes10
+    jp AddToDamage
 TotalDarkEnergy_10xDamageEffect:
 	ld c, 0  ; reset the Energy counter
 	call GetAllDarkEnergies
 	call ATimes10	       ; convert the Energy counter into a damage value by multiplying it by 10
    	jp SetDefiniteDamage   ; and then store that damage value in various wram locations	
-
 GetAllDarkEnergies:
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
 	call GetTurnDuelistVariable
@@ -10470,10 +10481,12 @@ FlareCommand_AssertPokemonInBench:
     ldh [hTempPlayAreaLocation_ff9d], a
     call SetUsedPokemonPowerThisTurn
 	call VictreebelLure_SwitchDefendingPokemon
+	jp GlowAnimationsEffect
+FlareCommand2:
 	call PlayerPickFireEnergyCardToDiscard
+	ret z
 	call DiscardSelectedEnergyEffect
-	call GlowAnimationsEffect
-; Falltrough
+	;falltrough	
 LureAbility_AssertPokemonInBench:
     call VictreebelLure_AssertPokemonInBench
     ret c

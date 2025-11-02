@@ -2430,7 +2430,7 @@ DarumakaCard:
 
 	; attack 2
 	energy COLORLESS, 2, FIRE, 1 ; energies
-	tx FlameTailName ; name
+	tx RecklessChargeName ; name
 	tx ThunderJoltDescription ; description
 	dw NONE ; description (cont)
 	db 40 ; damage
@@ -3815,32 +3815,32 @@ TalonflameCard:
 	tx FletchinderName ; pre-evo name
 
 	; attack 1
-	energy FIRE, 1 ; energies
-	tx IgniteName ; name
-	tx IgniteDescription ; description
+	energy 0 ; energies
+	tx NitroDrawName ; name
+	tx NitroDrawDescription ; description
+	tx PKMNPowerCondition ; description (cont)
+	db 0 ; damage
+	db POKEMON_POWER ; category
+	dw NitroDrawEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_PKMN_POWER_1 ; animation
+	
+	; attack 2
+	energy COLORLESS, 1, FIRE, 2 ; energies
+	tx BraveBirdName ; name
+	tx JigglypuffsDoubleEdgeDescription ; description
 	dw NONE ; description (cont)
-	db 20 ; damage
+	db 70 ; damage
 	db DAMAGE_NORMAL ; category
-	dw IgniteEffectCommands ; effect commands
-	db INFLICT_BURN ; flags 1
+	dw JigglypuffDoubleEdgeEffectCommands ; effect commands
+	db LOW_RECOIL ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 20
-	db ATK_ANIM_SMALL_FLAME ; animation
-	
-	; attack 2
-	energy FIRE, 3, COLORLESS, 1 ; energies
-	tx BlastBurnName ; name
-	tx BlastBurnDescription ; description
-	dw NONE ; description (cont)
-	db 100 ; damage
-	db DAMAGE_NORMAL ; category
-	dw BurningVoiceEffectCommands ; effect commands
-	db NONE ; flags 1
-	db DISCARD_ENERGY ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_FIRE_SPIN; animation
+	db ATK_ANIM_HIT_RECOIL ; animation
 
 	db 0 ; retreat cost
 	db WR_LIGHTNING ; weakness
@@ -3852,6 +3852,106 @@ TalonflameCard:
 	dw 200 * 10 ; weight
 	tx TalonflameDescription ; description
 	db 0
+
+LarvestaCard:
+	db TYPE_PKMN_FIRE ; type
+	gfx LarvestaCardGfx ; gfx
+	tx LarvestaName ; name
+	db CIRCLE ; rarity
+	db LOST_ISLE | NONE ; sets
+	dw LARVESTA
+	db 60 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy FIRE, 1 ; energies
+	tx EnergySearchName ; name
+	tx EnergySearchDescription ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw EnergySearchEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_GLOW_EFFECT ; animation
+	
+	; attack 2
+	energy FIRE, 1, COLORLESS, 1 ; energies
+	tx SearingFlameName ; name
+	tx MayInflictBurnDescription ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw MayBurnEffectEffectCommands ; effect commands
+	db INFLICT_BURN ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_SMALL_FLAME ; animation
+
+	db 2 ; retreat cost
+	db WR_WATER ; weakness
+	db NONE ; resistance
+	tx SunName ; category
+	db 61 ; Pokedex number
+	db 29 ; level
+	db 2, 0 ; length
+	dw 19 * 10 ; weight
+	tx LarvestaDescription ; description
+	db 16
+
+VolcaronaCard:
+	db TYPE_PKMN_FIRE ; type
+	gfx VolcaronaCardGfx ; gfx
+	tx VolcaronaName ; name
+	db STAR ; rarity
+	db LOST_ISLE | NONE ; sets
+	dw VOLCARONA
+	db 90 ; hp
+	db STAGE1 ; stage
+	tx LarvestaName ; pre-evo name
+
+	; attack 1
+	energy FIRE, 1 ; energies
+	tx FireFangName ; name
+	tx InflictBurnDescription ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_NORMAL ; category
+	dw BurnEffectEffectCommands ; effect commands
+	db BURNED ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+	
+	; attack 2
+	energy FIRE, 2, COLORLESS, 1 ; energies
+	tx FlamethrowerName ; name
+	tx do20ifDiscardDescription ; description
+	dw NONE ; description (cont)
+	db 30 ; damage
+	db DAMAGE_PLUS ; category
+	dw FlamethrowerYesNoEffectCommands ; effect commands
+	db NONE ; flags 1
+	db DISCARD_ENERGY ; flags 2
+	db NONE ; flags 3
+	db 3
+	db ATK_ANIM_BIG_FLAME ; animation
+
+	db 2 ; retreat cost
+	db WR_WATER ; weakness
+	db WR_GRASS ; resistance
+	tx SunName ; category
+	db 62 ; Pokedex number
+	db 67 ; level
+	db 3, 7 ; length
+	dw 42 * 10 ; weight
+	tx VolcaronaDescription ; description
+	db 16
 
 ;--Water--
 FroakieCard:
@@ -5130,7 +5230,7 @@ ChewtleCard:
 
 	; attack 1
 	energy COLORLESS, 2, WATER, 1 ; energies
-	tx FlameTailName ; name
+	tx RecklessChargeName ; name
 	tx ThunderJoltDescription ; description
 	dw NONE ; description (cont)
 	db 40 ; damage
@@ -5566,31 +5666,31 @@ SwinubCard:
 
 	; attack 1
 	energy WATER, 1 ; energies
-	tx BubbleName ; name
-	tx MayInflictParalysisDescription ; description
+	tx PowderSnowName ; name
+	tx MayInflictSleepDescription ; description
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw FroakieBubbleEffectCommands ; effect commands
-	db INFLICT_PARALYSIS ; flags 1
+	dw GastlySleepingGasEffectCommands ; effect commands
+	db INFLICT_SLEEP ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_BUBBLES ; animation
+	db ATK_ANIM_BLIZZARD ; animation
 
 	; attack 2
-	energy FIGHTING, 1 ; energies
-	tx FlailName ; name
-	tx MagikarpsFlailDescription ; description
+	energy COLORLESS, 1, WATER, 1 ; energies
+	tx RecklessChargeName ; name
+	tx ThunderJoltDescription ; description
 	dw NONE ; description (cont)
-	db 10 ; damage
-	db DAMAGE_X ; category
-	dw FlailEffectCommands ; effect commands
-	db NONE ; flags 1
+	db 30 ; damage
+	db DAMAGE_NORMAL ; category
+	dw PikachuThunderJoltEffectCommands ; effect commands
+	db LOW_RECOIL ; flags 1
 	db NONE ; flags 2
-	db BOOST_IF_TAKEN_DAMAGE ; flags 3
+	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_BIG_HIT ; animation
+	db ATK_ANIM_HIT_RECOIL ; animation
 
 	db 2 ; retreat cost
 	db WR_METAL ; weakness
@@ -5616,31 +5716,31 @@ PiloswineCard:
 
 	; attack 1
 	energy COLORLESS, 1, WATER, 1 ; energies
-	tx RageName ; name
-	tx FlareonsRageDescription ; description
+	tx IceFangName ; name
+	tx LeerDescription ; description
 	dw NONE ; description (cont)
-	db 10 ; damage
-	db DAMAGE_PLUS ; category
-	dw RageEffectCommands ; effect commands
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw LeerEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
-	db BOOST_IF_TAKEN_DAMAGE ; flags 3
+	db NONE ; flags 3
 	db 0
 	db ATK_ANIM_HIT ; animation
 
 	; attack 2
-	energy FIGHTING, 1, COLORLESS, 1 ; energies
-	tx DigName ; name
-	tx EarthquakeDescription ; description
+	energy WATER, 2, COLORLESS, 1 ; energies
+	tx ChargeDashName ; name
+	tx DamageCounterDescription ; description
 	dw NONE ; description (cont)
-	db 40 ; damage
-	db DAMAGE_NORMAL ; category
-	dw SandacondaEarthquakeEffectCommands ; effect commands
+	db 30 ; damage
+	db DAMAGE_PLUS ; category
+	dw CounterpunchEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
-	db SPECIAL_AI_HANDLING ; flags 3
+	db BOOST_IF_TAKEN_DAMAGE ; flags 3
 	db 0
-	db ATK_ANIM_HIT ; animation
+	db ATK_ANIM_HIT_RECOIL ; animation
 
 	db 3 ; retreat cost
 	db WR_METAL ; weakness
@@ -5666,26 +5766,26 @@ MamoswineCard:
 
 	; attack 1
 	energy WATER, 1, COLORLESS, 1 ; energies
-	tx QuakingPunchName ; name
-	tx HeadacheDescription ; description
+	tx IcicleCrashName ; name
+	tx IcicleCrashDescription ; description
 	dw NONE ; description (cont)
-	db 30 ; damage
-	db RESIDUAL ; category
-	dw BUIZELHeadacheEffectCommands ; effect commands
+	db 20 ; damage
+	db DAMAGE_PLUS ; category
+	dw IcicleCrashEffectCommands ; effect commands
 	db NONE ; flags 1
-	db FLAG_2_BIT_6 ; flags 2
+	db NONE ; flags 2
 	db NONE ; flags 3
-	db 2
-	db ATK_ANIM_PUNCH ; animation
+	db 0
+	db ATK_ANIM_SLASH ; animation
 
 	; attack 2
-	energy FIGHTING, 2, COLORLESS, 2 ; energies
-	tx TremulousFistName ; name
-	tx TremulousFistDescription ; description
+	energy WATER, 2, COLORLESS, 2 ; energies
+	tx EarthquakeName ; name
+	tx EarthquakeDescription ; description
 	dw NONE ; description (cont)
-	db 50 ; damage
-	db DAMAGE_PLUS ; category
-	dw Do10MorePerInjuredPokesEffectCommands ; effect commands
+	db 90 ; damage
+	db DAMAGE_NORMAL ; category
+	dw SandacondaEarthquakeEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3

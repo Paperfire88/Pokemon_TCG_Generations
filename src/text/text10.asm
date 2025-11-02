@@ -581,7 +581,7 @@ DarumakaName:
 	text "Darumaka"
 	done
 
-FlameTailName:
+RecklessChargeName:
 	text "Reckless Charge"
 	done
 
@@ -1498,47 +1498,35 @@ StretchKickDescription:
 	line "damage to it (Don't apply Weakness"
 	line "or Resistance)."
 	done
-
 HighJumpKickName:
 	text "High Jump Kick"
 	done
-
 KickingName:
 	text "Kicking"
 	done
-
 HitmonchanName:
 	text "Hitmonchan"
 	done
-
 JabName:
 	text "Mach Punch"
 	done
-
 SkyUppercut:
 	text "Sky Uppercut"
 	done
-
 PunchingName:
 	text "Punching"
 	done
-
 CufantName:
 	text "Cufant"
 	done
-
 LeerName:
 	text "Leer"
 	done
-
 LeerDescription:
 	text "Flip a coin. If heads, the Defending"
-	line "Pkmn can't attack this PKMN during"
-	line "your opponent's next turn."
-	line "(Benching or evolving either PKMN"
-	line "ends this effect.)"
+	line "PKMN can't attack during your"
+	line "opponent's next turn."
 	done
-
 SpikeName:
 	text "Spike"
 	done

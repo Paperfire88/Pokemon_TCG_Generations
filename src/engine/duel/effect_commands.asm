@@ -627,37 +627,30 @@ MarowakCallforFriendEffectCommands:
 	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, CallForFamilyFighting_PlayerSelectEffect
 	dbw EFFECTCMDTYPE_AI_SELECTION, CallForFamilyFighting_AISelectEffect
 	db  $00
-
 MachokeKarateChopEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, KarateChop_DamageSubtractionEffect
 	dbw EFFECTCMDTYPE_AI, KarateChop_AIEffect
 	db  $00
-
 MachokeSubmissionEffectCommands:
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Deal10DamageToSelfEffect
 	db  $00
-
 GravelerHardenEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, HardenEffect
 	db  $00
-
 RhydonRamEffectCommands:
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Ram_RecoilSwitchEffect
 	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, Ram_SelectSwitchEffect
 	dbw EFFECTCMDTYPE_AI_SWITCH_DEFENDING_PKMN, Ram_SelectSwitchEffect
 	db  $00
-
-RhyhornLeerEffectCommands:
+LeerEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, LeerEffect
 	db  $00
-
 HitmonleeStretchKickEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Opp_CheckBench
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, StretchKick_BenchDamageEffect
 	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, StretchKick_PlayerSelectEffect
 	dbw EFFECTCMDTYPE_AI_SELECTION, VictreebelLure_GetBenchPokemonWithLowestHP
 	db  $00
-
 MeowthSandAttackEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, SmokescreenEffect
 	db  $00
@@ -760,7 +753,11 @@ MagnetonSonicboomEffectCommands:
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Sonicboom_NullEffect
 	dbw EFFECTCMDTYPE_AI, Sonicboom_UnaffectedByColorEffect
 	db  $00
-
+IcicleCrashEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, IcicleCrashEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Sonicboom_NullEffect
+	dbw EFFECTCMDTYPE_AI, IcicleCrashEffect
+	db  $00
 RaikouPealOfThunderEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, PealOfThunder_InitialEffect
 	dbw EFFECTCMDTYPE_PKMN_POWER_TRIGGER, PealOfThunder_RandomlyDamageEffect
@@ -1945,26 +1942,26 @@ LinearAttackEffectCommands:
 	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, StretchKick_PlayerSelectEffect
 	dbw EFFECTCMDTYPE_AI_SELECTION, VictreebelLure_GetBenchPokemonWithLowestHP
 	db  $00
-
 IrritatingBuzzEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, SetCarryEF ; passive pokemon power
 	db  $00
-
 DredgeUpEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, DredgeUpEffect
 	db  $00
-
 FlareCommandEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Fire_CheckEnergy
-    dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, LureAbility_AssertPokemonInBench
+    dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, FlareCommand2
     dbw EFFECTCMDTYPE_BEFORE_DAMAGE, FlareCommand_AssertPokemonInBench
     dbw EFFECTCMDTYPE_REQUIRE_SELECTION, VictreebelLure_SelectSwitchPokemon
     db  $00
-
+NitroDrawEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Fire_CheckEnergy
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, Sprint_Check
+    dbw EFFECTCMDTYPE_BEFORE_DAMAGE, NitroDrawEffect
+    db  $00	
 DeepSleepEffectCommands:        ; Used for Gengars Deep Sleep. This command is just flavor, Deep Sleep code is found in Duel -> Core.
     dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, SetCarryEF
     db  $00
-
 SpookifyEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, RiotEffect
     db  $00

@@ -2182,7 +2182,7 @@ TextOffsets::
 	textpointer TakeDownDescription
 	textpointer CentiskorchDescription
 	textpointer DarumakaName
-	textpointer FlameTailName
+	textpointer RecklessChargeName
 	textpointer DarumakaDescription
 	textpointer DarmanitanName
 	textpointer AgilityName
@@ -4169,3 +4169,13 @@ TextOffsets::
 	textpointer GimmighoulDescription
 	textpointer GholdengoName
 	textpointer GholdengoDescription
+	textpointer NitroDrawName
+	textpointer NitroDrawDescription
+	textpointer LarvestaName
+	textpointer LarvestaDescription
+	textpointer VolcaronaName
+	textpointer VolcaronaDescription
+	textpointer IcicleCrashName
+	textpointer IcicleCrashDescription
+	textpointer IceFangName
+	textpointer ChargeDashName

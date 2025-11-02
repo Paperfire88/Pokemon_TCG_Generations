@@ -3310,8 +3310,6 @@ TotalRetreatCost_10xDamageEffect2:
     jr nz, .loop_play_area
 .done
     ld a, c
-    farcall ATimes10
-    farcall AddToDamage
 	ret
 
 AllEnergyInYourPlayArea_10xDamageEffect:

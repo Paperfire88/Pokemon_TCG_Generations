@@ -82,6 +82,8 @@ CardPointers::
 	dab SkeledirgeCard
 	dab SalanditCard
 	dab Salazzle
+	dab LarvestaCard
+	dab VolcaronaCard
 	dab BagonCard
 	dab ShelgonCard
 	dab SalamenceCard

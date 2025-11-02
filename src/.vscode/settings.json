@@ -1,28 +1,106 @@
 {
     "editor.unicodeHighlight.includeComments": true,
     "editor.minimap.enabled": false,
+    "editor.fontFamily": "Consolas",
+    "editor.fontSize": 16,
+    "editor.fontWeight": "normal",
     "editor.unicodeHighlight.allowedCharacters": {
         ";": true
     },
-    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
-    "editor.defaultColorDecorators": "auto",
-    "editor.language.colorizedBracketPairs": [],
-    "workbench.preferredHighContrastColorTheme": "Default Dark Modern",
-    "window.autoDetectColorScheme": true,
-    "editor.autoClosingQuotes": "always",
-    "editor.tabCompletion": "on",
-    "colorMyText.configurations": [
-        {
-            "paths": ["*.asm"]
-            "rules": [
-                {"patterns": ["text "],"bold": true, "color": "Green"}
-                {"patterns": ["tx "],"bold": true, "color": "Green", "matchCase": true}
-                {"patterns": ["Effect"],"bold": true, "color": "Green", "matchCase": true}
-                {"patterns": ["gfx "],"bold": true, "color": "Red", "matchCase": true}
-                {"patterns": ["Name"],"bold": true, "color": "BrightBlue", "matchCase": true}
-                {"patterns": ["Description"],"bold": true, "color": "Blue", "matchCase": true}
-                {"patterns": ["farcall"],"bold": true, "color": "Blue", "matchCase": true}
-                {"patterns": ["line"],"color": "Green"}]
-        }
-    ]
+    "editor.tokenColorCustomizations":{
+        "textMateRules":[{
+            "scope":[
+                "text",
+                ],
+                "settings":{
+                    "foreground": "#2eb841ff",
+                }
+            },
+        ]
+        
+    },
+        "highlight.regexes": {
+            "(// ?TODO:?)(.*)": [
+                {
+                "overviewRulerColor": "#ffcc00",
+                "backgroundColor": "#ffcc00",
+                "color": "#1f1f1f",
+                "fontWeight": "bold"
+                },
+                {
+                "backgroundColor": "#d9ad00",
+                "color": "#1f1f1f"
+                }
+            ],
+            "(jp)(.*)": [
+                {
+                "color": "#ffcc00ff",
+                },
+            ],
+            "(jr)(.*)": [
+                {
+                "color": "#ff8800ff",
+                },
+            ],
+            "(ret)(.*)": [
+                {
+                "color": "#ff0000ff",
+                },
+            ],
+            "(Effect:)(.*)": [
+                {
+                "color": "#18b912ff",
+                },
+            ],
+            "(Card:)(.*)": [
+                {
+                "color": "#18b912ff",
+                },
+            ],
+            "(GRASS)(.*)": [
+                {
+                "color": "#18b912ff",
+                },
+            ],
+            "(WATER)(.*)": [
+                {
+                "color": "#00a2ffff",
+                },
+            ],
+            "(FIRE)(.*)": [
+                {
+                "color": "#ff8800ff",
+                },
+            ],
+            "(LIGHTNING)(.*)": [
+                {
+                "color": "#ffcc00ff",
+                },
+            ],
+            "(FIGHTING)(.*)": [
+                {
+                "color": "#ff0000ff",
+                },
+            ],
+            "(PSYCHIC)(.*)": [
+                {
+                "color": "#FF0066",
+                },
+            ],
+            "(DARKNESS)(.*)": [
+                {
+                "color": "#7030A0",
+                },
+            ],
+            "(METAL)(.*)": [
+                {
+                "color": "#a4a49f",
+                },
+            ],
+            "(COLORLESS)(.*)": [
+                {
+                "color": "#a8a878",
+                },
+            ],
+    }
 }

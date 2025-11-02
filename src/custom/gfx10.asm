@@ -1,4 +1,4 @@
-;17/19
+;19/19
 SkarmoryCardGfx::	
 	INCBIN "gfx/cards/skarmory.pal"
 	INCBIN "gfx/cards/skarmory.attrmap"	
@@ -67,4 +67,11 @@ GholdengoCardGfx::
 	INCBIN "gfx/cards/gholdengo.pal"
 	INCBIN "gfx/cards/gholdengo.attrmap"	
 	INCBIN "gfx/cards/gholdengo.2bpp"
-			
+LarvestaCardGfx::	
+	INCBIN "gfx/cards/larvesta.pal"
+	INCBIN "gfx/cards/larvesta.attrmap"	
+	INCBIN "gfx/cards/larvesta.2bpp"	
+VolcaronaCardGfx::	
+	INCBIN "gfx/cards/volcarona.pal"
+	INCBIN "gfx/cards/volcarona.attrmap"	
+	INCBIN "gfx/cards/volcarona.2bpp"

@@ -78,6 +78,8 @@
 	const SKELEDIRGE                ; $40
 	const SALANDIT
 	const SALAZZLE              ; $35
+	const LARVESTA
+	const VOLCARONA
 	const BAGON                ; $3e
 	const SHELGON                ; $3f
 	const SALAMENCE                ; $40
