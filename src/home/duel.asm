@@ -1887,8 +1887,10 @@ ApplyDamageModifiers_DamageToTarget::
 	call SwapTurn
 	and b
 	jr z, .not_weak
+	call SwapTurn
 	ld a, DUELVARS_ARENA_CARD_STAGE
 	call LoadCardDataToBuffer2_FromDeckIndex
+	call SwapTurn
 	ld a, [wLoadedCard2Rarity]
 	cp DIAMOND
 	jr z, .stage1
@@ -1915,9 +1917,10 @@ ApplyDamageModifiers_DamageToTarget::
 	call SwapTurn
 	and b
 	jr z, .check_pluspower_and_defender ; jump if not resistant
+	
 	ld a, DUELVARS_ARENA_CARD_STAGE
 	call LoadCardDataToBuffer2_FromDeckIndex
-	ld a, [wLoadedCard2Rarity]
+ld a, [wLoadedCard2Rarity]
 	cp DIAMOND
 	jr z, .stage1b
 	cp STAR
@@ -1993,9 +1996,10 @@ ApplyDamageModifiers_DamageToSelf::
 	call GetArenaCardWeakness
 	and b
 	jr z, .not_weak
+	
 	ld a, DUELVARS_ARENA_CARD_STAGE
 	call LoadCardDataToBuffer2_FromDeckIndex
-	ld a, [wLoadedCard2Rarity]
+ld a, [wLoadedCard2Rarity]
 	cp DIAMOND
 	jr z, .stage1
 	cp STAR
@@ -2021,7 +2025,7 @@ ApplyDamageModifiers_DamageToSelf::
 	jr z, .not_resistant
 	ld a, DUELVARS_ARENA_CARD_STAGE
 	call LoadCardDataToBuffer2_FromDeckIndex
-	ld a, [wLoadedCard2Rarity]
+ld a, [wLoadedCard2Rarity]
 	cp DIAMOND
 	jr z, .stage1b
 	cp STAR

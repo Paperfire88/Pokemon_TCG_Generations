@@ -42,6 +42,7 @@ _AddStarterDeck:
 	adc h
 	ld h, a
 	res CARD_NOT_OWNED_F, [hl]
+	inc [hl]  ; OATS: use cards in multiple decks
 	pop hl
 	dec c
 	jr nz, .loop_main_cards

@@ -372,3 +372,167 @@ IceFangName:
 ChargeDashName:
 	text "Charge Dash"
 	done
+PressSelectToGoOneStageBelowText:
+	text "[SELECT]: (<RAMTEXT>)"
+	done	
+WatersOfRemembranceName:
+	text "Waters of Remebrance"	
+	done
+WatersOfRemembranceDescription:
+	text "This PKMN can use any attack from"
+	line "its previous Evolutions. (You still"
+	line "need the necessary Energy.)"
+	done
+GeneticMemoryName:	
+	text "Genetic Memory"
+	done
+LeppaBerryName:
+	text "Leppa Berry"
+	done
+LeppaBerryDescription:
+	text "Attach this card to 1 of your PKMN."
+	line "The PKMN attached can use any attack"
+	line "from its previous Evolutions. (You"
+	line "still need the necessary Energy.)"
+	done
+LeppaBerryDescription2:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Berry Tag Sprite (Gen 4))"
+	line "OG illustrator: (Game Freak)"
+	done	
+ScorchingScalesName:
+	text "Scorching Scales"
+	done
+ScorchingScalesDescription:
+	text "During between turns, Put 4 damage"
+	line "counters instead of 2 on your"
+	line "opponents burned PKMN."
+	done
+Received40DamageDueToBurnText:
+    text "<RAMTEXT> lost"
+    line "40 HP due to Burn."
+    done	
+FastFlightName:
+	text "Fast Flight"
+	done
+HeatDiveName:
+	text "Heat Dive"
+	done	
+ConductivityName:
+	text "Conductivity"
+	done
+ConductivityDescription:
+	text "Whenever your opponent attaches an"
+	line "Energy card from their hand to 1 of"
+	line "their PKMN, put 1 damage counter on"
+	line "that PKMN. You can only activate"
+	line "1 [Conductivity] each time."
+	done		
+GigavoltName:
+	text "Gigavolt"
+	done	
+GigavoltDescription:
+	text "Flip a coin. If heads, it does +30"
+	line "damage. If tails, the defending Pkmn"
+	line "is now Paralyzed."
+	done	
+IfHeadsplus30IfTailsParalysisText:
+	text "If Heads, + 30 damage!"
+	line "If Tails, inflict Paralysis!"
+	done	
+StaticKickName:
+	text "Static Kick"
+	done
+StaticKickDescription:
+	text "If the defending PKMN has any damage"
+	line "counter on it, discard an energy"
+	line "from it."
+	done
+MonkeyBeatdownName:
+	text "Monkey Beatdown"
+	done
+MonkeyBeatdownDescription:
+	text "Your opponent reveals their hand," 
+	line "This attack does +10 damage for each"
+	line "PKMN card you find there."
+	done		
+FrenzyTossName:
+	text "Frenzy Toss"
+	done
+FrenzyTossDescription:
+	text "This PKMN is now Confused. if you"
+	line "didn't KO your opponent active PKMN,"
+	line "put it and all cards attached to it"
+	line "into their hand."	
+	done
+RageFistName:
+	text "Rage Fist"
+	done
+RageFistDescription:
+	text "If this PKMN is confused, it does"
+	line "+50 damage. If you didn't KO the"
+	line "opponent's active PKMN, this PKMN"
+	line "is now confused."
+	done	
+SaltCureName:
+	text "Salt Cure"
+	done
+SaltCureDescription:
+	text "Heal 20 damage from this PKMN."
+	line "if the defending PKMN is a <WATER> or <METAL>"
+	line "PKMN, this attack does +40 damage."
+	done	
+PurifyingSaltName:
+	text "Purifying Salt"
+	done
+HeavySlamName:
+	text "Heavy Slam"
+	done
+HeavySlamDescription:
+	text "This attack does +20 damage for each"
+	line "<COLORLESS> of Difference between this PKMN"
+	line "And the defending PKMN Retreat Cost."
+	done
+RockHurlName:
+	text "Rock Hurl"
+	done
+SaltCoatingName:
+	text "Salt Coating"
+	done
+OctolockName:
+	text "Octolock"
+	done
+OctolockDescription:
+	text "The Defending PKMN Retreat cost is 1"
+	line "<COLORLESS> More until the end of the"
+	line "next turn. Then, Flip a Coin."
+	line "If Heads, your opponent can't use"
+	line "or activate any PKMN PWR during"
+	line "their next turn."
+	done
+TentacleBusterName:
+	text "Tentacle Buster"
+	done
+BindName:
+	text "Bind"
+	done
+PowersCheckText:
+	text "Coin check! If Heads,"
+	line "The Opponent can't use PKMN PWR'S."
+	done
+TrickOrTreatName:
+	text "Trick-or-Treat"
+	done
+TrickOrTreatDescription:
+	text "Once per turn, You can Change The"
+	line "Defending PKMN Weakness to<PSYCHIC>."
+	done
+PumpkinTrickName:
+	text "Pumpkin Trick"
+	done
+PumpkinTrickDescription:
+	text "Heal 20 HP from this PKMN. If your"
+	line "opponent has 4 or more PKMN in the"
+	line "Discard Pile, the defending PKMN is"
+	line "now burned."
+	done	

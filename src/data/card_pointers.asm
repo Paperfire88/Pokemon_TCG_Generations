@@ -399,6 +399,7 @@ CardPointers::
 	dab ReviveCard
 	dab RareCandyCard
 	dab PlusPowerCard
+	dab LeppaBerryCard
 	dab DefenderCard
 	dab RecycleCard
 	dab PokemonFluteCard

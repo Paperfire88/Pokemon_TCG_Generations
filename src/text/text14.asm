@@ -1092,7 +1092,7 @@ NacliDescription:
 	line "Pixel Art by: (KingKoopa)"
 	done 	
 NaclstackName:
-	text "Nacklstack"
+	text "Naclstack"
 	done
 NaclstackDescription:
 	text "Booster Pack: (LOST ISLE)"

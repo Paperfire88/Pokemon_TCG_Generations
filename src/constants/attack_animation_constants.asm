@@ -11,7 +11,7 @@
 	const ATK_ANIM_THUNDERSHOCK           ; $06
 	const ATK_ANIM_THUNDER                ; $07
 	const ATK_ANIM_THUNDERBOLT            ; $08
-	const ATK_ANIM_UNUSED_09              ; $09
+	const ATK_ANIM_CONDUCTIVITY              ; $09
 	const ATK_ANIM_THUNDER_WHOLE_SCREEN   ; $0a
 	const ATK_ANIM_EVOLUTIONARY_FLAME              ; $0b
 	const ATK_ANIM_THUNDERSTORM           ; $0c

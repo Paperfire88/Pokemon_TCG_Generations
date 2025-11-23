@@ -1,5 +1,8 @@
 Script_Clerk8:
 	start_script
+	give_one_of_each_trainer_booster
+	give_one_of_each_trainer_booster
+	give_one_of_each_trainer_booster
 	print_text_quit_fully Text068c
 ; 	print_variable_npc_text Gal1WantToTrade1Text, Gal1WantToTrade2Text
 ; 	ask_question_jump Gal1WouldYouLikeToTradeText, .ows_e0eb

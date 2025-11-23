@@ -161,8 +161,7 @@ HandleDamageReductionOrNoDamageFromPkmnPowerEffects::
 	cp POKEMON_POWER
 	ret z
 	push de
-	ld de, TREVENANT
-	call CountPokemonIDInBothPlayAreas
+	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
 	pop de
 	ret c
 	ld a, [wTempPlayAreaLocation_cceb]
@@ -191,8 +190,7 @@ HandleStrikesBack_AgainstDamagingAttack::
 	ld a, [wTempNonTurnDuelistCardID] ; ID of defending Pokemon
 	cp KROOKODILE
 	ret nz
-	ld a, TREVENANT
-	call CountPokemonIDInBothPlayAreas
+	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
 	ret c
 	ld a, [wLoadedAttackCategory] ; category of attack used
 	cp POKEMON_POWER	
@@ -473,10 +471,8 @@ NoDamageOrEffectTextIDTable::
 
 ; return carry if turn holder has Omanyte and its Clairvoyance Pkmn Power is active
 IsClairvoyanceActive::
-	ld de, TREVENANT
-	call CountPokemonIDInBothPlayAreas
-	ccf
-	ret nc
+	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
+	ret c
 	ld de, OMANYTE
 	jp CountPokemonIDInPlayArea
 
@@ -494,6 +490,14 @@ CheckCannotUseDueToStatus_OnlyToxicGasIfANon0::
 	ldtx hl, CannotUseDueToStatusText
 	scf
 	jr nz, .done ; return carry
+.check_substatus
+	ld a, DUELVARS_ARENA_CARD_SUBSTATUS3
+	call GetTurnDuelistVariable
+	bit SUBSTATUS3_NO_POKEPOWERS_F, a
+	jr z, .check_toxic_gas
+	ldtx hl, UnableDueToToxicGasText
+	scf
+	ret
 .check_toxic_gas
 	push de
 	ld de, TREVENANT
@@ -656,6 +660,10 @@ GetLoadedCard1RetreatCost::
 	ld de, TREVENANT
 	call CountPokemonIDInBothPlayAreas
 	jr c, .muk_found
+	ld a, DUELVARS_ARENA_CARD_SUBSTATUS3
+	call GetTurnDuelistVariable
+	bit SUBSTATUS3_NO_POKEPOWERS_F, a
+	jr nz, .muk_found
 	ld a, [wLoadedCard1RetreatCost]
 	sub c ; apply Retreat Aid for each Pkmn Power-capable Dodrio
 	ret nc
@@ -678,10 +686,8 @@ CheckCantRetreatDueToAcid::
 	ret
 
 CheckCantRetreatDueToPoisonReef::
-	ld a, TREVENANT
-	call CountPokemonIDInBothPlayAreas
-	ccf
-	ret nc
+	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
+	ret c
 	call SwapTurn
 	ld a, DUELVARS_ARENA_CARD
 	call GetTurnDuelistVariable
@@ -742,6 +748,8 @@ IsPrehistoricPowerActive::
 	ld de, TYRANTRUM
 	call CountPokemonIDInBothPlayAreas
 	ret nc
+	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
+	ret c
 	ld de, TREVENANT
 	call CountPokemonIDInBothPlayAreas
 	ldtx hl, UnableToEvolveDueToPrehistoricPowerText
@@ -786,6 +794,7 @@ UpdateSubstatusConditions_EndOfTurn::
 	ld a, DUELVARS_ARENA_CARD_SUBSTATUS3
 	call GetTurnDuelistVariable
 	res SUBSTATUS3_HEADACHE_F, [hl]
+	res SUBSTATUS3_NO_POKEPOWERS_F, [hl]
 	push hl
 	ld a, DUELVARS_ARENA_CARD_SUBSTATUS2
 	call GetTurnDuelistVariable
@@ -804,6 +813,8 @@ IsRainDanceActive::
 	ld de, GRENINJA
 	call CountPokemonIDInPlayArea
 	ret nc ; return if no Pkmn Power-capable Blastoise found in turn holder's play area
+	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
+	ret c
 	ld de, TREVENANT
 	call CountPokemonIDInBothPlayAreas
 	ccf

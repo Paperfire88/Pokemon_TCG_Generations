@@ -9,11 +9,11 @@ IF LC_CHALLENGE == 1
 	db 0, 11, 0, 0 ; LABORATORY
 	db 0, 11, 0, 0 ; LOST_ISLE
 ELSE
-	db 1, 5, 4, 1 ; COLOSSEUM
-	db 1, 5, 4, 1 ; EVOLUTION
-	db 0, 6, 4, 1 ; MYSTERY
-	db 0, 6, 4, 1 ; LABORATORY
-	db 0, 6, 4, 1 ; LOST_ISLE
+	db 0, 5, 4, 2 ; COLOSSEUM
+	db 0, 5, 4, 2 ; EVOLUTION
+	db 0, 5, 4, 2 ; MYSTERY
+	db 0, 5, 4, 2 ; LABORATORY
+	db 0, 5, 4, 2 ; LOST_ISLE
 ENDC
 MACRO booster_set
 	db \1 >> 4
@@ -71,6 +71,7 @@ BoosterPack_ColosseumGrass::
 	db 16 ; Fighting Type Chance
 	db 16 ; Psychic Type Chance
 	db 16 ; Darkness Type Chance
+	db 16 ; Metal Type Chance
 	db 16 ; Colorless Type Chance
 	db 16 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
@@ -87,6 +88,7 @@ BoosterPack_ColosseumFire::
 	db 16 ; Fighting Type Chance
 	db 16 ; Psychic Type Chance
 	db 16 ; Darkness Type Chance
+	db 16 ; Metal Type Chance
 	db 16 ; Colorless Type Chance
 	db 16 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
@@ -103,6 +105,7 @@ BoosterPack_ColosseumWater::
 	db 16 ; Fighting Type Chance
 	db 16 ; Psychic Type Chance
 	db 16 ; Darkness Type Chance
+	db 16 ; Metal Type Chance
 	db 16 ; Colorless Type Chance
 	db 16 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
@@ -119,6 +122,7 @@ BoosterPack_ColosseumLightning::
 	db 16 ; Fighting Type Chance
 	db 16 ; Psychic Type Chance
 	db 16 ; Darkness Type Chance
+	db 16 ; Metal Type Chance
 	db 16 ; Colorless Type Chance
 	db 16 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
@@ -135,6 +139,7 @@ BoosterPack_ColosseumFighting::
 	db 48 ; Fighting Type Chance
 	db 16 ; Psychic Type Chance
 	db 16 ; Darkness Type Chance
+	db 16 ; Metal Type Chance
 	db 16 ; Colorless Type Chance
 	db 16 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
@@ -151,8 +156,9 @@ BoosterPack_ColosseumTrainer::
 	db 16 ; Fighting Type Chance
 	db 16 ; Psychic Type Chance
 	db 16 ; Darkness Type Chance
+	db 16 ; Metal Type Chance
 	db 16 ; Colorless Type Chance
-	db 68 ; Trainer Card Chance
+	db 100 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
 
 BoosterPack_EvolutionNeutral::
@@ -167,6 +173,7 @@ BoosterPack_EvolutionNeutral::
 	db 20 ; Fighting Type Chance
 	db 20 ; Psychic Type Chance
 	db 20 ; Darkness Type Chance
+	db 20 ; Metal Type Chance
 	db 20 ; Colorless Type Chance
 	db 20 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
@@ -183,6 +190,7 @@ BoosterPack_EvolutionGrass::
 	db 16 ; Fighting Type Chance
 	db 16 ; Psychic Type Chance
 	db 16 ; Darkness Type Chance
+	db 16 ; Metal Type Chance
 	db 16 ; Colorless Type Chance
 	db 16 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
@@ -200,6 +208,7 @@ BoosterPack_EvolutionNeutralFireEnergy::
 	db 20 ; Psychic Type Chance
 	db 20 ; Darkness Type Chance
 	db 20 ; Colorless Type Chance
+	db 20 ; Metal Type Chance
 	db 20 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
 
@@ -215,6 +224,7 @@ BoosterPack_EvolutionWater::
 	db 16 ; Fighting Type Chance
 	db 16 ; Psychic Type Chance
 	db 16 ; Darkness Type Chance
+	db 16 ; Metal Type Chance
 	db 16 ; Colorless Type Chance
 	db 16 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
@@ -231,6 +241,7 @@ BoosterPack_EvolutionFighting::
 	db 48 ; Fighting Type Chance
 	db 16 ; Psychic Type Chance
 	db 16 ; Darkness Type Chance
+	db 16 ; Metal Type Chance
 	db 16 ; Colorless Type Chance
 	db 16 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
@@ -247,6 +258,7 @@ BoosterPack_EvolutionPsychic::
 	db 16 ; Fighting Type Chance
 	db 48 ; Psychic Type Chance
 	db 16 ; Darkness Type Chance
+	db 16 ; Metal Type Chance
 	db 16 ; Colorless Type Chance
 	db 16 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
@@ -263,8 +275,9 @@ BoosterPack_EvolutionTrainer::
 	db 16 ; Fighting Type Chance
 	db 16 ; Psychic Type Chance
 	db 16 ; Darkness Type Chance
+	db 16 ; Metal Type Chance
 	db 16 ; Colorless Type Chance
-	db 48 ; Trainer Card Chance
+	db 100 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
 
 BoosterPack_MysteryNeutral::
@@ -279,6 +292,7 @@ BoosterPack_MysteryNeutral::
 	db 17 ; Fighting Type Chance
 	db 17 ; Psychic Type Chance
 	db 17 ; Darkness Type Chance
+	db 17 ; Metal Type Chance
 	db 17 ; Colorless Type Chance
 	db 17 ; Trainer Card Chance
 	db 17 ; Energy Card Chance
@@ -295,6 +309,7 @@ BoosterPack_MysteryGrassColorless::
 	db 12 ; Fighting Type Chance
 	db 12 ; Psychic Type Chance
 	db 12 ; Darkness Type Chance
+	db 12 ; Metal Type Chance
 	db 22 ; Colorless Type Chance
 	db 12 ; Trainer Card Chance
 	db 12 ; Energy Card Chance
@@ -311,6 +326,7 @@ BoosterPack_MysteryWaterColorless::
 	db 12 ; Fighting Type Chance
 	db 12 ; Psychic Type Chance
 	db 12 ; Darkness Type Chance
+	db 12 ; Metal Type Chance
 	db 22 ; Colorless Type Chance
 	db 12 ; Trainer Card Chance
 	db 12 ; Energy Card Chance
@@ -327,6 +343,7 @@ BoosterPack_MysteryLightningColorless::
 	db 12 ; Fighting Type Chance
 	db 12 ; Psychic Type Chance
 	db 12 ; Darkness Type Chance
+	db 12 ; Metal Type Chance
 	db 22 ; Colorless Type Chance
 	db 12 ; Trainer Card Chance
 	db 12 ; Energy Card Chance
@@ -343,6 +360,7 @@ BoosterPack_MysteryFightingColorless::
 	db 48 ; Fighting Type Chance
 	db 12 ; Psychic Type Chance
 	db 12 ; Darkness Type Chance
+	db 12 ; Metal Type Chance
 	db 22 ; Colorless Type Chance
 	db 12 ; Trainer Card Chance
 	db 12 ; Energy Card Chance
@@ -359,6 +377,7 @@ BoosterPack_MysteryTrainerColorless::
 	db 16 ; Fighting Type Chance
 	db 16 ; Psychic Type Chance
 	db 16 ; Darkness Type Chance
+	db 16 ; Metal Type Chance
 	db 16 ; Colorless Type Chance
 	db 48 ; Trainer Card Chance
 	db 0 ; Energy Card Chance
@@ -374,6 +393,7 @@ BoosterPack_MysteryPsychic::
 	db 16 ; Fighting Type Chance
 	db 48 ; Psychic Type Chance
 	db 16 ; Darkness Type Chance
+	db 16 ; Metal Type Chance
 	db 16 ; Colorless Type Chance
 	db 16 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
@@ -386,9 +406,10 @@ BoosterPack_LaboratoryMostlyNeutral::
 	db 20 ; Fire Type Chance
 	db 20 ; Water Type Chance
 	db 20 ; Lightning Type Chance
-	db 16 ; Fighting Type Chance
+	db 20 ; Fighting Type Chance
 	db 20 ; Psychic Type Chance
-	db 16 ; Darkness Type Chance
+	db 20 ; Darkness Type Chance
+	db 20 ; Metal Type Chance
 	db 20 ; Colorless Type Chance
 	db 24 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
@@ -405,6 +426,7 @@ BoosterPack_LaboratoryGrass::
 	db 16 ; Fighting Type Chance
 	db 16 ; Psychic Type Chance
 	db 16 ; Darkness Type Chance
+	db 16 ; Metal Type Chance
 	db 16 ; Colorless Type Chance
 	db 16 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
@@ -421,6 +443,7 @@ BoosterPack_LaboratoryWater::
 	db 16 ; Fighting Type Chance
 	db 16 ; Psychic Type Chance
 	db 16 ; Darkness Type Chance
+	db 16 ; Metal Type Chance
 	db 16 ; Colorless Type Chance
 	db 16 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
@@ -437,6 +460,7 @@ BoosterPack_LaboratoryPsychic::
 	db 16 ; Fighting Type Chance
 	db 48 ; Psychic Type Chance
 	db 16 ; Darkness Type Chance
+	db 16 ; Metal Type Chance
 	db 16 ; Colorless Type Chance
 	db 16 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
@@ -453,6 +477,7 @@ BoosterPack_LaboratoryFighting::
 	db 48 ; Fighting Type Chance
 	db 16 ; Psychic Type Chance
 	db 16 ; Darkness Type Chance
+	db 16 ; Metal Type Chance
 	db 16 ; Colorless Type Chance
 	db 16 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
@@ -468,6 +493,7 @@ BoosterPack_LaboratoryLightning::
 	db 16 ; Fighting Type Chance
 	db 16 ; Psychic Type Chance
 	db 16 ; Darkness Type Chance
+	db 16 ; Metal Type Chance
 	db 16 ; Colorless Type Chance
 	db 16 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
@@ -483,8 +509,9 @@ BoosterPack_LaboratoryTrainer::
 	db 16 ; Fighting Type Chance
 	db 16 ; Psychic Type Chance
 	db 16 ; Darkness Type Chance
+	db 16 ; Metal Type Chance
 	db 16 ; Colorless Type Chance
-	db 48 ; Trainer Card Chance
+	db 100 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
 
 BoosterPack_EnergyLightningFire::
@@ -546,7 +573,8 @@ BoosterPack_RandomEnergies::
 	db  0 ; Lightning Type Chance
 	db  0 ; Fighting Type Chance
 	db  0 ; Psychic Type Chance
-	db  0 ; Darkness Type Chance	
+	db  0 ; Darkness Type Chance
+	db 	0 ; Metal Type Chance	
 	db  0 ; Colorless Type Chance
 	db  0 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
@@ -563,6 +591,7 @@ BoosterPack_MysteryFire::
 	db 16 ; Fighting Type Chance
 	db 16 ; Psychic Type Chance
 	db 16 ; Darkness Type Chance
+	db 16 ; Metal Type Chance
 	db 16 ; Colorless Type Chance
 	db 16 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
@@ -579,6 +608,7 @@ BoosterPack_LaboratoryFire::
 	db 16 ; Fighting Type Chance
 	db 16 ; Psychic Type Chance
 	db 16 ; Darkness Type Chance
+	db 16 ; Metal Type Chance
 	db 16 ; Colorless Type Chance
 	db 16 ; Trainer Card Chance
 	db  0 ; Energy Card Chance	
@@ -595,6 +625,7 @@ BoosterPack_ColosseumDarkness::
 	db 16 ; Fighting Type Chance
 	db 16 ; Psychic Type Chance
 	db 48 ; Darkness Type Chance
+	db 16 ; Metal Type Chance
 	db 16 ; Colorless Type Chance
 	db 16 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
@@ -611,6 +642,7 @@ BoosterPack_EvolutionDarkness::
 	db 16 ; Fighting Type Chance
 	db 16 ; Psychic Type Chance
 	db 48 ; Darkness Type Chance
+	db 16 ; Metal Type Chance
 	db 16 ; Colorless Type Chance
 	db 16 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
@@ -627,6 +659,7 @@ BoosterPack_MysteryDarkness::
 	db 16 ; Fighting Type Chance
 	db 16 ; Psychic Type Chance
 	db 48 ; Darkness Type Chance
+	db 16 ; Metal Type Chance
 	db 16 ; Colorless Type Chance
 	db 16 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
@@ -643,6 +676,7 @@ BoosterPack_LaboratoryDarkness::
 	db 16 ; Fighting Type Chance
 	db 16 ; Psychic Type Chance
 	db 48 ; Darkness Type Chance
+	db 16 ; Metal Type Chance
 	db 16 ; Colorless Type Chance
 	db 16 ; Trainer Card Chance
 	db  0 ; Energy Card Chance	

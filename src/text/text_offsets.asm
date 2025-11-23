@@ -3578,8 +3578,6 @@ TextOffsets::
 	textpointer	HighJumpKickDescription
 	textpointer	VacuumWaveName
 	textpointer	VacuumWaveDescription
-	textpointer	GigavoltName
-	textpointer	GigavoltDescription
 	textpointer	ParabolicChargeDescription
 	textpointer	ChooseUpt2LIGHTNINGEnergyText
 	textpointer	DrawChainName
@@ -4179,3 +4177,44 @@ TextOffsets::
 	textpointer IcicleCrashDescription
 	textpointer IceFangName
 	textpointer ChargeDashName
+	textpointer PressSelectToGoOneStageBelowText
+	textpointer WatersOfRemembranceName
+	textpointer WatersOfRemembranceDescription
+	textpointer GeneticMemoryName
+	textpointer LeppaBerryName
+	textpointer LeppaBerryDescription
+	textpointer LeppaBerryDescription2
+	textpointer ScorchingScalesName
+	textpointer ScorchingScalesDescription
+	textpointer Received40DamageDueToBurnText
+	textpointer FastFlightName
+	textpointer HeatDiveName
+	textpointer ConductivityDescription
+	textpointer ConductivityName
+	textpointer GigavoltName
+	textpointer GigavoltDescription
+	textpointer IfHeadsplus30IfTailsParalysisText
+	textpointer StaticKickName
+	textpointer StaticKickDescription
+	textpointer FrenzyTossName
+	textpointer FrenzyTossDescription
+	textpointer MonkeyBeatdownName
+	textpointer MonkeyBeatdownDescription
+	textpointer RageFistName
+	textpointer RageFistDescription
+	textpointer SaltCureName
+	textpointer SaltCureDescription
+	textpointer PurifyingSaltName
+	textpointer HeavySlamName
+	textpointer HeavySlamDescription
+	textpointer RockHurlName
+	textpointer SaltCoatingName
+	textpointer OctolockName
+	textpointer OctolockDescription
+	textpointer TentacleBusterName
+	textpointer BindName
+	textpointer TrickOrTreatName
+	textpointer TrickOrTreatDescription
+	textpointer PumpkinTrickName
+	textpointer PumpkinTrickDescription
+	textpointer PowersCheckText

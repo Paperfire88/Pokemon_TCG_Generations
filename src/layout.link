@@ -196,7 +196,9 @@ ROMX $4c
 ROMX $4d		
 	"Custom Gfx9"	
 ROMX $4e		
-	"Custom Gfx10"				
+	"Custom Gfx10"
+ROMX $4f
+	"Custom Gfx11"					
 WRAM0
 	"WRAM0"
 	"WRAM0 Duels 1"

@@ -603,7 +603,7 @@ SaveDeckConfiguration:
 ; handle deck configuration size
 	ld a, [wTotalCardCount]
 	cp DECK_SIZE
-	jp z, .ask_to_save_deck ; can be jr
+	jr z, .ask_to_save_deck ; can be jr
 	ldtx hl, ThisIsntA60CardDeckText
 	call DrawWideTextBox_WaitForInput
 	ldtx hl, ReturnToOriginalConfigurationText
@@ -646,7 +646,7 @@ DismantleDeck:
 	call YesOrNoMenuWithText
 	jr c, SaveDeckConfiguration.go_back
 	call CheckIfHasOtherValidDecks
-	jp nc, .Dismantle ; can be jr
+	jr nc, .Dismantle ; can be jr
 	ldtx hl, ThereIsOnly1DeckSoCannotBeDismantledText
 	call DrawWideTextBox_WaitForInput
 	call EmptyScreen
@@ -670,7 +670,6 @@ DismantleDeck:
 	ld a, NAME_BUFFER_LENGTH
 	call ClearNBytesFromHL
 	call GetPointerToDeckCards
-	call AddDeckToCollection
 	ld a, DECK_COMPRESSED_SIZE
 	call ClearNBytesFromHL
 .done_dismantle
@@ -1070,10 +1069,7 @@ CreateFilteredCardList:
 	cp CARD_NOT_OWNED
 	jr z, .next_card ; jump if never seen card
 	or a
-	jr nz, .ok ; has at least 1
-	call IsCardInAnyDeck
-	jr c, .next_card ; jump if not in any deck
-.ok
+	jr z, .next_card  ; OATS: let cards be used in multiple decks
 	push hl
 	ld bc, wOwnedCardsCountList
 	add hl, bc
@@ -1106,70 +1102,6 @@ CreateFilteredCardList:
 	pop bc
 	pop af
 	ret
-
-; returns carry if card ID in register e is not
-; found in any of the decks saved in SRAM
-IsCardInAnyDeck:
-	push af
-	push hl
-	ld hl, sDeck1Cards
-	call .FindCardInDeck
-	jr nc, .found_card
-	ld hl, sDeck2Cards
-	call .FindCardInDeck
-	jr nc, .found_card
-	ld hl, sDeck3Cards
-	call .FindCardInDeck
-	jr nc, .found_card
-	ld hl, sDeck4Cards
-	call .FindCardInDeck
-	jr nc, .found_card
-	pop hl
-	pop af
-	scf
-	ret
-.found_card
-	pop hl
-	pop af
-	or a
-	ret
-
-; returns carry if input card ID in register de
-; is not found in deck given by hl
-.FindCardInDeck
-	call EnableSRAM
-	ld b, DECK_SIZE
-.loop_outer
-	ld a, [hli] ; cmd byte
-	ld [wDeckCompressionCmdByte], a
-	ld c, $8
-.loop_inner
-	push bc
-	ld a, [hli]
-	ld c, a
-	ld b, 0
-	ld a, [wDeckCompressionCmdByte]
-	rla
-	rl b
-	ld [wDeckCompressionCmdByte], a
-	call CompareDEtoBC
-	pop bc
-	jr z, .match
-	dec b
-	jr z, .no_matches
-	dec c
-	jr nz, .loop_inner
-	jr .loop_outer
-
-.no_matches
-	call DisableSRAM
-	scf
-	ret
-.match
-	call DisableSRAM
-	or a
-	ret
-
 ; preserves all registers
 ; hl = start of bytes to set to $0
 ; a = number of bytes to set to $0
@@ -1455,15 +1387,6 @@ PrintFilteredCardList:
 	ld bc, CARD_COLLECTION_SIZE - 2
 	call CopyNBytesFromHLToDE_Long
 	call DisableSRAM
-
-	ld a, [wIncludeCardsInDeck]
-	or a
-	jr z, .ok
-	call GetPointerToDeckCards
-	ld d, h
-	ld e, l
-	call IncrementDeckCardsInTempCollection
-.ok
 	pop af
 
 	call CreateFilteredCardList
@@ -3269,64 +3192,7 @@ CreateCardCollectionListWithDeckCards:
 	call EnableSRAM
 	call CopyNBytesFromHLToDE_Long
 	call DisableSRAM
-
-; deck_1
-	ldh a, [hffb5]
-	bit DECK_1_F, a
-	jr z, .deck_2
-	ld de, sDeck1Cards
-	call IncrementDeckCardsInTempCollection
-.deck_2
-	ldh a, [hffb5]
-	bit DECK_2_F, a
-	jr z, .deck_3
-	ld de, sDeck2Cards
-	call IncrementDeckCardsInTempCollection
-.deck_3
-	ldh a, [hffb5]
-	bit DECK_3_F, a
-	jr z, .deck_4
-	ld de, sDeck3Cards
-	call IncrementDeckCardsInTempCollection
-.deck_4
-	ldh a, [hffb5]
-	bit DECK_4_F, a
-	ret z
-	ld de, sDeck4Cards
-;	fallthrough
-
-; goes through cards in deck in de
-; and for each card ID, increments its corresponding
-; entry in wTempCardCollection
-IncrementDeckCardsInTempCollection:
-	call EnableSRAM
-	ld a, DECK_SIZE
-	ld [wDecompSavedDeckCount], a
-.loop_outer
-	ld a, [de]
-	inc de
-	ld b, a
-	ld c, 8 ; number of bits
-.loop_inner
-	ld a, [de]
-	inc de
-	ld l, a
-	xor a
-	rl b
-	rla
-	ld h, a
-	push bc
-	ld bc, wTempCardCollection
-	add hl, bc
-	inc [hl]
-	pop bc
-	ld a, [wDecompSavedDeckCount]
-	dec a
-	ld [wDecompSavedDeckCount], a
-	jp z, DisableSRAM
-	dec c
-	jr nz, .loop_inner
-	jr .loop_outer
+	ret
 
 ; prints the name, level and storage count of the cards
 ; that are visible in the list window

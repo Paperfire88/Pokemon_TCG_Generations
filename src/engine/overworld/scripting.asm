@@ -960,6 +960,7 @@ ScriptCommand_GiveOneOfEachTrainerBooster:
 	db BOOSTER_EVOLUTION_TRAINER
 	db BOOSTER_MYSTERY_TRAINER_COLORLESS
 	db BOOSTER_LABORATORY_TRAINER
+	db BOOSTER_LOST_ISLE_NEUTRAL
 	db NO_BOOSTER ; $ff
 
 ; Shows the card received screen for a given promotional card
@@ -1000,7 +1001,7 @@ ScriptCommand_ShowCardReceivedScreen:
 ScriptCommand_JumpIfCardOwned:
 	ld e, c
 	ld d, b
-	call GetCardCountInCollectionAndDecks
+	call GetCardCountInCollection
 	jr ScriptCommand_JumpIfCardInCollection.count_check
 
 ScriptCommand_JumpIfCardInCollection:
@@ -1206,7 +1207,7 @@ ScriptCommand_JumpIfMan1RequestedCardOwned:
 	ld e, a
 	get_event_value EVENT_MAN1_REQUESTED_CARD_ID_HI
 	ld d, a
-	call GetCardCountInCollectionAndDecks
+	call GetCardCountInCollection
 	jp c, ScriptCommand_JumpIfAnyEnergyCardsInCollection.fail
 	jp ScriptCommand_JumpIfAnyEnergyCardsInCollection.pass_try_jump
 

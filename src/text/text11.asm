@@ -616,8 +616,8 @@ ThickSkinnedName:
 
 ThickSkinnedDescription:
 	text "This PKMN can't be affected by any"
-	line "Special Conditions. (Asleep,"
-	line "Confused, Paralyzed, or Poisoned.)"
+	line "Status Conditions. (<PARALYZED>, <POISONED>,<ASLEEP>, <BURNED>"
+	line "or <CONFUSED>)."
 	done
 
 BodySlamName:

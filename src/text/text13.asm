@@ -606,17 +606,6 @@ VacuumWaveDescription:
 	text "Attach 1 <FIGHTING> Energy card from your"
 	line "discard pile to 1 of your PKMN."
 	done
-
-GigavoltName:
-	text "Gigavolt"
-	done
-
-GigavoltDescription:
-	text "Flip a coin. If heads, this attack"
-	line "does +20 damage. If tails, the"
-	line "defending PKMN is now Paralyzed."
-	done
-
 ParabolicChargeDescription:
 	text "Search your deck for up to 2 <LIGHTNING>"
 	line "Energy and put them into your hand."

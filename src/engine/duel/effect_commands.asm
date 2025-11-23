@@ -258,8 +258,6 @@ BlastoiseHydroPumpEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, HydroPumpEffect
 	dbw EFFECTCMDTYPE_AI, HydroPumpEffect
 	db  $00
-
-
 VaporeonHydroPumpEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, HydroPumpEffect2
 	dbw EFFECTCMDTYPE_AI, HydroPumpEffect2
@@ -726,13 +724,6 @@ PikachuSparkEffectCommands:
 GrowlEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, GrowlEffect
 	db  $00
-PikachuLv16ThundershockEffectCommands:
-	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Paralysis50PercentEffect
-	db  $00
-PikachuAltLv16ThundershockEffectCommands:
-	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Paralysis50PercentEffect
-	db  $00
-
 RaichuThunderEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Thunder_Recoil50PercentEffect
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Thunder_RecoilEffect
@@ -1368,6 +1359,10 @@ WrackdownCommands:
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, IncreaseRetreatCostEffect
 	db $00	
 
+OctolockEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, PreventPokePowers50PercentEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, IncreaseRetreatCostEffect
+	db $00
 CoordinatedShurikenEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, OmastarWaterGunEffect
 	dbw EFFECTCMDTYPE_AI, OmastarWaterGunEffect
@@ -1526,7 +1521,11 @@ CounterpunchEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Counterpunch_DamageBoostEffect
 	dbw EFFECTCMDTYPE_AI, Counterpunch_AIEffect
 	db  $00	
-
+RageFistEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, RageFistEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, RageFistAfterDamageEffect
+	dbw EFFECTCMDTYPE_AI, Counterpunch_AIEffect
+	db  $00	
 IcyWindEffectCommands:		; Does extra damage if a T energy is attached, also mills 3 cards from opp.
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Sleep50PercentEffect
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, ExtraDamageIfTEnergiesEffect
@@ -1948,6 +1947,11 @@ IrritatingBuzzEffectCommands:
 DredgeUpEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, DredgeUpEffect
 	db  $00
+StaticKickEffectCommands:
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, StaticKickEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, StaticKickCheckEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, HyperBeam_AISelectEffect
+	db  $00
 FlareCommandEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Fire_CheckEnergy
     dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, FlareCommand2
@@ -1974,7 +1978,9 @@ DarkSlumberEffectCommands:
 PoltergeistEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, PoltergeistEffect
 	db  $00	
-
+MonkeyBeatdownEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, MonkeyBeatdownEffect
+	db  $00	
 GreenForceEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, GreenForceEffect
 	db  $00
@@ -1994,34 +2000,28 @@ AquaticRescueEffectCommands:
     dbw EFFECTCMDTYPE_BEFORE_DAMAGE, SelectedDiscardPileCards_ShuffleIntoDeckEffect
     dbw EFFECTCMDTYPE_REQUIRE_SELECTION, RodEffect
 	db  $00
-
 FirePaybackEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, FirePaybackEffect
 	dbw EFFECTCMDTYPE_AI, FirePaybackEffect
 	db  $00
-
 SkyDropEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, SkyDrop_DamageSubtractionEffect
 	dbw EFFECTCMDTYPE_AI, SkyDropAIEffect
 	db  $00
-
 DevoFlashEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Quickfreeze_InitialEffect
 	dbw EFFECTCMDTYPE_PKMN_POWER_TRIGGER, DevoFlashSelect
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, DevolutionBeam_LoadAnimation
 	dbw EFFECTCMDTYPE_AI_SELECTION, DevolutionBeam_AISelectEffect
 	db  $00	
-
 PsyReportEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, ScoutEffect
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, PsyReportEffect
 	db  $00
-
 DarkerRingEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Quickfreeze_InitialEffect
 	dbw EFFECTCMDTYPE_PKMN_POWER_TRIGGER, DarkerRingEffect
 	db  $00
-
 MindReportEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Quickfreeze_InitialEffect
 	dbw EFFECTCMDTYPE_PKMN_POWER_TRIGGER, MindReportEffect
@@ -2344,6 +2344,10 @@ AquaWindEffectCommands:
 BlessedWindsEffectCommands:
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, BlessedWindsEffect
 	db  $00
+FrenzyTossEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, SelfConfuseEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, HurricaneEffect
+	db  $00	
 SwirlEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Quickfreeze_InitialEffect
 	dbw EFFECTCMDTYPE_PKMN_POWER_TRIGGER, SwirlEffect
@@ -2494,7 +2498,7 @@ DragonsVenomEffectCommands:
 SpiritBreakEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, SpiritBreakEffect
 	db $00
-jfEffectCommands:
+DarkOathEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, Sprint_Check
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, jkEffect
 	db  $00
@@ -2565,3 +2569,16 @@ CryoMouthEffectCommands:
 WaveCrashEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, WaveCrashEffect
 	db $00	
+SaltCureEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, SaltCureEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Heal20Effect
+	db  $00	
+HeavySlamEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, HeavySlamEffect
+	dbw EFFECTCMDTYPE_AI, HeavySlamAIEffect
+	db  $00	
+HalloweenEffectCommands:
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Conversion1_WeaknessCheck
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, Sprint_Check
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, HalloweenEffect
+	db  $00	

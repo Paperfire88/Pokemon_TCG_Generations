@@ -3639,3 +3639,38 @@ Gyarados_AISelectEffect2:
 	jr nz, .loop_deck
 .found
 	ret	
+; loads wTxRam2 and wTxRam2_b:
+; [wTxRam2]   <- wLoadedCard1Name
+; [wTxRam2_b] <- input color as text symbol
+; input:
+;	a = type (color) constant
+LoadCardNameAndInputColor:
+	add a
+	ld e, a
+	ld d, $00
+	ld hl, ColorToTextSymbol
+	add hl, de
+
+; load wTxRam2 with card's name
+	ld de, wTxRam2
+	ld a, [wLoadedCard1Name]
+	ld [de], a
+	inc de
+	ld a, [wLoadedCard1Name + 1]
+	ld [de], a
+
+; load wTxRam2_b with ColorToTextSymbol
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	ret	
+ColorToTextSymbol:
+	tx FireSymbolText
+	tx GrassSymbolText
+	tx LightningSymbolText
+	tx WaterSymbolText
+	tx FightingSymbolText
+	tx PsychicSymbolText

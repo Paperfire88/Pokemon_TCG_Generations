@@ -539,7 +539,7 @@ ChooseCardToPlaceInHandText:
 
 ChoosePokemonToAttachDefenderToText:
 	text "Choose a Pokémon to"
-	line "attach Defender to."
+	line "attach it to."
 	done
 
 ChoosePokemonToReturnToTheDeckText:

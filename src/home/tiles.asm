@@ -312,7 +312,7 @@ LoadDuelCardSymbolTiles::
 	call BankswitchVRAM1
 	ld hl, DuelCgbSymbolGraphics - $4000
 	ld de, v1Tiles1 + $30 tiles
-	ld b, $40
+	ld b, $42
 	jr CopyFontsOrDuelGraphicsTiles
 
 ; loads the symbols for Stage 1 Pkmn card, Stage 2 Pkmn card, and Trainer card.

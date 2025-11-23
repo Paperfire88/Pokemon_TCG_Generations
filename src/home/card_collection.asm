@@ -4,31 +4,6 @@ GetAmountOfCardsOwned::
 	push bc
 	call EnableSRAM
 	ld hl, 0
-	ld de, sDeck1Cards
-	ld c, NUM_DECKS
-.next_deck
-	push bc
-	ld a, [de]
-	inc de
-	ld c, a
-	ld a, [de]
-	dec de
-	or c
-	pop bc
-	jr z, .skip_deck ; jump if deck empty
-	ld a, c
-	ld bc, DECK_SIZE
-	add hl, bc
-	ld c, a
-.skip_deck
-	ld a, sDeck2Cards - sDeck1Cards
-	add e
-	ld e, a
-	ld a, $0
-	adc d
-	ld d, a ; de = sDeck*Cards[x]
-	dec c
-	jr nz, .next_deck
 
 	; hl = DECK_SIZE * (no. of non-empty decks)
 	ld de, sCardCollection
@@ -53,74 +28,6 @@ GetAmountOfCardsOwned::
 	pop de
 	ret
 
-; return carry if the count in sCardCollection plus the count in each deck (sDeck*)
-; of the card with id given in de is 0 (if card not owned).
-; also return the count (total owned amount) in a.
-GetCardCountInCollectionAndDecks::
-	push hl
-	push de
-	push bc
-	call EnableSRAM
-	ld hl, sDeck1Cards
-	ld b, 0
-.loop_decks
-	ld a, [hli]
-	or [hl]
-	dec hl
-	jr z, .next_deck ; jump if deck empty
-
-	push hl
-	push de
-	ld d, h
-	ld e, l
-	ld hl, wCurDeckCards
-	call DecompressSRAMDeck
-	pop de
-
-	ld c, DECK_SIZE
-.next_card
-	ld a, [hli]
-	cp e
-	ld a, [hli]
-	jr nz, .no_match
-	cp d
-	jr nz, .no_match
-	inc b
-.no_match
-	dec c
-	jr nz, .next_card
-	pop hl
-
-.next_deck
-	push bc
-	ld bc, sDeck2Cards - sDeck1Cards
-	add hl, bc
-	pop bc
-	ld a, h
-	cp HIGH(sDeck4Cards + (DECK_NAME_SIZE + DECK_COMPRESSED_SIZE))
-	jr nz, .loop_decks
-	ld a, l
-	cp LOW(sDeck4Cards + (DECK_NAME_SIZE + DECK_COMPRESSED_SIZE))
-	jr nz, .loop_decks
-
-	; all decks done
-	ld hl, sCardCollection
-	add hl, de
-	ld a, [hl]
-	bit CARD_NOT_OWNED_F, a
-	jr nz, .done
-	add b ; if card seen, add b to count
-.done
-	and CARD_COUNT_MASK
-	call DisableSRAM
-	pop bc
-	pop de
-	pop hl
-	or a
-	ret nz
-	scf
-	ret
-
 ; return carry if the count in sCardCollection of the card with id given in de is 0.
 ; also return the count (amount owned outside of decks) in a.
 GetCardCountInCollection::
@@ -143,47 +50,7 @@ CreateTempCardCollection::
 	ld de, wTempCardCollection
 	ld bc, CARD_COLLECTION_SIZE
 	call CopyDataHLtoDE
-	ld de, sDeck1Name
-	call .AddDeckCards
-	ld de, sDeck2Name
-	call .AddDeckCards
-	ld de, sDeck3Name
-	call .AddDeckCards
-	ld de, sDeck4Name
-	call .AddDeckCards
 	jp DisableSRAM
-
-; adds the cards from a deck to wTempCardCollection given de = sDeck*Name
-.AddDeckCards:
-	ld a, [de]
-	or a
-	ret z ; return if empty name (empty deck)
-	ld hl, sDeck1Cards - sDeck1Name
-	add hl, de
-	ld e, l
-	ld d, h
-	ld hl, wCurDeckCards
-	call DecompressSRAMDeck
-
-	ld de, wCurDeckCards
-	ld hl, wTempCardCollection
-	ld c, DECK_SIZE
-.next_card_loop
-	push hl
-	ld a, [de]
-	inc de
-	add l
-	ld l, a
-	ld a, [de]
-	inc de
-	adc h
-	ld h, a
-	inc [hl] ; increment count
-	pop hl
-	dec c
-	jr nz, .next_card_loop
-	ret
-
 ; add card with id given in de to sCardCollection, provided that
 ; the player has less than MAX_AMOUNT_OF_CARD (99) of them
 AddCardToCollection::

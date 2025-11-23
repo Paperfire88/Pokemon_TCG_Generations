@@ -123,10 +123,10 @@ PunkRock_PoisonOrConfusionEffect:
 	jp c, PoisonEffect
 	jr ParalysisEffect	
 GigavoltEffect:
-	ldtx de, SuccessCheckIfHeadsEffectIsSuccessfulText
+	ldtx de, IfHeadsplus30IfTailsParalysisText
 	call TossCoin_BankB
 	jr nc, ParalysisEffect
-	jp Add20damageEffect
+	jp Add30damageEffect
 ElectroWebEffect:
 	call CheckIfDefendingPKMNhasaPKMNPower
 	ret nz
@@ -145,12 +145,18 @@ Rampage_Confusion50PercentEffect:
 	ldtx de, IfTailsYourPokemonBecomesConfusedText
 	call TossCoin_BankB
 	ret c ; heads
-	jp SelfConfuseEffect	
+	jr SelfConfuseEffect	
 MegatonHammerEffect:
 	call Deal20DamageToSelfEffect
 	ldtx de, IfTailsYourPokemonBecomesConfusedText
 	call TossCoin_BankB
 	jp c, Add40damageEffect
+	jr SelfConfuseEffect	
+RageFistAfterDamageEffect:
+	ld a, DUELVARS_ARENA_CARD_HP
+	call GetNonTurnDuelistVariable
+	or a
+	ret z
 	jr SelfConfuseEffect	
 ; Defending Pokemon and user become confused
 FoulOdorEffect:
@@ -182,6 +188,8 @@ PsychicZenEffect:
 MaliceTentacleEffect:
 	call IsActiveDamaged
 	jr z, ConfusionEffect
+	;falltrough
+Heal20Effect:
 	ld de, 20
 	jp ApplyAndAnimateHPRecovery	
 AbraConfusionEffect:
@@ -284,7 +292,7 @@ QueueStatusCondition:
 	cphl MYSTERIOUS_FOSSIL
 	jr z, .cant_induce_status
 	; Snorlax Thick Skinned prevents it from being statused...
-	cphl COPYCAT
+	cphl GARGANACL
 	jr nz, .can_induce_status
 	call SwapTurn
 	xor a
@@ -1082,7 +1090,7 @@ HandleDefendingPokemonAttackSelection:
 	ldh [hCurSelectionItem], a
 
 .start
-	bank1call PrintAndLoadAttacksToDuelTempList
+	bank1call PrintAndLoadAttacksFromActivePokemonToDuelTempList
 	push af
 	ldh a, [hCurSelectionItem]
 	ld hl, .menu_parameters
@@ -1431,62 +1439,6 @@ GetBenchPokemonWithLowestHP:
 
 	ld a, d
 	jp SwapTurn
-
-LoadCardNameAndInputColor:
-	add a
-	ld e, a
-	ld d, $00
-	ld hl, ColorToTextSymbol
-	add hl, de
-
-; load wTxRam2 with card's name
-	ld de, wTxRam2
-	ld a, [wLoadedCard1Name]
-	ld [de], a
-	inc de
-	ld a, [wLoadedCard1Name + 1]
-	ld [de], a
-
-; load wTxRam2_b with ColorToTextSymbol
-	inc de
-	ld a, [hli]
-	ld [de], a
-	inc de
-	ld a, [hli]
-	ld [de], a
-	ret
-
-ShiftMenuData:
-	; x, y, text id
-	textitem 10,  9, TypeText
-	textitem 10, 10, WeaknessText
-	textitem 10, 11, ResistanceText
-	db $ff
-
-ColorTileAndBGP:
-	; tile, BG
-	db $e4, $02
-	db $e0, $01
-	db $eC, $02
-	db $e8, $01
-	db $f0, $03
-	db $f4, $03
-
-ShiftListItemToColor:
-	db GRASS
-	db FIRE
-	db WATER
-	db LIGHTNING
-	db FIGHTING
-	db PSYCHIC
-
-ColorToTextSymbol:
-	tx FireSymbolText
-	tx GrassSymbolText
-	tx LightningSymbolText
-	tx WaterSymbolText
-	tx FightingSymbolText
-	tx PsychicSymbolText
 
 DrawSymbolOnPlayAreaCursor:
 	ld c, a
@@ -2176,7 +2128,15 @@ HeadacheEffect:
 	call GetNonTurnDuelistVariable
 	set SUBSTATUS3_HEADACHE_F, [hl]
 	ret
-
+PreventPokePowers50PercentEffect:
+	ldtx de, PowersCheckText
+	call TossCoin_BankB
+	ret nc ;Falltrough	
+PreventPokePowersEffect:
+	ld a, DUELVARS_ARENA_CARD_SUBSTATUS3
+	call GetNonTurnDuelistVariable
+	set SUBSTATUS3_NO_POKEPOWERS_F, [hl]
+	ret
 SeadraWaterGunEffect:
 	lb bc, 1, 1
 	jp ApplyExtraWaterEnergyDamageBonus
@@ -5306,6 +5266,12 @@ DisruptiveSignalEffect:
 	ret c ; return if asleep
 	call HandleEnergyDiscardEffectSelection
 	jp HyperBeam_DiscardEffect
+StaticKickCheckEffect:
+	call SwapTurn
+	call IsActiveDamaged
+	call SwapTurn
+	ret z
+	jr HyperBeam_PlayerSelectEffect
 CrunchEffectCheck:
 	call OPcontrolsEvolvedpkmnCheck
 	ret z
@@ -5324,12 +5290,17 @@ HyperBeam50Effect:
 	ldtx de, SuccessCheckIfHeadsEffectIsSuccessfulText
 	call TossCoin_BankB
 	ret nc
-	jp HyperBeam_DiscardEffect
-
+	jr HyperBeam_DiscardEffect
+StaticKickEffect:
+	call SwapTurn
+	call IsActiveDamaged
+	call SwapTurn
+	ret z
+	jr HyperBeam_DiscardEffect
 DestructiveFlameEffect:
 	call IsBurned
 	jp c, KindlingPanicEffect
-	jp HyperBeam_DiscardEffect
+	jr HyperBeam_DiscardEffect
 CrunchEffect:
 	call OPcontrolsEvolvedpkmnCheck
 	ret z
@@ -5407,7 +5378,6 @@ CountHowManyEvolvedPkmnOnBench:
 .done	
 	ld a, c
 	ret
-
 BlessedWindsEffect:
 	ld a, DUELVARS_ARENA_CARD
 	call GetTurnDuelistVariable
@@ -8252,7 +8222,7 @@ SkyDropAIEffect:
 	jp SetDefiniteAIDamage
 SkyDrop_DamageSubtractionEffect:
 	call _DamagePerOpponentRetreatCost
-	jp SubstractXfromDamage
+	;falltrough
 SubstractXfromDamage:
 	ld e, a ; Load A before everything
 	ld hl, wDamage
@@ -8270,6 +8240,18 @@ Low_AIEffect:
 	call Low_DamageBoostEffect
 	jp SetDefiniteAIDamage
 
+HeavySlamAIEffect:
+	call HeavySlamEffect
+	jp SetDefiniteAIDamage
+HeavySlamEffect:
+	call _DamagePerOpponentRetreatCost
+	ld b, a
+	ld e, PLAY_AREA_ARENA
+	call GetPlayAreaCardRetreatCost
+	call ATimes10
+	sub b
+	add a
+	jp AddToDamage
 JawLockEffect:
 	call GetOppRetreatCost
 	cp 2
@@ -9430,7 +9412,6 @@ MountainEaterEffect:
 	call FerroCheck.discard_1
 	ld de, 10
 	jp ApplyAndAnimateHPRecovery
-
 GlowAnimationsEffect:
 	ld a, ATK_ANIM_GLOW_EFFECT
 	jp Func_2fea9
@@ -9542,26 +9523,33 @@ CheckIfOpPKMNisFIGHTING:
 	call SwapTurn
 	call GetArenaCardColor
 	call SwapTurn
-	ldh [hCurSelectionItem], a
 	cp FIGHTING
-	ret nz
-	call LoadCardDataToBuffer2_FromCardID
-	ld hl, wLoadedCard2Type
-	ld a, [hli]
-	cp TYPE_PKMN_FIGHTING
 	ret
 
 CheckIfActivePKMNisLightning:
+	call SwapTurn
 	call GetArenaCardColor
-	ldh [hCurSelectionItem], a
+	call SwapTurn
 	cp LIGHTNING
-	ret nz
-	call LoadCardDataToBuffer2_FromCardID
-	ld hl, wLoadedCard2Type
-	ld a, [hli]
-	cp TYPE_PKMN_LIGHTNING
 	ret
-
+CheckIfActivePKMNisMetal:
+	call SwapTurn
+	call GetArenaCardColor
+	call SwapTurn
+	cp METAL
+	ret
+CheckIfActivePKMNisWater:
+	call SwapTurn
+	call GetArenaCardColor
+	call SwapTurn
+	cp WATER
+	ret	
+CheckIfActivePKMNisFire:
+	call SwapTurn
+	call GetArenaCardColor
+	call SwapTurn
+	cp FIRE
+	ret			
 EmberEffect:
 	ldh a, [hTemp_ffa0]
 	or a
@@ -9777,6 +9765,15 @@ GreenForceEffect:
 	cp WR_GRASS
 	ret c
 	jr Add40damageEffect
+SaltCureEffect:
+	call CheckIfitisCOLORLESSEffect
+	ret z
+	call CheckIfActivePKMNisWater
+	jr nc, .MoreDamage
+	call CheckIfActivePKMNisMetal
+	ret c
+.MoreDamage
+	jr Add40damageEffect	
 SmackDownEffect:
 	call GetOppWeaknessType
 	cp WR_FIGHTING
@@ -9788,6 +9785,14 @@ XScissorEffect:
 Add40damageEffect:
 	ld a, 40
 	jp AddToDamage
+RageFistEffect:	
+	call SwapTurn
+	call IsConfused
+	call SwapTurn
+	ret c ;falltrough	
+Add50damageEffect:
+	ld a, 50
+	jp AddToDamage	
 CheckIfitisCOLORLESSEffect:
 	call SwapTurn
 	call GetArenaCardColor
@@ -10140,6 +10145,29 @@ Linear_BenchDamageEffect:
 	ld de, 30
 	call DealDamageToPlayAreaPokemon_RegularAnim
 	jp SwapTurn
+
+MonkeyBeatdownEffect:
+	call ScoutEffect
+	call SwapTurn
+	call CreateHandCardList
+	call SortCardsInDuelTempListByID
+	xor a
+	ldh [hCurSelectionItem], a
+	ld hl, wDuelTempList
+	ld c, 0
+	
+.loop_hand
+	ld a, [hl]
+	cp $ff
+	jr z, PoltergeistEffect.done
+	call GetCardIDFromDeckIndex
+	call GetCardType
+	cp TYPE_PKMN
+	jr nz, .next
+	inc c
+.next
+	inc hl
+	jr .loop_hand
 PoltergeistEffect:
 	call ScoutEffect
 	call SwapTurn
@@ -10574,3 +10602,56 @@ SetUsedPokemonPowerThisTurn:
 	call GetTurnDuelistVariable
 	set USED_PKMN_POWER_THIS_TURN_F, [hl]
 	ret	
+; return carry if Defending card has no weakness
+Conversion1_WeaknessCheck:
+	call SwapTurn
+	ld a, DUELVARS_ARENA_CARD
+	call GetTurnDuelistVariable
+	call LoadCardDataToBuffer2_FromDeckIndex
+	call SwapTurn
+	ld a, [wLoadedCard2Weakness]
+	or a
+	ret nz
+	ldtx hl, NoWeaknessText
+	scf
+	ret
+HalloweenEffect:
+	call SetUsedPokemonPowerThisTurn
+	call GetOppWeaknessType
+	cp WR_PSYCHIC
+	ret z
+	ld a, 5
+	ldh [hTemp_ffa0], a
+	;falltrough
+ChangeWeaknessEffect:
+	call HandleNoDamageOrEffect
+	ret c ; is unaffected
+
+; apply changed weakness
+	ld a, DUELVARS_ARENA_CARD_CHANGED_WEAKNESS
+	call GetNonTurnDuelistVariable
+	ldh a, [hTemp_ffa0]
+	call TranslateColorToWR
+	ld [hl], a
+	ld l, DUELVARS_ARENA_CARD_LAST_TURN_CHANGE_WEAK
+	ld [hl], a
+
+; print text box
+	call SwapTurn
+	ldtx hl, ChangedTheWeaknessOfPokemonToColorText
+	call PrintArenaCardNameAndColorText
+	call SwapTurn
+
+; apply substatus
+	ld a, SUBSTATUS2_CONVERSION2
+	jp ApplySubstatus2ToDefendingCard	
+
+PrintArenaCardNameAndColorText:
+	push hl
+	ld a, DUELVARS_ARENA_CARD
+	call GetTurnDuelistVariable
+	call LoadCardDataToBuffer1_FromDeckIndex
+	ldh a, [hTemp_ffa0]
+	farcall LoadCardNameAndInputColor
+	pop hl
+	jp DrawWideTextBox_PrintText

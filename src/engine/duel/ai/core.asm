@@ -57,7 +57,7 @@ FindHighestBenchScore:
 	ld e, c
 	ld d, c
 	ld hl, wPlayAreaAIScore + 1
-	jp .next
+	jr .next
 
 .loop
 	ld a, [hli]
@@ -453,11 +453,9 @@ CheckEnergyNeededForAttack:
 	inc de
 	dec c
 	jr nz, .loop
-
 	ld a, [de]
-	swap a
-	call CheckIfEnoughParticularAttachedEnergy
-
+    swap a
+    call CheckIfEnoughParticularAttachedEnergy
 ; running CheckIfEnoughParticularAttachedEnergy back to back like this
 ; overwrites the results of a previous call of this function,
 ; however, no attack in the game has energy requirements for two
@@ -471,14 +469,14 @@ CheckEnergyNeededForAttack:
 	; colorless
 	ld a, [de]
 	and $f
-  	ld c, a ; colorless energy cost
+  	ld b, a ; colorless energy cost
 	ld a, [wTempLoadedAttackEnergyCost]
 	ld hl, wTempLoadedAttackEnergyNeededAmount
 	sub [hl]
-	ld b, a ; basic energy still needed
+	ld c, a ; basic energy still needed
 	ld a, [wTotalAttachedEnergies]
-	sub b
 	sub c
+	sub b
 	jr c, .not_enough
 
 	ld a, [wTempLoadedAttackEnergyNeededAmount]
@@ -496,9 +494,6 @@ CheckEnergyNeededForAttack:
 	ld b, a ; basic energy still needed
 	ld a, [wTempLoadedAttackEnergyNeededType]
 	call ConvertColorToEnergyCardID
-
-	ld e, a
-	ld d, 0
 	scf
 	ret
 

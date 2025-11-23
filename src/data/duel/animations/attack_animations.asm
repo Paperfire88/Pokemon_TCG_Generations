@@ -31,7 +31,7 @@ PointerTable_AttackAnimation:
 	dw AttackAnimation_ThunderShock        ; ATK_ANIM_THUNDERSHOCK
 	dw AttackAnimation_ThunderShock        ; ATK_ANIM_THUNDER
 	dw AttackAnimation_Thunderbolt         ; ATK_ANIM_THUNDERBOLT
-	dw AttackAnimation_ThunderShock        ; ATK_ANIM_UNUSED_09
+	dw AttackAnimation_Conductivity        ; ATK_ANIM_UNUSED_09
 	dw AttackAnimation_BigLightning        ; ATK_ANIM_THUNDER_WHOLE_SCREEN
 	dw AttackAnimation_EvolutionaryFlame        ; ATK_ANIM_EVOLUTIONARY_FLAME
 	dw AttackAnimation_BigLightning        ; ATK_ANIM_THUNDERSTORM
@@ -198,6 +198,12 @@ AttackAnimation_Thunderbolt:
 	anim_opponent       DUEL_ANIM_HIT
 	anim_normal         DUEL_ANIM_SHAKE1
 	anim_opponent       DUEL_ANIM_SHOW_DAMAGE
+	anim_end
+AttackAnimation_Conductivity:
+	anim_screen         SET_ANIM_SCREEN_PLAY_AREA
+	anim_play_area      DUEL_ANIM_BENCH_THUNDER
+	anim_normal         DUEL_ANIM_SHAKE1
+	anim_play_area      DUEL_ANIM_SHOW_DAMAGE
 	anim_end
 
 AttackAnimation_BigLightning:

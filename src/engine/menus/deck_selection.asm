@@ -268,10 +268,7 @@ DeckSelectionSubMenu:
 	call HandleDeckBuildScreen
 	jr nc, .asm_8ec4
 	call EnableSRAM
-	ld hl, wCurDeckCards
-	call DecrementDeckCardsInCollection
 	call GetPointerToDeckCards
-	call AddDeckToCollection
 	ld de, wCurDeckCards
 	call CompressDeckToSRAM
 

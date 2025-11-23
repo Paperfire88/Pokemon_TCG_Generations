@@ -1460,32 +1460,32 @@ PumpkabooCard:
 	dw NONE ; pre-evo name
 
 	; attack 1
-	energy COLORLESS, 1 ; energies
-	tx EnergySpikeName ; name
-	tx EnergySpikeDescription ; description
+	energy PSYCHIC, 1 ; energies
+	tx AstonishName ; name
+	tx AstonishDescription ; description
 	dw NONE ; description (cont)
 	db 0 ; damage
 	db RESIDUAL ; category
-	dw EnergyBoostEffectCommands ; effect commands
-	db DAMAGE_TO_OPPONENT_BENCH_F ; flags 1
+	dw AstonishEffectCommands ; effect commands
+	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
 	db ATK_ANIM_GLOW_EFFECT ; animation
 
 	; attack 2
-	energy PSYCHIC, 1 ; energies
-	tx FairyWindName ; name
-	tx GrowlDescription ; description
+	energy PSYCHIC, 1, COLORLESS, 1 ; energies
+	tx ConfuseRayName ; name
+	tx MayInflictConfusionDescription ; description
 	dw NONE ; description (cont)
-	db 10 ; damage
+	db 20 ; damage
 	db DAMAGE_NORMAL ; category
-	dw GrowlEffectCommands ; effect commands
-	db NONE ; flags 1
+	dw AlakazamConfuseRayEffectCommands ; effect commands
+	db INFLICT_CONFUSION ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_WHIRLWIND ; animation
+	db ATK_ANIM_CONFUSE_RAY ; animation
 
 	db 2 ; retreat cost
 	db WR_PSYCHIC ; weakness
@@ -1510,25 +1510,25 @@ GourgeistCard:
 	tx PumpkabooName ; pre-evo name
 
 	; attack 1
-	energy PSYCHIC, 1 ; energies
-	tx FairyPollenName ; name
-	tx FairyPollenDescription ; description
-	dw NONE ; description (cont)
-	db 10 ; damage
-	db DAMAGE_NORMAL ; category
-	dw FairyPollenEffectCommands ; effect commands
-	db INFLICT_SLEEP/INFLICT_BURN ; flags 1
+	energy 0 ; energies
+	tx TrickOrTreatName ; name
+	tx TrickOrTreatDescription ; description
+	tx PKMNPowerCondition ; description (cont)
+	db 0 ; damage
+	db POKEMON_POWER ; category
+	dw HalloweenEffectCommands ; effect commands
+	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
-	db 2
-	db ATK_ANIM_POWDER_EFFECT_CHANCE ; animation
+	db 0
+	db ATK_ANIM_GLOW_EFFECT ; animation
 
 	; attack 2
-	energy PSYCHIC, 2 ; energies
-	tx DrainingKissName ; name
-	tx ButterfreesMegaDrainDescription ; description
+	energy PSYCHIC, 1, COLORLESS, 1 ; energies
+	tx PumpkinTrickName ; name
+	tx PumpkinTrickDescription ; description
 	dw NONE ; description (cont)
-	db 30 ; damage
+	db 20 ; damage
 	db DAMAGE_NORMAL ; category
 	dw AbsorbEffectCommands ; effect commands
 	db NONE ; flags 1
@@ -3270,7 +3270,7 @@ GrimmsnarlCard:
 	tx PKMNPowerCondition ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
-	dw jfEffectCommands ; effect commands
+	dw DarkOathEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -7079,7 +7079,7 @@ EeveeCard:
 	db TYPE_PKMN_COLORLESS ; type
 	gfx EeveeCardGfx ; gfx
 	tx EeveeName ; name
-	db CIRCLE ; rarity
+	db STAR ; rarity
 	db EVOLUTION | NONE ; sets
 	dw EEVEE
 	db 50 ; hp
@@ -8057,6 +8057,17 @@ RecycleCard:
 	dw RecycleEffectCommands ; effect commands
 	tx RecycleDescription ; description
 	tx RecycleDescription2 ; description (cont)
+
+LeppaBerryCard:
+	db TYPE_TRAINER ; type
+	gfx LeppaBerryCardGfx ; gfx
+	tx LeppaBerryName ; name
+	db STAR ; rarity
+	db LOST_ISLE | NONE ; sets
+	dw LEPPA_BERRY
+	dw DefenderEffectCommands ; effect commands
+	tx LeppaBerryDescription ; description
+	tx LeppaBerryDescription2 ; description (cont)
 
 GrassEnergyCard:
 	db TYPE_ENERGY_GRASS ; type

@@ -356,6 +356,7 @@ wSelectedDuelSubMenuItem:: ; cbcf
 	ds $1
 
 wSelectedDuelSubMenuScrollOffset:: ; cbd0
+wDuelAttackSubMenuSelectedStage::
 	ds $1
 
 ; CARDPAGETYPE_PLAY_AREA or CARDPAGETYPE_NOT_PLAY_AREA
