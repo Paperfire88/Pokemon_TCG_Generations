@@ -1222,7 +1222,9 @@ SwapPlayAreaPokemon::
 	pop af
 	ld [hl], a
 	ret
-
+GetArenaCardAttachedEnergies::
+	ld e, PLAY_AREA_ARENA
+; falltrough
 ; Find which and how many energy cards are attached to the turn holder's Pokemon card in the arena,
 ; or a Pokemon card in the bench, depending on the value of register e.
 ; input: e = location to check, i.e. PLAY_AREA_*
@@ -2437,7 +2439,9 @@ MoveCardToDiscardPileIfInArena::
 	cp DECK_SIZE
 	jr c, .next_card
 	ret
-
+GetArenaCardDamageAndMaxHP::
+	ld e, PLAY_AREA_ARENA
+	;falltrough
 ; calculate damage and max HP of card at PLAY_AREA_* in e.
 ; input:
 ;	e = PLAY_AREA_* of card;

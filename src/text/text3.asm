@@ -854,7 +854,7 @@ RetreatingDescriptionText:
 	text "By choosing Retreat, you can switch"
 	line "the Active PKMN with a PKMN on your"
 	line "Bench. Energy is required to Retreat"
-	line "your Active switch. he amount of" 
+	line "your Active switch. the amount of" 
 	line "Energy required to Retreat differs" 
 	line "for each switch. To Retreat, you"
 	line "must discard Energy equal to the"

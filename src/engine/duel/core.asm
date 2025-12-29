@@ -989,6 +989,7 @@ DuelMenu_Attack:
 	jp PrintDuelMenuAndHandleInput
 .memory
 	push de
+	push af
 	farcall CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
 	jr c, .memory_gone
 	ld a, DUELVARS_ARENA_CARD
@@ -999,6 +1000,7 @@ DuelMenu_Attack:
 	cp16 KINGDRA
 .memory_gone	
 	pop de
+	pop af
 	ret
 .open_attack_menu
 	push af
@@ -1237,6 +1239,10 @@ PrintAndLoadAttacksToDuelTempList:
 	inc c
 	push hl
 	push bc
+	ld hl, wLoadedCard1Atk1EnergyCost  ; wLoadedCard1Atk1Name
+	call HandleModifiedAttackCost_PointToAttackName
+	pop bc
+	push bc
 	ld e, b
 	ld hl, wLoadedCard1Atk1Name
 	call PrintAttackOrPkmnPowerInformation
@@ -1255,6 +1261,10 @@ PrintAndLoadAttacksToDuelTempList:
 	ld [hli], a
 	inc c
 	push hl
+	push bc
+	ld hl, wLoadedCard1Atk2EnergyCost  ; wLoadedCard1Atk2Name
+	call HandleModifiedAttackCost_PointToAttackName
+	pop bc
 	push bc
 	ld e, b
 	ld hl, wLoadedCard1Atk2Name
@@ -1367,6 +1377,12 @@ _CheckIfEnoughEnergiesToAttack:
 	ld a, [hl]
 	cp POKEMON_POWER
 	jr z, .not_usable_or_not_enough_energies
+	push de
+	ld l, e
+	ld h, d
+	ld e, PLAY_AREA_ARENA
+	call OverwriteLoadedAttackCost
+	pop de
 	xor a
 	ld [wAttachedEnergiesAccum], a
 	ld hl, wAttachedEnergies
@@ -5723,12 +5739,13 @@ DisplayOpponentUsedAttackScreen:
 	call LoadCardDataToBuffer1_FromCardID
 	ld a, CARDPAGE_POKEMON_OVERVIEW
 	ld [wCardPageNumber], a
-	ld hl, wLoadedCard1Atk1Name
+	ld hl, wLoadedCard1Atk1EnergyCost
 	ld a, [wSelectedAttack]
 	or a
 	jr z, .first_atk
-	ld hl, wLoadedCard1Atk2Name
+	ld hl, wLoadedCard1Atk2EnergyCost
 .first_atk
+	call HandleModifiedAttackCost_PointToAttackName
 	ld e, 1
 	call PrintAttackOrPkmnPowerInformation
 	lb de, 1, 4
@@ -7959,4 +7976,13 @@ HandleOnPlayEnergyEffects:
 	ld de, 10 ; damage.
 	farcall DealDamageToPlayAreaPokemon ; deal the damage.
 	call HandleBetweenTurnKnockOuts ; nessesary if the damage KO's the mon, calls for the knocked out process.
+	ret
+HandleModifiedAttackCost_PointToAttackName:
+	push hl
+	ld e, PLAY_AREA_ARENA
+	call OverwriteLoadedAttackCost
+	pop hl
+; apply offset to point to the attack's name
+	ld de, CARD_DATA_ATTACK1_NAME - CARD_DATA_ATTACK1_ENERGY_COST
+	add hl, de
 	ret

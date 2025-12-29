@@ -428,9 +428,11 @@ CheckEnergyNeededForAttack:
 	ret
 
 .is_attack
+	ld hl, wLoadedAttackEnergyCost
 	ldh a, [hTempPlayAreaLocation_ff9d]
-	ld e, a
-	call GetPlayAreaCardAttachedEnergies
+	ld e, a ; could be an issue later
+	; call OverwriteLoadedAttackCost  ; preserves de
+	; call GetPlayAreaCardAttachedEnergies
 	bank1call HandleEnergyBurn
 
 	xor a
@@ -862,11 +864,15 @@ CheckEnergyNeededForAttackAfterDiscard:
 	ret
 
 .is_attack
+	ld hl, wLoadedAttackEnergyCost
+	ldh a, [hTempPlayAreaLocation_ff9d]
+	ld e, a
+	call OverwriteLoadedAttackCost
+; process energy discard logic
 	ldh a, [hTempPlayAreaLocation_ff9d]
 	farcall AIPickEnergyCardToDiscard
 	call LoadCardDataToBuffer1_FromDeckIndex
-	ld hl, wLoadedCard1ID
-	cphl DOUBLE_COLORLESS_ENERGY
+	cp DOUBLE_COLORLESS_ENERGY
 	jr z, .colorless
 
 ; color energy
@@ -2212,6 +2218,8 @@ CheckIfNoSurplusEnergyForAttack:
 	ld e, a
 	call GetPlayAreaCardAttachedEnergies
 	bank1call HandleEnergyBurn
+	ld hl, wLoadedAttackEnergyCost
+	call OverwriteLoadedAttackCost
 	xor a
 	ld [wTempLoadedAttackEnergyCost], a
 	ld [wTempLoadedAttackEnergyNeededAmount], a

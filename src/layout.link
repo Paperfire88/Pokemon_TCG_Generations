@@ -175,29 +175,29 @@ ROMX $3e
 	"Audio 2"
 ROMX $3f
 	"Audio 3"
-ROMX $44
+ROMX $40
 	"Custom Gfx"
-ROMX $45
+ROMX $41
 	"Custom Gfx2"
-ROMX $46
+ROMX $42
 	"Effect Functions2"			
-ROMX $47
+ROMX $43
 	"Custom Gfx3"
-ROMX $48
+ROMX $44
 	"Cards2"	
-ROMX $49
+ROMX $45
 	"Custom Gfx4"	
-ROMX $4a
+ROMX $46
 	"Custom Gfx5"
-ROMX $4b
+ROMX $47
 	"Custom Gfx7"
-ROMX $4c		
+ROMX $48		
 	"Custom Gfx8"
-ROMX $4d		
+ROMX $49		
 	"Custom Gfx9"	
-ROMX $4e		
+ROMX $4a		
 	"Custom Gfx10"
-ROMX $4f
+ROMX $4b
 	"Custom Gfx11"					
 WRAM0
 	"WRAM0"

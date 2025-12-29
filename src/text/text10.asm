@@ -35,7 +35,7 @@ AccelgorName:
 	text "Accelgor"
 	done
 
-SupersonicName:
+PesterName:
 	text "Pester"
 	done
 

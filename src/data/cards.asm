@@ -132,7 +132,7 @@ MeganiumCard:
 	db DAMAGE_NORMAL ; category
 	dw GiantBloomEffectCommands ; effect commands
 	db INFLICT_PARALYSIS/INFLICT_SLEEP ; flags 1
-	db HEAL_USER ; flags 2
+	db HEAL_USER/ATTACHED_ENERGY_BOOST ; flags 2
 	db NONE ; flags 3
 	db 2
 	db ATK_ANIM_DRAIN ; animation
@@ -679,12 +679,12 @@ VolbeatCard:
 
 	; attack 2
 	energy GRASS, 1, COLORLESS, 1 ; energies
-	tx SupersonicName ; name
+	tx PesterName ; name
 	tx ElectricalRendDescription ; description
 	dw NONE ; description (cont)
 	db 10 ; damage
-	db DAMAGE_NORMAL ; category
-	dw PoisonBoostEffectCommands ; effect commands
+	db DAMAGE_PLUS ; category
+	dw Do30moreIfDFPStatusedEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -964,7 +964,7 @@ YanmaCard:
 	dw NONE ; pre-evo name
 
 	; attack 1
-	energy GRASS, 1 ; energies
+	energy COLORLESS, 1 ; energies
 	tx UTurnName ; name
 	tx TeleportDescription ; description
 	dw NONE ; description (cont)
@@ -978,15 +978,15 @@ YanmaCard:
 	db ATK_ANIM_GLOW_ATTACK ; animation
 
 	; attack 2
-	energy GRASS, 1, COLORLESS, 1 ; energies
-	tx AgilityName ; name
-	tx RapidashsAgilityDescription ; description
+	energy GRASS, 1 ; energies
+	tx SuperSpeedName ; name
+	tx SuperSpeedDescription ; description
 	dw NONE ; description (cont)
-	db 20 ; damage
+	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw AgilityEffectCommands ; effect commands
+	dw SuperSpeedEffectCommands ; effect commands
 	db NONE ; flags 1
-	db NULLIFY_OR_WEAKEN_ATTACK | FLAG_2_BIT_6 ; flags 2
+	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
 	db ATK_ANIM_QUICK_ATTACK ; animation
@@ -1615,31 +1615,31 @@ GrookeyCard:
 
 	; attack 1
 	energy COLORLESS, 1 ; energies
-	tx TackleName ; name
-	dw NONE ; description
+	tx ScoutName ; name
+	tx ScoutDescription ; description
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw NONE ; effect commands
-	db NONE ; flags 1
+	dw ScoutEffectCommands ; effect commands
+	db DAMAGE_TO_OPPONENT_BENCH_F ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_WHIP ; animation
+	db ATK_ANIM_HIT ; animation
 
 	; attack 2
-	energy GRASS, 1 ; energies
-	tx EnergySearchName ; name
-	tx EnergySearchDescription ; description
+	energy COLORLESS, 1, GRASS, 1 ; energies
+	tx RazorLeafName ; name
+	tx ThunderJoltDescription ; description
 	dw NONE ; description (cont)
-	db 0 ; damage
-	db RESIDUAL ; category
-	dw EnergySearchEffectCommands ; effect commands
-	db NONE ; flags 1
+	db 30 ; damage
+	db DAMAGE_NORMAL ; category
+	dw PikachuThunderJoltEffectCommands ; effect commands
+	db LOW_RECOIL ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_GLOW_EFFECT ; animation
+	db ATK_ANIM_HIT_RECOIL ; animation
 
 	db 1 ; retreat cost
 	db WR_FIRE ; weakness
@@ -1665,31 +1665,31 @@ ThwackeyCard:
 
 	; attack 1
 	energy GRASS, 1 ; energies
-	tx LeafGuardName ; name
-	tx ExpandDescription ; description
+	tx GrassKnotName ; name
+	tx LowKickDescription ; description
 	dw NONE ; description (cont)
-	db 10 ; damage
-	db RESIDUAL ; category
-	dw JigglypuffExpandEffectCommands ; effect commands
+	db 20 ; damage
+	db DAMAGE_PLUS ; category
+	dw LowKickEffectCommands ; effect commands
 	db NONE ; flags 1
-	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_PROTECT ; animation
-
-	; attack 1
-	energy GRASS, 1, COLORLESS, 1 ; energies
-	tx WorrySeedName ; name
-	tx MayInflictConfusionDescription ; description
-	dw NONE ; description (cont)
-	db 30 ; damage
-	db DAMAGE_NORMAL ; category
-	dw AlakazamConfuseRayEffectCommands ; effect commands
-	db INFLICT_CONFUSION ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_CONFUSE_RAY ; animation
+	db ATK_ANIM_WHIP; animation
+
+	; attack 2
+	energy GRASS, 2, COLORLESS, 1 ; energies
+	tx KnockOffName; name
+	tx KnockOffDescription ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_PLUS ; category
+	dw KnockOffEffectCommands ; effect commands
+	db DAMAGE_TO_OPPONENT_BENCH_F ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_BIG_HIT ; animation
 
 	db 2 ; retreat cost
 	db WR_FIRE ; weakness
@@ -1714,27 +1714,27 @@ RillaboomCard:
 	tx ThwackeyName ; pre-evo name
 
 	; attack 1
-	energy GRASS, 1 ; energies
-	tx AttractName ; name
-	tx AttractDescription ; description
-	dw NONE ; description (cont)
-	db 30 ; damage
-	db RESIDUAL ; category
-	dw VictreebelLureEffectCommands ; effect commands
+	energy 0 ; energies
+	tx JungleSpiritName ; name
+	tx JungleSpiritDescription ; description
+	tx PKMNPowerCondition ; description (cont)
+	db 0 ; damage
+	db POKEMON_POWER ; category
+	dw MukToxicGasEffectCommands ; effect commands
 	db NONE ; flags 1
-	db SWITCH_OPPONENT_POKEMON ; flags 2
-	db INFLICT_CONFUSION ; flags 3
+	db NONE ; flags 2
+	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_LURE ; animation
+	db ATK_ANIM_PKMN_POWER_1 ; animation
 
 	; attack 2
-	energy GRASS, 2, COLORLESS, 1 ; energies
-	tx JumpingSideKickName ; name
-	tx ElectricalRendDescription ; description
+	energy GRASS, 2, COLORLESS, 2 ; energies
+	tx DrumBeatingName ; name
+	tx DrumBeatingDescription ; description
 	dw NONE ; description (cont)
 	db 50 ; damage
-	db DAMAGE_PLUS ; category
-	dw Do30moreIfDFPStatusedEffectCommands ; effect commands
+	db DAMAGE_NORMAL ; category
+	dw DrumBeatingEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3

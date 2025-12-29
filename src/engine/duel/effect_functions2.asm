@@ -1805,52 +1805,72 @@ RodEffect2:
 	ld [hl], $ff ; terminating byte
 	or a
 	ret  
-  ret
-
+SoulDrain_PlayerSelectEffect2:	
+	call CreateACardListFromDiscardPile
+	ld a, 3
+	ld [hTempCardIndex_ff9f], a
+	ld a, $ff
+	ldh [hTempList], a
+	xor a
+	ldh [hCurSelectionItem], a
+	ldtx hl, Choose3CardsFromDiscardPileText
+	jr FistOfAntiquity_PlayerSelectEffect2.next
+FistOfAntiquity_PlayerSelectEffect2:
+	call CreateACardListFromDiscardPile
+	ld a, 6
+	ld [hTempCardIndex_ff9f], a
+	ld a, $ff
+	ldh [hTempList], a
+	xor a
+	ldh [hCurSelectionItem], a
+	ldtx hl, Choose6CardsFromDiscardPileText
+.next	
+	farcall DrawWideTextBox_WaitForInput
+	jr Riptide_PlayerSelectEffect2.loop
 Riptide_PlayerSelectEffect2:
-  farcall CreateEnergyCardListFromDiscardPile_AllEnergy
-  ld a, 6
-  ld [hTempCardIndex_ff9f], a
-  ld a, $ff
-  ldh [hTempList], a
-  xor a
-  ldh [hCurSelectionItem], a
-  ldtx hl, Choose2BasicEnergyCardsFromDiscardPileText
-  farcall DrawWideTextBox_WaitForInput
+	farcall CreateEnergyCardListFromDiscardPile_AllEnergy
+	ld a, 6
+	ld [hTempCardIndex_ff9f], a
+	ld a, $ff
+	ldh [hTempList], a
+	xor a
+	ldh [hCurSelectionItem], a
+	ldtx hl, Choose2BasicEnergyCardsFromDiscardPileText
+	farcall DrawWideTextBox_WaitForInput
 
 .loop
-  bank1call InitAndDrawCardListScreenLayout
-  ldtx hl, PleaseSelectCardText
-  ldtx de, PlayerDiscardPileText
-  bank1call SetCardListHeaderText
-  ld a, [wDuelTempList]
-  cp $ff
-  jr z, .done  ; no more cards to choose from
-  bank1call DisplayCardList
-  jr nc, .store_selected_card
-; B pressed
-  ld a, [hTempCardIndex_ff9f]
-  farcall AskWhetherToQuitSelectingCards
-  jr c, .loop ; chose to continue
-  jr .done
+	bank1call InitAndDrawCardListScreenLayout
+	ldtx hl, PleaseSelectCardText
+	ldtx de, PlayerDiscardPileText
+	bank1call SetCardListHeaderText
+	ld a, [wDuelTempList]
+	cp $ff
+	jr z, .done  ; no more cards to choose from
+	bank1call DisplayCardList
+	jr nc, .store_selected_card
+	; B pressed
+	ld a, [hTempCardIndex_ff9f]
+	farcall AskWhetherToQuitSelectingCards
+	jr c, .loop ; chose to continue
+	jr .done
 
 .store_selected_card
-  farcall GetNextPositionInTempList
-  ldh a, [hTempCardIndex_ff98]
-  ld [hl], a ; store selected card
-  farcall RemoveCardFromDuelTempList
-  jr c, .done
-  ld a, [hTempCardIndex_ff9f]
-  ld b, a
-  ldh a, [hCurSelectionItem]
-  cp b
-  jr c, .loop
+	farcall GetNextPositionInTempList
+	ldh a, [hTempCardIndex_ff98]
+	ld [hl], a ; store selected card
+	farcall RemoveCardFromDuelTempList
+	jr c, .done
+	ld a, [hTempCardIndex_ff9f]
+	ld b, a
+	ldh a, [hCurSelectionItem]
+	cp b
+	jr c, .loop
 
 .done
-  farcall GetNextPositionInTempList
-  ld [hl], $ff
-  or a
-  ret
+	farcall GetNextPositionInTempList
+	ld [hl], $ff
+	or a
+	ret
 
 SelectedDiscardPileCards_ShuffleIntoDeckEffect2:
   ld hl, hTempList
@@ -2262,7 +2282,42 @@ CreateNoTrainerCardListFromDiscardPile:
 	ldtx hl, ThereAreNoTrainerCardsInDiscardPileText
 	scf
 	ret
-	
+
+CreateACardListFromDiscardPile:
+; get number of cards in Discard Pile
+; and have hl point to the end of the
+; Discard Pile list in wOpponentDeckCards.
+	ld a, DUELVARS_NUMBER_OF_CARDS_IN_DISCARD_PILE
+	call GetTurnDuelistVariable
+	ld b, a
+	add DUELVARS_DECK_CARDS
+	ld l, a
+
+	ld de, wDuelTempList
+	inc b
+	jr .next_card
+
+.check_trainer
+	ld a, [hl]
+	ld [de], a
+	inc de
+
+.next_card
+	dec l
+	dec b
+	jr nz, .check_trainer
+
+	ld a, $ff ; terminating byte
+	ld [de], a
+	ld a, [wDuelTempList]
+	cp $ff
+	jr z, .no_trainers
+	or a
+	ret
+.no_trainers
+	ldtx hl, ThereAreNoTrainerCardsInDiscardPileText
+	scf
+	ret
 PlayerYesNoEffect2:
 	farcall IsPlayerTurn
 	jp nc, .ia
@@ -3292,7 +3347,7 @@ Subs_AISelectEffect:
 
 TotalRetreatCost_10xDamageEffect2:
     ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-    farcall GetTurnDuelistVariable
+    call GetTurnDuelistVariable
     ld b, a
     ld l, DUELVARS_ARENA_CARD
     ; hl is now set to the first duel variable that holds the deck indices of the turn holder's play area Pokémon
@@ -3674,3 +3729,88 @@ ColorToTextSymbol:
 	tx WaterSymbolText
 	tx FightingSymbolText
 	tx PsychicSymbolText
+
+; returns carry if no Grass Energy cards
+; attached to card in Play Area location of a.
+; input:
+;	a = PLAY_AREA_* of location to check
+CheckIfCardHasGrassEnergyAttached2:
+	or CARD_LOCATION_PLAY_AREA
+	ld e, a
+
+	ld a, DUELVARS_CARD_LOCATIONS
+	call GetTurnDuelistVariable
+.loop
+	ld a, [hl]
+	cp e
+	jr nz, .next
+	push de
+	push hl
+	ld a, l
+	farcall GetCardIDFromDeckIndex
+	farcall GetCardType
+	pop hl
+	pop de
+	cp TYPE_ENERGY_GRASS
+	jr z, .no_carry
+.next
+	inc l
+	ld a, l
+	cp DECK_SIZE
+	jr c, .loop
+	farcall SetCarryEF
+	ret
+.no_carry
+	ld a, l
+	or a
+	ret
+CountOpBasicEnergies: ;Returns amount in a
+  	call SwapTurn
+  	farcall CreateEnergyCardListFromDiscardPile_OnlyBasic
+	call SwapTurn
+	ret c
+	ld a, c
+	ret	
+CreateMagikarpCardListFromDiscardPile:
+; gets hl to point at end of Discard Pile cards
+; and iterates the cards in reverse order.
+	ld a, DUELVARS_NUMBER_OF_CARDS_IN_DISCARD_PILE
+	call GetTurnDuelistVariable
+	ld b, a
+	add DUELVARS_DECK_CARDS
+	ld l, a
+	ld de, wDuelTempList
+	inc b
+	ld c, 0
+	jr .next_discard_pile_card
+
+.check_card
+	ld a, [hl]
+	farcall LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Type]
+	cp TYPE_ENERGY
+	jr nc, .next_discard_pile_card ; if not Pokémon card, skip
+	ld a, [wLoadedCard2ID]
+	cp MAGIKARP
+	jr nz, .next_discard_pile_card
+; write this card's index to wDuelTempList
+	inc c
+	ld a, [hl]
+	ld [de], a
+	inc de
+.next_discard_pile_card
+	dec l
+	dec b
+	jr nz, .check_card
+
+; done with the loop.
+	ld a, $ff ; terminating byte
+	ld [de], a
+	ld a, [wDuelTempList]
+	cp $ff
+	jr z, .set_carry
+	or a
+	ret
+.set_carry
+	farcall SetCarryEF
+	ret

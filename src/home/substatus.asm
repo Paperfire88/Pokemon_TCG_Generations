@@ -950,3 +950,75 @@ ClearChangedTypesIfMuk::
 	dec c
 	jr nz, .zero_changed_types_loop
 	ret
+OverwriteLoadedAttackCost::
+	ld bc, (NUM_TYPES - 1) / 2
+	add hl, bc
+; check whether there are any cost modifiers
+	call GetAttackCostDiscount
+	ld b, a
+	call GetAttackCostPenalty
+	add b
+	ret z  ; no modifiers
+; apply attack cost modifiers
+	ld a, [hl]
+IF (NUM_TYPES % 2) == 0
+	swap a
+ENDC	
+	and $0f
+	add c  ; penalty
+	sub b  ; discount
+	jr nc, .overwrite
+	xor a  ; no Colorless required
+	; jr .capped
+.overwrite
+	cp $10
+	jr c, .capped
+	ld a, $0f
+.capped
+IF (NUM_TYPES % 2) == 0
+	swap a
+ELSE
+; retain colored cost
+	ld c, a
+	ld a, [hl]
+	and $f0
+	or c
+ENDC	
+	ld [hl], a
+	ret
+GetAttackCostDiscount:
+	push hl
+	ld c, 0
+	ld a, e
+	or a
+	jr nz, .end	
+	push de
+	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
+	pop de
+	jr c, .end
+	ld de, RILLABOOM
+	call CountPokemonIDInBothPlayAreas
+	jr nc, .end
+	farcall GetArenaCardColor
+	cp GRASS
+	jr nz, .end
+	inc c
+.end	
+	ld a, c
+	pop hl
+	ret	
+GetAttackCostPenalty:
+	push hl
+	ld c, 0
+	ld a, e
+	or a
+	jr nz, .end
+	ld a, DUELVARS_ARENA_CARD_SUBSTATUS2
+	call GetTurnDuelistVariable
+	cp SUBSTATUS2_ATTACK_COST_PLUS_1
+	jr nz, .end
+	inc c
+.end
+	ld a, c
+	pop hl
+	ret

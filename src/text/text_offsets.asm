@@ -2027,7 +2027,7 @@ TextOffsets::
 	textpointer GrassCallForFamilyDescription
 	textpointer ShelmetDescription
 	textpointer AccelgorName
-	textpointer SupersonicName
+	textpointer PesterName
 	textpointer MayInflictConfusionDescription
 	textpointer DoubleKickName
 	textpointer AccelgorDescription
@@ -4218,3 +4218,42 @@ TextOffsets::
 	textpointer PumpkinTrickName
 	textpointer PumpkinTrickDescription
 	textpointer PowersCheckText
+	textpointer PsychicLockName
+	textpointer PsychicLockDescription
+	textpointer PsystormName
+	textpointer PsystormDescription
+	textpointer LifeDrainName
+	textpointer LifeDrainDescription
+	textpointer LifeDrainCoinText
+	textpointer JungleSpiritName
+	textpointer JungleSpiritDescription
+	textpointer DrumBeatingName
+	textpointer DrumBeatingDescription
+	textpointer DrumBeatingCheckText
+	textpointer RazorLeafName
+	textpointer SuperSpeedName
+	textpointer SuperSpeedDescription
+	textpointer DragonLauncherName
+	textpointer DragonLauncherDescription
+	textpointer JetAssaultName
+	textpointer SummonDirectiveName
+	textpointer SummonDirectiveDescription
+	textpointer DragonTailName
+	textpointer JetAssaultDescription
+	textpointer DastardlyJabName
+	textpointer DastardlyJabDescription
+	textpointer SteamRollerName
+	textpointer SteamRollerDescription
+	textpointer SteamRollerCheckText
+	textpointer DevolutionPunchName
+	textpointer RelicSearchName
+	textpointer RelicSearchDescription
+	textpointer FistOfAntiquityName
+	textpointer FistOfAntiquityDescription
+	textpointer Choose6CardsFromDiscardPileText
+	textpointer SoulDrainName
+	textpointer SoulDrainDescription
+	textpointer Choose3CardsFromDiscardPileText
+	textpointer KnockOffDescription
+	textpointer CrabhammerDescription
+	textpointer PoisonClawsName

@@ -504,11 +504,10 @@ OctolockName:
 	done
 OctolockDescription:
 	text "The Defending PKMN Retreat cost is 1"
-	line "<COLORLESS> More until the end of the"
-	line "next turn. Then, Flip a Coin."
-	line "If Heads, your opponent can't use"
-	line "or activate any PKMN PWR during"
-	line "their next turn."
+	line "<COLORLESS> More until the end of the next"
+	line "turn. Then, Flip a Coin. If Heads,"
+	line "your opponent can't use or activate"
+	line "any PKMN PWR during their next turn."
 	done
 TentacleBusterName:
 	text "Tentacle Buster"
@@ -525,7 +524,8 @@ TrickOrTreatName:
 	done
 TrickOrTreatDescription:
 	text "Once per turn, You can Change The"
-	line "Defending PKMN Weakness to<PSYCHIC>."
+	line "Defending PKMN Weakness type to <PSYCHIC>."
+	line "(The amount of it doesn't change.)"
 	done
 PumpkinTrickName:
 	text "Pumpkin Trick"
@@ -535,4 +535,162 @@ PumpkinTrickDescription:
 	line "opponent has 4 or more PKMN in the"
 	line "Discard Pile, the defending PKMN is"
 	line "now burned."
+	done
+PsychicLockName:
+	text "Psychic Lock"
+	done
+PsychicLockDescription:
+	text "If both player's have the same hand"
+	line "size, Your opponent can't play any"
+	line "Trainer cards during the next turn."
+	done
+PsystormName:
+	text "Psystorm"
+	done		
+PsystormDescription:
+	text "Does 10 damage for each Energy card"
+	line "attached to all PKMN in play."
 	done	
+LifeDrainName:
+	text "Life Drain"
+	done
+LifeDrainDescription:
+	text "Flip a coin. If heads, the defending"
+	line "PKMN remaining HP is now 10."
+	done
+LifeDrainCoinText:
+	text "If heads, defending PKMN"
+	line "HP is now 10!"
+	done
+JungleSpiritName:
+	text "Jungle Spirit"
+	done
+JungleSpiritDescription:
+	text "All <GRASS> PKMN pay 1 <COLORLESS> less to use"
+	line "their attacks.Only 1 [Jungle Spirit]"
+	line "can be use at the same time."
+	done		
+DrumBeatingName:
+	text "Drum Beating"
+	done
+DrumBeatingDescription:
+	text "Flip a coin. If heads, The Defending"
+	line "PKMN Attacks and Retreat cost is 1"
+	line "<COLORLESS> More until the end of the next"
+	line "turn."
+	done
+DrumBeatingCheckText:
+	text "Effect check! If Heads, Attack"
+	line "and Retreat cost more next turn."
+	done	
+RazorLeafName:
+	text "Razor Leaf"
+	done
+SuperSpeedName:
+	text "Super Speed"
+	done
+SuperSpeedDescription:
+	text "If this PKMN was Switched in this"
+	line "turn, Draw 3 cards."
+	done
+DragonLauncherName:
+	text "Dragon Launcher"
+	done
+DragonLauncherDescription:
+	text "You can choose a PKMN on your bench"
+	line "Shuffle It and any card attached to"
+	line "it into your deck.Then, do 50 Damage"
+	line "to 1 of your opponents benched PKMN."
+	done
+JetAssaultName:
+	text "Jet Assault"
+	done
+JetAssaultDescription:
+	text "If this PKMN was Switched In this"
+	line "turn, this attack does +30 damage."
+	line "If this PKMN has any <FIRE> energy"
+	line "attached, the defending PKMN is now"
+	line "Burned."
+	done		
+SummonDirectiveName:
+	text "Summon Directive"
+	done
+SummonDirectiveDescription:
+	text "When your play this PKMN from your"
+	line "hand and your bench isn't full;"
+	line "Search your deck for a<PSYCHIC> Basic PKMN"
+	line "and put it on your bench."
+	done
+DragonTailName:
+	text "Dragon Tail"
+	done
+DastardlyJabName:
+	text "Dastardly Jab"
+	done
+DastardlyJabDescription:
+	text "If the defending PKMN is Poisoned,"
+	line "its remaining HP is now 10."
+	done
+SteamRollerName:
+	text "Steamroller"
+	done
+SteamRollerDescription:	
+	text "Flip a Coin. If heads, The Defending"
+	line "PKMN Attacks cost 1 <COLORLESS> More until"
+	line "the end of the next turn."
+	done
+SteamRollerCheckText:
+	text "Effect check! If Heads, Attack"
+	line "cost 1 more next turn."
+	done
+DevolutionPunchName:
+	text "Devolution Punch"
+	done
+FistOfAntiquityName:
+	text "Fist of Antiquity"
+	done
+FistOfAntiquityDescription:
+	text "Return up to 6 cards from your"
+	line "opponent's discard pile into their"
+	line "deck. It does +10 damage for each"
+	line "card returned."
+	done	
+RelicSearchName:
+	text "Relic Search"
+	done
+RelicSearchDescription:
+	text "Discard 1 card from the top of your"
+	line "Opponent's Deck For each Energy"
+	line "attached on the defending PKMN."
+	done
+SoulDrainName:
+	text "Soul Drain"
+	done
+SoulDrainDescription:
+	text "Return up to 3 cards from your"
+	line "opponent's discard pile into their"
+	line "deck. Heal 10 HP from this PKMN for"
+	line "each card returned."
+	done
+Choose6CardsFromDiscardPileText:
+	text "Choose up to 6 cards from"
+	line "the Discard Pile."
+	done	
+Choose3CardsFromDiscardPileText:
+	text "Choose up to 3 cards from"
+	line "the Discard Pile."
+	done		
+KnockOffDescription:
+	text "If the defending PKMN has any energy"
+	line "attached to it, it does +20 damage."
+	line "After dealing damage, Discard an"
+	line "Energy from the Defending PKMN."
+	done
+CrabhammerDescription:
+	text "If the defending PKMN already has"
+	line "any damage <HP_NOK> counters on it, it's"
+	line "now confused."
+	done
+PoisonClawsName:
+	text "Poison Claws"
+	done
