@@ -7092,6 +7092,10 @@ AquaWindEffect:
 Draw3Effect:
 	ld c, 3
 	jr BillEffect.loop_draw	
+AxeKickDrawEffect:
+	call CheckIfOpPKMNhasaStatus
+	ret z
+	jr BillEffect
 TradeEffect:
 	call PutSelectedCardInDiscardPile
 	;fallthrough
@@ -9122,7 +9126,9 @@ DiscardEachtop2ffect:
 	call EachTop
 	jp Deal10DamageToSelfEffect
 EachTop:
+	push af
 	call DiscardtopCardsffect
+	pop af
 	call SwapTurn
 	call DiscardtopCardsffect
 	jp SwapTurn
@@ -9353,6 +9359,12 @@ ExtraDamageIfLEnergiesEffect:
 	cp 1
 	ret c ; no T attached
 	jp Add20damageEffect
+AxeKickEffect:
+	ld a, DUELVARS_ARENA_CARD_SUBSTATUS1
+	call GetTurnDuelistVariable
+	cp SUBSTATUS1_SWITCHED_IN
+	ret nz
+	jp Add20damageEffect		
 WaterSplashEffect:
 	call AskThePlayerYesorNo
 	ret nz

@@ -26,7 +26,7 @@ DuelCardHeaderGraphics::
 INCBIN "gfx/duel/card_headers.2bpp"
 
 DuelCgbSymbolGraphics::
-INCBIN "gfx/duel/cgb_symbols.2bpp", $0, $808
+INCBIN "gfx/duel/cgb_symbols.2bpp"
 
 SECTION "Gfx 2", ROMX
 
@@ -1218,9 +1218,9 @@ BreloomCardGfx::
 	INCBIN "gfx/cards/breloom.attrmap"
 	INCBIN "gfx/cards/breloom.2bpp"
 YanmaCardGfx::
-	INCBIN "gfx/cards/venonat.pal"
-	INCBIN "gfx/cards/venonat.attrmap"
-	INCBIN "gfx/cards/venonat.2bpp"
+	INCBIN "gfx/cards/yanma.pal"
+	INCBIN "gfx/cards/yanma.attrmap"
+	INCBIN "gfx/cards/yanma.2bpp"
 YanmegaCardGfx::
 	INCBIN "gfx/cards/yanmega.pal"
 	INCBIN "gfx/cards/yanmega.attrmap"

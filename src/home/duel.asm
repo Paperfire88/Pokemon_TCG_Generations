@@ -1197,15 +1197,12 @@ SwapPlayAreaPokemon::
 	cp DECK_SIZE
 	jr c, .update_card_locations_loop
 .done
+	ld a, DUELVARS_ARENA_CARD_SUBSTATUS1
+	call GetTurnDuelistVariable
+	ld [hl], SUBSTATUS1_SWITCHED_IN
 	pop hl
 	pop de
 	pop bc
-	ld a, SUBSTATUS1_SWITCHED_IN
-	push af
-	ld a, DUELVARS_ARENA_CARD_SUBSTATUS1
-	call GetTurnDuelistVariable
-	pop af
-	ld [hli], a
 	ret
 
 .swap_duelvar

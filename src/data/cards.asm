@@ -1914,7 +1914,7 @@ GolisopodCard:
 	tx WimpodName ; pre-evo name
 
 	; attack 1
-	energy GRASS, 2 ; energies
+	energy GRASS, 1 ; energies
 	tx FirstImpressionName ; name
 	tx FirstImpressionDescription ; description
 	dw NONE ; description (cont)

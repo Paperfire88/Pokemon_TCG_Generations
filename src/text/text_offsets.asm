@@ -4257,3 +4257,6 @@ TextOffsets::
 	textpointer KnockOffDescription
 	textpointer CrabhammerDescription
 	textpointer PoisonClawsName
+	textpointer FoulPlayName
+	textpointer AxeKickName
+	textpointer AxeKickDescription

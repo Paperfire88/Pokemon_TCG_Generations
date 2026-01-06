@@ -3764,32 +3764,32 @@ NymbleCard:
 	dw NONE ; pre-evo name
 
 	; attack 1
-	energy DARKNESS, 1, ; energies
-	tx PoisonStingName ; name
-	tx MayInflictPoisonDescription ; description
+	energy COLORLESS, 1 ; energies
+	tx AstonishName ; name
+	tx AstonishDescription ; description
 	dw NONE ; description (cont)
-	db 10 ; damage
-	db DAMAGE_NORMAL ; category
-	dw WeedlePoisonStingEffectCommands ; effect commands
-	db INFLICT_POISON ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_NEEDLES ; animation
-
-	; attack 2
-	energy DARKNESS, 1, COLORLESS, 1 ; energies
-	tx LowKickName ; name
-	tx LowKickDescription ; description
-	dw NONE ; description (cont)
-	db 10 ; damage
-	db DAMAGE_PLUS ; category
-	dw LowKickEffectCommands ; effect commands
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw AstonishEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_HIT; animation
+	db ATK_ANIM_GLOW_EFFECT ; animation
+
+	; attack 2
+	energy COLORLESS, 1 ; energies
+	tx UTurnName ; name
+	tx TeleportDescription ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db RESIDUAL ; category
+	dw ExeggutorTeleportEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_GLOW_ATTACK ; animation
 
 	db 1 ; retreat cost
 	db WR_FIRE ; weakness
@@ -3813,33 +3813,33 @@ LokixCard:
 	db STAGE1 ; stage
 	tx NymbleName ; pre-evo name
 
-	; attack 1
-	energy DARKNESS, 1, COLORLESS, 1 ; energies
-	tx CornerName ; name
-	tx CornerDescription ; description
+	; attack 2
+	energy DARKNESS, 1 ; energies
+	tx LowKickName ; name
+	tx LowKickDescription ; description
 	dw NONE ; description (cont)
 	db 10 ; damage
-	db DAMAGE_NORMAL ; category
-	dw CornerEffectCommands ; effect commands
-	db INFLICT_POISON ; flags 1
-	db FLAG_2_BIT_6 ; flags 2
-	db NONE ; flags 3
-	db 2
-	db ATK_ANIM_TOXIC ; animation
-
-	; attack 2
-	energy COLORLESS, 1, DARKNESS, 2 ; energies
-	tx PoisonBoostName ; name
-	tx PoisonBoostDescription ; description
-	dw NONE ; description (cont)
-	db 30 ; damage
 	db DAMAGE_PLUS ; category
-	dw PoisonBoostEffectCommands ; effect commands
+	dw LowKickEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_BIG_HIT ; animation
+	db ATK_ANIM_HIT; animation
+
+	; attack 2
+	energy DARKNESS, 2, COLORLESS, 1 ; energies
+	tx AxeKickName ; name
+	tx AxeKickDescription ; description
+	dw NONE ; description (cont)
+	db 30 ; damage
+	db DAMAGE_PLUS ; category
+	dw AxeKickEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_QUICK_ATTACK ; animation
 
 	db 1 ; retreat cost
 	db WR_FIRE ; weakness
@@ -3864,37 +3864,37 @@ ZoruaCard:
 	dw NONE ; pre-evo name
 
 	; attack 1
-	energy DARKNESS, 1, ; energies
-	tx PoisonStingName ; name
-	tx MayInflictPoisonDescription ; description
+	energy COLORLESS, 1 ; energies
+	tx FetchName ; name
+	tx FetchDescription ; description
 	dw NONE ; description (cont)
-	db 10 ; damage
-	db DAMAGE_NORMAL ; category
-	dw WeedlePoisonStingEffectCommands ; effect commands
-	db INFLICT_POISON ; flags 1
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw KangaskhanFetchEffectCommands ; effect commands
+	db DRAW_CARD ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_NEEDLES ; animation
+	db ATK_ANIM_GLOW_EFFECT ; animation
 
 	; attack 2
 	energy DARKNESS, 1, COLORLESS, 1 ; energies
-	tx LowKickName ; name
-	tx LowKickDescription ; description
+	tx DeepGrowlName ; name
+	tx MayInflictParalysisDescription ; description
 	dw NONE ; description (cont)
-	db 10 ; damage
-	db DAMAGE_PLUS ; category
-	dw LowKickEffectCommands ; effect commands
-	db NONE ; flags 1
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw AbraPsyshockEffectCommands ; effect commands
+	db INFLICT_PARALYSIS ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_HIT; animation
+	db ATK_ANIM_PSYCHIC_HIT ; animation
 
 	db 1 ; retreat cost
 	db WR_FIGHTING ; weakness
 	db WR_PSYCHIC ; resistance
-	tx GrasshopperName ; category
+	tx IllusionName ; category
 	db 130 ; Pokedex number
 	db 22 ; level
 	db 1, 8 ; length
@@ -3914,32 +3914,32 @@ ZoroarkCard:
 	tx ZoruaName ; pre-evo name
 
 	; attack 1
-	energy DARKNESS, 1, COLORLESS, 1 ; energies
-	tx CornerName ; name
-	tx CornerDescription ; description
+	energy COLORLESS, 2 ; energies
+	tx FoulPlayName ; name
+	tx ClefablesMetronomeDescription ; description
 	dw NONE ; description (cont)
-	db 10 ; damage
-	db DAMAGE_NORMAL ; category
-	dw CornerEffectCommands ; effect commands
-	db INFLICT_POISON ; flags 1
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw ClefairyMetronomeEffectCommands ; effect commands
+	db NONE ; flags 1
 	db FLAG_2_BIT_6 ; flags 2
 	db NONE ; flags 3
-	db 2
-	db ATK_ANIM_TOXIC ; animation
+	db 0
+	db ATK_ANIM_NONE ; animation
 
 	; attack 2
-	energy COLORLESS, 1, DARKNESS, 2 ; energies
-	tx PoisonBoostName ; name
-	tx PoisonBoostDescription ; description
+	energy DARKNESS, 1, COLORLESS, 2 ; energies
+	tx EntrapName ; name
+	tx EntrapDescription ; description
 	dw NONE ; description (cont)
-	db 30 ; damage
-	db DAMAGE_PLUS ; category
-	dw PoisonBoostEffectCommands ; effect commands
+	db 40 ; damage
+	db DAMAGE_NORMAL ; category
+	dw EntrapCommands ; effect commands
 	db NONE ; flags 1
-	db NONE ; flags 2
+	db FLAG_2_BIT_6 ; flags 2
 	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_BIG_HIT ; animation
+	db 1
+	db ATK_ANIM_NIGHTMARE ; animation
 
 	db 2 ; retreat cost
 	db WR_FIGHTING ; weakness

@@ -2566,6 +2566,10 @@ JetAssaultEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, FirstImpresionEffect
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, JetAssaultEffect
 	db  $00	
+AxeKickEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, AxeKickEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, AxeKickDrawEffect
+	db  $00		
 SuperSpeedEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, SuperSpeedEffect
 	db  $00			

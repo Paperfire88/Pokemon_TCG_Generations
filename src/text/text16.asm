@@ -694,3 +694,15 @@ CrabhammerDescription:
 PoisonClawsName:
 	text "Poison Claws"
 	done
+FoulPlayName:
+	text "Foul Play"
+	done
+AxeKickName:
+	text "Axe Kick"
+	done
+AxeKickDescription:
+	text "If this PKMN was switched in this"
+	line "turn, do +20 damage. If the"
+	line "defending PKMN is affected by an"
+	line "status condition, draw 2 cards."
+	done		
