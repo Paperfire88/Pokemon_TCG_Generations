@@ -113,7 +113,7 @@ Music2_Init:
 	ldh [rNR50], a
 	ld a, $ff
 	ldh [rNR51], a
-	ld a, $3d
+	ld a, BANK("Audio 1")
 	ld [wCurSongBank], a
 	ld a, $80
 	ld [wCurSongID], a

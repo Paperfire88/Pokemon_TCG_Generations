@@ -11,16 +11,16 @@ PlayerGenderSelection:
 	call SetupText
 
 	; draw male portrait
-	ld a, PLAYER_PIC
+	ld a, PORTRAIT_PLAYER
 	ld [wCurPortrait], a
-	ld a, TILEMAP_PLAYER
+	ld a, PORTRAIT_SLOT_1
 	lb bc, 2, 4
 	call DrawPortrait
 
 	; draw female portrait
 	ld a, MINT_PIC
 	ld [wCurPortrait], a
-	ld a, TILEMAP_OPPONENT
+	ld a, PORTRAIT_SLOT_2
 	lb bc, 12, 4
 	call DrawPortrait
 

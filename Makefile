@@ -8,7 +8,7 @@ rom_obj := \
 	src/audio.o \
 	src/wram.o \
 	src/hram.o
-
+	
 
 ### Build tools
 
@@ -35,7 +35,9 @@ clean: tidy
 	     \( -iname '*.1bpp' \
 	        -o -iname '*.2bpp' \
 	        -o -iname '*.pal' \ \
-			-o -iname '*.attrmap' \) \
+			-o -iname '*.attrmap' \
+	        -o -iname '*.lz' \) \
+
 	     -delete
 
 	find src/data \
@@ -134,10 +136,13 @@ src/gfx/titlescreen/title_screen.2bpp: rgbgfx += -x 12
 
 %.png: ;
 
-%.attrmap: %.png
-	$(RGBGFX) $(rgbgfx) -Z -P -A $<
-	tools/pal_fix $(tools/pal_fix) $*.pal
+src/gfx/cards/%.attrmap: src/gfx/cards/%.png
+	$(RGBGFX) $(RGBGFXFLAGS) -Z -P -A $<
+	tools/pal_fix $(tools/pal_fix) src/gfx/cards/$*.pal
 	tools/attr_fix $(tools/attr_fix) $@
+
+src/gfx/duelists/%.attrmap: src/gfx/duelists/%.png
+	$(RGBGFX) $(RGBGFXFLAGS) -Z -P -A $<
 
 %.pal: ;
 

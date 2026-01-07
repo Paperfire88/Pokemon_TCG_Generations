@@ -244,18 +244,20 @@ DrawPlayerPortrait::
 	ld a, EVENT_PLAYER_GENDER
 	farcall GetEventValue
 	or a
- 	ld a, PLAYER_PIC
+ 	ld a, PORTRAIT_PLAYER
 	jr z, .got_pic
 	ld a, MINT_PIC
 .got_pic
 	ld [wCurPortrait], a
-	ld a, TILEMAP_PLAYER
+	ld a, PORTRAIT_SLOT_1
+	ld [wPortraitSlot], a
+	ld a, EMOTION_NEUTRAL ; Player is always neutral
 ;	fallthrough
 
 ; input:
 ; a = TILEMAP_* constant
 DrawPortrait::
-	ld [wCurTilemap], a
+	ld [wPortraitEmotion], a
 	ldh a, [hBankROM]
 	push af
 	ld a, BANK(_DrawPortrait)
@@ -267,7 +269,9 @@ DrawPortrait::
 ; draws opponent's portrait given in a at b,c
 DrawOpponentPortrait::
 	ld [wCurPortrait], a
-	ld a, TILEMAP_OPPONENT
+	ld a, PORTRAIT_SLOT_2
+	ld [wPortraitSlot], a
+	ld a, e
 	jr DrawPortrait
 
 Func_3e31::

@@ -48,12 +48,10 @@
 	const TILEMAP_SOLID_TILES_2                    ; $2e
 	const TILEMAP_SOLID_TILES_3                    ; $2f
 	const TILEMAP_SOLID_TILES_4                    ; $30
-	const TILEMAP_PLAYER                           ; $31
-	const TILEMAP_OPPONENT                         ; $32
-	const TILEMAP_TITLE_SCREEN                     ; $33
-	const TILEMAP_COPYRIGHT                        ; $34
-	const TILEMAP_NINTENDO                         ; $35
-	const TILEMAP_COMPANIES                        ; $36
-	const TILEMAP_ISLE	                           ; $37
+	const TILEMAP_TITLE_SCREEN                     ; $31
+	const TILEMAP_COPYRIGHT                        ; $32
+	const TILEMAP_NINTENDO                         ; $33
+	const TILEMAP_COMPANIES                        ; $34
+	const TILEMAP_ISLE	                           ; $35
 
 DEF NUM_TILEMAPS EQU const_value
