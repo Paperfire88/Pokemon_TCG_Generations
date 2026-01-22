@@ -1285,7 +1285,7 @@ PetalSpikeName:
 	text "Petal Spike"
 	done
 PetalSpikeDescription:
-	text "The Defending PKMN is now Sleep."
+	text "The Defending PKMN is now Asleep."
 	line "If you healed HP this turn, it's now"
 	line "also Poisoned."	
 	done	

@@ -1157,20 +1157,20 @@ Mail15Text:
 
 NewGameText:
 	text "NEW GAME"
-	line "Current Version: 1.7"
+	line "Current Version: 1.8"
 	done
 
 ContinueDiaryNewGameText:
 	text "CONTINUE FROM DIARY"
 	line "NEW GAME"
-	line "Current Version: 1.7"
+	line "Current Version: 1.8"
 	done
 
 ContinueDiaryNewGameContinueDuelText:
 	text "CONTINUE FROM DIARY"
 	line "New Game"
 	line "CONTINUE DUEL"
-	line "Current Version: 1.7"
+	line "Current Version: 1.8"
 	done
 
 ContinueFromDiarySummaryText:

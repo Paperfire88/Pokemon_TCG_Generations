@@ -770,7 +770,7 @@ Text05a5:
 
 Text05a6:
 	text "No, Ronald! That cannot be "
-	line "allowed! He, too, has earned "
+	line "allowed! this duelist has earned "
 	line "the right to inherit the "
 	line "Legendary Pokémon Cards!"
 	line "Ronald! <RAMNAME>!"

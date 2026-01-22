@@ -455,9 +455,6 @@ CheckEnergyNeededForAttack:
 	inc de
 	dec c
 	jr nz, .loop
-	ld a, [de]
-    swap a
-    call CheckIfEnoughParticularAttachedEnergy
 ; running CheckIfEnoughParticularAttachedEnergy back to back like this
 ; overwrites the results of a previous call of this function,
 ; however, no attack in the game has energy requirements for two
@@ -470,6 +467,7 @@ CheckEnergyNeededForAttack:
 
 	; colorless
 	ld a, [de]
+	swap a
 	and $f
   	ld b, a ; colorless energy cost
 	ld a, [wTempLoadedAttackEnergyCost]

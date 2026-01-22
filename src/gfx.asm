@@ -2034,8 +2034,10 @@ DrapionCardGfx::
 	INCBIN "gfx/cards/drapion.2bpp"	
 SECTION "Gfx 13", ROMX
 MintGfx::
-	dw 36
 	INCBIN "gfx/duelists/mint.2bpp"
+	INCBIN "gfx/duelists/mint.attrmap.lz"
+PaletteMintPortrait::
+    INCBIN "gfx/duelists/mint.pal"	
 OWMintGfx::
 	dw $14
 	INCBIN "gfx/overworld_sprites/mint.2bpp"	

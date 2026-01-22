@@ -159,7 +159,7 @@
 	const PALETTE_JESSICA_PORTRAIT   ; $9e
 	const PALETTE_STEPHANIE_PORTRAIT ; $9f
 	const PALETTE_AARON_PORTRAIT     ; $a0
-	const PALETTE_161				; $a2
+	const PALETTE_MINT_PORTRAIT				; $a2
 	const PALETTE_162				; $a2
 	const PALETTE_163				; $a3
 	const PALETTE_164				; $a4

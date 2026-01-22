@@ -4260,3 +4260,8 @@ TextOffsets::
 	textpointer FoulPlayName
 	textpointer AxeKickName
 	textpointer AxeKickDescription
+	textpointer PoisonWhipDescription
+	textpointer PoisonWhipName
+	textpointer EruptionDescription
+	textpointer MagmaRecycleName
+	textpointer MagmaRecycleDescription

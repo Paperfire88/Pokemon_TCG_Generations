@@ -281,6 +281,7 @@ FlailEffectCommands:
 
 BUIZELHeadacheEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, HeadacheEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Deal10DamageToSelfEffect
 	db  $00
 
 FurySwipesEffectCommands:
@@ -654,6 +655,9 @@ RhydonRamEffectCommands:
 LeerEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, LeerEffect
 	db  $00
+PoisonWhipEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, PoisonEffect
+	;Falltrough
 HitmonleeStretchKickEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Opp_CheckBench
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, StretchKick_BenchDamageEffect
@@ -2561,7 +2565,8 @@ PetalSpikeEffectCommands:
 	db  $00		
 FirstImpresionEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, FirstImpresionEffect
-	db  $00	
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, FirstImpresionEffect2
+	db  $00		
 JetAssaultEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, FirstImpresionEffect
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, JetAssaultEffect
@@ -2618,3 +2623,6 @@ LifeDrainEffectCommands:
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, LifeDrain50PerentEffect
 	dbw EFFECTCMDTYPE_AI, LifeDrain_AIEffect
 	db  $00	
+EruptionEffectCommands:	
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EruptionEffect
+	db  $00

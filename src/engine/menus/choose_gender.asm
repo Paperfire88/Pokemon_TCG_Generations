@@ -14,6 +14,9 @@ PlayerGenderSelection:
 	ld a, PORTRAIT_PLAYER
 	ld [wCurPortrait], a
 	ld a, PORTRAIT_SLOT_1
+	ld [wPortraitSlot], a
+   	ld a, EMOTION_NEUTRAL
+   	ld [wPortraitEmotion], a
 	lb bc, 2, 4
 	call DrawPortrait
 
@@ -21,6 +24,9 @@ PlayerGenderSelection:
 	ld a, MINT_PIC
 	ld [wCurPortrait], a
 	ld a, PORTRAIT_SLOT_2
+	ld [wPortraitSlot], a
+	ld a, EMOTION_NEUTRAL
+	ld [wPortraitEmotion], a
 	lb bc, 12, 4
 	call DrawPortrait
 

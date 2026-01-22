@@ -100,7 +100,7 @@ BurstinginfernoName:
 BurstinginfernoDescription:
 	text "Discard any number of <FIRE> energy from"
 	line "this PKMN (Min 1).it does +20 damage"
-	line "for each <FIRE> Energy Discarded."
+	line "for each <FIRE> energy Discarded. "
 	done
 
 Choose1BasicEnergyCardFromHandText:

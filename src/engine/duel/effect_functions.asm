@@ -8435,6 +8435,16 @@ MeteorMashEffect:
 	call AddToDamage ; add 10 * a to damage
 ; set attack damage
 	jp SetDefiniteAIDamage	
+FirstImpresionEffect2:
+	call SwapTurn
+	xor a
+	ld b, a
+	add DUELVARS_ARENA_CARD_HP
+	call GetTurnDuelistVariable
+	call SwapTurn
+	or a
+	ret nz ; return if arena card has non-0 HP
+	jp BillEffect
 
 Ultravision_PlayerSelectEffect:
     ld b, 3
@@ -9115,11 +9125,35 @@ VolcanicClawEffect:
 	ld a, 5
 	;fallthrough
 DiscardtopCardsffect:
+	call DiscardtopCardsEffect_NoAnimation
+	jp GlowAnimationsEffect
+DiscardtopCardsEffect_NoAnimation:
 	ld [hTemp_ffa0], a
 	ldtx hl, ForWHATText
 	call DrawWideTextBox_WaitForInput
-	call Wildfire_DiscardDeckEffect
-	jp GlowAnimationsEffect
+	jp Wildfire_DiscardDeckEffect
+Discardtopcardandcheckenergy:
+	ld a, 1
+	call DiscardtopCardsEffect_NoAnimation
+	;falltrough
+CardOnListIsAnEnergyEffect:
+	ld a, [wDuelTempList]
+	ldh [hAIEnergyTransEnergyCard], a
+	cp $ff
+	ret z
+	call GetCardIDFromDeckIndex  ; preserves af, hl, bc
+	call GetCardType  ; preserves hl, bc
+	cp TYPE_ENERGY
+	or a
+	ret
+EruptionEffect:
+	call Discardtopcardandcheckenergy
+	call z, Add10damageEffect
+	call SwapTurn
+	call Discardtopcardandcheckenergy
+	call SwapTurn
+	call z, Add10damageEffect
+	ret
 
 DiscardEachtop2ffect:
 	ld a, 2

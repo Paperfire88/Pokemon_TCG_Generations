@@ -663,7 +663,7 @@ SkillDiveName:
 	done
 
 FiregiverName:
-	text "Volcanic Eruption"
+	text "Firegiver"
 	done
 
 FiregiverDescription:
@@ -1023,7 +1023,7 @@ ThunderJoltName:
 	text "Thunder Jolt"
 	done
 ThunderJoltDescription:
-	text "Flip a coin. If tails,take 10 damage"
+	text "Flip a coin.If tails,take 10 damage."
 	done
 MouseName:
 	text "Mouse"
@@ -1491,7 +1491,10 @@ HitmonleeName:
 StretchKickName:
 	text "Stretch Kick"
 	done
-
+PoisonWhipDescription:
+	text "The Defending PKMN is now Poisoned."
+	line ""
+	;Falltrough
 StretchKickDescription:
 	text "If your opponent has any Benched"
 	line "PKMN, choose 1 of them and deal 20"

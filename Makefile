@@ -142,7 +142,7 @@ src/gfx/cards/%.attrmap: src/gfx/cards/%.png
 	tools/attr_fix $(tools/attr_fix) $@
 
 src/gfx/duelists/%.attrmap: src/gfx/duelists/%.png
-	$(RGBGFX) $(RGBGFXFLAGS) -Z -P -A $<
+	$(RGBGFX) $(RGBGFXFLAGS) -P -A $<
 
 %.pal: ;
 

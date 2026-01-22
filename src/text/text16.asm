@@ -7,8 +7,10 @@ FirstImpressionName:
 	text "First Impression"
 	done
 FirstImpressionDescription:
-	text "If this PKMN was Switched In this"
+	text "If this PKMN was Switched-In this"
 	line "turn, this attack does +30 damage."
+	line "After dealing damage, if the"
+	line "defending PKMN is KO: Draw 2 cards."
 	done	
 FlipTurnDescription:
 	text "After doing damage, you can Switch"
@@ -706,3 +708,20 @@ AxeKickDescription:
 	line "defending PKMN is affected by an"
 	line "status condition, draw 2 cards."
 	done		
+PoisonWhipName:
+	text "Poison Whip"
+	done
+EruptionDescription:
+	text "Discard the top card of each" 
+	line "player's deck. it does +30 damage"
+	line "for each Energy discarded."
+	done
+MagmaRecycleName:
+	text "Magma Recycle"
+	done
+MagmaRecycleDescription:
+	text "Return up to 3 cards from your"
+	line "opponent's discard pile into their"
+	line "deck. Then, draw 1 card for each"
+	line "card returned."
+	done

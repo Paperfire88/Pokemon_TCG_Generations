@@ -168,7 +168,7 @@ palette_pointer PalettePlayerPortrait,    3, 0 ; PALETTE_PLAYER_PORTRAIT
 	palette_pointer PaletteJessicaPortrait,   3, 0 ; PALETTE_JESSICA_PORTRAIT
 	palette_pointer PaletteStephaniePortrait, 3, 0 ; PALETTE_STEPHANIE_PORTRAIT
 	palette_pointer PaletteAaronPortrait,     3, 0 ; PALETTE_AARON_PORTRAIT
-	palette_pointer Palette161, 1, 0 ; PALETTE_161
+	palette_pointer MintGfx, 1, 0 ; PALETTE_MINT_PORTRAIT
 	palette_pointer Palette162, 1, 0 ; PALETTE_162
 	palette_pointer Palette163, 8, 0 ; PALETTE 163
 	palette_pointer Palette164, 8, 0 ; PALETTE 164
