@@ -853,14 +853,13 @@ HandleSwitchDefendingPokemonEffect:
 ; attack was successful, switch Defending Pokemon
 	call SwapTurn
 	call SwapArenaWithBenchPokemon
-	call SwapTurn
-
 	xor a
 	ld [wccc5], a
 	ld [wDuelDisplayedScreen], a
 	inc a
 	ld [wDefendingWasForcedToSwitch], a
-	jp FerroCheck
+	call FerroCheck
+	jp SwapTurn
 
 ; returns carry if Defending has No Damage or Effect
 ; if so, print its appropriate text.
@@ -1571,10 +1570,12 @@ VictreebelLure_SwitchDefendingPokemon:
 	ld e, a
 	call HandleNShieldAndTransparency
 	call nc, SwapArenaWithBenchPokemon
-	call SwapTurn
 	xor a
 	ld [wDuelDisplayedScreen], a
-	jp FerroCheck
+	inc a
+	ld [wDefendingWasForcedToSwitch], a
+	call FerroCheck
+	jp SwapTurn
 
 ; If heads, defending Pokemon cant retreat next turn
 AcidEffect:
@@ -5585,6 +5586,9 @@ Gale_SwitchEffect:
 	ld hl, wDealtDamage
 	ld [hli], a
 	ld [hl], a
+	inc a
+	ld [wDefendingWasForcedToSwitch], a
+	call FerroCheck
 .skip_clear_damage
 	call SwapTurn
 	call .SwitchWithRandomBenchPokemon
@@ -5607,8 +5611,11 @@ Gale_SwitchEffect:
 	ld [wDuelDisplayedScreen], a
 	ret
 
-FerroCheck:
+FerroCheck: ; needs to return with same turn player as entered it
 	bank1call HandleBetweenTurnKnockOuts
+	call CountOppPrizes
+	or a
+	ret z
 	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
 	ret c
 	ld de, FERROTHORN
@@ -5618,13 +5625,20 @@ FerroCheck:
 	ld e, PLAY_AREA_ARENA
 	call Put1DamageCounterOnTarget
 .next
-	call IsPlayerTurn
-	ret c
-	ld de, SANDACONDA
-	call CountPokemonIDInPlayArea
+	ld a, [wDefendingWasForcedToSwitch]
+	or a
 	ret z
-.discard_1	
-	ld a, 1
+	xor a
+	ld [wDefendingWasForcedToSwitch], a
+	ld de, SANDACONDA		
+	call CountPokemonIDInPlayArea
+	or a
+	ret z
+	;fallthrough
+
+;discards cards from the turn holder's deck
+;input: a = number of cards to discard
+.discard_a 
 	ld [hTemp_ffa0], a
 	call GlowAnimationsEffect
 	jp Wildfire_DiscardDeckEffect
@@ -7815,13 +7829,13 @@ BossOrders_SwitchEffect:
 	call Func_2fea9
 
 ; switch Arena card
+	call ClearDamageReductionSubstatus2
 	call SwapTurn
 	call SwapArenaWithBenchPokemon2
-	call SwapTurn
-	call ClearDamageReductionSubstatus2
+	call FerroCheck	
 	xor a
 	ld [wDuelDisplayedScreen], a
-	jp FerroCheck
+	jp SwapTurn
 
 SwapArenaWithBenchPokemon2:
 	ldh a, [hTemp_ffa0]
@@ -9167,7 +9181,8 @@ EachTop:
 	call DiscardtopCardsffect
 	jp SwapTurn
 MountainEaterEffect:
-	call FerroCheck.discard_1
+	ld a, 1
+	call FerroCheck.discard_a
 	ld de, 10
 	jp ApplyAndAnimateHPRecovery
 GlowAnimationsEffect:
