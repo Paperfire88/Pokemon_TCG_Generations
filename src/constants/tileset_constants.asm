@@ -30,6 +30,5 @@
 	const TILESET_COPYRIGHT                   ; $1c
 	const TILESET_NINTENDO                    ; $1d
 	const TILESET_COMPANIES                   ; $1e
-	const TILESET_MINT
 	const TILESET_ISLE	                      ; $1f
 DEF NUM_TILESETS EQU const_value

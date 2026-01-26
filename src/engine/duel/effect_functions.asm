@@ -9144,15 +9144,14 @@ CardOnListIsAnEnergyEffect:
 	call GetCardIDFromDeckIndex  ; preserves af, hl, bc
 	call GetCardType  ; preserves hl, bc
 	cp TYPE_ENERGY
-	or a
 	ret
 EruptionEffect:
 	call Discardtopcardandcheckenergy
-	call z, Add10damageEffect
+	call c, Add10damageEffect
 	call SwapTurn
 	call Discardtopcardandcheckenergy
 	call SwapTurn
-	call z, Add10damageEffect
+	call c, Add10damageEffect
 	ret
 
 DiscardEachtop2ffect:

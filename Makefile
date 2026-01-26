@@ -34,7 +34,7 @@ clean: tidy
 	find src/gfx \
 	     \( -iname '*.1bpp' \
 	        -o -iname '*.2bpp' \
-	        -o -iname '*.pal' \ \
+	        -o -iname '*.pal' \
 			-o -iname '*.attrmap' \
 	        -o -iname '*.lz' \) \
 

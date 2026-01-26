@@ -38,6 +38,5 @@ Tilesets:
 	tileset CopyrightGfx,                  ; TILESET_COPYRIGHT
 	tileset NintendoGfx,                   ; TILESET_NINTENDO
 	tileset CompaniesGfx,                  ; TILESET_COMPANIES
-	tileset MintGfx,                       ; TILESET_MINT
 	tileset IsleGfx,                       ; TILESET_ISLE
 	assert_table_length NUM_TILESETS
