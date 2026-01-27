@@ -479,14 +479,14 @@ HandleSwitchDefendingPokemonEffect:
 ; attack was successful, switch Defending Pokemon
 	call SwapTurn
 	call SwapArenaWithBenchPokemon
-	call SwapTurn
 
 	xor a
 	ld [wccc5], a
 	ld [wDuelDisplayedScreen], a
 	inc a
 	ld [wDefendingWasForcedToSwitch], a
-	jp FerroCheck
+	call FerroCheck
+	jp SwapTurn
 
 ; returns carry if Defending has No Damage or Effect
 ; if so, print its appropriate text.
@@ -1170,20 +1170,36 @@ BenchSelectionMenuParameters:
 	db SYM_SPACE ; tile behind cursor
 	dw NULL ; function pointer if non-0
 
+CountHealedPKMN:
+	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
+    call GetTurnDuelistVariable
+    ld b, a
+    ld c, 0
+    ld a, DUELVARS_ARENA_CARD_FLAGS
+    call GetTurnDuelistVariable
+    ; hl = pointer to flags, starting from Arena
+
+; go through every Pokemon in the Play Area.
+.loop_play_area
+    ld a, [hli]
+    and HEALED_THIS_TURN
+    jr z, .next_pkmn
+    inc c
+.next_pkmn
+    dec b
+    jr nz, .loop_play_area
+    ld a, c
+    ret
 CycloneEffect:
-	ld a, DUELVARS_ARENA_CARD_FLAGS
-	call GetTurnDuelistVariable
-	and HEALED_THIS_TURN
-	jp nz, Add20damageEffect
+	call CountHealedPKMN
+	cp 1
+	jp c, Add20damageEffect
 	ret
 
 AquaWindEffect:
-	ld a, DUELVARS_ARENA_CARD_FLAGS
-	call GetTurnDuelistVariable
-	and HEALED_THIS_TURN
-	ret z
-	ld a, 3
-	bank1call DisplayDrawNCardsScreen
+	call CountHealedPKMN
+	cp 1
+	ret c
 	;fallthrough
 Draw3Effect:
 	ld c, 3
@@ -1315,10 +1331,12 @@ VictreebelLure_SwitchDefendingPokemon:
 	ld e, a
 	call HandleNShieldAndTransparency
 	call nc, SwapArenaWithBenchPokemon
-	call SwapTurn
 	xor a
 	ld [wDuelDisplayedScreen], a
-	jp FerroCheck
+	inc a
+	ld [wDefendingWasForcedToSwitch], a
+	call FerroCheck
+	jp SwapTurn
 
 ; If heads, defending Pokemon cant retreat next turn
 AcidEffect:
@@ -1461,13 +1479,10 @@ Teleport_PlayerSelectEffect:
 	ld [wPlayAreaSelectAction], a
 .loop
 	bank1call OpenPlayAreaScreenForSelection
-	jr c, .nope
+	jr c, .loop
 	ldh a, [hTempPlayAreaLocation_ff9d]
 	ldh [hTemp_ffa0], a
 	ret
-.nope
-	scf
-	ret	
 Teleport_AISelectEffect:
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
 	call GetTurnDuelistVariable
@@ -1476,12 +1491,13 @@ Teleport_AISelectEffect:
 	ret
 
 WaterDuplicateEffect:
-	Call AskThePlayerYesorNo
+	call IsPlayerTurn
+	jr nc, Teleport_SwitchEffect ; return if Player
+	call AskThePlayerYesorNo
 	ret nz
 	call Teleport_PlayerSelectEffect
 	;fallthrough
 Teleport_SwitchEffect:
-	ret c
 	call Teleport_CheckBench
 	ret c
 	call SwapArenaWithBenchPokemon2
@@ -6040,6 +6056,9 @@ Gale_SwitchEffect:
 	ld hl, wDealtDamage
 	ld [hli], a
 	ld [hl], a
+	inc a
+	ld [wDefendingWasForcedToSwitch], a
+	call FerroCheck
 .skip_clear_damage
 	call SwapTurn
 	call .SwitchWithRandomBenchPokemon
@@ -6062,8 +6081,11 @@ Gale_SwitchEffect:
 	ld [wDuelDisplayedScreen], a
 	ret
 
-FerroCheck:
+FerroCheck: ; needs to return with same turn player as entered it
 	bank1call HandleBetweenTurnKnockOuts
+	call CountOppPrizes
+	or a
+	ret z
 	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
 	ret c
 	ld de, FERROTHORN
@@ -6073,13 +6095,18 @@ FerroCheck:
 	ld e, PLAY_AREA_ARENA
 	call Put1DamageCounterOnTarget
 .next
-	call IsPlayerTurn
-	ret c
-	ld de, SANDACONDA
-	call CountPokemonIDInPlayArea
+	ld a, [wDefendingWasForcedToSwitch]
+	or a
 	ret z
-.discard_1	
-	ld a, 1
+	xor a
+	ld [wDefendingWasForcedToSwitch], a
+	ld de, SANDACONDA	
+	call CountPokemonIDInPlayArea
+	or a
+	ret z
+; discards cards from the turn holder's deck
+; input: a = number of cards to discard
+.discard_a 
 	ld [hTemp_ffa0], a
 	call GlowAnimationsEffect
 	jp Wildfire_DiscardDeckEffect
@@ -6594,6 +6621,8 @@ GamblerEffect:
 	call Func_2c0bd
 	ld a, DUELVARS_NUMBER_OF_CARDS_IN_HAND
 	call GetNonTurnDuelistVariable
+	or a
+	ret z
 	ld c, a
 
 ; correct number of cards to draw is in c
@@ -8341,13 +8370,13 @@ BossOrders_SwitchEffect:
 	call Func_2fea9
 
 ; switch Arena card
+	call ClearDamageReductionSubstatus2
 	call SwapTurn
 	call SwapArenaWithBenchPokemon2
-	call SwapTurn
-	call ClearDamageReductionSubstatus2
+	call FerroCheck	
 	xor a
 	ld [wDuelDisplayedScreen], a
-	jp FerroCheck
+	jp SwapTurn
 
 SwapArenaWithBenchPokemon2:
 	ldh a, [hTemp_ffa0]
@@ -8664,9 +8693,14 @@ SatelliteBeam_AIEffect:
 	jp SetDefiniteAIDamage
 SatelliteBeam_DamageBoostEffect:
 	call SwapTurn
-	call ZCommand_DamageBoostEffect
-	jp SwapTurn
-
+  	call CreateEnergyCardListFromDiscardPile_OnlyBasic
+	call SwapTurn
+	ret c
+	call CountCardsInDuelTempList
+	cp 12
+  	jp c, CapDamageEffect 
+	call ATimes10
+	jp AddToDamage
 ; +10 damage per Pokémon in discard pile (up to 5)
 SoulBurner_DamageBoostEffect:
 	call SwapTurn
@@ -9045,10 +9079,12 @@ FlareCommand_AssertPokemonInBench:
     ldh [hTempPlayAreaLocation_ff9d], a
     call SetUsedPokemonPowerThisTurn
 	call VictreebelLure_SwitchDefendingPokemon
+	jp GlowAnimationsEffect
+FlareCommand2:
 	call PlayerPickFireEnergyCardToDiscard
+	ret z
 	call DiscardSelectedEnergyEffect
-	call GlowAnimationsEffect
-
+	;falltrough	
 LureAbility_AssertPokemonInBench:
     call VictreebelLure_AssertPokemonInBench
     ret c
@@ -9298,9 +9334,9 @@ Burstinginferno_DiscardDeckEffect:
 	jr nz, .loop
 	ret
 SprintEffect:
+	call SetUsedPokemonPowerThisTurn
 	farcall SprintEffect2
-	ret
-
+	ret 
 Sprint_Check:
   call DeckCheck
   ret c
@@ -9896,17 +9932,18 @@ DiscardtopCardsffect:
 
 DiscardEachtop2ffect:
 	ld a, 2
-	ld [hTemp_ffa0], a
-	call GlowAnimationsEffect
-	call Wildfire_DiscardDeckEffect
-	call WaitForWideTextBoxInput
-	call SwapTurn
-	call Wildfire_DiscardDeckEffect
-	call SwapTurn
+	call EachTop
 	jp Deal10DamageToSelfEffect
-
+EachTop:
+	push af
+	call DiscardtopCardsffect
+	pop af
+	call SwapTurn
+	call DiscardtopCardsffect
+	jp SwapTurn
 MountainEaterEffect:
-	call FerroCheck.discard_1
+	ld a, 1
+	call FerroCheck.discard_a
 	ld de, 10
 	jp ApplyAndAnimateHPRecovery
 
@@ -10470,12 +10507,13 @@ AttractEffect:
 
 CallBackSelection:
 	call SwapTurn
-	jp Revive_PlayerSelection
-
-CallBack_PlaceInPlayAreaEffect:
-	call Revive_PlaceInPlayAreaEffect
+	call Revive_PlayerSelection
 	jp SwapTurn
-
+CallBack_PlaceInPlayAreaEffect:
+	cp TYPE_ENERGY
+	ret nc
+	call Revive_PlaceInPlayAreaEffect
+	ret
 AbraConfusionEffect:
 	call IsActiveDamaged
 	jp z, ConfusionEffect
@@ -10863,7 +10901,6 @@ CountDamagedPKMN:
 	ret
 
 MegatonHammerEffect:
-	call Deal20DamageToSelfEffect
 	ldtx de, IfTailsYourPokemonBecomesConfusedText
 	call TossCoin_BankB
 	jp c, Add40damageEffect

@@ -1609,7 +1609,7 @@ VineInviteName:
 	done
 
 VineInviteDescription:
-	text "After doing damage, Switch in 1 of"
+	text "Before doing damage, Switch in 1 of"
 	line "your opponent's Benched PKMN to the"
 	line "Active Spot.Then, The Defending PKMN"
 	line "Retreat cost is 1 <COLORLESS> More until the"

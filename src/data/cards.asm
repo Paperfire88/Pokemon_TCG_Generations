@@ -7630,9 +7630,9 @@ MismagiusCard:
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
 	dw SleepLureEffectCommands ; effect commands
-	db NONE ; flags 1
+	db INFLICT_SLEEP ; flags 1
 	db SWITCH_OPPONENT_POKEMON ; flags 2
-	db INFLICT_SLEEP ; flags 3
+	db NONE ; flags 3
 	db 0
 	db ATK_ANIM_LURE ; animation
 

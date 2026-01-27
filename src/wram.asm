@@ -695,6 +695,7 @@ wPreEvolutionPokemonCard:: ; ccee
 ; whether Defending Pokemon was forced to switch due to an attack
 ; determines whether DUELVARS_ARENA_CARD_LAST_TURN_DAMAGE
 ; gets zeroed or gets updated with wDealtDamage
+; now used to make sure Sandaconda doesn't activate when the turn player forces an opponent out 
 wDefendingWasForcedToSwitch:: ; ccef
 	ds $1
 

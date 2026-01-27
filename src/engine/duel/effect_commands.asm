@@ -135,8 +135,7 @@ ApplinStunSporeEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Paralysis50PercentEffect
 	db  $00
 ExeggutorTeleportEffectCommands:
-	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Teleport_SwitchEffect
-	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, Teleport_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, WaterDuplicateEffect
 	dbw EFFECTCMDTYPE_AI_SELECTION, Teleport_AISelectEffect
 	db  $00
 
@@ -301,6 +300,7 @@ FlailEffectCommands:
 
 BUIZELHeadacheEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, HeadacheEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Deal10DamageToSelfEffect
 	db  $00
 
 FurySwipesEffectCommands:
@@ -1366,7 +1366,7 @@ SmogScreenAttackEffectCommands:
 	db  $00	
 
 SprintEffectCommands:
-	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Sprint_Check
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, Sprint_Check
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, SprintEffect
 	db  $00
 
@@ -2024,7 +2024,7 @@ DredgeUpEffectCommands:
 
 FlareCommandEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Fire_CheckEnergy
-    dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, LureAbility_AssertPokemonInBench
+    dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, FlareCommand2
     dbw EFFECTCMDTYPE_BEFORE_DAMAGE, FlareCommand_AssertPokemonInBench
     dbw EFFECTCMDTYPE_REQUIRE_SELECTION, VictreebelLure_SelectSwitchPokemon
     db  $00
@@ -2508,8 +2508,8 @@ SmackDownEffectCommands:
 
 MegatonHammerEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, MegatonHammerEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Deal20DamageToSelfEffect
 	db  $00	
-
 DisruptiveSignalEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, DisruptiveSignalEffect
 	db $00

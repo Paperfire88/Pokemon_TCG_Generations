@@ -730,9 +730,7 @@ SprintEffect2:
 	dec c
 	jr nz, .draw_loop
 .done
-	farcall SetUsedPokemonPowerThisTurn
 	ret
-
 PlayerYesOrNoSelection:
 .select_deck
     bank1call DrawDuelMainScene
