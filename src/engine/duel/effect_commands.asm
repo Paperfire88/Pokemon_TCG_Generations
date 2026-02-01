@@ -1115,7 +1115,6 @@ PokemonFluteEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, PokemonFlute_BenchCheck
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, PokemonFlute_PlayerSelection
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, PokemonFlute_PlaceInPlayAreaText
-	dbw EFFECTCMDTYPE_AI_SELECTION, PokemonFlute_PlayerSelection
 	db  $00
 
 RareCandyEffectCommands:
@@ -1415,8 +1414,8 @@ HazardousEffectCommands:
 	db  $00
 
 HydroDrainEffectCommands:
-	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, OmastarWaterGunEffect
-	dbw EFFECTCMDTYPE_AI, OmastarWaterGunEffect
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, SeadraWaterGunEffect
+	dbw EFFECTCMDTYPE_AI, SeadraWaterGunEffect
 	dbw EFFECTCMDTYPE_AFTER_DAMAGE, AbsorbEffect
 	db  $00
 
@@ -1947,7 +1946,7 @@ XScissorEffectCommands:
 
 CallBackEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, PokemonFlute_BenchCheck
-	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, CallBackSelection
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, PokemonFlute_PlayerSelection
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, CallBack_PlaceInPlayAreaEffect
 	db  $00	
 

@@ -7041,7 +7041,6 @@ PokemonFlute_PlayerSelection:
 	ldh a, [hTempCardIndex_ff98]
 	ldh [hTemp_ffa0], a
 	ret
-
 PokemonFlute_PlaceInPlayAreaText:
 ; place selected card in non-Turn Duelists Bench
 	call SwapTurn
@@ -7996,8 +7995,6 @@ Revive_PlaceInPlayAreaEffect:
 	add 5 ; round up HP to nearest 10
 .rounded
 	ld [hl], a
-	call IsPlayerTurn
-	ret c ; done if Player played Revive
 
 ; display card
 	ldh a, [hTemp_ffa0]
@@ -10505,15 +10502,10 @@ AttractEffect:
 	call VictreebelLure_SwitchDefendingPokemon
 	jp ConfusionEffect
 
-CallBackSelection:
-	call SwapTurn
-	call Revive_PlayerSelection
-	jp SwapTurn
 CallBack_PlaceInPlayAreaEffect:
-	cp TYPE_ENERGY
-	ret nc
+	call SwapTurn
 	call Revive_PlaceInPlayAreaEffect
-	ret
+	jp SwapTurn
 AbraConfusionEffect:
 	call IsActiveDamaged
 	jp z, ConfusionEffect
