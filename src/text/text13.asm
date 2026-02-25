@@ -156,7 +156,7 @@ ZzzapName:
 	done
 
 ZzzapDescription:
-	text "If the Defending PKMN has a PKMN PWR"
+	text "If the Defending PKMN has an Ability"
 	line "do 10 damage to each of your opp."
 	line "Benched PKMN (Don't apply Weakness"
 	line "or Resistance)."
@@ -167,11 +167,10 @@ StrangeEvolutionName:
 	done
 
 StrangeEvolutionPichuDescription:
-	text "Heal all damage, Status Conditions"
-	line "and/or Effects affecting this PKMN."
-	line "then, until the end of this Duel,"
-	line "replace this card with a copy of"
-	line "[PIKACHU] from your deck."
+	text "Search your deck for an [PIKACHU]"
+	line "and put it on this PKMN (This counts"
+	line "as evolving this PKMN). then, that"
+	line "PKMN is treated as a Stage 1 PKMN."
 	done 
 
 ChooseAPikachuFromDeckText:
@@ -188,10 +187,10 @@ VoltTackleName:
 	done
 
 VoltTackleDescription:
-	text "This PKMN takes 20 Damage. If you"
-	line "have 3 or more [PIKACHU] and/or"
-	line "[RAICHU] in Play, this attack"
-	line "does +20 damage."
+	text "It takes 20 Damage, Unless is an"
+	line "Evolved PKMN. [If you have 3 or more"
+	line "[PIKACHU] and/or [RAICHU] in Play,"
+	line "this attack does +30 damage."
 	done
 
 CircleCircuitName:
@@ -210,8 +209,9 @@ EnergizeName:
 EnergizeDescription:
 	text "Attach 1 <LIGHTNING> Energy card from your"
 	line "discard pile to 1 of your PKMN."
-	line "If [PICHU] is in your Bench, attach"
-	line "up to 2 to This PKMN instead."
+	line "[If this PKMN has a [PICHU] as is"
+	line "basic PKMN, attach up to 2 energies"
+	line "to this PKMN instead.]"
 	done	
 
 NihilegoName:
@@ -227,7 +227,7 @@ VoidTentaclesName:
 	done
 
 VoidTentaclesDescription:
-	text "If the Defending PKMN has a PKMN PWR"
+	text "If the Defending PKMN has an Ability"
 	line "it is now Confused and Poisoned."
 	done
 
@@ -545,17 +545,16 @@ GutBlowName:
 	done
 
 GutBlowDescription:
-	text "If the Defending PKMN has a PKMN PWR"
+	text "If the Defending PKMN has an Ability"
 	line "this attack does +20 more damage."
 	done 
 
 StrangeEvolutionTyrogueDescription:
-	text "Heal all damage, Status Conditions"
-	line "and/or Effects affecting this PKMN."
-	line "then, until the end of this Duel,"
-	line "replace this card with a copy of"
-	line "[HITMONCHAN], [HITMONLEE] or "
-	line "[HITMONTOP] from your deck."
+	text "Search your deck for a [HITMONCHAN],"
+	line "[HITMONLEE], or [HITMONTOP] and put"
+	line "it on this PKMN (this counts as"
+	line "evolving this PKMN). then, that PKMN"
+	line "is treated as a Stage 1 PKMN."
 	done 
 
 ChooseAHitmonFromDeckText:
@@ -576,9 +575,9 @@ TripleKickName:
 	done
 
 TripleKickDescription:
-	text "Flip 3 coins. This attack does 30"
-	line "damage for each heads. If [TYROGUE]"
-	line "is in your Bench, Draw 2 cards."
+	text "Flip 3 coins. it does 30 damage for"
+	line "each heads. [If this PKMN is an"
+	line "Evolved PKMN, Draw 2 cards.]"
 	done
 
 SpecialPunchName:
@@ -586,16 +585,16 @@ SpecialPunchName:
 	done
 
 SpecialPunchDescription:
-	text "Don't apply Weakness/Resistance for"
-	line "this attack. If [TYROGUE] is in your"
-	line "bench, Heal 20 damage from this PKMN"
+	text "Don't apply Weakness/Resistance."
+	line "[If this PKMN is an Evolved PKMN,"
+	line "Heal 20 damage from this PKMN.]"
 	done 
 
 HighJumpKickDescription:
-	text "Flip a coin. If heads, this attack"
-	line "does +10 damage; if tails, take 10"
-	line "damage. If [TYROGUE] is in your"
-	line "Bench, this attack does +20 damage."
+	text "Flip a coin. If heads, it does +10"
+	line "damage; if tails, take 10 damage."
+	line "[If this PKMN is an Evolved PKMN,"
+	line "it also does +20 damage.]"
 	done 
 
 VacuumWaveName:
@@ -826,10 +825,10 @@ DoubleShockName:
 	done
 
 DoubleShockDescrition:
-	text "If [ELEKID] or [MAGMORTAR] are on"
-	line "play,Flip 2 coins. If either of them"
-	line "is heads, the Defending PKMN is now"
-	line "Paralyzed."
+	text "Flip a coin. If heads, the Defending"
+	line "PKMN is now Paralyzed. [If this PKMN"
+	line "has a [ELEKID] as is basic PKMN,"
+	line "Flip 2 coins instead.]"
 	done
 
 Jangmo_oName:
@@ -938,15 +937,14 @@ IgniteName:
 	text "Ignite"
 	done
 IgniteDescription:
-	text "If the Defending PKMN has a PKMN PWR"
+	text "If the Defending PKMN has an Ability"
 	line "it's now Burned."
 	done
 StrangeEvolutionMagmarDescription:
-	text "Heal all damage, Status Conditions"
-	line "and/or Effects affecting this PKMN."
-	line "then, until the end of this Duel,"
-	line "replace this card with a copy of"
-	line "[MAGMAR] from your deck."
+	text "Search your deck for a [MAGMAR] and"
+	line "put it on this PKMN (This counts as"
+	line "evolving this PKMN). then, that PKMN"
+	line "is treated as a Stage 1 PKMN."
 	done 
 
 ChooseaMagmarFromDeckText:
@@ -1129,18 +1127,17 @@ GatherEnergyName:
 	done
 
 GatherEnergyDescription:
-	text "If the Defending PKMN has a PKMN PWR"
+	text "If the Defending PKMN has an Ability"
 	line "Search your deck for a basic Energy"
 	line "and attach it to 1 of your PKMN."
 	line "Then, shuffle your deck."
 	done
 
 StrangeEvolutionElectabuzzDescription:
-	text "Heal all damage, Status Conditions"
-	line "and/or Effects affecting this PKMN."
-	line "then, until the end of this Duel,"
-	line "replace this card with a copy of"
-	line "[ELECTABUZZ] from your deck."
+	text "Search your deck for an [ELECTABUZZ]"
+	line "and put it on this PKMN (This counts"
+	line "as evolving this PKMN). then, that"
+	line "PKMN is treated as a Stage 1 PKMN."
 	done 
 
 ChooseAELECTABUZZFromDeckText:
@@ -1246,11 +1243,10 @@ AdamantinePressName:
 	done
 
 AdamantinePressDescription:
-	text "During your opponents next turn,this"
-	line "PKMN takes -10 less damage (after"
-	line "Weakness/Resistance).If its Affected"
-	line "by a Status Condition, it also takes"
-	line "-20 less damage next turn."
+	text "During your opponents turn, this"
+	line "PKMN takes -10 less damage. [If its"
+	line "Affected by a Status Condition, it"
+	line "also takes -20 less damage.]"
 	done
 
 FutureSightName:
@@ -1471,7 +1467,7 @@ ChemicalScaleName:
 	done
 
 ChemicalScaleDescription:
-	text "If the Defending PKMN has a PKMN PWR"
+	text "If the Defending PKMN has an Ability"
 	line "it's now Burned and Confused."
 	done
 

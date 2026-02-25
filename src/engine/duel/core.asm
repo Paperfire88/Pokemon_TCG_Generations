@@ -849,8 +849,8 @@ DisplayRetreatScreen:
 	ld [$ff00+c], a
 	; accumulate selected energy card
 	ld c, 1
-	ld a, [wLoadedCard2Type]
-	cp TYPE_ENERGY_DOUBLE_COLORLESS
+	ld a, [wLoadedCard2ID]
+	cp LOW(DOUBLE_COLORLESS_ENERGY)
 	jr nz, .not_double
 	inc c
 .not_double
@@ -973,8 +973,9 @@ DuelMenu_Attack:
 	jp PrintDuelMenuAndHandleInput
 
 .can_attack
-	call .memory
-	jr nz, .can_attack_set_current_arena_card
+	call FindMemoryEnergy
+	jr nc, .can_attack_set_current_arena_card
+.non	
 	xor a  ; PLAY_AREA_ARENA
 	ldh [hTempPlayAreaLocation_ff9d], a
 	call GetCardOneStageBelow  ; preload wAllStagesIndices
@@ -1005,15 +1006,16 @@ DuelMenu_Attack:
 	cp16 BASCULEGION
 	jr z, .memory_gone
 	cp16 KINGDRA
-.memory_gone	
+.memory_gone
 	pop de
 	pop af
 	ret
 .open_attack_menu
 	push af
-	call DuelMenu_Attack.memory
-	jr nz, .dones
-	pop af
+	call FindMemoryEnergy
+	jr nc, .dones
+.non2	
+	pop af	
 	push af
 	call PrintAttackMenuSelectButtonHint
 .dones	
@@ -1025,8 +1027,9 @@ DuelMenu_Attack:
 
 .wait_for_input
 	call DoFrame
-	call .memory
-	jr nz, .start
+	call FindMemoryEnergy
+	jr nc, .start
+.non3	
 	ldh a, [hKeysPressed]
 	bit SELECT_F, a
 	jr nz, .choose_attacks_from_stage_below
@@ -1043,8 +1046,7 @@ DuelMenu_Attack:
 	jr nc, .enough_energy
 	ldtx hl, NotEnoughEnergyCardsText
 	call DrawWideTextBox_WaitForInput
-	jr .try_open_attack_menu
-
+	jp .try_open_attack_menu
 .enough_energy
 	ldh a, [hCurMenuItem]
 	add a
@@ -1105,6 +1107,30 @@ DuelMenu_Attack:
 	ld [wSelectedDuelSubMenuItem], a
 	jp .try_open_attack_menu
 
+FindMemoryEnergy:
+    xor a ; DUELVARS_CARD_LOCATIONS
+    call GetTurnDuelistVariable
+    ld c, DECK_SIZE
+.loop_locations
+    ld a, [hli] ; gets location of i-th deck card
+    cp CARD_LOCATION_ARENA ; is it in Arena?
+    jr nz, .not_in_arena
+    ; l holds the deck index + 1, so get its card ID
+    ld a, l
+    dec a
+    call GetCardIDFromDeckIndex
+    cp16 MEMORY_ENERGY
+    jr z, .found
+.not_in_arena
+    dec c
+    jr nz, .loop_locations
+    ; not found
+    or a
+    ret
+.found
+    ; card ID was found in the Arena
+    scf
+	ret	
 ; draw the attack page of the card at wLoadedCard1 and of the attack selected in the Attack
 ; menu by hCurMenuItem, and listen for input in order to switch the page or to exit.
 OpenAttackPage:
@@ -3044,7 +3070,7 @@ DuelMenuData:
 	textitem 9,  14, CheckText
 	textitem 15, 14, RetreatText
 	textitem 3,  16, AttackText
-	textitem 9,  16, PKMNPowerText
+	textitem 9,  16, AbilityText
 	textitem 15, 16, DoneText
 	db $ff
 
@@ -4095,6 +4121,67 @@ DisplayCardPage_PokemonOverview:
 	ld a, e
 	jp PrintCardPageWeaknessesOrResistances
 
+PrintAttackOrPkmnPowerInformation2:
+	ld a, [hli]
+	or [hl]
+	ret z
+	push bc
+	push hl
+	dec hl
+	; print text ID pointed to by hl at 7,e
+	ld d, 7
+	call InitTextPrinting_ProcessTextFromPointerToID
+	pop hl
+	inc hl
+	inc hl
+	ld a, [wCardPageNumber]
+	or a
+	jr nz, .print_damage
+	dec hl
+	ld a, [hli]
+	or [hl]
+	jr z, .print_damage
+	; if in Attack menu and attack 1 description exists, print at 18,e:
+	ld b, 18
+	ld c, e
+	ld a, SYM_SPACE
+	call WriteByteToBGMap0
+.print_damage
+	inc hl
+	inc hl
+	inc hl
+	push hl
+	ld a, [hl]
+	or a
+	jr z, .print_category
+	; print attack damage at 15,(e+1) if non-0
+	ld b, 15 ; unless damage has three digits, this is effectively 16
+	ld c, e
+	inc c
+	call WriteTwoByteNumberInTxSymbolFormat
+.print_category
+	pop hl
+	inc hl
+	ld a, [hl]
+	and $ff ^ RESIDUAL
+	jr z, PrintAttackOrPkmnPowerInformation.print_energy_cost
+	cp POKEMON_POWER
+	jr z, .print_pokemon_power
+	ld bc, CARD_DATA_ATTACK1_ENERGY_COST
+	jp nc, PrintAttackOrPkmnPowerInformation.print_Resd
+	jp PrintAttackOrPkmnPowerInformation.next
+.print_pokemon_power
+	; print "PKMN PWR" at 2,e
+	ld a, $1
+	call LoadCardSet2Tiles
+	; draw the 2x2 set 2 icon of this card
+	ld a, $fc
+	lb hl, 1, 4
+	lb bc, 4, 1
+	lb de, 2, 2
+	call FillRectangle
+	pop bc
+	ret
 ; displays the name, damage, and energy cost of an attack or Pokemon power.
 ; used in the Attack menu and in the card page of a Pokemon.
 ; input:
@@ -4150,6 +4237,7 @@ PrintAttackOrPkmnPowerInformation:
 	jr nc, .print_Resd
 	; register a is DAMAGE_PLUS, DAMAGE_MINUS, or DAMAGE_X
 	; print the damage modifier (+, -, x) at 18,(e+1) (after the damage value)
+.next	
 	add SYM_PLUS - DAMAGE_PLUS
 	ld b, 18
 	ld c, e
@@ -4173,9 +4261,14 @@ PrintAttackOrPkmnPowerInformation:
 	ret
 .print_pokemon_power
 	; print "PKMN PWR" at 2,e
-	ld d, 2
-	ldtx hl, PKMNPWRText
-	call InitTextPrinting_ProcessTextFromID
+	ld a, $1
+	call LoadCardSet2Tiles
+	; draw the 2x2 set 2 icon of this card
+	ld a, $fc
+	lb hl, 1, 4
+	lb bc, 4, 1
+	lb de, 2, 10
+	call FillRectangle
 	pop bc
 	ret
 .print_Resd	
@@ -4367,7 +4460,7 @@ DisplayPokemonAttackCardPage:
 	; print name, damage, and energy cost of attack or Pokemon power starting at line 2
 	ld e, 2
 	pop hl
-	call PrintAttackOrPkmnPowerInformation
+	call PrintAttackOrPkmnPowerInformation2
 	pop hl
 ;	fallthrough
 
@@ -5586,7 +5679,14 @@ ReturnRetreatCostCardsToArena:
 ; return carry if unable to retreat this turn due to unsuccessful confusion check
 ; if successful, the retreated card is replaced with a bench Pokemon card
 AttemptRetreat:
-	call DiscardRetreatCostCards
+	ld hl, hTempRetreatCostCards
+.discard_loop
+	ld a, [hli]
+	cp $ff
+	jr z, .asm_6033
+	call DiscardCard
+	jr .discard_loop
+.asm_6033
 	ldh a, [hTemp_ffa0]
 	and CNF_SLP_PRZ
 	cp CONFUSED
@@ -6683,6 +6783,7 @@ HandleSleepCheck:
     pop hl
     push hl
     ld a, DOUBLE_POISONED
+	or BURNED
     and [hl]
     ld [hl], a
     ld a, DUEL_ANIM_HEAL
@@ -7949,7 +8050,7 @@ HandleOnPlayEnergyEffects:
 	ret
 .ConductivityScenario ;Cataclyptic code
 	call SwapTurn
-	ld a, AMPHAROS
+	ld de, AMPHAROS
 	call CountPokemonIDInPlayArea ; counts pokemon in opp's play area only.
 	call SwapTurn
 	ret nc; if not the right mon, ignore.

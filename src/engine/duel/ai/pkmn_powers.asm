@@ -23,7 +23,7 @@ HandleAIEnergyTrans:
 	ret nc ; return if no VenusaurLv67 found in own Play Area
 
 	ld de, TREVENANT
-	call CountPokemonIDInBothPlayAreas
+	call CountPokemonIDInBothArenas
 	ret c ; return if Muk found in any Play Area
 
 	ld a, [wce06]
@@ -404,7 +404,7 @@ AIEnergyTransTransferEnergyToBench:
 ; returns carry if turn ended.
 HandleAIPkmnPowers:
 	ld de, TREVENANT
-	call CountPokemonIDInBothPlayAreas
+	call CountPokemonIDInBothArenas
 	ccf
 	ret nc ; return no carry if Muk is in play
 
@@ -886,7 +886,7 @@ HandleAIlongdistancehypnosis:
 	ld a, c
 	ldh [hTemp_ffa0], a
 	ld de, TREVENANT
-	call CountPokemonIDInBothPlayAreas
+	call CountPokemonIDInBothArenas
 	ret c ; return if there's Muk in play
 
 	ld a, DUELVARS_ARENA_CARD_STATUS
@@ -911,7 +911,7 @@ HandleAIlongdistancehypnosis:
 ; handles AI logic for Cowardice
 HandleAICowardice:
 	ld de, TREVENANT
-	call CountPokemonIDInBothPlayAreas
+	call CountPokemonIDInBothArenas
 	ret c ; return if there's Muk in play
 
 	farcall AIChooseRandomlyNotToDoAction
@@ -1010,7 +1010,7 @@ HandleAIDamageSwap:
 	call CountPokemonIDInPlayArea
 	ret nc ; return if no Alakazam
 	ld de, TREVENANT
-	call CountPokemonIDInBothPlayAreas
+	call CountPokemonIDInBothArenas
 	ret c ; return if there's Muk in play
 
 ; only take damage off certain cards in Arena
@@ -1176,7 +1176,7 @@ HandleAIGoGoRainDanceEnergy:
 	call CountPokemonIDInPlayArea
 	ret nc ; return if no Blastoise
 	ld de, TREVENANT
-	call CountPokemonIDInBothPlayAreas
+	call CountPokemonIDInBothArenas
 	ret c ; return if there's Muk in play
 
 ; play all the energy cards that is needed.

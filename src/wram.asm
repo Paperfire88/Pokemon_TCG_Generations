@@ -57,7 +57,7 @@ UNION
 ; temporary list of the cards drawn from a booster pack
 wBoosterCardsDrawn:: ; c400
 wBoosterTempNonEnergiesDrawn:: ; c400
-	ds 2 * 11
+	ds 2 * 15
 wBoosterTempEnergiesDrawn:: ; c40b
 	ds 2 * 11
 wBoosterCardsDrawnEnd:: ; c416

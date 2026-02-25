@@ -804,7 +804,7 @@ ReplaceEmAllCardList:
 	card_item BRAVIARY,                  2
 	card_item PROFESSOR_OAK,           2
 	card_item IMPOSTER_PROFESSOR_OAK,  2
-	card_item LASS,                    2
+	card_item MARNIE,                    2
 	card_item BOSS_ORDERS,            3
 	deck_list_end
 

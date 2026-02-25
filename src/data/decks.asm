@@ -1175,7 +1175,7 @@ InvincibleRonaldDeck:
 	card_item ACCELGOR, 2
 	card_item PROFESSOR_OAK,     3
 	card_item IMPOSTER_PROFESSOR_OAK, 2
-	card_item LASS, 2
+	card_item MARNIE, 2
 	card_item BILL, 3
 	card_item ENERGY_REMOVAL,  4
 	card_item ENERGY_SEARCH,     3
@@ -1200,7 +1200,7 @@ LegendaryRonaldDeck:
 	card_item CHATOT,               3
 	card_item LUGIA,           1
 	card_item ZIGZAGOON, 2
-	card_item LASS, 2
+	card_item MARNIE, 2
 	card_item PROFESSOR_OAK,            4
 	card_item BILL,                     4
 	card_item POKE_BALL,	4

@@ -1,5 +1,5 @@
 BoosterSetRarityAmountsTable:
-;	db energies, commons, uncommons, rares
+; db energies, commons, uncommons, rares
 ; commons + uncommons + rares needs to be equal to 10 minus the number of energy cards
 ; defined in the pack's data below; otherwise, the number of cards in the pack won't be 10.
 IF LC_CHALLENGE == 1
@@ -9,11 +9,11 @@ IF LC_CHALLENGE == 1
 	db 0, 11, 0, 0 ; LABORATORY
 	db 0, 11, 0, 0 ; LOST_ISLE
 ELSE
-	db 0, 5, 4, 2 ; COLOSSEUM
-	db 0, 5, 4, 2 ; EVOLUTION
-	db 0, 5, 4, 2 ; MYSTERY
-	db 0, 5, 4, 2 ; LABORATORY
-	db 0, 5, 4, 2 ; LOST_ISLE
+	db 1, 8, 4, 2 ; COLOSSEUM
+	db 1, 8, 4, 2 ; EVOLUTION
+	db 0, 8, 4, 2 ; MYSTERY
+	db 1, 8, 4, 2 ; LABORATORY
+	db 0, 8, 4, 2 ; LOST_ISLE
 ENDC
 MACRO booster_set
 	db \1 >> 4
@@ -158,7 +158,7 @@ BoosterPack_ColosseumTrainer::
 	db 16 ; Darkness Type Chance
 	db 16 ; Metal Type Chance
 	db 16 ; Colorless Type Chance
-	db 100 ; Trainer Card Chance
+	db 156 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
 
 BoosterPack_EvolutionNeutral::
@@ -277,7 +277,7 @@ BoosterPack_EvolutionTrainer::
 	db 16 ; Darkness Type Chance
 	db 16 ; Metal Type Chance
 	db 16 ; Colorless Type Chance
-	db 100 ; Trainer Card Chance
+	db 156 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
 
 BoosterPack_MysteryNeutral::
@@ -365,7 +365,7 @@ BoosterPack_MysteryFightingColorless::
 	db 12 ; Trainer Card Chance
 	db 12 ; Energy Card Chance
 
-BoosterPack_MysteryTrainerColorless::
+BoosterPack_MysteryTrainer::
 	booster_set MYSTERY ; booster pack set
 	dw NULL ; energy generation function
 
@@ -379,7 +379,7 @@ BoosterPack_MysteryTrainerColorless::
 	db 16 ; Darkness Type Chance
 	db 16 ; Metal Type Chance
 	db 16 ; Colorless Type Chance
-	db 48 ; Trainer Card Chance
+	db 156 ; Trainer Card Chance
 	db 0 ; Energy Card Chance
 BoosterPack_MysteryPsychic::
 	booster_set MYSTERY ; booster pack set
@@ -511,7 +511,7 @@ BoosterPack_LaboratoryTrainer::
 	db 16 ; Darkness Type Chance
 	db 16 ; Metal Type Chance
 	db 16 ; Colorless Type Chance
-	db 100 ; Trainer Card Chance
+	db 156 ; Trainer Card Chance
 	db  0 ; Energy Card Chance
 
 BoosterPack_EnergyLightningFire::

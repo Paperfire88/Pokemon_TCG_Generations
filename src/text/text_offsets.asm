@@ -5,7 +5,7 @@ TextOffsets::
 	textpointer HandText
 	textpointer CheckText
 	textpointer AttackText
-	textpointer PKMNPowerText
+	textpointer AbilityText
 	textpointer DoneText
 	textpointer TypeText
 	textpointer RetreatText
@@ -126,7 +126,7 @@ TextOffsets::
 	textpointer ThereAreNoPokemonInPlayAreaText
 	textpointer WasKnockedOutText
 	textpointer HavePokemonPowerText
-	textpointer UnableToUsePkmnPowerDueToToxicGasText
+	textpointer UnableToUseAbilitiesDueToForetCurseText
 	textpointer PlayCheck1Text
 	textpointer PlayCheck2Text
 	textpointer SelectCheckText
@@ -2567,7 +2567,7 @@ TextOffsets::
 	textpointer SpiritombName
 	textpointer InvisibleWallName
 	textpointer InvisibleWallDescription
-	textpointer PKMNPowerCondition2
+	textpointer AbilityCondition2
 	textpointer HexName
 	textpointer BarrierName
 	textpointer SpiritombDescription
@@ -2605,7 +2605,7 @@ TextOffsets::
 	textpointer BirdName
 	textpointer CorvisquireDescription
 	textpointer CorviknightName
-	textpointer GaleName
+	textpointer GyroBallName
 	textpointer GaleDescription
 	textpointer CorviknightDescription
 	textpointer HurricaneName
@@ -2899,7 +2899,7 @@ TextOffsets::
 	textpointer	ProtectChargeName				; 0x0c1a
 	textpointer MunnaName						; 0x0c1b
 	textpointer MusharnaName						; 0x0c1c
-	textpointer TreasureRushName					; 0x0c1d
+	textpointer MakeItRainName					; 0x0c1d
 	textpointer DraconicDreamsName					; 0x0c1e
 	textpointer SlashingName					; 0x0c1f
 	textpointer	CinderCannonName					; 0x0c21
@@ -3033,7 +3033,7 @@ TextOffsets::
 	textpointer MachPunchDescription				; 0x0cb6	
 	textpointer FlipTurnName				; 0x0cb7
 	textpointer	TerasparkDescription; 0x0cb9
-	textpointer	TreasureRushDescription; 0x0cca
+	textpointer	MakeItRainNameDescription; 0x0cca
 	textpointer	SuctionHealName; 0x0ccb
 	textpointer	SuctionHealDescription; 0x0ccc
 	textpointer	GooeyName; 0x0ccd
@@ -3316,7 +3316,7 @@ TextOffsets::
 	textpointer	ChooseColorlessPKMNCardFromDeckText
 	textpointer	PsyShadowName
 	textpointer	PsyShadowDescription
-	textpointer	PKMNPowerCondition	
+	textpointer	AbilityCondition	
 	textpointer	CuttoSizeName
 	textpointer	CuttoSizeDescription
 	textpointer	RisingSwordName
@@ -3953,7 +3953,6 @@ TextOffsets::
 	textpointer HonedgeDescription
 	textpointer DoubladeName
 	textpointer DoubladeDescription
-	textpointer AegislashName
 	textpointer AegislashDescription
 	textpointer NatuName
 	textpointer NatuDescription
@@ -4265,3 +4264,62 @@ TextOffsets::
 	textpointer EruptionDescription
 	textpointer MagmaRecycleName
 	textpointer MagmaRecycleDescription
+	textpointer IronWillName
+	textpointer IronWillDescription
+	textpointer SteelTackleName
+	textpointer SteelTackleDescription
+	textpointer GraniteHeadName
+	textpointer MetallicStrikesName
+	textpointer MetallicStrikesDescription
+	textpointer RecycleEnergyName
+	textpointer RecycleEnergyDescription
+	textpointer MemoryEnergyName
+	textpointer MemoryEnergyDescription
+	textpointer SwitchOutPromptText
+	textpointer MiracleOracleName
+	textpointer MiracleOracleDescription
+	textpointer MirrorDrawName
+	textpointer MirrorDrawDescription
+	textpointer DigUnderName
+	textpointer GuardPressName
+	textpointer IronTailDescription
+	textpointer IronTailName
+	textpointer SmashTurnName
+	textpointer ProcedureForBurningFireText
+	textpointer DiscardingXCardsPromptText
+	textpointer CrimsonFireName
+	textpointer CrimsonFireDescription
+	textpointer DiscardedCardText
+	textpointer IronBarbsName
+	textpointer IronBarbsDescription
+	textpointer ShiftGearName
+	textpointer ShiftGearDescription
+	textpointer GearGrindName
+	textpointer ProcedureForShiftGearText
+	textpointer MagneticGearsDescription
+	textpointer MagneticGearsName
+	textpointer NoMetalEnergyText
+	textpointer AegislashBladeFormeName
+	textpointer AegislashShieldFormeName
+	textpointer StanceChangeName
+	textpointer StanceChangeBladeDescription
+	textpointer KingsBladeName
+	textpointer KingsBladeDescription
+	textpointer KingsShieldName
+	textpointer KingsShieldDescription
+	textpointer StanceChangeShieldDescription
+	textpointer ShadowSneakName
+	textpointer ShadowSneakDescription
+	textpointer DualBladesName
+	textpointer	MendName
+	textpointer	MendDescription
+	textpointer	MagmaPunchName
+	textpointer	MagmaPunchDescription
+	textpointer	FlameBazookaName
+	textpointer	FlameBazookaDecription
+	textpointer Reduce20DamageCheckText
+	textpointer ProtectChargeDescription
+	textpointer PlasmaPunchName
+	textpointer PlasmaPunchDescription
+	textpointer PhantomIllusionName
+	textpointer PhantomIllusionDescription

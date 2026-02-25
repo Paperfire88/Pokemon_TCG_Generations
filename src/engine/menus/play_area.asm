@@ -308,7 +308,7 @@ OpenInPlayAreaScreen_TextTable:
 	tx HandText               ; INPLAYAREA_PLAYER_BENCH_1
 	tx CheckText              ; INPLAYAREA_PLAYER_BENCH_2
 	tx AttackText             ; INPLAYAREA_PLAYER_BENCH_3
-	tx PKMNPowerText          ; INPLAYAREA_PLAYER_BENCH_4
+	tx AbilityText          ; INPLAYAREA_PLAYER_BENCH_4
 	tx DoneText               ; INPLAYAREA_PLAYER_BENCH_5
 	dw NULL                   ; INPLAYAREA_PLAYER_ACTIVE
 	tx DuelistHandText_2      ; INPLAYAREA_PLAYER_HAND
@@ -319,7 +319,7 @@ OpenInPlayAreaScreen_TextTable:
 	tx HandText               ; INPLAYAREA_OPP_BENCH_1
 	tx CheckText              ; INPLAYAREA_OPP_BENCH_2
 	tx AttackText             ; INPLAYAREA_OPP_BENCH_3
-	tx PKMNPowerText          ; INPLAYAREA_OPP_BENCH_4
+	tx AbilityText          ; INPLAYAREA_OPP_BENCH_4
 	tx DoneText               ; INPLAYAREA_OPP_BENCH_5
 
 MACRO in_play_area_cursor_transition

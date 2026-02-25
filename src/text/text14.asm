@@ -186,7 +186,7 @@ RareCandyDescription2:
 	done		
 MysteriousFossillDescriptionCont:
 	text "On your turn, you may discard this"
-	line "card. (Use the PKMN Power menu.)"
+	line "card. (Use the Abilities menu.)"
 	line ""
 	line "Booster Pack: (LABORATORY)"
 	line "OG Set: (Astral Radiance 157)"
@@ -664,11 +664,11 @@ SpectralFlamesDescription:
 BurningVoiceDescription:
 	text "It does +30 damage if the Defending"
 	line "PKMN is Burned. After doing damage:"
-	line "If the Defending PKMN has a PKMN PWR"
+	line "If the Defending PKMN has an Ability"
 	line "it's now Burned."
 	done
 SharpSickleDescription:
-	text "If the Defending PKMN has a PKMN PWR"
+	text "If the Defending PKMN has an Ability"
 	line "it does +30 more Damage."
 	done
 MagnemiteAndFriendsDescriptionText:
@@ -793,9 +793,6 @@ DoubladeDescription:
 	line "OG Set: (Primal Clash 99)"
 	line "OG illustrator: (Kanako Eo)"	
 	done	
-AegislashName:
-	text "Aegislash"
-	done
 AegislashDescription:
 	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Paradox Rift 135)"

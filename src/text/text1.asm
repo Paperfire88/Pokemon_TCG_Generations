@@ -13,8 +13,8 @@ AttackText:
 	text "Attack"
 	done
 
-PKMNPowerText:
-	text "PKMN Power"
+AbilityText:
+	text "Abilities"
 	done
 
 DoneText:
@@ -38,7 +38,7 @@ ResistanceText:
 	done
 
 PKMNPWRText:
-	text "PKMN PWR"
+	text "Ability"
 	done
 
 LengthText:
@@ -240,12 +240,12 @@ MayOnlyAttachOneEnergyCardText:
 	done
 
 UseThisPokemonPowerText:
-	text "Use this Pokémon Power?"
+	text "Use this Ability?"
 	done
 
 PokemonPowerSelectNotRequiredText:
 	text "You do not need to select the"
-	line "Pokémon Power to use it."
+	line "Ability to use it."
 	done
 
 DiscardDescription:
@@ -253,7 +253,7 @@ DiscardDescription:
 	line "your turn."
 	line "It will be counted as a Knock Out"
 	line "(This Discard is not"
-	line "a Pokémon Power)"
+	line "a Ability)"
 	done
 
 WillDrawNPrizesText:
@@ -376,7 +376,7 @@ RetreatWasUnsuccessfulText:
 
 WillUseThePokemonPowerText:
 	text "<RAMTEXT> will use the"
-	line "Pkmn Power <RAMTEXT>."
+	line "Ability <RAMTEXT>."
 	done
 
 FinishedTurnWithoutAttackingText:
@@ -556,14 +556,13 @@ WasKnockedOutText:
 
 HavePokemonPowerText:
 	text "<RAMTEXT> have"
-	line "Pokémon Power."
+	line "an Ability."
 	done
 
-UnableToUsePkmnPowerDueToToxicGasText:
-	text "Unable to us Pokémon Power due to"
+UnableToUseAbilitiesDueToForetCurseText:
+	text "Unable to use Abilities due to"
 	line "the effect of Forest Curse."
 	done
-
 PlayCheck1Text:
 	text "  Play"
 	line "  Check"
@@ -946,7 +945,7 @@ SuccessCheckIfHeadsAttackIsSuccessfulText:
 
 SuccessCheckIfHeadsPowerIsSuccessfulText:
 	text "Success check!!!"
-	line "If Heads, PKMN Power is successful!"
+	line "If Heads, Ability is successful!"
 	done
 
 SuccessCheckIfHeadsEffectIsSuccessfulText:

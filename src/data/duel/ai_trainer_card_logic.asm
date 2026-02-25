@@ -34,7 +34,7 @@ AITrainerCardLogic:
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_10, MR_FUJI,                AIDecide_MrFuji,                         AIPlay_MrFuji
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_03, SCOOP_UP,               AIDecide_ScoopUp,                        AIPlay_ScoopUp
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_03, RECYCLE,                AIDecide_Recycle,                        AIPlay_Recycle
-	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_05, LASS,                   AIDecide_Lass,                           AIPlay_Lass
+	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_05, MARNIE,                   AIDecide_Lass,                           AIPlay_Lass
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_04, ITEM_FINDER,            AIDecide_ItemFinder,                     AIPlay_ItemFinder
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_01, IMAKUNI_CARD,           AIDecide_Imakuni,                        AIPlay_Imakuni
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_01, COPYCAT,                AIDecide_Gambler,                        AIPlay_Gambler

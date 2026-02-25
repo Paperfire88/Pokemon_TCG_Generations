@@ -1174,11 +1174,10 @@ Text05d9:
 
 Text05da:
 	text "Some Pokémon have special"
-	line "abilities called Pokémon Powers."
-	line "Some Pokémon Powers are used as"
-	line "soon as the Pokémon is played,"
-	line "while others must be used by"
-	line "choosing the PKMN Power command."
+	line "abilities. Some Abilities are"
+	line "used as soon as the Pokémon is"
+	line "played, while others must be used by"
+	line "choosing the Abilities command."
 	line "There are many different Pokémon"
 	line "Powers, so read each card's text"
 	line "carefully."

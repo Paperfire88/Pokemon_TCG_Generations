@@ -1231,8 +1231,8 @@ DoubleColorlessEnergyName:
 	done
 
 DoubleColorlessEnergyDescription:
-	text "Provides <COLORLESS><COLORLESS> Energy. (Doesn't"
-	line "count as a basic Energy card.) "
+	text "[Special Energy Card]"
+	line "Provides 2 <COLORLESS><COLORLESS> Energy."
 	done
 
 ChikoritaName:
@@ -1384,10 +1384,9 @@ TwineedleName:
 	text "Twineedle"
 	done
 DoubleAttackX30Description:
-	text "Flip 2 coins. This attack does 30"
-	line "damage times the number of heads."
+	text "Flip 2 coins. it does 30 damage"
+	line "for each heads."
 	done
-
 PoisonBeeName:
 	text "Poison Bee"
 	done
@@ -1476,7 +1475,7 @@ XScissorName:
 	done
 
 XScissorDescription:
-	text "If the Defending PKMN has a PKMN PWR"
+	text "If the Defending PKMN has an Ability"
 	line "this attack does +40 more damage."
 	done 
 

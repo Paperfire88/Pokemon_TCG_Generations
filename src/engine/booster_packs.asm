@@ -185,8 +185,8 @@ CardTypeTable:
 	db BOOSTER_CARD_TYPE_ENERGY    ; TYPE_ENERGY_WATER
 	db BOOSTER_CARD_TYPE_ENERGY    ; TYPE_ENERGY_FIGHTING
 	db BOOSTER_CARD_TYPE_ENERGY    ; TYPE_ENERGY_PSYCHIC
-	db BOOSTER_CARD_TYPE_ENERGY   ; TYPE_ENERGY_DARKNESS
-	db BOOSTER_CARD_TYPE_ENERGY   ; TYPE_ENERGY_METAL
+	db BOOSTER_CARD_TYPE_ENERGY    ; TYPE_ENERGY_DARKNESS
+	db BOOSTER_CARD_TYPE_ENERGY    ; TYPE_ENERGY_METAL
 	db BOOSTER_CARD_TYPE_ENERGY    ; TYPE_ENERGY_COLORLESS
 	db BOOSTER_CARD_TYPE_TRAINER   ; TYPE_TRAINER
 	assert_table_length NUM_CARD_TYPES
@@ -637,7 +637,7 @@ BoosterDataJumptable:
 	dw BoosterPack_MysteryWaterColorless
 	dw BoosterPack_MysteryLightningColorless
 	dw BoosterPack_MysteryFightingColorless
-	dw BoosterPack_MysteryTrainerColorless
+	dw BoosterPack_MysteryTrainer
 	dw BoosterPack_LaboratoryMostlyNeutral
 	dw BoosterPack_LaboratoryGrass
 	dw BoosterPack_LaboratoryWater

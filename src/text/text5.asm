@@ -198,8 +198,8 @@ CombosBookName:
 
 CombosBookText:
 	text "You can create powerful combos by"
-	line "combining the abilities of 2 cards."
-	line "Pokémon Powers and Trainer Cards "
+	line "combining the power of 2 cards."
+	line "Abilities and Trainer Cards "
 	line "are useful in creating combos! "
 	line "Find card combinations that will"
 	line "create your own powerful combos."
@@ -226,8 +226,8 @@ ToxicGasBookName:
 ToxicGasBookText:
 	text "Trevenant's Forest Curse is very"
 	line "powerful! It can block all Pokémon"
-	line "Powers! But be careful because it"
-	line "also blocks your own Powers!"
+	line "Abilities! But be careful because it"
+	line "also blocks your own Abilities!"
 	done
 
 RainDanceBookName:
@@ -235,7 +235,7 @@ RainDanceBookName:
 	done
 
 RainDanceBookText:
-	text "Greninja's Pokémon Power, Rain "
+	text "Greninja's Ability, Rain "
 	line "Dance, is a great boon for your"
 	line "Water Pokémon! You can attach "
 	line "as many Water Energy cards as "
@@ -248,7 +248,7 @@ SelfdestructBookName:
 	done
 
 SelfdestructBookText:
-	text "Emboar's Pokémon Power, Fire Starter"
+	text "Emboar's Ability, Fire Starter"
 	line "is a great way to Recover your"
 	line "discarted Fire Energy cards!"
 	line "Re-ignite your benched Pokémon and"
@@ -376,7 +376,7 @@ FightingPokemonAndCombosBookText:
 	text "It is difficult to create combos"
 	line "with a Fighting Pokémon, since"
 	line "not many Fighting Pokémon have "
-	line "Pokémon Power. However, their "
+	line "Abilities. However, their "
 	line "strong attacks make up for this."
 	done
 
@@ -467,7 +467,7 @@ ParalyzeBookText:
 	text "When a Pokémon is paralyzed, it"
 	line "is unable to do anything."
 	line "It cannot retreat, attack or use"
-	line "Pokémon Power, but the player may"
+	line "Abilities, but the player may"
 	line "use any cards in his or her hand."
 	line "Paralysis lasts until the end of "
 	line "the paralyzed player's turn. "
@@ -579,7 +579,7 @@ SleepBookText:
 	text "When a Pokémon is asleep,"
 	line "it is unable to do anything."
 	line "It cannot attack, retreat or use"
-	line "Pokémon Power. A coin will be "
+	line "Abilities. A coin will be "
 	line "flipped at the end of each player's "
 	line "turn. If the coin comes up heads, "
 	line "the Pokémon will wake up. If it's"
@@ -588,16 +588,15 @@ SleepBookText:
 	done
 
 PokemonPowerBookName:
-	text "Pokémon Power"
+	text "Abilities"
 	done
 
 PokemonPowerBookText:
 	text "Some Pokémon have special "
-	line "abilities called Pokémon Power."
-	line "They are very powerful abilities!"
+	line "abilities. They are very powerful!"
 	line "They can be used before attacking, "
 	line "even if the Pokémon with the "
-	line "Pokémon Power is still on the Bench."
+	line "Ability is still on the Bench."
 	line "There are many different Pokémon "
 	line "Powers, so check your cards!"
 	done

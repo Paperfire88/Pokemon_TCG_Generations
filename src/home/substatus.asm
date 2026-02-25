@@ -96,9 +96,7 @@ HandleDamageReductionExceptSubstatus2::
 	jr z, .prevent_less_than_30_damage ; invisible wall
 	cphl KABUTO
 	jr z, .halve_damage2 ; kabuto armor
-	cphl GLALIE
-	jr z, .ice_wall ; kabuto armor
-	ret
+	ret	
 .no_damage
 	ld de, 0
 	ret
@@ -107,12 +105,7 @@ HandleDamageReductionExceptSubstatus2::
 	add hl, de
 	ld e, l
 	ld d, h
-	ret
-.ice_wall
-	ld a, DUELVARS_ARENA_CARD_STATUS
-	call GetTurnDuelistVariable
-	or a
-	ret z	
+	ret	
 .reduce_damage_by_20
 	ld hl, -20
 	add hl, de
@@ -189,6 +182,8 @@ HandleStrikesBack_AgainstDamagingAttack::
 	ret nz
 	ld a, [wTempNonTurnDuelistCardID] ; ID of defending Pokemon
 	cp KROOKODILE
+	jr z, .next
+	cp16 SANDSLASH
 	ret nz
 	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
 	ret c
@@ -198,10 +193,40 @@ HandleStrikesBack_AgainstDamagingAttack::
 
 	ld a, [wTempPlayAreaLocation_cceb] ; defending Pokemon's PLAY_AREA_*
 	or a ; cp PLAY_AREA_ARENA
-	jr nz, .in_bench
+	jr nz, DealDamagePokePowerEffect
 	call CheckCannotUseDueToStatus
 	ret c
-.in_bench
+	push hl
+	push de
+	; subtract 10 HP from attacking Pokemon (turn holder's arena Pokemon)
+	call SwapTurn
+	ld a, DUELVARS_ARENA_CARD
+	call GetTurnDuelistVariable
+	call LoadCardDataToBuffer2_FromDeckIndex
+	ld a, DUELVARS_ARENA_CARD_HP
+	call GetTurnDuelistVariable
+	push af
+	push hl
+	ld de, 10
+	call SubtractHP
+	ld a, [wLoadedCard2ID]
+	ld [wTempNonTurnDuelistCardID], a
+	ld hl, 10
+	jr DealDamagePokePowerEffect.load_damage
+.next	
+	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
+	ret c
+	ld a, [wLoadedAttackCategory] ; category of attack used
+	cp POKEMON_POWER	
+	ret z
+
+	ld a, [wTempPlayAreaLocation_cceb] ; defending Pokemon's PLAY_AREA_*
+	or a ; cp PLAY_AREA_ARENA
+	jr nz, DealDamagePokePowerEffect
+	call CheckCannotUseDueToStatus
+	ret c
+	; falltrough
+DealDamagePokePowerEffect::
 	push hl
 	push de
 	; subtract 10 HP from attacking Pokemon (turn holder's arena Pokemon)
@@ -218,6 +243,7 @@ HandleStrikesBack_AgainstDamagingAttack::
 	ld a, [wLoadedCard2ID]
 	ld [wTempNonTurnDuelistCardID], a
 	ld hl, 20
+.load_damage
 	call LoadTxRam3
 	ld hl, wLoadedCard2Name
 	ld a, [hli]
@@ -501,7 +527,7 @@ CheckCannotUseDueToStatus_OnlyToxicGasIfANon0::
 .check_toxic_gas
 	push de
 	ld de, TREVENANT
-	call CountPokemonIDInBothPlayAreas
+	call CountPokemonIDInBothArenas
 	pop de
 	ldtx hl, UnableDueToToxicGasText
 .done
@@ -529,7 +555,28 @@ CountPokemonIDInBothPlayAreas::
 .found
 	pop bc
 	ret
-
+; return, in a, the amount of times that the Pokemon card with a given ID is found in the
+; arena of both duelists.
+; if the arena Pokemon is asleep, confused, or paralyzed (Pkmn Power-incapable), it doesn't count.
+; input:
+; - de = Pokemon card ID to search
+CountPokemonIDInBothArenas::
+	push bc
+	push de
+	call CheckPokemonIDInArena
+	ld c, a
+	pop de
+	call SwapTurn
+	call CheckPokemonIDInArena
+	call SwapTurn
+	add c
+	or a
+	scf
+	jr nz, .found
+	or a
+.found
+	pop bc
+	ret
 ; return, in a, the amount of times that the Pokemon card with a given ID is found in the
 ; turn holder's play area. Also return carry if the Pokemon card is at least found once.
 ; if the arena Pokemon is asleep, confused, or paralyzed (Pkmn Power-incapable), it doesn't count.
@@ -658,7 +705,7 @@ GetLoadedCard1RetreatCost::
 	ret
 .dodrio_found
 	ld de, TREVENANT
-	call CountPokemonIDInBothPlayAreas
+	call CountPokemonIDInBothArenas
 	jr c, .muk_found
 	ld a, DUELVARS_ARENA_CARD_SUBSTATUS3
 	call GetTurnDuelistVariable
@@ -737,7 +784,7 @@ CheckCantUseTrainerDueToFlag:
 	ret
 
 checkifxisinplay::
-	ld de, LASS
+	ld de, MARNIE
 	call SwapTurn
 	call CountPokemonIDInPlayArea
 	call SwapTurn
@@ -751,7 +798,7 @@ IsPrehistoricPowerActive::
 	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
 	ret c
 	ld de, TREVENANT
-	call CountPokemonIDInBothPlayAreas
+	call CountPokemonIDInBothArenas
 	ldtx hl, UnableToEvolveDueToPrehistoricPowerText
 	ccf
 	ret
@@ -816,7 +863,7 @@ IsRainDanceActive::
 	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
 	ret c
 	ld de, TREVENANT
-	call CountPokemonIDInBothPlayAreas
+	call CountPokemonIDInBothArenas
 	ccf
 	ret
 
@@ -883,6 +930,23 @@ HandleStrikesBack_AgainstResidualAttack::
 	ld a, [wTempNonTurnDuelistCardID]
 	cp KROOKODILE
 	jr z, .strikes_back
+	cp16 SANDSLASH
+	jr z, .iron_barbs
+	ret
+.iron_barbs	
+	ld a, [wLoadedAttackCategory]
+	and RESIDUAL
+	ret nz
+	ld a, [wDealtDamage]
+	or a
+	ret z
+	call SwapTurn
+	call CheckCannotUseDueToStatus
+	call SwapTurn
+	ret c
+	ld hl, 10 ; damage to be dealt to attacker
+	call ApplyStrikesBack_AgainstResidualAttack
+	call nc, WaitForWideTextBoxInput
 	ret
 .strikes_back
 	ld a, [wLoadedAttackCategory]
@@ -1022,3 +1086,4 @@ GetAttackCostPenalty:
 	ld a, c
 	pop hl
 	ret
+	

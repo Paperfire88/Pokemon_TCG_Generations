@@ -122,6 +122,12 @@ CopyDeckData::
 	scf
 	ret
 
+CountPrizesTaken::
+	call CountPrizes
+	ld e, a
+	ld a, [wDuelInitialPrizes]
+	sub e ; (initial prizes) - (current prizes)
+	ret
 ; return, in register a, the amount of prizes that the turn holder has not yet drawn
 CountPrizes::
 	push hl
@@ -137,7 +143,6 @@ CountPrizes::
 	jr nz, .count_loop
 	pop hl
 	ret
-
 ; shuffles the turn holder's deck
 ; if less than 60 cards remain in the deck, it makes sure that the rest are ignored
 ShuffleDeck::
@@ -233,7 +238,20 @@ SearchCardInDeckAndAddToHand::
 	pop hl
 	pop af
 	ret
-
+; called whenever a card is discarded during a duel
+; handles the case when Recycle Energy is discarded
+; and is sent to the hand instead of the discard pile.	
+DiscardCard::
+	push bc
+	push de
+	ld c, a
+	call GetCardIDFromDeckIndex
+	cp16 RECYCLE_ENERGY
+	ld a, c
+	pop de
+	pop bc
+	jr nz, PutCardInDiscardPile
+	; falltrough
 ; adds a card to the turn holder's hand and increments the number of cards in the hand
 ; the card is identified by register a, which contains the deck index (0-59) of the card
 AddCardToHand::
@@ -1089,7 +1107,50 @@ MovePlayAreaCardToDiscardPile::
 	cp DECK_SIZE
 	jr c, .next_card
 	ret
-
+; move the Pokemon card of the turn holder in the
+; PLAY_AREA_* location given in e to the hand
+MovePlayAreaCardToHand::
+	call EmptyPlayAreaSlot
+	ld l, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
+	dec [hl]
+	ld l, DUELVARS_CARD_LOCATIONS
+.next_card
+	ld a, e
+	or CARD_LOCATION_PLAY_AREA
+	cp [hl]
+	jr nz, .not_in_location
+	push de
+	ld a, l
+	call AddCardToHand
+	pop de
+.not_in_location
+	inc l
+	ld a, l
+	cp DECK_SIZE
+	jr c, .next_card
+	ret
+; move the Pokemon card of the turn holder in the
+; PLAY_AREA_* location given in e to the Deck
+MovePlayAreaCardToDeck::
+	call EmptyPlayAreaSlot
+	ld l, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
+	dec [hl]
+	ld l, DUELVARS_CARD_LOCATIONS
+.next_card
+	ld a, e
+	or CARD_LOCATION_PLAY_AREA
+	cp [hl]
+	jr nz, .not_in_location
+	push de
+	ld a, l
+	call ReturnCardToDeck
+	pop de
+.not_in_location
+	inc l
+	ld a, l
+	cp DECK_SIZE
+	jr c, .next_card
+	ret	
 ; init a turn holder's play area slot to empty
 ; which slot (arena or benchx) is determined by the play area location offset (PLAY_AREA_*) in e
 EmptyPlayAreaSlot::
@@ -1196,10 +1257,10 @@ SwapPlayAreaPokemon::
 	ld a, l
 	cp DECK_SIZE
 	jr c, .update_card_locations_loop
-.done
 	ld a, DUELVARS_ARENA_CARD_SUBSTATUS1
 	call GetTurnDuelistVariable
 	ld [hl], SUBSTATUS1_SWITCHED_IN
+.done	
 	pop hl
 	pop de
 	pop bc
@@ -1263,11 +1324,11 @@ GetPlayAreaCardAttachedEnergies::
 	ld hl, wAttachedEnergies
 	add hl, de
 	inc [hl] ; increment the number of energy cards of this type
-	cp COLORLESS
-	jr nz, .not_colorless
+	ld a, [wLoadedCard2ID]
+	cp LOW(DOUBLE_COLORLESS_ENERGY)
+	jr nz, .not_an_energy_card
 	inc [hl] ; each colorless energy counts as two
 .not_an_energy_card
-.not_colorless
 	pop bc
 	pop de
 	pop hl
@@ -1290,7 +1351,6 @@ GetPlayAreaCardAttachedEnergies::
 	pop de
 	pop hl
 	ret
-
 ; returns in a how many times card e can be found in location b
 ; de = card id to search
 ; b = location to consider (CARD_LOCATION_*)
@@ -1386,7 +1446,7 @@ ProcessPlayedPokemonCard::
 	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
 	jr nc, .use_pokemon_power
 	call DisplayUsePokemonPowerScreen
-	ldtx hl, UnableToUsePkmnPowerDueToToxicGasText
+	ldtx hl, UnableToUseAbilitiesDueToForetCurseText
 	jp DrawWideTextBox_WaitForInput
 
 .use_pokemon_power
@@ -2075,7 +2135,7 @@ ApplyAttachedPluspower::
 ApplyFightingFury::
 	push de
 	ld de, TREVENANT
-	call CountPokemonIDInBothPlayAreas
+	call CountPokemonIDInBothArenas
 	jp c,.nope ; return if there's Muk in play
 	ld a, DUELVARS_ARENA_CARD
 	call CheckCannotUseDueToStatus

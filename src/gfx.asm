@@ -1414,9 +1414,9 @@ SeismitoadCardGfx::
 	INCBIN "gfx/cards/seismitoad.attrmap"
 	INCBIN "gfx/cards/seismitoad.2bpp"
 SkrelpCardGfx::
-	INCBIN "gfx/cards/tentacool.pal"
-	INCBIN "gfx/cards/tentacool.attrmap"
-	INCBIN "gfx/cards/tentacool.2bpp"
+	INCBIN "gfx/cards/skrelp.pal"
+	INCBIN "gfx/cards/skrelp.attrmap"
+	INCBIN "gfx/cards/skrelp.2bpp"
 DragalgeCardGfx::
 	INCBIN "gfx/cards/dragalge.pal"
 	INCBIN "gfx/cards/dragalge.attrmap"

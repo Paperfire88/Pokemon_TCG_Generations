@@ -574,7 +574,7 @@ GlossaryMenuPage1Text:
 	done
 
 GlossaryMenuPage2Text:
-	text "Energy Card         Pokémon Power "
+	text "Energy Card         Abilities "
 	line "Trainer Card        Weakness       "
 	line "Basic Pokémon       Resistance"
 	line "Evolution Card      Retreat       "
@@ -643,7 +643,7 @@ AboutAttackingText:
 	done
 
 AboutPokemonPowerText:
-	text "About Pokémon Power"
+	text "About Abilities"
 	done
 
 AboutWeaknessText:
@@ -823,15 +823,15 @@ AttackingDescriptionText:
 
 PokemonPowerDescriptionText:
 	text "Some PKMN have special Abilities" 
-	line "that they can use, the PKMN Powers." 
+	line "that they can use." 
 	line "Many of them can be used before your" 
-	line "attack. Unlike Attacks, PKMN Powers" 
+	line "attack. Unlike Attacks, Abilities" 
 	line "can be used by the Active or Benched"
 	line "PKMN. Some work only if a condition"
 	line "is met, Some can be used by just" 
 	line "placing the PKMN in the Play Area,"
 	line "but for some you must choose the" 
-	line "command, PKMN Power. Each PKMN Power"
+	line "command, Abilities. Each Ability"
 	line "is different, so read carefully to" 
 	line "see how each one works." 
 	done
@@ -1786,7 +1786,7 @@ SamRulesMenuText:
 	line "Attacking"
 	line "Retreating"
 	line "Evolving Pokémon"
-	line "Using Pokémon Power"
+	line "Using Abilities"
 	line "Ending Your Turn"
 	line "Win or Loss of a Duel"
 	line "Nothing to Ask"

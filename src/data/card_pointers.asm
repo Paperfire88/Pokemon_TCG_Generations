@@ -10,6 +10,8 @@ CardPointers::
 	dab DarknessEnergyCard
 	dab MetalEnergyCard
 	dab DoubleColorlessEnergyCard
+	dab RecycleEnergyCard
+	dab MemoryEnergyCard
 	;Grass
 	dab ChikoritaCard
 	dab BayleefCard
@@ -267,6 +269,7 @@ CardPointers::
 	dab DreepyCard
 	dab DrakloakCard
 	dab DragapultCard
+	dab AegislashShieldCard
 	dab CresseliaCard
 	dab MewLv23Card
 	dab MewtwoCard

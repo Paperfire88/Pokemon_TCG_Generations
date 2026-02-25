@@ -2369,7 +2369,7 @@ AIDecide_ProfessorOak:
 
 .handle_blastoise
 	ld de, TREVENANT
-	call CountPokemonIDInBothPlayAreas
+	call CountPokemonIDInBothArenas
 	jr c, .check_hand
 
 ; no Muk in Play Area
@@ -2656,7 +2656,7 @@ AIDecide_EnergyRetrieval:
 	cp GO_GO_RAIN_DANCE_DECK_ID
 	jr nz, .start
 	ld de, TREVENANT
-	call CountPokemonIDInBothPlayAreas
+	call CountPokemonIDInBothArenas
 	jr c, .start
 	ld de, GRENINJA
 	call CountPokemonIDInPlayArea
@@ -2924,7 +2924,7 @@ AIDecide_SuperEnergyRetrieval:
 	cp BLISTERING_POKEMON_DECK_ID
 	jr nz, .start
 	ld de, TREVENANT
-	call CountPokemonIDInBothPlayAreas
+	call CountPokemonIDInBothArenas
 	jr c, .start
 	ld de, GRENINJA
 	call CountPokemonIDInPlayArea
@@ -4777,7 +4777,7 @@ AIDecide_Lass:
 	call LoadCardDataToBuffer1_FromDeckIndex
 	push hl
 	ld hl, wLoadedCard1ID
-	cphl LASS
+	cphl MARNIE
 	pop hl
 	jr z, .loop
 	ld a, [wLoadedCard1Type]

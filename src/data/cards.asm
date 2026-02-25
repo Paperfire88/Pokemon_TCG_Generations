@@ -113,7 +113,7 @@ MeganiumCard:
 	energy 0 ; energies
 	tx EnergyTransName ; name
 	tx EnergyTransDescription ; description
-	tx PKMNPowerCondition2 ; description (cont)
+	tx AbilityCondition2 ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw VenusaurEnergyTransEffectCommands ; effect commands
@@ -163,7 +163,7 @@ CelebiCard:
 	energy 0 ; energies
 	tx SolarPowerName ; name
 	tx SolarPowerDescription ; description
-	tx PKMNPowerCondition2 ; description (cont)
+	tx AbilityCondition2 ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw VenusaurSolarPowerEffectCommands ; effect commands
@@ -216,7 +216,7 @@ WurmpleCard:
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw WeedlePoisonStingEffectCommands ; effect commands
+	dw Poison50PercentEffectCommands ; effect commands
 	db INFLICT_POISON ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -284,7 +284,7 @@ SilcoonCard:
 	dw NONE ; description (cont)
 	db 20 ; damage
 	db DAMAGE_NORMAL ; category
-	dw MetapodStunSporeEffectCommands ; effect commands
+	dw Paralysis50PercentEffectCommands ; effect commands
 	db INFLICT_PARALYSIS ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -317,7 +317,7 @@ BeautiflyCard:
 	energy 0 ; energies
 	tx MiracleScalesName ; name
 	tx MiracleScalesDescription ; description
-	tx PKMNPowerCondition ; description (cont)
+	tx AbilityCondition ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw OmanyteClairvoyanceEffectCommands ; effect commands
@@ -384,7 +384,7 @@ RowletCard:
 	dw NONE ; description (cont)
 	db 20 ; damage
 	db DAMAGE_NORMAL ; category
-	dw PikachuSparkEffectCommands ; effect commands
+	dw SparkEffectCommands ; effect commands
 	db DAMAGE_TO_OPPONENT_BENCH ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -434,7 +434,7 @@ DartrixCard:
 	dw NONE ; description (cont)
 	db 30 ; damage
 	db DAMAGE_NORMAL ; category
-	dw PikachuSparkEffectCommands ; effect commands
+	dw SparkEffectCommands ; effect commands
 	db DAMAGE_TO_OPPONENT_BENCH ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -816,16 +816,16 @@ AppletunCard:
 	; attack 1
 	energy 0 ; energies
 	tx HealName ; name
-	tx HealDescription ; description
-	tx PKMNPowerCondition2 ; description (cont)
+	tx SolarPowerDescription ; description
+	tx AbilityCondition2 ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
-	dw AppletunHealEffectCommands ; effect commands
+	dw VenusaurSolarPowerEffectCommands ; effect commands
 	db NONE ; flags 1
-	db HEAL_USER ; flags 2
+	db NONE ; flags 2
 	db NONE ; flags 3
-	db 1
-	db ATK_ANIM_PKMN_POWER_1 ; animation
+	db 0
+	db ATK_ANIM_SOLAR_POWER ; animation
 
 	; attack 2
 	energy GRASS, 1, COLORLESS, 1, ; energies
@@ -932,7 +932,7 @@ BreloomCard:
 	tx BattleBlastName ; name
 	tx BattleBlastDescription ; description
 	dw NONE ; description (cont)
-	db 30 ; damage
+	db 40 ; damage
 	db DAMAGE_PLUS ; category
 	dw BattleBlastEffectCommands ; effect commands
 	db NONE ; flags 1
@@ -1119,8 +1119,8 @@ SteeneeCard:
 	tx ExpandDescription ; description
 	dw NONE ; description (cont)
 	db 10 ; damage
-	db RESIDUAL ; category
-	dw JigglypuffExpandEffectCommands ; effect commands
+	db DAMAGE_NORMAL ; category
+	dw ExpandEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
 	db NONE ; flags 3
@@ -1132,9 +1132,9 @@ SteeneeCard:
 	tx WorrySeedName ; name
 	tx MayInflictConfusionDescription ; description
 	dw NONE ; description (cont)
-	db 30 ; damage
+	db 20 ; damage
 	db DAMAGE_NORMAL ; category
-	dw AlakazamConfuseRayEffectCommands ; effect commands
+	dw Confusion50PercentEffectCommands ; effect commands
 	db INFLICT_CONFUSION ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -1267,7 +1267,7 @@ TrevenantCard:
 	energy 0 ; energies
 	tx ForestCurseName ; name
 	tx ForestCurseDescription ; description
-	tx PKMNPowerCondition2 ; description (cont)
+	tx AbilityCondition2 ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw MukToxicGasEffectCommands ; effect commands
@@ -1514,7 +1514,7 @@ ScytherCard:
 	dw NONE ; pre-evo name
 
 	; attack 1
-	energy GRASS, 1 ; energies
+	energy COLORLESS, 1 ; energies
 	tx HelpfulSlashName ; name
 	tx HelpfulSlashDescription ; description
 	dw NONE ; description (cont)
@@ -1528,11 +1528,11 @@ ScytherCard:
 	db NONE ; animation
 
 	; attack 2
-	energy GRASS, 1, COLORLESS, 2 ; energies
+	energy COLORLESS, 2 ; energies
 	tx SlashName ; name
 	tx DontApplyWsRsDescription ; description
 	dw NONE ; description (cont)
-	db 30 ; damage
+	db 20 ; damage
 	db DAMAGE_NORMAL ; category
 	dw MagnetonSonicboomEffectCommands ; effect commands
 	db NONE ; flags 1
@@ -1567,7 +1567,7 @@ LeafeonCard:
 	energy 0 ; energies
 	tx GreeningCellsName ; name
 	tx GreeningCellsDescription ; description
-	tx PKMNPowerCondition ; description (cont)
+	tx AbilityCondition ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw GreeningCellsEffectCommands ; effect commands
@@ -1717,7 +1717,7 @@ RillaboomCard:
 	energy 0 ; energies
 	tx JungleSpiritName ; name
 	tx JungleSpiritDescription ; description
-	tx PKMNPowerCondition ; description (cont)
+	tx AbilityCondition ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw MukToxicGasEffectCommands ; effect commands
@@ -1734,7 +1734,7 @@ RillaboomCard:
 	dw NONE ; description (cont)
 	db 50 ; damage
 	db DAMAGE_NORMAL ; category
-	dw DrumBeatingEffectCommands ; effect commands
+	dw Acid50PercentEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -1867,7 +1867,7 @@ WimpodCard:
 	energy 0 ; energies
 	tx CowardiceName ; name
 	tx CowardiceDescription ; description
-	tx PKMNPowerCondition2 ; description (cont)
+	tx AbilityCondition2 ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw TentacoolCowardiceEffectCommands ; effect commands
@@ -2060,7 +2060,7 @@ EmboarCard:
 	db STAR ; rarity
 	db COLOSSEUM | NONE ; sets
 	dw EMBOAR
-	db 120 ; hp
+	db 110 ; hp
 	db STAGE2 ; stage
 	tx PigniteName ; pre-evo name
 
@@ -2068,7 +2068,7 @@ EmboarCard:
 	energy 0 ; energies
 	tx FirestarterName ; name
 	tx FirestarterDescription ; description
-	tx PKMNPowerCondition ; description (cont)
+	tx AbilityCondition ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw FirestarterEffectCommands ; effect commands
@@ -2092,7 +2092,7 @@ EmboarCard:
 	db 6
 	db ATK_ANIM_FIRE_SPIN ; animation
 
-	db 3 ; retreat cost
+	db 4 ; retreat cost
 	db WR_WATER ; weakness
 	db WR_GRASS ; resistance
 	tx MegaFirePigName ; category
@@ -2121,7 +2121,7 @@ HoundourCard:
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw MagmarSmogEffectCommands ; effect commands
+	dw Poison50PercentEffectCommands ; effect commands
 	db INFLICT_POISON ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -2371,7 +2371,7 @@ CameruptCard:
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw CinderCannonEffectCommands ; effect commands
+	dw MagmaRecycleEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -2478,23 +2478,23 @@ DarmanitanCard:
 	db 0
 	db ATK_ANIM_FIRE_PUNCH ; animation
 
-	; attack 2
-	energy FIRE, 2, COLORLESS,2, ; energies
-	tx CounterPunchName ; name
-	tx DamageCounterDescription ; description
+	; attack 1
+	energy COLORLESS, 2, FIRE, 1 ; energies
+	tx FirePunchName ; name
+	tx FirePunchDescription ; description
 	dw NONE ; description (cont)
-	db 40 ; damage
-	db DAMAGE_PLUS ; category
-	dw CounterpunchEffectCommands ; effect commands
+	db 30 ; damage
+	db DAMAGE_NORMAL ; category
+	dw ExpandEffectCommands ; effect commands
 	db NONE ; flags 1
-	db NONE ; flags 2
-	db BOOST_IF_TAKEN_DAMAGE ; flags 3
+	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
+	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_HIT_RECOIL ; animation
+	db ATK_ANIM_PROTECT ; animation
 
 	db 2 ; retreat cost
 	db WR_WATER ; weakness
-	db WR_METAL ; resistance
+	db NONE ; resistance
 	tx BlazingName ; category
 	db 54 ; Pokedex number
 	db 53 ; level
@@ -2568,7 +2568,7 @@ PyroarCard:
 	energy 0 ; energies
 	tx FlareCommandName ; name
 	tx FlareCommandDescription ; description
-	tx PKMNPowerCondition ; description (cont)
+	tx AbilityCondition ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw FlareCommandEffectCommands ; effect commands
@@ -2636,10 +2636,10 @@ FlareonLv28Card:
 	db 40 ; damage
 	db DAMAGE_NORMAL ; category
 	dw DestructiveFlameEffectCommands ; effect commands
-	db NONE ; flags 1
-	db NONE ; flags 2
+	db DAMAGE_TO_OPPONENT_BENCH ; flags 1
+	db INFLICT_BURN ; flags 2
 	db NONE ; flags 3
-	db 0
+	db 40
 	db ATK_ANIM_BIG_FLAME ; animation
 
 	db 1 ; retreat cost
@@ -2818,7 +2818,7 @@ ChandelureCard:
 	energy 0 ; energies
 	tx BurningDownName ; name
 	tx BurningDownDescription ; description
-	tx PKMNPowerCondition ; description (cont)
+	tx AbilityCondition ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw Mills3EffectCommands ; effect commands
@@ -2915,7 +2915,7 @@ MagmarLv24Card:
 	dw NONE ; pre-evo name
 
 	; attack 1
-	energy FIRE, 1 ; energies
+	energy COLORLESS, 1 ; energies
 	tx LiveCoalName ; name
 	tx LiveCoalDescription ; description
 	dw NONE ; description (cont)
@@ -2929,13 +2929,13 @@ MagmarLv24Card:
 	db NONE ; animation
 
 	; attack 1
-	energy COLORLESS, 2, FIRE, 1 ; energies
-	tx FirePunchName ; name
-	tx FirePunchDescription ; description
+	energy COLORLESS, 1, FIRE, 1 ; energies
+	tx MagmaPunchName ; name
+	tx MagmaPunchDescription ; description
 	dw NONE ; description (cont)
-	db 30 ; damage
+	db 20 ; damage
 	db DAMAGE_PLUS ; category
-	dw FirePunchEffectCommands ; effect commands
+	dw MagmaPunchEffectCommands ; effect commands
 	db INFLICT_BURN ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -2971,7 +2971,7 @@ MagmortarCard:
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw MeowthSandAttackEffectCommands ; effect commands
+	dw SmokescreenEffectCommands ; effect commands
 	db INFLICT_BURN ; flags 1
 	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
 	db NONE ; flags 3
@@ -2980,12 +2980,12 @@ MagmortarCard:
 	
 	; attack 2
 	energy FIRE, 2, COLORLESS, 1 ; energies
-	tx BoltsplosionName ; name
-	tx BoltsplosionDescription ; description
+	tx FlameBazookaName ; name
+	tx FlameBazookaDecription ; description
 	dw NONE ; description (cont)
 	db 40 ; damage
-	db DAMAGE_NORMAL ; category
-	dw BoltsplosionEffectCommands ; effect commands
+	db DAMAGE_X ; category
+	dw FlameBazookaEffectCommands ; effect commands
 	db DAMAGE_TO_OPPONENT_BENCH ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -3168,7 +3168,7 @@ SkeledirgeCard:
     energy 0 ; energies
     tx SpectralFlamesName ; name
     tx SpectralFlamesDescription ; description
-	tx PKMNPowerCondition ; description (cont)
+	tx AbilityCondition ; description (cont)
     db 0 ; damage
     db POKEMON_POWER ; category
     dw DeepSleepEffectCommands ; effect commands
@@ -3183,7 +3183,7 @@ SkeledirgeCard:
 	tx KarateChopName ; name
 	tx BurningVoiceDescription ; description
 	dw NONE ; description (cont)
-	db 30 ; damage
+	db 40 ; damage
 	db DAMAGE_PLUS ; category
 	dw BurningVoiceEffectCommands ; effect commands
 	db NONE ; flags 1
@@ -3221,7 +3221,7 @@ SalanditCard:
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw MagmarSmogEffectCommands ; effect commands
+	dw Poison50PercentEffectCommands ; effect commands
 	db INFLICT_POISON ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -3329,7 +3329,7 @@ BagonCard:
 	db ATK_ANIM_HIT ; animation
 	
 	; attack 2
-	energy FIRE, 1, WATER, 1 ; energies
+	energy COLORLESS, 1 ; energies
 	tx DraconicDreamsName ; name
 	tx DraconicDreamsDescription ; description
 	dw NONE ; description (cont)
@@ -3367,11 +3367,11 @@ ShelgonCard:
 	; attack 1
 	energy WATER, 1, COLORLESS, 1 ; energies
 	tx ProtectChargeName ; name
-	tx MetapodsStiffenDescription ; description
+	tx ProtectChargeDescription ; description
 	dw NONE ; description (cont)
 	db 20 ; damage
 	db RESIDUAL ; category
-	dw MetapodStiffenEffectCommands ; effect commands
+	dw ProtectChargeEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
 	db NONE ; flags 3
@@ -3379,13 +3379,13 @@ ShelgonCard:
 	db ATK_ANIM_NONE ; animation
 	
 	; attack 2
-	energy FIRE, 1, COLORLESS, 2 ; energies
+	energy FIRE, 1, COLORLESS, 1 ; energies
 	tx DragonbreathName ; name
 	tx MayInflictParalysisDescription ; description
 	dw NONE ; description (cont)
-	db 40 ; damage
+	db 30 ; damage
 	db DAMAGE_NORMAL ; category
-	dw ElectabuzzThundershockEffectCommands ; effect commands
+	dw Paralysis50PercentEffectCommands ; effect commands
 	db INFLICT_PARALYSIS ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -3415,31 +3415,31 @@ SalamenceCard:
 	tx ShelgonName ; pre-evo name
 
 	; attack 1
-	energy FIRE, 1, WATER, 1 ; energies
-	tx ShootThroughName ; name
-	tx SparkDescription ; description
+	energy WATER, 1, COLORLESS, 1 ; energies
+	tx DragonRageName ; name
+	tx EnergyAbsorptionDescription ; description
+	dw NONE ; description (cont)
+	db 30 ; damage
+	db DAMAGE_NORMAL ; category
+	dw MewtwoAltLV60EnergyAbsorptionEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db SPECIAL_AI_HANDLING ; flags 3
+	db 0
+	db ATK_ANIM_DRAGON_RAGE ; animation
+
+	; attack 2
+	energy FIRE, 1, COLORLESS, 1 ; energies
+	tx CrimsonFireName ; name
+	tx CrimsonFireDescription ; description
 	dw NONE ; description (cont)
 	db 40 ; damage
-	db DAMAGE_NORMAL ; category
-	dw PikachuSparkEffectCommands ; effect commands
-	db DAMAGE_TO_OPPONENT_BENCH ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 10
-	db ATK_ANIM_WHIRLWIND_ZIGZAG ; animation
-	
-	; attack 2
-	energy WATER, 2, FIRE, 2 ; energies
-	tx DragonRageName ; name
-	tx DontApplyWsRsDescription ; description
-	dw NONE ; description (cont)
-	db 70 ; damage
-	db DAMAGE_NORMAL ; category
-	dw MagnetonSonicboomEffectCommands ; effect commands
+	db DAMAGE_PLUS ; category
+	dw BurningFireEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
-	db 0
+	db 10
 	db ATK_ANIM_DRAGON_RAGE ; animation
 
 	db 3 ; retreat cost
@@ -3818,7 +3818,7 @@ TalonflameCard:
 	energy 0 ; energies
 	tx NitroDrawName ; name
 	tx NitroDrawDescription ; description
-	tx PKMNPowerCondition ; description (cont)
+	tx AbilityCondition ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw NitroDrawEffectCommands ; effect commands
@@ -3918,7 +3918,7 @@ VolcaronaCard:
     energy 0 ; energies
     tx ScorchingScalesName ; name
     tx ScorchingScalesDescription ; description
-	tx PKMNPowerCondition ; description (cont)
+	tx AbilityCondition ; description (cont)
     db 0 ; damage
     db POKEMON_POWER ; category
     dw DeepSleepEffectCommands ; effect commands
@@ -3972,7 +3972,7 @@ FroakieCard:
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw FroakieBubbleEffectCommands ; effect commands
+	dw Paralysis50PercentEffectCommands ; effect commands
 	db INFLICT_PARALYSIS ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -4069,7 +4069,7 @@ GreninjaCard:
 	energy 0 ; energies
 	tx RainDanceName ; name
 	tx RainDanceDescription ; description
-	tx PKMNPowerCondition2 ; description (cont)
+	tx AbilityCondition2 ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw BlastoiseRainDanceEffectCommands ; effect commands
@@ -4222,7 +4222,7 @@ BruxishCard:
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw AlakazamConfuseRayEffectCommands ; effect commands
+	dw Confusion50PercentEffectCommands ; effect commands
 	db INFLICT_CONFUSION ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -4272,7 +4272,7 @@ TympoleCard:
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw FroakieBubbleEffectCommands ; effect commands
+	dw Paralysis50PercentEffectCommands ; effect commands
 	db INFLICT_PARALYSIS ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -4569,7 +4569,7 @@ GlalieCard:
 	energy 0 ; energies
 	tx IceWallName ; name
 	tx IceWallDescription ; description
-	tx PKMNPowerCondition2 ; description (cont)
+	tx AbilityCondition2 ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw MrMimeInvisibleWallEffectCommands ; effect commands
@@ -4771,7 +4771,7 @@ ClauncherCard:
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw VictreebelAcidEffectCommands ; effect commands
+	dw Acid50PercentEffectCommands ; effect commands
 	db NONE ; flags 1
 	db FLAG_2_BIT_6 ; flags 2
 	db NONE ; flags 3
@@ -4885,7 +4885,7 @@ HorseaCard:
 	dw NONE ; description (cont)
 	db 20 ; damage
 	db DAMAGE_NORMAL ; category
-	dw HorseaSmokescreenEffectCommands ; effect commands
+	dw SmokescreenEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
 	db NONE ; flags 3
@@ -4968,7 +4968,7 @@ KingdraCard:
 	energy 0 ; energies
 	tx GeneticMemoryName ; name
 	tx WatersOfRemembranceDescription ; description
-	tx PKMNPowerCondition2 ; description (cont)
+	tx AbilityCondition2 ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw MrMimeInvisibleWallEffectCommands ; effect commands
@@ -5068,7 +5068,7 @@ Basculegion:
 	energy 0 ; energies
 	tx WatersOfRemembranceName ; name
 	tx WatersOfRemembranceDescription ; description
-	tx PKMNPowerCondition2 ; description (cont)
+	tx AbilityCondition2 ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw MrMimeInvisibleWallEffectCommands ; effect commands
@@ -5121,7 +5121,7 @@ DewpiderCard:
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw FroakieBubbleEffectCommands ; effect commands
+	dw Paralysis50PercentEffectCommands ; effect commands
 	db INFLICT_PARALYSIS ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -5185,7 +5185,7 @@ AraquanidCard:
 	dw NONE ; description (cont)
 	db 30 ; damage
 	db DAMAGE_PLUS ; category
-	dw WeavileBubblebeamEffectCommands ; effect commands
+	dw LiquidationEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -5335,7 +5335,7 @@ MudkipCard:
 	dw NONE ; description (cont)
 	db 20 ; damage
 	db DAMAGE_NORMAL ; category
-	dw MeowthSandAttackEffectCommands ; effect commands
+	dw SmokescreenEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
 	db NONE ; flags 3
@@ -5418,7 +5418,7 @@ SwampertCard:
 	energy 0 ; energies
 	tx EnergyDrawName ; name
 	tx EnergyDrawDescription ; description
-	tx PKMNPowerCondition ; description (cont)
+	tx AbilityCondition ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw EnergyDrawEffectCommands ; effect commands
@@ -5479,7 +5479,7 @@ MagikarpCard:
 	db ATK_ANIM_BIG_HIT ; animation
 
 	; attack 2
-	energy WATER, 3 ; energies
+	energy WATER, 1, COLORLESS, 1 ; energies
 	tx RapidEvolutionName ; name
 	tx RapidEvolutionDescription ; description
 	dw NONE ; description (cont)
@@ -5568,7 +5568,7 @@ VaporeonLv42Card:
 	energy 0 ; energies
 	tx SwirlName ; name
 	tx SwirlDescription ; description
-	tx PKMNPowerCondition2 ; description (cont)
+	tx AbilityCondition2 ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw SwirlEffectCommands ; effect commands
@@ -5618,7 +5618,7 @@ GlaceonCard:
 	energy 0 ; energies
 	tx FreezingGazeName ; name
 	tx FreezingGazeDescription ; description
-	tx PKMNPowerCondition ; description (cont)
+	tx AbilityCondition ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw FreezingGazeEffectCommands ; effect commands
@@ -5986,7 +5986,7 @@ BlitzleCard:
 	dw NONE ; description (cont)
 	db 20 ; damage
 	db DAMAGE_NORMAL ; category
-	dw PikachuSparkEffectCommands ; effect commands
+	dw SparkEffectCommands ; effect commands
 	db DAMAGE_TO_OPPONENT_BENCH ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -6019,7 +6019,7 @@ ZebstrikaCard:
 	energy COLORLESS, 0 ; energies
 	tx SprintName ; name
 	tx SprintDescription ; description
-	tx PKMNPowerCondition ; description (cont)
+	tx AbilityCondition ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw SprintEffectCommands ; effect commands
@@ -6172,7 +6172,7 @@ PincurchinCard:
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw JolteonStunNeedleEffectCommands ; effect commands
+	dw Paralysis50PercentEffectCommands ; effect commands
 	db INFLICT_PARALYSIS ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -6236,7 +6236,7 @@ ShinxCard:
 	dw NONE ; description (cont)
 	db 20 ; damage
 	db DAMAGE_NORMAL ; category
-	dw PikachuSparkEffectCommands ; effect commands
+	dw SparkEffectCommands ; effect commands
 	db DAMAGE_TO_OPPONENT_BENCH ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -6272,7 +6272,7 @@ LuxioCard:
 	dw NONE ; description (cont)
 	db 20 ; damage
 	db DAMAGE_NORMAL ; category
-	dw ElectabuzzThundershockEffectCommands ; effect commands
+	dw Paralysis50PercentEffectCommands ; effect commands
 	db INFLICT_PARALYSIS ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -6319,7 +6319,7 @@ LuxrayCard:
 	energy 0 ; energies
 	tx StepInName ; name
 	tx StepInDescription ; description
-	tx PKMNPowerCondition2 ; description (cont)
+	tx AbilityCondition2 ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw LugiaStepInEffectCommands ; effect commands
@@ -6422,7 +6422,7 @@ MagnemiteLv13Card:
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw AlakazamConfuseRayEffectCommands ; effect commands
+	dw Confusion50PercentEffectCommands ; effect commands
 	db INFLICT_CONFUSION ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -6472,7 +6472,7 @@ MagnetonLv28Card:
 	dw NONE ; description (cont)
 	db 20 ; damage
 	db DAMAGE_NORMAL ; category
-	dw MagnetonThunderWaveEffectCommands ; effect commands
+	dw Paralysis50PercentEffectCommands ; effect commands
 	db INFLICT_PARALYSIS ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -6519,7 +6519,7 @@ MagnezoneCard:
 	energy 0 ; energies
 	tx MagneticCircuitName ; name
 	tx MagneticCircuitDescription ; description
-	tx PKMNPowerCondition ; description (cont)
+	tx AbilityCondition ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw MagnetPulseEffectCommands ; effect commands
@@ -6572,7 +6572,7 @@ ToxelCard:
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw ElectabuzzThundershockEffectCommands ; effect commands
+	dw Paralysis50PercentEffectCommands ; effect commands
 	db INFLICT_PARALYSIS ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -6586,7 +6586,7 @@ ToxelCard:
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw WeedlePoisonStingEffectCommands ; effect commands
+	dw Poison50PercentEffectCommands ; effect commands
 	db INFLICT_POISON ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -6736,7 +6736,7 @@ ElectrikeCard:
 	dw NONE ; description (cont)
 	db 20 ; damage
 	db DAMAGE_NORMAL ; category
-	dw ElectabuzzThundershockEffectCommands ; effect commands
+	dw Paralysis50PercentEffectCommands ; effect commands
 	db INFLICT_PARALYSIS ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -6769,7 +6769,7 @@ ManectricCard:
 	energy 0 ; energies
 	tx SwitchCurrentname ; name
 	tx SwitchCurrentdescription ; description
-	tx PKMNPowerCondition ; description (cont)
+	tx AbilityCondition ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw OmanyteClairvoyanceEffectCommands ; effect commands
@@ -6872,7 +6872,7 @@ KilowattrelCard:
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw ButterfreeWhirlwindEffectCommands ; effect commands
+	dw WhirlwindEffectCommands ; effect commands
 	db NONE ; flags 1
 	db SWITCH_OPPONENT_POKEMON ; flags 2
 	db NONE ; flags 3
@@ -6916,7 +6916,7 @@ MareepCard:
 	dw NONE ; pre-evo name
 
 	; attack 1
-	energy LIGHTNING, 1 ; energies
+	energy COLORLESS, 1 ; energies
 	tx EnergySearchName ; name
 	tx EnergySearchDescription ; description
 	dw NONE ; description (cont)
@@ -6936,7 +6936,7 @@ MareepCard:
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw ElectabuzzThundershockEffectCommands ; effect commands
+	dw Paralysis50PercentEffectCommands ; effect commands
 	db INFLICT_PARALYSIS ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -6972,7 +6972,7 @@ FlaaffyCard:
 	dw NONE ; description (cont)
 	db 20 ; damage
 	db DAMAGE_NORMAL ; category
-	dw PikachuSparkEffectCommands ; effect commands
+	dw SparkEffectCommands ; effect commands
 	db DAMAGE_TO_OPPONENT_BENCH ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -7019,7 +7019,7 @@ AmpharosCard:
 	energy 0 ; energies
 	tx ConductivityName ; name
 	tx ConductivityDescription ; description
-	tx PKMNPowerCondition ; description (cont)
+	tx AbilityCondition ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw OmanyteClairvoyanceEffectCommands ; effect commands
@@ -7121,7 +7121,7 @@ GrubbinCard:
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw PinsirIronGripEffectCommands ; effect commands
+	dw Paralysis50PercentEffectCommands ; effect commands
 	db INFLICT_PARALYSIS ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -7368,7 +7368,7 @@ TynamoCard:
 	energy 0 ; energies
 	tx CowardiceName ; name
 	tx CowardiceDescription ; description
-	tx PKMNPowerCondition2 ; description (cont)
+	tx AbilityCondition2 ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw TentacoolCowardiceEffectCommands ; effect commands
@@ -7385,7 +7385,7 @@ TynamoCard:
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw ElectabuzzThundershockEffectCommands ; effect commands
+	dw Paralysis50PercentEffectCommands ; effect commands
 	db INFLICT_PARALYSIS ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -7565,7 +7565,7 @@ ElectabuzzLv35Card:
 	dw NONE ; pre-evo name
 
 	; attack 1
-	energy LIGHTNING, 1 ; energies
+	energy COLORLESS, 1 ; energies
 	tx PlasmaName ; name
 	tx PlasmaDescription ; description
 	dw NONE ; description (cont)
@@ -7579,14 +7579,14 @@ ElectabuzzLv35Card:
 	db ATK_ANIM_GLOW_EFFECT ; animation
 
 	; attack 2
-	energy LIGHTNING, 1, COLORLESS, 2 ; energies
-	tx ThunderpunchName ; name
-	tx ThunderpunchDescription ; description
+	energy LIGHTNING, 1, COLORLESS, 1 ; energies
+	tx PlasmaPunchName ; name
+	tx PlasmaPunchDescription ; description
 	dw NONE ; description (cont)
-	db 30 ; damage
+	db 20 ; damage
 	db DAMAGE_PLUS ; category
-	dw ElectabuzzThunderpunchEffectCommands ; effect commands
-	db LOW_RECOIL ; flags 1
+	dw PlasmaPunchEffectCommands ; effect commands
+	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
@@ -7721,7 +7721,7 @@ PikachuCard:
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw ElectabuzzThundershockEffectCommands ; effect commands
+	dw Paralysis50PercentEffectCommands ; effect commands
 	db INFLICT_PARALYSIS ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -7733,7 +7733,7 @@ PikachuCard:
 	tx VoltTackleName ; name
 	tx VoltTackleDescription ; description
 	dw NONE ; description (cont)
-	db 40 ; damage
+	db 30 ; damage
 	db DAMAGE_PLUS ; category
 	dw VoltTackleEffectCommands ; effect commands
 	db LOW_RECOIL ; flags 1
@@ -7835,7 +7835,7 @@ JoltikCard:
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw ElectabuzzThundershockEffectCommands ; effect commands
+	dw Paralysis50PercentEffectCommands ; effect commands
 	db INFLICT_PARALYSIS ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -8019,7 +8019,7 @@ SandacondaCard:
 	energy 0 ; energies
 	tx SandPitName ; name
 	tx SandPitDescription ; description
-	tx PKMNPowerCondition ; description (cont)
+	tx AbilityCondition ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw OmanyteClairvoyanceEffectCommands ; effect commands
@@ -8036,7 +8036,7 @@ SandacondaCard:
 	dw NONE ; description (cont)
 	db 20 ; damage
 	db DAMAGE_NORMAL ; category
-	dw MeowthSandAttackEffectCommands ; effect commands
+	dw SmokescreenEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
 	db NONE ; flags 3
@@ -8066,7 +8066,7 @@ SandileCard:
 	dw NONE ; pre-evo name
 
 	; attack 1
-	energy FIGHTING, 1 ; energies
+	energy COLORLESS, 1 ; energies
 	tx BiteName ; name
 	dw NONE ; description
 	dw NONE ; description (cont)
@@ -8086,7 +8086,7 @@ SandileCard:
 	dw NONE ; description (cont)
 	db 20 ; damage
 	db DAMAGE_NORMAL ; category
-	dw MeowthSandAttackEffectCommands ; effect commands
+	dw SmokescreenEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
 	db NONE ; flags 3
@@ -8272,7 +8272,7 @@ VibravaCard:
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw ElectabuzzThundershockEffectCommands ; effect commands
+	dw Paralysis50PercentEffectCommands ; effect commands
 	db INFLICT_PARALYSIS ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -8319,7 +8319,7 @@ FlygonCard:
 	energy 0 ; energies
 	tx IrritatingBuzzName ; name
 	tx IrritatingBuzzDescription ; description
-	tx PKMNPowerCondition ; description (cont)
+	tx AbilityCondition ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw IrritatingBuzzEffectCommands ; effect commands
@@ -8336,7 +8336,7 @@ FlygonCard:
 	dw NONE ; description (cont)
 	db 20 ; damage
 	db DAMAGE_PLUS ; category
-	dw GrassKnotEffectCommands ; effect commands
+	dw DustyPillarEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -8473,7 +8473,7 @@ LucarioCard:
 	energy 0 ; energies
 	tx PrecognitiveAuraName ; name
 	tx PrecognitiveAuraDescription ; description
-	tx PKMNPowerCondition ; description (cont)
+	tx AbilityCondition ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw GigaMagnetEffectCommands ; effect commands
@@ -8973,7 +8973,7 @@ Kommo_oCard:
 	energy 0 ; energies
 	tx AlolansFuryName ; name
 	tx AlolansFuryDescription ; description
-	tx PKMNPowerCondition ; description (cont)
+	tx AbilityCondition ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw FightingFuryEffectCommands ; effect commands
@@ -9023,7 +9023,7 @@ OmanyteCard:
 	energy 0 ; energies
 	tx ClairvoyanceName ; name
 	tx ClairvoyanceDescription ; description
-	tx PKMNPowerCondition2 ; description (cont)
+	tx AbilityCondition2 ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw OmanyteClairvoyanceEffectCommands ; effect commands
@@ -9273,7 +9273,7 @@ TyrantrumCard:
 	energy 0 ; energies
 	tx PrehistoricPowerName ; name
 	tx PrehistoricPowerDescription ; description
-	tx 	PKMNPowerCondition2 ; description (cont)
+	tx AbilityCondition2 ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw AerodactylPrehistoricPowerEffectCommands ; effect commands
@@ -9473,7 +9473,7 @@ GalladeCard:
 	energy 0 ; energies
 	tx RisingSwordName ; name
 	tx RisingSwordDescription ; description
-	tx PKMNPowerCondition ; description (cont)
+	tx AbilityCondition ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw PlusPowerSearchEffectCommands ; effect commands
@@ -9540,7 +9540,7 @@ ClobbopusCard:
 	dw NONE ; description (cont)
 	db 20 ; damage
 	db DAMAGE_NORMAL ; category
-	dw ElectabuzzThundershockEffectCommands ; effect commands
+	dw Paralysis50PercentEffectCommands ; effect commands
 	db INFLICT_PARALYSIS ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -9665,7 +9665,7 @@ NaclstackCard:
 	db DIAMOND ; rarity
 	db LOST_ISLE | NONE ; sets
 	dw NACLSTACK
-	db 90 ; hp
+	db 80 ; hp
 	db STAGE1 ; stage
 	tx NacliName ; pre-evo name
 
@@ -9688,7 +9688,7 @@ NaclstackCard:
 	tx HeavySlamName ; name
 	tx HeavySlamDescription ; description
 	dw NONE ; description (cont)
-	db 20 ; damage
+	db 10 ; damage
 	db DAMAGE_PLUS ; category
 	dw HeavySlamEffectCommands ; effect commands
 	db NONE ; flags 1
@@ -9715,7 +9715,7 @@ GarganaclCard:
 	db STAR ; rarity
 	db LOST_ISLE | NONE ; sets
 	dw GARGANACL
-	db 110 ; hp
+	db 100 ; hp
 	db STAGE2 ; stage
 	tx NaclstackName ; pre-evo name
 
@@ -9723,7 +9723,7 @@ GarganaclCard:
 	energy 0 ; energies
 	tx PurifyingSaltName ; name
 	tx ThickSkinnedDescription ; description
-	tx PKMNPowerCondition2 ; description (cont)
+	tx AbilityCondition2 ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
 	dw AerodactylPrehistoricPowerEffectCommands ; effect commands

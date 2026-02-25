@@ -341,321 +341,6 @@ MysteryAttack_RandomEffect2:
 	farcall SetNoEffectFromStatus
 .no_effect
 	ret
-
-Peek_SelectEffect2:
-; set Pkmn Power used flag
-	ldh a, [hTemp_ffa0]
-	add DUELVARS_ARENA_CARD_FLAGS
-	call GetTurnDuelistVariable
-	set USED_PKMN_POWER_THIS_TURN_F, [hl]
-
-	ld a, DUELVARS_DUELIST_TYPE
-	call GetTurnDuelistVariable
-	and DUELIST_TYPE_AI_OPP
-	jr nz, .ai_opp
-
-; player
-	farcall FinishQueuedAnimations
-	farcall HandlePeekSelection
-	ldh [hAIPkmnPowerEffectParam], a
-	ret
-
-.ai_opp
-	ldh a, [hAIPkmnPowerEffectParam]
-	bit AI_PEEK_TARGET_HAND_F, a
-	jr z, .prize_or_deck
-	and (~AI_PEEK_TARGET_HAND & $ff) ; unset bit to get deck index
-; if masked value is higher than $40, then it means
-; that AI chose to look at Player's deck.
-; all deck indices will be smaller than $40.
-	cp $40
-	jr c, .hand
-	ldh a, [hAIPkmnPowerEffectParam]
-	jr .prize_or_deck
-
-.hand
-; AI chose to look at random card in hand,
-; so display it to the Player on screen.
-	call SwapTurn
-	ldtx hl, PeekWasUsedToLookInYourHandText
-	bank1call DisplayCardDetailScreen
-	jp SwapTurn
-
-.prize_or_deck
-; AI chose either a prize card or Player's top deck card,
-; so show Play Area and draw cursor appropriately.
-	farcall FinishQueuedAnimations
-	call SwapTurn
-	ldh a, [hAIPkmnPowerEffectParam]
-	xor $80
-	farcall DrawAIPeekScreen
-	call SwapTurn
-	ldtx hl, CardPeekWasUsedOnText
-	jp DrawWideTextBox_WaitForInput
-
-
-TYRANITAR_PlayerSelectEffect:
-	ld a, $ff
-	ldh [hTemp_ffa0], a
-
-	call CreateDeckCardList
-	ldtx hl, ChooseATyranitarFromDeckText
-	ldtx bc, TyranitarName
-	ld de, TYRANITAR
-	farcall LookForCardsInDeck
-	ret c
-
-; draw Deck list interface and print text
-	bank1call Func_5591
-	ldtx hl, ChooseATyranitarText
-	ldtx de, DuelistDeckText
-	bank1call SetCardListHeaderText
-
-.loop
-	bank1call DisplayCardList
-	jr c, .pressed_b
-	call GetCardIDFromDeckIndex
-	cp16 TYRANITAR
-	jr nz, .play_sfx
-
-; Krabby was selected
-	ldh a, [hTempCardIndex_ff98]
-	ldh [hTemp_ffa0], a
-	or a
-	ret
-
-.play_sfx
-	; play SFX and loop back
-	call Func_3794
-	jr .loop
-
-.pressed_b
-; figure if Player can exit the screen without selecting,
-; that is, if the Deck has no Krabby card.
-	ld a, DUELVARS_CARD_LOCATIONS
-	call GetTurnDuelistVariable
-.loop_b_press
-	ld a, [hl]
-	cp CARD_LOCATION_DECK
-	jr nz, .next
-	ld a, l
-	call GetCardIDFromDeckIndex
-	cp16 TYRANITAR
-	jr z, .play_sfx ; found Krabby, go back to top loop
-.next
-	inc l
-	ld a, l
-	cp DECK_SIZE
-	jr c, .loop_b_press
-
-; no Krabby in Deck, can safely exit screen
-	ld a, $ff
-	ldh [hTemp_ffa0], a
-	or a
-	ret
-
-Gyarados_PlayerSelectEffect:
-	ld a, $ff
-	ldh [hTemp_ffa0], a
-
-	call CreateDeckCardList
-	ldtx hl, ChooseAGyaradosFromDeckText
-	ldtx bc, GyaradosName
-	ld de, GYARADOS
-	farcall LookForCardsInDeck
-	ret c
-
-; draw Deck list interface and print text
-	bank1call Func_5591
-	ldtx hl, ChooseAGyaradosText
-	ldtx de, DuelistDeckText
-	bank1call SetCardListHeaderText
-
-.loop
-	bank1call DisplayCardList
-	jr c, .pressed_b
-	call GetCardIDFromDeckIndex
-	cp16 GYARADOS
-	jr nz, .play_sfx
-
-; Krabby was selected
-	ldh a, [hTempCardIndex_ff98]
-	ldh [hTemp_ffa0], a
-	or a
-	ret
-
-.play_sfx
-	; play SFX and loop back
-	call Func_3794
-	jr .loop
-
-.pressed_b
-; figure if Player can exit the screen without selecting,
-; that is, if the Deck has no Krabby card.
-	ld a, DUELVARS_CARD_LOCATIONS
-	call GetTurnDuelistVariable
-.loop_b_press
-	ld a, [hl]
-	cp CARD_LOCATION_DECK
-	jr nz, .next
-	ld a, l
-	call GetCardIDFromDeckIndex
-	cp16 TYRANITAR
-	jr z, .play_sfx ; found Krabby, go back to top loop
-.next
-	inc l
-	ld a, l
-	cp DECK_SIZE
-	jr c, .loop_b_press
-
-; no Krabby in Deck, can safely exit screen
-	ld a, $ff
-	ldh [hTemp_ffa0], a
-	or a
-	ret
-
-PIKACHU_PlayerSelectEffect:
-	ld a, $ff
-	ldh [hTemp_ffa0], a
-
-	call CreateDeckCardList
-	ldtx hl, ChooseAPikachuFromDeckText
-
-; draw Deck list interface and print text
-	bank1call Func_5591
-	ldtx hl, ChooseAPikachuText
-	ldtx de, DuelistDeckText
-	bank1call SetCardListHeaderText
-
-.loop
-	bank1call DisplayCardList
-	jr c, .pressed_b
-	call GetCardIDFromDeckIndex
-	cp16 PIKACHU
-	jr nz, .play_sfx
-
-; Krabby was selected
-	ldh a, [hTempCardIndex_ff98]
-	ldh [hTemp_ffa0], a
-	or a
-	ret
-
-.play_sfx
-	; play SFX and loop back
-	call Func_3794
-	jr .loop
-
-.pressed_b
-; figure if Player can exit the screen without selecting,
-; that is, if the Deck has no Krabby card.
-	ld a, DUELVARS_CARD_LOCATIONS
-	call GetTurnDuelistVariable
-.loop_b_press
-	ld a, [hl]
-	cp CARD_LOCATION_DECK
-	jr nz, .next
-	ld a, l
-	call GetCardIDFromDeckIndex
-	cp16 PIKACHU
-	jr z, .play_sfx ; found Krabby, go back to top loop
-.next
-	inc l
-	ld a, l
-	cp DECK_SIZE
-	jr c, .loop_b_press
-
-; no Krabby in Deck, can safely exit screen
-	ld a, $ff
-	ldh [hTemp_ffa0], a
-	or a
-	scf
-	ret
-
-HitmonSearch_PlayerSelectEffect:
-	ld a, $ff
-	ldh [hTemp_ffa0], a
-
-	call CreateDeckCardList
-	ldtx hl, ChooseAHitmonFromDeckText
-
-; draw Deck list interface and print text
-	bank1call Func_5591
-	ldtx hl, ChooseAHitmonText
-	ldtx de, DuelistDeckText
-	bank1call SetCardListHeaderText
-
-.loop
-	bank1call DisplayCardList
-	jr c, .pressed_b
-	call GetCardIDFromDeckIndex
-	cp16 HITMONCHAN
-	jr z, .selected_nidoran
-	cp16 HITMONLEE
-	jr z, .selected_nidoran
-	cp16 HITMONTOP
-	jr nz, .loop ; .play_sfx would be more appropriate here
-
-.selected_nidoran
-	ldh a, [hTempCardIndex_ff98]
-	ldh [hTemp_ffa0], a
-	or a
-	ret
-
-.play_sfx
-	; play SFX and loop back
-	farcall Func_3794
-	jr .loop
-
-.pressed_b
-; figure if Player can exit the screen without selecting,
-; that is, if the Deck has no NidoranF or NidoranM card.
-	ld a, DUELVARS_CARD_LOCATIONS
-	call GetTurnDuelistVariable
-.loop_b_press
-	ld a, [hl]
-	cp CARD_LOCATION_DECK
-	jr nz, .next
-	ld a, l
-	farcall GetCardIDFromDeckIndex
-	ld bc, HITMONCHAN
-	call CompareDEtoBC
-	jr z, .play_sfx ; found, go back to top loop
-	ld bc, HITMONLEE
-	call CompareDEtoBC
-	jr z, .play_sfx ; found, go back to top loop
-	ld bc, HITMONTOP
-	jr z, .play_sfx ; found, go back to top loop
-.next
-	inc l
-	ld a, l
-	cp DECK_SIZE
-	jr c, .loop_b_press
-
-; no Nidoran in Deck, can safely exit screen
-	ld a, $ff
-	ldh [hTemp_ffa0], a
-	or a
-	ret
-
-HitmonSearch_AISelectEffect:
-	call CreateDeckCardList
-	ld hl, wDuelTempList
-.loop_deck
-	ld a, [hli]
-	ldh [hTemp_ffa0], a
-	cp $ff
-	ret z ; none found
-	call GetCardIDFromDeckIndex
-	ld a, e
-	cp HITMONCHAN
-	jr z, .found
-	cp HITMONLEE
-	jr z, .found
-	cp HITMONTOP
-	jr nz, .loop_deck
-.found
-	ret	
-
 Stage1Search_DeckCheck:
 	ld a, DUELVARS_NUMBER_OF_CARDS_NOT_IN_DECK
 	call GetTurnDuelistVariable
@@ -790,7 +475,6 @@ SprintEffect2:
 	dec c
 	jr nz, .draw_loop
 .done
-	farcall SetUsedPokemonPowerThisTurn
 	ret
 
 PlayerYesOrNoSelection:
@@ -1655,7 +1339,104 @@ GetEnergyAttachedMultiplierDamage2:
 	ld e, l
 	ld d, h
 	ret
+FindEvolutionInDiscardPile:
+	farcall CreateStage2PokemonCardListFromDiscardPile
+	ldtx bc, EvolutionCardText
+	lb de, SEARCHEFFECT_EVOLUTION, 0
+	ldtx hl, SearchyourDeckforanEvolvedPkmnText
+	call DrawWideTextBox_WaitForInput
 
+; draw deck list interface and print text
+	bank1call Func_5591
+	ldtx hl, ChooseEvolutionCardText
+	ldtx de, DuelistDeckText
+	farcall SetCardListHeaderText
+
+.read_input
+	bank1call DisplayCardList
+	jr c, .attempt_to_cancel ; the B button was pressed
+	farcall CheckDeckIndexForStage1OrStage2Pokemon
+	jr nc, .play_sfx ; not an Evolution card
+
+; an Evolution card was selected
+	ldh a, [hTempCardIndex_ff98]
+	ldh [hTemp_ffa0], a
+	or a
+	ret
+
+; play SFX and loop back
+.play_sfx
+	call Func_3794
+	jr .read_input
+
+; see if the Player can exit the screen without selecting a card,
+; that is, if the deck contains no Evolution cards.
+.attempt_to_cancel
+	ld hl, wDuelTempList
+.next_card
+	ld a, [hli]
+	cp $ff
+	jr z, .exit
+	farcall LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Type]
+	cp TYPE_ENERGY
+	ret nc ; not a Pokemon
+	ld a, [wLoadedCard2Stage]
+	or a
+	ret z ; is Basic
+	ld a, [wLoadedCard2Stage]
+	cp STAGE1
+	jr nc, .next_card
+	jr .play_sfx ; found an Evolution card, return to selection process
+
+; no Evolution cards in the deck, can safely exit screen
+.exit
+	ld a, $ff
+	ldh [hTemp_ffa0], a
+	or a
+	xor a
+	ret
+CreateStage2PokemonCardListFromDiscardPile:
+; gets hl to point at end of Discard Pile cards
+; and iterates the cards in reverse order.
+	ld a, DUELVARS_NUMBER_OF_CARDS_IN_DISCARD_PILE
+	call GetTurnDuelistVariable
+	ld b, a
+	add DUELVARS_DECK_CARDS
+	ld l, a
+	ld de, wDuelTempList
+	inc b
+	jr .next_discard_pile_card
+
+.check_card
+	ld a, [hl]
+	call LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Type]
+	cp TYPE_ENERGY
+	jr nc, .next_discard_pile_card ; if not Pokemon card, skip
+	ld a, [wLoadedCard2Stage]
+	cp 1
+	jr c, .next_discard_pile_card ; if not Basic stage, skip
+
+; write this card's index to wDuelTempList
+	ld a, [hl]
+	ld [de], a
+	inc de
+.next_discard_pile_card
+	dec l
+	dec b
+	jr nz, .check_card
+
+; done with the loop.
+	ld a, $ff ; terminating byte
+	ld [de], a
+	ld a, [wDuelTempList]
+	cp $ff
+	jr z, .set_carry
+	or a
+	ret
+.set_carry
+	jp SetCarryEF		
 FindEvolution:
 	farcall CreateDeckCardList
 	ldtx hl, ChooseEvolutionCardFromDeckText
@@ -1705,8 +1486,6 @@ FindEvolution:
 	ldh [hTemp_ffa0], a
 	or a
 	ret
-
-
 ; uses a card's deck index to check whether or not it is an Evolution card
 ; preserves all registers except af
 ; input:
@@ -2491,6 +2270,68 @@ NidoranFCallForFamily_PlayerSelectEffect2:
 	or a
 	ret
 
+DefenderSearchEffect:
+	ld a, $ff
+	ldh [hTemp_ffa0], a
+
+	call CreateDeckCardList
+	ldtx hl, ChooseNidoranFromDeckText
+	ldtx bc, NidoranMNidoranFText
+	ld d, SEARCHEFFECT_NIDORAN
+	farcall LookForCardsInDeck
+	ret c
+
+; draw Deck list interface and print text
+	bank1call Func_5591
+	ldtx hl, ChooseNidoranText
+	ldtx de, DuelistDeckText
+	bank1call SetCardListHeaderText
+
+.loop
+	bank1call DisplayCardList
+	jr c, .pressed_b
+	farcall GetCardIDFromDeckIndex
+	cp16 DEFENDER
+	jr nz, .loop ; .play_sfx would be more appropriate here
+
+.selected_nidoran
+	ldh a, [hTempCardIndex_ff98]
+	ldh [hTemp_ffa0], a
+	or a
+	ld e, PLAY_AREA_ARENA
+  	farcall Put1DamageCounterOnTarget
+	ret
+
+.play_sfx
+	; play SFX and loop back
+	call Func_3794
+	jr .loop
+
+.pressed_b
+; figure if Player can exit the screen without selecting,
+; that is, if the Deck has no NidoranF or NidoranM card.
+	ld a, DUELVARS_CARD_LOCATIONS
+	call GetTurnDuelistVariable
+.loop_b_press
+	ld a, [hl]
+	cp CARD_LOCATION_DECK
+	jr nz, .next
+	ld a, l
+	farcall GetCardIDFromDeckIndex
+	cp16 DEFENDER
+	jr z, .play_sfx ; found, go back to top loop
+.next
+	inc l
+	ld a, l
+	cp DECK_SIZE
+	jr c, .loop_b_press
+
+; no Nidoran in Deck, can safely exit screen
+	ld a, $ff
+	ldh [hTemp_ffa0], a
+	or a
+	ret
+
 NidoranFCallForFamily_AISelectEffect2:
 	call CreateDeckCardList
 	ld hl, wDuelTempList
@@ -3201,68 +3042,6 @@ Attach2Energy_FromDiscardtoActiveEffect2:
 	farcall AttachEnergyEffect
 	pop hl
 	jr .loop
-
-MAGMAR_PlayerSelectEffect:
-	ld a, $ff
-	ldh [hTemp_ffa0], a
-
-	call CreateDeckCardList
-	ldtx hl, ChooseaMagmarFromDeckText
-	ldtx bc, MagmarName
-	ld de, MAGMAR
-	farcall LookForCardsInDeck
-	ret c
-
-; draw Deck list interface and print text
-	bank1call Func_5591
-	ldtx hl, ChooseAMagmarText
-	ldtx de, DuelistDeckText
-	bank1call SetCardListHeaderText
-
-.loop
-	bank1call DisplayCardList
-	jr c, .pressed_b
-	call GetCardIDFromDeckIndex
-	cp16 MAGMAR
-	jr nz, .play_sfx
-
-; Krabby was selected
-	ldh a, [hTempCardIndex_ff98]
-	ldh [hTemp_ffa0], a
-	or a
-	ret
-
-.play_sfx
-	; play SFX and loop back
-	call Func_3794
-	jr .loop
-
-.pressed_b
-; figure if Player can exit the screen without selecting,
-; that is, if the Deck has no Krabby card.
-	ld a, DUELVARS_CARD_LOCATIONS
-	call GetTurnDuelistVariable
-.loop_b_press
-	ld a, [hl]
-	cp CARD_LOCATION_DECK
-	jr nz, .next
-	ld a, l
-	call GetCardIDFromDeckIndex
-	cp16 MAGMAR
-	jr z, .play_sfx ; found Krabby, go back to top loop
-.next
-	inc l
-	ld a, l
-	cp DECK_SIZE
-	jr c, .loop_b_press
-
-; no Krabby in Deck, can safely exit screen
-	ld a, $ff
-	ldh [hTemp_ffa0], a
-	or a
-	ret
-
-
 SUBSTITUTE_DOLL_PlayerSelectEffect:
 	ld a, $ff
 	ldh [hTemp_ffa0], a
@@ -3427,64 +3206,6 @@ EnergyDraw_PlayerHandSelection2:
 	ldh [hTemp_ffa0], a
 	or a
 	ret
-
-ELECTABUZZ_PlayerSelectEffect:
-	ld a, $ff
-	ldh [hTemp_ffa0], a
-
-	call CreateDeckCardList
-	ldtx hl, ChooseAELECTABUZZFromDeckText
-
-; draw Deck list interface and print text
-	bank1call Func_5591
-	ldtx hl, ChooseAELECTABUZZText
-	ldtx de, DuelistDeckText
-	bank1call SetCardListHeaderText
-
-.loop
-	bank1call DisplayCardList
-	jr c, .pressed_b
-	call GetCardIDFromDeckIndex
-	cp16 ELECTABUZZ
-	jr nz, .play_sfx
-
-; Krabby was selected
-	ldh a, [hTempCardIndex_ff98]
-	ldh [hTemp_ffa0], a
-	or a
-	ret
-
-.play_sfx
-	; play SFX and loop back
-	call Func_3794
-	jr .loop
-
-.pressed_b
-; figure if Player can exit the screen without selecting,
-; that is, if the Deck has no Krabby card.
-	ld a, DUELVARS_CARD_LOCATIONS
-	call GetTurnDuelistVariable
-.loop_b_press
-	ld a, [hl]
-	cp CARD_LOCATION_DECK
-	jr nz, .next
-	ld a, l
-	call GetCardIDFromDeckIndex
-	cp16 ELECTABUZZ
-	jr z, .play_sfx ; found Krabby, go back to top loop
-.next
-	inc l
-	ld a, l
-	cp DECK_SIZE
-	jr c, .loop_b_press
-
-; no Krabby in Deck, can safely exit screen
-	ld a, $ff
-	ldh [hTemp_ffa0], a
-	or a
-	scf
-	ret
-
 SelectUpto3AtachedEn_PlayerSelectEffect2:
 	ldtx hl, ChooseAndDiscard3EnergyCardsText
 	call DrawWideTextBox_WaitForInput
@@ -3667,20 +3388,6 @@ AI3orMoreRetreatCost:
 	cp 3
 	jr nz, .loop_deck ; card isn't a Trainer card
 	ret ; Trainer card found	
-
-TYRANITAR_AISelectEffect2:
-	call CreateDeckCardList
-	ld hl, wDuelTempList
-.loop_deck
-	ld a, [hli]
-	ldh [hTemp_ffa0], a
-	cp $ff
-	ret z ; none found
-	call GetCardIDFromDeckIndex
-	cp16 TYRANITAR
-	jr nz, .loop_deck
-.found
-	ret
 Gyarados_AISelectEffect2:
 	call CreateDeckCardList
 	ld hl, wDuelTempList
@@ -3764,6 +3471,40 @@ CheckIfCardHasGrassEnergyAttached2:
 	ld a, l
 	or a
 	ret
+; returns carry if no Metal Energy cards
+; attached to card in Play Area location of a.
+; input:
+;	a = PLAY_AREA_* of location to check
+CheckIfCardHasMetalEnergyAttached:
+	or CARD_LOCATION_PLAY_AREA
+	ld e, a
+
+	ld a, DUELVARS_CARD_LOCATIONS
+	call GetTurnDuelistVariable
+.loop
+	ld a, [hl]
+	cp e
+	jr nz, .next
+	push de
+	push hl
+	ld a, l
+	farcall GetCardIDFromDeckIndex
+	farcall GetCardType
+	pop hl
+	pop de
+	cp TYPE_ENERGY_METAL
+	jr z, .no_carry
+.next
+	inc l
+	ld a, l
+	cp DECK_SIZE
+	jr c, .loop
+	farcall SetCarryEF
+	ret
+.no_carry
+	ld a, l
+	or a
+	ret	
 CountOpBasicEnergies: ;Returns amount in a
   	call SwapTurn
   	farcall CreateEnergyCardListFromDiscardPile_OnlyBasic
@@ -3814,3 +3555,408 @@ CreateMagikarpCardListFromDiscardPile:
 .set_carry
 	farcall SetCarryEF
 	ret
+BurningFire_AIEffect:
+	xor a
+	farcall CreateListOfFireEnergyAttachedToArena
+	call ATimes10
+	add 10
+	ld e, a  ; max damage
+	ld d, 10 ; min damage
+	ld a, d  ; mean damage
+	farcall SetExpectedAIDamage
+	ret
+
+BurningFire_AISelectEffect:
+	; this selection is handled in AISelectSpecialAttackParameters
+	ld a, $ff
+	ldh [hTemp_ffa0], a
+	ret
+BurningFire_PlayerSelectEffect:
+	ldtx hl, ProcedureForBurningFireText
+	bank1call DrawWholeScreenTextBox
+.start_selection
+	; copy all player variables to temporary buffer
+	; this is done so that we temporarily discard chosen cards
+	; and at the end of selection this is reverted
+	; actual discarding is done in next effect command step
+	ldh a, [hWhoseTurn]
+	ld h, a
+	ld l, LOW(wPlayerDuelVariables)
+	ld de, wc000
+.loop_copy_to_buffer
+	ld a, [hli]
+	ld [de], a
+	inc e
+	jr nz, .loop_copy_to_buffer
+
+	xor a
+	ldh [hCurSelectionItem], a
+
+	; first select a play area Pokémon
+.select_play_area_pkmn
+	bank1call HasAlivePokemonInPlayArea
+.play_area_selection
+	bank1call OpenPlayAreaScreenForSelection
+	cp -1 ; B pressed?
+	jr z, .done_selecting_energies
+	; selected a pkmn, does it have Fire energies?
+	ldh [hTempPlayAreaLocation_ff9d], a
+	farcall GetListOfFireEnergiesFromPlayAreaCard
+	jr c, .play_area_selection ; no Fire energies
+	ldh a, [hTempPlayAreaLocation_ff9d]
+	bank1call DisplayEnergyDiscardMenu
+	ldh a, [hCurSelectionItem]
+	ld [wEnergyDiscardMenuNumerator], a
+	xor a
+	ld [wEnergyDiscardMenuDenominator], a
+	bank1call HandleEnergyDiscardMenuInput
+	jr c, .select_play_area_pkmn ; cancelled operation
+	; selected a Fire energy, place it in Discard Pile
+	farcall PutCardInDiscardPile
+	farcall GetNextPositionInTempList
+	ldh a, [hTempCardIndex_ff98]
+	ld [hl], a
+	ldh a, [hCurSelectionItem]
+	cp 15 ; max 15 energies chosen this way
+	jr c, .select_play_area_pkmn
+
+.done_selecting_energies
+	farcall GetNextPositionInTempList
+	ld [hl], $ff ; terminating byte
+
+	; restore player variables from buffer
+	ldh a, [hWhoseTurn]
+	ld d, a
+	ld e, LOW(wPlayerDuelVariables)
+	ld hl, wc000
+.loop_copy_from_buffer
+	ld a, [hli]
+	ld [de], a
+	inc e
+	jr nz, .loop_copy_from_buffer
+	ldh a, [hCurSelectionItem] ; num energies chosen to discard
+	dec a
+	ld l, a
+	ld h, $00
+	call LoadTxRam3
+	ldtx hl, DiscardingXCardsPromptText
+	call YesOrNoMenuWithText_SetCursorToYes
+	jr c, .start_selection
+	ret
+
+BurningFire_DiscardAndMultiplierEffect:
+	ld hl, hTemp_ffa0
+	ld c, 0 ; energy discarded tally
+.loop_discard
+	ld a, [hli]
+	cp $ff
+	jr z, .done_discard
+	farcall DiscardCard
+	inc c
+	jr .loop_discard
+.done_discard
+	; do 10 * discarded energies in damage
+	ld a, c
+	call ATimes10
+	farcall AddToDamage
+	ret
+Phantom_Illusion_EvolveEffect:
+	ld a, DUELVARS_ARENA_CARD_STAGE
+	call GetTurnDuelistVariable
+	or a
+	jp z, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
+	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
+	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
+	farcall IsPrehistoricPowerActive
+	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
+	ld hl, wDuelTempList
+	call FindEvolutionInDiscardPile
+	jp z, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
+	; add found Staryu card and add it to hand
+	ldh a, [hTempCardIndex_ff98]
+	call MoveDiscardPileCardToHand
+	call AddCardToHand
+
+	; replace card deck index
+	ldh a, [hTempCardIndex_ff98]
+	farcall EvolvePokemonCard
+	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful ; no deck cards
+	; set it as Basic Pokémon
+	ldh a, [hTempPlayAreaLocation_ff9d]
+	ld b, a
+	ld de, 10
+	call DealDamageToPlayAreaPokemon_RegularAnim
+	ldh a, [hTempPlayAreaLocation_ff9d]
+	add DUELVARS_ARENA_CARD_STAGE
+	ld l, a
+	ld [hl], STAGE2
+; display card
+	farcall PrintPokemonEvolvedIntoPokemon
+	ret	
+Pupitar_EvolveEffect:
+	call CreateDeckCardList
+	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful ; no deck cards
+	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
+	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
+	farcall IsPrehistoricPowerActive
+	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
+	ld hl, wDuelTempList
+.loop_find_card
+	ld a, [hli]
+	ldh [hTempCardIndex_ff98], a
+	cp $ff
+	jp z, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful ; no Staryu found in deck
+	call GetCardIDFromDeckIndex
+	cp16 TYRANITAR
+	jr nz, .loop_find_card
+.Evolve_to_Stage2	
+	; add found Staryu card and add it to hand
+	ldh a, [hTempCardIndex_ff98]
+	call SearchCardInDeckAndAddToHand
+
+	; replace card deck index
+	ldh a, [hTempCardIndex_ff98]
+	farcall EvolvePokemonCard
+	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful ; no deck cards
+	; set it as Basic Pokémon
+	ldh a, [hTempPlayAreaLocation_ff9d]
+	add DUELVARS_ARENA_CARD_STAGE
+	ld l, a
+	ld [hl], STAGE2
+; display card
+	farcall PrintPokemonEvolvedIntoPokemon
+	ret
+Tyrogue_EvolveEffect:
+	call CreateDeckCardList
+	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful ; no deck cards
+	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
+	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
+	farcall IsPrehistoricPowerActive
+	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
+	ld hl, wDuelTempList
+.loop_find_card
+	ld a, [hli]
+	ldh [hTempCardIndex_ff98], a
+	cp $ff
+	jp z, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful ; no Staryu found in deck
+	call GetCardIDFromDeckIndex
+	cp16 HITMONCHAN
+	jr z, .find_it
+	cp16 HITMONLEE
+	jr z, .find_it
+	cp16 HITMONTOP
+	jr nz, .loop_find_card
+.find_it	
+	jp MAGMAR_EvolveEffect.Evolve_to_Stage1		
+Elekid_EvolveEffect:
+	call CreateDeckCardList
+	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful ; no deck cards
+	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
+	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
+	farcall IsPrehistoricPowerActive
+	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
+	ld hl, wDuelTempList
+.loop_find_card
+	ld a, [hli]
+	ldh [hTempCardIndex_ff98], a
+	cp $ff
+	jp z, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful ; no Staryu found in deck
+	call GetCardIDFromDeckIndex
+	cp16 ELECTABUZZ
+	jr nz, .loop_find_card
+	jp MAGMAR_EvolveEffect.Evolve_to_Stage1	
+Magikarp_EvolveEffect:
+	call CreateDeckCardList
+	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful ; no deck cards
+	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
+	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
+	farcall IsPrehistoricPowerActive
+	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
+	ld hl, wDuelTempList
+.loop_find_card
+	ld a, [hli]
+	ldh [hTempCardIndex_ff98], a
+	cp $ff
+	jp z, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful ; no Staryu found in deck
+	call GetCardIDFromDeckIndex
+	cp16 GYARADOS
+	jr nz, .loop_find_card
+	jr MAGMAR_EvolveEffect.Evolve_to_Stage1	
+Pikachu_EvolveEffect:
+	call CreateDeckCardList
+	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful ; no deck cards
+	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
+	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
+	farcall IsPrehistoricPowerActive
+	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
+	ld hl, wDuelTempList
+.loop_find_card
+	ld a, [hli]
+	ldh [hTempCardIndex_ff98], a
+	cp $ff
+	jp z, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful ; no Staryu found in deck
+	call GetCardIDFromDeckIndex
+	cp16 PIKACHU
+	jr nz, .loop_find_card
+	jr MAGMAR_EvolveEffect.Evolve_to_Stage1
+MAGMAR_EvolveEffect:
+	call CreateDeckCardList
+	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful ; no deck cards
+	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
+	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
+	farcall IsPrehistoricPowerActive
+	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
+	ld hl, wDuelTempList
+.loop_find_card
+	ld a, [hli]
+	ldh [hTempCardIndex_ff98], a
+	cp $ff
+	jp z, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful ; no Staryu found in deck
+	call GetCardIDFromDeckIndex
+	cp16 MAGMAR
+	jr nz, .loop_find_card
+.Evolve_to_Stage1	
+	; add found Staryu card and add it to hand
+	ldh a, [hTempCardIndex_ff98]
+	call SearchCardInDeckAndAddToHand
+
+	; replace card deck index
+	ldh a, [hTempCardIndex_ff98]
+	farcall EvolvePokemonCard
+	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful ; no deck cards
+	; set it as Basic Pokémon
+	ldh a, [hTempPlayAreaLocation_ff9d]
+	add DUELVARS_ARENA_CARD_STAGE
+	ld l, a
+	ld [hl], STAGE1
+; display card
+	farcall PrintPokemonEvolvedIntoPokemon
+	ret	
+Rebirth_DiscardAndAddEffect2:
+	call CreateDeckCardList
+	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful ; no deck cards
+	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
+	jr c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
+	farcall IsPrehistoricPowerActive
+	jr c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
+	ld hl, wDuelTempList
+.loop_find_card
+	ld a, [hli]
+	ldh [hTempCardIndex_ff98], a
+	cp $ff
+	jp z, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful ; no Staryu found in deck
+	call GetCardIDFromDeckIndex
+	cp16 AEGISLASH
+	jr nz, .loop_find_card
+	jr Rebirth_DiscardAndAddEffect.devolve	
+Rebirth_DiscardAndAddEffect:
+	call CreateDeckCardList
+	jp c, .SetWasUnsuccessful ; no deck cards
+	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
+	jr c, .SetWasUnsuccessful
+	farcall IsPrehistoricPowerActive
+	jr c, .SetWasUnsuccessful
+	ld hl, wDuelTempList
+.loop_find_card
+	ld a, [hli]
+	ldh [hTempCardIndex_ff98], a
+	cp $ff
+	jp z, .SetWasUnsuccessful ; no Staryu found in deck
+	call GetCardIDFromDeckIndex
+	cp16 AEGISLASH_SHIELD
+	jr nz, .loop_find_card
+.devolve
+	ldh a, [hTempPlayAreaLocation_ff9d]
+	ld e, a
+	ldh a, [hTemp_ffa0]
+	farcall DevolutionBeam_DevolveEffect.DevolvePokemon
+	ld a, e
+	farcall RemoveCardFromHand
+	farcall ReturnCardToDeck
+	farcall ShuffleDeck
+	; add found Staryu card and add it to hand
+	ldh a, [hTempCardIndex_ff98]
+	call SearchCardInDeckAndAddToHand
+
+	; replace card deck index
+	ldh a, [hTempCardIndex_ff98]
+	farcall EvolvePokemonCard
+	jp c, .SetWasUnsuccessful ; no deck cards
+; display card
+	farcall PrintPokemonEvolvedIntoPokemon
+	ret
+.SetWasUnsuccessful
+	farcall SetWasUnsuccessful
+	ret
+FindMagby:
+    xor a ; DUELVARS_CARD_LOCATIONS
+    call GetTurnDuelistVariable
+    ld c, DECK_SIZE
+.loop_locations
+    ld a, [hli] ; gets location of i-th deck card
+    cp CARD_LOCATION_ARENA ; is it in Arena?
+    jr nz, .not_in_arena
+    ; l holds the deck index + 1, so get its card ID
+    ld a, l
+    dec a
+    call GetCardIDFromDeckIndex
+    cp16 MAGBY
+    jr z, .found
+.not_in_arena
+    dec c
+    jr nz, .loop_locations
+    ; not found
+    or a
+    ret
+.found
+    ; card ID was found in the Arena
+    scf
+	ret
+FindPichu:
+    xor a ; DUELVARS_CARD_LOCATIONS
+    call GetTurnDuelistVariable
+    ld c, DECK_SIZE
+.loop_locations
+    ld a, [hli] ; gets location of i-th deck card
+    cp CARD_LOCATION_ARENA ; is it in Arena?
+    jr nz, .not_in_arena
+    ; l holds the deck index + 1, so get its card ID
+    ld a, l
+    dec a
+    call GetCardIDFromDeckIndex
+    cp16 PICHU
+    jr z, .found
+.not_in_arena
+    dec c
+    jr nz, .loop_locations
+    ; not found
+    or a
+    ret
+.found
+    ; card ID was found in the Arena
+    scf
+	ret
+FindElekid:
+    xor a ; DUELVARS_CARD_LOCATIONS
+    call GetTurnDuelistVariable
+    ld c, DECK_SIZE
+.loop_locations
+    ld a, [hli] ; gets location of i-th deck card
+    cp CARD_LOCATION_ARENA ; is it in Arena?
+    jr nz, .not_in_arena
+    ; l holds the deck index + 1, so get its card ID
+    ld a, l
+    dec a
+    call GetCardIDFromDeckIndex
+    cp16 ELEKID
+    jr z, .found
+.not_in_arena
+    dec c
+    jr nz, .loop_locations
+    ; not found
+    or a
+    ret
+.found
+    ; card ID was found in the Arena
+    scf
+	ret	

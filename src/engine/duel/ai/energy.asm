@@ -149,7 +149,7 @@ AIProcessEnergyCards:
 ; add to AI score
 .check_venusaur
 	ld de, TREVENANT
-	call CountPokemonIDInBothPlayAreas
+	call CountPokemonIDInBothArenas
 	jr c, .check_if_active
 	ld de, MEGANIUM
 	call CountPokemonIDInPlayArea

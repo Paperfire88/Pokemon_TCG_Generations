@@ -27,7 +27,7 @@ Mail4Part1Text:
 	line "about Amy's deck - she's the "
 	line "Master of the Water Club."
 	line "Her deck uses Rain Dance -"
-	line "Greninja's Pokémon Power."
+	line "Greninja's Ability."
 	line "This deck allows her to "
 	line "keep attaching Water Energy "
 	line "to her Water Pokémon to "

@@ -7,7 +7,7 @@ TerasparkDescription:
 	line "Apply Weakness/Resistance)."
 	done
 
-TreasureRushDescription:
+MakeItRainNameDescription:
 	text "Does +10 damage for Each Card in"
 	line "your hand (Up to 10).Then, This PKMN"
 	line "takes 20 Damage."	
@@ -1231,8 +1231,8 @@ PsyShadowDescription:
 	line "counters on it. shuffle your deck."
 	done	
 
-PKMNPowerCondition:
-	text "This [PKMN Power] can't be used if" 
+AbilityCondition:
+	text "This [Ability] can't be used if" 
 	line "your active PKMN is affected by a"
 	line "Status Condition (<PARALYZED>, <ASLEEP> or <CONFUSED>)."
 	done
@@ -1600,7 +1600,7 @@ VineInviteName:
 	done
 
 VineInviteDescription:
-	text "After doing damage, Switch in 1 of"
+	text "Before doing damage, Switch in 1 of"
 	line "your opponent's Benched PKMN to the"
 	line "Active Spot.Then, The Defending PKMN"
 	line "Retreat cost is 1 <COLORLESS> More until the"

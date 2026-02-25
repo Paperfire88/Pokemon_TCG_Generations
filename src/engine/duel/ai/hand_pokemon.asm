@@ -493,7 +493,7 @@ AIDecideSpecialEvolutions:
 ; if there's no Muk, raise score
 .check_muk
 	ld de, TREVENANT
-	call CountPokemonIDInBothPlayAreas
+	call CountPokemonIDInBothArenas
 	jr c, .lower_score
 	ld a, 10
 	jp AddToAIScore
@@ -581,7 +581,7 @@ AIDecidePlayLegendaryBirds:
 .check_muk_and_snorlax
 	; checks for Muk in both Play Areas
 	ld de, TREVENANT
-	call CountPokemonIDInBothPlayAreas
+	call CountPokemonIDInBothArenas
 	jr c, .subtract
 
 ; add
@@ -602,6 +602,6 @@ AIDecidePlayLegendaryBirds:
 .zapdos
 	; checks for Muk in both Play Areas
 	ld de, TREVENANT
-	call CountPokemonIDInBothPlayAreas
+	call CountPokemonIDInBothArenas
 	jr c, .subtract
 	ret

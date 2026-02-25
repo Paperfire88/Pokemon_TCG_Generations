@@ -23,7 +23,7 @@ TransparencyDescription:
 	done
 
 PKMNBodyCondition:
-	text "This PKMNPower stops working if" 
+	text "This Ability stops working if" 
 	line "This PKMN is affected by a Special"
 	line "Condition. (Asleep, Confused,"
 	line "or Paralyzed.)"
@@ -122,8 +122,8 @@ InvisibleWallDescription:
 	line "effects of attacks still happen.)"
 	done
 
-PKMNPowerCondition2:
-	text "This [PKMN Power] can't be used if" 
+AbilityCondition2:
+	text "This [Ability] can't be used if" 
 	line "this PKMN is affected by a Status" 
 	line "Condition (<PARALYZED>, <ASLEEP> or <CONFUSED>)."
 	done
@@ -256,7 +256,7 @@ CorviknightName:
 	text "Corviknight"
 	done
 
-GaleName:
+GyroBallName:
 	text "Gyro Ball"
 	done
 
@@ -347,9 +347,8 @@ ClefablesMetronomeDescription:
 	done
 
 SteelWingDescription:
-	text "During your opponents next turn,this"
-	line "PKMN takes -20 less damage (after"
-	line "Weakness/Resistance)."
+	text "During your opponents next turn,"
+	line "this PKMN takes -20 less damage."
 	done
 
 StuffulName:
@@ -435,10 +434,8 @@ SteelWingName:
 
 ExpandDescription:
 	text "During your opponents next turn,this"
-	line "PKMN takes -10 less damage (after"
-	line "Weakness/Resistance)."
+	line "PKMN takes -10 less damage."
 	done
-
 ClassyCatName:
 	text "Beaver"
 	done
@@ -769,7 +766,7 @@ ClefairyDollDescription:
 	done
 ClefairyDollDescriptionCont:
 	text "On your turn, you may discard this"
-	line "card. (Use the PKMN Power menu.)"
+	line "card. (Use the Abilities menu.)"
 	line ""
 	line "Booster Pack: (MYSTERY)"
 	line "OG Set: (Pokémon Official Illus.)"
@@ -1389,8 +1386,8 @@ MusharnaName:
 	text "Musharna"
 	done
 
-TreasureRushName:
-	text "Treasure Rush"
+MakeItRainName:
+	text "Make It Rain"
 	done
 
 DraconicDreamsName:
@@ -1499,7 +1496,10 @@ DustyPillarName:
 
 DustyPillarDescription:
 	text "Does +20 damage for each <COLORLESS> in the"
-	line "Defending PKMN Retreat Cost."
+	line "Defending PKMN Retreat Cost. If this"
+	line "PKMN has any <GRASS> energy attached to"
+	line "it, discard the top 3 cards of your"
+	line "opponent's deck."
 	done	
 
 LowSweepName:

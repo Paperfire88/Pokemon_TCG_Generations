@@ -299,9 +299,9 @@ ForestCurseName:
 	done
 
 ForestCurseDescription:
-	text "As long as this PKMN is in play," 
+	text "As long as this is your Active PKMN," 
 	line "Neither player can use or activate"
-	line "the effect of any other PKMN Power." 
+	line "the effects of any other Ability." 
 	done
 
 SnoverName:
@@ -1215,8 +1215,8 @@ PerrserkerName:
 	done
 
 TripleAttackX20Description:
-	text "Flip 3 coins. This attack does 20"
-	line "damage for each heads."
+	text "Flip 3 coins. it does 20 damage for"
+	line "each heads."
 	done
 
 SandAttackName:
@@ -1365,7 +1365,7 @@ StrikesBackDescription:
 	done
 
 StrikesBackDescriptionCont:
-	text "This PKMN power can't be used if" 
+	text "This Ability can't be used if" 
 	line "this PKMN is affected by a Special" 
 	line "Condition when your opponent attacks"
 	done
@@ -1400,10 +1400,10 @@ HardenName:
 	done
 
 HardenDescription:
-	text "During your opponent's next turn, if"
-	line "30 or less damage is done to this"
-	line "PKMN, prevent that damage. (after"
-	line "Weakness or Resistance)."
+	text "During your opponent's next turn,"
+	line "prevent all damage done to this"
+	line "PKMN by attacks that deal 40 or less"
+	line "damage."
 	done
 
 RockThrowName:

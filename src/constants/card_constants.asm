@@ -8,6 +8,8 @@
 	const DARKNESS_ENERGY              ; $06
 	const METAL_ENERGY
 	const DOUBLE_COLORLESS_ENERGY     ; $07
+	const RECYCLE_ENERGY
+	const MEMORY_ENERGY
 	const CHIKORITA                   ; $08
 	const BAYLEEF                     ; $09
 	const MEGANIUM               ; $0b
@@ -259,6 +261,7 @@
 	const DREEPY
 	const DRAKLOAK
 	const DRAGAPULT
+	const AEGISLASH_SHIELD
 	const CRESSELIA             ; $9f
 	const MEW                    ; $a2
 	const MEWTWO_LV60                 ; $9e
@@ -365,7 +368,7 @@
 	const IMPOSTER_PROFESSOR_OAK      ; $c4
 	const BILL                        ; $c5
 	const MR_FUJI                     ; $c6
-	const LASS                        ; $c7
+	const MARNIE                        ; $c7
 	const IMAKUNI_CARD                ; $c8
 	const POKEMON_CENTER              ; $d3
 	const COPYCAT                     ; $e3

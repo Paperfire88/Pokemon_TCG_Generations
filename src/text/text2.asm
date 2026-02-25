@@ -78,7 +78,7 @@ KnockedOutDueToDestinyBondText:
 
 ReceivesDamageDueToStrikesBackText:
 	text "<RAMTEXT> receives <RAMNUM> damage"
-	line "due to the effects of Bite's Back."
+	line "due to an Ability."
 	done
 
 UnableToEvolveDueToPrehistoricPowerText:
@@ -479,7 +479,7 @@ BasicPokemonWasPlacedOnEachBenchText:
 
 WasUnsuccessfulText:
 	text "<RAMTEXT>'s"
-	line "<RAMTEXT> was unsuccessful."
+	line "<RAMTEXT> failed."
 	done
 
 ThereWasNoEffectFromTxRam2Text:
