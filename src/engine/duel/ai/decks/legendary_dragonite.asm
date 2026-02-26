@@ -97,7 +97,7 @@ AIDoTurn_LegendaryLugia:
 ; have Energy cards attached, try attaching from hand.
 ; otherwise run normal AI energy attach routine.
 	ld a, DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	call GetCardIDFromDeckIndex
 	cp16 CHATOT
 	jr nz, .attach_normally

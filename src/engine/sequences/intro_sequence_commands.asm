@@ -64,8 +64,7 @@ IntroSequenceCmd_WaitOrbsAnimation:
 	dec c
 	jr nz, .loop
 	call AdvanceIntroSequenceCmdPtrBy2
-	scf
-	ret
+	retscf
 
 .no_carry
 	or a
@@ -75,8 +74,7 @@ IntroSequenceCmd_Wait:
 	ld a, c
 	ld [wSequenceDelay], a
 	call AdvanceIntroSequenceCmdPtrBy3
-	scf
-	ret
+	retscf
 
 IntroSequenceCmd_SetOrbsAnimations:
 	ld l, c
@@ -98,8 +96,7 @@ IntroSequenceCmd_SetOrbsAnimations:
 	jr nz, .loop
 
 	call AdvanceIntroSequenceCmdPtrBy4
-	scf
-	ret
+	retscf
 
 IntroSequenceCmd_SetOrbsCoordinates:
 	ld l, c
@@ -132,8 +129,7 @@ IntroSequenceCmd_SetOrbsCoordinates:
 	jr nz, .loop
 
 	call AdvanceIntroSequenceCmdPtrBy4
-	scf
-	ret
+	retscf
 
 IntroOrbAnimations_CharizardScene:
 	db SPRITE_ANIM_192 ; GRASS
@@ -234,16 +230,14 @@ IntroSequenceCmd_PlayTitleScreenMusic:
 	ld a, MUSIC_TITLESCREEN
 	call PlaySong
 	call AdvanceIntroSequenceCmdPtrBy2
-	scf
-	ret
+	retscf
 
 IntroSequenceCmd_WaitSFX:
 	call AssertSFXFinished
 	or a
 	jr nz, .no_carry
 	call AdvanceIntroSequenceCmdPtrBy2
-	scf
-	ret
+	retscf
 
 .no_carry
 	or a
@@ -253,23 +247,20 @@ IntroSequenceCmd_PlaySFX:
 	ld a, c
 	call PlaySFX
 	call AdvanceIntroSequenceCmdPtrBy3
-	scf
-	ret
+	retscf
 
 IntroSequenceCmd_FadeIn:
 	ld a, TRUE
 	ld [wIntroSequencePalsNeedUpdate], a
 	call AdvanceIntroSequenceCmdPtrBy2
-	scf
-	ret
+	retscf
 
 IntroSequenceCmd_FadeOut:
 	farcall Func_10d50
 	ld a, TRUE
 	ld [wIntroSequencePalsNeedUpdate], a
 	call AdvanceIntroSequenceCmdPtrBy2
-	scf
-	ret
+	retscf
 
 IntroSequenceCmd_LoadCharizardScene:
 	lb bc, 6, 3
@@ -291,8 +282,7 @@ IntroSequenceCmd_LoadTitleScreenScene:
 	ld a, SCENE_TITLE_SCREEN
 	call LoadOpeningScene
 	call IntroSequenceEmptyFunc
-	scf
-	ret
+	retscf
 
 ; a = scene ID
 ; bc = coordinates for scene
@@ -310,8 +300,7 @@ LoadOpeningScene:
 	ld [wIntroSequencePalsNeedUpdate], a
 	call AdvanceIntroSequenceCmdPtrBy2
 	call EnableLCD
-	scf
-	ret
+	retscf
 
 IntroSequenceEmptyFunc:
 	ret

@@ -22,8 +22,7 @@ SetOneObjectAttributes::
 	ret
 .beyond_oam
 	pop hl
-	scf
-	ret
+	retscf
 
 ; set the Y Position and X Position of all sprites in wOAM to $00
 ZeroObjectPositions::

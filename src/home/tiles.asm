@@ -222,8 +222,7 @@ Func_1f96::
 	ld hl, sp+0
 	ld a, [hl]
 	add sp, 10
-	scf
-	ret
+	retscf
 
 Func_2046::
 	ld hl, sp+3

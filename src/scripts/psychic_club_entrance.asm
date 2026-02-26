@@ -120,8 +120,7 @@ Func_e8a0:
 	ld a, $08
 	ld [wLoadNPCYPos], a
 .asm_e8be
-	scf
-	ret
+	retscf
 
 Script_FirstRonaldDuel:
 	start_script

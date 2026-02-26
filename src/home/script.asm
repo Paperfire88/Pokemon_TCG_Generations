@@ -41,8 +41,7 @@ HandleMoveModeAPress::
 	pop bc
 	pop af
 	call BankswitchROM
-	scf
-	ret
+	retscf
 .noMatch
 	pop hl
 	ld bc, MAP_OBJECT_SIZE - 1

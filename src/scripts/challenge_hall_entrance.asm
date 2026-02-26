@@ -72,8 +72,7 @@ Preload_Clerk9:
 	ld a, MUSIC_CHALLENGE_HALL
 	ld [wDefaultSong], a
 .no_challenge_cup
-	scf
-	ret
+	retscf
 
 Script_Clerk9:
 	start_script

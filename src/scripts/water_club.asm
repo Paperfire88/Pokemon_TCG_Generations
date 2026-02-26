@@ -242,8 +242,7 @@ Preload_Amy:
 	ld a, $01
 	ld [wd3d0], a
 .asm_e2cf
-	scf
-	ret
+	retscf
 
 Script_MeetAmy:
 	start_script

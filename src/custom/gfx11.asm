@@ -1,8 +1,8 @@
 ;4/19
-LeppaBerryCardGfx::	
-	INCBIN "gfx/cards/leppa_berry.pal"
-	INCBIN "gfx/cards/leppa_berry.attrmap"	
-	INCBIN "gfx/cards/leppa_berry.2bpp"
+GreatBallCardGfx::	
+	INCBIN "gfx/cards/great_ball.pal"
+	INCBIN "gfx/cards/great_ball.attrmap"	
+	INCBIN "gfx/cards/great_ball.2bpp"
 RecycleEnergyCardGfx::	
 	INCBIN "gfx/cards/recycle_energy.pal"
 	INCBIN "gfx/cards/recycle_energy.attrmap"	

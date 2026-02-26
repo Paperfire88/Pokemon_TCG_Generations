@@ -76,8 +76,7 @@ _Preload_Ronald1InPsychicClubLobby:
 	get_event_value EVENT_RONALD_PSYCHIC_CLUB_LOBBY_ENCOUNTER
 	or a
 	jr nz, .dont_load
-	scf
-	ret
+	retscf
 .dont_load
 	or a
 	ret

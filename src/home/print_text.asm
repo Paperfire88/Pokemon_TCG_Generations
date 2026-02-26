@@ -300,8 +300,7 @@ ProcessTextHeader::
 	jr ProcessTextHeader
 .no_more_text
 	call TerminateHalfWidthText
-	scf
-	ret
+	retscf
 .tx_ram2
 	call WriteToTextHeader_MoveToNext
 	ld a, TX_KATAKANA

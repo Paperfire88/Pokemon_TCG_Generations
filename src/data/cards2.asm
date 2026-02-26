@@ -917,7 +917,7 @@ CarbinkCard:
 	dw NONE ; description (cont)
 	db 0 ; damage
 	db DAMAGE_NORMAL ; category
-	dw TrainerSearchEffectCommands ; effect commands
+	dw LuckyFindEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -8110,16 +8110,16 @@ RecycleCard:
 	tx RecycleDescription ; description
 	tx RecycleDescription2 ; description (cont)
 
-LeppaBerryCard:
+GreatBallCard:
 	db TYPE_TRAINER ; type
-	gfx GourgeistCardGfx ; gfx
-	tx LeppaBerryName ; name
-	db STAR ; rarity
+	gfx GreatBallCardGfx ; gfx
+	tx GreatBallName ; name
+	db DIAMOND ; rarity
 	db LOST_ISLE | NONE ; sets
-	dw LEPPA_BERRY
-	dw DefenderEffectCommands ; effect commands
-	tx LeppaBerryDescription ; description
-	tx LeppaBerryDescription2 ; description (cont)
+	dw GREAT_BALL
+	dw GreatBallEffectCommands ; effect commands
+	tx GreatBallDescription ; description
+	dw NONE ; description (cont)
 
 GrassEnergyCard:
 	db TYPE_ENERGY_GRASS ; type

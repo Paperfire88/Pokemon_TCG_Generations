@@ -25,8 +25,7 @@ Preload_ImakuniInScienceClubLobby:
 .load_imakuni
 	ld a, MUSIC_IMAKUNI
 	ld [wDefaultSong], a
-	scf
-	ret
+	retscf
 
 Script_Lad1:
 	start_script

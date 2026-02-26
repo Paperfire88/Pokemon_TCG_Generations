@@ -180,8 +180,7 @@ GetCardPointer::
 	call BankswitchROM
 	pop bc
 	pop de
-	scf
-	ret
+	retscf
 
 ; input:
 ; hl = card_gfx_index

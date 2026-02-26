@@ -19,8 +19,7 @@ _GameLoop::
 	jr _GameLoop ; virtually restart game
 
 ; this is never reached
-	scf
-	ret
+	retscf
 
 MainMenuFunctionTable:
 	dw MainMenu_ContinueFromDiary

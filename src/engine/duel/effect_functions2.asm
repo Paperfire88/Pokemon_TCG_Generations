@@ -67,8 +67,7 @@ LookForCardsInDeck:
 	dw .SearchDeckForSubs
 
 .set_carry
-	scf
-	ret
+	retscf
 
 ; returns carry if no card with
 ; same card ID as de is found in Deck
@@ -343,7 +342,7 @@ MysteryAttack_RandomEffect2:
 	ret
 Stage1Search_DeckCheck:
 	ld a, DUELVARS_NUMBER_OF_CARDS_NOT_IN_DECK
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	cp DECK_SIZE
 	ccf
 	ldtx hl, NoCardsLeftInTheDeckText
@@ -359,7 +358,7 @@ Stage1Search_PlayerSelection:
 	farcall LookForCardsInDeck
 	ret c ; skip showing deck
 
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChoosePokemonCardText
 	ldtx de, DuelistDeckText
 	bank1call SetCardListHeaderText
@@ -367,9 +366,7 @@ Stage1Search_PlayerSelection:
 	bank1call DisplayCardList
 	jr c, .try_exit ; B was pressed, check if Player can cancel operation
 	ldh a, [hTempCardIndex_ff98]
-	farcall LoadCardDataToBuffer2_FromDeckIndex
-	ld a, [wLoadedCard2Type]
-	cp TYPE_ENERGY
+	farcall CheckIfCardIsNotPkmn
 	jr nc, .play_sfx ; can't select non-Pokemon card
 	ldh a, [hTempCardIndex_ff98]
 	ldh [hTempList + 1], a
@@ -504,7 +501,7 @@ Donot:
 
 ShellTrapEffect1:
 	ld a, DUELVARS_ARENA_CARD_LAST_TURN_DAMAGE
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	or a
 	jr nz, .has_status
 	jr z, .no_status
@@ -550,7 +547,7 @@ EnergySearch_PlayerSelection2:
 	farcall LookForCardsInDeck
 	ret c ; skip showing deck
 
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChooseBasicEnergyCardText
 	ldtx de, DuelistDeckText
 	bank1call SetCardListHeaderText
@@ -592,7 +589,7 @@ FindTrainer:
 	jr c, .exit ; no Trainer cards in the deck
 
 ; draw deck list interface and print text
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChooseTrainerCardText
 	ldtx de, DuelistDeckText
 	farcall SetCardListHeaderText
@@ -655,7 +652,7 @@ AIFindTrainer:
 	jr nz, .loop_deck ; card isn't a Trainer card
 	ret ; Trainer card found
 
-MarowakCallForFamily_PlayerSelectEffect2:
+CallForFamilyFighting_PlayerSelectEffect:
 	ld a, $ff
 	ldh [hTemp_ffa0], a
 
@@ -665,7 +662,7 @@ MarowakCallForFamily_PlayerSelectEffect2:
 	ld d, SEARCHEFFECT_BASIC_FIGHTING
 
 ; draw Deck list interface and print text
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChooseBasicFightingPokemonText
 	ldtx de, DuelistDeckText
 	bank1call SetCardListHeaderText
@@ -695,7 +692,7 @@ MarowakCallForFamily_PlayerSelectEffect2:
 ; figure if Player can exit the screen without selecting,
 ; that is, if the Deck has no Basic Fighting Pokemon.
 	ld a, DUELVARS_CARD_LOCATIONS
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 .loop_b_press
 	ld a, [hl]
 	cp CARD_LOCATION_DECK
@@ -720,7 +717,7 @@ MarowakCallForFamily_PlayerSelectEffect2:
 	or a
 	ret
 
-MarowakCallForFamily_AISelectEffect:
+CallForFamilyFighting_AISelectEffect:
 	farcall CreateDeckCardList
 	ld hl, wDuelTempList
 .loop_deck
@@ -747,7 +744,7 @@ FindGrass:
 	jr c, .exit ; no Trainer cards in the deck
 
 ; draw deck list interface and print text
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChooseGrassText
 	ldtx de, DuelistDeckText
 	farcall SetCardListHeaderText
@@ -819,7 +816,7 @@ FindFire:
 	jr c, .exit ; no Trainer cards in the deck
 
 ; draw deck list interface and print text
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChooseFireText
 	ldtx de, DuelistDeckText
 	farcall SetCardListHeaderText
@@ -891,7 +888,7 @@ FindWater:
 	jr c, .exit ; no Trainer cards in the deck
 
 ; draw deck list interface and print text
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChooseWaterText
 	ldtx de, DuelistDeckText
 	farcall SetCardListHeaderText
@@ -963,7 +960,7 @@ FindLightning:
 	jr c, .exit ; no Trainer cards in the deck
 
 ; draw deck list interface and print text
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChooseLightningText
 	ldtx de, DuelistDeckText
 	farcall SetCardListHeaderText
@@ -1032,7 +1029,7 @@ FindFighting:
 	lb de, SEARCHEFFECT_FIGHTING, 0
 
 ; draw deck list interface and print text
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChooseFightingText
 	ldtx de, DuelistDeckText
 	farcall SetCardListHeaderText
@@ -1103,7 +1100,7 @@ FindPsychic:
 	jr c, .exit ; no Trainer cards in the deck
 
 ; draw deck list interface and print text
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChoosePsychicText
 	ldtx de, DuelistDeckText
 	farcall SetCardListHeaderText
@@ -1175,7 +1172,7 @@ FindDarkness:
 	jr c, .exit ; no Trainer cards in the deck
 
 ; draw deck list interface and print text
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChooseDarknessText
 	ldtx de, DuelistDeckText
 	farcall SetCardListHeaderText
@@ -1246,7 +1243,7 @@ FindColorless:
 	jr c, .exit ; no Trainer cards in the deck
 
 ; draw deck list interface and print text
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChooseColorlessText
 	ldtx de, DuelistDeckText
 	farcall SetCardListHeaderText
@@ -1303,11 +1300,14 @@ AIFindColorless:
 	cp TYPE_PKMN_COLORLESS
 	jr nz, .loop_deck ; card isn't a Trainer card
 	ret ; Trainer card found	
-
+; output in de the number of energy cards
+; attached to the Defending Pokemon times 10.
+; used for attacks that deal 10x number of energy
+; cards attached to the Defending card.
 GetEnergyAttachedMultiplierDamage2:
 	call SwapTurn
 	ld a, DUELVARS_CARD_LOCATIONS
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 
 	ld c, 0
 .loop
@@ -1347,7 +1347,7 @@ FindEvolutionInDiscardPile:
 	call DrawWideTextBox_WaitForInput
 
 ; draw deck list interface and print text
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChooseEvolutionCardText
 	ldtx de, DuelistDeckText
 	farcall SetCardListHeaderText
@@ -1377,9 +1377,7 @@ FindEvolutionInDiscardPile:
 	ld a, [hli]
 	cp $ff
 	jr z, .exit
-	farcall LoadCardDataToBuffer2_FromDeckIndex
-	ld a, [wLoadedCard2Type]
-	cp TYPE_ENERGY
+	farcall CheckIfCardIsNotPkmn
 	ret nc ; not a Pokemon
 	ld a, [wLoadedCard2Stage]
 	or a
@@ -1400,7 +1398,7 @@ CreateStage2PokemonCardListFromDiscardPile:
 ; gets hl to point at end of Discard Pile cards
 ; and iterates the cards in reverse order.
 	ld a, DUELVARS_NUMBER_OF_CARDS_IN_DISCARD_PILE
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld b, a
 	add DUELVARS_DECK_CARDS
 	ld l, a
@@ -1410,9 +1408,7 @@ CreateStage2PokemonCardListFromDiscardPile:
 
 .check_card
 	ld a, [hl]
-	call LoadCardDataToBuffer2_FromDeckIndex
-	ld a, [wLoadedCard2Type]
-	cp TYPE_ENERGY
+	farcall CheckIfCardIsNotPkmn
 	jr nc, .next_discard_pile_card ; if not Pokemon card, skip
 	ld a, [wLoadedCard2Stage]
 	cp 1
@@ -1446,7 +1442,7 @@ FindEvolution:
 	call DrawWideTextBox_WaitForInput
 
 ; draw deck list interface and print text
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChooseEvolutionCardText
 	ldtx de, DuelistDeckText
 	farcall SetCardListHeaderText
@@ -1493,16 +1489,13 @@ FindEvolution:
 ; output:
 ;	carry = set:  if the card is an Evolution card
 CheckDeckIndexForStage1OrStage2Pokemon:
-	farcall LoadCardDataToBuffer2_FromDeckIndex
-	ld a, [wLoadedCard2Type]
-	cp TYPE_ENERGY
+	farcall CheckIfCardIsNotPkmn
 	ret nc ; not a Pokemon
 	ld a, [wLoadedCard2Stage]
 	or a
 	ret z ; is Basic
 	; is an evolution
-	scf
-	ret
+	retscf
 
 
 ; finds the first Evolution card in the deck
@@ -1715,7 +1708,7 @@ GrassCallForFamily_PlayerSelectEffect2:
 	ld d, SEARCHEFFECT_POKEMON
 
 ; draw Deck list interface and print text
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChooseBasicGrassPokemonText
 	ldtx de, DuelistDeckText
 	bank1call SetCardListHeaderText
@@ -1745,7 +1738,7 @@ GrassCallForFamily_PlayerSelectEffect2:
 ; figure if Player can exit the screen without selecting,
 ; that is, if the Deck has no Basic Fighting Pokemon.
 	ld a, DUELVARS_CARD_LOCATIONS
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 .loop_b_press
 	ld a, [hl]
 	cp CARD_LOCATION_DECK
@@ -1802,7 +1795,7 @@ EnergySearch_PlayerSelection3:
 	farcall LookForCardsInDeck
 	ret c ; skip showing deck
 
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChooseBasicEnergyCardText
 	ldtx de, DuelistDeckText
 	bank1call SetCardListHeaderText
@@ -1891,7 +1884,7 @@ FindColorlessEvolution:
 	call DrawWideTextBox_WaitForInput
 
 ; draw deck list interface and print text
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChooseColorlessEvolutionCardText
 	ldtx de, DuelistDeckText
 	farcall SetCardListHeaderText
@@ -1947,7 +1940,7 @@ ColorlessCallForFamily_PlayerSelectEffect2:
 	ld d, SEARCHEFFECT_POKEMON
 
 ; draw Deck list interface and print text
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChooseBasicColorlessPokemonText
 	ldtx de, DuelistDeckText
 	bank1call SetCardListHeaderText
@@ -1977,7 +1970,7 @@ ColorlessCallForFamily_PlayerSelectEffect2:
 ; figure if Player can exit the screen without selecting,
 ; that is, if the Deck has no Basic Fighting Pokemon.
 	ld a, DUELVARS_CARD_LOCATIONS
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 .loop_b_press
 	ld a, [hl]
 	cp CARD_LOCATION_DECK
@@ -2025,7 +2018,7 @@ CreateNoTrainerCardListFromDiscardPile:
 ; and have hl point to the end of the
 ; Discard Pile list in wOpponentDeckCards.
 	ld a, DUELVARS_NUMBER_OF_CARDS_IN_DISCARD_PILE
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld b, a
 	add DUELVARS_DECK_CARDS
 	ld l, a
@@ -2059,15 +2052,14 @@ CreateNoTrainerCardListFromDiscardPile:
 	ret
 .no_trainers
 	ldtx hl, ThereAreNoTrainerCardsInDiscardPileText
-	scf
-	ret
+	retscf
 
 CreateACardListFromDiscardPile:
 ; get number of cards in Discard Pile
 ; and have hl point to the end of the
 ; Discard Pile list in wOpponentDeckCards.
 	ld a, DUELVARS_NUMBER_OF_CARDS_IN_DISCARD_PILE
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld b, a
 	add DUELVARS_DECK_CARDS
 	ld l, a
@@ -2095,8 +2087,7 @@ CreateACardListFromDiscardPile:
 	ret
 .no_trainers
 	ldtx hl, ThereAreNoTrainerCardsInDiscardPileText
-	scf
-	ret
+	retscf
 PlayerYesNoEffect2:
 	farcall IsPlayerTurn
 	jp nc, .ia
@@ -2135,7 +2126,7 @@ FireCallForFamily_PlayerSelectEffect2:
 	ld d, SEARCHEFFECT_POKEMON
 
 ; draw Deck list interface and print text
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChooseBasicFirePokemonText
 	ldtx de, DuelistDeckText
 	bank1call SetCardListHeaderText
@@ -2165,7 +2156,7 @@ FireCallForFamily_PlayerSelectEffect2:
 ; figure if Player can exit the screen without selecting,
 ; that is, if the Deck has no Basic Fighting Pokemon.
 	ld a, DUELVARS_CARD_LOCATIONS
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 .loop_b_press
 	ld a, [hl]
 	cp CARD_LOCATION_DECK
@@ -2220,7 +2211,7 @@ NidoranFCallForFamily_PlayerSelectEffect2:
 	ret c
 
 ; draw Deck list interface and print text
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChooseNidoranText
 	ldtx de, DuelistDeckText
 	bank1call SetCardListHeaderText
@@ -2249,7 +2240,7 @@ NidoranFCallForFamily_PlayerSelectEffect2:
 ; figure if Player can exit the screen without selecting,
 ; that is, if the Deck has no NidoranF or NidoranM card.
 	ld a, DUELVARS_CARD_LOCATIONS
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 .loop_b_press
 	ld a, [hl]
 	cp CARD_LOCATION_DECK
@@ -2282,7 +2273,7 @@ DefenderSearchEffect:
 	ret c
 
 ; draw Deck list interface and print text
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChooseNidoranText
 	ldtx de, DuelistDeckText
 	bank1call SetCardListHeaderText
@@ -2311,7 +2302,7 @@ DefenderSearchEffect:
 ; figure if Player can exit the screen without selecting,
 ; that is, if the Deck has no NidoranF or NidoranM card.
 	ld a, DUELVARS_CARD_LOCATIONS
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 .loop_b_press
 	ld a, [hl]
 	cp CARD_LOCATION_DECK
@@ -2356,7 +2347,7 @@ WaterCallForFamily_PlayerSelectEffect2:
 	ld d, SEARCHEFFECT_POKEMON
 
 ; draw Deck list interface and print text
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChooseBasicWaterPokemonText
 	ldtx de, DuelistDeckText
 	bank1call SetCardListHeaderText
@@ -2386,7 +2377,7 @@ WaterCallForFamily_PlayerSelectEffect2:
 ; figure if Player can exit the screen without selecting,
 ; that is, if the Deck has no Basic Fighting Pokemon.
 	ld a, DUELVARS_CARD_LOCATIONS
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 .loop_b_press
 	ld a, [hl]
 	cp CARD_LOCATION_DECK
@@ -2439,7 +2430,7 @@ LightningCallForFamily_PlayerSelectEffect2:
 	ld d, SEARCHEFFECT_POKEMON
 
 ; draw Deck list interface and print text
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChooseBasiclightningPokemonText
 	ldtx de, DuelistDeckText
 	bank1call SetCardListHeaderText
@@ -2469,7 +2460,7 @@ LightningCallForFamily_PlayerSelectEffect2:
 ; figure if Player can exit the screen without selecting,
 ; that is, if the Deck has no Basic Fighting Pokemon.
 	ld a, DUELVARS_CARD_LOCATIONS
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 .loop_b_press
 	ld a, [hl]
 	cp CARD_LOCATION_DECK
@@ -2522,7 +2513,7 @@ PsychicCallForFamily_PlayerSelectEffect2:
 	ld d, SEARCHEFFECT_POKEMON
 
 ; draw Deck list interface and print text
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChooseBasicPsychicPokemonText
 	ldtx de, DuelistDeckText
 	bank1call SetCardListHeaderText
@@ -2552,7 +2543,7 @@ PsychicCallForFamily_PlayerSelectEffect2:
 ; figure if Player can exit the screen without selecting,
 ; that is, if the Deck has no Basic Fighting Pokemon.
 	ld a, DUELVARS_CARD_LOCATIONS
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 .loop_b_press
 	ld a, [hl]
 	cp CARD_LOCATION_DECK
@@ -2605,7 +2596,7 @@ DarknessCallForFamily_PlayerSelectEffect2:
 	ld d, SEARCHEFFECT_POKEMON
 
 ; draw Deck list interface and print text
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChooseBasicDarknessPokemonText
 	ldtx de, DuelistDeckText
 	bank1call SetCardListHeaderText
@@ -2635,7 +2626,7 @@ DarknessCallForFamily_PlayerSelectEffect2:
 ; figure if Player can exit the screen without selecting,
 ; that is, if the Deck has no Basic Fighting Pokemon.
 	ld a, DUELVARS_CARD_LOCATIONS
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 .loop_b_press
 	ld a, [hl]
 	cp CARD_LOCATION_DECK
@@ -2692,7 +2683,7 @@ GrassEnergy_PlayerSelection:
 	farcall LookForCardsInDeck
 	ret c ; skip showing deck
 
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChooseBasicEnergyCardText
 	ldtx de, DuelistDeckText
 	bank1call SetCardListHeaderText
@@ -2751,7 +2742,7 @@ WaterEnergy_PlayerSelection:
 	farcall LookForCardsInDeck
 	ret c ; skip showing deck
 
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChooseBasicEnergyCardText
 	ldtx de, DuelistDeckText
 	bank1call SetCardListHeaderText
@@ -2863,7 +2854,7 @@ MysteriousFossil_PlayerSelection:
 	farcall LookForCardsInDeck
 	ret c ; skip showing deck
 
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 .loop
   bank1call InitAndDrawCardListScreenLayout
   ldtx hl, PleaseSelectCardText
@@ -2919,7 +2910,7 @@ LightningEnergy_PlayerSelection:
 	farcall LookForCardsInDeck
 	ret c ; skip showing deck
 
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChooseBasicEnergyCardText
 	ldtx de, DuelistDeckText
 	bank1call SetCardListHeaderText
@@ -2964,7 +2955,7 @@ LightningEnergy_PlayerSelection:
   or a
   ret  
  
-SharpenEffect2:
+SharpenEffect:
 	ldtx de, IfHeadsDraw1CardFromDeckText
 	farcall TossCoin_BankB
 	jp nc, .OppDraws1card; tails
@@ -3002,7 +2993,7 @@ PhantomPain_BenchDamageEffect2:
 	ld e, a
 	ldh a, [hTempPlayAreaLocation_ffa1]
 	add DUELVARS_ARENA_CARD_HP
-	call GetTurnDuelistVariable ;gets the current hp of the opp pokemon
+	get_turn_duelist_var ;gets the current hp of the opp pokemon
 	sub b ; sub the current hp against the damage of your active
 	jp c,.moredamage
 	ld [hl], a
@@ -3052,7 +3043,7 @@ SUBSTITUTE_DOLL_PlayerSelectEffect:
 	ld de, SEARCHEFFECT_SUBS
 
 ; draw Deck list interface and print text
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChooseASubstituteText
 	ldtx de, DuelistDeckText
 	bank1call SetCardListHeaderText
@@ -3083,7 +3074,7 @@ SUBSTITUTE_DOLL_PlayerSelectEffect:
 ; figure if Player can exit the screen without selecting,
 ; that is, if the Deck has no NidoranF or NidoranM card.
 	ld a, DUELVARS_CARD_LOCATIONS
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 .loop_b_press
 	ld a, [hl]
 	cp CARD_LOCATION_DECK
@@ -3126,7 +3117,7 @@ Subs_AISelectEffect:
 
 TotalRetreatCost_10xDamageEffect2:
     ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-    call GetTurnDuelistVariable
+    get_turn_duelist_var
     ld b, a
     ld l, DUELVARS_ARENA_CARD
     ; hl is now set to the first duel variable that holds the deck indices of the turn holder's play area Pokémon
@@ -3152,7 +3143,7 @@ AllEnergyInYourPlayArea_10xDamageEffect:
 	farcall ATimes10	       ; convert the Energy counter into a damage value by multiplying it by 10
    	jp SetDefiniteDamage   ; and then store that damage value in various wram locations
 
-MagnetismEffect2:
+MagnetismEffect:
 	ld de, MAGNEMITE
 	call CountPokemonIDInBothPlayAreas
 	ld b, a
@@ -3175,7 +3166,7 @@ EnergyDraw_PlayerHandSelection2:
 	ld d, SEARCHEFFECT_BASIC_ENERGY
 	ldtx bc, BasicEnergyText
 
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 .read_input
 	bank1call DisplayCardList
 	jr c, .bpressed ; B pressed?
@@ -3206,40 +3197,6 @@ EnergyDraw_PlayerHandSelection2:
 	ldh [hTemp_ffa0], a
 	or a
 	ret
-SelectUpto3AtachedEn_PlayerSelectEffect2:
-	ldtx hl, ChooseAndDiscard3EnergyCardsText
-	call DrawWideTextBox_WaitForInput
-
-	xor a
-	ldh [hCurSelectionItem], a
-	xor a
-	farcall CreateArenaOrBenchEnergyCardList
-	farcall SortCardsInDuelTempListByID
-	xor a
-	bank1call DisplayEnergyDiscardScreen
-
-	ld a, 3
-	ld [wEnergyDiscardMenuDenominator], a
-.loop_input
-	bank1call HandleEnergyDiscardMenuInput
-	ret c
-	farcall GetNextPositionInTempList
-	ldh a, [hTempCardIndex_ff98]
-	ld [hl], a
-	ld hl, wEnergyDiscardMenuNumerator
-	inc [hl]
-	ldh a, [hCurSelectionItem]
-	cp 3
-	jr nc, .done
-	ldh a, [hTempCardIndex_ff98]
-	farcall RemoveCardFromDuelTempList
-	bank1call DisplayEnergyDiscardMenu
-	jr .loop_input
-.done
-; return when 3 have been chosen
-	or a
-	ret
-
 Find0RetreatCost:
 	call CreateDeckCardList
 	ldtx hl, ChooseA0RetCostPKMNCardFromDeckText
@@ -3249,7 +3206,7 @@ Find0RetreatCost:
 	jr c, .exit ; no Trainer cards in the deck
 
 ; draw deck list interface and print text
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChooseA0RetCostText
 	ldtx de, DuelistDeckText
 	farcall SetCardListHeaderText
@@ -3320,7 +3277,7 @@ Find3orMoreRetreatCost:
 	jr c, .exit ; no Trainer cards in the deck
 
 ; draw deck list interface and print text
-	bank1call Func_5591
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 	ldtx hl, ChooseA3RetCostText
 	ldtx de, DuelistDeckText
 	farcall SetCardListHeaderText
@@ -3446,7 +3403,7 @@ CheckIfCardHasGrassEnergyAttached2:
 	ld e, a
 
 	ld a, DUELVARS_CARD_LOCATIONS
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 .loop
 	ld a, [hl]
 	cp e
@@ -3480,7 +3437,7 @@ CheckIfCardHasMetalEnergyAttached:
 	ld e, a
 
 	ld a, DUELVARS_CARD_LOCATIONS
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 .loop
 	ld a, [hl]
 	cp e
@@ -3516,7 +3473,7 @@ CreateMagikarpCardListFromDiscardPile:
 ; gets hl to point at end of Discard Pile cards
 ; and iterates the cards in reverse order.
 	ld a, DUELVARS_NUMBER_OF_CARDS_IN_DISCARD_PILE
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld b, a
 	add DUELVARS_DECK_CARDS
 	ld l, a
@@ -3527,9 +3484,7 @@ CreateMagikarpCardListFromDiscardPile:
 
 .check_card
 	ld a, [hl]
-	farcall LoadCardDataToBuffer2_FromDeckIndex
-	ld a, [wLoadedCard2Type]
-	cp TYPE_ENERGY
+	farcall CheckIfCardIsNotPkmn
 	jr nc, .next_discard_pile_card ; if not Pokémon card, skip
 	ld a, [wLoadedCard2ID]
 	cp MAGIKARP
@@ -3662,7 +3617,7 @@ BurningFire_DiscardAndMultiplierEffect:
 	ret
 Phantom_Illusion_EvolveEffect:
 	ld a, DUELVARS_ARENA_CARD_STAGE
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	or a
 	jp z, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
 	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
@@ -3890,7 +3845,7 @@ Rebirth_DiscardAndAddEffect:
 	ret
 FindMagby:
     xor a ; DUELVARS_CARD_LOCATIONS
-    call GetTurnDuelistVariable
+    get_turn_duelist_var
     ld c, DECK_SIZE
 .loop_locations
     ld a, [hli] ; gets location of i-th deck card
@@ -3910,11 +3865,10 @@ FindMagby:
     ret
 .found
     ; card ID was found in the Arena
-    scf
-	ret
+    retscf
 FindPichu:
     xor a ; DUELVARS_CARD_LOCATIONS
-    call GetTurnDuelistVariable
+    get_turn_duelist_var
     ld c, DECK_SIZE
 .loop_locations
     ld a, [hli] ; gets location of i-th deck card
@@ -3934,11 +3888,10 @@ FindPichu:
     ret
 .found
     ; card ID was found in the Arena
-    scf
-	ret
+    retscf
 FindElekid:
     xor a ; DUELVARS_CARD_LOCATIONS
-    call GetTurnDuelistVariable
+    get_turn_duelist_var
     ld c, DECK_SIZE
 .loop_locations
     ld a, [hli] ; gets location of i-th deck card
@@ -3958,5 +3911,186 @@ FindElekid:
     ret
 .found
     ; card ID was found in the Arena
-    scf
+    retscf
+; handles the Player selection of attack
+; to use, i.e. Amnesia or Metronome on.
+; returns carry if none selected.
+; outputs:
+;	d = card index of defending card
+;	e = attack index selected
+HandleDefendingPokemonAttackSelection:
+	bank1call DrawDuelMainScene
+	call SwapTurn
+	xor a
+	ldh [hCurSelectionItem], a
+
+.start
+	bank1call PrintAndLoadAttacksFromActivePokemonToDuelTempList
+	push af
+	ldh a, [hCurSelectionItem]
+	ld hl, .menu_parameters
+	call InitializeMenuParameters
+	pop af
+
+	ld [wNumMenuItems], a
+	call EnableLCD
+.loop_input
+	call DoFrame
+	ldh a, [hKeysPressed]
+	bit B_BUTTON_F, a
+	jr nz, .set_carry
+	and START
+	jr nz, .open_atk_page
+	call HandleMenuInput
+	jr nc, .loop_input
+	cp -1
+	jr z, .loop_input
+
+; an attack was selected
+	ldh a, [hCurMenuItem]
+	add a
+	ld e, a
+	ld d, $00
+	ld hl, wDuelTempList
+	add hl, de
+	ld d, [hl]
+	inc hl
+	ld e, [hl]
+	call SwapTurn
+	or a
+	ret
+
+.set_carry
+	call SwapTurn
+	retscf
+
+.open_atk_page
+	ldh a, [hCurMenuItem]
+	ldh [hCurSelectionItem], a
+	ld a, DUELVARS_ARENA_CARD
+	get_turn_duelist_var
+	call LoadCardDataToBuffer1_FromDeckIndex
+	bank1call OpenAttackPage
+	call SwapTurn
+	bank1call DrawDuelMainScene
+	call SwapTurn
+	jr .start
+
+.menu_parameters
+	db 1, 13 ; cursor x, cursor y
+	db 2 ; y displacement between items
+	db 2 ; number of items
+	db SYM_CURSOR_R ; cursor tile number
+	db SYM_SPACE ; tile behind cursor
+	dw NULL ; function pointer if non-0	
+;------------------------------------------
+FireSpin_CheckEnergy2:
+	farcall FireSpin_CheckEnergy
+	ret
+Upto3_DiscardEffect:
+	ld hl, hTempList
+	ld a, [hli]
+	call PutCardInDiscardPile
+	ld a, [hli]
+	call PutCardInDiscardPile
+	ld a, [hli]
+	jp PutCardInDiscardPile
+SelectUpto3AtachedEn_PlayerSelectEffect:
+	ldtx hl, ChooseAndDiscard3EnergyCardsText
+	call DrawWideTextBox_WaitForInput
+
+	xor a
+	ldh [hCurSelectionItem], a
+	xor a
+	farcall CreateArenaOrBenchEnergyCardList
+	farcall SortCardsInDuelTempListByID
+	xor a
+	bank1call DisplayEnergyDiscardScreen
+
+	ld a, 3
+	ld [wEnergyDiscardMenuDenominator], a
+.loop_input
+	bank1call HandleEnergyDiscardMenuInput
+	ret c
+	farcall GetNextPositionInTempList
+	ldh a, [hTempCardIndex_ff98]
+	ld [hl], a
+	ld hl, wEnergyDiscardMenuNumerator
+	inc [hl]
+	ldh a, [hCurSelectionItem]
+	cp 3
+	jr nc, .done
+	ldh a, [hTempCardIndex_ff98]
+	farcall RemoveCardFromDuelTempList
+	bank1call DisplayEnergyDiscardMenu
+	jr .loop_input
+.done
+; return when 3 have been chosen
+	or a
 	ret	
+SelectUpto3AtachedEn_AISelectEffect:
+	xor a ; PLAY_AREA_ARENA
+	call CreateArenaOrBenchEnergyCardList
+	ld hl, wDuelTempList
+	ld a, [hli]
+	ldh [hTempList], a
+	ld a, [hl]
+	ldh [hTempList + 2], a
+	ret
+AbilityOnPlay_InitialEffect:
+	retscf	
+DeckCheck2:
+	farcall DeckCheck
+	ret
+AbilityAndDeckCheck:
+	call DeckCheck2
+	ret c
+	farcall CheckPokemonPowerCanBeUsed
+	ret
+EnergyDrawEffect:
+	farcall PutSelectedCardInDiscardPile
+	farcall Draw3Effect
+	farcall SetUsedPokemonPowerThisTurn
+	ret
+; returns carry if no cards in Deck or if
+; Play Area is full already.
+CheckDeckAndPlayArea:
+	call CheckIfDeckIsEmpty
+	ret c ; return if no cards in deck
+	farcall CheckPlayArea
+	ret
+PutInPlayAreaEffect2:
+	farcall PutInPlayAreaEffect
+	ret 	
+FindIceEffect:
+	call WaterEnergy_PlayerSelection
+	jr EnergySearch_AddToHandEffect2
+GreeningCellsEffect:
+	call GrassEnergy_PlayerSelection
+	;fallthrough
+EnergySearch_AddToHandEffect2:
+	ld hl, hTempList
+	ld de, wDuelTempList
+.loop_cards
+	ld a, [hli]
+	ld [de], a
+	inc de
+	cp $ff
+	jr z, .done
+	call SearchCardInDeckAndAddToHand
+	call AddCardToHand
+	jr .loop_cards
+.done
+	call Func_2c0bd
+	call IsPlayerTurn
+	ret c
+	bank1call Func_4b38
+	ret	
+LuckyFindEffectEffect:
+	ldtx de, LuckyFindCheckText
+	call TossCoin_BankB
+	ret nc
+	; falltrough
+EnergySearch_FarcallAddToHandEffect:	
+	farcall EnergySearch_AddToHandEffect
+	ret

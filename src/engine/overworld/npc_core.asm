@@ -130,8 +130,7 @@ CheckIfNPCIsRonald:
 	or a
 	ret
 .set_carry
-	scf
-	ret
+	retscf
 
 UnloadNPC:
 	push hl

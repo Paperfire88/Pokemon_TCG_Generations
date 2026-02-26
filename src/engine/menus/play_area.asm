@@ -70,8 +70,7 @@ OpenInPlayAreaScreen::
 	call ZeroObjectPositionsAndToggleOAMCopy_Bank6
 	lb de, $38, $9f
 	call SetupText
-	scf
-	ret
+	retscf
 
 .skip_input
 	call ZeroObjectPositionsAndToggleOAMCopy_Bank6
@@ -144,7 +143,7 @@ OpenInPlayAreaScreen::
 
 	ld a, l
 	add DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	cp -1
 	ret z
 
@@ -239,7 +238,7 @@ OpenInPlayAreaScreen_TurnHolderPlayArea:
 .on_bench
 	ld [wCurPlayAreaSlot], a
 	add DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	cp -1
 	ret z
 	call GetCardIDFromDeckIndex
@@ -441,7 +440,7 @@ OpenInPlayAreaScreen_HandleInput:
 
 .player_area
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	dec a
 	jr nz, .bench_pokemon_exists
 
@@ -517,16 +516,14 @@ OpenInPlayAreaScreen_HandleInput:
 	; pressed b button
 	ld a, -1
 	farcall PlaySFXConfirmOrCancel
-	scf
-	ret
+	retscf
 
 .a_button
 	call .draw_cursor
 	ld a, $01
 	farcall PlaySFXConfirmOrCancel
 	ld a, [wInPlayAreaCurPosition]
-	scf
-	ret
+	retscf
 
 .return
 	ld a, [wMenuInputSFX]

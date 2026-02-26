@@ -152,8 +152,7 @@ HandleStartButtonInDeckSelectionMenu:
 	ld a, $ff ; cancel
 	call PlaySFXConfirmOrCancel
 	call PrintThereIsNoDeckHereText
-	scf
-	ret
+	retscf
 
 .valid_deck
 	ld a, $1
@@ -166,8 +165,7 @@ HandleStartButtonInDeckSelectionMenu:
 	ld a, ALL_DECKS
 	call DrawDecksScreen
 	ld a, [wCurDeck]
-	scf
-	ret
+	retscf
 
 HandleSelectButtonInDeckSelectionMenu:
 	ldh a, [hDPadHeld]
@@ -184,8 +182,7 @@ HandleSelectButtonInDeckSelectionMenu:
 	ld a, $ff ; cancel
 	call PlaySFXConfirmOrCancel
 	call PrintThereIsNoDeckHereText
-	scf
-	ret
+	retscf
 
 .valid_deck
 	ld a, $1
@@ -475,8 +472,7 @@ CheckIfCurDeckIsValid:
 	ld a, [hl]
 	or a
 	ret nz ; is valid
-	scf
-	ret ; is not valid
+	retscf ; is not valid
 
 .GetNumberChar
 	ld a, SYM_0 - 1

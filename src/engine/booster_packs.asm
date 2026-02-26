@@ -49,8 +49,7 @@ GenerateBoosterNonEnergies:
 	ret
 .no_valid_cards
 	debug_nop
-	scf
-	ret
+	retscf
 
 ; return hl pointing to wBoosterData_CommonAmount, wBoosterData_UncommonAmount,
 ; or wBoosterData_RareAmount, depending on the value at [wBoosterCurrentRarity]
@@ -293,8 +292,7 @@ DetermineBoosterCard:
 	ret
 .no_valid_card_found
 	debug_nop
-	scf
-	ret
+	retscf
 
 ; lowers the chance of getting the same type of card multiple times.
 ; more specifically, when a card of type T is drawn, T's new chances become

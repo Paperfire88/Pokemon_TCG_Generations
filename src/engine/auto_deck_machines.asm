@@ -181,8 +181,7 @@ CheckWhichDecksToDismantleToBuildSavedDeck:
 	ret nc
 
 ; none of the combinations work
-	scf
-	ret
+	retscf
 
 ; returns carry if wSelectedDeckMachineEntry cannot be built
 ; by dismantling the decks given by register a
@@ -199,5 +198,4 @@ CheckWhichDecksToDismantleToBuildSavedDeck:
 	ret
 .cannot_build
 	pop af
-	scf
-	ret
+	retscf

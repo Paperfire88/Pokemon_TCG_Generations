@@ -139,8 +139,7 @@ Preload_Tech5:
 	inc [hl]
 	inc [hl]
 .skip
-	scf
-	ret
+	retscf
 
 Script_Tech5:
 	start_script
@@ -159,8 +158,7 @@ Preload_Sam:
 	ld a, SOUTH
 	ld [wLoadNPCDirection], a
 .sam_at_table
-	scf
-	ret
+	retscf
 
 Script_Sam:
 	start_script
@@ -289,8 +287,7 @@ Preload_DrMason:
 	ld a, $0c
 	ld [wLoadNPCYPos], a
 .not_practice_duel
-	scf
-	ret
+	retscf
 
 Script_DrMason:
 	start_script

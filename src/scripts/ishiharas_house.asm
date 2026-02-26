@@ -2,8 +2,7 @@ Preload_NikkiInIshiharasHouse:
 	get_event_value EVENT_NIKKI_STATE
 	cp NIKKI_IN_ISHIHARAS_HOUSE
 	jr nz, .dont_load
-	scf
-	ret
+	retscf
 .dont_load
 	or a
 	ret

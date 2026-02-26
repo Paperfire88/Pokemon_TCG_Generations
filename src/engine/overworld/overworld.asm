@@ -1143,8 +1143,7 @@ FindNPCOrObject:
 
 .set_mode
 	ld [wOverworldMode], a
-	scf
-	ret
+	retscf
 
 OpenPauseMenu:
 	push hl

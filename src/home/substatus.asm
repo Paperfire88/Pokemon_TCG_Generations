@@ -2,7 +2,7 @@
 ; in the last turn by the turn holder's arena Pokemon
 HandleDoubleDamageSubstatus::
 	ld a, DUELVARS_ARENA_CARD_SUBSTATUS3
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	bit SUBSTATUS3_THIS_TURN_DOUBLE_DAMAGE_F, [hl]
 	call nz, .double_damage_at_de
 	ld a, DUELVARS_ARENA_CARD_SUBSTATUS1
@@ -10,7 +10,7 @@ HandleDoubleDamageSubstatus::
 	or a
 	call nz, .ret1
 	ld a, DUELVARS_ARENA_CARD_SUBSTATUS2
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	or a
 	call nz, .ret2
 	ret
@@ -71,7 +71,7 @@ HandleDamageReductionExceptSubstatus2::
 	or a
 	jr nz, .no_damage
 	ld a, DUELVARS_ARENA_CARD_SUBSTATUS1
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	or a
 	jr z, .not_affected_by_substatus1
 	cp SUBSTATUS1_NO_DAMAGE
@@ -201,10 +201,10 @@ HandleStrikesBack_AgainstDamagingAttack::
 	; subtract 10 HP from attacking Pokemon (turn holder's arena Pokemon)
 	call SwapTurn
 	ld a, DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	call LoadCardDataToBuffer2_FromDeckIndex
 	ld a, DUELVARS_ARENA_CARD_HP
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	push af
 	push hl
 	ld de, 10
@@ -232,10 +232,10 @@ DealDamagePokePowerEffect::
 	; subtract 10 HP from attacking Pokemon (turn holder's arena Pokemon)
 	call SwapTurn
 	ld a, DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	call LoadCardDataToBuffer2_FromDeckIndex
 	ld a, DUELVARS_ARENA_CARD_HP
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	push af
 	push hl
 	ld de, 20
@@ -270,7 +270,7 @@ HandleNShieldAndTransparency::
 	push de
 	ld a, DUELVARS_ARENA_CARD
 	add e
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	call GetCardIDFromDeckIndex
 	cp16 MIMIKYU
 	jr z, .nshield
@@ -291,8 +291,7 @@ HandleNShieldAndTransparency::
 .print_text
 	call DrawWideTextBox_WaitForInput
 	pop de
-	scf
-	ret
+	retscf
 .transparency
 	xor a
 	ld [wDuelDisplayedScreen], a
@@ -308,7 +307,7 @@ HandleNShieldAndTransparency::
 ; it unable to attack. also return in hl the text id to be displayed
 HandleCantAttackSubstatus::
 	ld a, DUELVARS_ARENA_CARD_SUBSTATUS2
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	or a
 	ret z
 	ldtx hl, UnableToAttackDueToTailWagText
@@ -320,14 +319,13 @@ HandleCantAttackSubstatus::
 	or a
 	ret
 .return_with_cant_attack
-	scf
-	ret
+	retscf
 
 ; return carry if the turn holder's arena Pokemon cannot use
 ; selected attack at wSelectedAttack due to amnesia
 HandleAmnesiaSubstatus::
 	ld a, DUELVARS_ARENA_CARD_SUBSTATUS2
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	or a
 	jr nz, .check_amnesia
 	ret
@@ -339,13 +337,12 @@ HandleAmnesiaSubstatus::
 	ret
 .affected_by_amnesia
 	ld a, DUELVARS_ARENA_CARD_DISABLED_ATTACK_INDEX
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld a, [wSelectedAttack]
 	cp [hl]
 	jr nz, .not_the_disabled_atk
 	ldtx hl, UnableToUseAttackDueToAmnesiaText
-	scf
-	ret
+	retscf
 
 ; return carry if the turn holder's attack was unsuccessful due to sand attack or smokescreen effect
 HandleSandAttackOrSmokescreenSubstatus::
@@ -357,13 +354,12 @@ HandleSandAttackOrSmokescreenSubstatus::
 	ret nc
 	ldtx hl, AttackUnsuccessfulText
 	call DrawWideTextBox_WaitForInput
-	scf
-	ret
+	retscf
 
 ; return carry if the turn holder's arena card is under the effects of sand attack or smokescreen
 CheckSandAttackOrSmokescreenSubstatus::
 	ld a, DUELVARS_ARENA_CARD_SUBSTATUS2
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	or a
 	ret z
 	ldtx de, SmokescreenCheckText
@@ -375,8 +371,7 @@ CheckSandAttackOrSmokescreenSubstatus::
 	ld a, [wGotHeadsFromSandAttackOrSmokescreenCheck]
 	or a
 	ret nz
-	scf
-	ret
+	retscf
 
 ; return carry if the defending card (turn holder's arena card) is under a substatus
 ; that prevents any damage or effect dealt to it for a turn.
@@ -388,7 +383,7 @@ HandleNoDamageOrEffectSubstatus::
 	cp POKEMON_POWER
 	ret z
 	ld a, DUELVARS_ARENA_CARD_SUBSTATUS1
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld e, NO_DAMAGE_OR_EFFECT_FLY
 	ldtx hl, NoDamageOrEffectDueToFlyText
 	cp SUBSTATUS1_IMMUNITY
@@ -413,8 +408,7 @@ HandleNoDamageOrEffectSubstatus::
 .no_damage_or_effect
 	ld a, e
 	ld [wNoDamageOrEffect], a
-	scf
-	ret
+	retscf
 .neutralizing_shield
 	ld a, [wIsDamageToSelf]
 	or a
@@ -457,8 +451,7 @@ HandleTransparency::
 	ld a, NO_DAMAGE_OR_EFFECT_TRANSPARENCY
 	ld [wNoDamageOrEffect], a
 	ldtx hl, NoDamageOrEffectDueToTransparencyText
-	scf
-	ret
+	retscf
 
 ; return carry and return the appropriate text id in hl if the target has an
 ; special status or power that prevents any damage or effect done to it this turn
@@ -480,13 +473,11 @@ CheckNoDamageOrEffect::
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
-	scf
-	ret
+	retscf
 
 .dont_print_text
 	ld hl, $0000
-	scf
-	ret
+	retscf
 
 NoDamageOrEffectTextIDTable::
 	tx NoDamageOrEffectDueToAgilityText      ; NO_DAMAGE_OR_EFFECT_AGILITY
@@ -511,19 +502,18 @@ CheckCannotUseDueToStatus_OnlyToxicGasIfANon0::
 	or a
 	jr nz, .check_toxic_gas
 	ld a, DUELVARS_ARENA_CARD_STATUS
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	and CNF_SLP_PRZ
 	ldtx hl, CannotUseDueToStatusText
 	scf
 	jr nz, .done ; return carry
 .check_substatus
 	ld a, DUELVARS_ARENA_CARD_SUBSTATUS3
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	bit SUBSTATUS3_NO_POKEPOWERS_F, a
 	jr z, .check_toxic_gas
 	ldtx hl, UnableDueToToxicGasText
-	scf
-	ret
+	retscf
 .check_toxic_gas
 	push de
 	ld de, TREVENANT
@@ -592,7 +582,7 @@ CountPokemonIDInPlayArea::
 	ld [wTempPokemonID_ce7c + 1], a
 	ld c, $0
 	ld a, DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	cp -1
 	jr z, .check_bench
 	call GetCardIDFromDeckIndex
@@ -605,13 +595,13 @@ CountPokemonIDInPlayArea::
 	pop bc
 	jr nz, .check_bench
 	ld a, DUELVARS_ARENA_CARD_STATUS
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	and CNF_SLP_PRZ
 	jr nz, .check_bench
 	inc c
 .check_bench
 	ld a, DUELVARS_BENCH
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 .next_bench_slot
 	ld a, [hli]
 	cp -1
@@ -651,7 +641,7 @@ CheckPokemonIDInArena::
 	ld [wTempPokemonID_ce7c + 1], a
 	ld c, $0
 	ld a, DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	cp -1
 	jr z, .done
 	call GetCardIDFromDeckIndex
@@ -664,7 +654,7 @@ CheckPokemonIDInArena::
 	pop bc
 	jr nz, .done
 	ld a, DUELVARS_ARENA_CARD_STATUS
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	and CNF_SLP_PRZ
 	jr nz, .done
 	inc c
@@ -685,7 +675,7 @@ CheckPokemonIDInArena::
 GetLoadedCard1RetreatCost::
 	ld c, 0
 	ld a, DUELVARS_BENCH
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 .check_bench_loop
 	ld a, [hli]
 	cp -1
@@ -708,7 +698,7 @@ GetLoadedCard1RetreatCost::
 	call CountPokemonIDInBothArenas
 	jr c, .muk_found
 	ld a, DUELVARS_ARENA_CARD_SUBSTATUS3
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	bit SUBSTATUS3_NO_POKEPOWERS_F, a
 	jr nz, .muk_found
 	ld a, [wLoadedCard1RetreatCost]
@@ -720,7 +710,7 @@ GetLoadedCard1RetreatCost::
 ; return carry if the turn holder's arena Pokemon is affected by Acid and can't retreat
 CheckCantRetreatDueToAcid::
 	ld a, DUELVARS_ARENA_CARD_SUBSTATUS2
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	or a
 	ret z
 	cp SUBSTATUS2_UNABLE_RETREAT
@@ -729,15 +719,14 @@ CheckCantRetreatDueToAcid::
 	ret
 .cant_retreat
 	ldtx hl, UnableToRetreatDueToAcidText
-	scf
-	ret
+	retscf
 
 CheckCantRetreatDueToPoisonReef::
 	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
 	ret c
 	call SwapTurn
 	ld a, DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld c, 0
 .loop
 	ld a, [hl]
@@ -760,28 +749,25 @@ CheckCantRetreatDueToPoisonReef::
 
 .cant_retreat
 	ldtx hl, UnableToRetreatText
-	scf
-	ret
+	retscf
 
 ; return carry if the turn holder is affected by Headache and trainer cards can't be used
 CheckCantUseTrainerDueToHeadache::
 	ld a, DUELVARS_ARENA_CARD_SUBSTATUS3
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	or a
 	bit SUBSTATUS3_HEADACHE_F, [hl]
 	ret z
 	ldtx hl, UnableToUseTrainerDueToHeadacheText
-	scf
-	ret
+	retscf
 
 CheckCantUseTrainerDueToFlag:
 	ld a, DUELVARS_ARENA_CARD_FLAGS
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	and SOMETHINGFORNOW
 	ret z
 	ldtx hl, ThisAttackCannotBeUsedTwiceText
-	scf
-	ret
+	retscf
 
 checkifxisinplay::
 	ld de, MARNIE
@@ -808,7 +794,7 @@ IsPrehistoricPowerActive::
 ; or prevent the opposing Pokemon from attacking the substatus condition inducer.
 ClearDamageReductionSubstatus2::
 	ld a, DUELVARS_ARENA_CARD_SUBSTATUS2
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	or a
 	ret z
 	cp SUBSTATUS2_REDUCE_BY_20
@@ -825,30 +811,30 @@ ClearDamageReductionSubstatus2::
 ; clears the SUBSTATUS1 and updates the double damage condition of the player about to start his turn
 UpdateSubstatusConditions_StartOfTurn::
 	ld a, DUELVARS_ARENA_CARD_SUBSTATUS1
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld [hl], $0
 	or a
 	ret z
 	cp SUBSTATUS1_NEXT_TURN_DOUBLE_DAMAGE
 	ret nz
 	ld a, DUELVARS_ARENA_CARD_SUBSTATUS3
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	set SUBSTATUS3_THIS_TURN_DOUBLE_DAMAGE_F, [hl]
 	ret
 
 ; clears the SUBSTATUS2, Headache, and updates the double damage condition of the player ending his turn
 UpdateSubstatusConditions_EndOfTurn::
 	ld a, DUELVARS_ARENA_CARD_SUBSTATUS3
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	res SUBSTATUS3_HEADACHE_F, [hl]
 	res SUBSTATUS3_NO_POKEPOWERS_F, [hl]
 	push hl
 	ld a, DUELVARS_ARENA_CARD_SUBSTATUS2
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	xor a
 	ld [hl], a
 	ld a, DUELVARS_ARENA_CARD_SUBSTATUS1
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	pop hl
 	cp SUBSTATUS1_NEXT_TURN_DOUBLE_DAMAGE
 	ret z
@@ -879,8 +865,7 @@ CheckRainDanceScenario::
 	call GetPlayAreaCardColor
 	cp TYPE_PKMN_WATER
 	jr nz, .no_carry
-	scf
-	ret
+	retscf
 .no_carry
 	or a
 	ret
@@ -904,7 +889,7 @@ Thecheck_hp::
 	or a
 	ret nz
 	ld a, DUELVARS_ARENA_CARD_HP
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	or a
 	ret z
 	ld [hl], 0
@@ -977,7 +962,7 @@ ApplyStrikesBack_AgainstResidualAttack::
 	ld l, a
 	call LoadTxRam2
 	ld a, DUELVARS_ARENA_CARD_HP
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	pop de
 	push af
 	push hl
@@ -992,8 +977,7 @@ ApplyStrikesBack_AgainstResidualAttack::
 	xor a
 	call PrintPlayAreaCardKnockedOutIfNoHP
 	call DrawDuelHUDs
-	scf
-	ret
+	retscf
 
 ; if the id of the card provided in register a as a deck index is TREVENANT,
 ; clear the changed type of all arena and bench Pokemon
@@ -1006,7 +990,7 @@ ClearChangedTypesIfMuk::
 	call SwapTurn
 .zero_changed_types
 	ld a, DUELVARS_ARENA_CARD_CHANGED_TYPE
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld c, MAX_PLAY_AREA_POKEMON
 .zero_changed_types_loop
 	xor a
@@ -1078,7 +1062,7 @@ GetAttackCostPenalty:
 	or a
 	jr nz, .end
 	ld a, DUELVARS_ARENA_CARD_SUBSTATUS2
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	cp SUBSTATUS2_ATTACK_COST_PLUS_1
 	jr nz, .end
 	inc c

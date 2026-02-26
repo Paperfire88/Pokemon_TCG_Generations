@@ -50,8 +50,7 @@ FindExtraInteractableObjects:
 	ld b, [hl]
 	pop hl
 	call SetNextScript
-	scf
-	ret
+	retscf
 
 Preload_JessicaInFireClubLobby:
 	get_event_value EVENT_PUPIL_JESSICA_STATE

@@ -159,8 +159,7 @@ UpdateShakeOffset:
 	ld a, h
 	ld [wScreenShakeOffsetsPtr + 1], a
 	pop hl
-	scf
-	ret
+	retscf
 
 SmallShakeOffsets:
 ; timer, offset

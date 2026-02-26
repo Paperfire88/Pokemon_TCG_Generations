@@ -40,8 +40,7 @@ GetCardCountInCollection::
 	pop hl
 	and CARD_COUNT_MASK
 	ret nz
-	scf
-	ret
+	retscf
 
 ; creates a list at wTempCardCollection of every card the player owns and how many
 CreateTempCardCollection::

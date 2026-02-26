@@ -64,15 +64,13 @@ HandleCheckMenuInput:
 	jr nz, .a_press
 	ld a, $ff ; cancel
 	call PlaySFXConfirmOrCancel
-	scf
-	ret
+	retscf
 
 .a_press
 	call DisplayCheckMenuCursor
 	ld a, $01
 	call PlaySFXConfirmOrCancel
-	scf
-	ret
+	retscf
 
 .no_input
 	ld a, [wMenuInputSFX]

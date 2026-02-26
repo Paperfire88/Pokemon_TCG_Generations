@@ -20,8 +20,7 @@ CheckIfAttackKnocksOutDefendingCard:
 	sub [hl]
 	ret c
 	ret nz
-	scf
-	ret
+	retscf
 
 ; returns carry if any of the defending Pokémon's attacks
 ; brings card at hTempPlayAreaLocation_ff9d down
@@ -37,21 +36,20 @@ CheckIfAnyDefendingPokemonAttackDealsSameDamageAsHP:
 	call EstimateDamage_FromDefendingPokemon
 	ldh a, [hTempPlayAreaLocation_ff9d]
 	add DUELVARS_ARENA_CARD_HP
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld hl, wDamage
 	sub [hl]
 	jr z, .true
 	ret
 .true
-	scf
-	ret
+	retscf
 
 ; checks AI scores for all benched Pokémon
 ; returns the location of the card with highest score
 ; in a and [hTempPlayAreaLocation_ff9d]
 FindHighestBenchScore:
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld b, a
 	ld c, 0
 	ld e, c
@@ -135,7 +133,7 @@ AITryUseAttack:
 	ldh [hTemp_ffa0], a
 	ld e, a
 	ld a, DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ldh [hTempCardIndex_ff9f], a
 	ld d, a
 	call CopyAttackDataAndDamage_FromDeckIndex
@@ -152,7 +150,7 @@ AITryUseAttack:
 	ld a, [wSelectedAttack]
 	ld e, a
 	ld a, DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld d, a
 	call CopyAttackDataAndDamage_FromDeckIndex
 	ld a, OPPACTION_USE_ATTACK
@@ -262,15 +260,14 @@ CheckIfEnergyIsUseful:
 	pop de
 	pop bc
 	pop hl
-	scf
-	ret
+	retscf
 
 ; pick a random Pokemon in the bench.
 ; output:
 ;	- a = PLAY_AREA_* of Bench Pokemon picked.
 PickRandomBenchPokemon:
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	dec a
 	call Random
 	inc a
@@ -282,7 +279,7 @@ AIPickPrizeCards:
 .loop
 	call .PickPrizeCard
 	ld a, DUELVARS_PRIZES
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	or a
 	jr z, .done
 	dec b
@@ -294,7 +291,7 @@ AIPickPrizeCards:
 ; and adds it to the hand.
 .PickPrizeCard:
 	ld a, DUELVARS_PRIZES
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	push hl
 	ld c, a
 
@@ -322,7 +319,7 @@ AIPickPrizeCards:
 ; add this prize card to the hand
 	ld a, e
 	add DUELVARS_PRIZE_CARDS
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	jp AddCardToHand
 
 .prize_flags
@@ -377,7 +374,7 @@ CheckIfSelectedAttackIsUnusable:
 	ret c
 
 	ld a, DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld d, a
 	ld a, [wSelectedAttack]
 	ld e, a
@@ -409,7 +406,7 @@ CheckIfSelectedAttackIsUnusable:
 CheckEnergyNeededForAttack:
 	ldh a, [hTempPlayAreaLocation_ff9d]
 	add DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld d, a
 	ld a, [wSelectedAttack]
 	ld e, a
@@ -424,8 +421,7 @@ CheckEnergyNeededForAttack:
 .no_attack
 	lb bc, 0, 0
 	ld de, 0
-	scf
-	ret
+	retscf
 
 .is_attack
 	ld hl, wLoadedAttackEnergyCost
@@ -494,8 +490,7 @@ CheckEnergyNeededForAttack:
 	ld b, a ; basic energy still needed
 	ld a, [wTempLoadedAttackEnergyNeededType]
 	call ConvertColorToEnergyCardID
-	scf
-	ret
+	retscf
 
 ; takes as input the energy cost of an attack for a
 ; particular energy, stored in the lower nibble of a
@@ -528,8 +523,7 @@ CheckIfEnoughParticularAttachedEnergy:
 	ld [wTempLoadedAttackEnergyNeededType], a
 	inc hl
 	inc b
-	scf
-	ret
+	retscf
 
 ; input:
 ;	a = energy type
@@ -580,15 +574,14 @@ CheckIfCardCanBePlayed:
 	ld a, [wAlreadyPlayedEnergy]
 	or a
 	ret z
-	scf
-	ret
+	retscf
 
 .pokemon_card
 	ld a, [wLoadedCard1Stage]
 	or a
 	jr nz, .evolution_card
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	cp MAX_PLAY_AREA_POKEMON
 	ccf
 	ret
@@ -597,7 +590,7 @@ CheckIfCardCanBePlayed:
 	bank1call IsPrehistoricPowerActive
 	ret c
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld c, a
 	ld b, 0
 .loop
@@ -611,8 +604,7 @@ CheckIfCardCanBePlayed:
 	inc b
 	dec c
 	jr nz, .loop
-	scf
-	ret
+	retscf
 
 .trainer_card
 	bank1call CheckCantUseTrainerDueToHeadache
@@ -631,7 +623,7 @@ CreateEnergyCardListFromHand:
 	ld de, wDuelTempList
 	ld b, a
 	ld a, DUELVARS_NUMBER_OF_CARDS_IN_HAND
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld c, a
 	inc c
 	ld l, LOW(wOpponentHand)
@@ -680,7 +672,7 @@ LookForCardIDInHand:
 	ld b, d
 	ld c, e
 	ld a, DUELVARS_NUMBER_OF_CARDS_IN_HAND
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld e, a
 	inc e
 	ld l, DUELVARS_HAND
@@ -700,8 +692,7 @@ LookForCardIDInHand:
 	pop bc
 	pop de
 	pop hl
-	scf
-	ret
+	retscf
 
 .no_carry
 	dec hl
@@ -751,8 +742,7 @@ LookForCardIDInHandList_Bank5:
 	jr nz, .loop
 
 	ldh a, [hTempCardIndex_ff98]
-	scf
-	ret
+	retscf
 
 ; returns carry if card ID in a
 ; is found in Play Area, starting with
@@ -767,7 +757,7 @@ LookForCardIDInPlayArea_Bank5:
 .loop
 	ld a, DUELVARS_ARENA_CARD
 	add b
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	cp $ff
 	ret z
 	call LoadCardDataToBuffer1_FromDeckIndex
@@ -790,8 +780,7 @@ LookForCardIDInPlayArea_Bank5:
 	ret
 .found
 	ld a, b
-	scf
-	ret
+	retscf
 
 ; check if energy card ID in e is in AI hand and,
 ; if so, attaches it to card ID in d in Play Area.
@@ -843,7 +832,7 @@ INCLUDE "engine/duel/ai/init.asm"
 CheckEnergyNeededForAttackAfterDiscard:
 	ldh a, [hTempPlayAreaLocation_ff9d]
 	add DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld d, a
 	ld a, [wSelectedAttack]
 	ld e, a
@@ -858,8 +847,7 @@ CheckEnergyNeededForAttackAfterDiscard:
 .no_attack
 	lb bc, 0, 0
 	ld e, c
-	scf
-	ret
+	retscf
 
 .is_attack
 	ld hl, wLoadedAttackEnergyCost
@@ -946,8 +934,7 @@ CheckEnergyNeededForAttackAfterDiscard:
 	call ConvertColorToEnergyCardID
 	ld e, a
     ld d, 0
-	scf
-	ret
+	retscf
 
 ; zeroes a bytes starting at hl
 ClearMemory_Bank5:
@@ -1049,7 +1036,7 @@ CheckIfAnyCardIDinLocation:
 .loop
 	ld a, DUELVARS_CARD_LOCATIONS
 	add e
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	cp d
 	jr nz, .next
 	ld a, e
@@ -1067,8 +1054,7 @@ CheckIfAnyCardIDinLocation:
 	ret
 .set_carry
 	ld a, e
-	scf
-	ret
+	retscf
 
 ; counts total number of energy cards in opponent's hand
 ; plus all the cards attached in Turn Duelist's Play Area.
@@ -1095,7 +1081,7 @@ CountOppEnergyCardsInHandAndAttached:
 ; that are attached in Play Area
 .attached
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld d, a
 	ld e, PLAY_AREA_ARENA
 .loop_play_area
@@ -1149,8 +1135,7 @@ RemoveCardIDInList:
 	pop bc
 	pop de
 	pop hl
-	scf
-	ret
+	retscf
 
 .no_carry
 	pop bc
@@ -1191,8 +1176,7 @@ TrySetUpBossStartingPlayArea:
 	or a
 	ret
 .set_carry
-	scf
-	ret
+	retscf
 
 ; runs through input card ID list in de.
 ; plays to Play Area first card that is found in hand.
@@ -1233,8 +1217,7 @@ TrySetUpBossStartingPlayArea:
 	ret
 
 .not_found
-	scf
-	ret
+	retscf
 
 INCLUDE "engine/duel/ai/retreat.asm"
 
@@ -1271,8 +1254,7 @@ CheckDamageToMrMime:
 	or a
 	ret
 .set_carry
-	scf
-	ret
+	retscf
 
 ; returns carry if arena card
 ; can knock out defending Pokémon
@@ -1283,8 +1265,7 @@ CheckIfActiveCardCanKnockOut:
 	jr nc, .fail
 	call CheckIfSelectedAttackIsUnusable
 	jp c, .fail
-	scf
-	ret
+	retscf
 
 .fail
 	or a
@@ -1317,8 +1298,7 @@ CheckIfActivePokemonCanUseAnyNonResidualAttack:
 	ret
 
 .ok
-	scf
-	ret
+	retscf
 
 ; looks for energy card(s) in hand depending on
 ; what is needed for selected card, for both attacks
@@ -1371,8 +1351,7 @@ LookForEnergyNeededInHand:
 .one_colorless
 	call CreateEnergyCardListFromHand
 	jr c, .no_carry
-	scf
-	ret
+	retscf
 
 .two_colorless
 	ld de, DOUBLE_COLORLESS_ENERGY
@@ -1416,8 +1395,7 @@ LookForEnergyNeededForAttackInHand:
 .one_colorless
 	call CreateEnergyCardListFromHand
 	jr c, .done
-	scf
-	ret
+	retscf
 
 .two_colorless
 	ld de, DOUBLE_COLORLESS_ENERGY
@@ -1549,8 +1527,7 @@ CheckEnergyFlagsNeededInList:
 .check_energy
 	and c
 	jp z, .next_card
-	scf
-	ret
+	retscf
 .no_carry
 	or a
 	ret
@@ -1666,7 +1643,7 @@ GetEnergyCostBits:
 CheckForEvolutionInList:
 	ld b, a
 	ld a, DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 
 	push af
 	ld [hl], b
@@ -1685,16 +1662,15 @@ CheckForEvolutionInList:
 	jr c, .loop
 
 	ld a, DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	pop af
 	ld [hl], a
 	ld a, d
-	scf
-	ret
+	retscf
 
 .no_carry
 	ld a, DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	pop af
 	ld [hl], a
 	or a
@@ -1710,7 +1686,7 @@ CheckForEvolutionInList:
 CheckForEvolutionInDeck:
 	ld b, a
 	ld a, DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 
 	push af
 	ld [hl], b
@@ -1718,7 +1694,7 @@ CheckForEvolutionInDeck:
 .loop
 	ld a, DUELVARS_CARD_LOCATIONS
 	add e
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	cp CARD_LOCATION_DECK
 	jr nz, .not_in_deck
 	push de
@@ -1736,7 +1712,7 @@ CheckForEvolutionInDeck:
 	jr nz, .loop
 
 	ld a, DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	pop af
 	ld [hl], a
 	or a
@@ -1744,12 +1720,11 @@ CheckForEvolutionInDeck:
 
 .set_carry
 	ld a, DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	pop af
 	ld [hl], a
 	ld a, e
-	scf
-	ret
+	retscf
 
 INCLUDE "engine/duel/ai/energy.asm"
 
@@ -1770,7 +1745,7 @@ LookForCardThatIsKnockedOutOnDevolution:
 	push af
 	call SwapTurn
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld b, a
 	ld c, PLAY_AREA_ARENA
 
@@ -1815,8 +1790,7 @@ LookForCardThatIsKnockedOutOnDevolution:
 	pop af
 	ldh [hTempPlayAreaLocation_ff9d], a
 	ld a, c
-	scf
-	ret
+	retscf
 
 ; returns carry if the following conditions are met:
 ;	- arena card HP >= half max HP
@@ -1825,12 +1799,12 @@ LookForCardThatIsKnockedOutOnDevolution:
 ;	- arena card can use second attack
 CheckIfArenaCardIsAtHalfHPCanEvolveAndUseSecondAttack:
 	ld a, DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld d, a
 	push de
 	call LoadCardDataToBuffer1_FromDeckIndex
 	ld a, DUELVARS_ARENA_CARD_HP
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld d, a
 	ld a, [wLoadedCard1HP]
 	rrca
@@ -1854,8 +1828,7 @@ CheckIfArenaCardIsAtHalfHPCanEvolveAndUseSecondAttack:
 	call CheckIfSelectedAttackIsUnusable
 	pop hl
 	jr c, .no_carry
-	scf
-	ret
+	retscf
 .no_carry
 	or a
 	ret
@@ -1876,7 +1849,7 @@ CountNumberOfSetUpBenchPokemon:
 	ld e, a
 	push de
 	ld a, DUELVARS_BENCH
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	lb bc, 0, 0
 	push hl
 
@@ -1897,7 +1870,7 @@ CountNumberOfSetUpBenchPokemon:
 ; compares card's current HP with max HP
 	ld a, c
 	add DUELVARS_ARENA_CARD_HP
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld d, a
 	ld a, [wLoadedCard1HP]
 	rrca
@@ -1943,8 +1916,7 @@ CountNumberOfSetUpBenchPokemon:
 	ld a, b
 	or a
 	ret z
-	scf
-	ret
+	retscf
 
 ; handles AI logic to determine some selections regarding certain attacks,
 ; if any of these attacks were chosen to be used.
@@ -1962,7 +1934,7 @@ AISelectSpecialAttackParameters:
 
 .SelectAttackParameters:
 	ld a, DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	call GetCardIDFromDeckIndex
 	cp16 MEW
 	jp z, .DevolutionBeam
@@ -2012,8 +1984,7 @@ AISelectSpecialAttackParameters:
 	ldh [hTempPlayAreaLocation_ffa1], a
 
 .set_carry_1
-	scf
-	ret
+	retscf
 .Plasma
 ; in case selected attack is Energy Absorption
 ; make list from energy cards in Discard Pile
@@ -2092,8 +2063,7 @@ AISelectSpecialAttackParameters:
 	; fallthrough
 
 .set_carry_2
-	scf
-	ret
+	retscf
 
 .Teleport
 ; in case selected attack is Teleport
@@ -2104,8 +2074,7 @@ AISelectSpecialAttackParameters:
 	call AIDecideBenchPokemonToSwitchTo
 	jp c, .no_carry
 	ldh [hTemp_ffa0], a
-	scf
-	ret
+	retscf
 
 .EnergySpikeDarkness
 	ld a, [wSelectedAttack]
@@ -2180,8 +2149,7 @@ AISelectSpecialAttackParameters:
 	jp nc, .no_carry  ; can be jr
 	ldh a, [hTempPlayAreaLocation_ff9d]
 	ldh [hTempPlayAreaLocation_ffa1], a
-	scf
-	ret
+	retscf
 		
 ; return carry if Pokémon at play area location
 ; in hTempPlayAreaLocation_ff9d does not have
@@ -2195,7 +2163,7 @@ AISelectSpecialAttackParameters:
 CheckIfNoSurplusEnergyForAttack:
 	ldh a, [hTempPlayAreaLocation_ff9d]
 	add DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld d, a
 	ld a, [wSelectedAttack]
 	ld e, a
@@ -2208,8 +2176,7 @@ CheckIfNoSurplusEnergyForAttack:
 	cp POKEMON_POWER
 	jr nz, .is_attack
 .not_attack
-	scf
-	ret
+	retscf
 
 .is_attack
 	ldh a, [hTempPlayAreaLocation_ff9d]
@@ -2255,8 +2222,7 @@ CheckIfNoSurplusEnergyForAttack:
 	ret nz ; return if surplus energy
 
 	; exactly the amount of energy needed
-	scf
-	ret
+	retscf
 
 ; takes as input the energy cost of an attack for a
 ; particular energy, stored in the lower nibble of a
@@ -2301,7 +2267,7 @@ CalculateParticularAttachedEnergyNeeded:
 CheckCardEvolutionInHandOrDeck:
 	ld b, a
 	ld a, DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	push af
 	ld [hl], b
 	ld e, 0
@@ -2309,7 +2275,7 @@ CheckCardEvolutionInHandOrDeck:
 .loop
 	ld a, DUELVARS_CARD_LOCATIONS
 	add e
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	cp CARD_LOCATION_DECK
 	jr z, .deck_or_hand
 	cp CARD_LOCATION_HAND
@@ -2328,7 +2294,7 @@ CheckCardEvolutionInHandOrDeck:
 	jr nz, .loop
 
 	ld a, DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	pop af
 	ld [hl], a
 	or a
@@ -2336,12 +2302,11 @@ CheckCardEvolutionInHandOrDeck:
 
 .set_carry
 	ld a, DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	pop af
 	ld [hl], a
 	ld a, e
-	scf
-	ret
+	retscf
 
 INCLUDE "engine/duel/ai/boss_deck_set_up.asm"
 
@@ -2376,8 +2341,7 @@ CheckIfCanDamageDefendingPokemon:
 	or a
 	ret
 .set_carry
-	scf
-	ret
+	retscf
 
 ; checks if defending Pokémon can knock out
 ; card at hTempPlayAreaLocation_ff9d with any of its attacks
@@ -2420,8 +2384,7 @@ CheckIfDefendingPokemonCanKnockOut:
 	jr nc, .set_carry ; wAIFirstAttackDamage < wAISecondAttackDamage
 	ld a, b
 .set_carry
-	scf
-	ret
+	retscf
 
 ; return carry if defending Pokémon can knock out
 ; card at hTempPlayAreaLocation_ff9d
@@ -2447,15 +2410,14 @@ CheckIfDefendingPokemonCanKnockOutWithAttack:
 	call EstimateDamage_FromDefendingPokemon
 	ldh a, [hTempPlayAreaLocation_ff9d]
 	add DUELVARS_ARENA_CARD_HP
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld hl, wDamage
 	sub [hl]
 	jr z, .set_carry
 	ret
 
 .set_carry
-	scf
-	ret
+	retscf
 
 .done
 	or a
@@ -2473,8 +2435,7 @@ CheckIfOpponentHasBossDeckID:
 	cp MUSCLES_FOR_BRAINS_DECK_ID
 	jr nc, .no_carry
 	pop af
-	scf
-	ret
+	retscf
 
 .no_carry
 	pop af
@@ -2496,8 +2457,7 @@ CheckIfNotABossDeckID:
 	ret
 
 .set_carry
-	scf
-	ret
+	retscf
 
 ; probability to return carry:
 ; - 50% if deck AI is playing is on the list;
@@ -2564,7 +2524,7 @@ CheckForBenchIDAtHalfHPAndCanUseSecondAttack:
 	ld e, a
 	push de
 	ld a, DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	lb bc, 0, PLAY_AREA_ARENA
 	push hl
 
@@ -2582,7 +2542,7 @@ CheckForBenchIDAtHalfHPAndCanUseSecondAttack:
 	pop bc
 	ld a, c
 	add DUELVARS_ARENA_CARD_HP
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld d, a
 	ld a, [wLoadedCard1HP]
 	rrca
@@ -2618,8 +2578,7 @@ CheckForBenchIDAtHalfHPAndCanUseSecondAttack:
 	ld a, b
 	or a
 	ret z
-	scf
-	ret
+	retscf
 
 ; add 5 to wPlayAreaEnergyAIScore AI score corresponding to all cards
 ; in bench that have same ID as register a
@@ -2627,7 +2586,7 @@ CheckForBenchIDAtHalfHPAndCanUseSecondAttack:
 ;	bc = card ID to look for
 RaiseAIScoreToAllMatchingIDsInBench:
 	ld a, DUELVARS_BENCH
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld e, 0
 .loop
 	inc e
@@ -2662,7 +2621,7 @@ Func_174f2:
 	ld hl, wcdfa
 	call ClearMemory_Bank5
 	ld a, DUELVARS_BENCH
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld e, 0
 
 .loop_play_area

@@ -88,5 +88,4 @@ CheckForCGB::
 	ld a, [wConsole]
 	cp CONSOLE_CGB
 	ret z
-	scf
-	ret
+	retscf

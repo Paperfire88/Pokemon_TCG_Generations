@@ -978,14 +978,11 @@ PlasmaPunchDescription:
 	line "PKMN is Paralyzed. [If this PKMN is"
 	line "an Evolved PKMN, it does +10 damage]"
 	done
-PhantomIllusionName:
-	text "PHANTOM ILLUSION"
+GreatBallName:
+	text "Great Ball"
 	done
-PhantomIllusionDescription:
-	text "IF YOUR ACTIVE PKMN IS AN EVOLVED"
-	line "PKMN: YOU CAN CHOOSE A STAGE 1 PKMN"
-	line "FROM YOUR DISCARD PILE AND PUT IT ON"
-	line "THIS PKMN(it COUNTS AS EVOLVING THIS"
-	line "PKMN).THEN, PUT 1 DAMAGE COUNTERS ON"
-	line "THAT PLAYED PKMN."
+GreatBallDescription:
+	text "Look at the top 7 cards of your deck"
+	line "Reveal a PKMN you find there and add"
+	line "it to your hand. Shuffle your deck."
 	done

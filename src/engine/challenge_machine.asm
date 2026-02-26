@@ -758,8 +758,7 @@ ChallengeMachine_CheckIfOpponentAlreadySelected:
 	or a
 	ret
 .found
-	scf
-	ret
+	retscf
 
 ChallengeMachine_OpponentDeckIDs:
 .club_members

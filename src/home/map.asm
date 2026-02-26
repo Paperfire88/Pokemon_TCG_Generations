@@ -55,8 +55,7 @@ GameEventPointerTable::
 	dw GameEvent_Overworld
 
 GameEvent_Overworld::
-	scf
-	ret
+	retscf
 
 GameEvent_Duel::
 	ld a, GAME_EVENT_DUEL
@@ -69,8 +68,7 @@ GameEvent_Duel::
 	call DisableSRAM
 	call SaveGeneralSaveData
 	bank1call StartDuel_VSAIOpp
-	scf
-	ret
+	retscf
 
 GameEvent_ChallengeMachine::
 	ld a, MUSIC_PC_MAIN_MENU
@@ -85,8 +83,7 @@ GameEvent_ChallengeMachine::
 	ld a, MUSIC_OVERWORLD
 	ld [wDefaultSong], a
 	call PlayDefaultSong
-	scf
-	ret
+	retscf
 
 GameEvent_ContinueDuel::
 	xor a
@@ -97,8 +94,7 @@ GameEvent_ContinueDuel::
 	call DisableSRAM
 	cp $ff
 	jr z, GameEvent_ChallengeMachine.asm_38ed
-	scf
-	ret
+	retscf
 
 GameEvent_Credits::
 	farcall PlayCreditsSequence

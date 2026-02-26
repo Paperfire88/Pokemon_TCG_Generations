@@ -90,15 +90,13 @@ Preload_Courtney:
 	jr z, Func_f77d
 	get_event_value EVENT_CHALLENGED_GRAND_MASTERS
 	jr nz, Func_f762
-	scf
-	ret
+	retscf
 
 Func_f762:
 	ld a, [wLoadNPCYPos]
 	add $02
 	ld [wLoadNPCYPos], a
-	scf
-	ret
+	retscf
 
 PlacePokemonDomeOpponentAtDuelTable:
 	ld a, $12
@@ -107,8 +105,7 @@ PlacePokemonDomeOpponentAtDuelTable:
 	ld [wLoadNPCYPos], a
 	ld a, WEST
 	ld [wLoadNPCDirection], a
-	scf
-	ret
+	retscf
 
 Func_f77d:
 	ld a, WEST
@@ -118,8 +115,7 @@ Func_f782:
 	ld [wLoadNPCXPos], a
 	ld a, c
 	ld [wLoadNPCYPos], a
-	scf
-	ret
+	retscf
 
 Preload_Steve:
 	get_event_value EVENT_STEVE_STATE
@@ -130,8 +126,7 @@ Preload_Steve:
 	jr z, Func_f77d
 	get_event_value EVENT_CHALLENGED_GRAND_MASTERS
 	jr nz, Func_f762
-	scf
-	ret
+	retscf
 
 Preload_Jack:
 	get_event_value EVENT_JACK_STATE
@@ -142,8 +137,7 @@ Preload_Jack:
 	jr z, Func_f77d
 	get_event_value EVENT_CHALLENGED_GRAND_MASTERS
 	jr nz, Func_f762
-	scf
-	ret
+	retscf
 
 Preload_Rod:
 	get_event_value EVENT_ROD_STATE
@@ -156,8 +150,7 @@ Preload_Rod:
 	lb bc, $0e, $0a
 	cp POKEMON_DOME_CHALLENGED
 	jr z, Func_f782
-	scf
-	ret
+	retscf
 
 Preload_Ronald1InPokemonDome:
 	get_event_value EVENT_RONALD_POKEMON_DOME_STATE
@@ -170,8 +163,7 @@ Preload_Ronald1InPokemonDome:
 	ld [wDefaultSong], a
 	jr PlacePokemonDomeOpponentAtDuelTable
 .not_challenged
-	scf
-	ret
+	retscf
 
 Script_f7ed:
 	jump_if_event_true EVENT_RECEIVED_LEGENDARY_CARDS, .ows_f7f9

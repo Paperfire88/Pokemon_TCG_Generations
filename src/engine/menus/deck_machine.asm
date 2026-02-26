@@ -359,8 +359,7 @@ HandleDeckMachineSelection:
 	call PrintNumSavedDecks
 	ld a, [wTempDeckMachineCursorPos]
 	ld [wCardListCursorPos], a
-	scf
-	ret
+	retscf
 
 .selection_made
 	call DrawListCursor_Visible
@@ -417,8 +416,7 @@ HandleDeckMachineSelection:
 	call DrawDeckMachineScreen
 	call PrintNumSavedDecks
 .set_carry
-	scf
-	ret
+	retscf
 
 ; returns carry if deck corresponding to the
 ; entry selected in the Deck Machine menu is empty
@@ -439,8 +437,7 @@ CheckIfSelectedDeckMachineEntryIsEmpty:
 	or [hl]
 	call DisableSRAM
 	ret nz ; is valid
-	scf
-	ret ; is empty
+	retscf ; is empty
 
 ClearScreenAndDrawDeckMachineScreen:
 	call Set_OBJ_8x8
@@ -589,8 +586,7 @@ PrintDeckMachineEntry:
 	call InitTextPrinting
 	ld hl, .text
 	call ProcessText
-	scf
-	ret
+	retscf
 
 .valid_deck
 	push de
@@ -816,8 +812,7 @@ SaveDeckInDeckSaveMachine:
 	ld [wTxRam2 + 1], a
 	ldtx hl, SavedTheConfigurationForText
 	call DrawWideTextBox_WaitForInput
-	scf
-	ret
+	retscf
 
 DeckMachineMenuParameters:
 	db 1, 2 ; cursor x, cursor y
@@ -944,8 +939,7 @@ CheckIfHasEnoughCardsToBuildDeck:
 
 .set_carry
 	pop hl
-	scf
-	ret
+	retscf
 
 .no_carry
 	or a
@@ -986,8 +980,7 @@ FindFirstEmptyDeckSlot:
 	ret
 
 .set_carry
-	scf
-	ret
+	retscf
 
 ; prompts the player whether to delete selected saved deck
 ; if player selects yes, clears memory in SRAM
@@ -1017,8 +1010,7 @@ TryDeleteSavedDeck:
 
 .no
 	ld a, [wCardListCursorPos]
-	scf
-	ret
+	retscf
 
 DeckMachineSelectionParams:
 	db 1 ; x pos
@@ -1085,8 +1077,7 @@ HandleDismantleDeckToMakeSpace:
 	jr nz, .selected_deck
 	; operation was cancelled
 	call SafelySwitchToTempSRAMBank
-	scf
-	ret
+	retscf
 
 .selected_deck
 	ld [wCurDeck], a
@@ -1149,8 +1140,7 @@ TryBuildDeckMachineDeck:
 
 .set_carry_and_return
 	ld a, [wCardListCursorPos]
-	scf
-	ret
+	retscf
 
 .do_not_own_all_cards_needed
 	ldtx hl, YouDoNotOwnAllCardsNeededToBuildThisDeckText
@@ -1166,8 +1156,7 @@ TryBuildDeckMachineDeck:
 	jr nc, .got_deck_slot
 	call HandleDismantleDeckToMakeSpace
 	jr nc, .got_deck_slot
-	scf
-	ret
+	retscf
 
 .got_deck_slot
 	ld [wDeckSlotForNewDeck], a
@@ -1222,8 +1211,7 @@ TryBuildDeckMachineDeck:
 	ld [wTxRam2 + 1], a
 	ldtx hl, BuiltDeckText
 	call DrawWideTextBox_WaitForInput
-	scf
-	ret
+	retscf
 
 .CopyDeckNameFromDEToHL:
 	ld b, DECK_NAME_SIZE
@@ -1250,8 +1238,7 @@ TryBuildDeckMachineDeck:
 	jr nc, .yes
 ; no
 	call SafelySwitchToTempSRAMBank
-	scf
-	ret
+	retscf
 
 .yes
 	call EnableSRAM
@@ -1434,8 +1421,7 @@ TryBuildDeckMachineDeck:
 	ld e, a
 	ld a, c
 	sub e
-	scf
-	ret
+	retscf
 
 ; returns in c the card count of card ID given in register de
 ; that is found in the card list in hl

@@ -138,8 +138,7 @@ Preload_Joseph:
 	ld a, WEST
 	ld [wLoadNPCDirection], a
 .not_defeated
-	scf
-	ret
+	retscf
 
 Script_Joseph:
 	start_script

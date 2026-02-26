@@ -50,8 +50,7 @@ ProcessSpecialTextCharacter::
 	jr z, .tx_halfwidth
 	cp TX_HALF2FULL
 	jr z, .tx_half2full
-	scf
-	ret
+	retscf
 .tx_halfwidth
 	ld a, HALF_WIDTH
 	ld [wFontWidth], a
@@ -765,8 +764,7 @@ ClassifyTextCharacterPair::
 ; swap d and e to put the TX_FULLWIDTH* character first
 	ld e, d
 	ld d, a
-	scf
-	ret
+	retscf
 
 ; convert the full-width font tile number at de to the
 ; equivalent offset within the full-width font tile graphics.

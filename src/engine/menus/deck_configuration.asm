@@ -231,8 +231,7 @@ PrintDeckName:
 	call InitTextPrinting
 	ldtx hl, NewDeckText
 	call ProcessTextFromID
-	scf
-	ret
+	retscf
 
 DeckNameSuffix:
 	db " deck"
@@ -313,8 +312,7 @@ CheckIfDeckHasCards:
 	or [hl]
 	call DisableSRAM
 	jr nz, .has_cards
-	scf
-	ret
+	retscf
 .has_cards
 	or a
 	ret
@@ -638,8 +636,7 @@ SaveDeckConfiguration:
 
 .set_carry
 	add sp, $2
-	scf
-	ret
+	retscf
 
 DismantleDeck:
 	ldtx hl, DismantleThisDeckText
@@ -769,8 +766,7 @@ CheckIfCurrentDeckWasChanged:
 
 .set_carry
 	call DisableSRAM
-	scf
-	ret
+	retscf
 
 ; returns carry if doesn't have a valid deck
 ; aside from the current deck
@@ -806,8 +802,7 @@ CheckIfHasOtherValidDecks:
 	call DisableSRAM
 	jr z, .no_carry ; no cards
 	; has cards, is the only valid deck!
-	scf
-	ret
+	retscf
 
 ; checks if wCurDeckCards has any basics
 ; returns carry set if there is at least
@@ -830,8 +825,7 @@ CheckIfThereAreAnyBasicCardsInDeck:
 	or a
 	jr nz, .loop_cards
 	; is basic card
-	scf
-	ret
+	retscf
 .no_carry
 	or a
 	ret
@@ -1671,8 +1665,7 @@ HandleCardSelectionInput:
 	ld a, $ff
 	ldh [hffb3], a
 	call PlaySFXConfirmOrCancel
-	scf
-	ret
+	retscf
 
 ; outputs cursor position in e and selection in a
 ConfirmSelectionAndReturnCarry:
@@ -1682,8 +1675,7 @@ ConfirmSelectionAndReturnCarry:
 	ld a, [wCardListCursorPos]
 	ld e, a
 	ldh a, [hffb3]
-	scf
-	ret
+	retscf
 
 HandleCardSelectionCursorBlink:
 	ld a, [wMenuInputSFX]
@@ -1873,8 +1865,7 @@ HandleDeckCardSelectionList:
 	ld a, [wCardListCursorPos]
 	ld e, a
 	ldh a, [hffb3]
-	scf
-	ret
+	retscf
 
 .handle_ab_btns
 	ldh a, [hKeysPressed]
@@ -1885,8 +1876,7 @@ HandleDeckCardSelectionList:
 	ld a, $ff
 	ldh [hffb3], a
 	call PlaySFXConfirmOrCancel
-	scf
-	ret
+	retscf
 
 .check_sfx
 	ld a, [wMenuInputSFX]
@@ -2120,8 +2110,7 @@ TryAddCardToDeck:
 	pop de
 	jr nz, .not_equal
 	; wMaxNumCardsAllowed == wTotalCardCount
-	scf
-	ret
+	retscf
 
 .not_equal
 	push de
@@ -2144,7 +2133,7 @@ TryAddCardToDeck:
 	ld a, b
 	cp d
 	pop de
-	scf
+	scf ;
 	ret z ; cannot add because player doesn't own more copies
 
 	ld a, SFX_CURSOR
@@ -2233,8 +2222,7 @@ TryAddCardToDeck:
 	; reached the maximum number
 	; of cards with same name allowed
 	pop de
-	scf
-	ret
+	retscf
 
 .exit_pop_de
 	pop de
@@ -2311,8 +2299,7 @@ RemoveCardFromDeck:
 	add hl, bc
 	dec [hl]
 	pop de
-	scf
-	ret
+	retscf
 
 ; remove first card instance of card ID in de
 ; and shift all elements up by one
@@ -2480,8 +2467,7 @@ HandleLeftRightInCardList:
 	ld hl, wCardListUpdateFunction
 	call CallIndirect
 .asm_9efa
-	scf
-	ret
+	retscf
 
 ; handles scrolling up and down with Select button
 ; in this case, the cursor position goes up/down
@@ -2529,8 +2515,7 @@ HandleSelectUpAndDownInList:
 	ld hl, wCardListUpdateFunction
 	call CallIndirect
 .set_carry
-	scf
-	ret
+	retscf
 
 ; simply draws the deck info header
 ; then awaits a b button press to exit

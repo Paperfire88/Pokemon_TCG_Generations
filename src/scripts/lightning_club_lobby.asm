@@ -25,8 +25,7 @@ Preload_ImakuniInLightningClubLobby:
 .load_imakuni
 	ld a, MUSIC_IMAKUNI
 	ld [wDefaultSong], a
-	scf
-	ret
+	retscf
 
 Script_Chap2:
 	start_script

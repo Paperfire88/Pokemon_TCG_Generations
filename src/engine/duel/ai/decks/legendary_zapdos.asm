@@ -96,7 +96,7 @@ AIDoTurn_LegendaryRaikou:
 ; Otherwise if Energy card is not needed,
 ; go through normal AI energy attach routine.
 	ld a, DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	call GetCardIDFromDeckIndex
 	cp16 TOXEL
 	jr nz, .check_electabuzz

@@ -402,7 +402,7 @@ CardPointers::
 	dab ReviveCard
 	dab RareCandyCard
 	dab PlusPowerCard
-	dab LeppaBerryCard
+	dab GreatBallCard
 	dab DefenderCard
 	dab RecycleCard
 	dab PokemonFluteCard

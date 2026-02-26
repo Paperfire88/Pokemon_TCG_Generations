@@ -44,8 +44,7 @@ CheckMatchingCommand::
 	or h
 	jr nz, .not_null_pointer
 	; return carry if pointer is NULL
-	scf
-	ret
+	retscf
 
 .not_null_pointer
 	ldh a, [hBankROM]
@@ -53,7 +52,7 @@ CheckMatchingCommand::
 	ld a, BANK(EffectCommands)
 	call BankswitchROM
 	; store the bank number of command functions ($b) in wEffectFunctionsBank
-	ld a, BANK("Effect Functions")
+	ld a, [hli] ; ld a, BANK("Effect Functions")
 	ld [wEffectFunctionsBank], a
 .check_command_loop
 	ld a, [hli]
@@ -81,5 +80,4 @@ CheckMatchingCommand::
 	; restore bank and return c
 	pop af
 	call BankswitchROM
-	scf
-	ret
+	retscf

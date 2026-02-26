@@ -102,7 +102,7 @@ AIProcessEnergyCards:
 ; start the main Play Area loop
 	ld b, PLAY_AREA_ARENA
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld c, a
 
 .loop_play_area
@@ -123,7 +123,7 @@ AIProcessEnergyCards:
 	call CreateHandCardList
 	ldh a, [hTempPlayAreaLocation_ff9d]
 	add DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld [wCurCardCanAttack], a
 	call GetAttacksEnergyCostBits
 	ld hl, wDuelTempList
@@ -181,7 +181,7 @@ AIProcessEnergyCards:
 ; will KO Pokémon between turns
 ; or if the defending Pokémon can KO
 	ld a, DUELVARS_ARENA_CARD_HP
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	call CalculateByteTensDigit
 	cp 3
 	jr nc, .check_defending_can_ko
@@ -190,13 +190,13 @@ AIProcessEnergyCards:
 	jr z, .has_20_hp
 	; hp = 10
 	ld a, DUELVARS_ARENA_CARD_STATUS
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	and POISONED
 	jr z, .check_defending_can_ko
 	jr .poison_will_ko
 .has_20_hp
 	ld a, DUELVARS_ARENA_CARD_STATUS
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	and DOUBLE_POISONED
 	jr z, .check_defending_can_ko
 .poison_will_ko
@@ -214,7 +214,7 @@ AIProcessEnergyCards:
 ; if there are not, add AI score
 .check_bench
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	dec a
 	jr nz, .ai_score_bonus
 	ld a, 6
@@ -225,7 +225,7 @@ AIProcessEnergyCards:
 ; if bench HP < 30
 .bench
 	add DUELVARS_ARENA_CARD_HP
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	call CalculateByteTensDigit
 	cp 3
 	jr nc, .ai_score_bonus
@@ -247,7 +247,7 @@ AIProcessEnergyCards:
 	push hl
 	ldh a, [hTempPlayAreaLocation_ff9d]
 	add DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	call GetCardIDFromDeckIndex
 	pop hl
 
@@ -528,7 +528,7 @@ DetermineAIScoreOfAttackEnergyRequirement:
 	ld b, a
 	ldh a, [hTempPlayAreaLocation_ff9d]
 	add DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	push af
 	ld [hl], b
 
@@ -560,7 +560,7 @@ DetermineAIScoreOfAttackEnergyRequirement:
 .done
 	ldh a, [hTempPlayAreaLocation_ff9d]
 	add DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	pop af
 	ld [hl], a
 	ret
@@ -577,7 +577,7 @@ FindPlayAreaCardWithHighestAIScore:
 	jr nz, .only_bench
 
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld b, a
 	ld c, PLAY_AREA_ARENA
 	ld e, c
@@ -603,8 +603,7 @@ FindPlayAreaCardWithHighestAIScore:
 	jr c, .not_enough_score
 	ld a, d
 	ldh [hTempPlayAreaLocation_ff9d], a
-	scf
-	ret
+	retscf
 .not_enough_score
 	or a
 	ret
@@ -612,7 +611,7 @@ FindPlayAreaCardWithHighestAIScore:
 ; same as above but only check bench Pokémon scores.
 .only_bench
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	dec a
 	jr z, .no_carry
 
@@ -636,8 +635,7 @@ FindPlayAreaCardWithHighestAIScore:
 ; in this case, there is no minimum threshold AI score.
 	ld a, d
 	ldh [hTempPlayAreaLocation_ff9d], a
-	scf
-	ret
+	retscf
 .no_carry
 	or a
 	ret
@@ -649,7 +647,7 @@ CheckIfEvolutionNeedsEnergyForAttack:
 	call CreateHandCardList
 	ldh a, [hTempPlayAreaLocation_ff9d]
 	add DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	call CheckCardEvolutionInHandOrDeck
 	jr c, .has_evolution
 	or a
@@ -659,14 +657,14 @@ CheckIfEvolutionNeedsEnergyForAttack:
 	ld b, a
 	ldh a, [hTempPlayAreaLocation_ff9d]
 	add DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	push af
 	ld [hl], b
 	call CheckEnergyNeededForAttack
 	jr c, .not_enough_energy
 	ldh a, [hTempPlayAreaLocation_ff9d]
 	add DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	pop af
 	ld [hl], a
 	or a
@@ -675,11 +673,10 @@ CheckIfEvolutionNeedsEnergyForAttack:
 .not_enough_energy
 	ldh a, [hTempPlayAreaLocation_ff9d]
 	add DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	pop af
 	ld [hl], a
-	scf
-	ret
+	retscf
 
 ; returns in e the card ID of the energy required for
 ; the Discard/Energy Boost attack loaded in wSelectedAttack.
@@ -694,7 +691,7 @@ GetEnergyCardForDiscardOrEnergyBoostAttack:
 ; load card ID and check selected attack index.
 	ldh a, [hTempPlayAreaLocation_ff9d]
 	add DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	call LoadCardDataToBuffer2_FromDeckIndex
 	ld a, [wSelectedAttack]
 	or a
@@ -771,8 +768,7 @@ GetEnergyCardForDiscardOrEnergyBoostAttack:
 
 .set_carry
 	lb bc, $01, $00
-	scf
-	ret
+	retscf
 
 ; for RaikouLv64's Thunderbolt attack, return with no carry.
 .zapdos2
@@ -783,8 +779,7 @@ GetEnergyCardForDiscardOrEnergyBoostAttack:
 ; return carry.
 .charizard_or_exeggutor
 	lb bc, $00, $01
-	scf
-	ret
+	retscf
 
 ; called after the AI has decided which card to attach
 ; energy from hand. AI does checks to determine whether
@@ -933,8 +928,7 @@ AITryToPlayEnergyCard:
 	ld [wAlreadyPlayedEnergy], a
 	ld a, OPPACTION_PLAY_ENERGY
 	bank1call AIMakeDecision
-	scf
-	ret
+	retscf
 
 ; wTempAI is 1 if the attack had a Discard/Energy Boost effect,
 ; and 0 otherwise. If 1, then return. If not one, check if
@@ -1025,12 +1019,11 @@ CheckSpecificDecksToAttachDoubleColorless:
 	pop hl
 	pop de
 	pop bc
-	scf
-	ret
+	retscf
 
 .GetArenaCardID:
 	ldh a, [hTempPlayAreaLocation_ff9d]
 	add DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	call GetCardIDFromDeckIndex
 	ret

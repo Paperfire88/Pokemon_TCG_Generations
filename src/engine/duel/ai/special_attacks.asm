@@ -7,7 +7,7 @@
 HandleSpecialAIAttacks:
 	ldh a, [hTempPlayAreaLocation_ff9d]
 	add DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	call GetCardIDFromDeckIndex
 
 	cp16 SHELMET
@@ -88,7 +88,7 @@ HandleSpecialAIAttacks:
 ; return a score of $80 + slots available in bench.
 .CallForFamily:
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	cp MAX_BENCH_POKEMON
 	jr nc, .zero_score
 	ld b, a
@@ -110,7 +110,7 @@ HandleSpecialAIAttacks:
 	jr nc, .zero_score
 .found_nidoran
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	cp MAX_PLAY_AREA_POKEMON
 	jr nc, .zero_score
 	ld b, a
@@ -142,7 +142,7 @@ HandleSpecialAIAttacks:
 	jr .zero_score
 .found_fighting_card
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	cp MAX_BENCH_POKEMON
 	jr nc, .zero_score
 	ld b, a
@@ -167,7 +167,7 @@ HandleSpecialAIAttacks:
 	call CheckIfAnyBasicPokemonInDeck
 	jp nc, .zero_score
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	cp MAX_PLAY_AREA_POKEMON
 	jp nc, .zero_score
 	ld b, a
@@ -215,7 +215,7 @@ HandleSpecialAIAttacks:
 	call SwapTurn
 	ld b, a
 	ld a, DUELVARS_BENCH
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 .loop_chain_lightning_bench
 	ld a, [hli]
 	cp $ff
@@ -245,7 +245,7 @@ HandleSpecialAIAttacks:
 ; otherwise return score of $80 + 1.
 .Conversion:
 	ld a, DUELVARS_ARENA_CARD_STATUS
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	and CNF_SLP_PRZ
 	cp CONFUSED
 	jp z, .zero_score
@@ -321,7 +321,7 @@ HandleSpecialAIAttacks:
 ; otherwise return a score of $80 + 0.
 .Fetch:
 	ld a, DUELVARS_NUMBER_OF_CARDS_NOT_IN_DECK
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	cp 41
 	jp nc, .zero_score
 	ld a, $80
@@ -332,7 +332,7 @@ HandleSpecialAIAttacks:
 ; of prize cards left for player.
 .Earthquake:
 	ld a, DUELVARS_BENCH
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 
 	lb de, 0, 0
 .loop_earthquake
@@ -342,7 +342,7 @@ HandleSpecialAIAttacks:
 	jr z, .count_prizes
 	ld a, e
 	add DUELVARS_ARENA_CARD_HP
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	cp 20
 	jr nc, .loop_earthquake
 	inc d
@@ -442,7 +442,7 @@ CheckWhetherToSwitchToFirstAttack:
 ; otherwise switch to the first attack.
 .check_flag
 	ld a, DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld d, a
 	ld e, SECOND_ATTACK
 	call CopyAttackDataAndDamage_FromDeckIndex
@@ -468,7 +468,7 @@ CheckIfAnyBasicPokemonInDeck:
 .loop
 	ld a, DUELVARS_CARD_LOCATIONS
 	add e
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	cp CARD_LOCATION_DECK
 	jr nz, .next
 	push de
@@ -489,8 +489,7 @@ CheckIfAnyBasicPokemonInDeck:
 	or a
 	ret
 .set_carry
-	scf
-	ret
+	retscf
 
 ; dismiss the attack if there are more than 10 cards left in the Player's deck and the
 ; Defending Pokémon can't KO the AI's Active Pokémon with its current amount of Energy.

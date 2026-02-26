@@ -39,7 +39,7 @@ LoadOpponentDeck::
 .valid_deck
 ; set opponent as controlled by AI
 	ld a, DUELVARS_DUELIST_TYPE
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld a, [wOpponentDeckID]
 	or DUELIST_TYPE_AI_OPP
 	ld [hl], a

@@ -92,8 +92,7 @@ Preload_ImakuniInFightingClubLobby:
 .load_imakuni
 	ld a, MUSIC_IMAKUNI
 	ld [wDefaultSong], a
-	scf
-	ret
+	retscf
 
 Script_Imakuni:
 	start_script

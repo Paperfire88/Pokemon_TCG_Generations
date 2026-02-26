@@ -391,7 +391,7 @@
 	const REVIVE                      ; $e0
 	const RARE_CANDY             ; $ca
 	const PLUSPOWER                   ; $d8
-	const LEPPA_BERRY
+	const GREAT_BALL
 	const DEFENDER                    ; $d9
 	const RECYCLE                     ; $e4
 	const POKEMON_FLUTE               ; $e2

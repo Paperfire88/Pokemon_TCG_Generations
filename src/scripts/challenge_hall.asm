@@ -42,8 +42,7 @@ Preload_Guide:
 	ld a, $02
 	ld [wLoadNPCYPos], a
 .asm_f281
-	scf
-	ret
+	retscf
 
 Script_Guide:
 	start_script
@@ -443,8 +442,7 @@ Preload_ChallengeHallOpponent:
 	jr z, .asm_f56e
 	ld a, [wChallengeHallNPC]
 	ld [wTempNPC], a
-	scf
-	ret
+	retscf
 
 .asm_f56e
 	call Func_f5db
@@ -452,8 +450,7 @@ Preload_ChallengeHallOpponent:
 	set_event_value EVENT_CHALLENGE_CUP_OPPONENT_NUMBER
 	call Func_f580
 	max_event_value EVENT_CHALLENGE_CUP_OPPONENT_CHOSEN
-	scf
-	ret
+	retscf
 
 Func_f580:
 	get_event_value EVENT_CHALLENGE_CUP_NUMBER
@@ -519,8 +516,7 @@ Func_f5cc:
 	ld a, [hl]
 	and b
 	ret z
-	scf
-	ret
+	retscf
 
 Func_f5d4:
 	call Func_f5e9

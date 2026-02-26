@@ -79,8 +79,7 @@ Preload_ChallengeHallLobbyRonald1:
 .load_ronald
 	ld a, [wPlayerYCoord]
 	ld [wLoadNPCYPos], a
-	scf
-	ret
+	retscf
 
 .challenge_cup_2_ended
 	max_event_value EVENT_RONALD_CHALLENGE_HALL_LOBBY_CONVO_5
@@ -114,8 +113,7 @@ SetRonaldChallengeHallLobbyState:
 	inc hl
 	ld c, [hl]
 	set_event_value EVENT_RONALD_CHALLENGE_HALL_LOBBY_STATE
-	scf
-	ret
+	retscf
 
 .next_inc
 	inc hl

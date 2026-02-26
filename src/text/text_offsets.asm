@@ -4321,5 +4321,5 @@ TextOffsets::
 	textpointer ProtectChargeDescription
 	textpointer PlasmaPunchName
 	textpointer PlasmaPunchDescription
-	textpointer PhantomIllusionName
-	textpointer PhantomIllusionDescription
+	textpointer GreatBallName
+	textpointer GreatBallDescription

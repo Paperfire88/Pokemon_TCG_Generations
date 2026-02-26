@@ -116,8 +116,7 @@ Preload_Isaac:
 	ld a, SOUTH
 	ld [wLoadNPCDirection], a
 .asm_e4ab
-	scf
-	ret
+	retscf
 
 Script_Isaac:
 	start_script

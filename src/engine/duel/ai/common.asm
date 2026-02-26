@@ -28,8 +28,7 @@ CheckIfPlayerHasPokemonOtherThanMewtwoLv53:
 
 .not_mewtwo1
 	call SwapTurn
-	scf
-	ret
+	retscf
 
 ; returns no carry if, given the Player is using a MewtwoLv53 mill deck,
 ; the AI already has a Bench fully set up, in which case it
@@ -68,8 +67,7 @@ HandleAIAntiMewtwoDeckStrategy:
 	ret
 
 .set_carry
-	scf
-	ret
+	retscf
 
 ; lists in wDuelTempList all the basic energy cards
 ; in card location of a.
@@ -91,7 +89,7 @@ FindBasicEnergyCardsInLocation:
 	ld a, DUELVARS_CARD_LOCATIONS
 	add e
 	push hl
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld hl, wTempAI
 	cp [hl]
 	pop hl
@@ -132,8 +130,7 @@ FindBasicEnergyCardsInLocation:
 	ret
 
 .set_carry
-	scf
-	ret
+	retscf
 
 ; returns in a the card index of energy card
 ; attached to Pokémon in Play Area location a,
@@ -159,7 +156,7 @@ AIPickEnergyCardToDiscard:
 	ld b, a
 	ld a, DUELVARS_ARENA_CARD
 	add b
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	call GetCardIDFromDeckIndex
 	ld a, e
 	ld [wTempCardID + 0], a
@@ -219,7 +216,7 @@ PickAttachedEnergyCardToRemove:
 	ld b, a
 	ld a, DUELVARS_ARENA_CARD
 	add b
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	call GetCardIDFromDeckIndex
 	ld a, e
 	ld [wTempCardID + 0], a
@@ -298,7 +295,7 @@ PickTwoAttachedEnergyCards:
 	ld b, a
 	ld a, DUELVARS_ARENA_CARD
 	add b
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	call GetCardIDFromDeckIndex
 	ld a, e
 	ld [wTempCardID + 0], a
@@ -504,7 +501,7 @@ LookForCardIDInLocation:
 .loop
 	ld a, DUELVARS_CARD_LOCATIONS
 	add e
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	cp d
 	jr nz, .next
 	ld a, e
@@ -524,8 +521,7 @@ LookForCardIDInLocation:
 	ret
 .found
 	ld a, e
-	scf
-	ret
+	retscf
 
 ; return carry if card ID loaded in a is found in hand
 ; and outputs in a the deck index of that card
@@ -557,8 +553,7 @@ LookForCardIDInHandList_Bank8:
 	jr nz, .loop
 
 	ldh a, [hTempCardIndex_ff98]
-	scf
-	ret
+	retscf
 
 ; searches in deck for card ID 1 in a, and
 ; if found, searches in Hand/Play Area for card ID 2 in b, and
@@ -608,8 +603,7 @@ LookForCardIDInDeck_GivenCardIDInHandAndPlayArea:
 ; none found
 
 	ld a, [wTempAIPokemonCard]
-	scf
-	ret
+	retscf
 
 .no_carry
 	or a
@@ -677,8 +671,7 @@ LookForCardIDInDeck_GivenCardIDInHand:
 ; none found
 
 	ld a, [wTempAIPokemonCard]
-	scf
-	ret
+	retscf
 
 .no_carry
 	or a
@@ -701,7 +694,7 @@ LookForCardIDInPlayArea_Bank8:
 .loop
 	ld a, DUELVARS_ARENA_CARD
 	add b
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	cp $ff
 	ret z
 
@@ -724,8 +717,7 @@ LookForCardIDInPlayArea_Bank8:
 
 .is_same
 	ld a, b
-	scf
-	ret
+	retscf
 
 ; runs through list avoiding card in e.
 ; removes first card in list not equal to e
@@ -798,8 +790,7 @@ RemoveFromListDifferentCardOfGivenType:
 	pop bc
 	pop de
 	pop hl
-	scf
-	ret
+	retscf
 .no_carry
 	pop bc
 	pop de
@@ -872,8 +863,7 @@ LookForCardIDToTradeWithDifferentHandCard:
 	dec hl
 	ld e, [hl]
 	ld a, [wTempAI]
-	scf
-	ret
+	retscf
 
 .no_carry
 	or a
@@ -914,14 +904,13 @@ CheckIfHasCardIDInHand:
 
 .set_carry
 	ldh a, [hTempCardIndex_ff98]
-	scf
-	ret
+	retscf
 
 ; outputs in a total number of Pokemon cards in hand
 ; plus Pokemon in Turn Duelist's Play Area.
 CountPokemonCardsInHandAndInPlayArea:
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld [wTempAI], a
 	call CreateHandCardList
 	ld hl, wDuelTempList
@@ -989,8 +978,7 @@ FindDuplicatePokemonCards:
 	jr z, .no_carry
 
 ; found
-	scf
-	ret
+	retscf
 .no_carry
 	or a
 	ret
@@ -1002,7 +990,7 @@ AICheckIfAttackIsHighRecoil:
 	ld a, [wSelectedAttack]
 	ld e, a
 	ld a, DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	ld d, a
 	call CopyAttackDataAndDamage_FromDeckIndex
 	ld a, ATTACK_FLAG1_ADDRESS | HIGH_RECOIL_F

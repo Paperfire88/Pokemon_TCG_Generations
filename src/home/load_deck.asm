@@ -28,8 +28,7 @@ LoadDeck::
 	pop af
 	call BankswitchROM
 	pop hl
-	scf
-	ret
+	retscf
 
 ; input:
 ; - de = source

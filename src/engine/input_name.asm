@@ -449,8 +449,7 @@ PlayerNamingScreen_CheckButtonState:
 	push af
 	call PlayerNamingScreen_DrawVisibleCursor
 	pop af
-	scf
-	ret
+	retscf
 .asm_69ef
 	ld a, [wMenuInputSFX]
 	or a
@@ -731,8 +730,7 @@ PlayerNamingScreen_ProcessInput:
 	or a
 	ret
 .on_end
-	scf
-	ret
+	retscf
 
 ; this transforms the last japanese character
 ; in the name buffer into its dakuon shape or something.
@@ -789,8 +787,7 @@ TransformCharacter:
 	inc hl
 	jr .loop
 .return
-	scf
-	ret
+	retscf
 
 ; given the cursor position, returns the pointer to the character information.
 ; this function is very similar to 'DeckNamingScreen_GetCharInfoFromPos',
@@ -1185,8 +1182,7 @@ DeckNamingScreen_ProcessInput:
 	ld a, [hl]
 	cp $01
 	jr nz, .asm_6ed7
-	scf
-	ret
+	retscf
 
 .asm_6ed7
 	ld d, a
@@ -1313,8 +1309,7 @@ DeckNamingScreen_CheckButtonState:
 	push af
 	call DeckNamingScreen_DrawVisibleCursor
 	pop af
-	scf
-	ret
+	retscf
 .asm_6f89
 	ld a, [wMenuInputSFX]
 	or a

@@ -164,7 +164,7 @@ AIPerformScriptedTurn:
 	call AIAttachEnergyInHandToCardInBench
 
 	ld a, DUELVARS_ARENA_CARD
-	call GetTurnDuelistVariable
+	get_turn_duelist_var
 	cp16 SANDILE ; wrong
 	ld a, PLAY_AREA_BENCH_1
 	jr nz, .retreat

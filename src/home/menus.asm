@@ -47,8 +47,7 @@ HandleCardListInput::
 	ld a, [wCurMenuItem]
 	ld e, a
 	ldh a, [hCurMenuItem]
-	scf
-	ret
+	retscf
 
 ; initializes parameters for a menu, given the 8 bytes starting at hl,
 ; which are loaded to the following addresses:
@@ -127,8 +126,7 @@ HandleMenuInput::
 	ld a, [wCurMenuItem]
 	ld e, a
 	ldh a, [hCurMenuItem]
-	scf
-	ret
+	retscf
 .check_A_or_B
 	ldh a, [hKeysPressed]
 	and A_BUTTON | B_BUTTON
@@ -141,8 +139,7 @@ HandleMenuInput::
 	ld a, $ff
 	ldh [hCurMenuItem], a
 	call PlayOpenOrExitScreenSFX
-	scf
-	ret
+	retscf
 
 ; plays an "open screen" sound (SFX_CONFIRM) if [hCurMenuItem] != 0xff
 ; plays an "exit screen" sound (SFX_CANCEL) if [hCurMenuItem] == 0xff
@@ -562,13 +559,11 @@ CardListMenuFunction::
 	ret z
 	and B_BUTTON
 	jr nz, .pressed_b
-	scf
-	ret
+	retscf
 .pressed_b
 	ld a, $ff
 	ldh [hCurMenuItem], a
-	scf
-	ret
+	retscf
 
 ; convert the number at a to TX_SYMBOL text format and write it to wDefaultText
 ; replace leading zeros with SYM_SPACE
@@ -695,8 +690,7 @@ WaitForButtonAorB::
 	bit B_BUTTON_F, a
 	jr z, WaitForButtonAorB
 	call EraseCursor
-	scf
-	ret
+	retscf
 .a_pressed
 	call EraseCursor
 	or a
@@ -898,8 +892,7 @@ HandleYesOrNoMenu::
 	ld [wDefaultYesOrNo], a ; 0
 	ld a, 1
 	ldh [hCurMenuItem], a
-	scf
-	ret
+	retscf
 
 ; prints "YES NO" at de
 PrintYesOrNoItems::
