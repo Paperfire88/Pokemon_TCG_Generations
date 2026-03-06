@@ -1111,4 +1111,7 @@ EelektrikDescription:
 	line "OG Set: (Lost Origin 60)"
 	line "OG illustrator: (Uta)"
 	done	
-
+SwitchOutPromptText:
+	text "Want to Swith Out your Active"
+	line "PKMN?"
+	done
