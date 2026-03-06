@@ -513,7 +513,7 @@ ApplyAndAnimateHPRecovery:
 .nobeauti
 	ld e, c	
 	ld d, b
-.beauti	
+.beauti
 	push de
 	ld hl, wccbd
 	ld [hl], e
@@ -1469,9 +1469,22 @@ Teleport_CheckBench:
 	ldtx hl, ThereAreNoPokemonOnBenchText
 	cp 2
 	ret
-Teleport_PlayerSelectEffect:
+Teleport_PlayerSelectEffect2:
+	ld a, $ff
+	ldh [hTemp_ffa0], a
 	call Teleport_CheckBench
 	ret c
+	jr Teleport_PlayerSelectEffect.select
+Teleport_PlayerSelectEffect:
+	ld a, $ff
+	ldh [hTemp_ffa0], a
+	call Teleport_CheckBench
+	ret c
+	; prompt player if they want to switch out
+	ldtx hl, SwitchOutPromptText
+	call YesOrNoMenuWithText
+	ret c ; no selected
+.select	
 	ldtx hl, SelectPkmnOnBenchToSwitchWithActiveText
 	call DrawWideTextBox_WaitForInput
 	bank1call HasAlivePokemonInBench
@@ -1489,14 +1502,21 @@ Teleport_AISelectEffect:
 	call Random
 	ldh [hTemp_ffa0], a
 	ret
-
-WaterDuplicateEffect:
-	call IsPlayerTurn
-	jr nc, Teleport_SwitchEffect ; return if Player
-	call AskThePlayerYesorNo
-	ret nz
-	call Teleport_PlayerSelectEffect
-	;fallthrough
+EnergyCrushEffect:
+	call Psychic_DamageBoostEffect
+	; falltrough	
+TeleportBlast_BeforeDamageEffect:
+	ldh a, [hTemp_ffa0]
+	cp $ff
+	ret nz ; has switching
+	ld a, ATK_ANIM_PSYCHIC_HIT
+	ld [wLoadedAttackAnimation], a
+	ret	
+TeleportBlast_SwitchEffect:
+	ldh a, [hTemp_ffa0]
+	cp $ff
+	ret z ; no switching
+	; falltrough
 Teleport_SwitchEffect:
 	call Teleport_CheckBench
 	ret c
@@ -9690,11 +9710,6 @@ ExtraDamageIfFTEnergiesEffect:
 ExtraDamageIfFTEnergiesAIEffect:
 	call ExtraDamageIfFTEnergiesEffect
 	jp SetDefiniteAIDamage	
-
-Teleport_PlayerSelectEffect2:
-	farcall Teleport_PlayerSelectEffect3
-	ret		
-
 LashesEffect:
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
 	call GetTurnDuelistVariable
@@ -10644,7 +10659,7 @@ FirePaybackEffect:
 	call CompareBenchPKMNEffect
 	cp b
 	ret c
-	dec a
+	sub b
 	add a
 	call ATimes10
 	jp AddToDamage
@@ -10953,3 +10968,13 @@ SpiritBreakEffect:
 	ret c
 	call HyperBeam_PlayerSelectEffect
 	jp HyperBeam_DiscardEffect
+Heal20Effect:
+	ld de, 20
+	jp ApplyAndAnimateHPRecovery	
+StrangePollenEffect:
+	ld e, PLAY_AREA_ARENA
+	call GetCardDamageAndMaxHP
+	or a
+	ret nz ; found damage
+	call BurnEffect
+	jp SleepEffect

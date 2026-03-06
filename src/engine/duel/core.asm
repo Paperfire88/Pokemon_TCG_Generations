@@ -6599,6 +6599,7 @@ HandleBurnCheck:
     pop hl
     push hl
     ld a, DOUBLE_POISONED
+	or CNF_SLP_PRZ
     and [hl]
     ld [hl], a
     ld a, DUEL_ANIM_HEAL
@@ -6690,7 +6691,7 @@ ConvertSpecialTrainerCardToPokemon::
 	db POKEMON_POWER      ; CARD_DATA_ATTACK1_CATEGORY
 	dw TrainerCardAsPokemonEffectCommands ; CARD_DATA_ATTACK1_EFFECT_COMMANDS
 	ds $18                ; CARD_DATA_RETREAT_COST - (CARD_DATA_ATTACK1_EFFECT_COMMANDS + 2)
-	db UNABLE_RETREAT     ; CARD_DATA_RETREAT_COST
+	db 0     			  ; CARD_DATA_RETREAT_COST
 	ds $0d                ; PKMN_CARD_DATA_LENGTH - (CARD_DATA_RETREAT_COST + 1)
 
 ; this function applies all status conditions in order

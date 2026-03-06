@@ -135,7 +135,9 @@ ApplinStunSporeEffectCommands:
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Paralysis50PercentEffect
 	db  $00
 ExeggutorTeleportEffectCommands:
-	dbw EFFECTCMDTYPE_AFTER_DAMAGE, WaterDuplicateEffect
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, TeleportBlast_BeforeDamageEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, TeleportBlast_SwitchEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, Teleport_PlayerSelectEffect
 	dbw EFFECTCMDTYPE_AI_SELECTION, Teleport_AISelectEffect
 	db  $00
 
@@ -545,7 +547,8 @@ HaunterTransparencyEffectCommands:
 
 HypnoProphecyEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Prophecy_CheckDeck
-	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Prophecy_ReorderDeckEffect
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Prophecy_ReorderDeckEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, FetchEffect
 	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, Prophecy_PlayerSelectEffect
 	db  $00
 
@@ -1504,10 +1507,10 @@ DragonRageEffectCommands:
     db  $00	
 
 EnergyCrushEffectCommands:
-	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Teleport_SwitchEffect
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EnergyCrushEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, TeleportBlast_SwitchEffect
 	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, Teleport_PlayerSelectEffect
 	dbw EFFECTCMDTYPE_AI_SELECTION, Teleport_AISelectEffect
-	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Psychic_DamageBoostEffect
 	dbw EFFECTCMDTYPE_AI, Psychic_AIEffect
 	db  $00
 
@@ -2382,7 +2385,7 @@ WaterDuplicateEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, CheckDeckAndPlayArea
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, PutInPlayAreaEffect
 	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, SUBSTITUTE_DOLL_PlayerSelection
-	dbw EFFECTCMDTYPE_AFTER_DAMAGE, WaterDuplicateEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, TeleportBlast_SwitchEffect
 	dbw EFFECTCMDTYPE_AI_SELECTION, Teleport_AISelectEffect
 	db  $00  
 
@@ -2620,4 +2623,8 @@ HeavyBallEffectCommands:
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, EnergyRetrieval_PlayerHandSelection
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, EnergySearch_AddToHandEffect
 	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, Find3orMoreRetreatCost_PlayerSelection
+	db  $00	
+StrangePollenEffectCommands:
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, StrangePollenEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, Heal20Effect
 	db  $00		
