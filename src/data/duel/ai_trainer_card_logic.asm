@@ -10,14 +10,15 @@ AITrainerCardLogic:
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_10, POTION,                 AIDecide_Potion2,                        AIPlay_Potion
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_04, SUPER_POTION,           AIDecide_SuperPotion1,                   AIPlay_SuperPotion
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_11, SUPER_POTION,           AIDecide_SuperPotion2,                   AIPlay_SuperPotion
-	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_03, DEFENDER,               AIDecide_Defender1,                      AIPlay_Defender
+	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_13, DEFENDER,               AIDecide_Defender1,                      AIPlay_Defender
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_04, DEFENDER,               AIDecide_Defender2,                      AIPlay_Defender
-	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_03, PLUSPOWER,              AIDecide_Pluspower1,                     AIPlay_Pluspower
-	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_04, PLUSPOWER,              AIDecide_Pluspower2,                     AIPlay_Pluspower
+	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_13, PLUSPOWER,              AIDecide_Pluspower1,                     AIPlay_Pluspower
+	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_14, PLUSPOWER,              AIDecide_Pluspower2,                     AIPlay_Pluspower
+	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_04, SWITCH,                 AIDecide_Switch,                         AIPlay_Switch
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_09, SWITCH,                 AIDecide_Switch,                         AIPlay_Switch
-	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_03, BOSS_ORDERS,           AIDecide_BossOrders,                     AIPlay_BossOrders
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_06, BOSS_ORDERS,           AIDecide_BossOrders,                     AIPlay_BossOrders
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_10, BOSS_ORDERS,           AIDecide_BossOrders,                     AIPlay_BossOrders
+	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_02, BILL,                   AIDecide_Bill,                           AIPlay_Bill
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_04, BILL,                   AIDecide_Bill,                           AIPlay_Bill
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_05, ENERGY_REMOVAL,         AIDecide_EnergyRemoval,                  AIPlay_EnergyRemoval
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_05, QUICK_BALL,   AIDecide_SuperEnergyRemoval,             AIPlay_SuperEnergyRemoval
@@ -32,12 +33,13 @@ AITrainerCardLogic:
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_03, POKEDEX,                AIDecide_Pokedex,                        AIPlay_Pokedex
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_07, FULL_HEAL,              AIDecide_FullHeal,                       AIPlay_FullHeal
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_10, MR_FUJI,                AIDecide_MrFuji,                         AIPlay_MrFuji
-	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_03, SCOOP_UP,               AIDecide_ScoopUp,                        AIPlay_ScoopUp
+	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_10, SCOOP_UP,               AIDecide_ScoopUp,                        AIPlay_ScoopUp
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_03, RECYCLE,                AIDecide_Recycle,                        AIPlay_Recycle
-	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_05, LASS,                   AIDecide_Lass,                           AIPlay_Lass
+	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_13, LASS,                   AIDecide_Lass,                           AIPlay_Lass
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_04, ITEM_FINDER,            AIDecide_ItemFinder,                     AIPlay_ItemFinder
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_01, IMAKUNI_CARD,           AIDecide_Imakuni,                        AIPlay_Imakuni
-	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_01, COPYCAT,                AIDecide_Gambler,                        AIPlay_Gambler
+	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_02, COPYCAT,                AIDecide_Gambler,                        AIPlay_Gambler
+	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_07, COPYCAT,                AIDecide_Gambler,                        AIPlay_Gambler
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_05, REVIVE,                 AIDecide_Revive,                         AIPlay_Revive
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_13, POKEMON_FLUTE,          AIDecide_PokemonFlute,                   AIPlay_PokemonFlute
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_05, SUBSTITUTE_DOLL,          AIDecide_ClefairyDollOrMysteriousFossil, AIPlay_ClefairyDollOrMysteriousFossil
@@ -45,7 +47,6 @@ AITrainerCardLogic:
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_02, POKE_BALL,              AIDecide_Pokeball,                       AIPlay_Pokeball
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_01, HEAVY_BALL,              AIDecide_Heavyball,                       AIPlay_EnergyRetrieval
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_02, COMPUTER_SEARCH,        AIDecide_ComputerSearch,                 AIPlay_ComputerSearch
-	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_02, POKEMON_COMMUNICATION,         AIDecide_PokemonTrader,                  AIPlay_PokemonTrader
-	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_03, POKEMON_COMMUNICATION,         AIDecide_PokemonTrader,                  AIPlay_PokemonTrader
 	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_04, POKEMON_COMMUNICATION,         AIDecide_PokemonTrader,                  AIPlay_PokemonTrader
+	ai_trainer_card_logic AI_TRAINER_CARD_PHASE_08, POKEMON_COMMUNICATION,         AIDecide_PokemonTrader,                  AIPlay_PokemonTrader
 	db $ff
