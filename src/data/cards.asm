@@ -334,12 +334,12 @@ BeautiflyCard:
 	dw NONE ; description (cont)
 	db 40 ; damage
 	db DAMAGE_NORMAL ; category
-	dw AbsorbEffectCommands ; effect commands
+	dw StrangePollenEffectCommands ; effect commands
 	db NONE ; flags 1
 	db HEAL_USER ; flags 2
 	db NONE ; flags 3
 	db 2
-	db ATK_ANIM_DRAIN ; animation
+	db ATK_ANIM_POWDER_EFFECT_CHANCE ; animation
 
 	db 0 ; retreat cost
 	db WR_LIGHTNING ; weakness
@@ -2138,7 +2138,7 @@ CentiskorchCard:
 	db DAMAGE_PLUS ; category
 	dw BurstinginfernoEffectCommands ; effect commands
 	db NONE ; flags 1
-	db DISCARD_ENERGY ; flags 2
+	db DISCARD_ENERGY|ATTACHED_ENERGY_BOOST ; flags 2
 	db NONE ; flags 3
 	db 3
 	db ATK_ANIM_BIG_FLAME ; animation
@@ -11039,7 +11039,7 @@ DunsparceCard:
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_HIT ; animation
+	db ATK_ANIM_GLOW_EFFECT ; animation
 
 	; attack 2
 	energy COLORLESS, 2 ; energies
