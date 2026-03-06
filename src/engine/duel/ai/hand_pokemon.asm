@@ -40,7 +40,7 @@ AIDecidePlayPokemonCard:
 	call SubFromAIScore
 	jr .check_defending_can_ko
 .has_4_or_fewer
-	ld a, 50
+	ld a, 80
 	call AddToAIScore
 
 ; if defending Pokémon can KO active card, increase AI score
@@ -49,7 +49,7 @@ AIDecidePlayPokemonCard:
 	ldh [hTempPlayAreaLocation_ff9d], a
 	call CheckIfDefendingPokemonCanKnockOut
 	jr nc, .check_energy_cards
-	ld a, 20
+	ld a, 40
 	call AddToAIScore
 
 ; if energy cards are found in hand
@@ -68,7 +68,7 @@ AIDecidePlayPokemonCard:
 	ld a, [wTempAIPokemonCard]
 	call CheckForEvolutionInList
 	jr nc, .check_evolution_deck
-	ld a, 20
+	ld a, 40
 	call AddToAIScore
 
 ; if evolution card is found in deck
@@ -80,10 +80,10 @@ AIDecidePlayPokemonCard:
 	ld a, 10
 	call AddToAIScore
 
-; if AI score is >= 180, play card from hand
+; if AI score is >= 120, play card from hand
 .check_score
 	ld a, [wAIScore]
-	cp 180
+	cp 120
 	jr c, .skip
 	ld a, [wTempAIPokemonCard]
 	ldh [hTemp_ffa0], a
@@ -202,7 +202,7 @@ AIDecideEvolution:
 	call CheckIfSelectedAttackIsUnusable
 	jr c, .evolution_cant_attack
 .evolution_can_attack
-	ld a, 5
+	ld a, 10
 	call AddToAIScore
 	jr .check_evolution_ko
 .evolution_cant_attack
@@ -233,7 +233,7 @@ AIDecideEvolution:
 	jr nc, .evolution_cant_ko
 	call CheckIfSelectedAttackIsUnusable
 	jr c, .evolution_cant_ko
-	ld a, 5
+	ld a, 10
 	call AddToAIScore
 	jr .check_defending_can_ko_evolution
 .evolution_cant_ko
@@ -294,7 +294,7 @@ AIDecideEvolution:
 	ld a, [wTempAIPokemonCard]
 	call CheckForEvolutionInList
 	jr nc, .check_2nd_stage_deck
-	ld a, 2
+	ld a, 10
 	call AddToAIScore
 	jr .check_damage
 
@@ -303,7 +303,7 @@ AIDecideEvolution:
 	ld a, [wTempAIPokemonCard]
 	call CheckForEvolutionInDeck
 	jr nc, .check_damage
-	ld a, 1
+	ld a, 4
 	call AddToAIScore
 
 ; decrease AI score proportional to damage
@@ -359,10 +359,10 @@ AIDecideEvolution:
 	ld a, 3
 	call SubFromAIScore
 
-; if AI score >= 133, go through with the evolution
+; if AI score >= 110, go through with the evolution
 .check_score
 	ld a, [wAIScore]
-	cp 133
+	cp 110
 	jr c, .done_bench_pokemon
 	ld a, [wTempAI]
 	ldh [hTempPlayAreaLocation_ffa1], a

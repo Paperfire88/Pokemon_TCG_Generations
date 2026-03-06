@@ -434,7 +434,7 @@ DetermineAIScoreOfAttackEnergyRequirement:
 	jp c, .check_evolution
 	jp z, .check_evolution
 	ld a, [wDamage]
-	add 10 ; boost gained by attaching another energy card
+	add 20 ; boost gained by attaching another energy card
 	ld b, a
 	ld a, DUELVARS_ARENA_CARD_HP
 	call GetNonTurnDuelistVariable
@@ -443,12 +443,12 @@ DetermineAIScoreOfAttackEnergyRequirement:
 	jr nz, .check_evolution
 
 .attaching_kos_player
-	ld a, 20
+	ld a, 40
 	call AddToAIScore
 	ldh a, [hTempPlayAreaLocation_ff9d]
 	or a
 	jr nz, .check_evolution
-	ld a, 10
+	ld a, 30
 	call AddToAIScore
 	jr .check_evolution
 
