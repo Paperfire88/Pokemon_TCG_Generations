@@ -8,20 +8,25 @@ AIActionTable_GeneralNoRetreat:
 	dw .take_prize
 
 .do_turn
-	jp AIDoTurn_GeneralNoRetreat
+	call AIDoTurn_GeneralNoRetreat
+	ret
 
 .start_duel
 	call InitAIDuelVars
-	jp AIPlayInitialBasicCards
+	call AIPlayInitialBasicCards
+	ret
 
 .forced_switch
-	jp AIDecideBenchPokemonToSwitchTo
+	call AIDecideBenchPokemonToSwitchTo
+	ret
 
 .ko_switch
-	jp AIDecideBenchPokemonToSwitchTo
+	call AIDecideBenchPokemonToSwitchTo
+	ret
 
 .take_prize
-	jp AIPickPrizeCards
+	call AIPickPrizeCards
+	ret
 
 AIDoTurn_GeneralNoRetreat:
 ; initialize variables
@@ -38,15 +43,17 @@ AIDoTurn_GeneralNoRetreat:
 	farcall HandleAICowardice
 ; process Trainer cards
 ; phase 2 through 4.
-	call AIDecidePlayPokemonCard
 	ld a, AI_TRAINER_CARD_PHASE_02
-	call AIProcessHandTrainerCards
-	ld a, AI_TRAINER_CARD_PHASE_03
 	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_03
 	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_04
 	call AIProcessHandTrainerCards
+; play Pokemon from hand
+	call AIDecidePlayPokemonCard
+	ret c ; return if turn ended
+; process Trainer cards
+; phase 5 through 12.
 	ld a, AI_TRAINER_CARD_PHASE_05
 	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_06
@@ -65,7 +72,8 @@ AIDoTurn_GeneralNoRetreat:
 ; play Energy card if possible
 	ld a, [wAlreadyPlayedEnergy]
 	or a
-	call z, AIProcessAndTryToPlayEnergy
+	jr nz, .skip_energy_attach_1
+	call AIProcessAndTryToPlayEnergy
 .skip_energy_attach_1
 ; play Pokemon from hand again
 	call AIDecidePlayPokemonCard
@@ -86,20 +94,13 @@ AIDoTurn_GeneralNoRetreat:
 	ld a, [wPreviousAIFlags]
 	and AI_FLAG_USED_PROFESSOR_OAK
 	jr z, .try_attack
-	call AIDecidePlayPokemonCard
 	ld a, AI_TRAINER_CARD_PHASE_01
 	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_02
 	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_03
 	call AIProcessHandTrainerCards
-	ld a, AI_TRAINER_CARD_PHASE_03
-	call AIProcessHandTrainerCards
-	ld a, [wPreviousAIFlags]
-	and AI_FLAG_USED_PROFESSOR_OAK
-	jr z, .pkmn_card
 	ld a, AI_TRAINER_CARD_PHASE_04
-.pkmn_card	
 	call AIProcessHandTrainerCards
 	call AIDecidePlayPokemonCard
 	ret c ; return if turn ended
@@ -111,7 +112,6 @@ AIDoTurn_GeneralNoRetreat:
 	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_08
 	call AIProcessHandTrainerCards
-	farcall AIProcessRetreat
 	ld a, AI_TRAINER_CARD_PHASE_10
 	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_11
@@ -120,7 +120,8 @@ AIDoTurn_GeneralNoRetreat:
 	call AIProcessHandTrainerCards
 	ld a, [wAlreadyPlayedEnergy]
 	or a
-	call z, AIProcessAndTryToPlayEnergy
+	jr nz, .skip_energy_attach_2
+	call AIProcessAndTryToPlayEnergy
 .skip_energy_attach_2
 	call AIDecidePlayPokemonCard
 	farcall HandleAIDamageSwap
