@@ -62,7 +62,6 @@ AIDoTurn_GeneralNoRetreat:
 	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_08
 	call AIProcessHandTrainerCards
-	farcall AIProcessRetreat
 	ld a, AI_TRAINER_CARD_PHASE_10
 	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_11
