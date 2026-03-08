@@ -462,6 +462,10 @@ CheckEnergyNeededForAttack:
 
 	; colorless
 	ld a, [de]
+	swap a
+	call CheckIfEnoughParticularAttachedEnergy
+	; colorless
+	ld a, [de]
 	and $f
   	ld c, a ; colorless energy cost
 	ld a, [wTempLoadedAttackEnergyCost]
