@@ -134,7 +134,7 @@ PointerTable_AttackAnimation:
 	dw AttackAnimation_MagneticStorm       ; ATK_ANIM_MAGNETIC_STORM
 	dw AttackAnimation_PoisonWhip          ; ATK_ANIM_POISON_WHIP
 	dw AttackAnimation_ThunderWave         ; ATK_ANIM_THUNDER_WAVE
-	dw AttackAnimation_ThunderWave         ; ATK_ANIM_UNUSED_70
+	dw AttackAnimation_Self_Hypnosis       ; ATK_ANIM_SELF_HYPNOSIS
 	dw AttackAnimation_Spore               ; ATK_ANIM_SPORE
 	dw AttackAnimation_Hypnosis            ; ATK_ANIM_HYPNOSIS
 	dw AttackAnimation_EnergyConversion    ; ATK_ANIM_ENERGY_CONVERSION
@@ -787,7 +787,10 @@ AttackAnimation_Hypnosis:
 	anim_player         DUEL_ANIM_GLOW
 	anim_opponent       DUEL_ANIM_PSYCHIC
 	anim_end
-
+AttackAnimation_Self_Hypnosis:
+	anim_player         DUEL_ANIM_GLOW
+	anim_player			DUEL_ANIM_SLEEP
+	anim_end
 AttackAnimation_EnergyConversion:
 	anim_player         DUEL_ANIM_GLOW
 	anim_normal         DUEL_ANIM_FLASH

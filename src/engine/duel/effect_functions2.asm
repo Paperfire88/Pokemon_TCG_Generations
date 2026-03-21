@@ -56,6 +56,7 @@ LookForCardsInDeck:
 	dw .SearchDeckForBasicFighting
 	dw .SearchDeckForBasicEnergy
 	dw .SearchDeckForTrainer
+	dw .SearchDeckForSupporter
 	dw .SearchDeckForFire
 	dw .SearchDeckForLightning
 	dw .SearchDeckForFighting
@@ -157,6 +158,19 @@ LookForCardsInDeck:
     jr nz, .loop_deck_trainer ; skip if not a Trainer
     or a
     ret
+
+.SearchDeckForSupporter
+    ld hl, wDuelTempList
+.loop_deck_supporter
+    ld a, [hli]
+    cp $ff
+    jp z, .set_carry
+    call GetCardIDFromDeckIndex
+    call GetCardType
+    cp TYPE_SUPPORTER
+    jr nz, .loop_deck_supporter ; skip if not a Supporter
+    or a
+    ret	
 
 .SearchDeckForFire
     ld hl, wDuelTempList
@@ -411,8 +425,6 @@ Stage1Search_AddToHandEffect:
 ; it wasn't the Player who played the Trainer card.
 	farcall SearchCardInDeckAndAddToHand
 	farcall AddCardToHand
-	farcall IsPlayerTurn
-	jr c, .done
 	ldh a, [hTempList + 1]
 	ldtx hl, WasPlacedInTheHandText
 	bank1call DisplayCardDetailScreen
@@ -579,7 +591,10 @@ EnergySearch_PlayerSelection2:
 	ldh [hTemp_ffa0], a
 	or a
 	ret
-
+SnackSearchEffect2:	
+	farcall CheckIfDefendingPKMNhasaPKMNPower
+	ret nz
+	; falltrough
 FindTrainer:
 	call CreateDeckCardList
 	ldtx hl, ChooseTrainerCardFromDeckText
@@ -633,8 +648,6 @@ FindTrainer:
 	ldh [hTemp_ffa0], a
 	or a
 	ret
-
-
 ; finds the first Trainer card in the deck
 ; output:
 ;	[hTemp_ffa0] = deck index of the chosen card ($ff if no card was chosen)
@@ -1432,7 +1445,12 @@ CreateStage2PokemonCardListFromDiscardPile:
 	or a
 	ret
 .set_carry
-	jp SetCarryEF		
+	jp SetCarryEF
+EvolutionaryLighEffect:
+	ldh a, [hTemp_ffa0]
+	call RemoveCardFromHand
+	call ReturnCardToDeck
+	; falltrough
 FindEvolution:
 	farcall CreateDeckCardList
 	ldtx hl, ChooseEvolutionCardFromDeckText
@@ -1454,6 +1472,7 @@ FindEvolution:
 	jr nc, .play_sfx ; not an Evolution card
 
 ; an Evolution card was selected
+	ld b, 0
 	ldh a, [hTempCardIndex_ff98]
 	ldh [hTemp_ffa0], a
 	or a
@@ -2033,6 +2052,10 @@ CreateNoTrainerCardListFromDiscardPile:
 	ld a, [wLoadedCard2Type]
 	cp TYPE_TRAINER
 	jr z, .next_card
+	cp TYPE_SUPPORTER
+	jr z, .next_card
+	cp TYPE_ENERGY_DOUBLE_COLORLESS
+	jr z, .next_card
 
 	ld a, [hl]
 	ld [de], a
@@ -2130,7 +2153,6 @@ FireCallForFamily_PlayerSelectEffect2:
 	ldtx hl, ChooseBasicFirePokemonText
 	ldtx de, DuelistDeckText
 	bank1call SetCardListHeaderText
-
 .loop
 	bank1call DisplayCardList
 	jr c, .pressed_b
@@ -2182,14 +2204,14 @@ FireCallForFamily_PlayerSelectEffect2:
 	ret
 
 FireCallForFamily_AISelectEffect2:
-	farcall CreateDeckCardList
+	call CreateDeckCardList
 	ld hl, wDuelTempList
 .loop_deck
 	ld a, [hli]
 	ldh [hTemp_ffa0], a
 	cp $ff
 	ret z ; none found
-	farcall LoadCardDataToBuffer2_FromDeckIndex
+	call LoadCardDataToBuffer2_FromDeckIndex
 	ld a, [wLoadedCard2Type]
 	cp FIRE
 	jr nz, .loop_deck
@@ -2856,45 +2878,45 @@ MysteriousFossil_PlayerSelection:
 
 	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
 .loop
-  bank1call InitAndDrawCardListScreenLayout
-  ldtx hl, PleaseSelectCardText
-  ldtx de, DuelistDeckText
-  bank1call SetCardListHeaderText
-  ld a, [wDuelTempList]
-  cp $ff
-  jr z, .done  ; no more cards to choose from
-  bank1call DisplayCardList
+	bank1call InitAndDrawCardListScreenLayout
+	ldtx hl, PleaseSelectCardText
+	ldtx de, DuelistDeckText
+	bank1call SetCardListHeaderText
+	ld a, [wDuelTempList]
+	cp $ff
+	jr z, .done  ; no more cards to choose from
+	bank1call DisplayCardList
 	call GetCardIDFromDeckIndex
 	cp16 MYSTERIOUS_FOSSIL
 	jr nz, .play_sfx
-  jr nc, .store_selected_card
-; B pressed
-  jr .done
+	jr nc, .store_selected_card
+	; B pressed
+	jr .done
 
 .play_sfx
 	farcall Func_3794
 	ld a, [hTempCardIndex_ff9f]
-  farcall AskWhetherToQuitSelectingCards
-  jr nc, .done ; chose to continue
+  	farcall AskWhetherToQuitSelectingCards
+  	jr nc, .done ; chose to continue
 	jr .loop
 
 .store_selected_card
-  farcall GetNextPositionInTempList
-  ldh a, [hTempCardIndex_ff98]
-  ld [hl], a ; store selected card
-  farcall RemoveCardFromDuelTempList
-  jr c, .done
-  ld a, [hTempCardIndex_ff9f]
-  ld b, a
-  ldh a, [hCurSelectionItem]
-  cp b
-  jr c, .loop
+	farcall GetNextPositionInTempList
+	ldh a, [hTempCardIndex_ff98]
+	ld [hl], a ; store selected card
+	farcall RemoveCardFromDuelTempList
+	jr c, .done
+	ld a, [hTempCardIndex_ff9f]
+	ld b, a
+	ldh a, [hCurSelectionItem]
+	cp b
+	jr c, .loop
 
 .done
-  farcall GetNextPositionInTempList
-  ld [hl], $ff
-  or a
-  ret  
+	farcall GetNextPositionInTempList
+	ld [hl], $ff
+	or a
+	ret
 
 LightningEnergy_PlayerSelection:
 	farcall CreateDeckCardList
@@ -3156,9 +3178,8 @@ MagnetismEffect:
 	add c
 	sub 1
 	call ATimes10
-	jp AddToDamage	
-
-EnergyDraw_PlayerHandSelection2:
+	jp AddToDamage
+EnergyDrawAnyEnergy_PlayerHandSelection2:
 	ld a, $ff
 	ldh [hTemp_ffa0], a
 	call CreateHandCardList
@@ -3172,7 +3193,7 @@ EnergyDraw_PlayerHandSelection2:
 	jr c, .bpressed ; B pressed?
 	ldh a, [hTempCardIndex_ff98]
 	ldh [hTemp_ffa0], a
-	farcall CheckIfCardIsBasicEnergy
+	farcall CheckIfCardIsNotPkmn
 	jr c, .play_sfx
 	or a
 	ret
@@ -3187,7 +3208,7 @@ EnergyDraw_PlayerHandSelection2:
 	ld a, [hli]
 	cp $ff
 	jr z, .exit
-	farcall CheckIfCardIsBasicEnergy
+	farcall CheckIfCardIsNotPkmn
 	jr c, .next_card
 	jr .read_input ; no, has to select Energy card
 .bpressed
@@ -3196,6 +3217,36 @@ EnergyDraw_PlayerHandSelection2:
 	ld a, $ff
 	ldh [hTemp_ffa0], a
 	or a
+	ret
+EnergyDraw_PlayerHandSelection2:
+	ld a, $ff
+	ldh [hTemp_ffa0], a
+	call CreateHandCardList
+	ldtx hl, Choose1BasicEnergyCardFromDeckText
+	ld d, SEARCHEFFECT_BASIC_ENERGY
+	ldtx bc, BasicEnergyText
+
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
+.read_input
+	bank1call DisplayCardList
+	jr c, .play_sfx ; B pressed?
+	ldh a, [hTempCardIndex_ff98]
+	ldh [hTemp_ffa0], a
+	farcall CheckIfCardIsBasicEnergy
+	jr c, .play_sfx
+	or a
+	ret
+.play_sfx
+	farcall Func_3794
+	jr .read_input
+
+.try_exit
+; check if Player can exit without selecting anything
+	ld hl, wDuelTempList
+.next_card
+	farcall CheckIfCardIsBasicEnergy
+	jr c, .next_card
+	jr .read_input ; no, has to select Energy card
 	ret
 Find0RetreatCost:
 	call CreateDeckCardList
@@ -3651,8 +3702,6 @@ Phantom_Illusion_EvolveEffect:
 Pupitar_EvolveEffect:
 	call CreateDeckCardList
 	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful ; no deck cards
-	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
-	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
 	farcall IsPrehistoricPowerActive
 	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
 	ld hl, wDuelTempList
@@ -3684,8 +3733,6 @@ Pupitar_EvolveEffect:
 Tyrogue_EvolveEffect:
 	call CreateDeckCardList
 	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful ; no deck cards
-	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
-	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
 	farcall IsPrehistoricPowerActive
 	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
 	ld hl, wDuelTempList
@@ -3706,8 +3753,6 @@ Tyrogue_EvolveEffect:
 Elekid_EvolveEffect:
 	call CreateDeckCardList
 	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful ; no deck cards
-	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
-	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
 	farcall IsPrehistoricPowerActive
 	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
 	ld hl, wDuelTempList
@@ -3720,11 +3765,65 @@ Elekid_EvolveEffect:
 	cp16 ELECTABUZZ
 	jr nz, .loop_find_card
 	jp MAGMAR_EvolveEffect.Evolve_to_Stage1	
+Munchlax_EvolveEffect:
+	ld a, DUELVARS_ARENA_CARD_STATUS
+	get_turn_duelist_var
+	and CNF_SLP_PRZ
+	cp ASLEEP
+	ldtx hl, UnableDueToSleepText
+	ret nc
+	call CreateDeckCardList
+	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful ; no deck cards
+	farcall IsPrehistoricPowerActive
+	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
+	ld hl, wDuelTempList
+.loop_find_card
+	ld a, [hli]
+	ldh [hTempCardIndex_ff98], a
+	cp $ff
+	jp z, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful ; no Staryu found in deck
+	call GetCardIDFromDeckIndex
+	cp16 SNORLAX
+	jr nz, .loop_find_card
+	jp MAGMAR_EvolveEffect.Evolve_to_Stage1	
+Budew_EvolveEffect:
+	call CreateDeckCardList
+	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful ; no deck cards
+	farcall IsPrehistoricPowerActive
+	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
+	ld hl, wDuelTempList
+.loop_find_card
+	ld a, [hli]
+	ldh [hTempCardIndex_ff98], a
+	cp $ff
+	jp z, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful ; no Staryu found in deck
+	call GetCardIDFromDeckIndex
+	cp16 ROSELIA
+	jr nz, .loop_find_card
+	jp MAGMAR_EvolveEffect.Evolve_to_Stage1
+FindLightningEffect:
+	call CreateDeckCardList
+	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful ; no deck cards
+	ld hl, wDuelTempList
+.loop_find_card
+	ld a, [hli]
+	ldh [hTempCardIndex_ff98], a
+	cp $ff
+	jp z, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful ; no Staryu found in deck
+	call GetCardIDFromDeckIndex
+	cp LIGHTNING_ENERGY
+	or a
+	jr z, .loop_find_card
+	; falltrough
+AttachEnergySearchedOntheActiveEffect:	
+	call AddCardToHand
+	ldh a, [hTemp_ffa0]
+	ld e, PLAY_AREA_ARENA
+	call PutHandCardInPlayArea
+	ret		
 Magikarp_EvolveEffect:
 	call CreateDeckCardList
 	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful ; no deck cards
-	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
-	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
 	farcall IsPrehistoricPowerActive
 	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
 	ld hl, wDuelTempList
@@ -3740,8 +3839,6 @@ Magikarp_EvolveEffect:
 Pikachu_EvolveEffect:
 	call CreateDeckCardList
 	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful ; no deck cards
-	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
-	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
 	farcall IsPrehistoricPowerActive
 	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
 	ld hl, wDuelTempList
@@ -3757,8 +3854,6 @@ Pikachu_EvolveEffect:
 MAGMAR_EvolveEffect:
 	call CreateDeckCardList
 	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful ; no deck cards
-	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
-	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
 	farcall IsPrehistoricPowerActive
 	jp c, Rebirth_DiscardAndAddEffect.SetWasUnsuccessful
 	ld hl, wDuelTempList
@@ -4055,7 +4150,7 @@ EnergyDrawEffect:
 ; returns carry if no cards in Deck or if
 ; Play Area is full already.
 CheckDeckAndPlayArea:
-	call CheckIfDeckIsEmpty
+	farcall CheckIfDeckIsEmpty
 	ret c ; return if no cards in deck
 	farcall CheckPlayArea
 	ret
@@ -4069,28 +4164,512 @@ GreeningCellsEffect:
 	call GrassEnergy_PlayerSelection
 	;fallthrough
 EnergySearch_AddToHandEffect2:
-	ld hl, hTempList
-	ld de, wDuelTempList
-.loop_cards
-	ld a, [hli]
-	ld [de], a
-	inc de
-	cp $ff
-	jr z, .done
-	call SearchCardInDeckAndAddToHand
-	call AddCardToHand
-	jr .loop_cards
-.done
-	call Func_2c0bd
-	call IsPlayerTurn
-	ret c
-	bank1call Func_4b38
-	ret	
+	farcall AddCardsToHandEffect2
+	ret 
+SnackSearchEffect:	
+	farcall CheckIfDefendingPKMNhasaPKMNPower
+	ret nz
+	jr EnergySearch_FarcallAddToHandEffect
 LuckyFindEffectEffect:
 	ldtx de, LuckyFindCheckText
-	call TossCoin_BankB
+	farcall TossCoin
 	ret nc
-	; falltrough
 EnergySearch_FarcallAddToHandEffect:	
 	farcall EnergySearch_AddToHandEffect
 	ret
+EnergyRetrieval_PlayerHandSelection2:
+	farcall EnergyRetrieval_PlayerHandSelection
+	ret	
+PokemonCollectorResearchEffect:	
+	farcall PutSelectedCardInDiscardPile
+	ldh a, [hTempCardIndex_ff9f]
+	call RemoveCardFromHand
+	call PutCardInDiscardPile
+	farcall CreateDeckCardList
+	ld a, 3
+  	ld [hTempCardIndex_ff9f], a
+  	ld a, $ff
+  	ldh [hTempList], a
+  	xor a
+  	ldh [hCurSelectionItem], a
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
+.loop
+	bank1call InitAndDrawCardListScreenLayout
+	ldtx hl, PleaseSelectCardText
+	ldtx de, DuelistDeckText
+	bank1call SetCardListHeaderText
+	ld a, [wDuelTempList]
+	cp $ff
+	jr z, .done  ; no more cards to choose from
+	bank1call DisplayCardList
+	call LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Type]
+	cp TYPE_TRAINER
+	jr z, .play_sfx
+	cp TYPE_SUPPORTER
+	jr z, .play_sfx
+	cp TYPE_ENERGY
+	jr z, .play_sfx
+	ld a, [wLoadedCard2Stage]
+	cp STAGE1
+	jr z, .play_sfx
+	cp STAGE2
+	jr z, .play_sfx
+	ld a, [wLoadedCard2HP]
+	cp 50
+	jr nc, .play_sfx
+	jr c, .store_selected_card
+	; B pressed
+	jr .done
+
+.play_sfx
+	farcall Func_3794
+	ld a, [hTempCardIndex_ff9f]
+  	farcall AskWhetherToQuitSelectingCards
+  	jr nc, .done ; chose to continue
+	jr .loop
+
+.store_selected_card
+	farcall GetNextPositionInTempList
+	ldh a, [hTempCardIndex_ff98]
+	ld [hl], a ; store selected card
+	farcall RemoveCardFromDuelTempList
+	jr c, .done
+	ld a, [hTempCardIndex_ff9f]
+	ld b, a
+	ldh a, [hCurSelectionItem]
+	cp b
+	jr c, .loop
+
+.done
+	farcall GetNextPositionInTempList
+	ld [hl], $ff
+	or a
+	ret
+RoseannesResearchEffect:	
+	ldh a, [hTempCardIndex_ff9f]
+	call RemoveCardFromHand
+	call PutCardInDiscardPile
+	ret
+Research_PlayerSelection:
+	farcall CreateDeckCardList
+	ld a, 2
+  	ld [hTempCardIndex_ff9f], a
+  	ld a, $ff
+  	ldh [hTempList], a
+  	xor a
+  	ldh [hCurSelectionItem], a
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
+.loop
+	bank1call InitAndDrawCardListScreenLayout
+	ldtx hl, PleaseSelectCardText
+	ldtx de, DuelistDeckText
+	bank1call SetCardListHeaderText
+	ld a, [wDuelTempList]
+	cp $ff
+	jr z, .done  ; no more cards to choose from
+	bank1call DisplayCardList
+	call LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Type]
+	cp TYPE_TRAINER
+	jr z, .play_sfx
+	cp TYPE_SUPPORTER
+	jr z, .play_sfx
+	cp TYPE_ENERGY_DOUBLE_COLORLESS
+	jr z, .play_sfx
+	ld a, [wLoadedCard2Stage]
+	cp STAGE1
+	jr z, .play_sfx
+	cp STAGE2
+	jr z, .play_sfx
+	jr nz, .store_selected_card
+	; B pressed
+	jr .done
+
+.play_sfx
+	farcall Func_3794
+	ld a, [hTempCardIndex_ff9f]
+  	farcall AskWhetherToQuitSelectingCards
+  	jr nc, .done ; chose to continue
+	jr .loop
+
+.store_selected_card
+	farcall GetNextPositionInTempList
+	ldh a, [hTempCardIndex_ff98]
+	ld [hl], a ; store selected card
+	farcall RemoveCardFromDuelTempList
+	jr c, .done
+	ld a, [hTempCardIndex_ff9f]
+	ld b, a
+	ldh a, [hCurSelectionItem]
+	cp b
+	jr c, .loop
+
+.done
+	farcall GetNextPositionInTempList
+	ld [hl], $ff
+	or a
+	ret
+
+Elm_DeckAndDiscardPileCheck:
+	farcall CheckIfDeckIsEmpty
+	ret nc ; deck not empty
+	bank1call CreateDiscardPileCardList
+	ret c ; both deck and discard pile empty
+	call CheckIfStage1or2IsInList
+	ldtx hl, NoEvosInDiscardPileText
+	ccf
+	ret
+Elm_AISelectEffect:
+	; AI will get it from Deck if possible
+	call CreateDeckCardList
+	call CheckIfStage1or2IsInList
+	ld a, $00
+	jr nc, .got_selection
+	; otherwise fetch it from Discard Pile
+	bank1call CreateDiscardPileCardList
+	call CheckIfStage1or2IsInList
+	ld a, $01
+	jr nc, .got_selection
+	ld a, $ff
+.got_selection
+	ldh [hTemp_ffa0], a
+	; [hTempPlayAreaLocation_ffa1] already has deck index
+	; of Mysterious Fossil because of CheckIfStage1or2IsInList
+	ret
+
+; returns carry set if a Stage 1 or 2 is found in wDuelTempList
+; also outputs first card it finds in [hTempPlayAreaLocation_ffa1]
+CheckIfStage1or2IsInList:
+	ld hl, wDuelTempList
+.loop_find
+	ld a, [hli]
+	ldh [hTempPlayAreaLocation_ffa1], a
+	cp $ff
+	ret z ; didn't find any
+	call LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Stage]
+	cp STAGE1
+	jr z, .loop_find
+	cp STAGE2
+	jr z, .loop_find
+	scf
+	ret
+Elm_PlayerSelectEffect:
+.select_deck_or_discard_pile
+	ldtx hl, ChooseDeckOrDiscardPileToCheckText
+	call TwoItemHorizontalMenu
+	ldh [hTemp_ffa0], a
+	jr nc, .deck
+
+; discard pile
+	bank1call CreateDiscardPileCardList
+	jr c, .select_deck_or_discard_pile
+	call CheckIfStage1or2IsInList
+	jr c, .pick_from_discard_pile
+	; no Mysterious Fossil in Discard Pile
+	ldtx hl, NoEvosInDiscardPileText
+	call DrawWideTextBox_WaitForInput
+	jr .select_deck_or_discard_pile
+
+.pick_from_discard_pile
+	call FindEvolutionInDiscardPile
+	jr z, .select_deck_or_discard_pile
+	ld b, 1
+	ret
+
+.deck
+	call FindEvolution
+	jr c, .select_deck_or_discard_pile
+	ret
+FossilExcavation_AddToHandEffect:
+	cp b
+	or a
+	jr z, .get_from_deck
+
+	; get from Discard Pile
+	ldh a, [hTempCardIndex_ff98]
+	call MoveDiscardPileCardToHand
+	call AddCardToHand
+	; display it to the player
+	bank1call DisplayPlayerDrawCardScreen
+	ret
+
+.get_from_deck
+	farcall EnergySearch_FarcallAddToHandEffect
+	bank1call DisplayPlayerDrawCardScreen
+	ret
+FossilResearch_PlayerSelection:	
+	ldh a, [hTempCardIndex_ff9f]
+	call RemoveCardFromHand
+	call PutCardInDiscardPile
+	farcall CreateDeckCardList
+	ld a, 2
+  	ld [hTempCardIndex_ff9f], a
+  	ld a, $ff
+  	ldh [hTempList], a
+  	xor a
+  	ldh [hCurSelectionItem], a
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
+.loop
+	bank1call InitAndDrawCardListScreenLayout
+	ldtx hl, PleaseSelectCardText
+	ldtx de, DuelistDeckText
+	bank1call SetCardListHeaderText
+	ld a, [wDuelTempList]
+	cp $ff
+	jp z, .done  ; no more cards to choose from
+	bank1call DisplayCardList
+	call GetCardIDFromDeckIndex
+	cp16 MYSTERIOUS_FOSSIL
+	jr z, .store_selected_card
+	cp16 KABUTO
+	jr z, .store_selected_card
+	cp16 KABUTOPS
+	jr z, .store_selected_card
+	cp16 OMANYTE
+	jr z, .store_selected_card
+	cp16 OMASTAR
+	jr z, .store_selected_card
+	cp16 TYRUNT
+	jr z, .store_selected_card
+	cp16 TYRANTRUM
+	jr z, .store_selected_card
+	cp16 FOSSIL_RESEARCHER
+	jr z, .store_selected_card
+	cp16 RELICANTH
+	jr nz, .play_sfx
+	jr z, .store_selected_card
+	
+	; B pressed
+	jr .done
+
+.play_sfx
+	farcall Func_3794
+	ld a, [hTempCardIndex_ff9f]
+  	farcall AskWhetherToQuitSelectingCards
+  	jr nc, .done ; chose to continue
+	jp .loop
+
+.store_selected_card
+	farcall GetNextPositionInTempList
+	ldh a, [hTempCardIndex_ff98]
+	ld [hl], a ; store selected card
+	farcall RemoveCardFromDuelTempList
+	jr c, .done
+	ld a, [hTempCardIndex_ff9f]
+	ld b, a
+	ldh a, [hCurSelectionItem]
+	cp b
+	jp c, .loop
+
+.done
+	farcall GetNextPositionInTempList
+	ld [hl], $ff
+	or a
+	ret	
+ProfessorBirchEffect:
+	farcall PutSelectedCardInDiscardPile
+	ld a, DUELVARS_NUMBER_OF_CARDS_IN_HAND
+	get_turn_duelist_var
+	cp 8
+	ret z
+	ld b, 0
+.Draw_Loop
+	inc b
+	call DrawCardFromDeck
+	jr c, .done
+	call AddCardToHand
+	ld a, DUELVARS_NUMBER_OF_CARDS_IN_HAND
+	get_turn_duelist_var
+	cp 7
+	jr nz, .Draw_Loop
+.done
+	ld a, b
+	bank1call DisplayDrawNCardsScreen
+	ret
+ZinniaEffect:	
+	ld b, 5
+    farcall CreateDeckCardListTopNCards
+	farcall HandlePlayerSelectionAnyCardFromDeckListToHand
+    ldh [hTemp_ffa0], a
+	ldh a, [hTemp_ffa0]
+    farcall AddDeckCardToHandEffect
+	ld b, 4
+    farcall CreateDeckCardListTopNCards
+	farcall HandlePlayerSelectionAnyCardFromDeckListToHand
+    ldh [hTemp_ffa0], a
+	ret
+Zinnia_AddToHandEffect:
+	ldh a, [hTemp_ffa0]
+    farcall AddDeckCardToHandEffect
+	bank1call Func_4b38
+	call SwapTurn
+	ld a, 3
+	farcall DiscardtopCardsffect
+	call SwapTurn
+    jp SelectedDiscardPileCards_ShuffleIntoDeckEffect2.done
+BigAppetiteEffect:
+	ld a, DUELVARS_ARENA_CARD_STAGE
+	get_turn_duelist_var
+	or a
+	jr nz, BigAppetiteEffect2 ; is an Stage 1/2
+	
+	ld a, DUELVARS_NUMBER_OF_CARDS_IN_HAND
+	get_turn_duelist_var
+	cp 5
+	ldtx hl, TooManyCardsInHandText
+	call z, DrawWideTextBox_WaitForInput
+	ret z
+	farcall SetUsedPokemonPowerThisTurn
+	ld b, 0
+.Draw_Loop
+	inc b
+	call DrawCardFromDeck
+	jr c, .done
+	call AddCardToHand
+	ld a, DUELVARS_NUMBER_OF_CARDS_IN_HAND
+	get_turn_duelist_var
+	cp 4
+	jr nz, .Draw_Loop
+.done
+	ld a, b
+	bank1call DisplayDrawNCardsScreen
+	jr SelfHypnosisAbilityAnimation
+BigAppetiteEffect2:	
+	ld a, DUELVARS_NUMBER_OF_CARDS_IN_HAND
+	get_turn_duelist_var
+	cp 6
+	ldtx hl, TooManyCardsInHandText
+	call z, DrawWideTextBox_WaitForInput
+	ret z
+	farcall SetUsedPokemonPowerThisTurn
+	ld b, 0
+.Draw_Loop
+	inc b
+	call DrawCardFromDeck
+	jr c, .done
+	call AddCardToHand
+	ld a, DUELVARS_NUMBER_OF_CARDS_IN_HAND
+	get_turn_duelist_var
+	cp 5
+	jr nz, .Draw_Loop
+.done
+	ld a, b
+	bank1call DisplayDrawNCardsScreen
+	jr SelfHypnosisAbilityAnimation
+AbilityPKMNIsYourActivePKMN2:
+	farcall AbilityPKMNIsYourActivePKMN
+	ret
+SelfHypnosisAbilityAnimation:
+	bank1call WaitAttackAnimation
+	ld a, ATK_ANIM_SELF_HYPNOSIS
+	farcall Func_2fea9
+	farcall SelfSleepEffect
+	farcall PlayAnimationPkmnpower
+	ret
+ShortCircuit_PlayerSelectEffect:
+	farcall EnergyRemoval_EnergyCheck
+	ret c
+	ldtx hl, ChoosePkmnInTheBenchToGiveDamageText
+	call DrawWideTextBox_WaitForInput
+	call SwapTurn
+	bank1call HasAlivePokemonInPlayArea
+.loop_selection
+	bank1call OpenPlayAreaScreenForSelection
+	jr c, .loop_selection ; mandatory selection
+	ldh a, [hTempPlayAreaLocation_ff9d]
+	ldh [hTemp_ffa0], a
+	ld e, a
+	; at least one
+	call SwapTurn
+	ret
+ShortCircuit_DamageEffect:
+	farcall EnergyRemoval_EnergyCheck
+	ret c
+	ldh a, [hTemp_ffa0]
+	ld b, a
+	call SwapTurn
+	ld e, a
+	call GetPlayAreaCardAttachedEnergies
+	ld a, [wTotalAttachedEnergies]
+	call ATimes10
+	ld e, a
+	ld d, $00
+	call DealDamageToPlayAreaPokemon_RegularAnim
+	jp SwapTurn
+FindSupporter:
+	call CreateDeckCardList
+	ldtx hl, ChooseSupporterCardFromDeckText
+	ldtx bc, SupporterCardText
+	lb de, SEARCHEFFECT_SUPPORTER, 0
+	farcall LookForCardsInDeck
+	jr c, .exit ; no Supporter cards in the deck
+
+; draw deck list interface and print text
+	bank1call InitAndDrawCardListScreenLayout_WithSelectCheckMenu
+	ldtx hl, ChooseSupporterCardText
+	ldtx de, DuelistDeckText
+	farcall SetCardListHeaderText
+
+.read_input
+	bank1call DisplayCardList
+	jr c, .attempt_to_cancel ; the B button was pressed
+	farcall LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Type]
+	cp TYPE_SUPPORTER
+	jr nz, .play_sfx ; not a Supporter card
+
+; a Supporter card was selected
+	ldh a, [hTempCardIndex_ff98]
+	ldh [hTemp_ffa0], a
+	or a
+	ret
+
+; play SFX and loop back
+.play_sfx
+	call Func_3794
+	jr .read_input
+
+; see if the Player can exit the screen without selecting a card,
+; that is, if the deck contains no Supporter cards.
+.attempt_to_cancel
+	ld hl, wDuelTempList
+.next_card
+	ld a, [hli]
+	cp $ff
+	jr z, .exit
+	farcall LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2Type]
+	cp TYPE_SUPPORTER
+	jr nz, .next_card
+	jr .play_sfx ; found a Supporter card, return to selection process
+
+; no Supporter cards in the deck, can safely exit screen
+.exit
+	ld a, $ff
+	ldh [hTemp_ffa0], a
+	or a
+	ret	
+ImpersonateEffect:
+	call FindSupporter
+	call SearchCardInDeckAndAddToHand
+	call AddCardToHand
+	call MoveHandCardToDiscardPile
+	ldh a, [hTemp_ffa0]
+	call PlayTrainerCardb
+	ret
+AllYouCanGrabEffect:
+	ld a, DECK_SIZE
+	ld hl, wPlayerNumberOfCardsNotInDeck
+	sub [hl]
+	call ATimes10
+	farcall SubstractXfromDamage
+	ret
+TenguStrikeEffect:
+	ld a, DUELVARS_ARENA_CARD_SUBSTATUS1
+	call GetNonTurnDuelistVariable
+	cp SUBSTATUS1_SWITCHED_IN
+	ret nz
+	farcall Add30damageEffect
+	ret 

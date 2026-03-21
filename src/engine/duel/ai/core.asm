@@ -428,7 +428,7 @@ CheckEnergyNeededForAttack:
 	ldh a, [hTempPlayAreaLocation_ff9d]
 	ld e, a ; could be an issue later
 	; call OverwriteLoadedAttackCost  ; preserves de
-	; call GetPlayAreaCardAttachedEnergies
+	call GetPlayAreaCardAttachedEnergies
 	bank1call HandleEnergyBurn
 
 	xor a
@@ -569,11 +569,16 @@ CheckIfCardCanBePlayed:
 	jr c, .pokemon_card
 	cp TYPE_TRAINER
 	jr z, .trainer_card
+	cp TYPE_SUPPORTER
+	jr z, .trainer_card
 
 ; energy card
 	ld a, [wAlreadyPlayedEnergy]
 	or a
 	ret z
+	ld a, [wCurrentAIFlags]
+	or AI_FLAG_USED_SUPPORTER
+	ld [wCurrentAIFlags], a
 	retscf
 
 .pokemon_card
@@ -607,6 +612,18 @@ CheckIfCardCanBePlayed:
 	retscf
 
 .trainer_card
+	cp TYPE_SUPPORTER
+	jr nz, .can_play
+	ld a, [wDuelTurns]
+	or a
+	jr z, .unable_to_play_supporter  ; first turn of the game
+	ld a, [wAlreadyPlayedEnergy]
+	and PLAYED_SUPPORTER_THIS_TURN
+	jr z, .can_play
+.unable_to_play_supporter
+	scf
+	ret
+.can_play
 	bank1call CheckCantUseTrainerDueToHeadache
 	ret c
 	call LoadNonPokemonCardEffectCommands

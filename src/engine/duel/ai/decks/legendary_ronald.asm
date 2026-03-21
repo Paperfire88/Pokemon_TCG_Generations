@@ -102,7 +102,7 @@ AIDoTurn_LegendaryRonald:
 	get_turn_duelist_var
 	cp DECK_SIZE - 9
 	jr nc, .skip_moltres_1 ; skip if cards in deck <= 9
-	ld de, TREVENANT
+	ld de, KABUTOPS
 	call CountPokemonIDInBothArenas
 	jr c, .skip_moltres_1 ; skip if Muk in play
 	ld de, ENTEI
@@ -156,7 +156,7 @@ AIDoTurn_LegendaryRonald:
 	get_turn_duelist_var
 	cp DECK_SIZE - 9
 	jr nc, .skip_moltres_2 ; skip if cards in deck <= 9
-	ld de, TREVENANT
+	ld de, KABUTOPS
 	call CountPokemonIDInBothArenas
 	jr c, .skip_moltres_2 ; skip if Muk in play
 	ld de, ENTEI

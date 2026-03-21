@@ -87,7 +87,7 @@ Script_Specs2:
 Data_ebe7:
 	dw PORYGON
 	dw DITTO
-	dw TREVENANT
+	dw KABUTOPS
 	dw FERROTHORN
 
 NPCMovement_ebeb:

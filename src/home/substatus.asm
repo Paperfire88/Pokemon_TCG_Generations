@@ -94,8 +94,8 @@ HandleDamageReductionExceptSubstatus2::
 	ld hl, wTempNonTurnDuelistCardID
 	cphl SPIRITOMB
 	jr z, .prevent_less_than_30_damage ; invisible wall
-	cphl KABUTO
-	jr z, .halve_damage2 ; kabuto armor
+	; cphl KABUTO
+	; jr z, .halve_damage2 ; kabuto armor
 	ret	
 .no_damage
 	ld de, 0
@@ -490,7 +490,7 @@ NoDamageOrEffectTextIDTable::
 IsClairvoyanceActive::
 	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
 	ret c
-	ld de, OMANYTE
+	ld de, IMAKUNI_CARD
 	jp CountPokemonIDInPlayArea
 
 ; returns carry if turn holder's arena card is paralyzed, asleep, confused,
@@ -516,7 +516,7 @@ CheckCannotUseDueToStatus_OnlyToxicGasIfANon0::
 	retscf
 .check_toxic_gas
 	push de
-	ld de, TREVENANT
+	ld de, KABUTOPS
 	call CountPokemonIDInBothArenas
 	pop de
 	ldtx hl, UnableDueToToxicGasText
@@ -694,7 +694,7 @@ GetLoadedCard1RetreatCost::
 	ld a, [wLoadedCard1RetreatCost] ; return regular retreat cost
 	ret
 .dodrio_found
-	ld de, TREVENANT
+	ld de, KABUTOPS
 	call CountPokemonIDInBothArenas
 	jr c, .muk_found
 	ld a, DUELVARS_ARENA_CARD_SUBSTATUS3
@@ -783,7 +783,7 @@ IsPrehistoricPowerActive::
 	ret nc
 	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
 	ret c
-	ld de, TREVENANT
+	ld de, KABUTOPS
 	call CountPokemonIDInBothArenas
 	ldtx hl, UnableToEvolveDueToPrehistoricPowerText
 	ccf
@@ -848,7 +848,7 @@ IsRainDanceActive::
 	ret nc ; return if no Pkmn Power-capable Blastoise found in turn holder's play area
 	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
 	ret c
-	ld de, TREVENANT
+	ld de, KABUTOPS
 	call CountPokemonIDInBothArenas
 	ccf
 	ret
@@ -979,11 +979,11 @@ ApplyStrikesBack_AgainstResidualAttack::
 	call DrawDuelHUDs
 	retscf
 
-; if the id of the card provided in register a as a deck index is TREVENANT,
+; if the id of the card provided in register a as a deck index is KABUTOPS,
 ; clear the changed type of all arena and bench Pokemon
 ClearChangedTypesIfMuk::
 	call GetCardIDFromDeckIndex
-	cp16 TREVENANT
+	cp16 KABUTOPS
 	ret nz
 	call SwapTurn
 	call .zero_changed_types
@@ -1070,4 +1070,3 @@ GetAttackCostPenalty:
 	ld a, c
 	pop hl
 	ret
-	

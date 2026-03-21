@@ -399,7 +399,7 @@ GetAIScoreOfAttack:
 	ld a, DUELVARS_ARENA_CARD
 	get_turn_duelist_var
 	call GetCardIDFromDeckIndex
-	cp16 AUDINO
+	cp16 STANTLER
 	jr z, .chansey
 	cp16 MAGNEMITE
 	jr z, .magnemite1_or_weezing
@@ -556,10 +556,16 @@ GetAIScoreOfAttack:
 .check_draw_flag
 	ld a, ATTACK_FLAG1_ADDRESS | DRAW_CARD_F
 	call CheckLoadedAttackFlag
-	jr nc, .check_heal_flag
+	jr nc, .check_energy_boost_flag
 	ld a, 1
 	call AddToAIScore
 
+.check_energy_boost_flag
+	ld a, ATTACK_FLAG2_ADDRESS | ATTACHED_ENERGY_BOOST_F
+	call CheckLoadedAttackFlag
+	jr nc, .check_heal_flag
+	ld a, 3
+	call AddToAIScore
 .check_heal_flag
 	ld a, ATTACK_FLAG2_ADDRESS | HEAL_USER_F
 	call CheckLoadedAttackFlag
@@ -602,7 +608,7 @@ GetAIScoreOfAttack:
 	call GetCardIDFromDeckIndex
 	call SwapTurn
 	; skip if player has Snorlax
-	cp16 HEAVY_BALL
+	cp16 GARGANACL
 	jp z, .handle_special_atks
 
 	ld a, DUELVARS_ARENA_CARD_STATUS

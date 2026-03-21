@@ -755,6 +755,8 @@ RemoveFromListDifferentCardOfGivenType:
 	jr c, .pkmn_card
 	cp TYPE_TRAINER
 	jr nz, .energy
+	cp TYPE_SUPPORTER
+	jr nz, .energy
 
 ; only remove from list specific type.
 

@@ -118,7 +118,7 @@ ColorlessPokemonText:
 	done
 
 TrainerCardText:
-	text "Trainer Card"
+	text "Item Card"
 	done
 
 EnergyCardText:

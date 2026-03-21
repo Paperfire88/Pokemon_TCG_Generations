@@ -1031,11 +1031,17 @@ CreateFilteredCardList:
 	and FILTER_ENERGY
 	cp FILTER_ENERGY
 	jr z, .check_energy
-	ld a, c
+	ld a, b
+	and FILTER_TRAINER
+	cp FILTER_TRAINER
+   	jr z, .check_trainer
+; OATS end custom logic
+
 ; OATS begin custom logic to include energy and pokemon in the same filter
-   	cp TYPE_TRAINER
-   	jr nc, .normal_card_check  ; it's a trainer card
-   	and TYPE_PKMN  ; treat pokemon and energy as the same thing
+	ld a, c
+	cp TYPE_TRAINER
+	jr nc, .normal_card_check  ; it's a trainer card
+	and TYPE_PKMN  ; treat pokemon and energy as the same thing
 ; OATS end custom logic
 .normal_card_check
 	cp b
@@ -1046,6 +1052,11 @@ CreateFilteredCardList:
 	and TYPE_ENERGY
 	cp TYPE_ENERGY
 	jr nz, .loop_card_ids
+
+.check_trainer
+	ld a, c
+	bit TYPE_TRAINER_F, a
+	jr z, .loop_card_ids
 
 .add_card
 	push bc
@@ -1308,6 +1319,10 @@ CountNumberOfCardsOfType:
 	and FILTER_ENERGY
 	cp FILTER_ENERGY
 	jr z, .check_energy
+	ld a, b
+	and FILTER_TRAINER
+	cp FILTER_TRAINER
+	jr z, .check_trainer	
 	ld a, l
 	; OATS begin custom logic to include energy and pokemon in the same filter
    	cp TYPE_TRAINER
@@ -1319,7 +1334,12 @@ CountNumberOfCardsOfType:
 	cp b
 	jr nz, .loop_cards
 	jr .incr_count
-
+.check_trainer
+	ld a, l
+	pop hl
+	bit TYPE_TRAINER_F, a
+	jr z, .loop_cards
+	jr .incr_count
 ; counts all energy cards as the same
 .check_energy
 	ld a, l
@@ -2903,7 +2923,6 @@ PrintConfirmationCardList:
 .not_pkmn_card
 	cp TYPE_TRAINER
 	jr nc, .trainer_card
-
 ; energy card
 	sub TYPE_ENERGY
 	ld b, a
@@ -2914,7 +2933,12 @@ PrintConfirmationCardList:
 	jr .got_tile
 
 .trainer_card
+	cp TYPE_SUPPORTER
+	jr nc, .supporter
 	ld a, ICON_TILE_TRAINER
+	jr .got_tile
+.supporter
+	ld a, ICON_TILE_SUPPORTER
 .got_tile
 	dec d
 	dec d
@@ -2973,6 +2997,7 @@ GetCardTypeIconPalette:
 	db ICON_TILE_STAGE_1_POKEMON, $3
 	db ICON_TILE_STAGE_2_POKEMON, $2
 	db ICON_TILE_TRAINER,         $3
+	db ICON_TILE_SUPPORTER,       $2
 	db $00, $ff
 
 ; copies b bytes from hl to de

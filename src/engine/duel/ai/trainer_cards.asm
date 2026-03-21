@@ -45,7 +45,7 @@ _AIProcessHandTrainerCards:
 
 	ld a, [wPreviousAIFlags]
 	and AI_FLAG_USED_SWITCH
-	jr nz, .inc_hl_by_4
+	jp nz, .inc_hl_by_4
 
 .skip_switch_check
 ; compare hand card to second byte in data and continue if equal.
@@ -54,14 +54,24 @@ _AIProcessHandTrainerCards:
 	ld a, [wLoadedCard1ID + 1]
 	ld d, a
 	call CompareDEtoBC
-	jr nz, .inc_hl_by_4
+	jp nz, .inc_hl_by_4
 
 ; found Trainer card
 	push hl
 	push de
 	ld a, [wAITrainerCardToPlay]
 	ldh [hTempCardIndex_ff9f], a
-
+	
+	ld a, [wLoadedCard1Type]
+	cp TYPE_SUPPORTER
+	jr nz, .no_support
+	ld a, [wPreviousAIFlags]
+	and AI_FLAG_USED_SUPPORTER
+	jp nz, .next_in_data
+	ld a, [wDuelTurns]
+	or a
+	jp z, .next_in_data  ; unable to play during the first turn
+.no_support	
 ; if Headache effects prevent playing card
 ; move on to the next item in list.
 	bank1call CheckCantUseTrainerDueToHeadache
@@ -770,8 +780,6 @@ AIDecide_Pluspower1:
 ; if there's an attack that can, only continue
 ; if it's unusable and there's no card in hand
 ; to fulfill its energy cost.
-	farcall CheckIfAnyAttackKnocksOutDefendingCard
-	jr nc, .cannot_ko
 	farcall CheckIfSelectedAttackIsUnusable
 	jr nc, .no_carry
 	farcall LookForEnergyNeededForAttackInHand
@@ -1383,6 +1391,10 @@ AIDecide_BossOrders:
 	retscf
 
 AIPlay_Bill:
+	ld a, [wCurrentAIFlags]
+	or AI_FLAG_USED_PROFESSOR_OAK | AI_FLAG_MODIFIED_HAND | AI_FLAG_USED_SUPPORTER
+	ld [wCurrentAIFlags], a
+	
 	ld a, [wAITrainerCardToPlay]
 	ldh [hTempCardIndex_ff9f], a
 	ld a, OPPACTION_EXECUTE_TRAINER_EFFECTS
@@ -2263,8 +2275,9 @@ AIDecide_RareCandy:
 
 AIPlay_ProfessorOak:
 	ld a, [wCurrentAIFlags]
-	or AI_FLAG_USED_PROFESSOR_OAK | AI_FLAG_MODIFIED_HAND
+	or AI_FLAG_USED_PROFESSOR_OAK | AI_FLAG_MODIFIED_HAND | AI_FLAG_USED_SUPPORTER
 	ld [wCurrentAIFlags], a
+	
 	ld a, [wAITrainerCardToPlay]
 	ldh [hTempCardIndex_ff9f], a
 	ld a, OPPACTION_EXECUTE_TRAINER_EFFECTS
@@ -2288,10 +2301,10 @@ AIDecide_ProfessorOak:
 	cp WONDERS_OF_SCIENCE_DECK_ID
 	jp z, .HandleWondersOfScienceDeck
 
-; return if cards in deck <= 14
+; return if cards in deck <= 10
 .check_cards_deck
 	ld a, [hl]
-	cp DECK_SIZE - 14
+	cp DECK_SIZE - 10
 	ret nc
 
 ; initialize score
@@ -2330,7 +2343,7 @@ AIDecide_ProfessorOak:
 	ld [wce06], a
 
 .handle_blastoise
-	ld de, TREVENANT
+	ld de, KABUTOPS
 	call CountPokemonIDInBothArenas
 	jr c, .check_hand
 
@@ -2387,7 +2400,7 @@ AIDecide_ProfessorOak:
 	jr nc, .not_in_hand
 
 ; there's a card in hand that can evolve
-	ld a, $01
+	ld a, $0f
 	ld [wce0f], a
 
 .not_in_hand
@@ -2399,7 +2412,7 @@ AIDecide_ProfessorOak:
 
 ; if it was found, set wce0f + 1 to $01
 	ld a, $01
-	ld [wce0f + 1], a
+	ld [wce0f + 10], a
 
 .next_play_area
 	inc e
@@ -2614,7 +2627,7 @@ AIDecide_EnergyRetrieval:
 	ld a, [wOpponentDeckID]
 	cp GO_GO_RAIN_DANCE_DECK_ID
 	jr nz, .start
-	ld de, TREVENANT
+	ld de, KABUTOPS
 	call CountPokemonIDInBothArenas
 	jr c, .start
 	ld de, GRENINJA
@@ -2880,7 +2893,7 @@ AIDecide_SuperEnergyRetrieval:
 	ld a, [wOpponentDeckID]
 	cp BLISTERING_POKEMON_DECK_ID
 	jr nz, .start
-	ld de, TREVENANT
+	ld de, KABUTOPS
 	call CountPokemonIDInBothArenas
 	jr c, .start
 	ld de, GRENINJA
@@ -3873,6 +3886,8 @@ AIDecide_Pokedex:
 	jr z, .find_energy
 	cp TYPE_TRAINER
 	jr nz, .loop_trainers
+	cp TYPE_SUPPORTER
+	jr nz, .loop_trainers
 ; found a Trainer card
 ; store it in wce1a list
 	push hl
@@ -4026,6 +4041,8 @@ PickPokedexCards:
 	cp $ff
 	jr z, .done
 	cp TYPE_TRAINER
+	jr nz, .loop_trainers
+	cp TYPE_SUPPORTER
 	jr nz, .loop_trainers
 ; found a Trainer card
 ; store it in wce1a list
@@ -4355,7 +4372,7 @@ AIDecide_ScoopUp:
 	call GetCardIDFromDeckIndex
 	cp16 SUICUNE
 	jr z, .articuno_or_chansey
-	cp16 AUDINO
+	cp16 STANTLER
 	jr nz, .no_carry
 
 ; here either SuicuneLv37 or Rayquaza
@@ -4591,7 +4608,7 @@ AIDecide_Recycle:
 	jr .loop_1
 
 .chansey
-	cp16 AUDINO
+	cp16 STANTLER
 	jr nz, .tauros
 	ld a, b
 	ld [wce08 + 1], a
@@ -4712,6 +4729,8 @@ AIDecide_Lass:
 	jr z, .loop
 	ld a, [wLoadedCard1Type]
 	cp TYPE_TRAINER
+	jr nz, .loop
+	cp TYPE_SUPPORTER
 	jr nz, .loop
 .no_carry
 	or a
@@ -4838,7 +4857,7 @@ AIDecide_Imakuni:
 
 AIPlay_Gambler:
 	ld a, [wCurrentAIFlags]
-	or AI_FLAG_MODIFIED_HAND
+	or AI_FLAG_USED_PROFESSOR_OAK | AI_FLAG_MODIFIED_HAND | AI_FLAG_USED_SUPPORTER
 	ld [wCurrentAIFlags], a
 	ld a, [wOpponentDeckID]
 	cp IMAKUNI_DECK_ID
@@ -4881,10 +4900,7 @@ AIDecide_Gambler:
 	ld a, [wOpponentDeckID]
 	cp IMAKUNI_DECK_ID
 	jr z, .imakuni
-	ld a, DUELVARS_NUMBER_OF_CARDS_IN_HAND
-	get_turn_duelist_var
-	cp 5 
-	jr c, .set_carry
+	jr .set_carry
 
 ; check if flag is set for Player using MewtwoLv53 only deck
 	ld a, [wAIBarrierFlagCounter]
@@ -5174,7 +5190,7 @@ AIDecide_Pokeball:
 ; this deck runs a deck check for specific
 ; card IDs in order of decreasing priority
 .fire_charge
-	ld de, AUDINO
+	ld de, STANTLER
 	ld a, CARD_LOCATION_DECK
 	call LookForCardIDInLocation
 	ret c
@@ -5756,7 +5772,7 @@ AIDecide_ComputerSearch_WondersOfScience:
 	ld de, PHANTUMP
 	call LookForCardIDInHandList_Bank8
 	jr nc, .target_grimer
-	ld de, TREVENANT
+	ld de, KABUTOPS
 	call LookForCardIDInHandList_Bank8
 	jr nc, .target_muk
 
@@ -5777,7 +5793,7 @@ AIDecide_ComputerSearch_WondersOfScience:
 ; first check Muk
 ; if in deck, check cards to discard.
 .target_muk
-	ld de, TREVENANT
+	ld de, KABUTOPS
 	ld a, CARD_LOCATION_DECK
 	call LookForCardIDInLocation
 	jp nc, .no_carry ; can be a jr
@@ -5808,7 +5824,7 @@ AIDecide_ComputerSearch_WondersOfScience:
 AIDecide_ComputerSearch_FireCharge:
 ; pick target card in deck from highest to lowest priority.
 ; if not found in hand, go to corresponding branch.
-	ld de, AUDINO
+	ld de, STANTLER
 	call LookForCardIDInHandList_Bank8
 	jr nc, .chansey
 	ld de, STANTLER
@@ -5827,7 +5843,7 @@ AIDecide_ComputerSearch_FireCharge:
 ; if not, then return no carry.
 ; else, look for cards to discard.
 .chansey
-	ld de, AUDINO
+	ld de, STANTLER
 	ld a, CARD_LOCATION_DECK
 	call LookForCardIDInLocation
 	jp nc, .no_carry
@@ -6021,7 +6037,7 @@ AIDecide_PokemonTrader_LegendarySuicune:
 ; a Seel or Dewgong was found in deck,
 ; check hand for card to trade for
 .check_hand
-	ld de, AUDINO
+	ld de, STANTLER
 	call CheckIfHasCardIDInHand
 	jr c, .set_carry
 	ld de, DITTO
@@ -6354,7 +6370,7 @@ AIDecide_PokemonTrader_PowerGenerator:
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jp c, .find_duplicates
 	ld bc, TOXEL
-	ld de, TOXTRICITY_LOW
+	ld de, TOXTRICITY
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
 	ld bc, TOXEL
@@ -6362,7 +6378,7 @@ AIDecide_PokemonTrader_PowerGenerator:
 	call LookForCardIDInDeck_GivenCardIDInHandAndPlayArea
 	jr c, .find_duplicates
 	ld de, TOXEL
-	ld bc, TOXTRICITY_LOW
+	ld bc, TOXTRICITY
 	call LookForCardIDInDeck_GivenCardIDInHand
 	jr c, .find_duplicates
 	ld de, TOXEL

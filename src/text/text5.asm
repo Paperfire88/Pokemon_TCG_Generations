@@ -220,11 +220,11 @@ EnergyTransBookText:
 	done
 
 ToxicGasBookName:
-	text "The Forest Curse"
+	text "The Primal Aura"
 	done
 
 ToxicGasBookText:
-	text "Trevenant's Forest Curse is very"
+	text "KABUTOPS Primal Aura is very"
 	line "powerful! It can block all Pokémon"
 	line "Abilities! But be careful because it"
 	line "also blocks your own Abilities!"

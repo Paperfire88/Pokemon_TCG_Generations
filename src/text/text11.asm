@@ -439,11 +439,6 @@ ExpandDescription:
 ClassyCatName:
 	text "Beaver"
 	done
-
-AudinoName:
-	text "Audino"
-	done
-
 GlareName:
 	text "Glare"
 	done
@@ -691,7 +686,8 @@ BillName:
 	done
 
 BillDescription:
-	text "Draw 2 cards."
+	text "Draw 3 cards. You can activate this"
+	line "card on the first turn of the duel."
 	done
 
 MrFujiName:
@@ -861,9 +857,9 @@ ScoopUpName:
 
 ScoopUpDescription:
 	text "Choose 1 of your PKMN in play and"
-	line "return its Basic PKMN card to your"
-	line "hand. (Discard all cards attached"
-	line "to that card.)"
+	line "return its Basic PKMN cards to your"
+	line "hand. (Discard all other cards"
+	line "attached to that card.)"
 	done
 
 ComputerSearchName:
@@ -916,9 +912,9 @@ ItemFinderName:
 	done
 
 ItemFinderDescription:
-	text "Discard 2 cards from your hand;"
-	line "Put a Trainer card from your discard"
-	line "pile into your hand."
+	text "Discard 2 cards from your hand; add"
+	line "an Item card from your discard"
+	line "pile to your hand."
 	done
 
 BossOrdersName:
@@ -1386,8 +1382,8 @@ MusharnaName:
 	text "Musharna"
 	done
 
-MakeItRainName:
-	text "Make It Rain"
+TreasureRushName:
+	text "Treasure Rush"
 	done
 
 DraconicDreamsName:
@@ -1609,9 +1605,10 @@ NinjaTornadoName:
 	done
 
 NinjaTornadoDescription:
-	text "Discard an Energy from the Defending" 
-	line "PKMN (If any). If an [ESCAVALIER] is"
-	line "in play,this attack does +20 damage."
+	text "You may switch this PKMN with 1 of"
+	line "your Benched PKMN. [If this PKMN was"
+	line "Switched in this turn, Discard an"
+	line "Energy from the Defending PKMN.]"
 	done
 
 DarkMistName:
@@ -1708,9 +1705,9 @@ ObsidianFangsName:
 	done
 
 PrimalAuraDesription:
-	text "When you play this PKMN from your"
-	line "hand, your opponent cannot play any"
-	line "trainer cards during their Next Turn"
+	text "As long as this is your Active PKMN," 
+	line "Neither player can use or activate"
+	line "the effects of any other Ability." 
 	done
 
 DowngradingBeamName:

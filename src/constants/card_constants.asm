@@ -48,6 +48,7 @@
 	const GROOKEY
 	const THWACKEY
 	const RILLABOOM
+	const BUDEW
 	const ROSELIA
 	const ROSERADE
 	const LEAFEON                     ; $2e
@@ -279,7 +280,6 @@
 	const ZUBAT                       ; $1a
 	const GOLBAT                      ; $1b
 	const CROBAT					  ;
-	const TOXTRICITY_LOW              ; $6f
 	const SKORUPI
 	const DRAPION
 	const VENIPEDE
@@ -287,8 +287,8 @@
 	const SCOLIPEDE
 	const CROAGUNK                      ; $7b
 	const TOXICROAK                    ; $7c
-	const CORPHISH
-	const CRAWDAUNT
+	; const CORPHISH
+	; const CRAWDAUNT
 	const IMPIDIMP
 	const MORGREM
 	const GRIMMSNARL
@@ -296,6 +296,9 @@
 	const LOKIX
 	const WOOPER
 	const CLODSIRE
+	const SEEDOT
+	const NUZLEAF
+	const SHIFTRY
 	const PAWNIARD
 	const BISHARP
 	const GASTLY
@@ -355,8 +358,9 @@
 	const EEVEE                       ; $bc
 	const SYLVEON                     ; $2e
 	const DITTO                       ; $bb
-	const AUDINO                     ; $b8
 	const DRAMPA                   ; $b7
+	const MUNCHLAX
+	const SNORLAX
 	const GOOMY                     ; $bf
 	const SLIGGOO                   ; $c0
 	const GOODRA              ; $c2
@@ -366,24 +370,33 @@
 	const LUGIA              ; $c1
 	const PROFESSOR_OAK               ; $c3
 	const IMPOSTER_PROFESSOR_OAK      ; $c4
+	const PROFESSOR_ELM
+	const PROFESSOR_BIRCH
 	const BILL                        ; $c5
 	const MR_FUJI                     ; $c6
 	const MARNIE                        ; $c7
 	const IMAKUNI_CARD                ; $c8
 	const POKEMON_CENTER              ; $d3
 	const COPYCAT                     ; $e3
+	const ROSEANNES_RESEARCH
+	const POKEMON_COLLECTOR
+	const FOSSIL_RESEARCHER
+	const ZINNIA
 	const BOSS_ORDERS                ; $db
 	const ENERGY_SEARCH               ; $cf
 	const MOON_STONE
 	const POKEMON_COMMUNICATION              ; $c9
+	const ACRO_BIKE
 	const ENERGY_RETRIEVAL            ; $cd
 	const SUPER_ENERGY_RETRIEVAL      ; $ce
 	const ENERGY_REMOVAL              ; $d0
 	const SUBSTITUTE_DOLL             ; $cb
 	const MYSTERIOUS_FOSSIL           ; $cc
 	const POKE_BALL                   ; $d4
+	const GREAT_BALL
 	const QUICK_BALL        		  ; $d1
 	const HEAVY_BALL                   ; $e1
+	const PREMIER_BALL
 	const POTION                      ; $dd
 	const SUPER_POTION                ; $de
 	const FULL_HEAL                   ; $df
@@ -391,7 +404,6 @@
 	const REVIVE                      ; $e0
 	const RARE_CANDY             ; $ca
 	const PLUSPOWER                   ; $d8
-	const GREAT_BALL
 	const DEFENDER                    ; $d9
 	const RECYCLE                     ; $e4
 	const POKEMON_FLUTE               ; $e2

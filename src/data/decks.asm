@@ -114,7 +114,7 @@ UnnamedDeck:
 	card_item GRASS_ENERGY,     8
 	card_item RAIKOU,      4
 	card_item CHARJABUG,   4
-	card_item TOXTRICITY_LOW,   4
+	card_item TOXTRICITY,   4
 	card_item MANECTRIC,     4
 	card_item TOXEL,          4
 	card_item EEVEE,            4
@@ -278,7 +278,7 @@ UnnamedDeck:
 
 	deck_list_start
 	card_item LIGHTNING_ENERGY, 12
-	card_item TOXTRICITY_LOW,    4
+	card_item TOXTRICITY,    4
 	card_item ELECTRIKE,   4
 	card_item MAGNEMITE,    4
 	card_item EEVEE,             4
@@ -323,7 +323,7 @@ UnnamedDeck2:
 	card_item PIGNITE,               3
 	card_item EMBOAR,                2
 	card_item RARE_CANDY,          2
-	card_item AUDINO,                  2
+	card_item STANTLER,                  2
 	card_item ENERGY_RETRIEVAL,         2
 	card_item PROFESSOR_OAK,            2
 	card_item BOSS_ORDERS,             2
@@ -479,7 +479,7 @@ UnnamedDeck2:
 
 	deck_list_start
 	card_item LIGHTNING_ENERGY, 12
-	card_item TOXTRICITY_LOW,    4
+	card_item TOXTRICITY,    4
 	card_item ELECTRIKE,   4
 	card_item MAGNEMITE,    4
 	card_item EEVEE,             4
@@ -1095,7 +1095,7 @@ WondersofScienceDeck:
 
 FireChargeDeck:
 	deck_list_start
-	card_item FIRE_ENERGY,             17
+	card_item FIRE_ENERGY,             14
 	card_item HOUNDOUR,                4
 	card_item HOUNDOOM,            3
 	card_item TORTUNATOR,              1
@@ -1112,7 +1112,7 @@ FireChargeDeck:
 	card_item PLUSPOWER,         2
 	card_item POTION,         2
 	card_item BOSS_ORDERS,         2
-	card_item COPYCAT,         1
+	card_item COPYCAT,         4
 	deck_list_end
 	tx FireChargeDeckName
 
@@ -1676,8 +1676,8 @@ PoisonDeck:
 
 AngerDeck:
 	deck_list_start
-	card_item FIRE_ENERGY,             16
-	card_item DOUBLE_COLORLESS_ENERGY,  4
+	card_item FIRE_ENERGY,             15
+	card_item DOUBLE_COLORLESS_ENERGY,  3
 	card_item SIZZLIPEDE,                4
 	card_item CENTISKORCH,            3
 	card_item DARUMAKA,                   4
@@ -1688,6 +1688,7 @@ AngerDeck:
 	card_item PROFESSOR_OAK,            3
 	card_item BILL,                     3
 	card_item ENERGY_SEARCH, 4
+	card_item SWITCH,	2
 	card_item ENERGY_RETRIEVAL,         2
 	card_item PLUSPOWER,                2
 	card_item DEFENDER,                 2

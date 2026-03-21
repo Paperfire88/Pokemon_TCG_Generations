@@ -1346,8 +1346,8 @@ WhirlwindName:
 
 WhirlwindDescription:
 	text "After doing damage, Your opponent"
-	line "Switches out their Active PKMN to"
-	line "the Bench."
+	line "Switches out their Active PKMN with"
+	line "1 of their Benched PKMN."
 	done
 
 ButterfreesMegaDrainDescription:

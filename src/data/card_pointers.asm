@@ -51,6 +51,7 @@ CardPointers::
 	dab GrookeyCard
 	dab ThwackeyCard
 	dab RillaboomCard
+	dab BudewCard
 	dab RoseliaCard
 	dab RoseradeCard
 	dab LeafeonCard
@@ -288,7 +289,6 @@ CardPointers::
 	dab ZubatCard
 	dab GolbatCard
 	dab CrobatCard
-	dab ToxtricityLv42Card
 	dab SkorupiCard
 	dab DrapionCard
 	dab VenipedeCard
@@ -296,8 +296,8 @@ CardPointers::
 	dab ScolipedeCard
 	dab CroagunkCard
 	dab ToxicroakCard
-	dab CorphishCard
-	dab CrawdauntCard
+	; dab CorphishCard
+	; dab CrawdauntCard
 	dab ImpidimpCard
 	dab	MorgremCard
 	dab	GrimmsnarlCard
@@ -305,6 +305,9 @@ CardPointers::
 	dab LokixCard
 	dab WooperCard
 	dab ClodsireCard
+	dab SeedotCard
+	dab NuzleafCard
+	dab ShiftryCard
 	dab PawniardCard
 	dab BisharpCard
 	dab GastlyCard
@@ -365,8 +368,9 @@ CardPointers::
 	dab EeveeCard
 	dab SylveonCard
 	dab DittoCard
-	dab AudinoCard
 	dab DrampaCard
+	dab MunchlaxCard
+	dab SnorlaxCard
 	dab GoomyCard
 	dab SliggooCard
 	dab GoodraCard
@@ -377,24 +381,33 @@ CardPointers::
 	;Trainers
 	dab ProfessorOakCard
 	dab ImposterProfessorOakCard
+	dab	ProfessorElmLectureCard
+	dab ProfessorBirchCard
 	dab BillCard
 	dab MrFujiCard
 	dab LassCard
 	dab ImakuniCard
 	dab PokemonCenterCard
 	dab CopycatCard
+	dab RoseannesResearchCard
+	dab PokemonCollectorCard
+	dab FossilResearcherCard
+	dab ZinniaCard
 	dab BossOrdersCard
 	dab EnergySearchCard
 	dab MoonStoneCard
 	dab PokemonTraderCard
+	dab AcroBikeCard
 	dab EnergyRetrievalCard
 	dab SuperEnergyRetrievalCard
 	dab EnergyRemovalCard
 	dab SubstituteDollCard
 	dab MysteriousFossilCard
 	dab PokeBallCard
+	dab GreatBallCard
 	dab QuickBallCard
 	dab HeavyBallCard
+	dab PremierBallCard
 	dab PotionCard
 	dab SuperPotionCard
 	dab FullHealCard
@@ -402,7 +415,6 @@ CardPointers::
 	dab ReviveCard
 	dab RareCandyCard
 	dab PlusPowerCard
-	dab GreatBallCard
 	dab DefenderCard
 	dab RecycleCard
 	dab PokemonFluteCard

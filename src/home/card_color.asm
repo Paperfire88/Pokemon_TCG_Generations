@@ -21,6 +21,8 @@ GetPlayAreaCardColor::
 	call GetCardType
 	cp TYPE_TRAINER
 	jr nz, .got_type
+	cp TYPE_SUPPORTER
+	jr nz, .got_type
 	ld a, COLORLESS
 .got_type
 	pop de

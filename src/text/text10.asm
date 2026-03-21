@@ -294,14 +294,17 @@ TrevenantName:
 	text "Trevenant"
 	done
 
-ForestCurseName:
-	text "Forest's Curse"
+DarkForestName:
+	text "Dark Forest"
 	done
 
-ForestCurseDescription:
-	text "As long as this is your Active PKMN," 
-	line "Neither player can use or activate"
-	line "the effects of any other Ability." 
+DarkForestDescription:
+	text "If the Defending PKMN attacks, your"
+	line "opponent Flips a Coin. If Tails," 
+	line "that attack fails."
+	line "[If that PKMN had a <PSYCHIC> Weakness,"
+	line "Your Opponent can't play any Item"
+	line "cards during their next turn.]"
 	done
 
 SnoverName:
@@ -698,14 +701,13 @@ GreninjaName:
 	done
 
 RainDanceName:
-	text "Rain Dance"
+	text "Water Call"
 	done
 
 RainDanceDescription:
-	text "During your turn, you may attach any"
-	line "number of <WATER> Energy from your hand"
-	line "to 1 of your <WATER> PKMN (This doesn't"
-	line "use your 1 Energy attachment)."
+	text "Once per turn, you can attach 1 <WATER>"
+	line "basic Energy from your hand to 1"
+	line "of your PKMN."
 	done
 
 HydroPumpName:
@@ -732,9 +734,9 @@ KnockOffName:
 	done
 
 HeadacheDescription:
-	text "Your opponent can't play Trainer"
-	line "cards during their next turn. then,"
-	line "this PKMN Does 10 damage to itself."
+	text "Your opponent can't play Item cards"
+	line "during their next turn. then, this"
+	line "PKMN takes 10 damage."
 	done
 
 DuckName:
@@ -918,9 +920,9 @@ HorseaName:
 	done
 
 OpponentAttackMayDoNothingDescription:
-	text "If the Defending PKMN attacks during" 
-	line "your opponent's next turn, they flip"
-	line "a coin. If tails, that attack fails."
+	text "If the Defending PKMN attacks, your"
+	line "opponent Flips a Coin. If Tails," 
+	line "that attack fails."
 	done
 
 DragonName:

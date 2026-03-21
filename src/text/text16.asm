@@ -1,11 +1,3 @@
-AssassinsRoseDescription:
-	text "If the Defending PKMN is Poisoned,"
-	line "it does +30 damage and heals 20"
-	line "damage from this PKMN."	
-	done
-FirstImpressionName:
-	text "First Impression"
-	done
 FirstImpressionDescription:
 	text "If this PKMN was Switched-In this"
 	line "turn, this attack does +30 damage."
@@ -26,7 +18,7 @@ BlastBurnDescription:
 	line "PKMN to use this attack."
 	line "[If the defending PKMN is Burned,"
 	line "Discard 1 energy instead.]"	
-	done
+	done	
 IceWallName:
 	text "Ice Wall"
 	done
@@ -69,13 +61,6 @@ RapidEvolutionDescription:
 	text "Search your deck for a [GYARADOS]"
 	line "and put it on this PKMN (This counts"
 	line "as evolving this PKMN)."
-	done
-ChooseAGyaradosFromDeckText:
-	text "Choose a Gyarados"
-	line "from the Deck."
-	done
-ChooseAGyaradosText:
-	text "Choose a Gyarados."
 	done	
 TailRevengeName:
 	text "Tail Revenge"
@@ -165,25 +150,7 @@ DragapultDescription:
 	done	
 StealthName:
 	text "Stealth"
-	done	
-Plus10Text:
-	text "(10+)"
-	done				
-Minus10Text:
-	text "(10-)"
-	done
-Plus20Text:
-	text "(20+)"
-	done				
-Minus20Text:
-	text "(20-)"
-	done
-Plus30Text:
-	text "(30+)"
-	done				
-Minus30Text:
-	text "(30-)"
-	done							
+	done					
 ElectrowebName:
 	text "Electroweb"
 	done
@@ -706,9 +673,9 @@ AxeKickName:
 	done
 AxeKickDescription:
 	text "If this PKMN was switched in this"
-	line "turn, do +20 damage. If the"
+	line "turn, do +20 damage. [If the"
 	line "defending PKMN is affected by an"
-	line "status condition, draw 2 cards."
+	line "status condition, draw 2 cards.]"
 	done		
 PoisonWhipName:
 	text "Poison Whip"
@@ -880,9 +847,9 @@ MagneticGearsName:
 	text "Magnetci Gears"
 	done
 MagneticGearsDescription:
-	text "Move an Energy attached to the"
-	line "opponent's Active PKMN to 1 of"
-	line "their Benched PKMN."
+	text "Move any Energy from the defending"
+	line "PKMN to 1 of your opponent's Benched"
+	line "PKMN."
 	done		
 NoMetalEnergyText:
 	text "No Metal Energy."
@@ -985,4 +952,202 @@ GreatBallDescription:
 	text "Look at the top 7 cards of your deck"
 	line "Reveal a PKMN you find there and add"
 	line "it to your hand. Shuffle your deck."
+	done
+PremierBallName:
+	text "Premier Ball"
+	done
+PremierBallDescription:
+	text "Randomly add 1 of your face-down"
+	line "Prizes to your hand, then, put this"
+	line "card as a face-down Prize card."
+	done
+WasPlacedInThePrizesText:
+	text "<RAMTEXT> was placed"
+	line "with the Prizes."
+	done
+MayOnlyUseOneSupporterCardText:
+	text "You already used a Supporter card"
+	line "this turn."
+	done
+YouCannotUseSupporterCardsDuringTheFirstTurnText:
+	text "You can't use Supporter cards during"
+	line "the first turn of the game."
+	done
+SupporterText:
+	text "Supporter"
+	done
+ItemText:
+	text "Item"
+	done
+ProfessorOakDescription2:
+	text "[Supporter rule]: You cant play it"
+	line "during the first turn. You can only"
+	line "play 1 Supporter during your turn."
+	line ""
+	line "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Base Set 88)"
+	line "OG illustrator: (Ken Sugimori)"
+	done
+ImakuniDescription2:	
+	text "[Imakuni? rule]: You can play it"
+	line "during the first turn. You can only"
+	line "play 0.9 Supporters during your turn"
+	line ""
+	line "Booster Pack: (PROMO)"
+	line "OG Set: (CoroCoro promo)"
+	line "OG illustrator: (Imakuni...maybe?)"
+	done
+CopycatDescription2:
+	text "[Supporter rule]: You cant play it"
+	line "during the first turn. You can only"
+	line "play 1 Supporter during your turn."
+	line ""
+	line "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Expedition 136)"
+	line "OG illustrator: (Ken Sugimori)"
+	done
+BossOrdersDescription2:
+	text "[Supporter rule]: You cant play it"
+	line "during the first turn. You can only"
+	line "play 1 Supporter during your turn."
+	line ""
+	line "Booster Pack: (LABORATORY)"
+	line "OG Set: (Paldea Evolved 172)"
+	line "OG illustrator: (NC Empire)"
+	done
+PokemonCenterDescription2:
+	text "[Supporter rule]: You cant play it"
+	line "during the first turn. You can only"
+	line "play 1 Supporter during your turn."
+	line ""
+	line "Booster Pack: (MYSTERY)"
+	line "OG Set: (Sword & Shield 176)"
+	line "OG illustrator: (kirisAki)"
+	done
+ImposterProfessorOakDescription2:
+	text "[Supporter rule]: You cant play it"
+	line "during the first turn. You can only"
+	line "play 1 Supporter during your turn."
+	line ""
+	line "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Team Rocket 76)"
+	line "OG illustrator: (Ken Sugimori)"
+	done
+BillDescription2:
+	text "[Supporter rule]: You cant play it"
+	line "during the first turn. You can only"
+	line "play 1 Supporter during your turn."
+	line ""
+	line "Booster Pack: (COLOSSEUM)"
+	line "OG Set: (Base Set 91)"
+	line "OG illustrator: (Ken Sugimori)"
+	done	
+MrFujiDescription2:
+	text "[Supporter rule]: You cant play it"
+	line "during the first turn. You can only"
+	line "play 1 Supporter during your turn."
+	line ""
+	line "Booster Pack: (EVOLUTION)"
+	line "OG Set: (Fossil 58)"
+	line "OG illustrator: (Ken Sugimori)"
+	done
+LassDescription2:
+	text "[Supporter rule]: You cant play it"
+	line "during the first turn. You can only"
+	line "play 1 Supporter during your turn."
+	line ""
+	line "Booster Pack: (MYSTERY)"
+	line "OG Set: (Sword & Shield 200)"
+	line "OG illustrator: (kirisAki)"
+	done
+RoseannesResearchName:
+	text "Roseanne's Research"
+	done
+RoseannesResearchDescription:
+	text "Search your deck for up to 2 basic"
+	line "PKMN And/Or Basic Energies and add"
+	line "them to your hand. Shuffle Your Deck"
+	done
+RoseannesResearchDescription2:
+	text "[Supporter rule]: You cant play it"
+	line "during the first turn. You can only"
+	line "play 1 Supporter during your turn."
+	line ""
+	line "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Secret Wonders 125)"
+	line "OG illustrator: (Kanako Eo)"
+	done
+PokemonCollectorName:
+	text "Pokémon Collector"
+	done
+PokemonCollectorDescription:
+	text "Discard 1 card, Search your deck for"
+	line "up to 3 basic PKMN with 40 HP or"
+	line "less and add them to your hand."
+	line "Shuffle Your Deck."
+	done
+PokemonCollectorDescription2:
+	text "[Supporter rule]: You cant play it"
+	line "during the first turn. You can only"
+	line "play 1 Supporter during your turn."
+	line ""
+	line "Booster Pack: (LOST ISLE)"
+	line "OG Set: (HeartGold & SoulSilver 97)"
+	line "OG illustrator: (Masakazu Fukuda)"
+	done
+AcroBikeName:
+	text "Acro Bike"
+	done
+AcroBikeDescription:
+	text "Look at the top 2 cards of your deck"
+	line "and add 1 of them to your hand,"
+	line "Discard the other one."
+	done
+AcroBikeDescription2:
+	text "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Primal Clash 122)"
+	line "OG illustrator: (Toyste Beach)"
+	done
+ProfessorElmLectureName:
+	text "Professor Elm"
+	done
+ProfessorElmLectureDescription:
+	text "Search your Deck or Discard Pile for"
+	line "an Evolution PKMN and add it to your"
+	line "hand. Shuffle Your Deck."
+	done
+ProfessorElmLectureDescription2:
+	text "[Supporter rule]: You cant play it"
+	line "during the first turn. You can only"
+	line "play 1 Supporter during your turn."
+	line ""
+	line "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Lost Thunder 188a)"
+	line "OG illustrator: (nagimiso)"
+	done
+ChooseDeckOrDiscardPileToCheckText:
+	text "Which one would you like to see?"
+	line "            Deck     Discard Pile"
+	done
+NoEvosInDiscardPileText:
+	text "There's No Evolved PKMN on"
+	line "the discard dile."
+	done
+FossilResearcherName:
+	text "Fossil Researcher"
+	done
+FossilResearcherDescription:
+	text "Search your deck for up to 2 Cards"
+	line "that are Named, Mentions or Evolve"
+	line "from [Mysterious Fossil] and Add"
+	line "them to your hand. Shuffle Your Deck"
+	done
+FossilResearcherDescription2:
+	text "[Supporter rule]: You cant play it"
+	line "during the first turn. You can only"
+	line "play 1 Supporter during your turn."
+	line ""
+	line "Booster Pack: (LOST ISLE)"
+	line "OG Set: (Furious Fists 92)"
+	line "OG illustrator: (Naoki Saito)"
 	done

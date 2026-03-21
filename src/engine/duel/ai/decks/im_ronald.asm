@@ -41,7 +41,7 @@ AIActionTable_ImRonald:
 
 .list_retreat
 	ai_retreat TOGEKISS, -1
-	ai_retreat AUDINO,         -1
+	ai_retreat STANTLER,         -1
 	ai_retreat SIZZLIPEDE,       -1
 	dw NULL
 

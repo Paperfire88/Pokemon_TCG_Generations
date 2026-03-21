@@ -946,16 +946,6 @@ StrangeEvolutionMagmarDescription:
 	line "evolving this PKMN). then, that PKMN"
 	line "is treated as a Stage 1 PKMN."
 	done 
-
-ChooseaMagmarFromDeckText:
-	text "Choose a Magmar"
-	line "from the Deck."
-	done
-
-ChooseAMagmarText:
-	text "Choose a Magmar."
-	done
-
 EvolutionaryFlameName:
 	text "Evolutionary Flame"
 	done
@@ -1139,16 +1129,6 @@ StrangeEvolutionElectabuzzDescription:
 	line "as evolving this PKMN). then, that"
 	line "PKMN is treated as a Stage 1 PKMN."
 	done 
-
-ChooseAELECTABUZZFromDeckText:
-	text "Choose a ELECTABUZZ"
-	line "from the Deck."
-	done
-
-ChooseAELECTABUZZText:
-	text "Choose a ELECTABUZZ."
-	done
-
 FollowUpBoltName:
 	text "Follow-Up Bolt"
 	done
@@ -1548,4 +1528,12 @@ DarkPulseName:
 DarkPulseDescription:
 	text "Does 10 damage for each <DARKNESS> Energy"
 	line "attached to all of your PKMN."
+	done
+AssassinsRoseDescription:
+	text "If the Defending PKMN is Poisoned,"
+	line "it does +30 damage and heals 20"
+	line "damage from this PKMN."	
+	done
+FirstImpressionName:
+	text "First Impression"
 	done

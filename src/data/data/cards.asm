@@ -16,7 +16,7 @@ ChikoritaCard:
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw GastlySleepingGasEffectCommands ; effect commands
+	dw Sleep50PercentEffectCommands ; effect commands
 	db INFLICT_SLEEP ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -1365,8 +1365,8 @@ TrevenantCard:
 
 	; attack 1
 	energy 0 ; energies
-	tx ForestCurseName ; name
-	tx ForestCurseDescription ; description
+	tx DarkForestName ; name
+	tx DarkForestDescription ; description
 	tx AbilityCondition2 ; description (cont)
 	db 0 ; damage
 	db POKEMON_POWER ; category
@@ -1420,7 +1420,7 @@ SnoverCard:
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw GastlySleepingGasEffectCommands ; effect commands
+	dw Sleep50PercentEffectCommands ; effect commands
 	db INFLICT_SLEEP ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -5162,7 +5162,7 @@ ToxtricityLv42Card:
 	tx ToxtricityName ; name
 	db DIAMOND ; rarity
 	db EVOLUTION | NONE ; sets
-	dw TOXTRICITY_LOW
+	dw TOXTRICITY
 	db 70 ; hp
 	db STAGE1 ; stage
 	tx ToxelName ; pre-evo name
@@ -5933,12 +5933,12 @@ PerrserkerCard:
 	db ATK_ANIM_HIT ; animation
 
 	energy COLORLESS, 1, FIGHTING, 2 ; energies
-	tx MakeItRainName ; name
-	tx MakeItRainNameDescription ; description
+	tx TreasureRushName ; name
+	tx TreasureRushNameDescription ; description
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_PLUS ; category
-	dw MakeItRainNameEffectCommands ; effect commands
+	dw TreasureRushNameEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3

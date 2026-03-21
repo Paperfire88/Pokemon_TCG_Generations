@@ -22,7 +22,7 @@ HandleAIEnergyTrans:
 	call CountPokemonIDInPlayArea
 	ret nc ; return if no VenusaurLv67 found in own Play Area
 
-	ld de, TREVENANT
+	ld de, KABUTOPS
 	call CountPokemonIDInBothArenas
 	ret c ; return if Muk found in any Play Area
 
@@ -400,7 +400,7 @@ AIEnergyTransTransferEnergyToBench:
 ;	- Curse.
 ; returns carry if turn ended.
 HandleAIPkmnPowers:
-	ld de, TREVENANT
+	ld de, KABUTOPS
 	call CountPokemonIDInBothArenas
 	ccf
 	ret nc ; return no carry if Muk is in play
@@ -879,7 +879,7 @@ HandleAICurse:
 HandleAIlongdistancehypnosis:
 	ld a, c
 	ldh [hTemp_ffa0], a
-	ld de, TREVENANT
+	ld de, KABUTOPS
 	call CountPokemonIDInBothArenas
 	ret c ; return if there's Muk in play
 
@@ -904,7 +904,7 @@ HandleAIlongdistancehypnosis:
 
 ; handles AI logic for Cowardice
 HandleAICowardice:
-	ld de, TREVENANT
+	ld de, KABUTOPS
 	call CountPokemonIDInBothArenas
 	ret c ; return if there's Muk in play
 
@@ -1002,7 +1002,7 @@ HandleAIDamageSwap:
 	ld de, ALAKAZAM
 	call CountPokemonIDInPlayArea
 	ret nc ; return if no Alakazam
-	ld de, TREVENANT
+	ld de, KABUTOPS
 	call CountPokemonIDInBothArenas
 	ret c ; return if there's Muk in play
 
@@ -1167,10 +1167,10 @@ HandleAIGoGoRainDanceEnergy:
 	ld de, GRENINJA
 	call CountPokemonIDInPlayArea
 	ret nc ; return if no Blastoise
-	ld de, TREVENANT
+	ld de, KABUTOPS
 	call CountPokemonIDInBothArenas
 	ret c ; return if there's Muk in play
-
+	ret
 ; play all the energy cards that is needed.
 .loop
 	farcall AIProcessAndTryToPlayEnergy

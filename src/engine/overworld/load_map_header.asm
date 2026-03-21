@@ -20,5 +20,4 @@ LoadMapHeader:
 	pop bc
 	pop hl
 	ret
-
 INCLUDE "data/map_headers.asm"

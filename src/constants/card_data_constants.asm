@@ -127,7 +127,7 @@ DEF TYPE_ENERGY EQU const_value		   ; $10
 	const TYPE_ENERGY_DOUBLE_COLORLESS ; $18
 	const_skip 7
 	const TYPE_TRAINER                 ; $20
-	const TYPE_TRAINER_UNUSED          ; $21
+	const TYPE_SUPPORTER       ; $21
 DEF NUM_CARD_TYPES EQU const_value - 15
 
 DEF TYPE_PKMN      EQU %1111

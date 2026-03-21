@@ -563,6 +563,7 @@ wNPCDuelDeckID:: ; cc19
 wDuelTheme:: ; cc1a
 	ds $1
 
+wAttackEnergyCost:: ; cc21
 ; holds the energies attached to a given pokemon card. 1 byte for each of the
 ; 8 energy types (includes the unused one that shares byte with the colorless energy)
 wAttachedEnergies:: ; cc1b

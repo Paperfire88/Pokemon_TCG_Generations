@@ -549,18 +549,16 @@ PlayEnergyCard:
 	ld a, c
 	cp TYPE_ENERGY_WATER
 	jr nz, .not_water_energy
-	call IsRainDanceActive
-	jr c, .rain_dance_active
-
 .not_water_energy
 	ld a, [wAlreadyPlayedEnergy]
-	or a
+	and PLAYED_ENERGY_THIS_TURN
 	jr nz, .already_played_energy
 	call HasAlivePokemonInPlayArea
 	call OpenPlayAreaScreenForSelection ; choose card to play energy card on
 	jp c, DuelMainInterface ; exit if no card was chosen
 .play_energy_set_played
-	ld a, TRUE
+	ld a, [wAlreadyPlayedEnergy]
+	or PLAYED_ENERGY_THIS_TURN
 	ld [wAlreadyPlayedEnergy], a
 .play_energy
 	ldh a, [hTempPlayAreaLocation_ff9d]
@@ -580,8 +578,6 @@ PlayEnergyCard:
 	call HasAlivePokemonInPlayArea
 	call OpenPlayAreaScreenForSelection ; choose card to play energy card on
 	jp c, DuelMainInterface ; exit if no card was chosen
-	call CheckRainDanceScenario
-	jr c, .play_energy
 	ld a, [wAlreadyPlayedEnergy]
 	or a
 	jr z, .play_energy_set_played
@@ -1488,10 +1484,19 @@ CheckIfActiveCardParalyzedOrAsleep:
 	ldtx hl, UnableDueToParalysisText
 	jr .return_with_status_condition
 .asleep
+	ld a, DUELVARS_ARENA_CARD
+	get_turn_duelist_var
+	call GetCardIDFromDeckIndex
+	cp16 MUNCHLAX
+	jr z, .inmune_to_Sleep
+	cp16 SNORLAX
+	jr z, .inmune_to_Sleep
 	ldtx hl, UnableDueToSleepText
 .return_with_status_condition
 	retscf
-
+.inmune_to_Sleep
+	or a
+	ret
 ; display the animation of the turn duelist drawing one card at the beginning of the turn
 ; if there isn't any card left in the deck, let the player know with a text message
 DisplayDrawOneCardScreen:
@@ -4566,6 +4571,16 @@ DisplayEnergyOrTrainerCardPage:
 	lb de, 4, 3
 	ld hl, wLoadedCard1Name
 	call InitTextPrinting_ProcessTextFromPointerToID
+	ld a, [wLoadedCard1Type]
+	cp TYPE_TRAINER
+	jr c, .not_trainer_card
+	ld hl, CardPageSupporterTextData
+	cp TYPE_SUPPORTER
+	jr z, .got_card_tag
+	ld hl, CardPageItemTextData
+.got_card_tag
+	call PlaceTextItems
+.not_trainer_card	
 	; colorize the card image
 	lb de, 6, 4
 	ld a, $a0
@@ -4583,7 +4598,12 @@ DisplayEnergyOrTrainerCardPage:
 	call DrawCardPageSet2AndRarityIcons
 	pop hl
 	jp PrintAttackOrNonPokemonCardDescription
-
+CardPageSupporterTextData:
+	textitem 1, 5, SupporterText
+	db $ff
+CardPageItemTextData:
+	textitem 2, 5, ItemText
+	db $ff	
 ; display the card details of the card in wLoadedCard1
 ; print the text at hl
 _DisplayCardDetailScreen:
@@ -6232,7 +6252,8 @@ OppAction_PlayEnergyCard:
 	call LoadCardDataToBuffer1_FromDeckIndex
 	call DrawLargePictureOfCard
 	call PrintAttachedEnergyToPokemon
-	ld a, TRUE
+	ld a, [wAlreadyPlayedEnergy]
+	or PLAYED_ENERGY_THIS_TURN
 	ld [wAlreadyPlayedEnergy], a
 	call HandleOnPlayEnergyEffects
 	jp DrawDuelMainScene
@@ -6295,6 +6316,16 @@ OppAction_PlayTrainerCard:
 	call PrintUsedTrainerCardDescription
 	ld a, $01
 	ld [wSkipDuelistIsThinkingDelay], a
+	ld a, [wLoadedCard1Type]
+	cp TYPE_SUPPORTER
+	ret nz
+.supporter_card
+	ld a, [wDuelTurns]
+	or a
+	ret z  ; unable to play during the first turn
+	ld a, [wAlreadyPlayedEnergy]
+	or PLAYED_SUPPORTER_THIS_TURN
+	ld [wAlreadyPlayedEnergy], a
 	ret
 
 ; execute the effect commands of the trainer card that is being played
@@ -6912,10 +6943,25 @@ ConvertSpecialTrainerCardToPokemon::
 	pop hl
 	ret z ; return if the card is not in the arena or bench
 	cp16 MYSTERIOUS_FOSSIL
-	jr z, .start_ram_data_overwrite
+	jr z, .OverwriteCardData
 	cp16 SUBSTITUTE_DOLL
 	ret nz
-.start_ram_data_overwrite
+	call CheckPuppetMaster ; overwrite the second attack in case Puppet Master is in effect
+	jr nc, .OverwriteCardData ; no Puppet Master
+	call .OverwriteCardData
+	ld bc, CARD_DATA_ATTACK2
+	add hl, bc
+	ld c, CARD_DATA_ATTACK2_ANIMATION - CARD_DATA_ATTACK2 + 1
+	ld de, .new_attack2
+.loop_copy_1
+	ld a, [de]
+	inc de
+	ld [hli], a
+	dec c
+	jr nz, .loop_copy_1
+	ret
+.OverwriteCardData
+	push hl
 	push de
 	ld [hl], TYPE_PKMN_COLORLESS
 	ld bc, CARD_DATA_HP
@@ -6929,20 +6975,103 @@ ConvertSpecialTrainerCardToPokemon::
 	dec c
 	jr nz, .loop
 	pop de
+	pop hl
 	ret
 
 .trainer_to_pkmn_data
 	db 30                 ; CARD_DATA_HP
-	ds $07                ; CARD_DATA_ATTACK1_NAME - (CARD_DATA_HP + 1)
+	ds CARD_DATA_ATTACK1_NAME - (CARD_DATA_HP + 1)
 	tx DiscardName        ; CARD_DATA_ATTACK1_NAME
 	tx DiscardDescription ; CARD_DATA_ATTACK1_DESCRIPTION
-	ds $03                ; CARD_DATA_ATTACK1_CATEGORY - (CARD_DATA_ATTACK1_DESCRIPTION + 2)
+	ds CARD_DATA_ATTACK1_CATEGORY - (CARD_DATA_ATTACK1_DESCRIPTION + 2)
 	db POKEMON_POWER      ; CARD_DATA_ATTACK1_CATEGORY
 	dw TrainerCardAsPokemonEffectCommands ; CARD_DATA_ATTACK1_EFFECT_COMMANDS
 	ds $18                ; CARD_DATA_RETREAT_COST - (CARD_DATA_ATTACK1_EFFECT_COMMANDS + 2)
-	db UNABLE_RETREAT     ; CARD_DATA_RETREAT_COST
+	db 0                  ; CARD_DATA_RETREAT_COST
 	ds $0d                ; PKMN_CARD_DATA_LENGTH - (CARD_DATA_RETREAT_COST + 1)
+.new_attack2
+	; attack 2
+	energy 0 ; energies
+	tx MaliceTentaclesName ; name
+	tx MaliceTentaclesDescription ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw MaliceTentacleEffectCommands ; effect commands
+	db INFLICT_CONFUSION	 ; flags 1
+	db NONE ; flags 2
+	db BOOST_IF_TAKEN_DAMAGE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+; returns carry if:
+; - turn duelist has a Hypno lv30 in the Play Area;
+; - Hypno is able to use its Pkmn Power;
+; - Hypno has enough energy to pay for its Mind Shock attack
+CheckPuppetMaster:
+	push hl
+	ldh a, [hWhoseTurn]
+	ld hl, wWhoseTurn
+	cp [hl]
+	jr nz, .no_carry
+	ld b, PLAY_AREA_ARENA - 1
+	ld a, DUELVARS_ARENA_CARD
+	get_turn_duelist_var
+.loop_play_area
+	inc b
+	ld a, [hli]
+	cp $ff
+	jr z, .no_carry
+	call GetCardIDFromDeckIndex
+	cp16 MALAMAR
+	jr nz, .loop_play_area
+	; is Hypno lv30, check if it can use its Pkmn Power
+	push hl
+	push bc
+	ld a, b
+	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
+	pop bc
+	pop hl
+	jr c, .loop_play_area ; not able to use, skip
 
+	push hl
+	push de
+	ld a, b
+	or CARD_LOCATION_ARENA
+	ld e, a
+	ld c, 0 ; tracks the energy count
+	ld a, DUELVARS_CARD_LOCATIONS
+	get_turn_duelist_var
+.loop_card_locations
+	ld a, [hl]
+	cp e
+	jr nz, .next_card_location
+	push de
+	ld a, l
+	call GetCardIDFromDeckIndex
+	cp16 DARKNESS_ENERGY
+.check_energy
+	pop de
+	jr nz, .next_card_location
+	inc c
+.next_card_location
+	inc l
+	ld a, l
+	cp DECK_SIZE
+	jr c, .loop_card_locations
+	; no more cards to check, tally energy count
+	pop de
+	pop hl
+	ld a, c ; number of energy cards
+	cp 2
+	jr c, .loop_play_area
+	; enough energy
+	pop hl
+	scf
+	ret
+.no_carry
+	pop hl
+	or a
+	ret
 ; this function applies all status conditions in order
 ; that have been added to the wStatusConditionQueue
 ; return carry if any status conditions were applied
@@ -7344,7 +7473,6 @@ GetCardOneStageBelow:
 .not_basic
 	ld hl, wAllStagesIndices
 	ld a, $ff
-	ld [hli], a
 	ld [hli], a
 	ld [hl], a
 
@@ -8036,3 +8164,4 @@ HandleModifiedAttackCost_PointToAttackName:
 	ld de, CARD_DATA_ATTACK1_NAME - CARD_DATA_ATTACK1_ENERGY_COST
 	add hl, de
 	ret
+	

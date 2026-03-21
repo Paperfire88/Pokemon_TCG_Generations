@@ -38,6 +38,8 @@ SetUpBossStartingHandAndDeck:
 	jr c, .pokemon_card_1
 	cp TYPE_TRAINER
 	jr z, .next_card_deck_1
+	cp TYPE_SUPPORTER
+	jr z, .next_card_deck_1
 
 ; energy card
 	ld a, [wAISetupEnergyCount]
@@ -92,6 +94,8 @@ SetUpBossStartingHandAndDeck:
 	cp TYPE_ENERGY
 	jr c, .pokemon_card_2
 	cp TYPE_TRAINER
+	jr z, .next_card_deck_2
+	cp TYPE_SUPPORTER
 	jr z, .next_card_deck_2
 
 ; energy card

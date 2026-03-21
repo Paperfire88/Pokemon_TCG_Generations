@@ -46,7 +46,7 @@ AIActionTable_InvincibleRonald:
 
 .list_energy
 	ai_energy PHANTUMP,         2, +1
-	ai_energy TREVENANT,            2, +1
+	ai_energy KABUTOPS,            2, +1
 	ai_energy ILLUMISE,        3, +1
 	ai_energy VOLBEAT,    2, +0
 	ai_energy SHELMET,        2, +0

@@ -149,31 +149,6 @@ ChrisFightingClubWantsToDuelRepeatText:
 	line "But before I can start my training"
 	line "again, I must defeat you first!"
 	done	
-ProfessorOakDescription2:
-	text "Booster Pack: (COLOSSEUM)"
-	line "OG Set: (Base Set 88)"
-	line "OG illustrator: (Ken Sugimori)"
-	done	
-ImposterProfessorOakDescription2:
-	text "Booster Pack: (EVOLUTION)"
-	line "OG Set: (Team Rocket 76)"
-	line "OG illustrator: (Ken Sugimori)"
-	done
-BillDescription2:
-	text "Booster Pack: (COLOSSEUM)"
-	line "OG Set: (Base Set 91)"
-	line "OG illustrator: (Ken Sugimori)"
-	done	
-MrFujiDescription2:
-	text "Booster Pack: (EVOLUTION)"
-	line "OG Set: (Fossil 58)"
-	line "OG illustrator: (Ken Sugimori)"
-	done
-LassDescription2:
-	text "Booster Pack: (MYSTERY)"
-	line "OG Set: (Sword & Shield 200)"
-	line "OG illustrator: (kirisAki)"
-	done
 PokemonTraderDescription2:
 	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Team Up 152b)"
@@ -222,12 +197,7 @@ SwitchDescription2:
 	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (HeartGold & SoulSilver 102)"
 	line "OG illustrator: (Hideaki Hakozaki)"
-	done		
-PokemonCenterDescription2:
-	text "Booster Pack: (MYSTERY)"
-	line "OG Set: (Sword & Shield 176)"
-	line "OG illustrator: (kirisAki)"
-	done	
+	done			
 PokeBallDescription2:
 	text "Booster Pack: (COLOSSEUM)"
 	line "OG Set: (Jungle 64)"
@@ -262,12 +232,7 @@ ItemFinderDescription2:
 	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Base Set 74)"
 	line "OG illustrator: (Keiji Kinebuchi)"
-	done	
-BossOrdersDescription2:
-	text "Booster Pack: (LABORATORY)"
-	line "OG Set: (Paldea Evolved 172)"
-	line "OG illustrator: (NC Empire)"
-	done		
+	done			
 DevolutionSprayDescription2:
 	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Base Set 72)"
@@ -302,12 +267,7 @@ PokemonFluteDescription2:
 	text "Booster Pack: (EVOLUTION)"
 	line "OG Set: (Base Set 86)"
 	line "OG illustrator: (Keiji Kinebuchi)"
-	done	
-CopycatDescription2:
-	text "Booster Pack: (EVOLUTION)"
-	line "OG Set: (Expedition 136)"
-	line "OG illustrator: (Ken Sugimori)"
-	done		
+	done			
 RecycleDescription2:
 	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Fossil 61)"
@@ -1288,4 +1248,22 @@ PetalSpikeDescription:
 	done	
 AssassinsRoseName:
 	text "Assassin's Rose"
+	done
+Plus10Text:
+	text "(10+)"
+	done				
+Minus10Text:
+	text "(10-)"
+	done
+Plus20Text:
+	text "(20+)"
+	done				
+Minus20Text:
+	text "(20-)"
+	done
+Plus30Text:
+	text "(30+)"
+	done				
+Minus30Text:
+	text "(30-)"
 	done

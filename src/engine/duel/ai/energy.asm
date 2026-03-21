@@ -148,7 +148,7 @@ AIProcessEnergyCards:
 ; and there's VenusaurLv67 in own Play Area,
 ; add to AI score
 .check_venusaur
-	ld de, TREVENANT
+	ld de, KABUTOPS
 	call CountPokemonIDInBothArenas
 	jr c, .check_if_active
 	ld de, MEGANIUM
@@ -356,7 +356,6 @@ AIProcessEnergyCards:
 ; now to determine the highest score.
 	call FindPlayAreaCardWithHighestAIScore
 	jp nc, .not_found
-
 	ld a, [wAIEnergyAttachLogicFlags]
 	or a
 	jr z, .play_card
@@ -364,6 +363,9 @@ AIProcessEnergyCards:
 	jp RetrievePlayAreaAIScoreFromBackup1
 
 .play_card
+	ld a, [wAlreadyPlayedEnergy]
+	or PLAYED_ENERGY_THIS_TURN
+	ld [wAlreadyPlayedEnergy], a
 	call CreateEnergyCardListFromHand
 	jp AITryToPlayEnergyCard
 
@@ -406,7 +408,7 @@ DetermineAIScoreOfAttackEnergyRequirement:
 .check_surplus_energy
 	call CheckIfNoSurplusEnergyForAttack
 	jr c, .asm_166cd
-	cp 3 ; check how much surplus energy
+	cp 4 ; check how much surplus energy
 	jr c, .asm_166cd
 
 .asm_166c5
@@ -434,7 +436,7 @@ DetermineAIScoreOfAttackEnergyRequirement:
 	jp c, .check_evolution
 	jp z, .check_evolution
 	ld a, [wDamage]
-	add 10 ; boost gained by attaching another energy card
+	add 20 ; boost gained by attaching another energy card
 	ld b, a
 	ld a, DUELVARS_ARENA_CARD_HP
 	call GetNonTurnDuelistVariable
@@ -443,12 +445,12 @@ DetermineAIScoreOfAttackEnergyRequirement:
 	jr nz, .check_evolution
 
 .attaching_kos_player
-	ld a, 20
+	ld a, 40
 	call AddToAIScore
 	ldh a, [hTempPlayAreaLocation_ff9d]
 	or a
 	jr nz, .check_evolution
-	ld a, 10
+	ld a, 30
 	call AddToAIScore
 	jr .check_evolution
 
@@ -924,7 +926,8 @@ AITryToPlayEnergyCard:
 .play_energy_card
 	ldh a, [hTempPlayAreaLocation_ff9d]
 	ldh [hTempPlayAreaLocation_ffa1], a
-	ld a, TRUE
+	ld a, [wAlreadyPlayedEnergy]
+	or PLAYED_ENERGY_THIS_TURN
 	ld [wAlreadyPlayedEnergy], a
 	ld a, OPPACTION_PLAY_ENERGY
 	bank1call AIMakeDecision

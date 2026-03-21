@@ -1201,7 +1201,7 @@ LightningAndFireDeckCardList:
 	card_item MAGNETON,            1
 	card_item TOXEL,                  3
 	card_item TOXTRICITY,           1
-	card_item TOXTRICITY_LOW,           1
+	card_item TOXTRICITY,           1
 	card_item ZIGZAGOON,                  2
 	card_item LINOONE,                 1
 	card_item PROFESSOR_OAK,            1

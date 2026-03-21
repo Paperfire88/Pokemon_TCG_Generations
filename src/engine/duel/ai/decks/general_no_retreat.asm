@@ -41,8 +41,12 @@ AIDoTurn_GeneralNoRetreat:
 	farcall HandleAIPkmnPowers
 	ret c ; return if turn ended
 	farcall HandleAICowardice
+	call AIDecidePlayPokemonCard
+	ret c ; return if turn ended
 ; process Trainer cards
 ; phase 2 through 4.
+	ld a, AI_TRAINER_CARD_PHASE_01
+	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_02
 	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_03
@@ -70,7 +74,7 @@ AIDoTurn_GeneralNoRetreat:
 	call AIProcessHandTrainerCards
 ; play Energy card if possible
 	ld a, [wAlreadyPlayedEnergy]
-	or a
+	and PLAYED_ENERGY_THIS_TURN
 	jr nz, .skip_energy_attach_1
 	call AIProcessAndTryToPlayEnergy
 .skip_energy_attach_1
@@ -84,15 +88,14 @@ AIDoTurn_GeneralNoRetreat:
 	ld a, AI_ENERGY_TRANS_ATTACK
 	farcall HandleAIEnergyTrans
 ; process Trainer cards phases 13 and 15
+	call AIDecidePlayPokemonCard
+	ret c ; return if turn ended
 	ld a, AI_TRAINER_CARD_PHASE_13
 	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_15
 	call AIProcessHandTrainerCards
 ; if used Professor Oak, process new hand
 ; if not, then proceed to attack.
-	ld a, [wPreviousAIFlags]
-	and AI_FLAG_USED_PROFESSOR_OAK
-	jr z, .try_attack
 	ld a, AI_TRAINER_CARD_PHASE_01
 	call AIProcessHandTrainerCards
 	ld a, AI_TRAINER_CARD_PHASE_02
@@ -118,7 +121,7 @@ AIDoTurn_GeneralNoRetreat:
 	ld a, AI_TRAINER_CARD_PHASE_12
 	call AIProcessHandTrainerCards
 	ld a, [wAlreadyPlayedEnergy]
-	or a
+	and PLAYED_ENERGY_THIS_TURN
 	jr nz, .skip_energy_attach_2
 	call AIProcessAndTryToPlayEnergy
 .skip_energy_attach_2

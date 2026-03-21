@@ -7,7 +7,7 @@ TerasparkDescription:
 	line "Apply Weakness/Resistance)."
 	done
 
-MakeItRainNameDescription:
+TreasureRushNameDescription:
 	text "Does +10 damage for Each Card in"
 	line "your hand (Up to 10).Then, This PKMN"
 	line "takes 20 Damage."	
@@ -985,11 +985,11 @@ CarbinkName:
 
 ChooseTrainerCardText:
 	text "Choose a"
-	line "Trainer card."
+	line "Item card."
 	done
 
 ChooseTrainerCardFromDeckText:
-	text "Choose a Trainer card from"
+	text "Choose an Item card from"
 	line "your deck."
 	done	
 
@@ -1232,9 +1232,9 @@ PsyShadowDescription:
 	done	
 
 AbilityCondition:
-	text "This [Ability] can't be used if" 
-	line "your active PKMN is affected by a"
-	line "Status Condition (<PARALYZED>, <ASLEEP> or <CONFUSED>)."
+	text "This [Ability] can't be used if your" 
+	line "active PKMN is affected by a Status"
+	line "Condition (<PARALYZED>, <ASLEEP> or <CONFUSED>)."
 	done
 
 CuttoSizeName:

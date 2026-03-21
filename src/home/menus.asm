@@ -595,6 +595,8 @@ OneByteNumberToTxSymbol::
 ; translate the TYPE_* constant in wLoadedCard1Type to an index for CardSymbolTable
 CardTypeToSymbolID::
 	ld a, [wLoadedCard1Type]
+	cp TYPE_SUPPORTER
+	jr nc, .supporter_card
 	cp TYPE_TRAINER
 	jr nc, .trainer_card
 	cp TYPE_ENERGY
@@ -604,6 +606,9 @@ CardTypeToSymbolID::
 	ret
 .trainer_card
 	ld a, 12
+	ret
+.supporter_card
+	ld a, 13
 	ret
 .pokemon_card
 	ld a, [wLoadedCard1Stage] ; different symbol for each evolution stage
@@ -664,6 +669,7 @@ CardSymbolTable::
 	db $b4, $03 ; TYPE_PKMN_*, Stage 1
 	db $b8, $02 ; TYPE_PKMN_*, Stage 2
 	db $bc, $03 ; TYPE_TRAINER
+	db $e8, $02 ; TYPE_SUPPORTER
 
 ; copy the name and level of the card at wLoadedCard1 to wDefaultText
 ; a = length in number of tiles (the resulting string will be padded with spaces to match it)

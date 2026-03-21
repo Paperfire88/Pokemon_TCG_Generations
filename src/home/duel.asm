@@ -343,7 +343,24 @@ PutCardInDiscardPile::
 	pop hl
 	pop af
 	ret
-
+; puts the turn holder's card with the deck index (0-59) given in a into the discard pile
+PutCardInPrizes::
+	push af
+	push hl
+	push de
+	get_turn_duelist_var
+	ld [hl], CARD_LOCATION_PRIZE
+	ld e, l
+	ld l, DUELVARS_NUMBER_OF_CARDS_NOT_IN_DECK
+	inc [hl]
+	ld a, DUELVARS_DECK_CARDS - 1
+	add [hl]
+	ld l, a
+	ld [hl], e ; save card to DUELVARS_DECK_CARDS + [DUELVARS_NUMBER_OF_CARDS_IN_DISCARD_PILE]
+	pop de
+	pop hl
+	pop af
+	ret
 ; search a card in the turn holder's discard pile, extract it, and set its location to
 ; CARD_LOCATION_JUST_DRAWN. AddCardToHand is meant to be called next.
 ; the card is identified by register a, which contains the deck index (0-59) of the card
@@ -682,7 +699,17 @@ GetCardIDFromDeckIndex_bc::
 	pop de
 	pop hl
 	ret
-
+; preserves all registers except af
+; input:
+;	a = deck index of the card to identify
+; output:
+;	a = type ID of the card from input (TYPE_* constant)
+GetCardTypeFromDeckIndex_SaveDE::
+	push de
+	call GetCardIDFromDeckIndex
+	call GetCardType
+	pop de
+	ret
 ; return [wDuelTempList + a] in a and in hTempCardIndex_ff98
 GetCardInDuelTempList_OnlyDeckIndex::
 	push hl
@@ -1282,6 +1309,7 @@ GetPlayAreaCardAttachedEnergies::
 	push bc
 	xor a
 	ld c, NUM_TYPES
+	inc c
 	ld hl, wAttachedEnergies
 .zero_energies_loop
 	ld [hli], a
@@ -1419,7 +1447,7 @@ ProcessPlayedPokemonCard::
 	ldtx hl, HavePokemonPowerText
 	call DrawWideTextBox_WaitForInput
 	ld hl, wLoadedCard1ID
-	cphl TREVENANT
+	cphl KABUTOPS
 	jr z, .use_pokemon_power
 	ld a, $01 ; check only Muk
 	call CheckCannotUseDueToStatus_OnlyToxicGasIfANon0
@@ -1764,6 +1792,28 @@ CheckSelfConfusionDamage::
 .no_confusion_damage
 	or a
 	ret
+PlayTrainerCardb::
+	ldh a, [hWhoseTurn]
+	ld h, a
+	ldh a, [hTempCardIndex_ff98]
+	ldh [hTempCardIndex_ff9f], a
+	call LoadNonPokemonCardEffectCommands
+	xor a
+	ld a, EFFECTCMDTYPE_INITIAL_EFFECT_1
+	call TryExecuteEffectCommandFunction
+	ret c
+	ld a, EFFECTCMDTYPE_INITIAL_EFFECT_2
+	call TryExecuteEffectCommandFunction
+	ret c
+	ld a, EFFECTCMDTYPE_DISCARD_ENERGY
+	call TryExecuteEffectCommandFunction
+	ld a, EFFECTCMDTYPE_REQUIRE_SELECTION
+	call TryExecuteEffectCommandFunction
+	ld a, OPPACTION_EXECUTE_TRAINER_EFFECTS
+	ldh [hOppActionTableIndex], a
+	ld a, EFFECTCMDTYPE_BEFORE_DAMAGE
+	call TryExecuteEffectCommandFunction
+	ret
 
 ; play the trainer card with deck index at hTempCardIndex_ff98.
 ; a trainer card is like an attack effect, with its own effect commands.
@@ -1778,6 +1828,31 @@ PlayTrainerCard::
 	ldh a, [hTempCardIndex_ff98]
 	ldh [hTempCardIndex_ff9f], a
 	call LoadNonPokemonCardEffectCommands
+	xor a
+	ld a, [wLoadedCard1Type]
+	cp TYPE_SUPPORTER
+	jr nz, .play_card
+	; Supporter Trainer
+	ldtx hl, MayOnlyUseOneSupporterCardText
+	ld a, [wAlreadyPlayedEnergy]
+	ld b, a
+	and PLAYED_SUPPORTER_THIS_TURN
+	jr nz, .cant_use
+	
+	ldh a, [hTempCardIndex_ff98]
+	call GetCardIDFromDeckIndex
+	cp16 BILL
+	jr z, .bill
+	ldtx hl, YouCannotUseSupporterCardsDuringTheFirstTurnText
+	ld a, [wDuelTurns]
+	or a
+	jr z, .cant_use
+.bill
+	ld a, PLAYED_SUPPORTER_THIS_TURN
+	or b
+	ld [wAlreadyPlayedEnergy], a
+	jr .play_card
+.play_card
 	ld a, EFFECTCMDTYPE_INITIAL_EFFECT_1
 	call TryExecuteEffectCommandFunction
 	jr nc, .can_use
@@ -2110,7 +2185,7 @@ ApplyAttachedPluspower::
 ; increases de by 10 points for each Pluspower found in location b
 ApplyFightingFury::
 	push de
-	ld de, TREVENANT
+	ld de, KABUTOPS
 	call CountPokemonIDInBothArenas
 	jp c,.nope ; return if there's Muk in play
 	ld a, DUELVARS_ARENA_CARD
@@ -2580,3 +2655,9 @@ CopyOpponentName::
 .print_player2
 	ldtx hl, Player2Text
 	jp CopyText
+CheckTriggeringPokemonIsActive::
+	ldh a, [hTempPlayAreaLocation_ff9d]
+	or a
+	ret z  ; PLAY_AREA_ARENA
+	ldtx hl, NotActivePKMNText
+	retscf

@@ -948,11 +948,6 @@ PersianDescription:
 	line "OG Set: (Stormfront 32)"
 	line "OG illustrator: (Kouki Saitou)"
 	done
-AudinoDescription:
-	text "Booster Pack: (LABORATORY)"
-	line "OG Set: (Noble Victories 85)"
-	line "OG illustrator: (Naoki Saito)"
-	done
 DoduoDescription:
 	text "Booster Pack: (EVOLUTION)"
 	line "OG Set: (Silver Tempest 148)"
@@ -999,12 +994,6 @@ PorygonDescription:
 	line "OG Set: (Gym Challenge 98)"
 	line "OG illustrator: (Ken Sugimori)"
 	done
-SnorlaxDescription:
-	text "Booster Pack: (LABORATORY)"
-	line "OG Set: (Astral Radiance 118)"
-	line "OG illustrator: (DOM)"
-	done
-
 DratiniDescription:
 	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Ancient Origins 58)"

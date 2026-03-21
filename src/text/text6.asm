@@ -1184,10 +1184,11 @@ Text05da:
 	done
 
 EvolutionaryLightDescription:
-	text "Once per turn, search your deck for"
-	line "an Evolution card. Show it to your" 
-	line "opponent and put it into your hand." 
-	line "Shuffle your deck afterward."
+	text "Once per turn, put a card from your"
+	line "hand into your deck. then, search"
+	line "your deck for an Evolution card," 
+	line "Reveal it, and add it to your hand." 
+	line "Shuffle your deck."
 	done
 
 SearchyourDeckforanEvolvedPkmnText:

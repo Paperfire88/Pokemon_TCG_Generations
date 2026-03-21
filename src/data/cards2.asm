@@ -3652,90 +3652,239 @@ ClodsireCard:
 	tx ClodsireDescription ; description
 	db 0
 
-CorphishCard:
+; CorphishCard:
+; 	db TYPE_PKMN_DARKNESS ; type
+; 	gfx CorphishCardGfx ; gfx
+; 	tx CorphishName ; name
+; 	db DIAMOND ; rarity
+; 	db LOST_ISLE | NONE ; sets
+; 	dw CORPHISH
+; 	db 50 ; hp
+; 	db BASIC ; stage
+; 	dw NONE ; pre-evo name
+
+; 	; attack 1
+; 	energy DARKNESS, 1 ; energies
+; 	tx PoisonClawsName ; name
+; 	tx MayInflictPoisonDescription ; description
+; 	dw NONE ; description (cont)
+; 	db 10 ; damage
+; 	db DAMAGE_NORMAL ; category
+; 	dw Poison50PercentEffectCommands ; effect commands
+; 	db INFLICT_POISON ; flags 1
+; 	db NONE ; flags 2
+; 	db NONE ; flags 3
+; 	db 0
+; 	db ATK_ANIM_NEEDLES ; animation
+
+; 	; attack 1
+; 	energy COLORLESS, 1, DARKNESS, 1 ; energies
+; 	tx TakeDownName ; name
+; 	tx ThunderJoltDescription ; description
+; 	dw NONE ; description (cont)
+; 	db 30 ; damage
+; 	db DAMAGE_NORMAL ; category
+; 	dw PikachuThunderJoltEffectCommands ; effect commands
+; 	db LOW_RECOIL ; flags 1
+; 	db NONE ; flags 2
+; 	db NONE ; flags 3
+; 	db 0
+; 	db ATK_ANIM_HIT_RECOIL ; animation
+
+; 	db 1 ; retreat cost
+; 	db WR_GRASS  ; weakness
+; 	db NONE ; resistance
+; 	tx RuffianName ; category
+; 	db 95 ; Pokedex number
+; 	db 21 ; level
+; 	db 2, 11 ; length
+; 	dw 22 * 10 ; weight
+; 	tx CorphishDescription ; description
+; 	db 16
+
+; CrawdauntCard:
+; 	db TYPE_PKMN_DARKNESS ; type
+; 	gfx CrawdauntCardGfx ; gfx
+; 	tx CrawdauntName ; name
+; 	db STAR ; rarity
+; 	db LOST_ISLE | NONE ; sets
+; 	dw CRAWDAUNT
+; 	db 80 ; hp
+; 	db STAGE1 ; stage
+; 	tx CorphishName ; pre-evo name
+
+; 	; attack 1
+; 	energy DARKNESS, 2, COLORLESS, 1 ; energies
+; 	tx KnockOffName; name
+; 	tx KnockOffDescription ; description
+; 	dw NONE ; description (cont)
+; 	db 20 ; damage
+; 	db DAMAGE_PLUS ; category
+; 	dw KnockOffEffectCommands ; effect commands
+; 	db DAMAGE_TO_OPPONENT_BENCH_F ; flags 1
+; 	db NONE ; flags 2
+; 	db NONE ; flags 3
+; 	db 0
+; 	db ATK_ANIM_BIG_HIT ; animation
+
+; 	; attack 2
+; 	energy DARKNESS, 2, COLORLESS, 2 ; energies
+; 	tx CrabhammerName; name
+; 	tx CrabhammerDescription ; description
+; 	dw NONE ; description (cont)
+; 	db 50 ; damage
+; 	db DAMAGE_NORMAL ; category
+; 	dw CrabhammerEffectCommands ; effect commands
+; 	db INFLICT_CONFUSION ; flags 1
+; 	db NONE ; flags 2
+; 	db NONE ; flags 3
+; 	db 0
+; 	db ATK_ANIM_BIG_HIT ; animation
+
+; 	db 2 ; retreat cost
+; 	db WR_GRASS ; weakness
+; 	db WR_METAL ; resistance
+; 	tx RuffianName ; category
+; 	db 95 ; Pokedex number
+; 	db 47 ; level
+; 	db 2, 11 ; length
+; 	dw 22 * 10 ; weight
+; 	tx CrawdauntDescription ; description
+; 	db 0
+SeedotCard:
 	db TYPE_PKMN_DARKNESS ; type
-	gfx CorphishCardGfx ; gfx
-	tx CorphishName ; name
-	db DIAMOND ; rarity
-	db LOST_ISLE | NONE ; sets
-	dw CORPHISH
-	db 50 ; hp
+	gfx SeedotCardGfx ; gfx
+	tx SeedotName ; name
+	db CIRCLE ; rarity
+	db EVOLUTION | NONE ; sets
+	dw SEEDOT
+	db 40 ; hp
 	db BASIC ; stage
 	dw NONE ; pre-evo name
 
 	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx EnergySearchName ; name
+	tx EnergySearchDescription ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw EnergySearchEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_NONE ; animation
+
+	; attack 2
+	energy COLORLESS, 2 ; energies
+	tx AstonishName ; name
+	tx AstonishDescription ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw AstonishEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_GLOW_EFFECT ; animation
+
+	db 1 ; retreat cost
+	db WR_GRASS ; weakness
+	db NONE ; resistance
+	tx AcornName ; category
+	db 85 ; Pokedex number
+	db 9 ; level
+	db 2, 11 ; length
+	dw 22 * 10 ; weight
+	tx SeedotDescription ; description
+	db 16
+
+NuzleafCard:
+	db TYPE_PKMN_DARKNESS ; type
+	gfx NuzleafCardGfx ; gfx
+	tx NuzleafName ; name
+	db DIAMOND ; rarity
+	db EVOLUTION | NONE ; sets
+	dw NUZLEAF
+	db 70 ; hp
+	db STAGE1 ; stage
+	tx SeedotName ; pre-evo name
+
+	; attack 1
 	energy DARKNESS, 1 ; energies
-	tx PoisonClawsName ; name
-	tx MayInflictPoisonDescription ; description
+	tx TrickeryName ; name
+	tx MagneticGearsDescription ; description
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw Poison50PercentEffectCommands ; effect commands
-	db INFLICT_POISON ; flags 1
+	dw MagneticLinesEffectCommands ; effect commands
+	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_NEEDLES ; animation
-
-	; attack 1
-	energy COLORLESS, 1, DARKNESS, 1 ; energies
-	tx TakeDownName ; name
-	tx ThunderJoltDescription ; description
-	dw NONE ; description (cont)
-	db 30 ; damage
-	db DAMAGE_NORMAL ; category
-	dw PikachuThunderJoltEffectCommands ; effect commands
-	db LOW_RECOIL ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_HIT_RECOIL ; animation
-
-	db 1 ; retreat cost
-	db WR_GRASS  ; weakness
-	db NONE ; resistance
-	tx RuffianName ; category
-	db 95 ; Pokedex number
-	db 21 ; level
-	db 2, 11 ; length
-	dw 22 * 10 ; weight
-	tx CorphishDescription ; description
-	db 16
-
-CrawdauntCard:
-	db TYPE_PKMN_DARKNESS ; type
-	gfx CrawdauntCardGfx ; gfx
-	tx CrawdauntName ; name
-	db STAR ; rarity
-	db LOST_ISLE | NONE ; sets
-	dw CRAWDAUNT
-	db 80 ; hp
-	db STAGE1 ; stage
-	tx CorphishName ; pre-evo name
-
-	; attack 1
-	energy DARKNESS, 2, COLORLESS, 1 ; energies
-	tx KnockOffName; name
-	tx KnockOffDescription ; description
-	dw NONE ; description (cont)
-	db 20 ; damage
-	db DAMAGE_PLUS ; category
-	dw KnockOffEffectCommands ; effect commands
-	db DAMAGE_TO_OPPONENT_BENCH_F ; flags 1
-	db NONE ; flags 2
-	db NONE ; flags 3
-	db 0
-	db ATK_ANIM_BIG_HIT ; animation
+	db ATK_ANIM_DARK_MIND ; animation
 
 	; attack 2
-	energy DARKNESS, 2, COLORLESS, 2 ; energies
-	tx CrabhammerName; name
-	tx CrabhammerDescription ; description
+	energy DARKNESS, 2, COLORLESS, 1 ; energies
+	tx WickedGustName ; name
+	tx WickedGustDescription ; description
 	dw NONE ; description (cont)
-	db 50 ; damage
-	db DAMAGE_NORMAL ; category
-	dw CrabhammerEffectCommands ; effect commands
-	db INFLICT_CONFUSION ; flags 1
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw WickedGustEffectCommands ; effect commands
+	db NONE ; flags 1
+	db FLAG_2_BIT_7 ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_WHIRLWIND ; animation
+
+	db 1 ; retreat cost
+	db WR_GRASS ; weakness
+	db WR_PSYCHIC ; resistance
+	tx WilyName ; category
+	db 95 ; Pokedex number
+	db 28 ; level
+	db 2, 11 ; length
+	dw 22 * 10 ; weight
+	tx NuzleafDescription ; description
+	db 16
+
+ShiftryCard:
+	db TYPE_PKMN_DARKNESS ; type
+	gfx ShiftryCardGfx ; gfx
+	tx ShiftryName ; name
+	db STAR ; rarity
+	db EVOLUTION | NONE ; sets
+	dw SHIFTRY
+	db 100 ; hp
+	db STAGE2 ; stage
+	tx NuzleafName ; pre-evo name
+
+	; attack 1
+	energy 0 ; energies
+	tx FanActionName ; name
+	tx FanActionDescription ; description
+	tx AbilityCondition ; description (cont)
+	db 0 ; damage
+	db POKEMON_POWER ; category
+	dw FanActionEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_GLOW_EFFECT ; animation
+
+	; attack 2
+	energy DARKNESS, 1, COLORLESS, 2 ; energies
+	tx TenguStrikeName; name
+	tx TenguStrikeDescription ; description
+	dw NONE ; description (cont)
+	db 30 ; damage
+	db DAMAGE_PLUS ; category
+	dw TenguStrikeEffectCommands ; effect commands
+	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
@@ -3743,14 +3892,15 @@ CrawdauntCard:
 
 	db 2 ; retreat cost
 	db WR_GRASS ; weakness
-	db WR_METAL ; resistance
-	tx RuffianName ; category
+	db WR_PSYCHIC ; resistance
+	tx WickedName ; category
 	db 95 ; Pokedex number
-	db 47 ; level
+	db 55 ; level
 	db 2, 11 ; length
 	dw 22 * 10 ; weight
-	tx CrawdauntDescription ; description
+	tx ShiftryDescription ; description
 	db 0
+
 DarkraiCard:
 	db TYPE_PKMN_DARKNESS ; type
 	gfx DarkraiCardGfx ; gfx
@@ -3864,12 +4014,12 @@ LokixCard:
 
 	; attack 2
 	energy DARKNESS, 1 ; energies
-	tx LowKickName ; name
-	tx LowKickDescription ; description
+	tx ChipOffName ; name
+	tx ChipOffDescription ; description
 	dw NONE ; description (cont)
 	db 10 ; damage
-	db DAMAGE_PLUS ; category
-	dw LowKickEffectCommands ; effect commands
+	db DAMAGE_NORMAL ; category
+	dw ChipOffEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -3977,18 +4127,18 @@ ZoroarkCard:
 	db ATK_ANIM_NONE ; animation
 
 	; attack 2
-	energy DARKNESS, 1, COLORLESS, 2 ; energies
-	tx EntrapName ; name
-	tx EntrapDescription ; description
+	energy DARKNESS, 2 ; energies
+	tx ImpersonateName ; name
+	tx ImpersonateDescription ; description
 	dw NONE ; description (cont)
-	db 40 ; damage
-	db DAMAGE_NORMAL ; category
-	dw EntrapCommands ; effect commands
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw ImpersonateEffectCommands ; effect commands
 	db NONE ; flags 1
 	db FLAG_2_BIT_6 ; flags 2
 	db NONE ; flags 3
-	db 1
-	db ATK_ANIM_NIGHTMARE ; animation
+	db 0
+	db ATK_ANIM_NONE ; animation
 
 	db 2 ; retreat cost
 	db WR_FIGHTING ; weakness
@@ -4453,12 +4603,12 @@ PerrserkerCard:
 	db ATK_ANIM_HIT ; animation
 
 	energy COLORLESS, 1, METAL, 2 ; energies
-	tx MakeItRainName ; name
-	tx MakeItRainNameDescription ; description
+	tx TreasureRushName ; name
+	tx TreasureRushNameDescription ; description
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_PLUS ; category
-	dw MakeItRainNameEffectCommands ; effect commands
+	dw TreasureRushNameEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -5689,26 +5839,26 @@ GholdengoCard:
 
 	; attack 1
 	energy METAL, 1 ; energies
-	tx ShareLootName ; name
-	tx ShareLootDescription ; description
+	tx DataRetrievalName ; name
+	tx EeeekDescription ; description
 	dw NONE ; description (cont)
-	db 10 ; damage
-	db DAMAGE_NORMAL ; category
-	dw ShareLootEffectCommands ; effect commands
-	db NONE ; flags 1
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw ShuffleHandThenDraw4EffectCommands ; effect commands
+	db DRAW_CARD ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
-	db 2
-	db ATK_ANIM_HIT ; animation
+	db 0
+	db ATK_ANIM_NONE ; animation
 
 	; attack 2
 	energy COLORLESS, 1, METAL, 2 ; energies
-	tx MakeItRainName ; name
-	tx MakeItRainNameDescription ; description
+	tx AllYouCanGrabName ; name
+	tx AllYouCanGrabDescription ; description
 	dw NONE ; description (cont)
-	db 10 ; damage
-	db DAMAGE_X ; category
-	dw MakeItRainNameEffectCommands ; effect commands
+	db 150 ; damage
+	db DAMAGE_MINUS ; category
+	dw AllYouCanGrabEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
@@ -6439,32 +6589,32 @@ TogeticCard:
 	tx TogepiName ; pre-evo name
 
 	; attack 1
-	energy 0 ; energies
-	tx EvolutionaryLightName ; name
-	tx EvolutionaryLightDescription ; description
-	tx AbilityCondition ; description (cont)
+	energy COLORLESS, 1 ; energies
+	tx EnergyPresentName ; name
+	tx EnergyPresentDescription ; description
+	dw NONE ; description (cont)
 	db 0 ; damage
-	db POKEMON_POWER ; category
-	dw EvolutionPkmnSearchPokepowerEffectCommands ; effect commands
+	db RESIDUAL ; category
+	dw EnergyPresentEffectCommands ; effect commands
 	db NONE ; flags 1
 	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_PKMN_POWER_1 ; animation
+	db ATK_ANIM_GLOW_EFFECT ; animation
 
 	; attack 2
 	energy COLORLESS, 2 ; energies
-	tx MetronomeName ; name
-	tx ClefablesMetronomeDescription ; description
+	tx FairyWindName ; name
+	tx GrowlDescription ; description
 	dw NONE ; description (cont)
-	db 0 ; damage
-	db RESIDUAL ; category
-	dw ClefableMetronomeEffectCommands ; effect commands
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw GrowlEffectCommands ; effect commands
 	db NONE ; flags 1
-	db FLAG_2_BIT_6 ; flags 2
+	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_NONE ; animation
+	db ATK_ANIM_WHIRLWIND ; animation
 
 	db 1 ; retreat cost
 	db WR_DARKNESS ; weakness
@@ -6489,18 +6639,18 @@ TogekissCard:
 	tx TogeticName ; pre-evo name
 
 	; attack 1
-	energy COLORLESS, 1 ; energies
-	tx MetronomeName ; name
-	tx ClefablesMetronomeDescription ; description
-	dw NONE ; description (cont)
+	energy 0 ; energies
+	tx EvolutionaryLightName ; name
+	tx EvolutionaryLightDescription ; description
+	tx AbilityCondition ; description (cont)
 	db 0 ; damage
-	db RESIDUAL ; category
-	dw ClefableMetronomeEffectCommands ; effect commands
+	db POKEMON_POWER ; category
+	dw EvolutionPkmnSearchPokepowerEffectCommands ; effect commands
 	db NONE ; flags 1
-	db FLAG_2_BIT_6 ; flags 2
+	db NONE ; flags 2
 	db NONE ; flags 3
 	db 0
-	db ATK_ANIM_NONE ; animation
+	db ATK_ANIM_PKMN_POWER_1 ; animation
 
 	; attack 2
 	energy COLORLESS, 2 ; energies
@@ -6926,56 +7076,6 @@ DrampaCard:
 	dw 144 * 10 ; weight
 	tx LickitungDescription ; description
 	db 0
-
-AudinoCard:
-	db TYPE_PKMN_COLORLESS ; type
-	gfx AudinoCardGfx ; gfx
-	tx AudinoName ; name
-	db DIAMOND ; rarity
-	db LABORATORY | NONE ; sets
-	dw AUDINO
-	db 80 ; hp
-	db BASIC ; stage
-	dw NONE ; pre-evo name
-
-	; attack 1
-	energy 0 ; energies
-	tx HealerName ; name
-	tx HealDescription ; description
-	tx AbilityCondition2 ; description (cont)
-	db 0 ; damage
-	db POKEMON_POWER ; category
-	dw AppletunHealEffectCommands ; effect commands
-	db NONE ; flags 1
-	db HEAL_USER ; flags 2
-	db NONE ; flags 3
-	db 1
-	db ATK_ANIM_PKMN_POWER_1 ; animation
-
-	; attack 2
-	energy COLORLESS, 2, ; energies
-	tx DrainSlapName ; name
-	tx LeechLifeDescription ; description
-	dw NONE ; description (cont)
-	db 20 ; damage
-	db DAMAGE_NORMAL ; category
-	dw LeechLifeEffectCommands ; effect commands
-	db NONE ; flags 1
-	db HEAL_USER ; flags 2
-	db NONE ; flags 3
-	db 3
-	db ATK_ANIM_DRAIN ; animation
-
-	db 2 ; retreat cost
-	db WR_FIGHTING ; weakness
-	db WR_PSYCHIC ; resistance
-	tx HearingName ; category
-	db 191 ; Pokedex number
-	db 60 ; level
-	db 3, 7 ; length
-	dw 76 * 10 ; weight
-	tx AudinoDescription; description
-	db 8
 
 ChatotCard:
 	db TYPE_PKMN_COLORLESS ; type
@@ -7727,9 +7827,109 @@ DunsparceCard:
 	tx DunsparceDescription ; description
 	db 18
 
+MunchlaxCard:
+	db TYPE_PKMN_COLORLESS ; type
+	gfx MunchlaxCardGfx ; gfx
+	tx MunchlaxName ; name
+	db DIAMOND ; rarity
+	db LOST_ISLE | NONE ; sets
+	dw MUNCHLAX
+	db 60 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy 0 ; energies
+	tx StrangeEvolutionName ; name
+	tx StrangeEvolutionSnorlaxDescription ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db COSTLESS ; category
+	dw StrangeEvolutionMunchlaxEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_GLOW_EFFECT ; animation
+
+	; attack 2
+	energy COLORLESS, 1 ; energies
+	tx SnackSearchName ; name
+	tx SnackSearchDescription ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_NORMAL ; category
+	dw SnackSearchEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_GLOW_ATTACK ; animation
+
+	db 2 ; retreat cost
+	db WR_FIGHTING ; weakness
+	db NONE ; resistance
+	tx BigEaterName ; category
+	db 192 ; Pokedex number
+	db 15 ; level
+	db 4, 7 ; length
+	dw 86 * 10 ; weight
+	tx MunchlaxDescription ; description
+	db 16
+
+SnorlaxCard:
+	db TYPE_PKMN_COLORLESS ; type
+	gfx SnorlaxCardGfx ; gfx
+	tx SnorlaxName ; name
+	db STAR ; rarity
+	db LOST_ISLE | NONE ; sets
+	dw SNORLAX
+	db 90 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy 0 ; energies
+	tx BigAppetiteName ; name
+	tx BigAppetiteDescription ; description
+	tx AbilityCondition ; description (cont)
+	db 0 ; damage
+	db POKEMON_POWER ; category
+	dw BigAppetiteEffectCommands ; effect commands
+	db INFLICT_SLEEP ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_SELF_HYPNOSIS ; animation
+
+	; attack 2
+	energy COLORLESS, 4 ; energies
+	tx BlockinName ; name
+	tx BlockinDescription ; description
+	dw NONE ; description (cont)
+	db 40 ; damage
+	db DAMAGE_NORMAL ; category
+	dw BlockinEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_BIG_HIT ; animation
+
+	db 4 ; retreat cost
+	db WR_FIGHTING ; weakness
+	db NONE ; resistance
+	tx SleepingName ; category
+	db 193 ; Pokedex number
+	db 71 ; level
+	db 5, 11 ; length
+	dw 188 * 10 ; weight
+	tx SnorlaxDescription ; description
+	db 1
+
 ;--Trainers--
 ProfessorOakCard:
-	db TYPE_TRAINER ; type
+	db TYPE_SUPPORTER ; type
 	gfx ProfessorOakCardGfx ; gfx
 	tx ProfessorOakName ; name
 	db DIAMOND ; rarity
@@ -7740,7 +7940,7 @@ ProfessorOakCard:
 	tx ProfessorOakDescription2 ; description (cont)
 
 ImposterProfessorOakCard:
-	db TYPE_TRAINER ; type
+	db TYPE_SUPPORTER ; type
 	gfx ImposterProfessorOakCardGfx ; gfx
 	tx ImposterProfessorOakName ; name
 	db DIAMOND ; rarity
@@ -7751,7 +7951,7 @@ ImposterProfessorOakCard:
 	tx ImposterProfessorOakDescription2 ; description (cont)
 
 BillCard:
-	db TYPE_TRAINER ; type
+	db TYPE_SUPPORTER ; type
 	gfx BillCardGfx ; gfx
 	tx BillName ; name
 	db CIRCLE ; rarity
@@ -7762,7 +7962,7 @@ BillCard:
 	tx BillDescription2 ; description (cont)
 
 MrFujiCard:
-	db TYPE_TRAINER ; type
+	db TYPE_SUPPORTER ; type
 	gfx MrFujiCardGfx ; gfx
 	tx MrFujiName ; name
 	db CIRCLE ; rarity
@@ -7773,7 +7973,7 @@ MrFujiCard:
 	tx MrFujiDescription2 ; description (cont)
 
 LassCard:
-	db TYPE_TRAINER ; type
+	db TYPE_SUPPORTER ; type
 	gfx LassCardGfx ; gfx
 	tx LassName ; name
 	db STAR ; rarity
@@ -7784,7 +7984,7 @@ LassCard:
 	tx LassDescription2 ; description (cont)
 
 ImakuniCard:
-	db TYPE_TRAINER ; type
+	db TYPE_SUPPORTER ; type
 	gfx ImakuniCardGfx ; gfx
 	tx ImakuniName ; name
 	db PROMOSTAR ; rarity
@@ -7792,7 +7992,7 @@ ImakuniCard:
 	dw IMAKUNI_CARD
 	dw ImakuniEffectCommands ; effect commands
 	tx ImakuniDescription ; description
-	tx ClefairyDollDescriptionCont ; description (cont)
+	tx ImakuniDescription2 ; description (cont)
 
 PokemonTraderCard:
 	db TYPE_TRAINER ; type
@@ -7909,7 +8109,7 @@ SwitchCard:
 	tx SwitchDescription2 ; description (cont)
 
 PokemonCenterCard:
-	db TYPE_TRAINER ; type
+	db TYPE_SUPPORTER ; type
 	gfx PokemonCenterCardGfx ; gfx
 	tx PokemonCenterName ; name
 	db STAR ; rarity
@@ -7997,7 +8197,7 @@ ItemFinderCard:
 	tx ItemFinderDescription2 ; description (cont)
 
 BossOrdersCard:
-	db TYPE_TRAINER ; type
+	db TYPE_SUPPORTER ; type
 	gfx BossOrdersCardGfx ; gfx
 	tx BossOrdersName ; name
 	db STAR ; rarity
@@ -8089,7 +8289,7 @@ PokemonFluteCard:
 	tx PokemonFluteDescription2 ; description (cont)
 
 CopycatCard:
-	db TYPE_TRAINER ; type
+	db TYPE_SUPPORTER ; type
 	gfx CopycatCardGfx ; gfx
 	tx CopycatName ; name
 	db DIAMOND ; rarity
@@ -8238,3 +8438,91 @@ MemoryEnergyCard:
 	dw DoubleColorlessEnergyEffectCommands ; effect commands
 	tx MemoryEnergyDescription ; description
 	dw NONE ; description (cont)
+
+PremierBallCard:
+	db TYPE_TRAINER ; type
+	gfx PremierBallCardGfx ; gfx
+	tx PremierBallName ; name
+	db DIAMOND ; rarity
+	db LOST_ISLE | NONE ; sets
+	dw PREMIER_BALL
+	dw PremierBallEffectCommands ; effect commands
+	tx PremierBallDescription ; description
+	dw NONE ; description (cont)
+
+RoseannesResearchCard:
+	db TYPE_SUPPORTER ; type
+	gfx RoseannesResearchCardGfx ; gfx
+	tx RoseannesResearchName ; name
+	db DIAMOND ; rarity
+	db LOST_ISLE | NONE ; sets
+	dw ROSEANNES_RESEARCH
+	dw RoseannesResearchEffectCommands ; effect commands
+	tx RoseannesResearchDescription ; description
+	tx RoseannesResearchDescription2 ; description (cont)
+
+PokemonCollectorCard:
+	db TYPE_SUPPORTER ; type
+	gfx PokemonCollectorCardGfx ; gfx
+	tx PokemonCollectorName ; name
+	db DIAMOND ; rarity
+	db LOST_ISLE | NONE ; sets
+	dw POKEMON_COLLECTOR
+	dw PokemonCollectorEffectCommands ; effect commands
+	tx PokemonCollectorDescription ; description
+	tx PokemonCollectorDescription2 ; description (cont)
+
+AcroBikeCard:
+	db TYPE_TRAINER ; type
+	gfx AcroBikeCardGfx ; gfx
+	tx AcroBikeName ; name
+	db DIAMOND ; rarity
+	db LOST_ISLE | NONE ; sets
+	dw ACRO_BIKE
+	dw AcroBikeEffectCommands ; effect commands
+	tx AcroBikeDescription ; description
+	tx AcroBikeDescription2 ; description (cont)
+
+ProfessorElmLectureCard:
+	db TYPE_SUPPORTER ; type
+	gfx ProfessorElmLectureCardGfx ; gfx
+	tx ProfessorElmLectureName ; name
+	db STAR ; rarity
+	db LOST_ISLE | NONE ; sets
+	dw PROFESSOR_ELM
+	dw ProfessorElmLectureEffectCommands ; effect commands
+	tx ProfessorElmLectureDescription ; description
+	tx ProfessorElmLectureDescription2 ; description (cont)
+
+FossilResearcherCard:
+	db TYPE_SUPPORTER ; type
+	gfx FossilResearcherCardGfx ; gfx
+	tx FossilResearcherName ; name
+	db DIAMOND ; rarity
+	db LOST_ISLE | NONE ; sets
+	dw FOSSIL_RESEARCHER
+	dw FossilResearcherEffectCommands ; effect commands
+	tx FossilResearcherDescription ; description
+	tx FossilResearcherDescription2 ; description (cont)
+
+ProfessorBirchCard:
+	db TYPE_SUPPORTER ; type
+	gfx ProfessorBirchCardGfx ; gfx
+	tx ProfessorBirchName ; name
+	db STAR ; rarity
+	db LOST_ISLE | NONE ; sets
+	dw PROFESSOR_BIRCH
+	dw ProfessorBirchEffectCommands ; effect commands
+	tx ProfessorBirchDescription ; description
+	tx ProfessorBirchDescription2 ; description (cont)
+
+ZinniaCard:
+	db TYPE_SUPPORTER ; type
+	gfx ZinniaCardGfx ; gfx
+	tx ZinniaName ; name
+	db STAR ; rarity
+	db LOST_ISLE | NONE ; sets
+	dw ZINNIA
+	dw ZinniaEffectCommands ; effect commands
+	tx ZinniaDescription ; description
+	tx ZinniaDescription2 ; description (cont)

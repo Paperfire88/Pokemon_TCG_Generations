@@ -1244,9 +1244,9 @@ IllumiseCardGfx::
 	INCBIN "gfx/cards/illumise.attrmap"
 	INCBIN "gfx/cards/illumise.2bpp"
 KarrablastCardGfx::
-	INCBIN "gfx/cards/nidoranm.pal"
-	INCBIN "gfx/cards/nidoranm.attrmap"
-	INCBIN "gfx/cards/nidoranm.2bpp"
+	INCBIN "gfx/cards/karrablast.pal"
+	INCBIN "gfx/cards/karrablast.attrmap"
+	INCBIN "gfx/cards/karrablast.2bpp"
 EscavalierCardGfx::
 	INCBIN "gfx/cards/nidorino.pal"
 	INCBIN "gfx/cards/nidorino.attrmap"
@@ -1551,10 +1551,6 @@ ToxtricityLv35CardGfx::
 	INCBIN "gfx/cards/electrode1.pal"
 	INCBIN "gfx/cards/electrode1.attrmap"
 	INCBIN "gfx/cards/electrode1.2bpp"
-ToxtricityLv42CardGfx::
-	INCBIN "gfx/cards/electrode2.pal"
-	INCBIN "gfx/cards/electrode2.attrmap"
-	INCBIN "gfx/cards/electrode2.2bpp"
 ElectrikeCardGfx::
 	INCBIN "gfx/cards/electabuzz1.pal"
 	INCBIN "gfx/cards/electabuzz1.attrmap"
@@ -1815,10 +1811,6 @@ DrampaCardGfx::
 	INCBIN "gfx/cards/drampa.pal"
 	INCBIN "gfx/cards/drampa.attrmap"	
 	INCBIN "gfx/cards/drampa.2bpp"
-AudinoCardGfx::
-	INCBIN "gfx/cards/farfetchd.pal"
-	INCBIN "gfx/cards/farfetchd.attrmap"	
-	INCBIN "gfx/cards/farfetchd.2bpp"
 ChatotCardGfx::
 	INCBIN "gfx/cards/kangaskhan.pal"
 	INCBIN "gfx/cards/kangaskhan.attrmap"
