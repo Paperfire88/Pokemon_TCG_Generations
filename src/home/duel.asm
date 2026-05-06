@@ -1998,27 +1998,15 @@ ApplyDamageModifiers_DamageToTarget::
 	and b
 	jr z, .not_weak
 	call SwapTurn
-	ld a, DUELVARS_ARENA_CARD_STAGE
+	ld a, DUELVARS_ARENA_CARD
+	call GetTurnDuelistVariable ; Gets the opponent's card info
 	call LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2WkValue] ; loads the new weakness modifier we just put in
 	call SwapTurn
 	ld a, [wLoadedCard2Rarity]
-	cp DIAMOND
-	jr z, .stage1
-	cp STAR
-	jr z, .stage2
-	cp PROMOSTAR
-	jr z, .stage2
-	ld hl, 10
-	jr .next
-.stage1	
-	ld hl, 20
-	jr .next
-.stage2
-	ld hl, 30	
-.next
-	add hl, de
-	ld e, l
-	ld d, h
+	ld l, a
+	ld h, 0
+	add hl, de ; loads the extra damage to de for weakness
 	ld hl, wDamageEffectiveness
 	set WEAKNESS, [hl]
 .not_weak
@@ -2028,23 +2016,15 @@ ApplyDamageModifiers_DamageToTarget::
 	and b
 	jr z, .check_pluspower_and_defender ; jump if not resistant
 	
-	ld a, DUELVARS_ARENA_CARD_STAGE
+	call SwapTurn
+	ld a,  DUELVARS_ARENA_CARD
+	call GetTurnDuelistVariable
 	call LoadCardDataToBuffer2_FromDeckIndex
-ld a, [wLoadedCard2Rarity]
-	cp DIAMOND
-	jr z, .stage1b
-	cp STAR
-	jr z, .stage2b
-	cp PROMOSTAR
-	jr z, .stage2b
-	ld hl, -10
-	jr .nextb
-.stage1b	
-	ld hl, -20
-	jr .nextb
-.stage2b
-	ld hl, -30	
-.nextb
+	ld a, [wLoadedCard2RsValue] ; loads the resistance modifier
+	ld l, a
+	ld a, [wLoadedCard2RsValue + 1] ; helps to process to make it a negative value
+	ld h, a
+	call SwapTurn
 	add hl, de
 	ld e, l
 	ld d, h
@@ -2107,49 +2087,26 @@ ApplyDamageModifiers_DamageToSelf::
 	and b
 	jr z, .not_weak
 	
-	ld a, DUELVARS_ARENA_CARD_STAGE
+	call SwapTurn ; basically the same logic as before
+	ld a,  DUELVARS_ARENA_CARD
+	call GetTurnDuelistVariable
 	call LoadCardDataToBuffer2_FromDeckIndex
-ld a, [wLoadedCard2Rarity]
-	cp DIAMOND
-	jr z, .stage1
-	cp STAR
-	jr z, .stage2
-	cp PROMOSTAR
-	jr z, .stage2
-	ld hl, 10
-	jr .next
-.stage1	
-	ld hl, 20
-	jr .next
-.stage2
-	ld hl, 30	
-.next
+	ld a, [wLoadedCard2WkValue]
+	call SwapTurn
+	ld l, a
+	ld h, 0
 	add hl, de
-	ld e, l
-	ld d, h
 	ld hl, wDamageEffectiveness
 	set WEAKNESS, [hl]
 .not_weak
-	call GetArenaCardResistance
-	and b
-	jr z, .not_resistant
-	ld a, DUELVARS_ARENA_CARD_STAGE
+	ld a,  DUELVARS_ARENA_CARD 
+	call GetTurnDuelistVariable
 	call LoadCardDataToBuffer2_FromDeckIndex
-ld a, [wLoadedCard2Rarity]
-	cp DIAMOND
-	jr z, .stage1b
-	cp STAR
-	jr z, .stage2b
-	cp PROMOSTAR
-	jr z, .stage2b
-	ld hl, -10
-	jr .nextb
-.stage1b	
-	ld hl, -20
-	jr .nextb
-.stage2b
-	ld hl, -30	
-.nextb
+	ld a, [wLoadedCard2RsValue]
+	ld l, a
+	ld a, [wLoadedCard2RsValue + 1]
+	ld h, a
+	call SwapTurn
 	add hl, de
 	ld e, l
 	ld d, h

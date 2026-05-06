@@ -152,27 +152,15 @@ _CalculateDamage_VersusDefendingPokemon:
 	call SwapTurn
 	and b
 	jr z, .not_weak
-	; double de
-	ld a, DUELVARS_ARENA_CARD_STAGE
+	call SwapTurn 
+	ld a,  DUELVARS_ARENA_CARD
+	call GetTurnDuelistVariable
 	call LoadCardDataToBuffer2_FromDeckIndex
-	ld a, [wLoadedCard2Rarity]
-	cp DIAMOND
-	jr z, .stage1
-	cp STAR
-	jr z, .stage2
-	cp PROMOSTAR
-	jr z, .stage2
-	ld hl, 10
-	jr .next
-.stage1	
-	ld hl, 20
-	jr .next
-.stage2
-	ld hl, 30	
-.next
+	ld a, [wLoadedCard2WkValue]
+	call SwapTurn
+	ld l, a
+	ld h, 0
 	add hl, de
-	ld e, l
-	ld d, h
 
 .not_weak
 ; handle resistance
@@ -181,24 +169,15 @@ _CalculateDamage_VersusDefendingPokemon:
 	call SwapTurn
 	and b
 	jr z, .not_resistant
-	ld a, [wLoadedCard2Rarity]
-	cp DIAMOND
-	jr z, .stage1b
-	cp STAR
-	jr z, .stage2b
-	cp PROMOSTAR
-	jr z, .stage2b
-	ld hl, -10
-	jr .nextb
-.stage1b	
-	ld hl, -20
-	jr .nextb
-.stage2b
-	ld hl, -30	
-.nextb
-	add hl, de
-	ld e, l
-	ld d, h
+	call SwapTurn
+	ld a,  DUELVARS_ARENA_CARD
+	call GetTurnDuelistVariable
+	call LoadCardDataToBuffer2_FromDeckIndex
+	ld a, [wLoadedCard2RsValue]
+	ld l, a
+	ld a, [wLoadedCard2RsValue + 1]
+	ld h, a
+	call SwapTurn
 .not_resistant
 	; apply pluspower and defender boosts
 	call ApplyFightingFury
@@ -415,26 +394,15 @@ CalculateDamage_FromDefendingPokemon:
 	and b
 	jr z, .not_weak
 	; double de
-	ld a, DUELVARS_ARENA_CARD_STAGE
+	call SwapTurn
+	ld a,  DUELVARS_ARENA_CARD
+	call GetTurnDuelistVariable
 	call LoadCardDataToBuffer2_FromDeckIndex
-	ld a, [wLoadedCard2Rarity]
-	cp DIAMOND
-	jr z, .stage1
-	cp STAR
-	jr z, .stage2
-	cp PROMOSTAR
-	jr z, .stage2
-	ld hl, 10
-	jr .next
-.stage1	
-	ld hl, 20
-	jr .next
-.stage2
-	ld hl, 30	
-.next
+	ld a, [wLoadedCard2WkValue]
+	call SwapTurn
+	ld l, a
+	ld h, 0
 	add hl, de
-	ld e, l
-	ld d, h
 .not_weak
 ; handle resistance
 	ldh a, [hTempPlayAreaLocation_ff9d]
@@ -454,23 +422,15 @@ CalculateDamage_FromDefendingPokemon:
 .unchanged_res
 	and b
 	jr z, .not_resistant
-	ld a, DUELVARS_ARENA_CARD_STAGE
+	call SwapTurn ; WR MOD
+	ld a,  DUELVARS_ARENA_CARD
+	call GetTurnDuelistVariable
 	call LoadCardDataToBuffer2_FromDeckIndex
-	ld a, [wLoadedCard2Rarity]
-	cp DIAMOND
-	jr z, .stage1b
-	cp STAR
-	jr z, .stage2b
-	cp PROMOSTAR
-	jr z, .stage2b
-	ld hl, -10
-	jr .nextb
-.stage1b	
-	ld hl, -20
-	jr .nextb
-.stage2b
-	ld hl, -30	
-.nextb
+	 ld a, [wLoadedCard2RsValue]
+	ld l, a
+	ld a, [wLoadedCard2RsValue + 1]
+	ld h, a
+	call SwapTurn
 	add hl, de
 	ld e, l
 	ld d, h

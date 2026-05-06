@@ -1249,21 +1249,3 @@ PetalSpikeDescription:
 AssassinsRoseName:
 	text "Assassin's Rose"
 	done
-Plus10Text:
-	text "(10+)"
-	done				
-Minus10Text:
-	text "(10-)"
-	done
-Plus20Text:
-	text "(20+)"
-	done				
-Minus20Text:
-	text "(20-)"
-	done
-Plus30Text:
-	text "(30+)"
-	done				
-Minus30Text:
-	text "(30-)"
-	done

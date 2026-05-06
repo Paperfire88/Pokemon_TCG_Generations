@@ -14,12 +14,12 @@ MACRO card_data_struct
 \1Atk2::         atk_data_struct \1Atk2
 \1RetreatCost::   ds 1
 \1Weakness::      ds 1
+\1WkValue::       ds 2
 \1Resistance::    ds 1
+\1RsValue::       ds 2
 \1Category::      ds 2
 \1PokedexNumber:: ds 1
 \1Level::         ds 1
-\1Length::        ds 2
-\1Weight::        ds 2
 \1Description::   ds 2
 \1Unknown2::      ds 1
 ENDM

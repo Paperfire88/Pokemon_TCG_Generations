@@ -67,12 +67,12 @@ DEF CARD_DATA_ATTACK2_ANIMATION       rb
 ; TYPE_PKMN card only
 DEF CARD_DATA_RETREAT_COST          rb
 DEF CARD_DATA_WEAKNESS              rb
+DEF CARD_DATA_WK_VALUE              rw
 DEF CARD_DATA_RESISTANCE            rb
+DEF CARD_DATA_RS_VALUE              rw
 DEF CARD_DATA_CATEGORY              rw
 DEF CARD_DATA_POKEDEX_NUMBER        rb
 DEF CARD_DATA_LEVEL                 rb
-DEF CARD_DATA_LENGTH                rw
-DEF CARD_DATA_WEIGHT                rw
 DEF CARD_DATA_PKMN_DESCRIPTION      rw
 DEF CARD_DATA_UNKNOWN2              rb
 

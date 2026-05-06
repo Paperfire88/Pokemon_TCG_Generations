@@ -4097,8 +4097,36 @@ DisplayCardPage_PokemonOverview:
 	call PrintCardPageWeaknessesOrResistances
 	inc c ; 16
 	ld a, e
-	jp PrintCardPageWeaknessesOrResistances
-
+	call PrintCardPageWeaknessesOrResistances
+	;falltrough
+CardPageWRModifiersOnlyData:
+	ld a, [wLoadedCard1WkValue] ; load the weakness modifier
+	cp 0 ; check against 0
+	jr z, .CheckResistance ; if 0, go to the resistance check
+	lb bc, 9, 15
+	ld a, SYM_PLUS
+	call WriteByteToBGMap0 ; otherwise make a plus symbol and add it to coordinates 9,15
+	lb bc, 10, 15  ; at coordinates 10, 15...
+	ld hl, wLoadedCard1WkValue
+	ld a, [hli]
+	ld l, [hl]
+	ld h, a ; -convert the weakness modifier to a,
+	call WriteTwoDigitNumberInTxSymbolFormat ; - then write it
+.CheckResistance
+	ld a, [wLoadedCard1RsValue] ; load the resistance modifier
+	cp 0
+	ret z; if 0, go to .done
+	lb bc, 9, 16
+	ld a, SYM_MINUS 
+	call WriteByteToBGMap0 ; write a minus symbol at these coordinates
+	lb bc, 10, 16
+	ld hl, wLoadedCard1RsValue 
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a ; convert the resistance number to a
+	xor $ff
+	inc a ; convert from a negative number to a positive displayed number for the purposes of graphics
+	jp WriteTwoDigitNumberInTxSymbolFormat ; and write it
 PrintAttackOrPkmnPowerInformation2:
 	ld a, [hli]
 	or [hl]
@@ -4285,7 +4313,7 @@ PrintCardPageWeaknessesOrResistances:
 	; which bits are set and therefore which WR_* values are active.
 	; a is kept updated with the equivalent TYPE_* constant.
 	inc a
-	cp 9
+	cp 8
 	jr nc, .done
 	rl d
 	jr nc, .loop
@@ -4295,48 +4323,6 @@ PrintCardPageWeaknessesOrResistances:
 	pop af
 	jr .loop
 .done
-	push af
-	ld a, [wLoadedCard1Weakness]
-	cp NONE
-	jr z, .exit
-	ld a, [wLoadedCard1Rarity]
-	cp DIAMOND
-	jr z, .stage1
-	cp STAR
-	jr z, .stage2
-	cp PROMOSTAR
-	jr z, .stage2
-	ld hl, CardPageWeaknessTextData3
-	jr .next
-.stage1	
-	ld hl, CardPageWeaknessTextData2
-	jr .next
-.stage2
-	ld hl, CardPageWeaknessTextData
-.next	
-	call PlaceTextItems
-.exit	
-	ld a, [wLoadedCard1Resistance]
-	cp NONE
-	jr z, .exitb
-	ld a, [wLoadedCard1Rarity]
-	cp DIAMOND
-	jr z, .stage1b
-	cp STAR
-	jr z, .stage2b
-	cp PROMOSTAR
-	jr z, .stage2b
-	ld hl, CardPageResistanceTextData3
-	jr .nextb
-.stage1b	
-	ld hl, CardPageResistanceTextData2
-	jr .nextb
-.stage2b
-	ld hl, CardPageResistanceTextData
-.nextb	
-	call PlaceTextItems	
-.exitb
-	pop af
 	pop de
 	pop bc
 	ret
@@ -4380,24 +4366,6 @@ CardPageRetreatWRTextData:
 	textitem 1, 15, WeaknessText
 	textitem 1, 16, ResistanceText
 	db $ff
-CardPageWeaknessTextData:	
-	textitem 10, 15, Plus30Text
-	db $ff
-CardPageWeaknessTextData2:	
-	textitem 10, 15, Plus20Text
-	db $ff
-CardPageWeaknessTextData3:	
-	textitem 10, 15, Plus10Text
-	db $ff	
-CardPageResistanceTextData:	
-	textitem 10, 16, Minus30Text	
-	db $ff
-CardPageResistanceTextData2:	
-	textitem 10, 16, Minus20Text
-	db $ff
-CardPageResistanceTextData3:	
-	textitem 10, 16, Minus10Text
-	db $ff	
 CardPageLvHPNoTextTileData:
 	db 11,  2, SYM_Lv, 0
 	db 15,  2, SYM_HP, 0
@@ -4456,9 +4424,6 @@ DisplayCardPage_PokemonDescription:
 	; print surrounding box, card name at 5,1, type, set 2, and rarity
 	call PrintPokemonCardPageGenericInformation
 	call LoadDuelCardSymbolTiles2
-	; print "LENGTH", "WEIGHT", "Lv", and "HP" where it corresponds in the page
-	ld hl, CardPageLengthWeightTextData
-	call PlaceTextItems
 	ld hl, CardPageLvHPTextTileData
 	call WriteDataBlocksToBGMap0
 	; draw the card symbol associated to its TYPE_* at 3,2
@@ -4525,11 +4490,6 @@ DrawCardPageSet2AndRarityIcons:
 	cp NO_RARITY
 	call nz, PrintCardPageRarityIcon
 	ret
-
-CardPageLengthWeightTextData:
-
-	db $ff
-
 CardPageLvHPTextTileData:
 	db 11, 2, SYM_Lv, 0
 	db 15, 2, SYM_HP, 0
@@ -4677,101 +4637,6 @@ SetLineSeparation:
 SetOneLineSeparation:
 	xor a
 	jr SetLineSeparation
-
-; given a number in hl, print it divided by 10 at b,c, with decimal part
-; separated by a dot (unless it's 0). used to print a Pokemon card's weight.
-PrintPokemonCardWeight:
-	push bc
-	ld de, -1
-	ld bc, -10
-.divide_by_10_loop
-	inc de
-	add hl, bc
-	jr c, .divide_by_10_loop
-	ld bc, 10
-	add hl, bc
-	pop bc
-	push hl
-	push bc
-	ld l, e
-	ld h, d
-	call TwoByteNumberToTxSymbol_TrimLeadingZeros_Bank1
-	pop bc
-	pop hl
-	ld a, l
-	ld hl, wStringBuffer + 5
-	or a
-	jr z, .decimal_done
-.decimal_done
-	ld [hl], 0
-	push bc
-	call BCCoordToBGMap0Address
-	ld hl, wStringBuffer
-.find_first_digit_loop
-	ld a, [hli]
-	or a
-	jr z, .find_first_digit_loop
-	dec hl
-	push hl
-	ld b, -1
-.get_number_length_loop
-	inc b
-	ld a, [hli]
-	or a
-	jr nz, .get_number_length_loop
-	pop hl
-	push bc
-	call SafeCopyDataHLtoDE
-	pop bc
-	pop de
-	ld a, b
-	add d
-	ld d, a
-	ret
-
-; given a number in h and another in l, print them formatted as <l>'<h>" at b,c.
-; used to print the length (feet and inches) of a Pokemon card.
-PrintPokemonCardLength:
-	push hl
-	ld l, h
-	ld h, $00
-	ldtx de, FeetText ; '
-	call .print_feet_or_inches
-	pop hl
-	ld h, $00
-	ldtx de, InchesText ; "
-	call .print_feet_or_inches
-	ret
-
-.print_feet_or_inches
-; keep track how many digits each number consists of in wPokemonLengthPrintOffset,
-; in order to align the rest of the string. the text with id at de
-; is printed after the number.
-	push de
-	push bc
-	call TwoByteNumberToTxSymbol_TrimLeadingZeros_Bank1
-	ld a, b
-	inc a
-	pop bc
-	push bc
-	push hl
-	call BCCoordToBGMap0Address
-	ld b, a
-	pop hl
-	call SafeCopyDataHLtoDE
-	pop bc
-	add b
-	ld b, a
-	pop hl
-	push bc
-	ld e, c
-	ld d, b
-	call InitTextPrinting
-	call ProcessTextFromID
-	pop bc
-	inc b
-	ret
-
 ; return carry if the turn holder has any Pokemon with non-zero HP on the bench.
 ; return how many Pokemon with non-zero HP in b.
 ; does this by calculating how many Pokemon in play area minus one

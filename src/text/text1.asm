@@ -40,15 +40,6 @@ ResistanceText:
 PKMNPWRText:
 	text "Ability"
 	done
-
-LengthText:
-	text "Length"
-	done
-
-WeightText:
-	text "Weight"
-	done
-
 PokemonText:
 	text " Pokémon"
 	done

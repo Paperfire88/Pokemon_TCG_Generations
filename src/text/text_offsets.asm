@@ -12,8 +12,6 @@ TextOffsets::
 	textpointer WeaknessText
 	textpointer ResistanceText
 	textpointer PKMNPWRText
-	textpointer LengthText
-	textpointer WeightText
 	textpointer PokemonText
 	textpointer MetresText
 	textpointer LbsText
@@ -4112,12 +4110,6 @@ TextOffsets::
 	textpointer DragapultName
 	textpointer DragapultDescription
 	textpointer StealthName
-	textpointer Plus10Text
-	textpointer Plus20Text
-	textpointer Plus30Text
-	textpointer Minus10Text
-	textpointer Minus20Text
-	textpointer Minus30Text
 	textpointer CobwebTripName
 	textpointer ElectrowebName
 	textpointer ElectrowebDescription
