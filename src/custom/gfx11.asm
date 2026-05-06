@@ -1,4 +1,4 @@
-;18/19
+;19/19
 GreatBallCardGfx::	
 	INCBIN "gfx/cards/great_ball.pal"
 	INCBIN "gfx/cards/great_ball.attrmap"	
@@ -71,3 +71,6 @@ ShiftryCardGfx::
 	INCBIN "gfx/cards/shiftry.pal"
 	INCBIN "gfx/cards/shiftry.attrmap"	
 	INCBIN "gfx/cards/shiftry.2bpp"		
+OWBernardGfx::
+	dw $14
+	INCBIN "gfx/overworld_sprites/bernard.2bpp"

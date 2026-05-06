@@ -227,6 +227,9 @@ OpponentTitlesAndDeckNames:
 	tx StrangeLifeformText
 	tx ImakuniDeckName
 
+	tx FireGRLeaderText
+	tx PowerOfFireDeckName	
+	
 	tx EmptyText
 	dw NULL
 	
@@ -250,5 +253,5 @@ OpponentTitlesAndDeckNames:
 	
 	tx EmptyText
 	dw NULL
-	
+
 	assert_table_length NUM_DECK_IDS

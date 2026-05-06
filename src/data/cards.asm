@@ -1820,7 +1820,7 @@ RoseliaCard:
 	dw NONE ; description (cont)
 	db 10 ; damage
 	db DAMAGE_NORMAL ; category
-	dw NONE ; effect commands
+	dw SweetSpikeEffectCommands ; effect commands
 	db NONE ; flags 1
 	db HEAL_USER ; flags 2
 	db NONE ; flags 3
@@ -1875,7 +1875,7 @@ RoseradeCard:
 	db FLAG_2_BIT_6 ; flags 2
 	db NONE ; flags 3
 	db 3
-	db ATK_ANIM_WHIP ; animation
+	db ATK_ANIM_GLOW_EFFECT ; animation
 
 	; attack 2
 	energy GRASS, 3; energies
@@ -2002,6 +2002,55 @@ GolisopodCard:
 	tx GolisopodDescription ; description
 	db 16
 
+ShayminCard:
+	db TYPE_PKMN_GRASS ; type
+	gfx ShayminCardGfx ; gfx
+	tx ShayminName ; name
+	db PROMOSTAR ; rarity
+	db PROMOTIONAL | PRO ; sets
+	dw SHAYMIN
+	db 60 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy 0 ; energies
+	tx SolarPowerName ; name
+	tx SolarPowerDescription ; description
+	tx AbilityCondition2 ; description (cont)
+	db 0 ; damage
+	db POKEMON_POWER ; category
+	dw VenusaurSolarPowerEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_SOLAR_POWER ; animation
+
+	; attack 2
+	energy GRASS, 1, COLORLESS, 1 ; energies
+	tx PsychicName ; name
+	tx PsychicDescription ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_PLUS ; category
+	dw MewtwoPsychicEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_PSYCHIC_HIT ; animation
+
+	db 1 ; retreat cost
+	db WR_FIRE ; weakness
+	db NONE ; resistance
+	tx GratitudeName ; category
+	db 4 ; Pokedex number
+	db 44 ; level
+	db 6, 7 ; length
+	dw 221 * 10 ; weight
+	tx ShayminDescription ; description
+	db 0
 ;--FIRE--
 TepigCard:
 	db TYPE_PKMN_FIRE ; type
@@ -4003,6 +4052,56 @@ VolcaronaCard:
 	tx VolcaronaDescription ; description
 	db 16
 
+HeatranCard:
+	db TYPE_PKMN_FIRE ; type
+	gfx HeatranCardGfx ; gfx
+	tx HeatranName ; name
+	db PROMOSTAR ; rarity
+	db PROMOTIONAL | PRO ; sets
+	dw HEATRAN
+	db 100 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy FIRE, 1, ; energies
+	tx RevivalBlessName ; name
+	tx ReviveDescription ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw ReviveEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db SPECIAL_AI_HANDLING ; flags 3
+	db 0
+	db ATK_ANIM_GLOW_EFFECT ; animation
+
+	; attack 2
+	energy COLORLESS, 4 ; energies
+	tx RaibowBurnName ; name
+	tx RainbowBurnDescription ; description
+	dw NONE ; description (cont)
+	db 30 ; damage
+	db DAMAGE_PLUS ; category
+	dw DragonRageEffectCommands ; effect commands
+	db NONE ; flags 1
+	db ATTACHED_ENERGY_BOOST ; flags 2
+	db NONE ; flags 3
+	db MAX_ENERGY_BOOST_IS_NOT_LIMITED
+	db ATK_ANIM_BIG_HIT ; animation
+
+	db 3 ; retreat cost
+	db WR_FIGHTING ; weakness
+	db NONE ; resistance
+	tx LavaDomeName ; category
+	db 71 ; Pokedex number
+	db 60 ; level
+	db 6, 7 ; length
+	dw 132 * 10 ; weight
+	tx HeatranDescription ; description
+	db 0
+
 ;--Water--
 FroakieCard:
 	db TYPE_PKMN_WATER ; type
@@ -6003,6 +6102,56 @@ SuicuneCard:
 	tx SuicuneDescription ; description
 	db 0
 
+KyogreCard:
+	db TYPE_PKMN_WATER ; type
+	gfx KyogreCardGfx ; gfx
+	tx KyogreName ; name
+	db PROMOSTAR ; rarity
+	db PROMOTIONAL | PRO ; sets
+	dw KYOGRE
+	db 100 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy 0 ; energies
+	tx QuickfreezeName ; name
+	tx QuickfreezeDescription ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db POKEMON_POWER ; category
+	dw SuicuneQuickfreezeEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_QUICKFREEZE ; animation
+
+	; attack 2
+	energy WATER, 2, COLORLESS, 1 ; energies
+	tx CrystalStreamName ; name
+	tx CrystalStreamDescription ; description
+	dw NONE ; description (cont)
+	db 40 ; damage
+	db DAMAGE_NORMAL ; category
+	dw CrystalStreamEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NULLIFY_OR_WEAKEN_ATTACK ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	db 4 ; retreat cost
+	db WR_LIGHTNING ; weakness
+	db NONE ; resistance
+	tx SeaBasinName ; category
+	db 144 ; Pokedex number
+	db 84 ; level
+	db 5, 7 ; length
+	dw 122 * 10 ; weight
+	tx KyogreDescription ; description
+	db 0
+
 ;--Lightning--
 BlitzleCard:
 	db TYPE_PKMN_LIGHTNING ; type
@@ -6461,7 +6610,7 @@ MagnemiteLv13Card:
 	db CIRCLE ; rarity
 	db LABORATORY | NONE ; sets
 	dw MAGNEMITE
-	db 40 ; hp
+	db 50 ; hp
 	db BASIC ; stage
 	dw NONE ; pre-evo name
 
@@ -6511,7 +6660,7 @@ MagnetonLv28Card:
 	db DIAMOND ; rarity
 	db LABORATORY | NONE ; sets
 	dw MAGNETON
-	db 70 ; hp
+	db 80 ; hp
 	db STAGE1 ; stage
 	tx MagnemiteName ; pre-evo name
 
@@ -6543,7 +6692,7 @@ MagnetonLv28Card:
 	db 0
 	db ATK_ANIM_THUNDER ; animation
 
-	db 1 ; retreat cost
+	db 2 ; retreat cost
 	db WR_FIRE ; weakness
 	db WR_DARKNESS ; resistance
 	tx MagnetName ; category
@@ -6593,7 +6742,7 @@ MagnezoneCard:
 	db 0
 	db ATK_ANIM_THUNDER ; animation
 
-	db 2 ; retreat cost
+	db 3 ; retreat cost
 	db WR_FIRE ; weakness
 	db WR_DARKNESS ; resistance
 	tx MagnetName ; category
@@ -7307,7 +7456,7 @@ RaikouCard:
 	gfx RaikouCardGfx ; gfx
 	tx RaikouName ; name
 	db PROMOSTAR ; rarity
-	db PROMOTIONAL | GB ; sets
+	db PROMOTIONAL | PRO ; sets
 	dw RAIKOU
 	db 80 ; hp
 	db BASIC ; stage
@@ -7950,6 +8099,56 @@ RegielekiCard:
 	db 5, 3 ; length
 	dw 116 * 10 ; weight
 	tx RegielekiDescription ; description
+	db 0
+
+MiraidonCard:
+	db TYPE_PKMN_LIGHTNING ; type
+	gfx MiraidonCardGfx ; gfx
+	tx MiraidonName ; name
+	db PROMOSTAR ; rarity
+	db PROMOTIONAL | PRO ; sets
+	dw MIRAIDON
+	db 80 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy LIGHTNING, 1, ; energies
+	tx EnergyAbsorptionName ; name
+	tx EnergyAbsorptionDescription ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw MewtwoAltLV60EnergyAbsorptionEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db SPECIAL_AI_HANDLING ; flags 3
+	db 0
+	db ATK_ANIM_GLOW_EFFECT ; animation
+
+	; attack 2
+	energy LIGHTNING, 3 ; energies
+	tx PlasmafName ; name
+	tx PlasmaFistDescription ; description
+	dw NONE ; description (cont)
+	db 60 ; damage
+	db DAMAGE_NORMAL ; category
+	dw PlasmaFistEffectCommands ; effect commands
+	db NONE ; flags 1
+	db DISCARD_ENERGY ; flags 2
+	db NONE ; flags 3
+	db 9
+	db ATK_ANIM_THUNDERPUNCH ; animation
+
+	db 2 ; retreat cost
+	db WR_WATER ; weakness
+	db NONE ; resistance
+	tx ParadoxName ; category
+	db 120 ; Pokedex number
+	db 84 ; level
+	db 5, 3 ; length
+	dw 116 * 10 ; weight
+	tx MiraidonDescription ; description
 	db 0
 
 ;--Fightning--
@@ -9957,4 +10156,102 @@ AnnihilapeCard:
 	tx AnnihilapeDescription ; description
 	db 0	
 
+GroudonCard:
+	db TYPE_PKMN_FIGHTING ; type
+	gfx GroudonCardGfx ; gfx
+	tx GroudonName ; name
+	db PROMOSTAR ; rarity
+	db PROMOTIONAL | PRO ; sets
+	dw GROUDON
+	db 100 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
 
+	; attack 1
+	energy FIGHTING, 1 ; energies
+	tx MountainEaterName ; name
+	tx MountainEaterDescription ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw MountainEaterEffectCommands ; effect commands
+	db DAMAGE_TO_OPPONENT_BENCH ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_GLOW_EFFECT ; animation
+
+	; attack 1
+	energy FIGHTING, 1, COLORLESS, 1 ; energies
+	tx RockThrowName ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db DAMAGE_TO_OPPONENT_BENCH ; flags 1
+	db NULLIFY_OR_WEAKEN_ATTACK_F ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_ROCK_THROW ; animation
+
+	db 4 ; retreat cost
+	db WR_GRASS ; weakness
+	db NONE ; resistance
+	tx ContinentName ; category
+	db 139 ; Pokedex number
+	db 84 ; level
+	db 1, 4 ; length
+	dw 14 * 10 ; weight
+	tx GroudonDescription ; description
+	db 0
+
+KoraidonCard:
+	db TYPE_PKMN_FIGHTING ; type
+	gfx KoraidonCardGfx ; gfx
+	tx KoraidonName ; name
+	db PROMOSTAR ; rarity
+	db PROMOTIONAL | PRO ; sets
+	dw KORAIDON
+	db 80 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy FIGHTING, 1 ; energies
+	tx MountainEaterName ; name
+	tx MountainEaterDescription ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw MountainEaterEffectCommands ; effect commands
+	db DAMAGE_TO_OPPONENT_BENCH ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_GLOW_EFFECT ; animation
+
+	; attack 1
+	energy FIGHTING, 1, COLORLESS, 1 ; energies
+	tx RockThrowName ; name
+	dw NONE ; description
+	dw NONE ; description (cont)
+	db 20 ; damage
+	db DAMAGE_NORMAL ; category
+	dw NONE ; effect commands
+	db DAMAGE_TO_OPPONENT_BENCH ; flags 1
+	db NULLIFY_OR_WEAKEN_ATTACK_F ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_ROCK_THROW ; animation
+
+	db 2 ; retreat cost
+	db WR_WATER ; weakness
+	db NONE ; resistance
+	tx ParadoxName ; category
+	db 139 ; Pokedex number
+	db 84 ; level
+	db 1, 4 ; length
+	dw 14 * 10 ; weight
+	tx KoraidonDescription ; description
+	db 0

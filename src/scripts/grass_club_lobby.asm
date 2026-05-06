@@ -7,6 +7,10 @@ GrassClubLobbyAfterDuel:
 	db NPC_BRITTANY
 	dw Script_BeatBrittany
 	dw Script_LostToBrittany
+	db NPC_LIZ
+	db NPC_LIZ
+	dw Script_BeatLiz
+	dw Script_LostToLiz
 	db $00
 
 Script_Brittany:
@@ -133,7 +137,36 @@ Preload_Gal2:
 	get_event_value EVENT_RECEIVED_LEGENDARY_CARDS
 	cp TRUE
 	ret
-
 Script_Gal2:
 	start_script
 	print_text_quit_fully Text0703
+Script_Liz:
+	start_script
+	jump_if_event_greater_or_equal EVENT_LIZ_STATE, LIZ_DEFEATED, .DEFEATED
+	test_if_event_less_than EVENT_LIZ_STATE, LIZ_TALKED
+	print_variable_npc_text TextLizFirstTalk, TextLiz4
+	set_event EVENT_LIZ_STATE, LIZ_TALKED
+	ask_question_jump LizNPCDuelText, .OktoDuel
+	print_npc_text TextLiz2
+	quit_script_fully
+.DEFEATED
+	print_npc_text TextLiz4
+	ask_question_jump LizNPCDuelText, .OktoDuel
+	print_npc_text TextLiz2
+	quit_script_fully
+
+.OktoDuel
+	print_npc_text TextLiz3
+	start_duel PRIZES_4, POWER_OF_FIRE_DECK_ID, MUSIC_DUEL_THEME_1
+	quit_script_fully
+Script_BeatLiz:
+	start_script
+	set_event EVENT_LIZ_STATE, LIZ_DEFEATED
+	print_npc_text TextLizDefeat
+	give_booster_packs BOOSTER_COLOSSEUM_FIRE, BOOSTER_COLOSSEUM_FIRE, NO_BOOSTER
+	print_npc_text TextLizDefeat2
+	quit_script_fully
+
+Script_LostToLiz:
+	start_script
+	print_text_quit_fully TextLizVictory	

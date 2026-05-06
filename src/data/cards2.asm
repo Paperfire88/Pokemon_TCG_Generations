@@ -1996,6 +1996,56 @@ AegislashShieldCard:
 	dw 106 * 10 ; weight
 	tx AegislashDescription ; description
 	db 0
+
+XerneasCard:
+	db TYPE_PKMN_PSYCHIC ; type
+	gfx XerneasCardGfx ; gfx
+	tx XerneasName ; name
+	db PROMOSTAR ; rarity
+	db PROMOTIONAL | PRO ; sets
+	dw XERNEAS
+	db 80 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy PSYCHIC, 1 ; energies
+	tx LunarDreamsName ; name
+	tx LunarDreamsDescription ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db RESIDUAL ; category
+	dw LunarDreamsEffectCommands ; effect commands
+	db NONE ; flags 1
+	db HEAL_USER ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_GLOW_EFFECT ; animation
+
+	; attack 2
+	energy PSYCHIC, 3 ; energies
+	tx LunarCressName ; name
+	tx DreamyWishDescription ; description
+	dw NONE ; description (cont)
+	db 40 ; damage
+	db DAMAGE_NORMAL ; category
+	dw DreamyWishEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db SPECIAL_AI_HANDLING ; flags 3
+	db 0
+	db ATK_ANIM_PSYCHIC_HIT ; animation
+
+	db 2 ; retreat cost
+	db WR_METAL ; weakness
+	db NONE ; resistance
+	tx LifeName ; category
+	db 150 ; Pokedex number
+	db 84 ; level
+	db 6, 7 ; length
+	dw 269 * 10 ; weight
+	tx XerneasDescription ; description
+	db 0	
 ;Darkness
 DeinoCard:
 	db TYPE_PKMN_DARKNESS ; type
@@ -4151,6 +4201,55 @@ ZoroarkCard:
 	tx ZoroarkDescription ; description
 	db 0
 
+YveltalCard:
+	db TYPE_PKMN_DARKNESS ; type
+	gfx YveltalCardGfx ; gfx
+	tx YveltalName ; name
+	db PROMOSTAR ; rarity
+	db PROMOTIONAL | NONE ; sets
+	dw YVELTAL
+	db 80 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy DARKNESS, 1 ; energies
+	tx DarkVoidName ; name
+	tx DarkVoidDescription ; description
+	dw NONE ; description (cont)
+	db 0 ; damage
+	db DAMAGE_NORMAL ; category
+	dw DarkVoidEffectCommands ; effect commands
+	db INFLICT_SLEEP_F ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_DARK_MIND ; animation
+
+	; attack 2
+	energy DARKNESS, 3 ; energies
+	tx NightSpearName ; name
+	tx DarkChargeDescription ; description
+	dw NONE ; description (cont)
+	db 40 ; damage
+	db DAMAGE_NORMAL ; category
+	dw DarkChargeEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db SPECIAL_AI_HANDLING ; flags 3
+	db 0
+	db ATK_ANIM_DARK_MIND ; animation
+
+	db 2 ; retreat cost
+	db WR_LIGHTNING ; weakness
+	db NONE ; resistance
+	tx DestructionName ; category
+	db 95 ; Pokedex number
+	db 84 ; level
+	db 2, 11 ; length
+	dw 22 * 10 ; weight
+	tx YveltalDescription ; description
+	db 0
 MoonStoneCard:
 	db TYPE_TRAINER ; type
 	gfx MoonStoneCardGfx ; gfx
@@ -7927,6 +8026,105 @@ SnorlaxCard:
 	tx SnorlaxDescription ; description
 	db 1
 
+ArceusCard:
+	db TYPE_PKMN_COLORLESS ; type
+	gfx ArceusCardGfx ; gfx
+	tx ArceusName ; name
+	db PROMOSTAR ; rarity
+	db PROMOTIONAL | PRO ; sets
+	dw ARCEUS
+	db 90 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx DragonPulseName ; name
+	tx DragonPulseDescription ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_PLUS ; category
+	dw DragonPulseEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_QUICK_ATTACK ; animation
+
+	; attack 2
+	energy COLORLESS, 4 ; energies
+	tx EmeraldBreakName ; name
+	tx DoTheWaveDescription ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_PLUS ; category
+	dw WigglytuffDoTheWaveEffectCommands ; effect commands
+	db NONE ; flags 1
+	db ATTACHED_ENERGY_BOOST_F ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	db 2 ; retreat cost
+	db NONE ; weakness
+	db NONE ; resistance
+	tx AlphaName ; category
+	db 195 ; Pokedex number
+	db 99 ; level
+	db 2, 7 ; length
+	dw 33 * 10 ; weight
+	tx ArceusDescription ; description
+	db 3
+
+MissingNoCard:
+	db TYPE_PKMN_COLORLESS ; type
+	gfx MissingNoCardGfx ; gfx
+	tx MissingNoName ; name
+	db PROMOSTAR ; rarity
+	db PROMOTIONAL | PRO ; sets
+	dw MISSINGNO
+	db 30 ; hp
+	db BASIC ; stage
+	dw NONE ; pre-evo name
+
+	; attack 1
+	energy COLORLESS, 1 ; energies
+	tx DragonPulseName ; name
+	tx DragonPulseDescription ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_PLUS ; category
+	dw DragonPulseEffectCommands ; effect commands
+	db NONE ; flags 1
+	db NONE ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_QUICK_ATTACK ; animation
+
+	; attack 2
+	energy COLORLESS, 4 ; energies
+	tx EmeraldBreakName ; name
+	tx DoTheWaveDescription ; description
+	dw NONE ; description (cont)
+	db 10 ; damage
+	db DAMAGE_PLUS ; category
+	dw WigglytuffDoTheWaveEffectCommands ; effect commands
+	db NONE ; flags 1
+	db ATTACHED_ENERGY_BOOST_F ; flags 2
+	db NONE ; flags 3
+	db 0
+	db ATK_ANIM_HIT ; animation
+
+	db 3 ; retreat cost
+	db NONE ; weakness
+	db NONE ; resistance
+	tx NoName ; category
+	db 195 ; Pokedex number
+	db 00 ; level
+	db 2, 7 ; length
+	dw 33 * 10 ; weight
+	tx MissingNoDescription ; description
+	db 3	
 ;--Trainers--
 ProfessorOakCard:
 	db TYPE_SUPPORTER ; type

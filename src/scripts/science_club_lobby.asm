@@ -10,23 +10,13 @@ ScienceClubLobbyAfterDuel:
 	db $00
 
 Preload_ImakuniInScienceClubLobby:
-	get_event_value EVENT_IMAKUNI_STATE
-	cp IMAKUNI_TALKED
-	jr c, .dont_load
-	get_event_value EVENT_TEMP_DUELED_IMAKUNI
-	jr nz, .dont_load
+	call Check_Imakuni_State
+	ret nz
 	get_event_value EVENT_IMAKUNI_ROOM
 	cp IMAKUNI_SCIENCE_CLUB
-	jr z, .load_imakuni
-.dont_load
+	jp z, load_imakuni
 	or a
 	ret
-
-.load_imakuni
-	ld a, MUSIC_IMAKUNI
-	ld [wDefaultSong], a
-	retscf
-
 Script_Lad1:
 	start_script
 	jump_if_event_greater_or_equal EVENT_ISHIHARA_TRADE_STATE, ISHIHARA_TRADES_COMPLETE, .ows_ebbb

@@ -69,10 +69,7 @@ LookForCardsInDeck:
 
 .set_carry
 	retscf
-
-; returns carry if no card with
-; same card ID as de is found in Deck
-.SearchDeckForCardID
+.SearchDeckForCardID ; returns carry if no card with same card ID as de is found in Deck
 	ld b, d
 	ld c, e
 	ld hl, wDuelTempList
@@ -4007,6 +4004,29 @@ FindElekid:
 .found
     ; card ID was found in the Arena
     retscf
+FindBudew:
+    xor a ; DUELVARS_CARD_LOCATIONS
+    get_turn_duelist_var
+    ld c, DECK_SIZE
+.loop_locations
+    ld a, [hli] ; gets location of i-th deck card
+    cp CARD_LOCATION_ARENA ; is it in Arena?
+    jr nz, .not_in_arena
+    ; l holds the deck index + 1, so get its card ID
+    ld a, l
+    dec a
+    call GetCardIDFromDeckIndex
+    cp16 BUDEW
+    jr z, .found
+.not_in_arena
+    dec c
+    jr nz, .loop_locations
+    ; not found
+    or a
+    ret
+.found
+    ; card ID was found in the Arena
+    retscf	
 ; handles the Player selection of attack
 ; to use, i.e. Amnesia or Metronome on.
 ; returns carry if none selected.
@@ -4673,3 +4693,45 @@ TenguStrikeEffect:
 	ret nz
 	farcall Add30damageEffect
 	ret 
+Put1DamageCounterOnTarget2:
+  ld d, 10
+  ld a, ATK_ANIM_BENCH_HIT
+  ld [wLoadedAttackAnimation], a
+  push hl
+  push de
+  push bc
+  ld a, e
+  ld [wTempPlayAreaLocation_cceb], a
+  or a  ; cp PLAY_AREA_ARENA
+  jr nz, .skip_no_damage_or_effect_check
+; arena
+  ld a, [wNoDamageOrEffect]
+  or a
+  jr z, .skip_no_damage_or_effect_check
+  ld d, 0
+.skip_no_damage_or_effect_check
+  xor a
+  ld [wNoDamageOrEffect], a
+  ld e, d
+  ld d, 0
+  push de
+  ld a, [wTempPlayAreaLocation_cceb]
+  add DUELVARS_ARENA_CARD
+  get_turn_duelist_var
+  call GetCardIDFromDeckIndex
+  ld a, e
+  ld [wTempNonTurnDuelistCardID], a
+  pop de
+  ld a, [wTempPlayAreaLocation_cceb]
+  ld b, a
+  ld c, 0
+  add DUELVARS_ARENA_CARD_HP
+  get_turn_duelist_var
+ bank1call Func_7415
+  bank1call PlayAttackAnimation_DealAttackDamageSimple
+  call PrintKnockedOutIfHLZero
+  call WaitForWideTextBoxInput
+  pop bc
+  pop de
+  pop hl
+  ret

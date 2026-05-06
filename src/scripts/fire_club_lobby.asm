@@ -7,17 +7,19 @@ FireClubLobbyAfterDuel:
 	db NPC_JESSICA
 	dw Script_BeatJessicaInFireClubLobby
 	dw Script_LostToJessicaInFireClubLobby
+
+	db NPC_BERNARD
+	db NPC_BERNARD
+	dw Script_BeatBernard
+	dw Script_LostToBernard
 	db $00
-
-FireClubPressedA:
-	ld hl, SlowpokePaintingObjectTable
-	jp FindExtraInteractableObjects
-
 SlowpokePaintingObjectTable:
 	db 16, 2, NORTH
 	dw Script_ee76
 	db $00
-
+FireClubPressedA:
+	ld hl, SlowpokePaintingObjectTable
+	; falltrough
 ; Given a table with data of the form:
 ;	X, Y, Dir, Script
 ; Searches to try to find a match, and starts a Script if possible
@@ -225,3 +227,36 @@ Script_Mania:
 	test_if_event_false EVENT_RECEIVED_LEGENDARY_CARDS
 	print_variable_npc_text Text06a3, Text06a4
 	quit_script_fully
+Script_Bernard:
+	start_script
+	jump_if_event_true EVENT_BEAT_KEN, .beat_ken
+	test_if_event_zero EVENT_BERNARD_STATE
+	print_variable_npc_text TextBernardFirstTalk, TextBernardAlreadyTalked
+	set_event EVENT_BERNARD_STATE, BERNARD_TALKED
+	quit_script_fully
+.beat_ken
+	test_if_event_less_than EVENT_BERNARD_STATE, BERNARD_DEFEATED
+	print_variable_npc_text TextBernard4, TextBernardAfterDefeat
+	ask_question_jump BernardNPCDuelText, .OktoDuel
+	print_npc_text TextBernard2
+	quit_script_fully
+
+.OktoDuel
+	print_npc_text TextBernard3
+	start_duel PRIZES_6, POWER_OF_FIRE_DECK_ID, MUSIC_DUEL_THEME_1
+	quit_script_fully
+Script_BeatBernard:
+	start_script
+	print_npc_text TextBernardDefeat
+	jump_if_event_greater_or_equal EVENT_BERNARD_STATE, BERNARD_DEFEATED, .defeated
+	set_event EVENT_BERNARD_STATE, BERNARD_DEFEATED
+	give_card HEATRAN
+	show_card_received_screen HEATRAN
+.defeated
+	give_booster_packs BOOSTER_COLOSSEUM_FIRE, BOOSTER_COLOSSEUM_FIRE, NO_BOOSTER
+	print_npc_text TextBernardDefeat2
+	quit_script_fully
+
+Script_LostToBernard:
+	start_script
+	print_text_quit_fully TextBernardVictory	

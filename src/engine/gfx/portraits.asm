@@ -48,4 +48,14 @@ Portraits:
 	portrait StephaniePortrait, ; PORTRAIT_STEPHANIE
 	portrait AaronPortrait,     ; PORTRAIT_AARON
     portrait MintGfx,           ; MINT_PIC
+	portrait BernardPortrait,   ; PORTRAIT_BERNARD
+	portrait MelissaPortrait,   ; PORTRAIT_MELISSA
+	portrait YutaPortrait,    	; PORTRAIT_YUTA
+	portrait LizPortrait,   	; PORTRAIT_LIZ
+	portrait ParkerPortrait,    ; PORTRAIT_PARKER
+	portrait CassiePortrait,    ; PORTRAIT_CASSIE
+	portrait ChipPortrait,      ; PORTRAIT_CHIP
+	portrait CatherinePortrait, ; PORTRAIT_CATHERINE
+	portrait JacobPortrait, 	; PORTRAIT_JACOB
+	portrait CodyPortrait, 		; PORTRAIT_CODY
     assert_table_length NUM_PORTRAITS

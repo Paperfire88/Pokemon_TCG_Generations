@@ -1520,19 +1520,18 @@ MuddyHammerDescription:
 	line "PKMN is Poisoned, Discard the top 3"
 	line "cards instead."
 	done
-	
 DarkPulseName:
 	text "Dark Pulse"
 	done
-
 DarkPulseDescription:
 	text "Does 10 damage for each <DARKNESS> Energy"
 	line "attached to all of your PKMN."
 	done
 AssassinsRoseDescription:
 	text "If the Defending PKMN is Poisoned,"
-	line "it does +30 damage and heals 20"
-	line "damage from this PKMN."	
+	line "it does +30 damage. [If this PKMN"
+	line "has a [BUDEW] as is basic PKMN, heal"
+	line "20 damage from this PKMN.]"	
 	done
 FirstImpressionName:
 	text "First Impression"

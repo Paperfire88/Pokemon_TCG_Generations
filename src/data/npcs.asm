@@ -119,6 +119,16 @@ NPCHeaderPointers:
 	dw Ronald2NPCHeader
 	dw Ronald3NPCHeader
 	dw DummyNPCHeader
+	dw BernardNPCHeader
+	dw MelissaNPCHeader
+	dw YutaNPCHeader
+	dw LizNPCHeader
+	dw ParkerNPCHeader
+	dw CassieNPCHeader
+	dw ChipNPCHeader
+	dw CatherineNPCHeader
+	dw JacobNPCHeader
+	dw CodyNPCHeader
 	assert_table_length NUM_NPCS
 
 DrMasonNPCHeader:
@@ -1411,3 +1421,114 @@ DummyNPCHeader:
 	db SPRITE_OW_PLAYER
 	db SPRITE_ANIM_RED_NPC_UP
 	db $00
+; New NPC's	
+BernardNPCHeader:
+	db NPC_BERNARD
+	db SPRITE_OW_BERNARD
+	db SPRITE_ANIM_RED_NPC_UP
+	db $00
+	dw Script_Bernard
+	tx BernardNPCName
+	db PORTRAIT_BERNARD
+	db POWER_OF_FIRE_DECK_ID
+	db MUSIC_RONALD
+	db MUSIC_MATCH_START_2
+MelissaNPCHeader:
+	db NPC_MELISSA
+	db SPRITE_OW_MELISSA
+	db SPRITE_ANIM_YELLOW_NPC_UP
+	db $00
+	dw Script_Melissa
+	tx MelissaNPCName
+	db PORTRAIT_MELISSA
+	db HARD_POKEMON_DECK_ID
+	db MUSIC_RONALD
+	db MUSIC_MATCH_START_2
+YutaNPCHeader:
+	db NPC_YUTA
+	db SPRITE_OW_YUTA
+	db SPRITE_ANIM_RED_NPC_UP
+	db $00
+	dw Script_Yuta
+	tx YutaNPCName
+	db PORTRAIT_YUTA
+	db HARD_POKEMON_DECK_ID
+	db MUSIC_RONALD
+	db MUSIC_MATCH_START_2
+LizNPCHeader:
+	db NPC_LIZ
+	db SPRITE_OW_MELISSA
+	db SPRITE_ANIM_RED_NPC_UP
+	db $00
+	dw Script_Liz
+	tx LizNPCName
+	db PORTRAIT_LIZ
+	db HARD_POKEMON_DECK_ID
+	db MUSIC_RONALD
+	db MUSIC_MATCH_START_2		
+ParkerNPCHeader:
+	db NPC_PARKER
+	db SPRITE_OW_YUTA
+	db SPRITE_ANIM_GREEN_NPC_UP
+	db $00
+	dw Script_Parker
+	tx ParkerNPCName
+	db PORTRAIT_PARKER
+	db HARD_POKEMON_DECK_ID
+	db MUSIC_RONALD
+	db MUSIC_MATCH_START_2	
+CassieNPCHeader:
+	db NPC_CASSIE
+	db SPRITE_OW_CASSIE
+	db SPRITE_ANIM_RED_NPC_UP
+	db $00
+	dw Script_Cassie
+	tx CassieNPCName
+	db PORTRAIT_CASSIE
+	db HARD_POKEMON_DECK_ID
+	db MUSIC_RONALD
+	db MUSIC_MATCH_START_2	
+ChipNPCHeader:
+	db NPC_CHIP
+	db SPRITE_OW_CHIP
+	db SPRITE_ANIM_YELLOW_NPC_UP
+	db $00
+	dw Script_Chip
+	tx ChipNPCName
+	db PORTRAIT_CHIP
+	db HARD_POKEMON_DECK_ID
+	db MUSIC_RONALD
+	db MUSIC_MATCH_START_2
+CatherineNPCHeader:
+	db NPC_CATHERINE
+	db SPRITE_OW_CATHERINE
+	db SPRITE_ANIM_YELLOW_NPC_UP
+	db $00
+	dw Script_Catherine
+	tx CatherineNPCName
+	db PORTRAIT_CATHERINE
+	db HARD_POKEMON_DECK_ID
+	db MUSIC_RONALD
+	db MUSIC_MATCH_START_2
+JacobNPCHeader:
+	db NPC_JACOB
+	db SPRITE_OW_JACOB
+	db SPRITE_ANIM_BLUE_NPC_UP
+	db $00
+	dw Script_Jacob
+	tx JacobNPCName
+	db PORTRAIT_JACOB
+	db HARD_POKEMON_DECK_ID
+	db MUSIC_RONALD
+	db MUSIC_MATCH_START_2
+CodyNPCHeader:
+	db NPC_CODY
+	db SPRITE_OW_JOSHUA
+	db SPRITE_ANIM_BLUE_NPC_UP
+	db $00
+	dw Script_Cody
+	tx CodyNPCName
+	db PORTRAIT_CODY
+	db HARD_POKEMON_DECK_ID
+	db MUSIC_RONALD
+	db MUSIC_MATCH_START_2

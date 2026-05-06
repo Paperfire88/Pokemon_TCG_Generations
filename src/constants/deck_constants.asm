@@ -65,6 +65,7 @@ ENDM
 	deck_const FLAMETHROWER_DECK           ; $34
 	deck_const RESHUFFLE_DECK              ; $35
 	deck_const IMAKUNI_DECK                ; $36
+	deck_const POWER_OF_FIRE_DECK          ; $3F
 	deck_const DEINO_AND_FRIENDS_DECK      ; $37
 	deck_const DEINO_EXTRA_DECK   		   ; $38
 	deck_const MAGNEMITE_AND_FRIENDS_DECK  ; $39

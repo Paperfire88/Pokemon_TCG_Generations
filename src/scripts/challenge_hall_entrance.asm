@@ -69,11 +69,9 @@ Preload_Clerk9:
 .start_challenge_cup
 	set_event_value EVENT_CHALLENGE_CUP_NUMBER
 	max_event_value EVENT_CHALLENGE_CUP_STARTING
-	ld a, MUSIC_CHALLENGE_HALL
-	ld [wDefaultSong], a
+	bank1call Load_Challenge_Hall_Music
 .no_challenge_cup
 	retscf
-
 Script_Clerk9:
 	start_script
 	jump_if_event_zero EVENT_CHALLENGE_CUP_1_STATE, .ows_f066

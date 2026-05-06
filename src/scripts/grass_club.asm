@@ -17,6 +17,11 @@ GrassClubAfterDuel:
 	db NPC_NIKKI
 	dw Script_BeatNikki
 	dw Script_LostToNikki
+	
+	db NPC_MELISSA
+	db NPC_MELISSA
+	dw Script_BeatMelissa
+	dw Script_LostToMelissa
 	db $00
 
 Script_Kristin:
@@ -135,3 +140,68 @@ Script_LostToNikki:
 	start_script
 .ows_e7f3
 	print_text_quit_fully Text0722
+
+Script_Melissa:
+	start_script
+	jump_if_event_greater_or_equal EVENT_MELISSA_STATE, MELISSA_DEFEATED, .DEFEATED
+	test_if_event_less_than EVENT_MELISSA_STATE, MELISSA_TALKED
+	print_variable_npc_text TextMelissaFirstTalk, TextMelissa4
+	set_event EVENT_MELISSA_STATE, MELISSA_TALKED
+	ask_question_jump MelissaNPCDuelText, .OktoDuel
+	print_npc_text TextMelissa2
+	quit_script_fully
+.DEFEATED
+	print_npc_text TextMelissaAfterDefeat
+	ask_question_jump MelissaNPCDuelText, .OktoDuel
+	print_npc_text TextMelissa2
+	quit_script_fully
+
+.OktoDuel
+	print_npc_text TextMelissa3
+	start_duel PRIZES_4, POWER_OF_FIRE_DECK_ID, MUSIC_DUEL_THEME_1
+	quit_script_fully
+Script_BeatMelissa:
+	start_script
+	set_event EVENT_MELISSA_STATE, MELISSA_DEFEATED
+	print_npc_text TextMelissaDefeat
+	give_booster_packs BOOSTER_COLOSSEUM_FIRE, BOOSTER_COLOSSEUM_FIRE, NO_BOOSTER
+	print_npc_text TextMelissaDefeat2
+	quit_script_fully
+
+Script_LostToMelissa:
+	start_script
+	print_text_quit_fully TextMelissaVictory
+Script_Parker:
+	start_script
+	jump_if_event_greater_or_equal EVENT_PARKER_STATE, PARKER_DEFEATED, .DEFEATED
+	test_if_event_less_than EVENT_PARKER_STATE, PARKER_TALKED
+	print_variable_npc_text TextParkerFirstTalk, TextParker4
+	set_event EVENT_PARKER_STATE, PARKER_TALKED
+	ask_question_jump ParkerNPCDuelText, .OktoDuel
+	print_npc_text TextParker2
+	quit_script_fully
+.DEFEATED
+	print_npc_text TextParker4
+	ask_question_jump ParkerNPCDuelText, .OktoDuel
+	print_npc_text TextParker2
+	quit_script_fully
+
+.OktoDuel
+	print_npc_text TextParker3
+	start_duel PRIZES_6, POWER_OF_FIRE_DECK_ID, MUSIC_DUEL_THEME_1
+	quit_script_fully
+Script_BeatParker:
+	start_script
+	print_npc_text TextParkerDefeat
+	jump_if_event_greater_or_equal EVENT_PARKER_STATE, PARKER_DEFEATED, .defeated
+	set_event EVENT_PARKER_STATE, PARKER_DEFEATED
+	give_card SHAYMIN
+	show_card_received_screen SHAYMIN
+.defeated
+	give_booster_packs BOOSTER_COLOSSEUM_FIRE, BOOSTER_COLOSSEUM_FIRE, NO_BOOSTER
+	print_npc_text TextParkerDefeat2
+	quit_script_fully
+
+Script_LostToParker:
+	start_script
+	print_text_quit_fully TextParkerVictory		

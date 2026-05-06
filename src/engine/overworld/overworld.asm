@@ -1,25 +1,5 @@
 LoadMap::
-	call DisableLCD
-	call EnableSRAM
-	bank1call DiscardSavedDuelData
-	call DisableSRAM
-	ld a, GAME_EVENT_OVERWORLD
-	ld [wGameEvent], a
-	xor a
-	ld [wReloadOverworldCallbackPtr], a
-	ld [wReloadOverworldCallbackPtr + 1], a
-	ld [wMatchStartTheme], a
-	ld [wd317], a
-	call WhiteOutDMGPals
-	call ZeroObjectPositions
-	xor a
-	ld [wTileMapFill], a
-	call LoadSymbolsFont
-	call Set_OBJ_8x8
-	xor a
-	ld [wLineSeparation], a
-	xor a
-	ld [wd291], a
+	bank1call LoadMap_1
 .warp
 	farcall FadeScreenToWhite
 	call WhiteOutDMGPals
@@ -66,18 +46,27 @@ LoadMap::
 	jr z, .no_warp
 	ld a, SFX_WARP
 	call PlaySFX
-	jp .warp
+	jr .warp
 .no_warp
 	farcall FadeScreenToWhite
-	call Func_c1a0
+	call ResetDoFrameFunction
 	ld a, [wMatchStartTheme]
 	or a
-	jr z, .no_duel
+	jr z, Func_c280
 	call Func_c280
 	farcall Duel_Init
-.no_duel
-	jp Func_c280
-
+;	fallthrough
+Func_c280:
+	call BackupPlayerPosition
+	call EnableAndClearSpriteAnimations
+	call ZeroObjectPositions
+	ld hl, wVBlankOAMCopyToggle
+	inc [hl]
+	call EnableLCD
+	call DoFrameIfLCDEnabled
+	call DisableLCD
+	farcall Func_12871
+	ret
 HandleOverworldMode:
 	ld a, [wOverworldMode]
 	res 7, a
@@ -94,17 +83,42 @@ HandleOverworldMode:
 
 OverworldModePointers:
 	dw UpdateOverworldMap
-	dw CallHandlePlayerMoveMode
+	dw HandlePlayerMoveMode
 	dw SetScriptData
 	dw EnterScript
 
 UpdateOverworldMap:
 	farcall OverworldMap_Update
 	ret
+HandlePlayerMoveMode:
+	ld a, [wPlayerSpriteIndex]
+	ld [wWhichSprite], a
+	ld a, [wPlayerCurrentlyMoving]
+	bit 4, a
+	ret nz
+	bit 0, a
+	call z, HandlePlayerMoveModeInput
+	ld a, [wPlayerCurrentlyMoving]
+	or a
+	jr z, .not_moving
+	bit 0, a
+	call nz, Func_c66c
+	ld a, [wPlayerCurrentlyMoving]
+	bit 1, a
+	call nz, Func_c6dc
+	ret
 
-CallHandlePlayerMoveMode:
-	jp HandlePlayerMoveMode
-
+.not_moving
+	ldh a, [hKeysPressed]
+	and START
+	call nz, OpenPauseMenu
+	ldh a, [hKeysHeld]
+	and SELECT
+	ret z
+	ldh a, [hKeysHeld]
+	bit B_BUTTON_F, a
+	jp nz, PauseMenu_Diary2
+	ret
 SetScriptData:
 	ld a, [wScriptNPC]
 	ld [wLoadedNPCTempIndex], a
@@ -124,25 +138,6 @@ EnterScript:
 	ld h, [hl]
 	ld l, a
 	jp hl
-
-; closes dialogue window. seems to be for other things as well.
-CloseAdvancedDialogueBox:
-	ld a, [wOverworldNPCFlags]
-	bit AUTO_CLOSE_TEXTBOX, a
-	call nz, CloseTextBox
-	ld a, [wOverworldNPCFlags]
-	bit RESTORE_FACING_DIRECTION, a
-	jr z, .skip
-	ld a, [wScriptNPC]
-	ld [wLoadedNPCTempIndex], a
-	farcall Func_1c5e9
-.skip
-	xor a
-	ld [wOverworldNPCFlags], a
-	ld a, [wOverworldModeBackup]
-	ld [wOverworldMode], a
-	ret
-
 ; redraws the background and removes textbox control
 CloseTextBox:
 	push hl
@@ -175,14 +170,13 @@ Func_c158:
 	ld a, [wNPCDuelist]
 	ld [wTempNPC], a
 	call FindLoadedNPC
-	jr c, .asm_c179
+	ret c
 	ld a, [wLoadedNPCTempIndex]
 	ld l, LOADED_NPC_DIRECTION
 	call GetItemInLoadedNPCIndex
 	ld a, [wNPCDuelistDirection]
 	ld [hl], a
 	farcall UpdateNPCAnimation
-.asm_c179
 	ret
 
 Func_c17a:
@@ -208,10 +202,6 @@ Func_c184:
 SetOverworldDoFrameFunction:
 	ld hl, OverworldDoFrameFunction
 	jp SetDoFrameFunction
-
-Func_c1a0:
-	jp ResetDoFrameFunction
-
 WhiteOutDMGPals:
 	xor a
 	call SetBGP
@@ -324,19 +314,6 @@ Func_c268:
 PauseMenuTextList:
 	tx PauseMenuOptionsText
 	dw NULL
-
-Func_c280:
-	call BackupPlayerPosition
-	call EnableAndClearSpriteAnimations
-	call ZeroObjectPositions
-	ld hl, wVBlankOAMCopyToggle
-	inc [hl]
-	call EnableLCD
-	call DoFrameIfLCDEnabled
-	call DisableLCD
-	farcall Func_12871
-	ret
-
 SetOverworldNPCFlags:
 	push hl
 	ld hl, wOverworldNPCFlags
@@ -400,13 +377,10 @@ ReturnToOverworld:
 	res HIDE_ALL_NPC_SPRITES, [hl]
 	ld hl, wReloadOverworldCallbackPtr
 	ld a, [hli]
-	or [hl]
-	jr z, .no_callback
-	ld a, [hld]
-	ld l, [hl]
-	ld h, a
-	call CallHL2
-.no_callback
+	ld h, [hl]
+	ld l, a
+	or h
+	call nz, CallHL2 ; just in case, idk if this can cause an issue
 	farcall FadeScreenFromWhite
 	pop de
 	pop bc
@@ -446,10 +420,9 @@ Func_c36a:
 	ld [wOWMapEvents], a
 	ld a, [wCurMap]
 	cp POKEMON_DOME_ENTRANCE
-	jr nz, .asm_c379
+	ret nz
 	xor a
 	ld [wOWMapEvents + 1], a
-.asm_c379
 	ret
 
 ; loads in wPermissionMap the permissions
@@ -578,8 +551,19 @@ Func_c3ff:
 	call Func_c41c
 	call Func_c469
 	call SetScreenScrollWram
-	jp SetScreenScroll
-
+	; falltrough
+SetScreenScroll:
+	ld a, [wSCX]
+	ldh [hSCX], a
+	ld a, [wSCY]
+	ldh [hSCY], a
+	ret
+SetScreenScrollWram::
+	ld a, [wSCXBuffer]
+	ld [wSCX], a
+	ld a, [wSCYBuffer]
+	ld [wSCY], a
+	ret
 Func_c41c:
 	ld a, [wPlayerXCoordPixels]
 	sub $40
@@ -642,21 +626,6 @@ Func_c469:
 	rrca
 	ld [wd234], a
 	ret
-
-SetScreenScrollWram::
-	ld a, [wSCXBuffer]
-	ld [wSCX], a
-	ld a, [wSCYBuffer]
-	ld [wSCY], a
-	ret
-
-SetScreenScroll:
-	ld a, [wSCX]
-	ldh [hSCX], a
-	ld a, [wSCY]
-	ldh [hSCY], a
-	ret
-
 Func_c49c:
 	ld a, [wPlayerXCoord]
 	and $1f
@@ -725,41 +694,9 @@ xor a
 	ld [wd338], a
 	ld a, [wCurMap]
 	cp OVERWORLD_MAP
-	jr nz, .not_ow_map
-	farcall OverworldMap_InitCursorSprite
-.not_ow_map
-	ret
-
-HandlePlayerMoveMode:
-	ld a, [wPlayerSpriteIndex]
-	ld [wWhichSprite], a
-	ld a, [wPlayerCurrentlyMoving]
-	bit 4, a
 	ret nz
-	bit 0, a
-	call z, HandlePlayerMoveModeInput
-	ld a, [wPlayerCurrentlyMoving]
-	or a
-	jr z, .not_moving
-	bit 0, a
-	call nz, Func_c66c
-	ld a, [wPlayerCurrentlyMoving]
-	bit 1, a
-	call nz, Func_c6dc
-	ret
-
-.not_moving
-	ldh a, [hKeysPressed]
-	and START
-	call nz, OpenPauseMenu
-	ldh a, [hKeysHeld]
-	and SELECT
-	ret z
-	ldh a, [hKeysHeld]
-	bit B_BUTTON_F, a
-	jp nz, PauseMenu_Diary2
-	ret
- 
+	farcall OverworldMap_InitCursorSprite
+	ret 
 PauseMenu_Diary2:
 	call BackupPlayerPosition
 	call PauseSong
@@ -880,22 +817,54 @@ HandlePlayerMoveModeInput:
 	call AttemptPlayerMovementFromDirection
 	ld a, [wPlayerCurrentlyMoving]
 	and $1
-	jr nz, .done
+	ret nz
 .skip_moving
 	ldh a, [hKeysPressed]
 	and A_BUTTON
-	jr z, .done
-	call FindNPCOrObject
-	jr .done
-.done
-	ret
+	ret z
+	;falltrough
+; Arrives here if A button is pressed when not moving + in map move state
+FindNPCOrObject:
+	ld a, $ff
+	ld [wScriptNPC], a
+	call FindPlayerMovementFromDirection
+	call GetPermissionOfMapPosition
+	and $40
+	jr z, .no_npc
+	farcall FindNPCAtLocation
+	jr c, .no_npc
+	ld a, [wLoadedNPCTempIndex]
+	ld [wScriptNPC], a
+	ld a, OWMODE_START_SCRIPT
+	jr .set_mode
 
+.no_npc
+	call HandleMoveModeAPress
+	jr nc, .exit
+	ld a, OWMODE_SCRIPT
+.set_mode
+	ld [wOverworldMode], a
+	retscf
+.exit
+	or a
+	ret
 UpdatePlayerDirectionFromDPad:
 	call GetDirectionFromDPad
 UpdatePlayerDirection:
 	ld [wPlayerDirection], a
-	jp UpdatePlayerSprite
-
+	; falltrough
+; Updates sprite depending on direction
+UpdatePlayerSprite:
+	push bc
+	ld a, [wPlayerSpriteIndex]
+	ld [wWhichSprite], a
+	ld a, [wPlayerSpriteBaseAnimation]
+	ld b, a
+	ld a, [wPlayerDirection]
+	add b
+	farcall StartNewSpriteAnimation
+	pop bc
+	ret
 GetDirectionFromDPad:
 	push hl
 	ld hl, KeypadDirectionMap
@@ -910,23 +879,8 @@ GetDirectionFromDPad:
 	ld a, [hl]
 	pop hl
 	ret
-
 KeypadDirectionMap:
 	db SOUTH, NORTH, WEST, EAST
-
-; Updates sprite depending on direction
-UpdatePlayerSprite:
-	push bc
-	ld a, [wPlayerSpriteIndex]
-	ld [wWhichSprite], a
-	ld a, [wPlayerSpriteBaseAnimation]
-	ld b, a
-	ld a, [wPlayerDirection]
-	add b
-	farcall StartNewSpriteAnimation
-	pop bc
-	ret
-
 AttemptPlayerMovementFromDirection:
 	push bc
 	call FindPlayerMovementFromDirection
@@ -1116,35 +1070,6 @@ Func_c70d:
 .asm_c71c
 	pop hl
 	ret
-
-; Arrives here if A button is pressed when not moving + in map move state
-FindNPCOrObject:
-	ld a, $ff
-	ld [wScriptNPC], a
-	call FindPlayerMovementFromDirection
-	call GetPermissionOfMapPosition
-	and $40
-	jr z, .no_npc
-	farcall FindNPCAtLocation
-	jr c, .no_npc
-	ld a, [wLoadedNPCTempIndex]
-	ld [wScriptNPC], a
-	ld a, OWMODE_START_SCRIPT
-	jr .set_mode
-
-.no_npc
-	call HandleMoveModeAPress
-	jr nc, .exit
-	ld a, OWMODE_SCRIPT
-	jr .set_mode
-.exit
-	or a
-	ret
-
-.set_mode
-	ld [wOverworldMode], a
-	retscf
-
 OpenPauseMenu:
 	push hl
 	push bc
@@ -1216,7 +1141,6 @@ PauseMenu_Deck:
 	farcall SetDefaultPalettes
 	farcall DeckSelectionMenu
 	call Set_OBJ_8x8
-	ret
 
 PauseMenu_Card:
 	xor a
@@ -1225,9 +1149,7 @@ PauseMenu_Card:
 	call Set_OBJ_8x16
 	farcall SetDefaultPalettes
 	farcall HandleDeckSaveMachineMenu
-	call Set_OBJ_8x8
-	ret
-
+	jp Set_OBJ_8x8
 PauseMenu_Mail:
 	xor a
 	ldh [hSCX], a
@@ -1235,15 +1157,11 @@ PauseMenu_Mail:
 	call Set_OBJ_8x16
 	farcall SetDefaultPalettes
 	farcall PCMenu_ReadMail
-	call Set_OBJ_8x8
-	ret
-
+	jp Set_OBJ_8x8
 PauseMenu_Config:
 	farcall _PauseMenu_Config
-	ret
 
 PauseMenu_Exit:
-	farcall _PauseMenu_Exit
 	ret
 
 PCMenu:

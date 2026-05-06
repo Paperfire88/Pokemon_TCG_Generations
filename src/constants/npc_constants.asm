@@ -148,6 +148,16 @@ DEF NPC_DATA_LENGTH EQU const_value
 	const NPC_RONALD2                     ; $71
 	const NPC_RONALD3                     ; $72
 	const NPC_PLAYER_CREDITS              ; $73
+	const NPC_BERNARD              		  ; $74
+	const NPC_MELISSA              		  ; $75
+	const NPC_YUTA						  ; $76
+	const NPC_LIZ						  ; $77
+	const NPC_PARKER					  ; $78
+	const NPC_CASSIE					  ; $79
+	const NPC_CHIP						  ; $7a
+	const NPC_CATHERINE					  ; $7b
+	const NPC_JACOB						  ; $7c
+	const NPC_CODY						  ; $7d
 
 DEF NUM_NPCS EQU const_value
 

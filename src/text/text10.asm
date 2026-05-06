@@ -257,7 +257,7 @@ AttractName:
 	done
 
 AttractDescription:
-	text "After doing damage, Switch in 1 of" 
+	text "Before doing damage, Switch in 1 of" 
 	line "your opponent's Benched PKMN to the"
 	line "Active Spot. Then, that Active PKMN"
 	line "is now Confused."

@@ -167,5 +167,15 @@
 	const PALETTE_166				; $a6	
 	const PALETTE_167				; $a7	
 	const PALETTE_168				; $a8
-	const PALETTE_169				; $a9			
+	const PALETTE_169				; $a9
+	const PALETTE_BERNARD_PORTRAIT  ; $aa
+	const PALETTE_MELISSA_PORTRAIT  ; $ab
+	const PALETTE_YUTA_PORTRAIT  	; $ac
+	const PALETTE_LIZ_PORTRAIT  	; $ad
+	const PALETTE_PARKER_PORTRAIT  	; $ae
+	const PALETTE_CASSIE_PORTRAIT  	; $af
+	const PALETTE_CHIP_PORTRAIT  	; $b0
+	const PALETTE_CATHERINE_PORTRAIT; $b1
+	const PALETTE_JACOB_PORTRAIT	; $b2
+	const PALETTE_CODY_PORTRAIT		; $b3
 DEF NUM_PALETTES EQU const_value

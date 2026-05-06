@@ -7,17 +7,39 @@
     "editor.unicodeHighlight.allowedCharacters": {
         ";": true
     },
-    "editor.tokenColorCustomizations":{
-        "textMateRules":[{
+    "workbench.colorCustomizations": {
+        // "activityBar.foreground":"#1678c9",
+        "editor.lineHighlightBorder": "#abb2bf",
+    },
+        // {
+        //     "scope":[
+        //         "keyword.control.gbz80","support.function.gbz80","keyword.other.opcode.gbz80"
+        //         ],
+        //         "settings":{
+        //             "fontFamily": "Bahnschrift",
+        //         }
+        //     },       
+     "editor.tokenColorCustomizations":{
+        "textMateRules":[
+        {
             "scope":[
-                "text",
+                "string.quoted.double.asm","comment.line.asm"
                 ],
                 "settings":{
-                    "foreground": "#2eb841ff",
+                    "fontStyle": "italic",
                 }
             },
-        ]
-        
+        {
+            "scope":[
+                "variable.parameter.label.asm"
+                ],
+                "settings":{
+                    "background": "#ff0a0a",
+                }
+            },    
+        ],
+        "strings": "#ccccaf",
+        "numbers": "#FFFFFF",
     },
         "highlight.regexes": {
             "(// ?TODO:?)(.*)": [
@@ -50,6 +72,7 @@
             "(Effect:)(.*)": [
                 {
                 "color": "#18b912ff",
+                "backgroundColor": "#101010",
                 },
             ],
             "(Card:)(.*)": [
@@ -102,5 +125,6 @@
                 "color": "#a8a878",
                 },
             ],
-    }
+    },
+    "editor.language.colorizedBracketPairs": []
 }

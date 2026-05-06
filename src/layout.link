@@ -200,7 +200,11 @@ ROMX $49
 ROMX $4a		
 	"Custom Gfx10"
 ROMX $4b
-	"Custom Gfx11"					
+	"Custom Gfx11"
+ROMX $4c
+	"Custom Gfx12"
+ROMX $4d
+	"Custom Gfx13"
 WRAM0
 	"WRAM0"
 	"WRAM0 Duels 1"

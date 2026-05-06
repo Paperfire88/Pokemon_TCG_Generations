@@ -51,10 +51,10 @@ Poison50PercentEffectCommands: ; Inflicts Poison on a Coin Flip. so 50/50.
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, Poison50PercentEffect
 	dbw EFFECTCMDTYPE_AI, MayInflictPoison_AIEffect
 	db  $00
-VictreebelLureEffectCommands: ; After doing damage, Switch in 1 of your opponents Benched PKMN to the Active Spot.
+VictreebelLureEffectCommands: ; Before doing damage, Switch in 1 of your opponents Benched PKMN to the Active Spot.
 	db BANK("Effect Functions")
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, VictreebelLure_AssertPokemonInBench
-	dbw EFFECTCMDTYPE_AFTER_DAMAGE, AttractEffect
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, AttractEffect
 	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, VictreebelLure_SelectSwitchPokemon
 	dbw EFFECTCMDTYPE_AI_SELECTION, VictreebelLure_GetBenchPokemonWithLowestHP
 	db  $00
@@ -488,8 +488,12 @@ LeerEffectCommands:
 	db  $00
 PoisonWhipEffectCommands:
 	db BANK("Effect Functions")
-	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, PoisonEffect
-	;Falltrough
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Opp_CheckBench
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, StretchKick_BenchDamageEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, PoisonEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, StretchKick_PlayerSelectEffect
+	dbw EFFECTCMDTYPE_AI_SELECTION, VictreebelLure_GetBenchPokemonWithLowestHP
+	db  $00
 HitmonleeStretchKickEffectCommands:
 	db BANK("Effect Functions")
 	dbw EFFECTCMDTYPE_INITIAL_EFFECT_1, Opp_CheckBench
@@ -1047,9 +1051,9 @@ NoOppTrainersEffectCommands:
 
 LightningHasteEffectCommands:
 	db BANK("Effect Functions")
-  dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, LightningHaste_OncePerTurnCheck
-  dbw EFFECTCMDTYPE_BEFORE_DAMAGE, LightningHaste_AttachEnergyEffect
-  db  $00
+	dbw EFFECTCMDTYPE_INITIAL_EFFECT_2, LightningHaste_OncePerTurnCheck
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, LightningHaste_AttachEnergyEffect
+	db  $00
 
 ShinyFeatherEffectCommands:
 	db BANK("Effect Functions")		; Enters the field to trigger the pokepower. Gets a trainer card from discard. Modified Itemfinder effect. Ai doesn't understand this?
@@ -2281,7 +2285,8 @@ DastardlyJabEffectCommands:
 	db  $00	
 AssassinsRoseEffectCommands:
 	db BANK("Effect Functions")
-	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, AssassinsRoseEffect
+	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, PoisonBoostEffect
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, AssassinsRoseEffect
 	dbw EFFECTCMDTYPE_AI, PoisonBoostAIEffect
 	db  $00
 HauntEffectCommands:
@@ -2928,3 +2933,9 @@ TenguStrikeEffectCommands:
 	db BANK("Effect Functions 2")
 	dbw EFFECTCMDTYPE_BEFORE_DAMAGE, TenguStrikeEffect
 	db  $00
+SweetSpikeEffectCommands:
+	db BANK("Effect Functions")
+	dbw EFFECTCMDTYPE_AFTER_DAMAGE, SweetSpike_HealEffect
+	dbw EFFECTCMDTYPE_REQUIRE_SELECTION, SweetSpike_PlayerSelection
+	dbw EFFECTCMDTYPE_AI_SELECTION, SweetSpike_AI_Selection
+	db $00

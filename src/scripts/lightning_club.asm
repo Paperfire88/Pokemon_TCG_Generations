@@ -22,6 +22,11 @@ LightningClubAfterDuel:
 	db NPC_ISAAC
 	dw Script_BeatIsaac
 	dw Script_LostToIsaac
+
+	db NPC_CHIP
+	db NPC_CHIP
+	dw Script_BeatChip
+	dw Script_LostToChip
 	db $00
 
 Script_Jennifer:
@@ -182,3 +187,38 @@ Script_LostToIsaac:
 
 .ows_e522
 	print_text_quit_fully Text0641
+Preload_NPC_IF_ISAAC_BEATED:
+	get_event_value EVENT_BEAT_ISAAC
+	cp TRUE
+	ccf
+	ret	
+Script_Chip:
+	start_script
+	jump_if_event_greater_or_equal EVENT_CHIP_STATE, CHIP_DEFEATED, .DEFEATED
+	test_if_event_less_than EVENT_CHIP_STATE, CHIP_TALKED
+	print_variable_npc_text TextChipFirstTalk, TextChip4
+	set_event EVENT_CHIP_STATE, CHIP_TALKED
+	ask_question_jump ChipNPCDuelText, .OktoDuel
+	print_npc_text TextChip2
+	quit_script_fully
+.DEFEATED
+	print_npc_text TextChip4
+	ask_question_jump ChipNPCDuelText, .OktoDuel
+	print_npc_text TextChip2
+	quit_script_fully
+
+.OktoDuel
+	print_npc_text TextChip3
+	start_duel PRIZES_4, POWER_OF_FIRE_DECK_ID, MUSIC_DUEL_THEME_1
+	quit_script_fully
+Script_BeatChip:
+	start_script
+	set_event EVENT_CHIP_STATE, CHIP_DEFEATED
+	print_npc_text TextChipDefeat
+	give_booster_packs BOOSTER_COLOSSEUM_FIRE, BOOSTER_COLOSSEUM_FIRE, NO_BOOSTER
+	print_npc_text TextChipDefeat2
+	quit_script_fully
+
+Script_LostToChip:
+	start_script
+	print_text_quit_fully TextChipVictory

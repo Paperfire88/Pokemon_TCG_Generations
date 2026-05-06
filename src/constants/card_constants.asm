@@ -52,6 +52,7 @@
 	const ROSELIA
 	const ROSERADE
 	const LEAFEON                     ; $2e
+	const SHAYMIN
 	const TEPIG                  ; $30
 	const PIGNITE                  ; $31
 	const EMBOAR                   ; $32
@@ -91,6 +92,7 @@
 	const CHARMELEON
 	const CHARIZARD
 	const ENTEI                ; $40
+	const HEATRAN
 	const HOOH
 	const FROAKIE                    ; $41
 	const FROGADIER                   ; $42
@@ -136,6 +138,7 @@
 	const OMASTAR                     ; $5d
 	const REGICE
 	const SUICUNE               ; $
+	const KYOGRE
 	const MAGNEMITE              ; $69
 	const MAGNETON               ; $6b
 	const MAGNEZONE               ; $6c
@@ -175,6 +178,7 @@
 	const ZERAORA                 ; $75
 	const REGIELEKI
 	const RAIKOU                 ; $76
+	const MIRAIDON
 	const SANDILE                      ; $7d
 	const KROKOROK                     ; $7e
 	const KROOKODILE                     ; $7f
@@ -217,6 +221,8 @@
 	const TYRANTRUM                  ; $8d
 	const SCIZOR                      ; $2f
 	const REGIROCK
+	const GROUDON
+	const KORAIDON
 	const GALLADE
 	const RALTS
 	const KIRLIA
@@ -266,6 +272,7 @@
 	const CRESSELIA             ; $9f
 	const MEW                    ; $a2
 	const MEWTWO_LV60                 ; $9e
+	const XERNEAS
 	const DEINO                        ; $8e
 	const ZWEILOUS                     ; $8f
 	const HYDREIGON                    ; $90
@@ -309,6 +316,7 @@
 	const WEAVILE                    ; $58
 	const NIHILEGO
 	const DARKRAI
+	const YVELTAL
 	;Metal
 	const ARON
 	const LAIRON
@@ -368,6 +376,8 @@
 	const REGIGIGAS
 	const RAYQUAZA                   ; $b4
 	const LUGIA              ; $c1
+	const ARCEUS
+	const MISSINGNO
 	const PROFESSOR_OAK               ; $c3
 	const IMPOSTER_PROFESSOR_OAK      ; $c4
 	const PROFESSOR_ELM

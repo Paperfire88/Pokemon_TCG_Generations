@@ -53,6 +53,7 @@ DeckAIPointerTable::
 	dw AIActionTable_GeneralNoRetreat        ; FLAMETHROWER_DECK
 	dw AIActionTable_GeneralNoRetreat        ; RESHUFFLE_DECK
 	dw AIActionTable_GeneralNoRetreat    ; IMAKUNI_DECK
+	dw AIActionTable_GeneralNoRetreat        ; POWER_OF_FIRE_DECK_ID
 	dw AIActionTable_GeneralNoRetreat        ; TEPIG_AND_FRIENDS_DECK
 	dw AIActionTable_GeneralNoRetreat        ; TEPIG_EXTRA_DECK
 	dw AIActionTable_GeneralNoRetreat        ; TEPIG_AND_FRIENDS_DECK

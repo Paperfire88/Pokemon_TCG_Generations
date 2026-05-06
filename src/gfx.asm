@@ -1171,7 +1171,26 @@ AaronPortrait::
 	INCBIN "gfx/duelists/aaron.attrmap.lz"
 PaletteAaronPortrait::
 	INCBIN "gfx/duelists/aaron.pal"
-
+BernardPortrait::	
+	INCBIN "gfx/duelists/bernard.2bpp"
+	INCBIN "gfx/duelists/bernard.attrmap.lz"
+PaletteBernardPortrait::
+	INCBIN "gfx/duelists/bernard.pal"
+MelissaPortrait::	
+	INCBIN "gfx/duelists/melissa.2bpp"
+	INCBIN "gfx/duelists/melissa.attrmap.lz"
+PaletteMelissaPortrait::
+	INCBIN "gfx/duelists/melissa.pal"
+YutaPortrait::	
+	INCBIN "gfx/duelists/yuta.2bpp"
+	INCBIN "gfx/duelists/yuta.attrmap.lz"
+PaletteYutaPortrait::
+	INCBIN "gfx/duelists/yuta.pal"
+LizPortrait::	
+	INCBIN "gfx/duelists/liz.2bpp"
+	INCBIN "gfx/duelists/liz.attrmap.lz"
+PaletteLizPortrait::
+	INCBIN "gfx/duelists/liz.pal"		
 SECTION "Card Gfx 1", ROMX
 
 CardGraphics::

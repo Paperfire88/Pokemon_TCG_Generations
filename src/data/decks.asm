@@ -64,6 +64,7 @@ DeckPointers::
 	dw FlamethrowerDeck
 	dw ReshuffleDeck
 	dw ImakuniDeck
+	dw PowerOfFireDeck	
 	IF LC_CHALLENGE == 1
 	dw DeinoAndFriendsDeckLC
 	dw DeinoExtraDeck
@@ -2087,3 +2088,24 @@ RaltsAndFriendsDeckLC:
     card_item POKEDEX,         2
     deck_list_end
     tx RaltsAndFriendsDeckName
+PowerOfFireDeck:
+	deck_list_start
+	card_item FIRE_ENERGY,             16
+	card_item TEPIG,               4
+	card_item PIGNITE,               3
+	card_item EMBOAR,                2
+	card_item HOUNDOUR,                   4
+	card_item HOUNDOOM,           3
+	card_item MAGMAR,              3
+	card_item MAGMORTAR,              2
+	card_item FLAREON,             2
+	card_item EEVEE,                    3
+	card_item BILL,                     4
+	card_item PROFESSOR_OAK,           3
+	card_item ENERGY_SEARCH, 4
+	card_item ENERGY_RETRIEVAL,         2
+	card_item SWITCH,                   1
+	card_item PLUSPOWER,                2
+	card_item BOSS_ORDERS,             2
+	deck_list_end
+	tx PowerOfFireDeckName

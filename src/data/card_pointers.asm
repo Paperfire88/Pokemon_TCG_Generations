@@ -55,6 +55,7 @@ CardPointers::
 	dab RoseliaCard
 	dab RoseradeCard
 	dab LeafeonCard
+	dab ShayminCard
 	;Fire
 	dab TepigCard
 	dab PigniteCard
@@ -95,6 +96,7 @@ CardPointers::
 	dab CharmeleonCard
 	dab CharizardCard
 	dab EnteiCard
+	dab HeatranCard
 	dab HoohCard
 	;Water
 	dab FroakieCard
@@ -141,6 +143,7 @@ CardPointers::
 	dab OmastarCard
 	dab RegiceCard
 	dab SuicuneCard
+	dab KyogreCard
 	;Lightning
 	dab MagnemiteLv13Card
 	dab MagnetonLv28Card
@@ -180,7 +183,8 @@ CardPointers::
 	dab EelektrossCard
 	dab ZeraoraCard
 	dab RegielekiCard
-	dab RaikouCard	
+	dab RaikouCard
+	dab MiraidonCard
 	; Fighting
 	dab SandileCard
 	dab KrokorokCard
@@ -225,6 +229,8 @@ CardPointers::
 	dab ScizorCard
 	dab GalladeCard
 	dab RegirockCard
+	dab GroudonCard
+	dab KoraidonCard
 	;Psychic
 	dab RaltsCard
 	dab KirliaCard
@@ -274,6 +280,7 @@ CardPointers::
 	dab CresseliaCard
 	dab MewLv23Card
 	dab MewtwoCard
+	dab XerneasCard
 	;Darkness
 	dab DeinoCard
 	dab ZweilousCard
@@ -318,6 +325,7 @@ CardPointers::
 	dab WeavileCard
 	dab NihilegoCard
 	dab DarkraiCard
+	dab YveltalCard
 	;Metal
 	dab AronCard
 	dab LaironCard
@@ -378,6 +386,8 @@ CardPointers::
 	dab RegigigasCard
 	dab RayquazaCard
 	dab LugiaCard
+	dab ArceusCard
+	dab MissingNoCard
 	;Trainers
 	dab ProfessorOakCard
 	dab ImposterProfessorOakCard

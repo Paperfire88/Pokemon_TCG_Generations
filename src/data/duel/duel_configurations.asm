@@ -368,5 +368,13 @@ DeckIDDuelConfigurations:
 	tx StrangeLifeformText ; rank
 	dw NULL ; element
 
+	db POWER_OF_FIRE_DECK_ID ; deck ID
+	db PORTRAIT_BERNARD ; NPC portrait
+	tx BernardNPCName ; name text ID
+	db PRIZES_6 ; number of prize cards
+	db MUSIC_DUEL_THEME_1 ; theme
+	tx FireGRLeaderText ; rank
+	tx ChallengeMachineFireIconText ; element
+
 	assert_table_length NUM_AI_DECK_IDS -8
 	db -1 ; end

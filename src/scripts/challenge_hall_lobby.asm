@@ -2,16 +2,12 @@ Preload_ChallengeHallNPCs2: ; Challenge Cup Inactive
 	call Preload_ChallengeHallNPCs1
 	ccf
 	ret
-
 Preload_ChallengeHallNPCs1: ; Challenge Cup Active
 	get_event_value EVENT_CHALLENGE_CUP_STARTING
 	or a
-	jr z, .quit
-	ld a, MUSIC_CHALLENGE_HALL
-	ld [wDefaultSong], a
-	scf
-.quit
-	ret
+	ret z
+	bank1call Load_Challenge_Hall_Music
+	retscf
 
 ChallengeHallLobbyLoadMap:
 	get_event_value EVENT_RONALD_CHALLENGE_HALL_LOBBY_STATE

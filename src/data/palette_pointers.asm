@@ -176,5 +176,15 @@ palette_pointer PalettePlayerPortrait,    3, 0 ; PALETTE_PLAYER_PORTRAIT
 	palette_pointer Palette166, 8, 0 ; PALETTE 166
 	palette_pointer Palette167, 8, 0 ; PALETTE 167	
 	palette_pointer Palette168, 8, 0 ; PALETTE 168
-	palette_pointer Palette169, 8, 0 ; PALETTE 169		
+	palette_pointer Palette169, 8, 0 ; PALETTE 169
+	palette_pointer PaletteBernardPortrait,     3, 0 ; PALETTE_BERNARD_PORTRAIT
+	palette_pointer PaletteMelissaPortrait,     3, 0 ; PALETTE_MELISSA_PORTRAIT
+	palette_pointer PaletteYutaPortrait,     3, 0 ; PALETTE_YUTA_PORTRAIT
+	palette_pointer PaletteLizPortrait,     3, 0 ; PALETTE_LIZ_PORTRAIT
+	palette_pointer PaletteParkerPortrait,     3, 0 ; PALETTE_PARKER_PORTRAIT
+	palette_pointer PaletteCassiePortrait,     3, 0 ; PALETTE_CASSIE_PORTRAIT
+	palette_pointer PaletteChipPortrait,     3, 0 ; PALETTE_CHIP_PORTRAIT
+	palette_pointer PaletteCatherinePortrait,     3, 0 ; PALETTE_CATHERINE_PORTRAIT
+	palette_pointer PaletteJacobPortrait,     3, 0 ; PALETTE_JACOB_PORTRAIT
+	palette_pointer PaletteCodyPortrait,     3, 0 ; PALETTE_CODY_PORTRAIT
 	assert_table_length NUM_PALETTES

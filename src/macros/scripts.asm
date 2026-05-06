@@ -107,8 +107,8 @@ ENDM
 	const ScriptCommand_EndScript8_index                                     ; $63
 	const ScriptCommand_EndScript9_index                                     ; $64
 	const ScriptCommand_PickRareFireCard_index                      		 ; $65
-	const ScriptCommand_PickRareFireCard_index2                      		 ; $65
-	const ScriptCommand_PickRareFireCard_index3                      		 ; $65
+	const ScriptCommand_PickRareFireCard_index2                      		 ; $66
+	const ScriptCommand_CheckSoloEnergyRequirement_index                     ; $67
 
 DEF NUM_SCRIPT_COMMANDS EQU const_value
 
@@ -234,7 +234,11 @@ MACRO jump_if_any_energy_cards_in_collection
 	run_command ScriptCommand_JumpIfAnyEnergyCardsInCollection
 	dw \1 ; script label
 ENDM
-
+MACRO duel_requirement_check
+	run_command ScriptCommand_CheckSoloEnergyRequirement
+	dw \1 ; script label
+	dw \2 ; Script Label
+ENDM
 ; Removes all of the player's energy cards from their collection
 MACRO remove_all_energy_cards_from_collection
 	run_command ScriptCommand_RemoveAllEnergyCardsFromCollection

@@ -8129,8 +8129,11 @@ HandleOnPlayEnergyEffects:
 	jr nz,.ConductivityScenario
 	call SwapTurn
 	ld e, PLAY_AREA_ARENA
-  	farcall Put1DamageCounterOnTarget
+  	farcall Put1DamageCounterOnTarget2
 	call SwapTurn
+	push af
+	bank1call HandleBetweenTurnKnockOuts
+	pop af
 	ret
 .ConductivityScenario ;Cataclyptic code
 	call SwapTurn

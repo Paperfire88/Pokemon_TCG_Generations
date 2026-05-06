@@ -147,6 +147,12 @@ DEF SPRITE_FRAME_OFFSET_SIZE EQU 4
 	const SPRITE_PSYCHIC            ; $6d
 	const SPRITE_FIGHTING           ; $6e
 	const SPRITE_OW_MINT            ; $6f
-	const SPRITE_DARKNESS
-
+	const SPRITE_DARKNESS			; $70
+	const SPRITE_OW_BERNARD			; $71
+	const SPRITE_OW_MELISSA			; $72
+	const SPRITE_OW_YUTA			; $73
+	const SPRITE_OW_CASSIE			; $74
+	const SPRITE_OW_CHIP			; $75
+	const SPRITE_OW_CATHERINE		; $76
+	const SPRITE_OW_JACOB			; $77
 DEF NUM_SPRITES EQU const_value

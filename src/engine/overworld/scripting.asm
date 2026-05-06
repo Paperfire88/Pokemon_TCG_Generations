@@ -81,14 +81,11 @@ Func_c998:
 Func_c9b8:
 	ld l, MAP_SCRIPT_LOAD_MAP
 	jr CallMapScriptPointerIfExists
-
 Func_c9bc:
 	ld l, MAP_SCRIPT_AFTER_DUEL
 	jr CallMapScriptPointerIfExists
-
 Func_c9c0:
 	ld l, MAP_SCRIPT_MOVED_PLAYER
-
 CallMapScriptPointerIfExists::
 	call GetMapScriptPointer
 	ret nc
@@ -97,18 +94,15 @@ CallMapScriptPointerIfExists::
 Func_c9c7:
 	ld l, MAP_SCRIPT_CLOSE_TEXTBOX
 	jr CallMapScriptPointerIfExists
-
 ClearEvents:
 	push hl
 	push bc
 	ld hl, wEventVars
-	ld bc, EVENT_VAR_BYTES
-.loop
+	ld b, EVENT_VAR_BYTES
 	xor a
+.loop
 	ld [hli], a
-	dec bc
-	ld a, b
-	or c
+	dec b
 	jr nz, .loop
 	pop bc
 	pop hl
@@ -119,8 +113,50 @@ DetermineImakuniAndChallengeHall:
 	xor a
 	ld [wEventVars + EVENT_VAR_BYTES - 1], a
 	call DetermineImakuniRoom
-	jp DetermineChallengeHallEvent
-
+DetermineChallengeHallEvent:
+	ld a, [wOverworldMapSelection]
+	cp OWMAP_CHALLENGE_HALL
+	ret z
+	get_event_value EVENT_RECEIVED_LEGENDARY_CARDS
+	or a
+	jr nz, .challenge_cup_three
+; challenge cup two
+	get_event_value EVENT_CHALLENGE_CUP_2_STATE
+	cp CHALLENGE_CUP_OVER
+	ret z
+	or a ; cp CHALLENGE_CUP_NOT_STARTED
+	jr z, .challenge_cup_one
+	cp CHALLENGE_CUP_WON
+	jr z, .close_challenge_cup_one
+	ld c, CHALLENGE_CUP_READY_TO_START
+	set_event_value EVENT_CHALLENGE_CUP_2_STATE
+	jr .close_challenge_cup_one
+.challenge_cup_one
+	get_event_value EVENT_CHALLENGE_CUP_1_STATE
+	cp CHALLENGE_CUP_OVER
+	ret z
+	or a ; cp CHALLENGE_CUP_NOT_STARTED
+	ret z
+	cp CHALLENGE_CUP_WON
+	ret z
+	ld c, CHALLENGE_CUP_READY_TO_START
+	set_event_value EVENT_CHALLENGE_CUP_1_STATE
+	ret
+.challenge_cup_three
+	call UpdateRNGSources
+	ld c, CHALLENGE_CUP_READY_TO_START
+	and %11
+	or a
+	jr z, .start_challenge_cup_three
+	ld c, CHALLENGE_CUP_NOT_STARTED
+.start_challenge_cup_three
+	set_event_value EVENT_CHALLENGE_CUP_3_STATE
+	ld c, CHALLENGE_CUP_OVER
+	set_event_value EVENT_CHALLENGE_CUP_2_STATE
+.close_challenge_cup_one
+	ld c, CHALLENGE_CUP_OVER
+	set_event_value EVENT_CHALLENGE_CUP_1_STATE
+	ret
 ; Determines what room Imakuni is in when you reset
 ; Skips current room and does not occur if you haven't talked to Imakuni
 DetermineImakuniRoom:
@@ -148,55 +184,6 @@ ImakuniPossibleRooms:
 	db SCIENCE_CLUB_LOBBY
 	db LIGHTNING_CLUB_LOBBY
 	db WATER_CLUB_LOBBY
-
-DetermineChallengeHallEvent:
-	ld a, [wOverworldMapSelection]
-	cp OWMAP_CHALLENGE_HALL
-	jr z, .done
-	get_event_value EVENT_RECEIVED_LEGENDARY_CARDS
-	or a
-	jr nz, .challenge_cup_three
-; challenge cup two
-	get_event_value EVENT_CHALLENGE_CUP_2_STATE
-	cp CHALLENGE_CUP_OVER
-	jr z, .done
-	or a ; cp CHALLENGE_CUP_NOT_STARTED
-	jr z, .challenge_cup_one
-	cp CHALLENGE_CUP_WON
-	jr z, .close_challenge_cup_one
-	ld c, CHALLENGE_CUP_READY_TO_START
-	set_event_value EVENT_CHALLENGE_CUP_2_STATE
-	jr .close_challenge_cup_one
-.challenge_cup_one
-	get_event_value EVENT_CHALLENGE_CUP_1_STATE
-	cp CHALLENGE_CUP_OVER
-	jr z, .done
-	or a ; cp CHALLENGE_CUP_NOT_STARTED
-	jr z, .done
-	cp CHALLENGE_CUP_WON
-	jr z, .done
-	ld c, CHALLENGE_CUP_READY_TO_START
-	set_event_value EVENT_CHALLENGE_CUP_1_STATE
-	jr .done
-.challenge_cup_three
-	call UpdateRNGSources
-	ld c, CHALLENGE_CUP_READY_TO_START
-	and %11
-	or a
-	jr z, .start_challenge_cup_three
-	ld c, CHALLENGE_CUP_NOT_STARTED
-.start_challenge_cup_three
-	set_event_value EVENT_CHALLENGE_CUP_3_STATE
-	jr .close_challenge_cup_two
-.close_challenge_cup_two
-	ld c, CHALLENGE_CUP_OVER
-	set_event_value EVENT_CHALLENGE_CUP_2_STATE
-.close_challenge_cup_one
-	ld c, CHALLENGE_CUP_OVER
-	set_event_value EVENT_CHALLENGE_CUP_1_STATE
-.done
-	ret
-
 GetStackEventValue:
 	call GetByteAfterCall
 ;	fallthrough
@@ -221,7 +208,6 @@ GetEventValue::
 	pop hl
 	or a
 	ret
-
 SetStackEventZero:
 	call GetByteAfterCall
 	push bc
@@ -282,25 +268,21 @@ GetByteAfterCall:
 MaxStackEventValue:
 	call GetByteAfterCall
 ;	fallthrough
-
 MaxOutEventValue:
 	push bc
 	ld c, $ff
 	call SetEventValue
 	pop bc
 	ret
-
 SetStackEventFalse:
 	call GetByteAfterCall
 ;	fallthrough
-
 ZeroOutEventValue:
 	push bc
 	ld c, 0
 	call SetEventValue
 	pop bc
 	ret
-
 TryGiveMedalPCPacks:
 	push hl
 	push bc
@@ -499,6 +481,16 @@ EventVarMasks:
 	event_def $1b, %11110000 ; EVENT_SAM_MENU_CHOICE
 	event_def $1b, %00001111 ; EVENT_AARON_DECK_MENU_CHOICE
 	event_def $1d, %00000001 ; EVENT_PLAYER_GENDER
+	event_def $1d, %11110000 ; EVENT_BERNARD_STATE
+	event_def $1e, %00000011 ; EVENT_MELISSA_STATE
+	event_def $1e, %00001000 ; EVENT_YUTA_STATE
+	event_def $1f, %00010000 ; EVENT_LIZ_STATE
+	event_def $1f, %00110000 ; EVENT_PARKER_STATE
+	event_def $20, %11000000 ; EVENT_CASSIE_STATE
+	event_def $20, %00001100 ; EVENT_CHIP_STATE
+	event_def $21, %01000000 ; EVENT_CATHERINE_STATE
+	event_def $21, %00000100 ; EVENT_JACOB_STATE
+	event_def $22, %00111100 ; EVENT_CODY_STATE
 	assert_table_length NUM_EVENT_FLAGS
 
 ; Used for basic level objects that just print text and quit
@@ -508,8 +500,23 @@ PrintInteractableObjectText:
 	ld h, [hl]
 	ld l, a
 	call Func_cc32
-	jp CloseAdvancedDialogueBox
-
+; closes dialogue window. seems to be for other things as well.
+CloseAdvancedDialogueBox:
+	ld a, [wOverworldNPCFlags]
+	bit AUTO_CLOSE_TEXTBOX, a
+	call nz, CloseTextBox
+	ld a, [wOverworldNPCFlags]
+	bit RESTORE_FACING_DIRECTION, a
+	jr z, .skip
+	ld a, [wScriptNPC]
+	ld [wLoadedNPCTempIndex], a
+	farcall Func_1c5e9
+.skip
+	xor a
+	ld [wOverworldNPCFlags], a
+	ld a, [wOverworldModeBackup]
+	ld [wOverworldMode], a
+	ret
 Func_cc32:
 	push hl
 	ld hl, wCurrentNPCNameTx
@@ -532,7 +539,6 @@ Script_LegendaryCardBottomLeft:
 Script_LegendaryCardBottomRight:
 Script_LegendaryCardRightSpark:
 	jp CloseAdvancedDialogueBox
-
 ; Enters into the script loop, continuing until wBreakScriptLoop > 0
 ; When the loop is broken, it resumes normal code execution where script ended
 ; Note: Some scripts "double return" and skip this.
@@ -558,27 +564,66 @@ RST20::
 IncreaseScriptPointerBy1:
 	ld a, 1
 	jr IncreaseScriptPointer
-
 IncreaseScriptPointerBy2:
 	ld a, 2
 	jr IncreaseScriptPointer
-
+ScriptCommand_SetNextNPCAndScript:
+	ld a, c
+	ld [wTempNPC], a
+	call GetScriptArgs2AfterPointer
+	call SetNextNPCAndScript
+	;falltrough
 IncreaseScriptPointerBy4:
 	ld a, 4
 	jr IncreaseScriptPointer
-
+; prints text arg 1 or arg 2 depending on wScriptControlByte.
+ScriptCommand_PrintVariableNPCText:
+	ld a, [wScriptControlByte]
+	or a
+	call z, GetScriptArgs3AfterPointer
+	ld l, c
+	ld h, b
+	call Func_cc32
+	;falltrough
 IncreaseScriptPointerBy5:
 	ld a, 5
 	jr IncreaseScriptPointer
-
+; args: unused, room, new player x, new player y, new player direction
+ScriptCommand_EnterMap:
+	ld a, [wScriptPointer]
+	ld l, a
+	ld a, [wScriptPointer + 1]
+	ld h, a
+	inc hl
+	ld a, [hli]
+	ld a, [hli]
+	ld [wTempMap], a
+	ld a, [hli]
+	ld [wTempPlayerXCoord], a
+	ld a, [hli]
+	ld [wTempPlayerYCoord], a
+	ld a, [hli]
+	ld [wTempPlayerDirection], a
+	ld hl, wOverworldTransition
+	set 4, [hl]
+	;falltrough
 IncreaseScriptPointerBy6:
 	ld a, 6
 	jr IncreaseScriptPointer
-
+ScriptCommand_PrintTextForChallengeCup:
+	get_event_value EVENT_CHALLENGE_CUP_NUMBER
+	dec a
+	and %11
+	add a
+	inc a
+	call GetScriptArgsAfterPointer
+	ld l, c
+	ld h, b
+	call Func_cc32
+	;falltrough
 IncreaseScriptPointerBy7:
 	ld a, 7
 	jr IncreaseScriptPointer
-
 IncreaseScriptPointerBy3:
 	ld a, 3
 IncreaseScriptPointer:
@@ -590,22 +635,18 @@ IncreaseScriptPointer:
 	adc 0
 	ld [wScriptPointer + 1], a
 	ret
-
 SetScriptPointer:
 	ld hl, wScriptPointer
 	ld [hl], c
 	inc hl
 	ld [hl], b
 	ret
-
 GetScriptArgs1AfterPointer:
 	ld a, 1
 	jr GetScriptArgsAfterPointer
-
 GetScriptArgs2AfterPointer:
 	ld a, 2
 	jr GetScriptArgsAfterPointer
-
 GetScriptArgs3AfterPointer:
 	ld a, 3
 GetScriptArgsAfterPointer:
@@ -623,33 +664,27 @@ GetScriptArgsAfterPointer:
 	pop hl
 	or b
 	ret
-
 SetScriptControlBytePass:
 	ld a, $ff
 	ld [wScriptControlByte], a
 	ret
-
 SetScriptControlByteFail:
 	xor a
 	ld [wScriptControlByte], a
 	ret
-
 ; Exits Script mode and runs the next instruction like normal
 ScriptCommand_EndScript:
 	ld a, TRUE
 	ld [wBreakScriptLoop], a
 	jp IncreaseScriptPointerBy1
-
 ScriptCommand_CloseAdvancedTextBox:
 	call CloseAdvancedDialogueBox
 	jp IncreaseScriptPointerBy1
-
 ScriptCommand_QuitScriptFully:
 	call ScriptCommand_CloseAdvancedTextBox
 	call ScriptCommand_EndScript
 	pop hl
 	ret
-
 ; args: 2-Text String Index
 ScriptCommand_PrintNPCText:
 	ld l, c
@@ -745,35 +780,10 @@ SetNPCDuelParams:
 	ld a, c
 	ld [wDuelTheme], a
 	ret
-
-; prints text arg 1 or arg 2 depending on wScriptControlByte.
-ScriptCommand_PrintVariableNPCText:
-	ld a, [wScriptControlByte]
-	or a
-	call z, GetScriptArgs3AfterPointer
-.print_text
-	ld l, c
-	ld h, b
-	call Func_cc32
-	jp IncreaseScriptPointerBy5
-
-ScriptCommand_PrintTextForChallengeCup:
-	get_event_value EVENT_CHALLENGE_CUP_NUMBER
-	dec a
-	and %11
-	add a
-	inc a
-	call GetScriptArgsAfterPointer
-	ld l, c
-	ld h, b
-	call Func_cc32
-	jp IncreaseScriptPointerBy7
-
 ScriptCommand_PrintVariableText:
 	ld a, [wScriptControlByte]
 	or a
 	call z, GetScriptArgs3AfterPointer
-.print_text
 	ld l, c
 	ld h, b
 	call Func_c891
@@ -1059,7 +1069,35 @@ ScriptCommand_TakeCard:
 	ld e, c
 	call RemoveCardFromCollection
 	jp IncreaseScriptPointerBy3
-
+; check if the deck has energy cards of different types than b
+; return carry if so
+ScriptCommand_CheckSoloEnergyRequirement:
+	ld b, TYPE_ENERGY_GRASS
+	ld c, DECK_SIZE
+	ld hl, wPlayerDeck
+.scan_deck_loop
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+	inc hl
+	call GetCardType
+	bit 3, a
+	jr z, .non_energy
+	cp b
+	jr nz, .fail
+.non_energy
+	dec c
+	jr nz, .scan_deck_loop
+.pass_try_jump
+	call SetScriptControlBytePass
+	call GetScriptArgs1AfterPointer
+	jr z, .no_jump
+	jp SetScriptPointer
+.no_jump
+	jp IncreaseScriptPointerBy3
+.fail
+	call SetScriptControlByteFail
+	jp IncreaseScriptPointerBy3
 ScriptCommand_JumpIfAnyEnergyCardsInCollection:
 	ld de, GRASS_ENERGY
 	ld b, 0
@@ -1264,14 +1302,6 @@ ScriptCommand_SetDialogNPC:
 	ld a, c
 	farcall SetNPCDialogName
 	jp IncreaseScriptPointerBy2
-
-ScriptCommand_SetNextNPCAndScript:
-	ld a, c
-	ld [wTempNPC], a
-	call GetScriptArgs2AfterPointer
-	call SetNextNPCAndScript
-	jp IncreaseScriptPointerBy4
-
 ScriptCommand_SetSpriteAttributes:
 	ld a, [wScriptNPC]
 	ld [wLoadedNPCTempIndex], a
@@ -1433,17 +1463,21 @@ ScriptCommand_OpenMenu:
 	jp IncreaseScriptPointerBy1
 
 ScriptCommand_PickRareFireCard3:
-	ld a, (FindRandomCards.end - FindRandomCards) / 4 - 2
-	call Random
-	add 2
-	ld hl, FindRandomCards
-	jp ScriptCommand_PickChallengeCupPrizeCard.get_card_from_list
+	; ld a, (FindRandomCards.end - FindRandomCards) / 4 - 2
+	; call Random
+	; add 2
+	; ld hl, FindRandomCards
+	; jp ScriptCommand_PickChallengeCupPrizeCard.get_card_from_list
+	ret
 ScriptCommand_PickRareFireCard2:
-	ld a, (FindRandomCards.end - FindRandomCards) / 4 - 2
-	call Random
-	add 2
-	ld hl, FindRandomCards
-	jp ScriptCommand_PickChallengeCupPrizeCard.get_card_from_list
+	; ld a, (FindRandomCards.end - FindRandomCards) / 4 - 2
+	; call Random
+	; add 2
+	; ld hl, FindRandomCards
+	; jp ScriptCommand_PickChallengeCupPrizeCard.get_card_from_list
+	ret
+ScriptCommand_PickRareFireCard:	
+	ret	
 ScriptCommand_PickChallengeCupPrizeCard:
 	get_event_value EVENT_CHALLENGE_CUP_NUMBER
 	dec a
@@ -1669,15 +1703,13 @@ ShowMultichoiceTextbox:
 	ld h, [hl]
 	ld l, a
 	or h
-	jr z, .no_text_2
+	ret z
 	add hl, bc
 	ld a, [hli]
 	ld [wTxRam2], a
 	ld a, [hl]
 	ld [wTxRam2 + 1], a
-.no_text_2
 	ret
-
 ScriptCommand_ShowSamNormalMultichoice:
 	ld hl, .multichoice_menu_args
 	xor a
@@ -1744,27 +1776,6 @@ ScriptCommand_OpenDeckMachine:
 	call ResumeSong
 	call ReturnToOverworldNoCallback
 	jp IncreaseScriptPointerBy2
-
-; args: unused, room, new player x, new player y, new player direction
-ScriptCommand_EnterMap:
-	ld a, [wScriptPointer]
-	ld l, a
-	ld a, [wScriptPointer + 1]
-	ld h, a
-	inc hl
-	ld a, [hli]
-	ld a, [hli]
-	ld [wTempMap], a
-	ld a, [hli]
-	ld [wTempPlayerXCoord], a
-	ld a, [hli]
-	ld [wTempPlayerYCoord], a
-	ld a, [hli]
-	ld [wTempPlayerDirection], a
-	ld hl, wOverworldTransition
-	set 4, [hl]
-	jp IncreaseScriptPointerBy6
-
 ScriptCommand_FlashScreen:
 	farcall FlashScreenToWhite
 	jp IncreaseScriptPointerBy2
@@ -1952,7 +1963,6 @@ ScriptCommand_ZeroOutEventValue:
 	ld a, c
 	call ZeroOutEventValue
 	jp IncreaseScriptPointerBy2
-
 ScriptCommand_JumpIfEventTrue:
 	ld a, c
 	call GetEventValue
@@ -2010,7 +2020,7 @@ Func_d4fb:
 	ld c, CHALLENGE_CUP_OVER
 	set_event_value EVENT_CHALLENGE_CUP_1_STATE
 	ret
-INCLUDE "scripts/FindCard.asm"
+
 INCLUDE "scripts/mason_laboratory.asm"
 INCLUDE "scripts/deck_machine_room.asm"
 

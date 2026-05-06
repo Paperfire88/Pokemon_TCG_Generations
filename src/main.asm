@@ -9,6 +9,7 @@ INCLUDE "engine/duel/core.asm"
 
 SECTION "Menus Common", ROMX
 INCLUDE "engine/menus/common.asm"
+INCLUDE "engine/overworld/map_scripts.asm"
 
 SECTION "Menus 1", ROMX
 INCLUDE "engine/menus/duel.asm"
@@ -21,6 +22,7 @@ INCLUDE "engine/menus/deck_machine.asm"
 SECTION "Overworld Scripting", ROMX
 INCLUDE "engine/overworld/overworld.asm"
 INCLUDE "engine/overworld/scripting.asm"
+; 
 
 SECTION "Menus 2", ROMX
 INCLUDE "engine/menus/init_menu.asm"
@@ -184,6 +186,10 @@ SECTION "Custom Gfx10", ROMX
 INCLUDE "custom/gfx10.asm"
 SECTION "Custom Gfx11", ROMX
 INCLUDE "custom/gfx11.asm"
+SECTION "Custom Gfx12", ROMX
+INCLUDE "custom/gfx12.asm"
+SECTION "Custom Gfx13", ROMX
+INCLUDE "custom/gfx13.asm"
 SECTION "Gfx", ROMX
 INCLUDE "engine/gfx/gfx_table_pointers.asm"
 INCLUDE "engine/gfx/tilemaps.asm"

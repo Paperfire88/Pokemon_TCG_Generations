@@ -75,25 +75,13 @@ Script_Man1:
 	print_text_quit_fully Man1GaveAllCardsText
 
 Preload_ImakuniInFightingClubLobby:
-	get_event_value EVENT_IMAKUNI_STATE
-	cp IMAKUNI_MENTIONED
-	jr z, .load_imakuni
-	or a ; cp IMAKUNI_NOT_MENTIONED
-	jr z, .dont_load
-	get_event_value EVENT_TEMP_DUELED_IMAKUNI
-	jr nz, .dont_load
+	call Check_Imakuni_State
+	ret nz
 	get_event_value EVENT_IMAKUNI_ROOM
 	cp IMAKUNI_FIGHTING_CLUB
-	jr z, .load_imakuni
-.dont_load
+	jp z, load_imakuni
 	or a
 	ret
-
-.load_imakuni
-	ld a, MUSIC_IMAKUNI
-	ld [wDefaultSong], a
-	retscf
-
 Script_Imakuni:
 	start_script
 	set_event EVENT_IMAKUNI_STATE, IMAKUNI_TALKED

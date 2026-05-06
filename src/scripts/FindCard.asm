@@ -1,6 +1,7 @@
 ScriptCommand_PickRareFireCard:
 	ld a, (FindRandomCards.end - FindRandomCards) / 4 - 2
 	call Random
+	call Random
 	add 2
 	ld hl, FindRandomCards
 	farcall ScriptCommand_PickChallengeCupPrizeCard.get_card_from_list
@@ -24,7 +25,6 @@ FindRandomCards:
 	dw FROSLASS
 	dw GOURGEIST
 	dw PIKACHU
-	dw JIRACHI
 	dw ESPEON                        ; $9c
 	dw FLOATZEL                     ; $45
 	dw CLAUNCHER                      ; $4f
@@ -106,7 +106,6 @@ FindRandomCards:
 	dw TANGROWTH                ; $2d
 	dw HORSEA                      ; $51
 	dw HAWLUCHA                        ; $83
-	dw MEW                    ; $a2
 	dw KROKOROK                     ; $7e
 	dw SKARMORY
 	dw LUCARIO
@@ -163,7 +162,6 @@ FindRandomCards:
 	dw GOTHITELLE
 	dw PAWNIARD
 	dw SEADRA                      ; $52
-	dw CRESSELIA             ; $9f
 	dw DRAMPA                   ; $b7
 	dw GASTLY
 	dw WOOPER
@@ -252,7 +250,6 @@ FindRandomCards:
 	dw MIMIKYU                     ; $a0
 	dw TINKATON
 	dw CHEWTLE                      ; $59
-	dw CELEBI               ; $0a
 	dw LEAFEON                     ; $2e
 	dw GENGAR
 	dw GHOLDENGO

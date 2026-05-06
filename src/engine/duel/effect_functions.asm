@@ -1348,7 +1348,16 @@ AIPickAttackForAmnesia:
 .chosen
 	ld a, e
 	jp SwapTurn
-
+SweetSpike_AI_Selection:	
+	ld a, DUELVARS_ARENA_CARD_STAGE
+	get_turn_duelist_var
+	or a
+	jr nz, GetBenchPokemonWithLowestHP2
+	retscf
+GetBenchPokemonWithLowestHP2:
+	call SwapTurn
+	call GetBenchPokemonWithLowestHP
+	jp SwapTurn
 ; Return in a the PLAY_AREA_* of the non-turn holder's Pokemon card in bench with the lowest (remaining) HP.
 ; if multiple cards are tied for the lowest HP, the one with the highest PLAY_AREA_* is returned.
 GetBenchPokemonWithLowestHP:
@@ -5625,7 +5634,13 @@ Draw_Loop:
 	dec c
 	jr nz, Draw_Loop
 .done
-	ret	
+	ret
+SweetSpike_PlayerSelection:
+	ld a, DUELVARS_ARENA_CARD_STAGE
+	get_turn_duelist_var
+	or a
+	jr nz, Potion_PlayerSelection
+	retscf
 Potion_PlayerSelection:
 	bank1call HasAlivePokemonInPlayArea
 .read_input
@@ -5647,7 +5662,12 @@ Potion_PlayerSelection:
 	ldh [hTempPlayAreaLocation_ffa1], a
 	or a
 	ret
-
+SweetSpike_HealEffect:
+	ld a, DUELVARS_ARENA_CARD_STAGE
+	get_turn_duelist_var
+	or a
+	jr nz, Potion_HealEffect
+	jp Heal10Effect	
 Potion_HealEffect:
 	ldh a, [hTemp_ffa0]
 	ldh [hTempPlayAreaLocation_ff9d], a
@@ -9075,11 +9095,10 @@ TDCommandEffect:
 	ret c
 	jr Add30damageEffect
 AssassinsRoseEffect:
-	call IsPoisoned
-	ret c
+	farcall FindBudew
+	ret nc
 	ld de, 20
-	call ApplyAndAnimateHPRecovery
-	jr Add30damageEffect	
+	jp ApplyAndAnimateHPRecovery
 FirstImpresionEffect:
 	ld a, DUELVARS_ARENA_CARD_SUBSTATUS1
 	get_turn_duelist_var

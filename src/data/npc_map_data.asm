@@ -124,6 +124,8 @@ WaterClubEntranceNPCS:
 	dw Preload_Ronald2InClubEntrance
 	db NPC_RONALD3, $fe, $08, NORTH
 	dw Preload_Ronald3InClubEntrance
+	db NPC_JACOB, $02, $0a, EAST
+	dw Preload_NPC_IF_AMY_BEATED
 	db $00
 
 WaterClubLobbyNPCS:
@@ -141,6 +143,8 @@ WaterClubLobbyNPCS:
 	dw NULL
 	db NPC_GIFT_CENTER_CLERK, $0a, $04, SOUTH
 	dw NULL
+	db NPC_CODY, $0c, $10, WEST
+	dw NULL
 	db $00
 
 WaterClubNPCS:
@@ -156,6 +160,8 @@ WaterClubNPCS:
 
 LightningClubEntranceNPCS:
 	db NPC_CLERK4, $06, $02, SOUTH
+	dw NULL
+	db NPC_CASSIE, $10, $02, NORTH
 	dw NULL
 	db NPC_RONALD1, $08, $fe, SOUTH
 	dw Preload_Ronald1InClubEntrance
@@ -178,6 +184,8 @@ LightningClubLobbyNPCS:
 	dw NULL
 	db NPC_GIFT_CENTER_CLERK, $0a, $04, SOUTH
 	dw NULL
+	db NPC_CATHERINE, $0c, $10, NORTH
+	dw NULL
 	db $00
 
 LightningClubNPCS:
@@ -189,6 +197,8 @@ LightningClubNPCS:
 	dw NULL
 	db NPC_ISAAC, $0c, $04, NORTH
 	dw Preload_Isaac
+	db NPC_CHIP, $06, $14, EAST
+	dw Preload_NPC_IF_ISAAC_BEATED
 	db $00
 
 GrassClubEntranceNPCS:
@@ -202,6 +212,8 @@ GrassClubEntranceNPCS:
 	dw Preload_Ronald2InClubEntrance
 	db NPC_RONALD3, $fe, $08, NORTH
 	dw Preload_Ronald3InClubEntrance
+	db NPC_YUTA, $10, $08, WEST
+	dw Preload_NPC_IF_ERIKA_BEATED
 	db $00
 
 GrassClubLobbyNPCS:
@@ -217,6 +229,8 @@ GrassClubLobbyNPCS:
 	dw NULL
 	db NPC_GIFT_CENTER_CLERK, $0a, $04, SOUTH
 	dw NULL
+	db NPC_LIZ, $18, $06, WEST
+	dw Preload_Ronald1InIshiharasHouse
 	db $00
 
 GrassClubNPCS:
@@ -226,6 +240,10 @@ GrassClubNPCS:
 	dw NULL
 	db NPC_NIKKI, $0c, $04, SOUTH
 	dw Preload_NikkiInGrassClub
+	db NPC_MELISSA, $16, $06, WEST
+	dw NULL
+	db NPC_PARKER, $08, $16, NORTH
+	dw Preload_Ronald1InIshiharasHouse
 	db $00
 
 PsychicClubEntranceNPCS:
@@ -332,6 +350,8 @@ FireClubLobbyNPCS:
 	dw NULL
 	db NPC_GIFT_CENTER_CLERK, $0a, $04, SOUTH
 	dw NULL
+	db NPC_BERNARD, $06, $10,EAST
+	dw Preload_Ronald1InIshiharasHouse
 	db $00
 
 FireClubNPCS:

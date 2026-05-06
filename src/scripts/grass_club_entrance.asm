@@ -1,8 +1,6 @@
 GrassClubEntranceAfterDuel:
 	ld hl, GrassClubEntranceAfterDuelTable
 ;	fallthrough
-
-
 FindEndOfDuelScript:
 	ld c, 0
 	ld a, [wDuelResult]
@@ -48,6 +46,11 @@ GrassClubEntranceAfterDuelTable:
 	db NPC_RONALD3
 	dw Script_BeatSecondRonaldDuel
 	dw Script_LostToSecondRonaldDuel
+
+	db NPC_YUTA
+	db NPC_YUTA
+	dw Script_BeatYuta
+	dw Script_LostToYuta
 	db $00
 
 Script_Clerk5:
@@ -112,3 +115,38 @@ NPCMovement_e5bf:
 	db WEST
 	db WEST
 	db $fe, -9
+Preload_NPC_IF_ERIKA_BEATED:
+	get_event_value EVENT_BEAT_NIKKI
+	cp TRUE
+	ccf
+	ret	
+Script_Yuta:
+	start_script
+	jump_if_event_greater_or_equal EVENT_YUTA_STATE, YUTA_DEFEATED, .DEFEATED
+	test_if_event_less_than EVENT_YUTA_STATE, YUTA_TALKED
+	print_variable_npc_text TextYutaFirstTalk, TextYuta4
+	set_event EVENT_YUTA_STATE, YUTA_TALKED
+	ask_question_jump YutaNPCDuelText, .OktoDuel
+	print_npc_text TextYuta2
+	quit_script_fully
+.DEFEATED
+	print_npc_text TextYutaAfterDefeat
+	ask_question_jump YutaNPCDuelText, .OktoDuel
+	print_npc_text TextYuta2
+	quit_script_fully
+
+.OktoDuel
+	print_npc_text TextYuta3
+	start_duel PRIZES_4, POWER_OF_FIRE_DECK_ID, MUSIC_DUEL_THEME_1
+	quit_script_fully
+Script_BeatYuta:
+	start_script
+	set_event EVENT_YUTA_STATE, YUTA_DEFEATED
+	print_npc_text TextYutaDefeat
+	give_booster_packs BOOSTER_COLOSSEUM_FIRE, BOOSTER_COLOSSEUM_FIRE, NO_BOOSTER
+	print_npc_text TextYutaDefeat2
+	quit_script_fully
+
+Script_LostToYuta:
+	start_script
+	print_text_quit_fully TextYutaVictory

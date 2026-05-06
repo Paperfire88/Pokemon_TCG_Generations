@@ -120,4 +120,11 @@ Sprites:
 	gfx_pointer FightingGfx,         $04 ; SPRITE_FIGHTING
 	gfx_pointer OWMintGfx,           $14 ; SPRITE_OW_MINT
 	gfx_pointer DarknessGfx,         $a2 ; SPRITE_DARKNESS
+	gfx_pointer OWBernardGfx,        $14 ; SPRITE_OW_BERNARD
+	gfx_pointer OWMelissaGfx,        $14 ; SPRITE_OW_MELISSA
+	gfx_pointer OWYutaGfx,           $14 ; SPRITE_OW_YUTA
+	gfx_pointer OWCassieGfx,         $14 ; SPRITE_OW_CASSIE
+	gfx_pointer OWChipGfx,           $14 ; SPRITE_OW_CHIP
+	gfx_pointer OWCatherineGfx,      $14 ; SPRITE_OW_CATHERINE
+	gfx_pointer OWJacobGfx,          $14 ; SPRITE_OW_JACOB
 	assert_table_length NUM_SPRITES
