@@ -960,8 +960,8 @@ DuelMenu_Attack:
 .alert_cant_attack_and_cancel_menu
 	call DrawWideTextBox_WaitForInput
 	jp PrintDuelMenuAndHandleInput
-
 .can_attack
+	; call PrintDefendingPkmnStats
 	call FindMemoryEnergy
 	jr nc, .can_attack_set_current_arena_card
 .non	
@@ -1029,7 +1029,7 @@ DuelMenu_Attack:
 	call HandleMenuInput
 	jr nc, .wait_for_input
 	cp -1 ; was B pressed?
-	jp z, PrintDuelMenuAndHandleInput
+	jr z, .b_pressed
 	ld [wSelectedDuelSubMenuItem], a
 	call CheckIfEnoughEnergiesToAttack
 	jr nc, .enough_energy
@@ -1056,7 +1056,10 @@ DuelMenu_Attack:
 	call UseAttackOrPokemonPower
 	jp c, DuelMainInterface
 	ret
-
+.b_pressed
+	; call EmptyScreen
+	; call DrawDuelMainScene
+	jp PrintDuelMenuAndHandleInput
 .cannot_use_due_to_amnesia
 	call DrawWideTextBox_WaitForInput
 	jp .try_open_attack_menu
@@ -1095,7 +1098,19 @@ DuelMenu_Attack:
 	xor a
 	ld [wSelectedDuelSubMenuItem], a
 	jp .try_open_attack_menu
-
+PrintDefendingPkmnStats:
+	lb de, 11, 0
+	lb bc, 20, 8
+	call DrawRegularTextBox
+	;dada
+	ld hl, CardPageRetreatWRTextData2
+	call PlaceTextItems
+	call PrintMiniWeaknessResistanceTypesandValues
+	lb bc, 13, 6
+	ld e, c
+	ld hl, wLoadedCard2Atk1Name
+	call PrintMinPkmnPowerInformation
+	ret
 FindMemoryEnergy:
     xor a ; DUELVARS_CARD_LOCATIONS
     get_turn_duelist_var
@@ -4127,6 +4142,61 @@ CardPageWRModifiersOnlyData:
 	xor $ff
 	inc a ; convert from a negative number to a positive displayed number for the purposes of graphics
 	jp WriteTwoDigitNumberInTxSymbolFormat ; and write it
+PrintMiniWeaknessResistanceTypesandValues:
+	ld c, 3
+	ld b, 15
+	ld a, [wLoadedCard1RetreatCost]
+	ld e, a
+	inc e
+.retreat_cost_loop
+	dec e
+	jr z, .retreat_cost_done
+	ld a, SYM_COLORLESS
+	call WriteByteToBGMap0
+	inc b
+	jr .retreat_cost_loop
+.retreat_cost_done
+	ld a, [wLoadedCard2Weakness]
+	ld d, a
+	ld a, [wLoadedCard2Resistance]
+	ld e, a
+.got_wr
+	ld c, 1
+	ld a, d
+	ld b, 15
+	call PrintCardPageWeaknessesOrResistances
+	ld a, e
+	inc c
+	call PrintCardPageWeaknessesOrResistances	
+	;falltrough
+CardPageWRModifiersOnlyData2:
+	ld a, [wLoadedCard1WkValue] ; load the weakness modifier
+	cp 0 ; check against 0
+	jr z, .CheckResistance ; if 0, go to the resistance check
+	lb bc, 16, 1
+	ld a, SYM_PLUS
+	call WriteByteToBGMap0 ; otherwise make a plus symbol and add it to coordinates 9,15
+	lb bc, 17, 1  ; at coordinates 10, 15...
+	ld hl, wLoadedCard1WkValue
+	ld a, [hli]
+	ld l, [hl]
+	ld h, a ; -convert the weakness modifier to a,
+	call WriteTwoDigitNumberInTxSymbolFormat ; - then write it
+.CheckResistance
+	ld a, [wLoadedCard1RsValue] ; load the resistance modifier
+	cp 0
+	ret z; if 0, go to .done
+	lb bc, 16, 2
+	ld a, SYM_MINUS 
+	call WriteByteToBGMap0 ; write a minus symbol at these coordinates
+	lb bc, 17, 2
+	ld hl, wLoadedCard1RsValue 
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a ; convert the resistance number to a
+	xor $ff
+	inc a ; convert from a negative number to a positive displayed number for the purposes of graphics
+	jp WriteTwoDigitNumberInTxSymbolFormat ; and write it
 PrintAttackOrPkmnPowerInformation2:
 	ld a, [hli]
 	or [hl]
@@ -4284,7 +4354,19 @@ PrintAttackOrPkmnPowerInformation:
 	call InitTextPrinting_ProcessTextFromID
 	pop bc
 	ret
-
+PrintMinPkmnPowerInformation:
+	ld a, [hli]
+	or [hl]
+	ret z
+	push bc
+	push hl
+	dec hl
+	; print text ID pointed to by hl at 12,e
+	ld d, 12
+	call InitTextPrinting_ProcessTextFromPointerToID
+	pop hl
+	pop bc
+	ret
 ; print the number of energies required of color (type) e, and return e ++ (next color).
 ; the requirement of the current color is provided as input in the lower nybble of a.
 PrintEnergiesOfColor:
@@ -4313,7 +4395,7 @@ PrintCardPageWeaknessesOrResistances:
 	; which bits are set and therefore which WR_* values are active.
 	; a is kept updated with the equivalent TYPE_* constant.
 	inc a
-	cp 8
+	cp 9
 	jr nc, .done
 	rl d
 	jr nc, .loop
@@ -4365,6 +4447,12 @@ CardPageRetreatWRTextData:
 	textitem 1, 14, RetreatCostText
 	textitem 1, 15, WeaknessText
 	textitem 1, 16, ResistanceText
+	db $ff
+CardPageRetreatWRTextData2:
+	textitem 12, 1, WeaknessMinText
+	textitem 12, 2, ResistanceMinText
+	textitem 12, 3, RetreatMinText
+	textitem 12, 5, AbilityText2
 	db $ff
 CardPageLvHPNoTextTileData:
 	db 11,  2, SYM_Lv, 0

@@ -2985,15 +2985,11 @@ SharpenEffect:
 	ret c ; empty deck
 	farcall AddCardToHand
 	farcall LoadCardDataToBuffer1_FromDeckIndex
-	ld a, [wDuelistType]
-	cp DUELIST_TYPE_PLAYER
-	ret nz
-	; show card on screen if it was Player
 	bank1call OpenCardPage_FromHand
 	farcall GlowAnimationsEffect
 	farcall FocusEnergyEffect
 	ret
-	.OppDraws1card
+.OppDraws1card
 	call OppDraws1cardEffect
 	call GlowAnimationsEffect
 	farcall FocusEnergyEffect
@@ -4694,44 +4690,44 @@ TenguStrikeEffect:
 	farcall Add30damageEffect
 	ret 
 Put1DamageCounterOnTarget2:
-  ld d, 10
-  ld a, ATK_ANIM_BENCH_HIT
-  ld [wLoadedAttackAnimation], a
-  push hl
-  push de
-  push bc
-  ld a, e
-  ld [wTempPlayAreaLocation_cceb], a
-  or a  ; cp PLAY_AREA_ARENA
-  jr nz, .skip_no_damage_or_effect_check
+	ld d, 10
+	ld a, ATK_ANIM_BENCH_HIT
+	ld [wLoadedAttackAnimation], a
+	push hl
+	push de
+	push bc
+	ld a, e
+	ld [wTempPlayAreaLocation_cceb], a
+	or a  ; cp PLAY_AREA_ARENA
+	jr nz, .skip_no_damage_or_effect_check
 ; arena
-  ld a, [wNoDamageOrEffect]
-  or a
-  jr z, .skip_no_damage_or_effect_check
-  ld d, 0
+	ld a, [wNoDamageOrEffect]
+	or a
+	jr z, .skip_no_damage_or_effect_check
+	ld d, 0
 .skip_no_damage_or_effect_check
-  xor a
-  ld [wNoDamageOrEffect], a
-  ld e, d
-  ld d, 0
-  push de
-  ld a, [wTempPlayAreaLocation_cceb]
-  add DUELVARS_ARENA_CARD
-  get_turn_duelist_var
-  call GetCardIDFromDeckIndex
-  ld a, e
-  ld [wTempNonTurnDuelistCardID], a
-  pop de
-  ld a, [wTempPlayAreaLocation_cceb]
-  ld b, a
-  ld c, 0
-  add DUELVARS_ARENA_CARD_HP
-  get_turn_duelist_var
- bank1call Func_7415
-  bank1call PlayAttackAnimation_DealAttackDamageSimple
-  call PrintKnockedOutIfHLZero
-  call WaitForWideTextBoxInput
-  pop bc
-  pop de
-  pop hl
-  ret
+	xor a
+	ld [wNoDamageOrEffect], a
+	ld e, d
+	ld d, 0
+	push de
+	ld a, [wTempPlayAreaLocation_cceb]
+	add DUELVARS_ARENA_CARD
+	get_turn_duelist_var
+	call GetCardIDFromDeckIndex
+	ld a, e
+	ld [wTempNonTurnDuelistCardID], a
+	pop de
+	ld a, [wTempPlayAreaLocation_cceb]
+	ld b, a
+	ld c, 0
+	add DUELVARS_ARENA_CARD_HP
+	get_turn_duelist_var
+	bank1call Func_7415
+	bank1call PlayAttackAnimation_DealAttackDamageSimple
+	call PrintKnockedOutIfHLZero
+	call WaitForWideTextBoxInput
+	pop bc
+	pop de
+	pop hl
+	ret

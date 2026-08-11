@@ -71,8 +71,8 @@ VitalitySongDescription:
 VoltswitchDescription:
 	text "Flip a Coin. If Heads, This Attack"
 	line "Does 10 damage. Either Way,"
-	line "You can Switch this Pkmn with 1"
-	line "of your Benched Pkmn."
+	line "You can Switch this PKMN with 1"
+	line "of your Benched PKMN."
 	done
 	
 NuzzleDescription:
@@ -83,15 +83,15 @@ NuzzleDescription:
 
 RainbowBurnDescription:
 	text "Does +10 damage for each different"
-	line "type of Energy attached to this Pkmn"
+	line "type of Energy attached to this PKMN"
 	line "(<WATER><FIRE><GRASS><LIGHTNING><FIGHTING><PSYCHIC><DARKNESS><METAL>)."
 	done		
 
 EnergyCrushDescription:
 	text "Does +10 damage for each Energy"
-	line "attached to the Defending Pkmn."
+	line "attached to the Defending PKMN."
 	line "Then, You can Switch this PKMN with"
-	line "1 of your Benched pkmn."
+	line "1 of your Benched PKMN."
 	done
 BurstinginfernoName:
 	text "Bursting Inferno"
@@ -99,7 +99,7 @@ BurstinginfernoName:
 
 BurstinginfernoDescription:
 	text "Discard any number of <FIRE> energy from"
-	line "this PKMN (Min 1).it does +20 damage"
+	line "this PKMN (Min 1).this does +20 damage"
 	line "for each <FIRE> energy Discarded. "
 	done
 
@@ -130,7 +130,7 @@ PlasmaFistDescription:
 	done
 
 SmogScreenName:
-	text "Smogscreen"
+	text "Smog-screen"
 	done
 
 SmogScreenDescription:
@@ -193,7 +193,7 @@ PoisonBoostName:
 	done
 
 PoisonBoostDescription:
-	text "it does +30 damage if the Defending"
+	text "this does +30 damage if the Defending"
 	line "PKMN is <POISONED> Poisoned."
 	done
 
@@ -204,7 +204,7 @@ DigDrainName:
 SharpshootingDescription:
 	text "This attack does +10 damage for each"
 	line "extra <WATER> energy attached to this"
-	line "pkmn (in addition to its attack cost"
+	line "PKMN (in addition to its attack cost"
 	line "and up to +30 damage). This attack"
 	line "also does 20 damage to 1 of your"
 	line "opponent's Benched PKMN. (If any.)"
@@ -216,8 +216,8 @@ HazardousClawsName:
 	done
 
 HazardousClawsDescription:
-	text "Discard 2 Energy from this Pkmn."
-	line "Your opponent's Active Pkmn is now"
+	text "Discard 2 Energy from this PKMN."
+	line "Your opponent's Active PKMN is now"
 	line "Paralyzed and Poisoned."
 	done
 
@@ -235,7 +235,7 @@ HydroDrainName:
 HydroDrainDescription:
 	text "This attack does +10 damage for each"
 	line "extra <WATER> energy attached to this"
-	line "pkmn (in addition to its attack cost"
+	line "PKMN (in addition to its attack cost"
 	line "and up to +30 damage)."
 	line "Heal damage from this PKMN equal to"
 	line "half the damage done (rounded up)."
@@ -309,7 +309,7 @@ BattleBlastName:
 
 BattleBlastDescription:
 	text "Does +10 damage for each <FIGHTING> Energy"
-	line "atached to this PKMN."
+	line "attached to this PKMN."
 	done	
 
 PoisonHuntName:
@@ -339,8 +339,8 @@ DreamWaltzName:
 	done
 
 DreamWaltzDescription:
-	text "You can Switch this Pkmn with 1 of"
-	line "your Benched Pkmn. Eitherway, your"
+	text "You can Switch this PKMN with 1 of"
+	line "your Benched PKMN. Either way, your"
 	line "Opponent Active PKMN is Now Asleep."
 	done
 
@@ -354,7 +354,7 @@ BugbuzzName:
 
 BugbuzzDescription:
 	text "Does +10 damage for each <GRASS>"
-	line "Energy atached to this PKMN."
+	line "Energy attached to this PKMN."
 	done	
 
 VengeanceName:
@@ -573,7 +573,7 @@ WaterBirdName:
 	done	
 
 HowlitzerName:
-	text "Howlitzer"
+	text "Howitzer"
 	done	
 
 HostileName:
@@ -921,7 +921,7 @@ LashesName:
 LashesDescription:
 	text "This attack does +10 damage for"
 	line "each of your Benched PKMN with any"
-	line "amount of energy atached on it."
+	line "amount of energy attached on it."
 	done	
 
 StickandAbsorbName:
@@ -929,9 +929,9 @@ StickandAbsorbName:
 	done
 
 StickandAbsorbDescription:
-	text "The Defending Pkmn can't retreat" 
+	text "The Defending PKMN can't retreat" 
 	line "during your opponent's next turn. If"
-	line "this pkmn has 4 or more <GRASS> energy"
+	line "this PKMN has 4 or more <GRASS> energy"
 	line "attached, and it deals damage, heal"
 	line "30 damage from it."
 	done		
@@ -975,7 +975,7 @@ UnableToAttackText:
 ConversionZDescription:
 	text "Once per turn (before your attack),"
 	line "Search your deck for a basic Energy"
-	line "and attach it to 1 of your Pkmn."
+	line "and attach it to 1 of your PKMN."
 	line "Then, shuffle your deck."
 	done	
 
@@ -1017,8 +1017,8 @@ IceShardName:
 	done	
 
 IceShardDescription:
-	text "If your opponent's Active Pkmn is"
-	line "a <FIGHTING> Pkmn, this attack does +10 damage."
+	text "If your opponent's Active PKMN is"
+	line "a <FIGHTING> PKMN, this attack does +10 damage."
 	done	
 
 CutieflyName:
@@ -1428,7 +1428,7 @@ ExplosiveEvolutionName:
 
 ExplosiveEvolutionDescription:
 	text "This attack does 10 damage to each"
-	line "of your opponent's benched Pkmn."
+	line "of your opponent's benched PKMN."
 	line "(Don't apply Weakness/Resistance.)"
 	line "Then, search your deck for an"
 	line "[TYRANITAR] and put it on [PUPITAR]"
@@ -1467,7 +1467,7 @@ DarkDestructionName:
 
 DarkDestructionDescription:
 	text "Does +10 damage for each damage"
-	line "counter on this pkmn. If this pkmn" 
+	line "counter on this PKMN. If this PKMN" 
 	line "has 4 or more <DARKNESS> energy attached"
 	line "to it; Discard the top 3 cards of"
 	line "each player's deck."
@@ -1475,7 +1475,7 @@ DarkDestructionDescription:
 
 GnawOffDescription:
 	text "Flip a coin. If tails, does"
-	line "10 damage to itself. If this Pkmn" 
+	line "10 damage to itself. If this PKMN" 
 	line "has any <HP_NOK> damage counters on it,"
 	line "Draw a card."
 	done
@@ -1490,7 +1490,7 @@ TidalClashName:
 
 TidalClashDescription:
 	text "Return up to 6 Energies from your"
-	line "discard pile into your Deck. it Does"
+	line "discard pile into your Deck. this does"
 	line "+10 damage for each card returned."
 	done
 
@@ -1529,11 +1529,11 @@ ColorlessCallForFamilyDescription:
 
 ChooseBasicColorlessPokemonText:
 	text "Choose a Basic"
-	line "<COLORLESS> Pkmn"
+	line "<COLORLESS> PKMN"
 	done
 
 BasicColorlessPokemonFromDeckText:
-	text "Choose a Basic <COLORLESS> Pkmn"
+	text "Choose a Basic <COLORLESS> PKMN"
 	line "from the Deck."
 	done
 
@@ -1566,7 +1566,7 @@ ConfusionAbraName:
 
 ConfusionAbraDescription:
 	text "If this PKMN is at full HP <HP_OK>, the" 
-	line "Defending Pkmn is now Confused."
+	line "Defending PKMN is now Confused."
 	done
 
 SuperPsiName:
@@ -1575,7 +1575,7 @@ SuperPsiName:
 
 SuperPsiDescription:
 	text "If this PKMN is at full HP <HP_OK>, the" 
-	line "Defending Pkmn is now Confused. if"
+	line "Defending PKMN is now Confused. if"
 	line "it has 3 or more <HP_NOK> Damage Counters"
 	line "on it, this attack does +20 damage."	
 	done
@@ -1588,7 +1588,7 @@ PsychicZenDescription:
 	text "If this PKMN is at full HP <HP_OK>, this" 
 	line "attack does +30 more damage. if it"
 	line "has any <HP_NOK> Damage Counters on it,"
-	line "the Defending Pkmn is now Confused."
+	line "the Defending PKMN is now Confused."
 	done
 
 KinesisName:
@@ -1743,7 +1743,7 @@ GreenForceName:
 GreenForceDescription:
 	text "Heal damage from this PKMN equal to"
 	line "half the damage done (Rounded Up)."
-	line "If this pkmn has 4 or more<GRASS> energy"
+	line "If this PKMN has 4 or more<GRASS> energy"
 	line "attached, Draw a card."
 	done
 AstonishName:

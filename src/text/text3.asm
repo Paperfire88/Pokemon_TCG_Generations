@@ -347,7 +347,7 @@ GreatQuakeDescriptionText:
 	done
 
 BoneAttackDescriptionText:
-	text "A Deck of Sandile and Rokcruff - "
+	text "A Deck of Sandile and Rockruff - "
 	line "A Bitting Deck.         -Andrew <FIGHTING>"
 	done
 
@@ -483,7 +483,7 @@ PoisonDescriptionText:
 
 WondersOfScienceDescriptionText:
 	text "Put an Eternal Sleep with Gengar's"
-	line "Pokémmon Power!            -Rick <DARKNESS>"
+	line "Pokémon Power!            -Rick <DARKNESS>"
 	done
 
 ReplaceEmAllDescriptionText:
@@ -543,7 +543,7 @@ LegendaryEnteiDescriptionText:
 
 LegendaryRaikouDescriptionText:
 	text "Zap opponents with the"
-	line "Legandary Raikou!        -Steve <LIGHTNING>"
+	line "Legendary Raikou!        -Steve <LIGHTNING>"
 	done
 
 LegendarySuicuneDescriptionText:
@@ -781,7 +781,7 @@ TrainerCardsDescriptionText:
 	line "different effects. Trainer Cards"
 	line "are played during your turn by" 
 	line "following the instructions on the"
-	line "card and thenvdiscarding it."
+	line "card and then discarding it."
 	line "You can use as many Trainer Cards"
 	line "as you like during your turn."
 	done

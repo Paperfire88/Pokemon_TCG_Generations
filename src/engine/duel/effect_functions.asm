@@ -26,7 +26,7 @@ SearingFlameEffect:
 FairyPollenEffect:
 	call SleepEffect
 	call SwapTurn
-  	call CreateEnergyCardListFromDiscardPile_OnlyBasic
+	call CreateEnergyCardListFromDiscardPile_OnlyBasic
 	call SwapTurn
 	ret c
 	call CountCardsInDuelTempList
@@ -35,7 +35,7 @@ FairyPollenEffect:
 	jr BurnEffect
 PumpkinTrickEffect:
 	call SwapTurn
-  	call CreatePokemonCardListFromDiscardPile
+	call CreatePokemonCardListFromDiscardPile
 	call SwapTurn
 	ret c
 	ld a, c
@@ -250,11 +250,11 @@ DreamMistEffect:
 	;fallthrough
 PlayAnimationPkmnpower:
 	bank1call WaitAttackAnimation	
-    bank1call ApplyStatusConditionQueue
-    bank1call PrintFailedEffectText
+	bank1call ApplyStatusConditionQueue
+	bank1call PrintFailedEffectText
 	bank1call DrawDuelHUDs
-    call c, WaitForWideTextBoxInput 
-    ret
+	call c, WaitForWideTextBoxInput 
+	ret
 GaintBloomEffect:
 	call CheckIfyouhaveanGrassEnergyEffect
 	cp 4
@@ -499,7 +499,7 @@ MayInflictPoison_AIEffect:
 ; else
 ;	[wAIMinDamage] <- [wDamage] + d
 ;	[wAIMaxDamage] <- [wDamage] + e
-;	[wDamage]      <- [wDamage] + a
+;	[wDamage]	  <- [wDamage] + a
 UpdateExpectedAIDamage_AccountForPoison:
 	push af
 	ld a, DUELVARS_ARENA_CARD_STATUS
@@ -1471,7 +1471,7 @@ DriveOff_SelectSwitchPokemon:
 ; of the Bench Pokemon that was selected for switch
 VictreebelLure_SelectSwitchPokemon:
 	call VictreebelLure_AssertPokemonInBench
-    ret c
+	ret c
 	ldtx hl, SelectPkmnOnBenchToSwitchWithActiveText
 	call DrawWideTextBox_WaitForInput
 	call SwapTurn
@@ -1497,7 +1497,7 @@ FlareCommand_GetBenchPokemonWithLowestHP:
 
 VinePullEffect:
 	call VictreebelLure_AssertPokemonInBench
-    ret c
+	ret c
 ; Defending Pokemon is swapped out for the one with the PLAY_AREA_* at hTemp_ffa0
 ; unless Mew's Neutralizing Shield or Haunter's Transparency prevents it.
 VictreebelLure_SwitchDefendingPokemon:
@@ -1567,13 +1567,13 @@ CheckPlayArea:
 PutInPlayAreEvoEffect:
 	call PutInPlayAreaEffect
 	; make it count as a Basic Pokémon
-    ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-    get_turn_duelist_var
-    dec a
-    add DUELVARS_ARENA_CARD_STAGE
-    ld l, a
-    xor a  ; BASIC
-    ld [hl], a
+	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
+	get_turn_duelist_var
+	dec a
+	add DUELVARS_ARENA_CARD_STAGE
+	ld l, a
+	xor a  ; BASIC
+	ld [hl], a
 	ret
 EnergyCrushEffect:
 	call Psychic_DamageBoostEffect
@@ -2284,9 +2284,6 @@ Quickfreeze_Paralysis50PercentEffect:
 	call c, WaitForWideTextBoxInput
 	ret
 FocusEnergyEffect:
-	ld hl, wTempTurnDuelistCardID + 1
-	cphl PAWNIARD
-	ret nz ; return if no Drednaw
 	ld a, SUBSTATUS1_NEXT_TURN_DOUBLE_DAMAGE
 	jp ApplySubstatus1ToDefendingCard
 
@@ -3930,7 +3927,7 @@ StretchKick_PlayerSelectEffect:
 	jp SwapTurn
 ArrowEffect:
 	call VictreebelLure_AssertPokemonInBench
-    ret c
+	ret c
 	call SwapTurn
 	ldh a, [hTemp_ffa0]
 	ld b, a
@@ -3939,7 +3936,7 @@ ArrowEffect:
 	jp SwapTurn
 MercilessEffect:
 	call VictreebelLure_AssertPokemonInBench
-    ret c
+	ret c
 	;falltrough
 StretchKick_BenchDamageEffect:
 	call SwapTurn
@@ -4063,7 +4060,7 @@ Thunder_RecoilEffect:
 MetallicStrikesEffect:
 	call CompareRetreatCostBetweenActives
 	cp b
-	jp nc, FurySwipes20_MultiplierEffect
+	jp c, FurySwipes20_MultiplierEffect
 	;falltrough	
 PinMissile_MultiplierEffect:
 	ld hl, 20
@@ -6682,24 +6679,24 @@ Pokedex_OrderDeckCardsEffect:
 	ret
 CountHealedPKMN:
 	ld a, DUELVARS_NUMBER_OF_POKEMON_IN_PLAY_AREA
-    get_turn_duelist_var
-    ld b, a
-    ld c, 0
-    ld a, DUELVARS_ARENA_CARD_FLAGS
-    get_turn_duelist_var
-    ; hl = pointer to flags, starting from Arena
+	get_turn_duelist_var
+	ld b, a
+	ld c, 0
+	ld a, DUELVARS_ARENA_CARD_FLAGS
+	get_turn_duelist_var
+	; hl = pointer to flags, starting from Arena
 
-; go through every Pokemon in the Play Area.
+	; go through every Pokemon in the Play Area.
 .loop_play_area
-    ld a, [hli]
-    and HEALED_THIS_TURN
-    jr z, .next_pkmn
-    inc c
+	ld a, [hli]
+	and HEALED_THIS_TURN
+	jr z, .next_pkmn
+	inc c
 .next_pkmn
-    dec b
-    jr nz, .loop_play_area
-    ld a, c
-    ret
+	dec b
+	jr nz, .loop_play_area
+	ld a, c
+	ret
 PumpkinEffect:
 	call CheckIfyouhaveanGrassEnergyEffect
 	cp 1
@@ -8027,15 +8024,15 @@ GetNumAttachedFIGHTINGEnergy:
 
 BattleblastEffect:
   	call GetNumAttachedFIGHTINGEnergy
-	call Atimes10AndAddtoDamage ; add 10 * a to damage
+  	call Atimes10AndAddtoDamage ; add 10 * a to damage
 ; set attack damage
 	jp SetDefiniteAIDamage	
 
 MeteorMashEffect:
   	call GetNumAttachedFIGHTINGEnergy
-	call ATimes10
-	add a
-	call AddToDamage ; add 10 * a to damage
+  	call ATimes10
+  	add a
+  	call AddToDamage ; add 10 * a to damage
 ; set attack damage
 	jp SetDefiniteAIDamage	
 FirstImpresionEffect2:
@@ -10405,3 +10402,4 @@ AddCardsToHandEffect2:
 EvolutionaryLighEffect2:
 	farcall EvolutionaryLighEffect
 	ret
+	

@@ -54,7 +54,7 @@ SnackSearchDescription:
 	line "this PKMN is Asleep.)"
 	done 	
 StrangeEvolutionSnorlaxDescription:
-	text "Search your deck for an [SNORLAX]"
+	text "Search your deck for a [SNORLAX]"
 	line "and put it on this PKMN (This counts"
 	line "as evolving this PKMN). then, that"
 	line "PKMN is treated as a Stage 1 PKMN."
@@ -78,7 +78,7 @@ BigAppetiteDescription:
 	line "an Stage 1, Draw up to 5 instead.]"
 	done
 BlockinName:
-	text "Blockin"
+	text "Blocking"
 	done
 BlockinDescription:
 	text "The Defending PKMN can't retreat"
@@ -99,7 +99,7 @@ BudName:
 	text "Bud"
 	done
 StrangeEvolutionRoseliaDescription:
-	text "Search your deck for an [ROSELIA]"
+	text "Search your deck for a [ROSELIA]"
 	line "and put it on this PKMN (This counts"
 	line "as evolving this PKMN). then, that"
 	line "PKMN is treated as a Stage 1 PKMN."
@@ -133,7 +133,7 @@ ShortCircuitName:
 ShortCircuitDescription:
 	text "Also, Deal 10 damage to 1 of your"
 	line "opponent's PKMN for each Energy card"
-	line "Attached to it. (Dont apply Weakness"
+	line "Attached to it.(Don't apply Weakness"
 	line "or Resistance)."
 	done
 ChargeName:
@@ -194,7 +194,7 @@ AllYouCanGrabName:
 	text "All-You-Can-Grab"
 	done
 AllYouCanGrabDescription:
-	text "It Does -10 Damage for Each Card"
+	text "this does -10 Damage for Each Card"
 	line "remaining in your Deck."
 	done
 ChipOffName:
@@ -251,7 +251,7 @@ TenguStrikeName:
 	done
 TenguStrikeDescription:
 	text "If the Defending PKMN was Switched"
-	line "In this turn, it does +30 damage."
+	line "In this turn, this does +30 damage."
 	done
 TrickeryName:
 	text "Trickery"
@@ -281,7 +281,7 @@ ThunderousCrashName:
 	done
 ThunderousCrashDescription:
 	text "Discard Up to 12 <LIGHTNING> Energy from any"
-	line "of your PKMN as you like.It does +10"
+	line "of your PKMN as you like.this does +10"
 	line "damage for each Energy discarded."
 	done
 ShockLockName:
@@ -344,7 +344,7 @@ TextBernard4:
 	line "packs. Are you interested?"
 	done
 TextBernardDefeat:
-	text "Urgh...It was Fun."
+	text "Ugh...It was Fun."
 	line ""
 	line "The way you handle your cards"
 	line "has shown me a thin or two."
@@ -383,7 +383,7 @@ TextMelissaFirstTalk:
 	line "i was so excited to see the"
 	line "gardens around here! These"
 	line "Flowers are so pretty!"
-	line "But now i'm wondering, will"
+	line "But now I'm wondering, will"
 	line "you have a duel with me?"
 	line "win, and you'll get some new cards."
 	done
@@ -486,7 +486,7 @@ TextLizFirstTalk:
 	line "me if you want to."
 	done
 TextLiz2:
-	text "Allright then."
+	text "Alright then."
 	done
 TextLiz3:
 	text "we shall have a duel with 4"
@@ -500,10 +500,10 @@ TextLiz4:
 	done		
 TextLizDefeat:
 	text "Oh dear."
-	line "It sems i've been bested."
+	line "It seems I've been bested."
 	done
 TextLizDefeat2:
-	text "I'm suprised. you have quite a"
+	text "I'm surprised. you have quite a"
 	line "lot of skill <RAMNAME>."
 	done
 TextLizVictory:
@@ -552,7 +552,7 @@ TextParkerDefeat:
 	done
 TextParkerDefeat2:
 	text "come visit again if you'd ever like"
-	line "to battle in nature's magnificance!"
+	line "to battle in nature's magnificence!"
 	done
 TextParkerVictory:
 	text "I didn't really expect you to win,"
@@ -722,7 +722,7 @@ TextChipFirstTalk:
 	line "actually check on this light bulbs,"
 	line "as you can see they just turn On"
 	line "and Off constantly. You kinda want"
-	line "to control that... But eh, i'm kinda"
+	line "to control that... But eh, I'm kinda"
 	line "bored right now. what do you say"
 	line "kid, wanna duel?"
 	done
@@ -748,7 +748,7 @@ TextChipDefeat2:
 	done
 TextChipVictory:
 	text "That's about right."
-	line "I didn't think i should be lossing."
+	line "I didn't think i should be losing."
 	line "we'll have ourselves another battle!"
 	done
 CatherineNPCName:
@@ -766,7 +766,7 @@ TextCatherineFirstTalk:
 	line "I have heard that someone called"
 	line "<RAMNAME> obtained the"
 	line "Legendary cards!"
-	line "to control that... But eh, i'm kinda"
+	line "to control that... But eh, I'm kinda"
 	line "bored right now. what do you say"
 	line "kid, wanna duel?"
 	done
@@ -846,7 +846,7 @@ TextJacobDefeat2:
 TextJacobVictory:
 	text "Hoohoo! you couldn't defeat me!!"
 	line "Wanna know why?"
-	line "'cause i'm one tough cookie!"
+	line "'cause I'm one tough cookie!"
 	done
 CodyNPCName:
 	text "Cody"
@@ -870,7 +870,7 @@ TextCody2:
 	done
 TextCody3:
 	text "Set aside 4 Prize Cards."
-	line "Allright! let's duel!!"
+	line "Alright! let's duel!!"
 	done
 TextCody4:	
 	text "Yeaaah! I'm Cody!"
@@ -888,4 +888,16 @@ TextCodyVictory:
 	line "Cody, Cody is so cool!"
 	line "Since i won and no one gave"
 	line "me any praise, i give it myself!"
+	done
+RetreatMinText:
+	text "Ret"
+	done
+WeaknessMinText:
+	text "Weak"
+	done
+ResistanceMinText:
+	text "Res"
+	done
+AbilityText2:
+	text "Ability:"
 	done

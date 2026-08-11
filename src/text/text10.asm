@@ -66,7 +66,7 @@ KarrablastName:
 	done
 
 HornHazardName:
-	text "Suprise Attack"
+	text "Surprise Attack"
 	done
 
 MayDoNothingDescription:
@@ -176,7 +176,7 @@ PetalDanceDescription:
 	line "damage times the number of heads."
 	line "This PKMN is now Confused (after"
 	line "doing damage). then, Heal Damage"
-	line "from this PKMN equal to hald of"
+	line "from this PKMN equal to half of"
 	line "the damage inflicted. (Round Up.)"
 	done
 
@@ -233,7 +233,7 @@ VenomPowderDescription:
 	done
 
 PoisonmothName:
-	text "Poisonmoth"
+	text "Poison-moth"
 	done
 
 BounsweetName:
@@ -317,7 +317,7 @@ HypnosisName:
 
 ExeggcutesLeechSeedDescription:
 	text "If this attack deals damage, Heal 10"
-	line "damage from this Pkmn."
+	line "damage from this PKMN."
 	done
 
 EggName:
@@ -379,7 +379,7 @@ SmogName:
 	done
 
 SelfdestructName:
-	text "Selfdestruct"
+	text "Self-destruct"
 	done
 
 WeezingsSelfdestructDescription:
@@ -420,11 +420,11 @@ ScizorName:
 	done
 
 IronGripName:
-	text "Irongrip"
+	text "Iron-grip"
 	done
 
 StagbeetleName:
-	text "Stagbeetle"
+	text "Stag beetle"
 	done
 
 TepigName:
@@ -565,7 +565,7 @@ FlareblitzDescription:
 	text "Discard 1 Energy card attached to"
 	line "this PKMN; this attack. Does +10"
 	line "damage for each <HP_NOK> damage counter"
-	line "on this pkmn."
+	line "on this PKMN."
 	done
 
 RadiatorName:
@@ -642,7 +642,7 @@ RageName:
 
 FlareonsRageDescription:
 	text "Does damage +10 damage for each"
-	line "<HP_NOK> damage counter on this pkmn."
+	line "<HP_NOK> damage counter on this PKMN."
 	done
 
 EnteiName:
@@ -658,7 +658,7 @@ WildfireDescription:
 	line "cards attached to this PKMN, discard"
 	line "cards from the top of your opponent"
 	line "deck Equal to the number of card"
-	line "discarted From this PKMN."
+	line "discarded From this PKMN."
 	done
 
 SkillDiveName:
@@ -666,7 +666,7 @@ SkillDiveName:
 	done
 
 FiregiverName:
-	text "Firegiver"
+	text "Fire-giver"
 	done
 
 FiregiverDescription:
@@ -717,7 +717,7 @@ HydroPumpName:
 HydroPumpDescription:
 	text "This attack does +20 damage for each"
 	line "extra <WATER> energy attached to this"
-	line "pkmn (in addition to its attack cost"
+	line "PKMN (in addition to its attack cost"
 	line "and up to +60 damage)."
 	done
 
@@ -775,7 +775,7 @@ WaterGunName:
 PoliwagsWaterGunDescription:
 	text "This attack does +10 damage for each"
 	line "extra <WATER> energy attached to this"
-	line "pkmn (in addition to its attack cost"
+	line "PKMN (in addition to its attack cost"
 	line "and up to +30 damage)."
 	done
 
@@ -798,7 +798,7 @@ PoliwhirlsAmnesiaDescription:
 	done
 
 DoubleslapName:
-	text "Double Drainslap"
+	text "Double Drain-slap"
 	done
 
 SeismitoadName:
@@ -879,7 +879,7 @@ SlapName:
 	done
 
 StarshapeName:
-	text "Starshape"
+	text "Star-shape"
 	done
 
 BasculegionName:
@@ -909,7 +909,7 @@ SeadraName:
 SeadrasWaterGunDescription:
 	text "This attack does +10 damage for each"
 	line "extra <WATER> energy attached to this"
-	line "pkmn (in addition to its attack cost"
+	line "PKMN (in addition to its attack cost"
 	line "and up to +30 damage)."
 	line "Flip a coin. If heads, the Defending" 
 	line "PKMN is now Asleep."
@@ -935,7 +935,7 @@ MeteorMashName:
 
 MeteorMashDescription:
 	text "Does +20 damage for each <FIGHTING> Energy"
-	line "atached to this PKMN."
+	line "attached to this PKMN."
 	done
 
 FocusEnergyDescription:
@@ -1092,7 +1092,7 @@ GigashockName:
 
 GigashockDescription:
 	text "This attack does 10 damage to up to" 
-	line "3 of your opponent's Benched Pkmn." 
+	line "3 of your opponent's Benched PKMN." 
 	line "(Don't apply Weakness/Resistance for"
 	line "Benched PKMN.)"
 	done
@@ -1217,8 +1217,8 @@ PerrserkerName:
 	done
 
 TripleAttackX20Description:
-	text "Flip 3 coins. it does 20 damage for"
-	line "each heads."
+	text "Flip 3 coins. this does 20 damage"
+	line "for each heads."
 	done
 
 SandAttackName:
@@ -1244,7 +1244,7 @@ BigThunderDescription:
 	text "Choose a PKMN in play other than"
 	line "this One at random. This attack does"
 	line "70 damage to that PKMN. (Don't apply"
-	line "Weakness ot Resistance.)"
+	line "Weakness or Resistance.)"
 	done
 
 ThunderboltName:
@@ -1301,11 +1301,11 @@ LightningName:
 	done
 
 ThunderpunchName:
-	text "Thunderpunch"
+	text "Thunder-punch"
 	done
 
 ThunderpunchDescription:
-	text "Flip a coin. If heads, it does +10"
+	text "Flip a coin. If heads, this does +10"
 	line "damage; if tails, take 10 damage."
 	done
 
@@ -1381,7 +1381,7 @@ TrapinchName:
 	done
 
 StoneBarrageName:
-	text "Continous Tumble"
+	text "Continuous Tumble"
 	done
 
 StoneBarrageDescription:
@@ -1466,7 +1466,7 @@ CallforFriendDescription:
 	done
 
 BonekeeperName:
-	text "Bonekeeper"
+	text "Bone-keeper"
 	done
 
 BoneAttackDescription:
@@ -1496,7 +1496,7 @@ StretchKickName:
 PoisonWhipDescription:
 	text "The Defending PKMN is now Poisoned."
 	line ""
-	;Falltrough
+	; falltrough
 StretchKickDescription:
 	text "If your opponent has any Benched"
 	line "PKMN, choose 1 of them and deal 20"
@@ -1654,7 +1654,7 @@ HydreigonName:
 DamageSwapDescription:
 	text "During your turn,You may move 1 <HP_NOK> "
 	line "damage counter from 1 of your PKMN"
-	line "to another as long as it doesn't"
+	line "to another as long as this doesn't"
 	line "Knock it Out."
 	done
 
@@ -1678,7 +1678,7 @@ StrangeBehaviorDescription:
 	done
 
 HermitcrabName:
-	text "Hermitcrab"
+	text "Hermit-crab"
 	done
 
 DuskullName:
@@ -1696,13 +1696,13 @@ MayInflictSleepDescription:
 
 ChaoticNoiseDescription:
 	text "Flip a coin. If heads, the Defending" 
-	line "Pkmn is now Confused. If tails," 
-	line "the Defending Pkmn is now Asleep."
+	line "PKMN is now Confused. If tails," 
+	line "the Defending PKMN is now Asleep."
 	done				
 
 ShadowClawDescription:
 	text "If this PKMN has any <PSYCHIC> energy "
-	line "attached, it does +20 damage."
+	line "attached, this does +20 damage."
 	done
 
 TwineedleDescription:
@@ -1720,7 +1720,7 @@ ApplefallDescription:
 
 SweetImpactDescription:
 	text "If this attack deals damage, Heal 10"
-	line "damage from this Pkmn. If this PKMN"
+	line "damage from this PKMN. If this PKMN"
 	line "has any <FIRE> energy attached, this"
 	line "attack does +20 damage."
 	done	
@@ -1755,12 +1755,12 @@ DestinyBondName:
 	done
 
 CounterPunchName:
-	text "Damage Counterpunch"
+	text "Damage Counter-punch"
 	done		
 
 DamageCounterDescription:
-	text "If this Pkmn has any <HP_NOK> damage" 
-	line "counters on it, it does +30 damage."
+	text "If this PKMN has any <HP_NOK> damage" 
+	line "counters on it, this does +30 damage."
 	done		
 
 ClawRendName:
@@ -1768,7 +1768,7 @@ ClawRendName:
 	done	
 
 ClawRendDescription:
-	text "If the Defending Pkmn already has" 
+	text "If the Defending PKMN already has" 
 	line "any <HP_NOK> damage counters on it,"
 	line "this attack does +20 damage."
 	done	
@@ -1791,10 +1791,10 @@ GaintBloomName:
 GiantBloomDescription:
 	text "Heal damage from this PKMN equal to"
 	line "half the damage done (rounded up)."
-	line "If this pkmn has 4 or more <GRASS>energy"
+	line "If this PKMN has 4 or more <GRASS>energy"
 	line "attached, Flip a coin. If heads," 
-	line "the Defending Pkmn is now Paralyzed." 
-	line "If tails, the Defending Pkmn is" 
+	line "the Defending PKMN is now Paralyzed." 
+	line "If tails, the Defending PKMN is" 
 	line "now Asleep."
 	done
 
@@ -1828,8 +1828,8 @@ ToxicVibrationName:
 
 ToxicVibrationDescription:
 	text "Flip a coin. If heads, the Defending" 
-	line "Pkmn is now Poisoned. If tails," 
-	line "the Defending Pkmn is now Asleep."
+	line "PKMN is now Poisoned. If tails," 
+	line "the Defending PKMN is now Asleep."
 	done	
 
 ChaoticNoiseName:
@@ -1978,7 +1978,7 @@ OpportunistName:
 	done		
 
 OpportunistDescription:
-	text "If the Defending Pkmn already has" 
+	text "If the Defending PKMN already has" 
 	line "any <HP_NOK> damage counters on it,"
 	line "Your Opponent Can't play any trainer"
 	line "cards during their next turn."

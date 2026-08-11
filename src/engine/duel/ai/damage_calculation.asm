@@ -426,7 +426,7 @@ CalculateDamage_FromDefendingPokemon:
 	ld a,  DUELVARS_ARENA_CARD
 	call GetTurnDuelistVariable
 	call LoadCardDataToBuffer2_FromDeckIndex
-	 ld a, [wLoadedCard2RsValue]
+	ld a, [wLoadedCard2RsValue]
 	ld l, a
 	ld a, [wLoadedCard2RsValue + 1]
 	ld h, a

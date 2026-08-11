@@ -1132,7 +1132,6 @@ PauseMenu_Status:
 PauseMenu_Diary:
 	farcall _PauseMenu_Diary
 	ret
-
 PauseMenu_Deck:
 	xor a
 	ldh [hSCX], a
@@ -1141,7 +1140,7 @@ PauseMenu_Deck:
 	farcall SetDefaultPalettes
 	farcall DeckSelectionMenu
 	call Set_OBJ_8x8
-
+	ret
 PauseMenu_Card:
 	xor a
 	ldh [hSCX], a

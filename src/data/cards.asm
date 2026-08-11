@@ -642,12 +642,12 @@ IllumiseCard:
 
 	db 1 ; retreat cost
 	db WR_FIRE ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_GRASS ; resistance
+	dw -10 ; resistance value (+/-)
 	tx FireflyName ; category
 	db 17 ; Pokedex number
 	db 43 ; level
-	dw 4, 3 ; weakness value (+/-)
-	dw 132 * 10 ; resistance value (+/-)
 	tx IllumiseDescription ; description
 	db 0
 
@@ -692,12 +692,12 @@ VolbeatCard:
 
 	db 1 ; retreat cost
 	db WR_FIRE ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_GRASS ; resistance
+	dw -10 ; resistance value (+/-)
 	tx FireflyName ; category
 	db 18 ; Pokedex number
 	db 48 ; level
-	dw 4, 7 ; weakness value (+/-)
-	dw 137 * 10 ; resistance value (+/-)
 	tx VolbeatDescription ; description
 	db 0
 
@@ -742,12 +742,12 @@ ApplinCard:
 
 	db 1 ; retreat cost
 	db WR_WATER ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx AppleCoreName ; category
 	db 22 ; Pokedex number
 	db 8 ; level
-	dw 1, 8 ; weakness value (+/-)
-	dw 12 * 10 ; resistance value (+/-)
 	tx ApplinDescription ; description
 	db 16
 
@@ -792,12 +792,12 @@ FlappleCard:
 
 	db 1 ; retreat cost
 	db WR_WATER ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_GRASS ; resistance
+	dw -20 ; resistance value (+/-)
 	tx AppleWingName ; category
 	db 23 ; Pokedex number
 	db 32 ; level
-	dw 2, 7 ; weakness value (+/-)
-	dw 19 * 10 ; resistance value (+/-)
 	tx FlappleDescription ; description
 	db 0
 
@@ -842,15 +842,14 @@ AppletunCard:
 
 	db 2 ; retreat cost
 	db WR_WATER ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_FIRE ; resistance
+	dw -20 ; resistance value (+/-)
 	tx AppleNectarName ; category
 	db 24 ; Pokedex number
 	db 35 ; level
-	dw 3, 11 ; weakness value (+/-)
-	dw 41 * 10 ; resistance value (+/-)
 	tx AppletunDescription ; description
 	db 0
-
 ShroomishCard:
 	db TYPE_PKMN_GRASS ; type
 	gfx ShroomishCardGfx ; gfx
@@ -892,12 +891,12 @@ ShroomishCard:
 
 	db 1 ; retreat cost
 	db WR_FIRE ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx MushroomName ; category
 	db 25 ; Pokedex number
 	db 8 ; level
-	dw 1, 0 ; weakness value (+/-)
-	dw 12 * 10 ; resistance value (+/-)
 	tx ShroomishDescription ; description
 	db 16
 
@@ -942,12 +941,12 @@ BreloomCard:
 
 	db 1 ; retreat cost
 	db WR_PSYCHIC ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_DARKNESS ; resistance
+	dw -20 ; resistance value (+/-)
 	tx MushroomName ; category
 	db 26 ; Pokedex number
 	db 28 ; level
-	dw 3, 3 ; weakness value (+/-)
-	dw 65 * 10 ; resistance value (+/-)
 	tx BreloomDescription ; description
 	db 0
 
@@ -992,12 +991,12 @@ YanmaCard:
 
 	db 1 ; retreat cost
 	db WR_LIGHTNING ; weakness
+	dw +10 ; weakness value (+/-)
 	db WR_FIGHTING ; resistance
+	dw -10 ; resistance value (+/-)
 	tx ThinWingName ; category
 	db 27 ; Pokedex number
 	db 12 ; level
-	dw 3, 3 ; weakness value (+/-)
-	dw 66 * 10 ; resistance value (+/-)
 	tx YanmaDescription ; description
 	db 16
 
@@ -1042,12 +1041,12 @@ YanmegaCard:
 
 	db 1 ; retreat cost
 	db WR_LIGHTNING ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_FIGHTING ; resistance
+	dw -10 ; resistance value (+/-)
 	tx OgreDarnerName ; category
 	db 28 ; Pokedex number
 	db 38 ; level
-	dw 4, 11 ; weakness value (+/-)
-	dw 28 * 10 ; resistance value (+/-)
 	tx YANMEGADescription ; description
 	db 0
 
@@ -1092,12 +1091,12 @@ BounsweetCard:
 
 	db 1 ; retreat cost
 	db WR_FIRE ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx FruitName ; category
 	db 29 ; Pokedex number
 	db 11 ; level
-	dw 2, 4 ; weakness value (+/-)
-	dw 9 * 10 ; resistance value (+/-)
 	tx BounsweetDescription ; description
 	db 16
 
@@ -1141,13 +1140,13 @@ SteeneeCard:
 	db ATK_ANIM_CONFUSE_RAY ; animation
 
 	db 1 ; retreat cost
-	db WR_FIRE ; weakness
+	db WR_FIRE ; 
+	dw +20 ; weakness value (+/-)
 	db WR_WATER ; resistance
+	dw -20 ; resistance value (+/-)
 	tx FruitName ; category
 	db 30 ; Pokedex number
 	db 28 ; level
-	dw 3, 3 ; weakness value (+/-)
-	dw 14 * 10 ; resistance value (+/-)
 	tx SteeneeDescription ; description
 	db 16
 
@@ -1192,12 +1191,12 @@ TsareenaCard:
 
 	db 1 ; retreat cost
 	db WR_FIRE ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_WATER ; resistance
+	dw -20 ; resistance value (+/-)
 	tx FruitName ; category
 	db 31 ; Pokedex number
 	db 42 ; level
-	dw 5, 7 ; weakness value (+/-)
-	dw 34 * 10 ; resistance value (+/-)
 	tx VictreebelDescription ; description
 	db 0
 
@@ -1242,12 +1241,12 @@ PhantumpCard:
 
 	db 1 ; retreat cost
 	db WR_PSYCHIC ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw +0 ; resistance value (+/-)
 	tx StumpName ; category
 	db 32 ; Pokedex number
 	db 17 ; level
-	dw 2, 11 ; weakness value (+/-)
-	dw 66 * 10 ; resistance value (+/-)
 	tx PhantumpDescription ; description
 	db 16
 
@@ -1292,12 +1291,12 @@ TrevenantCard:
 
 	db 2 ; retreat cost
 	db WR_PSYCHIC ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_FIGHTING ; resistance
+	dw -20 ; resistance value (+/-)
 	tx ElderTreeName ; category
 	db 33 ; Pokedex number
 	db 34 ; level
-	dw 3, 11 ; weakness value (+/-)
-	dw 66 * 10 ; resistance value (+/-)
 	tx TrevenantDescription ; description
 	db 0
 
@@ -1342,12 +1341,12 @@ SnoverCard:
 
 	db 2 ; retreat cost
 	db WR_METAL ; weakness
+	dw +10 ; weakness value (+/-)
 	db WR_WATER ; resistance
+	dw -10 ; resistance value (+/-)
 	tx FrostTreeName ; category
 	db 34 ; Pokedex number
 	db 24 ; level
-	dw 1, 4 ; weakness value (+/-)
-	dw 6 * 10 ; resistance value (+/-)
 	tx ExeggcuteDescription ; description
 	db 16
 
@@ -1392,12 +1391,12 @@ AbomasnowCard:
 
 	db 3 ; retreat cost
 	db WR_METAL ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_WATER ; resistance
+	dw -20 ; resistance value (+/-)
 	tx FrostTreeName ; category
 	db 35 ; Pokedex number
 	db 45 ; level
-	dw 6, 7 ; weakness value (+/-)
-	dw 265 * 10 ; resistance value (+/-)
 	tx ExeggutorDescription ; description
 	db 0
 
@@ -1442,12 +1441,12 @@ TangelaLv8Card:
 
 	db 2 ; retreat cost
 	db WR_FIRE ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx VineName ; category
 	db 114 ; Pokedex number
 	db 12 ; level
-	dw 3, 3 ; weakness value (+/-)
-	dw 77 * 10 ; resistance value (+/-)
 	tx TangelaLv8Description ; description
 	db 16
 
@@ -1492,12 +1491,12 @@ TangrowthCard:
 
 	db 4 ; retreat cost
 	db WR_FIRE ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_WATER ; resistance
+	dw -20 ; resistance value (+/-)
 	tx VineName ; category
 	db 114 ; Pokedex number
 	db 52 ; level
-	dw 3, 3 ; weakness value (+/-)
-	dw 77 * 10 ; resistance value (+/-)
 	tx TangrowthDescription ; description
 	db 0
 
@@ -1542,12 +1541,12 @@ ScytherCard:
 
 	db 0 ; retreat cost
 	db WR_LIGHTNING ; weakness
+	dw +20 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx MantisName ; category
 	db 123 ; Pokedex number
 	db 25 ; level
-	dw 4, 11 ; weakness value (+/-)
-	dw 123 * 10 ; resistance value (+/-)
 	tx ScytherDescription ; description
 	db 16
 
@@ -1592,12 +1591,12 @@ LeafeonCard:
 
 	db 1 ; retreat cost
 	db WR_FIRE ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_LIGHTNING ; resistance
+	dw -20 ; resistance value (+/-)
 	tx VerdantName ; category
 	db 95 ; Pokedex number
 	db 42 ; level
-	dw 2, 11 ; weakness value (+/-)
-	dw 22 * 10 ; resistance value (+/-)
 	tx LeafeonDescription ; description
 	db 0
 
@@ -1642,12 +1641,12 @@ GrookeyCard:
 
 	db 1 ; retreat cost
 	db WR_FIRE ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx DrummerName ; category
 	db 29 ; Pokedex number
 	db 15 ; level
-	dw 2, 4 ; weakness value (+/-)
-	dw 9 * 10 ; resistance value (+/-)
 	tx GrookeyDescription ; description
 	db 16
 
@@ -1692,12 +1691,12 @@ ThwackeyCard:
 
 	db 2 ; retreat cost
 	db WR_FIRE ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_WATER ; resistance
+	dw -20 ; resistance value (+/-)
 	tx DrummerName ; category
 	db 30 ; Pokedex number
 	db 33 ; level
-	dw 3, 3 ; weakness value (+/-)
-	dw 14 * 10 ; resistance value (+/-)
 	tx ThwackeyDescription ; description
 	db 16
 
@@ -1742,12 +1741,12 @@ RillaboomCard:
 
 	db 4 ; retreat cost
 	db WR_FIRE ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_WATER ; resistance
+	dw -20 ; resistance value (+/-)
 	tx DrummerName ; category
 	db 31 ; Pokedex number
 	db 65 ; level
-	dw 5, 7 ; weakness value (+/-)
-	dw 34 * 10 ; resistance value (+/-)
 	tx RillaboomDescription ; description
 	db 0
 
@@ -1792,12 +1791,12 @@ BudewCard:
 
 	db 0 ; retreat cost
 	db WR_PSYCHIC ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx BudName ; category
 	db 29 ; Pokedex number
 	db 6 ; level
-	dw 2, 4 ; weakness value (+/-)
-	dw 9 * 10 ; resistance value (+/-)
 	tx BudewDescription ; description
 	db 16
 
@@ -1842,12 +1841,12 @@ RoseliaCard:
 
 	db 1 ; retreat cost
 	db WR_PSYCHIC ; weakness
+	dw +20 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx ThornName ; category
 	db 29 ; Pokedex number
 	db 23 ; level
-	dw 2, 4 ; weakness value (+/-)
-	dw 9 * 10 ; resistance value (+/-)
 	tx RoseliaDescription ; description
 	db 16
 
@@ -1892,12 +1891,12 @@ RoseradeCard:
 
 	db 1 ; retreat cost
 	db WR_PSYCHIC ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_FIGHTING ; resistance
+	dw -20 ; resistance value (+/-)
 	tx ThornName ; category
 	db 30 ; Pokedex number
 	db 57 ; level
-	dw 3, 3 ; weakness value (+/-)
-	dw 14 * 10 ; resistance value (+/-)
 	tx RoseradeDescription ; description
 	db 16
 
@@ -1942,12 +1941,12 @@ WimpodCard:
 
 	db 1 ; retreat cost
 	db WR_LIGHTNING ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx WimpodName ; category
 	db 117 ; Pokedex number
 	db 8 ; level
-	dw 3, 7 ; weakness value (+/-)
-	dw 66 * 10 ; resistance value (+/-)
 	tx WimpodDescription ; description
 	db 16
 
@@ -1992,12 +1991,12 @@ GolisopodCard:
 
 	db 3 ; retreat cost
 	db WR_LIGHTNING ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_GRASS ; resistance
+	dw -30 ; resistance value (+/-)
 	tx HardScaleName ; category
 	db 117 ; Pokedex number
 	db 44 ; level
-	dw 3, 7 ; weakness value (+/-)
-	dw 66 * 10 ; resistance value (+/-)
 	tx GolisopodDescription ; description
 	db 16
 
@@ -2041,13 +2040,13 @@ ShayminCard:
 	db ATK_ANIM_PSYCHIC_HIT ; animation
 
 	db 1 ; retreat cost
-	db WR_FIRE ; weakness
+	db WR_FIRE ; 
+	dw +20 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx GratitudeName ; category
 	db 4 ; Pokedex number
 	db 44 ; level
-	dw 6, 7 ; weakness value (+/-)
-	dw 221 * 10 ; resistance value (+/-)
 	tx ShayminDescription ; description
 	db 0
 ;--FIRE--
@@ -2092,12 +2091,12 @@ TepigCard:
 
 	db 1 ; retreat cost
 	db WR_WATER ; weakness
+	dw +10 ; weakness value (+/-)
 	db WR_GRASS ; resistance
+	dw -10 ; resistance value (+/-)
 	tx FirePigName ; category
 	db 46 ; Pokedex number
 	db 10 ; level
-	dw 2, 0 ; weakness value (+/-)
-	dw 19 * 10 ; resistance value (+/-)
 	tx TepigDescription ; description
 	db 21
 
@@ -2142,12 +2141,12 @@ PigniteCard:
 
 	db 2 ; retreat cost
 	db WR_WATER ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_GRASS ; resistance
+	dw -20 ; resistance value (+/-)
 	tx FirePigName ; category
 	db 47 ; Pokedex number
 	db 32 ; level
-	dw 3, 7 ; weakness value (+/-)
-	dw 42 * 10 ; resistance value (+/-)
 	tx PigniteDescription ; description
 	db 18
 
@@ -2192,12 +2191,12 @@ EmboarCard:
 
 	db 4 ; retreat cost
 	db WR_WATER ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_GRASS ; resistance
+	dw -20 ; resistance value (+/-)
 	tx MegaFirePigName ; category
 	db 48 ; Pokedex number
 	db 76 ; level
-	dw 5, 7 ; weakness value (+/-)
-	dw 200 * 10 ; resistance value (+/-)
 	tx EmboarDescription ; description
 	db 0
 
@@ -2242,12 +2241,12 @@ HoundourCard:
 
 	db 1 ; retreat cost
 	db WR_FIGHTING ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx DarkName ; category
 	db 49 ; Pokedex number
 	db 11 ; level
-	dw 2, 0 ; weakness value (+/-)
-	dw 22 * 10 ; resistance value (+/-)
 	tx HoundourDescription ; description
 	db 16
 
@@ -2292,12 +2291,12 @@ HoundoomCard:
 
 	db 1 ; retreat cost
 	db WR_FIGHTING ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_PSYCHIC ; resistance
+	dw -20 ; resistance value (+/-)
 	tx DarkName ; category
 	db 50 ; Pokedex number
 	db 32 ; level
-	dw 3, 7 ; weakness value (+/-)
-	dw 44 * 10 ; resistance value (+/-)
 	tx HoundoomDescription ; description
 	db 0
 
@@ -2341,13 +2340,13 @@ SizzlipedeCard:
 	db ATK_ANIM_SMALL_FLAME ; animation
 
 	db 1 ; retreat cost
-	db WR_WATER ; weakness
+	db WR_METAL ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx RadiatorName ; category
 	db 51 ; Pokedex number
 	db 18 ; level
-	dw 2, 4 ; weakness value (+/-)
-	dw 42 * 10 ; resistance value (+/-)
 	tx SizzlipedeDescription ; description
 	db 16
 
@@ -2392,12 +2391,12 @@ CentiskorchCard:
 
 	db 2 ; retreat cost
 	db WR_WATER ; weakness
+	dw +20 ; weakness value (+/-)	
 	db WR_GRASS ; resistance
+	dw -20 ; resistance value (+/-)
 	tx RadiatorName ; category
 	db 52 ; Pokedex number
 	db 45 ; level
-	dw 6, 3 ; weakness value (+/-)
-	dw 342 * 10 ; resistance value (+/-)
 	tx CentiskorchDescription ; description
 	db 0
 
@@ -2442,12 +2441,12 @@ NumelCard:
 
 	db 1 ; retreat cost
 	db WR_WATER ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx NumbName ; category
 	db 57 ; Pokedex number
 	db 22 ; level
-	dw 2, 11 ; weakness value (+/-)
-	dw 55 * 10 ; resistance value (+/-)
 	tx NumelDescription ; description
 	db 16
 
@@ -2492,12 +2491,12 @@ CameruptCard:
 
 	db 2 ; retreat cost
 	db WR_WATER ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_LIGHTNING ; resistance
+	dw -20 ; resistance value (+/-)
 	tx EruptionName ; category
 	db 58 ; Pokedex number
 	db 44 ; level
-	dw 6, 3 ; weakness value (+/-)
-	dw 342 * 10 ; resistance value (+/-)
 	tx CameruptDescription ; description
 	db 0
 
@@ -2542,12 +2541,12 @@ DarumakaCard:
 
 	db 2 ; retreat cost
 	db WR_WATER ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx ZenCharmName ; category
 	db 53 ; Pokedex number
 	db 28 ; level
-	dw 3, 3 ; weakness value (+/-)
-	dw 66 * 10 ; resistance value (+/-)
 	tx DarumakaDescription ; description
 	db 16
 
@@ -2592,12 +2591,12 @@ DarmanitanCard:
 
 	db 2 ; retreat cost
 	db WR_WATER ; weakness
+	dw +20 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx BlazingName ; category
 	db 54 ; Pokedex number
 	db 53 ; level
-	dw 5, 7 ; weakness value (+/-)
-	dw 209 * 10 ; resistance value (+/-)
 	tx DarmanitanDescription ; description
 	db 0
 
@@ -2642,12 +2641,12 @@ LitleoCard:
 
 	db 1 ; retreat cost
 	db WR_FIGHTING ; weakness
+	dw +10 ; weakness value (+/-)
 	db WR_PSYCHIC ; resistance
+	dw -10 ; resistance value (+/-)
 	tx LionCubName ; category
 	db 55 ; Pokedex number
 	db 14 ; level
-	dw 3, 3 ; weakness value (+/-)
-	dw 66 * 10 ; resistance value (+/-)
 	tx DarumakaDescription ; description
 	db 16
 
@@ -2692,12 +2691,12 @@ PyroarCard:
 
 	db 2 ; retreat cost
 	db WR_FIGHTING ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_PSYCHIC ; resistance
+	dw -20 ; resistance value (+/-)
 	tx RoyalName ; category
 	db 56 ; Pokedex number
 	db 41 ; level
-	dw 5, 7 ; weakness value (+/-)
-	dw 209 * 10 ; resistance value (+/-)
 	tx PyroarDescription ; description
 	db 0
 
@@ -2742,12 +2741,12 @@ FlareonLv28Card:
 
 	db 1 ; retreat cost
 	db WR_WATER ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_GRASS ; resistance
+	dw -20 ; resistance value (+/-)
 	tx FlameName ; category
 	db 200 ; Pokedex number
 	db 38 ; level
-	dw 2, 11 ; weakness value (+/-)
-	dw 55 * 10 ; resistance value (+/-)
 	tx FlareonLv28Description ; description
 	db 0
 
@@ -2792,12 +2791,12 @@ TortunatorCard:
 
 	db 3 ; retreat cost
 	db WR_FIGHTING ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_LIGHTNING ; resistance
+	dw -20 ; resistance value (+/-)
 	tx FlameName ; category
 	db 59 ; Pokedex number
 	db 45 ; level
-	dw 6, 7 ; weakness value (+/-)
-	dw 132 * 10 ; resistance value (+/-)
 	tx EnteiLv35Description ; description
 	db 0
 
@@ -2842,12 +2841,12 @@ LitwickCard:
 
 	db 0 ; retreat cost
 	db WR_PSYCHIC ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx CandleName ; category
 	db 46 ; Pokedex number
 	db 26 ; level
-	dw 2, 0 ; weakness value (+/-)
-	dw 19 * 10 ; resistance value (+/-)
 	tx LitwickDescription ; description
 	db 16
 
@@ -2892,12 +2891,12 @@ LampentCard:
 
 	db 1 ; retreat cost
 	db WR_PSYCHIC ; weakness
+	dw +20 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx LampName ; category
 	db 47 ; Pokedex number
 	db 46 ; level
-	dw 3, 7 ; weakness value (+/-)
-	dw 42 * 10 ; resistance value (+/-)
 	tx LampentDescription ; description
 	db 16
 
@@ -2942,12 +2941,12 @@ ChandelureCard:
 
 	db 2 ; retreat cost
 	db WR_PSYCHIC ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_FIGHTING ; resistance
+	dw -20 ; resistance value (+/-)
 	tx LampName ; category
 	db 48 ; Pokedex number
 	db 62 ; level
-	dw 5, 7 ; weakness value (+/-)
-	dw 200 * 10 ; resistance value (+/-)
 	tx ChandelureDescription ; description
 	db 0
 
@@ -2992,12 +2991,12 @@ MagbyCard:
 
 	db 0 ; retreat cost
 	db NONE ; weakness
+	dw +0 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx LiveCoalName ; category
 	db 117 ; Pokedex number
 	db 5 ; level
-	dw 3, 7 ; weakness value (+/-)
-	dw 66 * 10 ; resistance value (+/-)
 	tx MagbyDescription ; description
 	db 0
 
@@ -3042,12 +3041,12 @@ MagmarLv24Card:
 
 	db 2 ; retreat cost
 	db WR_WATER ; weakness
+	dw +20 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx SpitfireName ; category
 	db 126 ; Pokedex number
 	db 24 ; level
-	dw 4, 3 ; weakness value (+/-)
-	dw 98 * 10 ; resistance value (+/-)
 	tx MagmarLv24Description ; description
 	db 16
 
@@ -3092,12 +3091,12 @@ MagmortarCard:
 
 	db 3 ; retreat cost
 	db WR_WATER ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_METAL ; resistance
+	dw -30 ; resistance value (+/-)
 	tx BlastName ; category
 	db 70 ; Pokedex number
 	db 67 ; level
-	dw 4, 3 ; weakness value (+/-)
-	dw 98 * 10 ; resistance value (+/-)
 	tx MagmortarDescription ; description
 	db 0
 
@@ -3142,12 +3141,12 @@ EnteiCard:
 
 	db 2 ; retreat cost
 	db NONE ; weakness
+	dw +0 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx VolcanoName ; category
 	db 60 ; Pokedex number
 	db 87 ; level
-	dw 6, 7 ; weakness value (+/-)
-	dw 132 * 10 ; resistance value (+/-)
 	tx EnteiLv37Description ; description
 	db 0
 
@@ -3192,12 +3191,12 @@ FuecocoCard:
 
 	db 1 ; retreat cost
 	db WR_WATER ; weakness
+	dw +10 ; weakness value (+/-)
 	db WR_GRASS ; resistance
+	dw -10 ; resistance value (+/-)
 	tx FireCrocName ; category
 	db 61 ; Pokedex number
 	db 12 ; level
-	dw 2, 0 ; weakness value (+/-)
-	dw 19 * 10 ; resistance value (+/-)
 	tx FuecocoDescription ; description
 	db 16
 
@@ -3242,12 +3241,12 @@ CrocalorCard:
 
 	db 2 ; retreat cost
 	db WR_WATER ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_GRASS ; resistance
+	dw -20 ; resistance value (+/-)
 	tx FireCrocName ; category
 	db 62 ; Pokedex number
 	db 34 ; level
-	dw 3, 7 ; weakness value (+/-)
-	dw 42 * 10 ; resistance value (+/-)
 	tx CrocalorDescription ; description
 	db 16
 
@@ -3292,12 +3291,12 @@ SkeledirgeCard:
 
 	db 3 ; retreat cost
 	db WR_WATER ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_GRASS ; resistance
+	dw -20 ; resistance value (+/-)
 	tx SingerName ; category
 	db 63 ; Pokedex number
 	db 67 ; level
-	dw 5, 7 ; weakness value (+/-)
-	dw 200 * 10 ; resistance value (+/-)
 	tx SkeledirgeDescription ; description
 	db 0
 
@@ -3342,12 +3341,12 @@ SalanditCard:
 
 	db 1 ; retreat cost
 	db WR_PSYCHIC ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx ToxicName ; category
 	db 55 ; Pokedex number
 	db 12 ; level
-	dw 3, 3 ; weakness value (+/-)
-	dw 66 * 10 ; resistance value (+/-)
 	tx SalanditDescription ; description
 	db 16
 
@@ -3392,12 +3391,12 @@ Salazzle:
 
 	db 1 ; retreat cost
 	db WR_PSYCHIC ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_DARKNESS ; resistance
+	dw -20 ; resistance value (+/-)
 	tx ToxicName ; category
 	db 90 ; Pokedex number
 	db 45 ; level
-	dw 3, 7 ; weakness value (+/-)
-	dw 44 * 10 ; resistance value (+/-)
 	tx SalazzleDescription ; description
 	db 0
 
@@ -3442,12 +3441,12 @@ BagonCard:
 
 	db 1 ; retreat cost
 	db WR_WATER ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx RockHeadName ; category
 	db 64 ; Pokedex number
 	db 18 ; level
-	dw 2, 0 ; weakness value (+/-)
-	dw 19 * 10 ; resistance value (+/-)
 	tx BagonDescription ; description
 	db 16
 
@@ -3492,7 +3491,9 @@ ShelgonCard:
 
 	db 2 ; retreat cost
 	db WR_WATER ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_GRASS ; resistance
+	dw -20 ; resistance value (+/-)
 	tx EnduranceName ; category
 	db 65 ; Pokedex number
 	db 48 ; level
@@ -3542,12 +3543,12 @@ SalamenceCard:
 
 	db 3 ; retreat cost
 	db WR_WATER ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_FIGHTING ; resistance
+	dw -30 ; resistance value (+/-)
 	tx DragonName ; category
 	db 66 ; Pokedex number
 	db 77 ; level
-	dw 5, 7 ; weakness value (+/-)
-	dw 200 * 10 ; resistance value (+/-)
 	tx SalamanceDescription ; description
 	db 0
 
@@ -3592,12 +3593,12 @@ DruddigonCard:
 
 	db 2 ; retreat cost
 	db WR_WATER ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_LIGHTNING ; resistance
+	dw -20 ; resistance value (+/-)
 	tx CaveName ; category
 	db 67 ; Pokedex number
 	db 43 ; level
-	dw 6, 7 ; weakness value (+/-)
-	dw 132 * 10 ; resistance value (+/-)
 	tx DruddigonDescription ; description
 	db 0
 
@@ -3692,12 +3693,12 @@ CharmanderCard:
 
 	db 1 ; retreat cost
 	db WR_WATER ; weakness
+	dw +10 ; weakness value (+/-)
 	db WR_GRASS ; resistance
+	dw -10 ; resistance value (+/-)
 	tx FlameName ; category
 	db 61 ; Pokedex number
 	db 15 ; level
-	dw 2, 0 ; weakness value (+/-)
-	dw 19 * 10 ; resistance value (+/-)
 	tx CharmanderDescription ; description
 	db 16
 
@@ -3742,12 +3743,12 @@ CharmeleonCard:
 
 	db 1 ; retreat cost
 	db WR_WATER ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_GRASS ; resistance
+	dw -20 ; resistance value (+/-)
 	tx FlameName ; category
 	db 62 ; Pokedex number
 	db 29 ; level
-	dw 3, 7 ; weakness value (+/-)
-	dw 42 * 10 ; resistance value (+/-)
 	tx CharmeleonDescription ; description
 	db 16
 
@@ -3792,12 +3793,12 @@ CharizardCard:
 
 	db 4 ; retreat cost
 	db WR_WATER ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_GRASS ; resistance
+	dw -30 ; resistance value (+/-)
 	tx FlameName ; category
 	db 63 ; Pokedex number
 	db 76 ; level
-	dw 5, 7 ; weakness value (+/-)
-	dw 200 * 10 ; resistance value (+/-)
 	tx CharizardDescription ; description
 	db 0
 
@@ -3842,12 +3843,12 @@ FletchlingCard:
 
 	db 0 ; retreat cost
 	db WR_LIGHTNING ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx TinyBirdName ; category
 	db 61 ; Pokedex number
 	db 12 ; level
-	dw 2, 0 ; weakness value (+/-)
-	dw 19 * 10 ; resistance value (+/-)
 	tx FletchlingDescription ; description
 	db 16
 
@@ -3892,12 +3893,12 @@ FletchinderCard:
 
 	db 0 ; retreat cost
 	db WR_LIGHTNING ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_FIGHTING ; resistance
+	dw -20 ; resistance value (+/-)
 	tx EmberName ; category
 	db 62 ; Pokedex number
 	db 27 ; level
-	dw 3, 7 ; weakness value (+/-)
-	dw 42 * 10 ; resistance value (+/-)
 	tx FletchinderDescription ; description
 	db 16
 
@@ -3942,12 +3943,12 @@ TalonflameCard:
 
 	db 0 ; retreat cost
 	db WR_LIGHTNING ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_FIGHTING ; resistance
+	dw -20 ; resistance value (+/-)
 	tx ScorchingName ; category
 	db 63 ; Pokedex number
 	db 52 ; level
-	dw 5, 7 ; weakness value (+/-)
-	dw 200 * 10 ; resistance value (+/-)
 	tx TalonflameDescription ; description
 	db 0
 
@@ -3992,12 +3993,12 @@ LarvestaCard:
 
 	db 2 ; retreat cost
 	db WR_WATER ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx SunName ; category
 	db 61 ; Pokedex number
 	db 29 ; level
-	dw 2, 0 ; weakness value (+/-)
-	dw 19 * 10 ; resistance value (+/-)
 	tx LarvestaDescription ; description
 	db 16
 
@@ -4042,12 +4043,12 @@ VolcaronaCard:
 
 	db 2 ; retreat cost
 	db WR_WATER ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_GRASS ; resistance
+	dw -30 ; resistance value (+/-)
 	tx SunName ; category
 	db 62 ; Pokedex number
 	db 67 ; level
-	dw 3, 7 ; weakness value (+/-)
-	dw 42 * 10 ; resistance value (+/-)
 	tx VolcaronaDescription ; description
 	db 16
 
@@ -4092,12 +4093,12 @@ HeatranCard:
 
 	db 3 ; retreat cost
 	db WR_FIGHTING ; weakness
+	dw +30 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx LavaDomeName ; category
 	db 71 ; Pokedex number
 	db 60 ; level
-	dw 6, 7 ; weakness value (+/-)
-	dw 132 * 10 ; resistance value (+/-)
 	tx HeatranDescription ; description
 	db 0
 
@@ -4143,12 +4144,12 @@ FroakieCard:
 
 	db 1 ; retreat cost
 	db WR_GRASS ; weakness
+	dw +10 ; weakness value (+/-)
 	db WR_FIRE ; resistance
+	dw -10 ; resistance value (+/-)
 	tx BubbleFrogName ; category
 	db 72 ; Pokedex number
 	db 10 ; level
-	dw 1, 8 ; weakness value (+/-)
-	dw 20 * 10 ; resistance value (+/-)
 	tx FroakieDescription ; description
 	db 21
 
@@ -4193,12 +4194,12 @@ FrogadierCard:
 
 	db 1 ; retreat cost
 	db WR_GRASS ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_FIRE ; resistance
+	dw -20 ; resistance value (+/-)
 	tx BubbleFrogName ; category
 	db 73 ; Pokedex number
 	db 24 ; level
-	dw 3, 3 ; weakness value (+/-)
-	dw 50 * 10 ; resistance value (+/-)
 	tx FrogadierDescription ; description
 	db 18
 
@@ -4243,12 +4244,12 @@ GreninjaCard:
 
 	db 1 ; retreat cost
 	db WR_GRASS ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_FIRE ; resistance
+	dw -20 ; resistance value (+/-)
 	tx NinjaName; category
 	db 74 ; Pokedex number
 	db 52 ; level
-	dw 5, 3 ; weakness value (+/-)
-	dw 189 * 10 ; resistance value (+/-)
 	tx GreninjaDescription ; description
 	db 0
 
@@ -4293,12 +4294,12 @@ BuizelCard:
 
 	db 0 ; retreat cost
 	db WR_LIGHTNING ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx SeaWeaselName ; category
 	db 75 ; Pokedex number
 	db 15 ; level
-	dw 2, 7 ; weakness value (+/-)
-	dw 43 * 10 ; resistance value (+/-)
 	tx BuizelDescription ; description
 	db 16
 
@@ -4343,12 +4344,12 @@ FloatzelCard:
 
 	db 1 ; retreat cost
 	db WR_LIGHTNING ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_METAL ; resistance
+	dw -20 ; resistance value (+/-)
 	tx SeaWeaselName ; category
 	db 76 ; Pokedex number
 	db 37 ; level
-	dw 5, 7 ; weakness value (+/-)
-	dw 169 * 10 ; resistance value (+/-)
 	tx FloatzelDescription ; description
 	db 0
 
@@ -4393,12 +4394,12 @@ BruxishCard:
 
 	db 1 ; retreat cost
 	db WR_DARKNESS ; weakness
+	dw +20 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx BiteName ; category
 	db 79 ; Pokedex number
 	db 29 ; level
-	dw 3, 11 ; weakness value (+/-)
-	dw 79 * 10 ; resistance value (+/-)
 	tx BruxishDescription ; description
 	db 0
 
@@ -4443,12 +4444,12 @@ TympoleCard:
 
 	db 1 ; retreat cost
 	db WR_GRASS ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx TadpoleName ; category
 	db 77 ; Pokedex number
 	db 13 ; level
-	dw 2, 0 ; weakness value (+/-)
-	dw 27 * 10 ; resistance value (+/-)
 	tx TympoleDescription ; description
 	db 16
 
@@ -4493,12 +4494,12 @@ PalpitoadCard:
 
 	db 2 ; retreat cost
 	db WR_GRASS ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_LIGHTNING ; resistance
+	dw -20 ; resistance value (+/-)
 	tx VibrationName ; category
 	db 78 ; Pokedex number
 	db 28 ; level
-	dw 3, 4 ; weakness value (+/-)
-	dw 44 * 10 ; resistance value (+/-)
 	tx PalpitoadDescription ; description
 	db 16
 
@@ -4543,12 +4544,12 @@ SeismitoadCard:
 
 	db 3 ; retreat cost
 	db WR_GRASS ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_LIGHTNING ; resistance
+	dw -20 ; resistance value (+/-)
 	tx VibrationName ; category
 	db 79 ; Pokedex number
 	db 68 ; level
-	dw 4, 3 ; weakness value (+/-)
-	dw 119 * 10 ; resistance value (+/-)
 	tx SeismitoadDescription ; description
 	db 0
 
@@ -4593,12 +4594,12 @@ SeelCard:
 
 	db 1 ; retreat cost
 	db WR_LIGHTNING ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx SeaLionName ; category
 	db 82 ; Pokedex number
 	db 12 ; level
-	dw 3, 7 ; weakness value (+/-)
-	dw 198 * 10 ; resistance value (+/-)
 	tx SeelDescription ; description
 	db 16
 
@@ -4643,12 +4644,12 @@ DewgongCard:
 
 	db 2 ; retreat cost
 	db WR_FIGHTING ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_WATER ; resistance
+	dw -20 ; resistance value (+/-)
 	tx SeaLionName ; category
 	db 83 ; Pokedex number
 	db 42 ; level
-	dw 5, 7 ; weakness value (+/-)
-	dw 265 * 10 ; resistance value (+/-)
 	tx DewgongDescription ; description
 	db 0
 
@@ -4693,12 +4694,12 @@ SnoruntCard:
 
 	db 1 ; retreat cost
 	db WR_METAL ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx SnowName ; category
 	db 86 ; Pokedex number
 	db 19 ; level
-	dw 1, 4 ; weakness value (+/-)
-	dw 14 * 10 ; resistance value (+/-)
 	tx SnoruntDescription ; description
 	db 16
 
@@ -4743,12 +4744,12 @@ GlalieCard:
 
 	db 2 ; retreat cost
 	db WR_METAL ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_WATER ; resistance
+	dw -20 ; resistance value (+/-)
 	tx SnowName ; category
 	db 87 ; Pokedex number
 	db 43 ; level
-	dw 4, 3 ; weakness value (+/-)
-	dw 132 * 10 ; resistance value (+/-)
 	tx GlalieDescription ; description
 	db 0
 
@@ -4793,12 +4794,12 @@ FroslassCard:
 
 	db 1 ; retreat cost
 	db WR_PSYCHIC ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_FIGHTING ; resistance
+	dw -20 ; resistance value (+/-)
 	tx SnowName ; category
 	db 87 ; Pokedex number
 	db 45 ; level
-	dw 4, 3 ; weakness value (+/-)
-	dw 132 * 10 ; resistance value (+/-)
 	tx FroslassDescription ; description
 	db 0
 WingullCard:
@@ -4842,12 +4843,12 @@ WingullCard:
 
 	db 1 ; retreat cost
 	db WR_LIGHTNING ; weakness
+	dw +10 ; weakness value (+/-)
 	db WR_FIGHTING ; resistance
+	dw -10 ; resistance value (+/-)
 	tx SeagullName ; category
 	db 84 ; Pokedex number
 	db 12 ; level
-	dw 1, 0 ; weakness value (+/-)
-	dw 9 * 10 ; resistance value (+/-)
 	tx ShellderDescription ; description
 	db 16
 
@@ -4892,12 +4893,12 @@ PelipperCard:
 
 	db 2 ; retreat cost
 	db WR_LIGHTNING ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_FIGHTING ; resistance
+	dw -20 ; resistance value (+/-)
 	tx WaterBirdName ; category
 	db 85 ; Pokedex number
 	db 35 ; level
-	dw 4, 11 ; weakness value (+/-)
-	dw 292 * 10 ; resistance value (+/-)
 	tx CloysterDescription ; description
 	db 0
 
@@ -4942,12 +4943,12 @@ ClauncherCard:
 
 	db 1 ; retreat cost
 	db WR_LIGHTNING ; weakness
+	dw +10 ; weakness value (+/-)
 	db WR_FIRE ; resistance
+	dw -10 ; resistance value (+/-)
 	tx WaterGunName ; category
 	db 86 ; Pokedex number
 	db 20 ; level
-	dw 1, 4 ; weakness value (+/-)
-	dw 14 * 10 ; resistance value (+/-)
 	tx ClauncherDescription ; description
 	db 16
 
@@ -4992,12 +4993,12 @@ ClawitzerCard:
 
 	db 2 ; retreat cost
 	db WR_LIGHTNING ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_FIRE ; resistance
+	dw -20 ; resistance value (+/-)
 	tx HowlitzerName ; category
 	db 87 ; Pokedex number
 	db 47 ; level
-	dw 4, 3 ; weakness value (+/-)
-	dw 132 * 10 ; resistance value (+/-)
 	tx ClawitzerDescription ; description
 	db 0
 
@@ -5042,12 +5043,12 @@ HorseaCard:
 
 	db 1 ; retreat cost
 	db WR_LIGHTNING ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx DragonName ; category
 	db 88 ; Pokedex number
 	db 16 ; level
-	dw 1, 4 ; weakness value (+/-)
-	dw 18 * 10 ; resistance value (+/-)
 	tx HorseaDescription ; description
 	db 16
 
@@ -5092,12 +5093,12 @@ SeadraCard:
 
 	db 1 ; retreat cost
 	db WR_LIGHTNING ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_METAL ; resistance
+	dw -20 ; resistance value (+/-)
 	tx DragonName ; category
 	db 89 ; Pokedex number
 	db 33 ; level
-	dw 3, 1 ; weakness value (+/-)
-	dw 55 * 10 ; resistance value (+/-)
 	tx SeadraDescription ; description
 	db 16
 
@@ -5142,12 +5143,12 @@ KingdraCard:
 
 	db 1 ; retreat cost
 	db WR_LIGHTNING ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_METAL ; resistance
+	dw -20 ; resistance value (+/-)
 	tx DragonName ; category
 	db 90 ; Pokedex number
 	db 55 ; level
-	dw 3, 7 ; weakness value (+/-)
-	dw 44 * 10 ; resistance value (+/-)
 	tx KingdraDescription ; description
 	db 0
 
@@ -5192,12 +5193,12 @@ BasculinCard:
 
 	db 1 ; retreat cost
 	db WR_LIGHTNING ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx HostileName ; category
 	db 91 ; Pokedex number
 	db 32 ; level
-	dw 2, 0 ; weakness value (+/-)
-	dw 33 * 10 ; resistance value (+/-)
 	tx BasculinDescription ; description
 	db 21
 
@@ -5242,12 +5243,12 @@ Basculegion:
 
 	db 2 ; retreat cost
 	db WR_LIGHTNING ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_FIGHTING ; resistance
+	dw -20 ; resistance value (+/-)
 	tx BigFishName ; category
 	db 92 ; Pokedex number
 	db 58 ; level
-	dw 4, 3 ; weakness value (+/-)
-	dw 86 * 10 ; resistance value (+/-)
 	tx BasculegionDescription ; description
 	db 0
 
@@ -5292,12 +5293,12 @@ DewpiderCard:
 
 	db 1 ; retreat cost
 	db WR_LIGHTNING ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx WaterBubbleName ; category
 	db 93 ; Pokedex number
 	db 15 ; level
-	dw 2, 7 ; weakness value (+/-)
-	dw 76 * 10 ; resistance value (+/-)
 	tx DewpiderDescription ; description
 	db 16
 
@@ -5342,12 +5343,12 @@ AraquanidCard:
 
 	db 1 ; retreat cost
 	db WR_LIGHTNING ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_FIGHTING ; resistance
+	dw -20 ; resistance value (+/-)
 	tx WaterBubbleName ; category
 	db 94 ; Pokedex number
 	db 38 ; level
-	dw 3, 7 ; weakness value (+/-)
-	dw 176 * 10 ; resistance value (+/-)
 	tx AraquanidDescription ; description
 	db 0
 
@@ -5392,12 +5393,12 @@ ChewtleCard:
 
 	db 2 ; retreat cost
 	db WR_GRASS ; weakness
+	dw +10 ; weakness value (+/-)
 	db WR_FIRE ; resistance
+	dw -10 ; resistance value (+/-)
 	tx SnappingName ; category
 	db 97 ; Pokedex number
 	db 25 ; level
-	dw 8, 2 ; weakness value (+/-)
-	dw 485 * 10 ; resistance value (+/-)
 	tx ChewtleDescription ; description
 	db 16
 
@@ -5442,12 +5443,12 @@ DrednawCard:
 
 	db 3 ; retreat cost
 	db WR_GRASS ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_FIRE ; resistance
+	dw -30 ; resistance value (+/-)
 	tx BiteName ; category
 	db 98 ; Pokedex number
 	db 59 ; level
-	dw 3, 3 ; weakness value (+/-)
-	dw 64 * 10 ; resistance value (+/-)
 	tx DrednawDescription ; description
 	db 0
 
@@ -5492,12 +5493,12 @@ MudkipCard:
 
 	db 1 ; retreat cost
 	db WR_GRASS ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx MudFishName ; category
 	db 117 ; Pokedex number
 	db 14 ; level
-	dw 3, 7 ; weakness value (+/-)
-	dw 66 * 10 ; resistance value (+/-)
 	tx MudkipDescription ; description
 	db 16
 
@@ -5542,12 +5543,12 @@ MarshtompCard:
 
 	db 2 ; retreat cost
 	db WR_GRASS ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_FIRE ; resistance
+	dw -20 ; resistance value (+/-)
 	tx MudFishName ; category
 	db 117 ; Pokedex number
 	db 28 ; level
-	dw 3, 7 ; weakness value (+/-)
-	dw 66 * 10 ; resistance value (+/-)
 	tx MarshtompDescription ; description
 	db 16
 
@@ -5592,7 +5593,9 @@ SwampertCard:
 
 	db 3 ; retreat cost
 	db WR_GRASS ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_FIRE ; resistance
+	dw -20 ; resistance value (+/-)
 	tx MudFishName ; category
 	db 117 ; Pokedex number
 	db 53 ; level
@@ -5642,12 +5645,12 @@ MagikarpCard:
 
 	db 0 ; retreat cost
 	db WR_LIGHTNING ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx FishName ; category
 	db 117 ; Pokedex number
 	db 14 ; level
-	dw 3, 7 ; weakness value (+/-)
-	dw 66 * 10 ; resistance value (+/-)
 	tx MagikarpDescription ; description
 	db 16
 
@@ -5692,12 +5695,12 @@ GyaradosCard:
 
 	db 4 ; retreat cost
 	db WR_LIGHTNING ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_FIGHTING ; resistance
+	dw -30 ; resistance value (+/-)
 	tx AtrociusName ; category
 	db 117 ; Pokedex number
 	db 72 ; level
-	dw 3, 7 ; weakness value (+/-)
-	dw 66 * 10 ; resistance value (+/-)
 	tx GyaradosDescription ; description
 	db 16
 
@@ -5742,12 +5745,12 @@ VaporeonLv42Card:
 
 	db 1 ; retreat cost
 	db WR_LIGHTNING ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_FIRE ; resistance
+	dw -20 ; resistance value (+/-)
 	tx BubbleJetName ; category
 	db 201 ; Pokedex number
 	db 42 ; level
-	dw 3, 3 ; weakness value (+/-)
-	dw 64 * 10 ; resistance value (+/-)
 	tx VaporeonLv42Description ; description
 	db 0
 
@@ -5792,12 +5795,12 @@ GlaceonCard:
 
 	db 1 ; retreat cost
 	db WR_METAL ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_WATER ; resistance
+	dw -20 ; resistance value (+/-)
 	tx SnowName ; category
 	db 95 ; Pokedex number
 	db 44 ; level
-	dw 2, 11 ; weakness value (+/-)
-	dw 22 * 10 ; resistance value (+/-)
 	tx GlaceonDescription ; description
 	db 0
 
@@ -5842,12 +5845,12 @@ SwinubCard:
 
 	db 2 ; retreat cost
 	db WR_METAL ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx SwineName ; category
 	db 77 ; Pokedex number
 	db 19 ; level
-	dw 2, 0 ; weakness value (+/-)
-	dw 27 * 10 ; resistance value (+/-)
 	tx SwinubDescription ; description
 	db 16
 
@@ -5892,12 +5895,12 @@ PiloswineCard:
 
 	db 3 ; retreat cost
 	db WR_METAL ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_LIGHTNING ; resistance
+	dw -20 ; resistance value (+/-)
 	tx SwineName ; category
 	db 78 ; Pokedex number
 	db 38 ; level
-	dw 3, 4 ; weakness value (+/-)
-	dw 44 * 10 ; resistance value (+/-)
 	tx PiloswineDescription ; description
 	db 16
 
@@ -5942,12 +5945,12 @@ MamoswineCard:
 
 	db 4 ; retreat cost
 	db WR_METAL ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_LIGHTNING ; resistance
+	dw -30 ; resistance value (+/-)
 	tx SwineName ; category
 	db 79 ; Pokedex number
 	db 74 ; level
-	dw 4, 3 ; weakness value (+/-)
-	dw 119 * 10 ; resistance value (+/-)
 	tx MamoswineDescription ; description
 	db 0
 
@@ -5992,12 +5995,12 @@ RelicanthCard:
 
 	db 1 ; retreat cost
 	db WR_GRASS ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_FIRE ; resistance
+	dw -20 ; resistance value (+/-)
 	tx LongevityName ; category
 	db 101 ; Pokedex number
 	db 35 ; level
-	dw 5, 7 ; weakness value (+/-)
-	dw 122 * 10 ; resistance value (+/-)
 	tx RelicanthDescription ; description
 	db 0
 
@@ -6042,12 +6045,12 @@ RegiceCard:
 
 	db 3 ; retreat cost
 	db WR_FIRE ; weakness
+	dw +30 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx FreezeName ; category
 	db 144 ; Pokedex number
 	db 80 ; level
-	dw 5, 7 ; weakness value (+/-)
-	dw 122 * 10 ; resistance value (+/-)
 	tx RegiceDescription ; description
 	db 0
 
@@ -6142,12 +6145,12 @@ KyogreCard:
 
 	db 4 ; retreat cost
 	db WR_LIGHTNING ; weakness
+	dw +30 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx SeaBasinName ; category
 	db 144 ; Pokedex number
 	db 84 ; level
-	dw 5, 7 ; weakness value (+/-)
-	dw 122 * 10 ; resistance value (+/-)
 	tx KyogreDescription ; description
 	db 0
 
@@ -6193,12 +6196,12 @@ BlitzleCard:
 
 	db 1 ; retreat cost
 	db WR_FIGHTING ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx ElectrifiedName ; category
 	db 103 ; Pokedex number
 	db 12 ; level
-	dw 1, 4 ; weakness value (+/-)
-	dw 13 * 10 ; resistance value (+/-)
 	tx BlitzleDescription ; description
 	db 16
 
@@ -6243,12 +6246,12 @@ ZebstrikaCard:
 
 	db 1 ; retreat cost
 	db WR_FIGHTING ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_GRASS ; resistance
+	dw -20 ; resistance value (+/-)
 	tx ThunderboltName ; category
 	db 104 ; Pokedex number
 	db 40 ; level
-	dw 2, 7 ; weakness value (+/-)
-	dw 66 * 10 ; resistance value (+/-)
 	tx ZebstrikaDescription ; description
 	db 0
 
@@ -6293,12 +6296,12 @@ HelioptileCard:
 
 	db 1 ; retreat cost
 	db WR_FIGHTING ; weakness
+	dw +10 ; weakness value (+/-)
 	db WR_PSYCHIC ; resistance
+	dw -10 ; resistance value (+/-)
 	tx GeneratorName ; category
 	db 105 ; Pokedex number
 	db 16 ; level
-	dw 1, 4 ; weakness value (+/-)
-	dw 13 * 10 ; resistance value (+/-)
 	tx HelioptileDescription ; description
 	db 16
 
@@ -6343,12 +6346,12 @@ HelioliskCard:
 
 	db 1 ; retreat cost
 	db WR_FIGHTING ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_PSYCHIC ; resistance
+	dw -20 ; resistance value (+/-)
 	tx GeneratorName ; category
 	db 106 ; Pokedex number
 	db 45 ; level
-	dw 2, 7 ; weakness value (+/-)
-	dw 66 * 10 ; resistance value (+/-)
 	tx HelioliskDescription ; description
 	db 0
 
@@ -6393,12 +6396,12 @@ PincurchinCard:
 
 	db 2 ; retreat cost
 	db WR_FIGHTING ; weakness
+	dw +20 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx SeaUrchinName ; category
 	db 107 ; Pokedex number
 	db 36 ; level
-	dw 1, 4 ; weakness value (+/-)
-	dw 13 * 10 ; resistance value (+/-)
 	tx PincurchinDescription ; description
 	db 0
 
@@ -6443,12 +6446,12 @@ ShinxCard:
 
 	db 1 ; retreat cost
 	db WR_FIGHTING ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx FlashName ; category
 	db 108 ; Pokedex number
 	db 12 ; level
-	dw 1, 4 ; weakness value (+/-)
-	dw 13 * 10 ; resistance value (+/-)
 	tx ShinxDescription ; description
 	db 16
 
@@ -6493,12 +6496,12 @@ LuxioCard:
 
 	db 1 ; retreat cost
 	db WR_FIGHTING ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_METAL ; resistance
+	dw -20 ; resistance value (+/-)
 	tx SparkName ; category
 	db 109 ; Pokedex number
 	db 23 ; level
-	dw 1, 4 ; weakness value (+/-)
-	dw 13 * 10 ; resistance value (+/-)
 	tx LuxioDescription ; description
 	db 16
 
@@ -6543,12 +6546,12 @@ LuxrayCard:
 
 	db 1 ; retreat cost
 	db WR_FIGHTING ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_METAL ; resistance
+	dw -20 ; resistance value (+/-)
 	tx GleamEyesName ; category
 	db 110 ; Pokedex number
 	db 53 ; level
-	dw 1, 4 ; weakness value (+/-)
-	dw 13 * 10 ; resistance value (+/-)
 	tx LuxrayDescription ; description
 	db 0
 
@@ -6593,12 +6596,12 @@ EmolgaCard:
 
 	db 0 ; retreat cost
 	db WR_WATER ; weakness
+	dw +10 ; weakness value (+/-)
 	db WR_FIGHTING ; resistance
+	dw -10 ; resistance value (+/-)
 	tx SkySquirrelName ; category
 	db 111 ; Pokedex number
 	db 34 ; level
-	dw 1, 4 ; weakness value (+/-)
-	dw 13 * 10 ; resistance value (+/-)
 	tx EmolgaDescription ; description
 	db 0
 
@@ -6643,12 +6646,12 @@ MagnemiteLv13Card:
 
 	db 1 ; retreat cost
 	db WR_FIRE ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx MagnetName ; category
 	db 112 ; Pokedex number
 	db 13 ; level
-	dw 1, 0 ; weakness value (+/-)
-	dw 13 * 10 ; resistance value (+/-)
 	tx MagnemiteLv13Description ; description
 	db 16
 
@@ -6693,12 +6696,12 @@ MagnetonLv28Card:
 
 	db 2 ; retreat cost
 	db WR_FIRE ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_DARKNESS ; resistance
+	dw -20 ; resistance value (+/-)
 	tx MagnetName ; category
 	db 113 ; Pokedex number
 	db 28 ; level
-	dw 3, 3 ; weakness value (+/-)
-	dw 132 * 10 ; resistance value (+/-)
 	tx MagnetonLv28Description ; description
 	db 16
 
@@ -6743,12 +6746,12 @@ MagnezoneCard:
 
 	db 3 ; retreat cost
 	db WR_FIRE ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_DARKNESS ; resistance
+	dw -20 ; resistance value (+/-)
 	tx MagnetName ; category
 	db 114 ; Pokedex number
 	db 55 ; level
-	dw 3, 3 ; weakness value (+/-)
-	dw 132 * 10 ; resistance value (+/-)
 	tx MagnezoneDescription ; description
 	db 0
 
@@ -6793,12 +6796,12 @@ ToxelCard:
 
 	db 1 ; retreat cost
 	db WR_PSYCHIC ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx BabyName ; category
 	db 115 ; Pokedex number
 	db 10 ; level
-	dw 1, 8 ; weakness value (+/-)
-	dw 23 * 10 ; resistance value (+/-)
 	tx ToxelDescription ; description
 	db 21
 
@@ -6843,12 +6846,12 @@ ToxtricityLv35Card:
 
 	db 1 ; retreat cost
 	db WR_PSYCHIC ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_DARKNESS ; resistance
+	dw -20 ; resistance value (+/-)
 	tx PunkName ; category
 	db 116 ; Pokedex number
 	db 42 ; level
-	dw 3, 11 ; weakness value (+/-)
-	dw 147 * 10 ; resistance value (+/-)
 	tx ToxtricityLv35Description ; description
 	db 0
 ElectrikeCard:
@@ -6892,12 +6895,12 @@ ElectrikeCard:
 
 	db 1 ; retreat cost
 	db WR_FIGHTING ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx LightningName ; category
 	db 118 ; Pokedex number
 	db 20 ; level
-	dw 3, 7 ; weakness value (+/-)
-	dw 66 * 10 ; resistance value (+/-)
 	tx ElectrikeDescription ; description
 	db 16
 
@@ -6942,12 +6945,12 @@ ManectricCard:
 
 	db 1 ; retreat cost
 	db WR_FIGHTING ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_METAL ; resistance
+	dw -20 ; resistance value (+/-)
 	tx DischargeName ; category
 	db 119 ; Pokedex number
 	db 44 ; level
-	dw 2, 7 ; weakness value (+/-)
-	dw 54 * 10 ; resistance value (+/-)
 	tx ManectricDescription ; description
 	db 0
 
@@ -6992,12 +6995,12 @@ WattrelCard:
 
 	db 1 ; retreat cost
 	db WR_WATER ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx ElectronName ; category
 	db 125 ; Pokedex number
 	db 17 ; level
-	dw 5, 3 ; weakness value (+/-)
-	dw 116 * 10 ; resistance value (+/-)
 	tx WattrelDescription ; description
 	db 0
 
@@ -7042,12 +7045,12 @@ KilowattrelCard:
 	
 	db 0 ; retreat cost
 	db WR_WATER ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_FIGHTING ; resistance
+	dw -20 ; resistance value (+/-)
 	tx ElectronName ; category
 	db 206 ; Pokedex number
 	db 42 ; level
-	dw 6, 11 ; weakness value (+/-)
-	dw 1014 * 10 ; resistance value (+/-)
 	tx KilowattrelDescription ; description
 	db 0
 
@@ -7092,12 +7095,12 @@ MareepCard:
 
 	db 1 ; retreat cost
 	db WR_FIGHTING ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx WoolName ; category
 	db 122 ; Pokedex number
 	db 9 ; level
-	dw 1, 4 ; weakness value (+/-)
-	dw 13 * 10 ; resistance value (+/-)
 	tx MareepDescription ; description
 	db 16
 
@@ -7142,12 +7145,12 @@ FlaaffyCard:
 
 	db 2 ; retreat cost
 	db WR_FIGHTING ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_METAL ; resistance
+	dw -20 ; resistance value (+/-)
 	tx WoolName ; category
 	db 123 ; Pokedex number
 	db 25 ; level
-	dw 1, 4 ; weakness value (+/-)
-	dw 13 * 10 ; resistance value (+/-)
 	tx FlaaffyDescription ; description
 	db 16
 
@@ -7192,12 +7195,12 @@ AmpharosCard:
 
 	db 2 ; retreat cost
 	db WR_FIGHTING ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_METAL ; resistance
+	dw -30 ; resistance value (+/-)
 	tx LightningName ; category
 	db 124 ; Pokedex number
 	db 53 ; level
-	dw 1, 4 ; weakness value (+/-)
-	dw 13 * 10 ; resistance value (+/-)
 	tx AmpharosDescription ; description
 	db 0
 JolteonLv29Card:
@@ -7241,12 +7244,12 @@ JolteonLv29Card:
 
 	db 1 ; retreat cost
 	db WR_FIGHTING ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_WATER ; resistance
+	dw -20 ; resistance value (+/-)
 	tx LightningName ; category
 	db 202 ; Pokedex number
 	db 49 ; level
-	dw 2, 7 ; weakness value (+/-)
-	dw 54 * 10 ; resistance value (+/-)
 	tx JolteonLv29Description ; description
 	db 0
 
@@ -7291,12 +7294,12 @@ GrubbinCard:
 
 	db 1 ; retreat cost
 	db WR_FIRE ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx LarvaName ; category
 	db 40 ; Pokedex number
 	db 12 ; level
-	dw 3, 3 ; weakness value (+/-)
-	dw 77 * 10 ; resistance value (+/-)
 	tx SkorupiDescription ; description
 	db 16
 
@@ -7341,12 +7344,12 @@ CharjabugCard:
 
 	db 2 ; retreat cost
 	db WR_FIRE ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_GRASS ; resistance
+	dw -20 ; resistance value (+/-)
 	tx BatteryName ; category
 	db 41 ; Pokedex number
 	db 25 ; level
-	dw 1, 0 ; weakness value (+/-)
-	dw 13 * 10 ; resistance value (+/-)
 	tx CharjabugDescription ; description
 	db 16
 
@@ -7391,12 +7394,12 @@ VikavoltCard:
 
 	db 2 ; retreat cost
 	db WR_FIRE ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_GRASS ; resistance
+	dw -30 ; resistance value (+/-)
 	tx StagbeetleName ; category
 	db 42 ; Pokedex number
 	db 40 ; level
-	dw 5, 3 ; weakness value (+/-)
-	dw 116 * 10 ; resistance value (+/-)
 	tx VikavoltDescription ; description
 	db 0
 
@@ -7441,12 +7444,12 @@ ZeraoraCard:
 
 	db 1 ; retreat cost
 	db WR_FIGHTING ; weakness
+	dw +30 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx ThunderclapName ; category
 	db 120 ; Pokedex number
 	db 74 ; level
-	dw 5, 3 ; weakness value (+/-)
-	dw 116 * 10 ; resistance value (+/-)
 	tx RaikouLv64Description ; description
 	db 0
 
@@ -7491,12 +7494,12 @@ RaikouCard:
 
 	db 2 ; retreat cost
 	db NONE ; weakness
+	dw +0 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx ElectricName ; category
 	db 145 ; Pokedex number
 	db 68 ; level
-	dw 5, 3 ; weakness value (+/-)
-	dw 116 * 10 ; resistance value (+/-)
 	tx RaikouLv68Description ; description
 	db 0
 
@@ -7541,12 +7544,12 @@ TynamoCard:
 
 	db 0 ; retreat cost
 	db NONE ; weakness
+	dw +0 ; weakness value (+/-)
 	db WR_FIGHTING ; resistance
+	dw -10 ; resistance value (+/-)
 	tx EleFishName ; category
 	db 122 ; Pokedex number
 	db 12 ; level
-	dw 1, 4 ; weakness value (+/-)
-	dw 13 * 10 ; resistance value (+/-)
 	tx TynamoDescription ; description
 	db 16
 
@@ -7591,12 +7594,12 @@ EelektrikCard:
 
 	db 2 ; retreat cost
 	db NONE ; weakness
+	dw +0 ; weakness value (+/-)
 	db WR_FIGHTING ; resistance
+	dw -20 ; resistance value (+/-)
 	tx EleFishName ; category
 	db 123 ; Pokedex number
-	db 12 ; level
-	dw 1, 4 ; weakness value (+/-)
-	dw 13 * 10 ; resistance value (+/-)
+	db 32 ; level
 	tx EelektrikDescription ; description
 	db 16
 
@@ -7641,12 +7644,12 @@ EelektrossCard:
 
 	db 3 ; retreat cost
 	db NONE ; weakness
+	dw +0 ; weakness value (+/-)
 	db WR_FIGHTING ; resistance
+	dw -30 ; resistance value (+/-)
 	tx EleFishName ; category
 	db 124 ; Pokedex number
 	db 52 ; level
-	dw 1, 4 ; weakness value (+/-)
-	dw 13 * 10 ; resistance value (+/-)
 	tx EelektrossDescription ; description
 	db 0
 
@@ -7691,12 +7694,12 @@ ElekidCard:
 
 	db 0 ; retreat cost
 	db NONE ; weakness
+	dw +0 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx ElectricName ; category
 	db 117 ; Pokedex number
 	db 9 ; level
-	dw 3, 7 ; weakness value (+/-)
-	dw 66 * 10 ; resistance value (+/-)
 	tx ElekidDescription ; description
 	db 0
 
@@ -7741,12 +7744,12 @@ ElectabuzzLv35Card:
 
 	db 2 ; retreat cost
 	db WR_FIGHTING ; weakness
+	dw +20 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx ElectricName ; category
 	db 117 ; Pokedex number
 	db 35 ; level
-	dw 3, 7 ; weakness value (+/-)
-	dw 66 * 10 ; resistance value (+/-)
 	tx ElectabuzzLv35Description ; description
 	db 16
 
@@ -7791,12 +7794,12 @@ ElectivireCard:
 
 	db 3 ; retreat cost
 	db WR_FIGHTING ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_LIGHTNING ; resistance
+	dw -30 ; resistance value (+/-)
 	tx ThunderboltName ; category
 	db 117 ; Pokedex number
 	db 66 ; level
-	dw 3, 7 ; weakness value (+/-)
-	dw 66 * 10 ; resistance value (+/-)
 	tx ElectivireDescription ; description
 	db 0
 
@@ -7841,12 +7844,12 @@ PichuCard:
 
 	db 0 ; retreat cost
 	db NONE ; weakness
+	dw +0 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx MouseName ; category
 	db 117 ; Pokedex number
 	db 9 ; level
-	dw 3, 7 ; weakness value (+/-)
-	dw 66 * 10 ; resistance value (+/-)
 	tx PichuDescription ; description
 	db 0
 
@@ -7891,12 +7894,12 @@ PikachuCard:
 
 	db 1 ; retreat cost
 	db WR_FIGHTING ; weakness
+	dw +20 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx MouseName ; category
 	db 117 ; Pokedex number
 	db 27 ; level
-	dw 3, 7 ; weakness value (+/-)
-	dw 66 * 10 ; resistance value (+/-)
 	tx PikachuDescription ; description
 	db 16
 
@@ -7941,12 +7944,12 @@ RaichuCard:
 
 	db 2 ; retreat cost
 	db WR_FIGHTING ; weakness
+	dw +30 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx MouseName ; category
 	db 117 ; Pokedex number
 	db 48 ; level
-	dw 3, 7 ; weakness value (+/-)
-	dw 66 * 10 ; resistance value (+/-)
 	tx RaichuDescription ; description
 	db 0
 
@@ -7991,12 +7994,12 @@ JoltikCard:
 
 	db 0 ; retreat cost
 	db WR_FIRE ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx EleSpiderName ; category
 	db 122 ; Pokedex number
 	db 6 ; level
-	dw 1, 4 ; weakness value (+/-)
-	dw 13 * 10 ; resistance value (+/-)
 	tx JoltikDescription ; description
 	db 16
 
@@ -8041,12 +8044,12 @@ GalvantulaCard:
 
 	db 1 ; retreat cost
 	db WR_FIRE ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_GRASS ; resistance
+	dw -20 ; resistance value (+/-)
 	tx EleSpiderName ; category
 	db 123 ; Pokedex number
 	db 46 ; level
-	dw 1, 4 ; weakness value (+/-)
-	dw 13 * 10 ; resistance value (+/-)
 	tx GalvantulaDescription ; description
 	db 16
 
@@ -8091,12 +8094,12 @@ RegielekiCard:
 
 	db 3 ; retreat cost
 	db WR_FIGHTING ; weakness
+	dw +30 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx LightningName ; category
 	db 120 ; Pokedex number
 	db 80 ; level
-	dw 5, 3 ; weakness value (+/-)
-	dw 116 * 10 ; resistance value (+/-)
 	tx RegielekiDescription ; description
 	db 0
 
@@ -8141,12 +8144,12 @@ MiraidonCard:
 
 	db 2 ; retreat cost
 	db WR_WATER ; weakness
+	dw +30 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx ParadoxName ; category
 	db 120 ; Pokedex number
 	db 84 ; level
-	dw 5, 3 ; weakness value (+/-)
-	dw 116 * 10 ; resistance value (+/-)
 	tx MiraidonDescription ; description
 	db 0
 
@@ -8192,12 +8195,12 @@ SilicobraCard:
 
 	db 1 ; retreat cost
 	db WR_GRASS ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx SandSnakeName ; category
 	db 128 ; Pokedex number
 	db 18 ; level
-	dw 0, 8 ; weakness value (+/-)
-	dw 2 * 10 ; resistance value (+/-)
 	tx SilicobraDescription ; description
 	db 16
 
@@ -8242,12 +8245,12 @@ SandacondaCard:
 
 	db 2 ; retreat cost
 	db WR_GRASS ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_LIGHTNING ; resistance
+	dw -20 ; resistance value (+/-)
 	tx SandSnakeName ; category
 	db 129 ; Pokedex number
 	db 36 ; level
-	dw 2, 4 ; weakness value (+/-)
-	dw 73 * 10 ; resistance value (+/-)
 	tx SandacondaDescription ; description
 	db 0
 
@@ -8292,12 +8295,12 @@ SandileCard:
 
 	db 1 ; retreat cost
 	db WR_WATER ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx DesertCrocName ; category
 	db 132 ; Pokedex number
 	db 20 ; level
-	dw 2, 7 ; weakness value (+/-)
-	dw 43 * 10 ; resistance value (+/-)
 	tx MachopDescription ; description
 	db 21
 
@@ -8342,12 +8345,12 @@ KrokorokCard:
 
 	db 2 ; retreat cost
 	db WR_WATER ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_PSYCHIC ; resistance
+	dw -20 ; resistance value (+/-)
 	tx DesertCrocName ; category
 	db 133 ; Pokedex number
 	db 40 ; level
-	dw 4, 11 ; weakness value (+/-)
-	dw 155 * 10 ; resistance value (+/-)
 	tx MachokeDescription ; description
 	db 16
 
@@ -8392,12 +8395,12 @@ KrookodileCard:
 
 	db 3 ; retreat cost
 	db WR_WATER ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_PSYCHIC ; resistance
+	dw -20 ; resistance value (+/-)
 	tx IntimidationName ; category
 	db 134 ; Pokedex number
 	db 67 ; level
-	dw 5, 3 ; weakness value (+/-)
-	dw 287 * 10 ; resistance value (+/-)
 	tx MachampDescription ; description
 	db 0
 
@@ -8442,12 +8445,12 @@ TrapinchCard:
 
 	db 1 ; retreat cost
 	db WR_WATER ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx AntPitName ; category
 	db 135 ; Pokedex number
 	db 16 ; level
-	dw 1, 4 ; weakness value (+/-)
-	dw 44 * 10 ; resistance value (+/-)
 	tx GeodudeDescription ; description
 	db 16
 
@@ -8492,12 +8495,12 @@ VibravaCard:
 
 	db 1 ; retreat cost
 	db WR_WATER ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_LIGHTNING ; resistance
+	dw -20 ; resistance value (+/-)
 	tx VibrationName ; category
 	db 136 ; Pokedex number
 	db 35 ; level
-	dw 3, 3 ; weakness value (+/-)
-	dw 232 * 10 ; resistance value (+/-)
 	tx GravelerDescription ; description
 	db 16
 
@@ -8542,12 +8545,12 @@ FlygonCard:
 
 	db 1 ; retreat cost
 	db WR_WATER ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_LIGHTNING ; resistance
+	dw -20 ; resistance value (+/-)
 	tx MysticName ; category
 	db 137 ; Pokedex number
 	db 56 ; level
-	dw 4, 7 ; weakness value (+/-)
-	dw 662 * 10 ; resistance value (+/-)
 	tx GolemDescription ; description
 	db 0
 
@@ -8596,12 +8599,12 @@ HawluchaCard:
 
 	db 1 ; retreat cost
 	db WR_LIGHTNING ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx WrestlingName ; category
 	db 138 ; Pokedex number
 	db 42 ; level
-	dw 28, 10 ; weakness value (+/-)
-	dw 463 * 10 ; resistance value (+/-)
 	tx Hawlucha ; description
 	db 0
 
@@ -8646,12 +8649,12 @@ RioluCard:
 
 	db 1 ; retreat cost
 	db WR_PSYCHIC ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx AuraName ; category
 	db 95 ; Pokedex number
 	db 17 ; level
-	dw 2, 11 ; weakness value (+/-)
-	dw 22 * 10 ; resistance value (+/-)
 	tx RioluDescription ; description
 	db 16
 
@@ -8696,12 +8699,12 @@ LucarioCard:
 
 	db 2 ; retreat cost
 	db WR_FIGHTING ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_DARKNESS ; resistance
+	dw -20 ; resistance value (+/-)
 	tx AuraName ; category
 	db 95 ; Pokedex number
 	db 41 ; level
-	dw 2, 11 ; weakness value (+/-)
-	dw 22 * 10 ; resistance value (+/-)
 	tx LucarioDescription ; description
 	db 0
 
@@ -8746,12 +8749,12 @@ LarvitarCard:
 
 	db 1 ; retreat cost
 	db WR_GRASS ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx RockSkinName ; category
 	db 139 ; Pokedex number
 	db 13 ; level
-	dw 1, 4 ; weakness value (+/-)
-	dw 14 * 10 ; resistance value (+/-)
 	tx CuboneDescription ; description
 	db 16
 
@@ -8796,12 +8799,12 @@ PupitarCard:
 
 	db 2 ; retreat cost
 	db WR_GRASS ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_LIGHTNING ; resistance
+	dw -20 ; resistance value (+/-)
 	tx HardShellName ; category
 	db 140 ; Pokedex number
 	db 32 ; level
-	dw 3, 3 ; weakness value (+/-)
-	dw 99 * 10 ; resistance value (+/-)
 	tx PupitarDescription ; description
 	db 16
 
@@ -8846,12 +8849,12 @@ TyranitarCard:
 
 	db 4 ; retreat cost
 	db WR_FIGHTING ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_PSYCHIC ; resistance
+	dw -30 ; resistance value (+/-)
 	tx ArmorName ; category
 	db 141 ; Pokedex number
 	db 64 ; level
-	dw 3, 3 ; weakness value (+/-)
-	dw 99 * 10 ; resistance value (+/-)
 	tx TyranitarDescription ; description
 	db 0
 
@@ -8896,12 +8899,12 @@ TyrogueCard:
 
 	db 0 ; retreat cost
 	db NONE ; weakness
+	dw +0 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx ScuffleName ; category
 	db 95 ; Pokedex number
 	db 7 ; level
-	dw 2, 11 ; weakness value (+/-)
-	dw 22 * 10 ; resistance value (+/-)
 	tx TyrogueDescription ; description
 	db 0
 
@@ -8946,12 +8949,12 @@ HitmontopCard:
 
 	db 1 ; retreat cost
 	db WR_PSYCHIC ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_DARKNESS ; resistance
+	dw -20 ; resistance value (+/-)
 	tx RapidSpinName ; category
 	db 95 ; Pokedex number
 	db 31 ; level
-	dw 2, 11 ; weakness value (+/-)
-	dw 22 * 10 ; resistance value (+/-)
 	tx HitmontopDescription ; description
 	db 16
 
@@ -8996,12 +8999,12 @@ HitmonleeCard:
 
 	db 1 ; retreat cost
 	db WR_PSYCHIC ; weakness
+	dw +20 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx KickingName ; category
 	db 142 ; Pokedex number
 	db 30 ; level
-	dw 4, 11 ; weakness value (+/-)
-	dw 110 * 10 ; resistance value (+/-)
 	tx HitmonleeDescription ; description
 	db 0
 
@@ -9046,12 +9049,12 @@ HitmonchanCard:
 
 	db 2 ; retreat cost
 	db WR_PSYCHIC ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_DARKNESS ; resistance
+	dw -20 ; resistance value (+/-)
 	tx PunchingName ; category
 	db 143 ; Pokedex number
 	db 33 ; level
-	dw 4, 7 ; weakness value (+/-)
-	dw 111 * 10 ; resistance value (+/-)
 	tx HitmonchanDescription ; description
 	db 0
 
@@ -9096,12 +9099,12 @@ Jangmo_oCard:
 
 	db 1 ; retreat cost
 	db WR_PSYCHIC ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx ScalyName ; category
 	db 117 ; Pokedex number
 	db 26 ; level
-	dw 3, 7 ; weakness value (+/-)
-	dw 66 * 10 ; resistance value (+/-)
 	tx Jangmo_oDescription ; description
 	db 16
 
@@ -9146,12 +9149,12 @@ Hakamo_oCard:
 
 	db 2 ; retreat cost
 	db WR_PSYCHIC ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_LIGHTNING ; resistance
+	dw -20 ; resistance value (+/-)
 	tx ScalyName ; category
 	db 117 ; Pokedex number
 	db 44 ; level
-	dw 3, 7 ; weakness value (+/-)
-	dw 66 * 10 ; resistance value (+/-)
 	tx Hakamo_oDescription ; description
 	db 16
 
@@ -9196,12 +9199,12 @@ Kommo_oCard:
 
 	db 3 ; retreat cost
 	db WR_PSYCHIC ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_LIGHTNING ; resistance
+	dw -30 ; resistance value (+/-)
 	tx ScalyName ; category
 	db 117 ; Pokedex number
 	db 82 ; level
-	dw 3, 7 ; weakness value (+/-)
-	dw 66 * 10 ; resistance value (+/-)
 	tx Kommo_oDescription ; description
 	db 0
 
@@ -9246,12 +9249,12 @@ OmanyteCard:
 
 	db 1 ; retreat cost
 	db WR_GRASS ; weakness
+	dw +10 ; weakness value (+/-)
 	db WR_FIRE ; resistance
+	dw -10 ; resistance value (+/-)
 	tx SpiralName ; category
 	db 99 ; Pokedex number
 	db 29 ; level
-	dw 0 ; weakness value (+/-)
-	dw 17 * 10 ; resistance value (+/-)
 	tx OmanyteDescription ; description
 	db 17
 
@@ -9296,12 +9299,12 @@ OmastarCard:
 
 	db 2 ; retreat cost
 	db WR_GRASS ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_FIRE ; resistance
+	dw -20 ; resistance value (+/-)
 	tx SpiralName ; category
 	db 100 ; Pokedex number
 	db 62 ; level
-	dw 3, 3 ; weakness value (+/-)
-	dw 77 * 10 ; resistance value (+/-)
 	tx OmastarDescription ; description
 	db 0
 
@@ -9346,12 +9349,12 @@ KabutoCard:
 
 	db 1 ; retreat cost
 	db WR_GRASS ; weakness
+	dw +10 ; weakness value (+/-)
 	db WR_FIRE ; resistance
+	dw -10 ; resistance value (+/-)
 	tx ShellfishName ; category
 	db 146 ; Pokedex number
 	db 16 ; level
-	dw 1, 8 ; weakness value (+/-)
-	dw 25 * 10 ; resistance value (+/-)
 	tx KabutoDescription ; description
 	db 16
 
@@ -9396,12 +9399,12 @@ KabutopsCard:
 
 	db 1 ; retreat cost
 	db WR_GRASS ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_FIRE ; resistance
+	dw -20 ; resistance value (+/-)
 	tx ShellfishName ; category
 	db 147 ; Pokedex number
 	db 60 ; level
-	dw 4, 3 ; weakness value (+/-)
-	dw 89 * 10 ; resistance value (+/-)
 	tx KabutopsDescription ; description
 	db 0
 
@@ -9446,12 +9449,12 @@ TyruntCard:
 
 	db 2 ; retreat cost
 	db WR_WATER ; weakness
+	dw +10 ; weakness value (+/-)
 	db WR_FIRE ; resistance
+	dw -10 ; resistance value (+/-)
 	tx RoyalName ; category
 	db 148 ; Pokedex number
 	db 22 ; level
-	dw 1, 4 ; weakness value (+/-)
-	dw 14 * 10 ; resistance value (+/-)
 	tx TyruntDescription ; description
 	db 16
 
@@ -9496,12 +9499,12 @@ TyrantrumCard:
 
 	db 3 ; retreat cost
 	db WR_WATER ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_FIRE ; resistance
+	dw -20 ; resistance value (+/-)
 	tx DespotName ; category
 	db 149 ; Pokedex number
 	db 68 ; level
-	dw 5, 11 ; weakness value (+/-)
-	dw 130 * 10 ; resistance value (+/-)
 	tx AerodactylDescription ; description
 	db 1
 
@@ -9546,12 +9549,12 @@ RockruffCard:
 
 	db 1 ; retreat cost
 	db WR_GRASS ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE; resistance
+	dw -0 ; resistance value (+/-)
 	tx PuppyName ; category
 	db 150 ; Pokedex number
 	db 14 ; level
-	dw 1, 4 ; weakness value (+/-)
-	dw 14 * 10 ; resistance value (+/-)
 	tx RockruffDescription ; description
 	db 16
 
@@ -9596,12 +9599,12 @@ LycanrocCard:
 
 	db 1 ; retreat cost
 	db WR_GRASS ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_FIRE ; resistance
+	dw -20 ; resistance value (+/-)
 	tx WolfName ; category
 	db 151 ; Pokedex number
 	db 38 ; level
-	dw 3, 3 ; weakness value (+/-)
-	dw 99 * 10 ; resistance value (+/-)
 	tx LycanrocDescription ; description
 	db 0
 
@@ -9646,12 +9649,12 @@ LycanrocMCard:
 
 	db 2 ; retreat cost
 	db WR_GRASS ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_FIRE ; resistance
+	dw -20 ; resistance value (+/-)
 	tx WolfName ; category
 	db 151 ; Pokedex number
 	db 52 ; level
-	dw 3, 3 ; weakness value (+/-)
-	dw 99 * 10 ; resistance value (+/-)
 	tx LycanrocMDescription ; description
 	db 0
 
@@ -9696,12 +9699,12 @@ GalladeCard:
 
 	db 2 ; retreat cost
 	db WR_PSYCHIC ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_DARKNESS ; resistance
+	dw -20 ; resistance value (+/-)
 	tx BlandeName ; category
 	db 105 ; Pokedex number
 	db 55 ; level
-	dw 3, 3 ; weakness value (+/-)
-	dw 99 * 10 ; resistance value (+/-)
 	tx GalladeDescription ; description
 	db 0
 
@@ -9746,12 +9749,12 @@ ClobbopusCard:
 
 	db 2 ; retreat cost
 	db WR_PSYCHIC ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -10 ; resistance value (+/-)
 	tx JujitsuName ; category
 	db 117 ; Pokedex number
 	db 14 ; level
-	dw 3, 7 ; weakness value (+/-)
-	dw 66 * 10 ; resistance value (+/-)
 	tx ClobbopusDescription ; description
 	db 16
 
@@ -9796,12 +9799,12 @@ GrapploctCard:
 
 	db 3 ; retreat cost
 	db WR_PSYCHIC ; weakness
+	dw +20 ; weakness value (+/-)
 	db WR_DARKNESS ; resistance
+	dw -20 ; resistance value (+/-)
 	tx JujitsuName ; category
 	db 117 ; Pokedex number
 	db 36 ; level
-	dw 3, 7 ; weakness value (+/-)
-	dw 66 * 10 ; resistance value (+/-)
 	tx GrapploctDescription ; description
 	db 16
 
@@ -9846,12 +9849,12 @@ NacliCard:
 
 	db 2 ; retreat cost
 	db WR_GRASS ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx SaltName ; category
 	db 139 ; Pokedex number
 	db 16 ; level
-	dw 1, 4 ; weakness value (+/-)
-	dw 14 * 10 ; resistance value (+/-)
 	tx NacliDescription ; description
 	db 16
 
@@ -9896,12 +9899,12 @@ NaclstackCard:
 
 	db 3 ; retreat cost
 	db WR_GRASS ; weakness
+	dw +20 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx SaltName ; category
 	db 140 ; Pokedex number
 	db 37 ; level
-	dw 3, 3 ; weakness value (+/-)
-	dw 99 * 10 ; resistance value (+/-)
 	tx NaclstackDescription ; description
 	db 16
 
@@ -9946,12 +9949,12 @@ GarganaclCard:
 
 	db 4 ; retreat cost
 	db WR_GRASS ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_PSYCHIC ; resistance
+	dw -20 ; resistance value (+/-)
 	tx SaltName ; category
 	db 141 ; Pokedex number
 	db 58 ; level
-	dw 3, 3 ; weakness value (+/-)
-	dw 99 * 10 ; resistance value (+/-)
 	tx GarganaclDescription ; description
 	db 0	
 
@@ -9996,12 +9999,12 @@ RegirockCard:
 
 	db 3 ; retreat cost
 	db WR_GRASS ; weakness
+	dw +30 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx SaltName ; category
 	db 139 ; Pokedex number
 	db 80 ; level
-	dw 1, 4 ; weakness value (+/-)
-	dw 14 * 10 ; resistance value (+/-)
 	tx RegirockDescription ; description
 	db 0
 
@@ -10046,12 +10049,12 @@ MankeyCard:
 
 	db 0 ; retreat cost
 	db WR_PSYCHIC ; weakness
+	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx SaltName ; category
 	db 139 ; Pokedex number
 	db 19 ; level
-	dw 1, 4 ; weakness value (+/-)
-	dw 14 * 10 ; resistance value (+/-)
 	tx MankeyDescription ; description
 	db 16
 
@@ -10096,12 +10099,12 @@ PrimeapeCard:
 
 	db 2 ; retreat cost
 	db WR_PSYCHIC ; weakness
+	dw +20 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx PigMonkeyName ; category
 	db 140 ; Pokedex number
 	db 31 ; level
-	dw 3, 3 ; weakness value (+/-)
-	dw 99 * 10 ; resistance value (+/-)
 	tx PrimeapeDescription ; description
 	db 16
 
@@ -10146,12 +10149,12 @@ AnnihilapeCard:
 
 	db 2 ; retreat cost
 	db WR_PSYCHIC ; weakness
+	dw +30 ; weakness value (+/-)
 	db WR_FIGHTING ; resistance
+	dw -30 ; resistance value (+/-)
 	tx PigMonkeyName ; category
 	db 141 ; Pokedex number
 	db 62 ; level
-	dw 3, 3 ; weakness value (+/-)
-	dw 99 * 10 ; resistance value (+/-)
 	tx AnnihilapeDescription ; description
 	db 0	
 
@@ -10196,11 +10199,11 @@ GroudonCard:
 
 	db 4 ; retreat cost
 	db WR_GRASS ; weakness
+	dw +30 ; weakness value (+/-)
 	db NONE ; resistance
 	tx ContinentName ; category
 	db 139 ; Pokedex number
 	db 84 ; level
-	dw 1, 4 ; weakness value (+/-)
 	dw 14 * 10 ; resistance value (+/-)
 	tx GroudonDescription ; description
 	db 0
@@ -10246,11 +10249,11 @@ KoraidonCard:
 
 	db 2 ; retreat cost
 	db WR_WATER ; weakness
+	dw +30 ; weakness value (+/-)
 	db NONE ; resistance
+	dw -0 ; resistance value (+/-)
 	tx ParadoxName ; category
 	db 139 ; Pokedex number
 	db 84 ; level
-	dw 1, 4 ; weakness value (+/-)
-	dw 14 * 10 ; resistance value (+/-)
 	tx KoraidonDescription ; description
 	db 0

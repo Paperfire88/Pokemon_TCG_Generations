@@ -207,7 +207,7 @@ ZoroarkDescription:
 	line "OG illustrator: (Shin Nagasawa)"
 	done		
 IllusionName:
-	text "Ilusion"
+	text "Illusion"
 	done
 KlinkName:
 	text "Klink"
@@ -332,7 +332,7 @@ IcicleCrashDescription:
 	text "Don't apply Weakness/Resistance for"
 	line "this attack. [If the total retreat"
 	line "cost of all your PKMN is 10 or More,"
-	line "it does +20 damage and the defending"
+	line "this does +20 damage and the defending"
 	line "PKMN it's now Confused."
 	done
 IceFangName:
@@ -345,7 +345,7 @@ PressSelectToGoOneStageBelowText:
 	text "[SELECT]: (<RAMTEXT>)"
 	done	
 WatersOfRemembranceName:
-	text "Waters of Remebrance"	
+	text "Waters of Remembrance"	
 	done
 WatersOfRemembranceDescription:
 	text "This PKMN can use any attack from"
@@ -401,8 +401,8 @@ GigavoltName:
 	text "Gigavolt"
 	done	
 GigavoltDescription:
-	text "Flip a coin. If heads, it does +30"
-	line "damage. If tails, the defending Pkmn"
+	text "Flip a coin. If heads, this does +30"
+	line "damage. If tails, the defending PKMN"
 	line "is now Paralyzed."
 	done	
 IfHeadsplus30IfTailsParalysisText:
@@ -438,7 +438,7 @@ RageFistName:
 	text "Rage Fist"
 	done
 RageFistDescription:
-	text "If this PKMN is confused, it does"
+	text "If this PKMN is confused, this does"
 	line "+50 damage. If you didn't KO the"
 	line "opponent's active PKMN, this PKMN"
 	line "is now confused."
@@ -494,7 +494,7 @@ TrickOrTreatName:
 TrickOrTreatDescription:
 	text "Once per turn, You can Change The"
 	line "Defending PKMN Weakness type to <PSYCHIC>."
-	line "(The amount of it doesn't change.)"
+	line "(The amount of this doesn't change.)"
 	done
 PumpkinTrickName:
 	text "Pumpkin Trick"
@@ -623,7 +623,7 @@ FistOfAntiquityName:
 FistOfAntiquityDescription:
 	text "Return up to 6 cards from your"
 	line "opponent's discard pile into their"
-	line "deck. It does +10 damage for each"
+	line "deck. this does +10 damage for each"
 	line "card returned."
 	done	
 RelicSearchName:
@@ -653,7 +653,7 @@ Choose3CardsFromDiscardPileText:
 	done		
 KnockOffDescription:
 	text "If the defending PKMN has any energy"
-	line "attached to it, it does +20 damage."
+	line "attached to it, this does +20 damage."
 	line "After dealing damage, Discard an"
 	line "Energy from the Defending PKMN."
 	done
@@ -682,7 +682,7 @@ PoisonWhipName:
 	done
 EruptionDescription:
 	text "Discard the top card of each" 
-	line "player's deck. it does +30 damage"
+	line "player's deck. this does +30 damage"
 	line "for each Basic Energy discarded."
 	done
 MagmaRecycleName:
@@ -721,7 +721,7 @@ MetallicStrikesName:
 	text "Metallic Strikes"
 	done	
 MetallicStrikesDescription:
-	text "Flip 3 coins. it does 20 damage for"
+	text "Flip 3 coins. this does 20 damage for"
 	line "each heads. [If this PKMN Retreat"
 	line "Cost is higher than the Opponents"
 	line "PKMN, Flip 4 coins instead.]"
@@ -747,7 +747,7 @@ MemoryEnergyDescription:
 	line "necessary Energy.)"
 	done
 SwitchOutPromptText:
-	text "Want to Swith Out your Active"
+	text "Want to Switch Out your Active"
 	line "PKMN?"
 	done
 MiracleOracleName:
@@ -776,7 +776,7 @@ IronTailName:
 	text "Iron Tail"
 	done
 IronTailDescription:
-	text "Flip 5 coins. it does 30 damage for"
+	text "Flip 5 coins. this does 30 damage for"
 	line "each heads."
 	done
 SmashTurnName:
@@ -785,11 +785,11 @@ SmashTurnName:
 ProcedureForBurningFireText:
 	text "Procedure for the Attack:"
 	line ""
-	line "1. Choose the Pokémon to dicard Fire"
+	line "1. Choose the Pokémon to discard Fire"
 	line "   Energy from.  Press the A Button."
 	line ""
 	line "2. Press the A Button to Choose an"
-	line "   Energy to dicard it."
+	line "   Energy to discard it."
 	line ""
 	line "3. Repeat steps 1 and 2."
 	line ""
@@ -803,7 +803,7 @@ CrimsonFireName:
 	done
 CrimsonFireDescription:
 	text "Discard Up to 12 <FIRE> Energy from any"
-	line "of your PKMN as you like.It does +10"
+	line "of your PKMN as you like.this does +10"
 	line "damage for each Energy discarded."
 	done
 DiscardedCardText:
@@ -844,7 +844,7 @@ GearGrindName:
 	text "Gear Grind"
 	done
 MagneticGearsName:
-	text "Magnetci Gears"
+	text "Magnetic Gears"
 	done
 MagneticGearsDescription:
 	text "Move any Energy from the defending"
@@ -861,7 +861,7 @@ KingsBladeName:
 	text "King's Blade"
 	done
 KingsBladeDescription:
-	text "It does +10 Damage for each Prize"
+	text "this does +10 Damage for each Prize"
 	line "Card you have taken. Don't apply"
 	line "Weakness/Resistance for this attack."
 	done			
@@ -897,7 +897,7 @@ ShadowSneakName:
 	done
 ShadowSneakDescription:
 	text "If you have taken a Prize Card,"
-	line "it does +20 damage."
+	line "this does +20 damage."
 	done
 DualBladesName:
 	text "Dual Blades"
@@ -915,14 +915,14 @@ MagmaPunchName:
 MagmaPunchDescription:
 	text "Flip a coin. If heads, the Defending"
 	line "PKMN is now Burned. [If this PKMN is"
-	line "an Evolved PKMN, it does +10 damage]"
+	line "an Evolved PKMN, this does +10 damage]"
 	done
 FlameBazookaName:
 	text "Flame Bazooka"
 	done
 FlameBazookaDecription:
 	text "Discard the top 3 cards from your"
-	line "Deck. it does 40 damage for each"
+	line "Deck. this does 40 damage for each"
 	line "Basic Energy discarded."
 	line "[If this PKMN has a [MAGBY] as is"
 	line "basic PKMN, Discard the top 4 cards"
@@ -943,7 +943,7 @@ PlasmaPunchName:
 PlasmaPunchDescription:
 	text "Flip a coin. If heads, the Defending"
 	line "PKMN is Paralyzed. [If this PKMN is"
-	line "an Evolved PKMN, it does +10 damage]"
+	line "an Evolved PKMN, this does +10 damage]"
 	done
 GreatBallName:
 	text "Great Ball"
@@ -1131,7 +1131,7 @@ ChooseDeckOrDiscardPileToCheckText:
 	done
 NoEvosInDiscardPileText:
 	text "There's No Evolved PKMN on"
-	line "the discard dile."
+	line "the discard pile."
 	done
 FossilResearcherName:
 	text "Fossil Researcher"

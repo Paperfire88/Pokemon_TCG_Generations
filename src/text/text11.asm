@@ -64,7 +64,7 @@ PhantomPainName:
 PhantomPainDescription:
 	text "Put <HP_NOK> damage counters on 1 of your"
 	line "Opponent's PKMN for each <HP_NOK> damage"
-	line "counter on this pkmn."
+	line "counter on this PKMN."
 	done
 
 ShadowName:
@@ -209,7 +209,7 @@ MysteryAttackDescription:
 	text "Does a random amount of damage to"
 	line "the Defending PKMN. Flip a coin."
 	line "If heads, apply a random effect to"
-	line "the defending pokemon."
+	line "the defending Pokémon."
 	done
 
 PsywaveName:
@@ -603,7 +603,7 @@ KilowattrelName:
 	done
 
 ThickSkinnedName:
-	text "Regi Shield"
+	text "Regi-Shield"
 	done
 
 ThickSkinnedDescription:
@@ -890,7 +890,7 @@ PlusPowerName:
 PlusPowerDescription:
 	text "Attach this card to your Active PKMN" 
 	line "Discard this card at the end of your" 
-	line "turn. If this PKMN attacks, it does"
+	line "turn. If this PKMN attacks, this does"
 	line "+10 damage to the Defending"
 	line "PKMN (before Weakness/Resistance)." 
 	done
@@ -1518,10 +1518,10 @@ HuntingArrowName:
 	done
 
 HuntingArrowDescription:
-	text "If the Defending Pkmn has any <HP_NOK> "
+	text "If the Defending PKMN has any <HP_NOK> "
 	line "damage counters on it, this attack"
 	line "does +20 damage. If your opponent"
-	line "has any Benched Pkmn, choose 1 of"
+	line "has any Benched PKMN, choose 1 of"
 	line "them and this attack also does 20"
 	line "damage to it." 
 	done
@@ -1654,13 +1654,13 @@ ElectricalRendName:
 	done
 
 HexDescription:	
-	text "It does +20 damage if the Defending"
+	text "this does +20 damage if the Defending"
 	line "PKMN is Affected By a Status"
 	line "Condition."
 	done	
 
 ElectricalRendDescription:	
-	text "It does +30 damage if the Defending"
+	text "this does +30 damage if the Defending"
 	line "PKMN is Affected By a Status"
 	line "Condition."
 	done	
@@ -1695,7 +1695,7 @@ DamageCheckIfHeadsXDamageText:
 	done
 
 DredgeUpDescription:
-	text "If the Defending Pkmn has any Damage" 
+	text "If the Defending PKMN has any Damage" 
 	line "Counters on it, Discard the Top 3"
 	line "cards of Your Opponent's Deck."
 	done	
@@ -1782,13 +1782,13 @@ CoordinatedShurikenDescription:
 	line "addition to its attack cost and up"
 	line "to +30 damage). after doing damage,"
 	line "Choose up to 3 of your opponent's"
-	line "Benched Pkmn, and put 1 <HP_NOK> damage"
+	line "Benched PKMN, and put 1 <HP_NOK> damage"
 	line "counter on each of them."
 	done	
 
 DownDrawDescription:
 	text "Draw 2 cards, then, Switch this"
-	line "PKMN with 1 of your Benched pkmn"
+	line "PKMN with 1 of your Benched PKMN"
 	line "(You Can't use this Attack if"
 	line "your bench is Empty)."
 	done

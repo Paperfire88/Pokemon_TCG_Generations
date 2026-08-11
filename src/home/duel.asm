@@ -2002,11 +2002,13 @@ ApplyDamageModifiers_DamageToTarget::
 	call GetTurnDuelistVariable ; Gets the opponent's card info
 	call LoadCardDataToBuffer2_FromDeckIndex
 	ld a, [wLoadedCard2WkValue] ; loads the new weakness modifier we just put in
-	call SwapTurn
-	ld a, [wLoadedCard2Rarity]
 	ld l, a
-	ld h, 0
+	ld a, [wLoadedCard2WkValue + 1]
+	ld h, a
+	call SwapTurn
 	add hl, de ; loads the extra damage to de for weakness
+	ld e, l
+	ld d, h
 	ld hl, wDamageEffectiveness
 	set WEAKNESS, [hl]
 .not_weak
@@ -2099,6 +2101,10 @@ ApplyDamageModifiers_DamageToSelf::
 	ld hl, wDamageEffectiveness
 	set WEAKNESS, [hl]
 .not_weak
+	call GetArenaCardResistance
+	and b
+	jr z, .not_resistant
+	call SwapTurn
 	ld a,  DUELVARS_ARENA_CARD 
 	call GetTurnDuelistVariable
 	call LoadCardDataToBuffer2_FromDeckIndex

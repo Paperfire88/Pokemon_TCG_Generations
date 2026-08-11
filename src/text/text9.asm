@@ -1384,7 +1384,7 @@ TwineedleName:
 	text "Twineedle"
 	done
 DoubleAttackX30Description:
-	text "Flip 2 coins. it does 30 damage"
+	text "Flip 2 coins. this does 30 damage"
 	line "for each heads."
 	done
 PoisonBeeName:

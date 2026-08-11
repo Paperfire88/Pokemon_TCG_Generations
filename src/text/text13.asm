@@ -18,7 +18,7 @@ StaticOverloadName:
 	done
 
 StaticOverloadDescription:
-	text "It does +10 damage for each of your"
+	text "this does +10 damage for each of your"
 	line "Opponents Damaged PKMN."
 	done	
 
@@ -59,7 +59,7 @@ ChooseBasicFirePokemonFromDeckText:
 	done
 
 DevoFlashName:
-	text "Devo Flash"
+	text "Devo-Flash"
 	done
 
 DevoFlashDescription:
@@ -167,7 +167,7 @@ StrangeEvolutionName:
 	done
 
 StrangeEvolutionPichuDescription:
-	text "Search your deck for an [PIKACHU]"
+	text "Search your deck for a [PIKACHU]"
 	line "and put it on this PKMN (This counts"
 	line "as evolving this PKMN). then, that"
 	line "PKMN is treated as a Stage 1 PKMN."
@@ -504,7 +504,7 @@ ChatterName:
 
 ChatterDescription:
 	text "Flip a coin. If heads, the Defending" 
-	line "Pkmn is now Confused. If tails," 
+	line "PKMN is now Confused. If tails," 
 	line "during your opponent's next turn the"
 	line "Defending PKMN can't retreat."
 	done
@@ -515,7 +515,7 @@ ConfusedIfHeadscantretreatIfTailsText:
 	done	
 
 SolarBeamDescription:
-	text "If this pkmn has 4 or more energies"
+	text "If this PKMN has 4 or more energies"
 	line "attached, this attack does +30 more"
 	line "damage."
 	done
@@ -575,7 +575,7 @@ TripleKickName:
 	done
 
 TripleKickDescription:
-	text "Flip 3 coins. it does 30 damage for"
+	text "Flip 3 coins. this does 30 damage for"
 	line "each heads. [If this PKMN is an"
 	line "Evolved PKMN, Draw 2 cards.]"
 	done
@@ -591,7 +591,7 @@ SpecialPunchDescription:
 	done 
 
 HighJumpKickDescription:
-	text "Flip a coin. If heads, it does +10"
+	text "Flip a coin. If heads, this does +10"
 	line "damage; if tails, take 10 damage."
 	line "[If this PKMN is an Evolved PKMN,"
 	line "it also does +20 damage.]"
@@ -799,7 +799,7 @@ SoulBurnerName:
 	done
 
 SoulBurnerDescription:	
-	text "It does +10 damage for each PKMN in"
+	text "this does +10 damage for each PKMN in"
 	line "your Opp. discard pile (up to 10)."
 	done
 
@@ -812,7 +812,7 @@ BillowingHeatWaveDescription:
 	line "it was already Burned, do 10 damage"
 	line "to each of your opponent's Benched"
 	line "PKMN instead (Don't apply Weakness"
-	line "Resistance to benched pkmn)."
+	line "Resistance to benched PKMN)."
 	done
 
 IfHeadsplus10IfTailsBurnText:
@@ -848,7 +848,7 @@ ClangingScalesName:
 	done
 	
 ClangingScalesDescription:
-	text "Unless this Pkmn has a <LIGHTNING> Energy"
+	text "Unless this PKMN has a <LIGHTNING> Energy"
 	line "attached, this PKMN takes +30 more"
 	line "damage from attacks (before applying"
 	line "Weakness and Resistance), During"
@@ -909,7 +909,7 @@ WoodHammerName:
 	done
 
 WoodHammerDescription:
-	text "It does 30 damage to itself. If you"
+	text "this does 30 damage to itself. If you"
 	line "healed HP this turn, this attack"
 	line "does +20 damage."
 	done
@@ -1124,7 +1124,7 @@ GatherEnergyDescription:
 	done
 
 StrangeEvolutionElectabuzzDescription:
-	text "Search your deck for an [ELECTABUZZ]"
+	text "Search your deck for a [ELECTABUZZ]"
 	line "and put it on this PKMN (This counts"
 	line "as evolving this PKMN). then, that"
 	line "PKMN is treated as a Stage 1 PKMN."
@@ -1166,7 +1166,7 @@ DerisiveRoastingName:
 	done
 
 DerisiveRoastingDescription:
-	text "It does +20 damage for each Status"
+	text "this does +20 damage for each Status"
 	line "Condition on the Defending PKMN."
 	done
 
@@ -1245,7 +1245,7 @@ MaliceTentaclesName:
 
 MaliceTentaclesDescription:
 	text "If this PKMN is at full HP <HP_OK>, the" 
-	line "Defending Pkmn is now Confused."
+	line "Defending PKMN is now Confused."
 	line "Otherwise, Heal 20 Damage From this"
 	line "PKMN."
 	done
@@ -1267,7 +1267,7 @@ SmackDownName:
 
 SmackDownDescription:
 	text "If the defending PKMN has a <FIGHTING>"
-	line "Resistance, it does +30 damage."
+	line "Resistance, this does +30 damage."
 	done
 
 PulverizingPressName:
@@ -1279,7 +1279,7 @@ MegatonHammerName:
 	done
 
 MegatonHammerDescription:
-	text "It does 20 damage to itself."
+	text "this does 20 damage to itself."
 	line "Flip a Coin. if heads, This Attack"
 	line "does +40 damage. If tails, this PKMN"
 	line "is now Confused."	
@@ -1323,7 +1323,7 @@ SatelliteBeamName:
 	done
 
 SatelliteBeamDescription:
-	text "It does +10 damage for each Basic"
+	text "this does +10 damage for each Basic"
 	line "Energy in your opponent's discard"
 	line "pile (Up to +120)."
 	done
@@ -1505,9 +1505,9 @@ PoisonRingName:
 	done
 
 PoisonRingDescription:
-	text "The Defending pkmn is now Poisoned."
+	text "The Defending PKMN is now Poisoned."
 	line "During your opponent's next turn,"
-	line "that pkmn can't retreat."
+	line "that PKMN can't retreat."
 	done
 
 MuddyHammerName:
@@ -1529,7 +1529,7 @@ DarkPulseDescription:
 	done
 AssassinsRoseDescription:
 	text "If the Defending PKMN is Poisoned,"
-	line "it does +30 damage. [If this PKMN"
+	line "this does +30 damage. [If this PKMN"
 	line "has a [BUDEW] as is basic PKMN, heal"
 	line "20 damage from this PKMN.]"	
 	done

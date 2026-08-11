@@ -250,7 +250,7 @@ SelfdestructBookName:
 SelfdestructBookText:
 	text "Emboar's Ability, Fire Starter"
 	line "is a great way to Recover your"
-	line "discarted Fire Energy cards!"
+	line "discarded Fire Energy cards!"
 	line "Re-ignite your benched Pokémon and"
 	line "attack with a fierce force."
 	done
@@ -928,7 +928,7 @@ RonaldChallengeCup1LostActive2Text:
 	line "I lost to the third opponent!"
 	line "I just lost my concentration."
 	line "But I'll win the next Challenge "
-	line "Cup! Of course I'll puverize you!"
+	line "Cup! Of course I'll pulverize you!"
 	line "See ya! Ha ha ha ha ha ha!"
 	done
 

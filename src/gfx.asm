@@ -1255,9 +1255,9 @@ RowletCardGfx::
 	INCBIN "gfx/cards/rowlet.attrmap"
 	INCBIN "gfx/cards/rowlet.2bpp"
 DartrixCardGfx::
-	INCBIN "gfx/cards/kakuna.pal"
-	INCBIN "gfx/cards/kakuna.attrmap"
-	INCBIN "gfx/cards/kakuna.2bpp"
+	INCBIN "gfx/cards/dartrix.pal"
+	INCBIN "gfx/cards/dartrix.attrmap"
+	INCBIN "gfx/cards/dartrix.2bpp"
 IllumiseCardGfx::
 	INCBIN "gfx/cards/illumise.pal"
 	INCBIN "gfx/cards/illumise.attrmap"
@@ -1419,9 +1419,9 @@ FloatzelCardGfx::
 	INCBIN "gfx/cards/floatzel.attrmap"
 	INCBIN "gfx/cards/floatzel.2bpp"
 TympoleCardGfx::
-	INCBIN "gfx/cards/poliwag.pal"
-	INCBIN "gfx/cards/poliwag.attrmap"
-	INCBIN "gfx/cards/poliwag.2bpp"
+	INCBIN "gfx/cards/tympole.pal"
+	INCBIN "gfx/cards/tympole.attrmap"
+	INCBIN "gfx/cards/tympole.2bpp"
 PalpitoadCardGfx::
 	INCBIN "gfx/cards/poliwhirl.pal"
 	INCBIN "gfx/cards/poliwhirl.attrmap"

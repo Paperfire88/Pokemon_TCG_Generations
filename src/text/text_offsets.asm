@@ -4531,3 +4531,7 @@ TextOffsets::
 	textpointer	TextCodyDefeat
 	textpointer	TextCodyDefeat2
 	textpointer	TextCodyVictory
+	textpointer RetreatMinText
+	textpointer	WeaknessMinText
+	textpointer ResistanceMinText
+	textpointer AbilityText2

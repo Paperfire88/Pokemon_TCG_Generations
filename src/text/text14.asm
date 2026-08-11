@@ -17,14 +17,14 @@ TDCommandName:
 	done
 TDCommandDescription:
 	text "If you have 3 or more Trainers"
-	line "In your discard pile, it does"
+	line "In your discard pile, this does"
 	line "+30 damage."
 	done
 ZCommandName:
 	text "Z Command"
 	done	
 ZCommandDescription:
-	text "It does +10 damage for each Trainers"
+	text "this does +10 damage for each Trainers"
 	line "in your discard pile (Up to +110)."	
 	done
 ChooseA0RetCostText:
@@ -151,7 +151,7 @@ ChrisFightingClubWantsToDuelRepeatText:
 	done	
 PokemonTraderDescription2:
 	text "Booster Pack: (LABORATORY)"
-	line "OG Set: (Team Up 152b)"
+	line "OG Set: (Team Up 152 b)"
 	line "OG illustrator: (OOYAMA)"
 	done	
 RareCandyDescription2:
@@ -385,7 +385,7 @@ SnowName:
 	text "Snow"
 	done	
 InterwiningName:
-	text "Internwining"
+	text "Intertwining"
 	done
 SylveonDescription:
 	text "Booster Pack: (EVOLUTION)"
@@ -577,7 +577,7 @@ FlashPressureName:
 DragonPulseDescription:
 	text "Discard the top 3 cards from your"
 	line "Deck. If the defending PKMN is an"
-	line "Evolved PKMN, instead, it does +10"
+	line "Evolved PKMN, instead, this does +10"
 	line "Damage and your opponent discards"
 	line "the top 5 cards from their deck."	
 	done
@@ -622,14 +622,14 @@ SpectralFlamesDescription:
 	line "Confused as long as it is burned."
 	done
 BurningVoiceDescription:
-	text "It does +30 damage if the Defending"
+	text "this does +30 damage if the Defending"
 	line "PKMN is Burned. After doing damage:"
 	line "If the Defending PKMN has an Ability"
 	line "it's now Burned."
 	done
 SharpSickleDescription:
 	text "If the Defending PKMN has an Ability"
-	line "it does +30 more Damage."
+	line "this does +30 more Damage."
 	done
 MagnemiteAndFriendsDescriptionText:
 	text "A Lightning <LIGHTNING> Deck:"
@@ -732,7 +732,7 @@ GyaradosDescription:
 	line "OG illustrator: (Ken Sugimori)"	
 	done
 AtrociusName:
-	text "Atrocius"
+	text "Atrocious"
 	done	
 SwordName:
 	text "Sword"

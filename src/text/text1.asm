@@ -754,7 +754,7 @@ ThereAreNoTrainerCardsInDiscardPileText:
 	done
 
 NoAttackMayBeChoosenText:
-	text "No Attacks may be choosen."
+	text "No Attacks may be chosen."
 	done
 
 YouDidNotReceiveAnAttackToMirrorMoveText:
