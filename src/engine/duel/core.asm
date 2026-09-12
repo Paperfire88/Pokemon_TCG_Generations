@@ -4014,26 +4014,37 @@ DisplayCardPage_PokemonOverview:
 ; CARDPAGETYPE_NOT_PLAY_AREA
 	; print surrounding box, card name at 5,1, type, set 2, and rarity
 	call PrintPokemonCardPageGenericInformation
+	lb de, 10, 3
+	lb bc, 9, 5
+	call DrawRegularTextBoxNoCGB ;Pkmn HP, LV & PREVO
+	lb de, 1, 8
+	lb bc, 18, 5
+	call DrawRegularTextBoxNoCGB ; ATTACK/ABILITY
+	lb de, 1, 13
+	lb bc, 16, 4
+	call DrawRegularTextBoxNoCGB ; RETREAT, WK & RS
+	lb de, 11, 2
+	lb de, 11, 2
 	; print fixed text and draw the card symbol associated to its TYPE_*
 	ld hl, CardPageRetreatWRTextData
 	call PlaceTextItems
 	ld hl, CardPageLvHPNoTextTileData
 	call WriteDataBlocksToBGMap0
-	lb de, 3, 2
+	lb de, 19, 2
 	call DrawCardSymbol
 	; print pre-evolution's name (if any)
 	ld a, [wLoadedCard1Stage]
 	or a
 	jr z, .basic
 	ld hl, wLoadedCard1PreEvoName
-	lb de, 1, 3
+	lb de, 12, 6
 	call InitTextPrinting_ProcessTextFromPointerToID
 .basic
 	; print card level and maximum HP
-	lb bc, 12, 2
+	lb bc, 16, 5
 	ld a, [wLoadedCard1Level]
 	call WriteTwoDigitNumberInTxSymbolFormat
-	lb bc, 16, 2
+	lb bc, 15, 4
 	ld a, [wLoadedCard1HP]
 	call WriteTwoByteNumberInTxSymbolFormat
 	jr .print_numbers_and_energies
@@ -4062,7 +4073,7 @@ DisplayCardPage_PokemonOverview:
 	; call WriteTwoByteNumberInTxSymbolFormat
 	; print the name, damage, and energy cost of each attack and/or Pokemon power that exists
 	; first attack at 5,10 and second at 5,12
-	lb bc, 5, 10
+	lb bc, 5, 9
 
 .attacks
 	ld e, c
@@ -4076,7 +4087,9 @@ DisplayCardPage_PokemonOverview:
 	; print the retreat cost (some amount of colorless energies) at 8,14
 	inc c
 	inc c ; 14
-	ld b, 8
+	inc c ; 15
+	inc c
+	ld b, 2
 	ld a, [wLoadedCard1RetreatCost]
 	ld e, a
 	inc e
@@ -4089,7 +4102,6 @@ DisplayCardPage_PokemonOverview:
 	jr .retreat_cost_loop
 .retreat_cost_done
 	; print the colors (energies) of the weakness(es) and resistance(s)
-	inc c ; 15
 	ld a, [wCardPageType]
 	or a
 	jr z, .wr_from_loaded_card
@@ -4108,9 +4120,9 @@ DisplayCardPage_PokemonOverview:
 	ld e, a
 .got_wr
 	ld a, d
-	ld b, 8
+	ld b, 6
 	call PrintCardPageWeaknessesOrResistances
-	inc c ; 16
+	ld b, 11
 	ld a, e
 	call PrintCardPageWeaknessesOrResistances
 	;falltrough
@@ -4118,10 +4130,10 @@ CardPageWRModifiersOnlyData:
 	ld a, [wLoadedCard1WkValue] ; load the weakness modifier
 	cp 0 ; check against 0
 	jr z, .CheckResistance ; if 0, go to the resistance check
-	lb bc, 9, 15
+	lb bc, 7, 15
 	ld a, SYM_PLUS
 	call WriteByteToBGMap0 ; otherwise make a plus symbol and add it to coordinates 9,15
-	lb bc, 10, 15  ; at coordinates 10, 15...
+	lb bc, 8, 15  ; at coordinates 10, 15...
 	ld hl, wLoadedCard1WkValue
 	ld a, [hli]
 	ld l, [hl]
@@ -4131,10 +4143,10 @@ CardPageWRModifiersOnlyData:
 	ld a, [wLoadedCard1RsValue] ; load the resistance modifier
 	cp 0
 	ret z; if 0, go to .done
-	lb bc, 9, 16
+	lb bc, 12, 15
 	ld a, SYM_MINUS 
 	call WriteByteToBGMap0 ; write a minus symbol at these coordinates
-	lb bc, 10, 16
+	lb bc, 13, 15
 	ld hl, wLoadedCard1RsValue 
 	ld a, [hli]
 	ld h, [hl]
@@ -4231,14 +4243,14 @@ PrintAttackOrPkmnPowerInformation2:
 	or a
 	jr z, .print_category
 	; print attack damage at 15,(e+1) if non-0
-	ld b, 15 ; unless damage has three digits, this is effectively 16
-	ld c, e
-	inc c
+	ld b, 14 ; unless damage has three digits, this is effectively 16
+	ld c, 9
 	call WriteTwoByteNumberInTxSymbolFormat
 .print_category
 	pop hl
 	inc hl
 	ld a, [hl]
+	ld e, 9
 	and $ff ^ RESIDUAL
 	jr z, PrintAttackOrPkmnPowerInformation.print_energy_cost
 	cp POKEMON_POWER
@@ -4254,7 +4266,7 @@ PrintAttackOrPkmnPowerInformation2:
 	ld a, $fc
 	lb hl, 1, 4
 	lb bc, 4, 1
-	lb de, 2, 2
+	lb de, 2, 9
 	call FillRectangle
 	pop bc
 	ret
@@ -4297,9 +4309,8 @@ PrintAttackOrPkmnPowerInformation:
 	or a
 	jr z, .print_category
 	; print attack damage at 15,(e+1) if non-0
-	ld b, 15 ; unless damage has three digits, this is effectively 16
+	ld b, 14 ; unless damage has three digits, this is effectively 16
 	ld c, e
-	inc c
 	call WriteTwoByteNumberInTxSymbolFormat
 .print_category
 	pop hl
@@ -4315,9 +4326,8 @@ PrintAttackOrPkmnPowerInformation:
 	; print the damage modifier (+, -, x) at 18,(e+1) (after the damage value)
 .next	
 	add SYM_PLUS - DAMAGE_PLUS
-	ld b, 18
+	ld b, 17
 	ld c, e
-	inc c
 	call WriteByteToBGMap0
 .print_energy_cost
 	ld bc, CARD_DATA_ATTACK1_ENERGY_COST - CARD_DATA_ATTACK1_CATEGORY
@@ -4343,7 +4353,7 @@ PrintAttackOrPkmnPowerInformation:
 	ld a, $fc
 	lb hl, 1, 4
 	lb bc, 4, 1
-	lb de, 2, 10
+	lb de, 2, 9 ; this is the one for the main page.
 	call FillRectangle
 	pop bc
 	ret
@@ -4414,7 +4424,7 @@ PrintCardPageWeaknessesOrResistances:
 ; CARDPAGE_POKEMON_OVERVIEW when wCardPageType is CARDPAGETYPE_PLAY_AREA.
 PrintPokemonCardPageGenericInformation:
 	call DrawCardPageSurroundingBox
-	lb de, 5, 1
+	lb de, 11, 2
 	ld hl, wLoadedCard1Name
 	call InitTextPrinting_ProcessTextFromPointerToID
 	ld a, [wCardPageType]
@@ -4426,7 +4436,7 @@ PrintPokemonCardPageGenericInformation:
 .from_loaded_card
 	ld a, [wLoadedCard1Type]
 .got_color
-	lb bc, 18, 1
+	lb bc, 1, 1
 	inc a
 	call WriteByteToBGMap0
 	jp DrawCardPageSet2AndRarityIcons
@@ -4436,7 +4446,7 @@ DrawCardPageSurroundingBox:
 	lb de, 0, 0
 	lb bc, 20, 18
 	call DrawRegularTextBox
-	lb de, 6, 4
+	lb de, 2, 2
 	ld a, $a0
 	lb hl, 6, 1
 	lb bc, 8, 6
@@ -4444,9 +4454,9 @@ DrawCardPageSurroundingBox:
 	jp ApplyCardCGBAttributes
 
 CardPageRetreatWRTextData:
-	textitem 1, 14, RetreatCostText
-	textitem 1, 15, WeaknessText
-	textitem 1, 16, ResistanceText
+	textitem 2, 14, RetreatCostText
+	textitem 6, 14, WeaknessText
+	textitem 11, 14, ResistanceText
 	db $ff
 CardPageRetreatWRTextData2:
 	textitem 12, 1, WeaknessMinText
@@ -4455,12 +4465,12 @@ CardPageRetreatWRTextData2:
 	textitem 12, 5, AbilityText2
 	db $ff
 CardPageLvHPNoTextTileData:
-	db 11,  2, SYM_Lv, 0
-	db 15,  2, SYM_HP, 0
+	db 11,  5, SYM_Lv, 0
+	db 11,  4, SYM_HP, 0
 ;	continues to CardPageNoTextTileData
 
 CardPageNoTextTileData:
-	db 18, 16, SYM_POKEMON, 0
+	db 11, 6, SYM_POKEMON, 0
 	db $ff
 
 DisplayCardPage_PokemonAttack1Page1:
@@ -4491,8 +4501,33 @@ DisplayPokemonAttackCardPage:
 	push hl
 	; print surrounding box, card name at 5,1, type, set 2, and rarity
 	call PrintPokemonCardPageGenericInformation
+	lb de, 1, 8
+	lb bc, 18, 3
+	call DrawRegularTextBoxNoCGB ; ATTACK/ABILITY
+	lb de, 10, 3
+	lb bc, 9, 5
+	call DrawRegularTextBoxNoCGB ;Pkmn HP, LV & PREVO
+	; print the Level and HP numbers at 12,2 and 16,2 respectively
+	lb bc, 16, 5
+	ld a, [wLoadedCard1Level]
+	call WriteTwoDigitNumberInTxSymbolFormat
+	lb bc, 15, 4
+	ld a, [wLoadedCard1HP]
+	call WriteTwoByteNumberInTxSymbolFormat
+	ld hl, CardPageLvHPNoTextTileData
+	call WriteDataBlocksToBGMap0
+	lb de, 19, 2
+	call DrawCardSymbol
+	; print pre-evolution's name (if any)
+	ld a, [wLoadedCard1Stage]
+	or a
+	jr z, .basic
+	ld hl, wLoadedCard1PreEvoName
+	lb de, 12, 6
+	call InitTextPrinting_ProcessTextFromPointerToID
+.basic
 	; print name, damage, and energy cost of attack or Pokemon power starting at line 2
-	ld e, 2
+	ld e, 9
 	pop hl
 	call PrintAttackOrPkmnPowerInformation2
 	pop hl
@@ -4511,27 +4546,42 @@ PrintAttackOrNonPokemonCardDescription:
 DisplayCardPage_PokemonDescription:
 	; print surrounding box, card name at 5,1, type, set 2, and rarity
 	call PrintPokemonCardPageGenericInformation
+	lb de, 10, 3
+	lb bc, 9, 5
+	call DrawRegularTextBoxNoCGB ;Pkmn HP, LV & PREVO
+	lb de, 1, 8
+	lb bc, 18, 3
+	call DrawRegularTextBoxNoCGB ; Category
+	lb de, 1, 11
+	lb bc, 18, 5
+	call DrawRegularTextBoxNoCGB ; Description
 	call LoadDuelCardSymbolTiles2
 	ld hl, CardPageLvHPTextTileData
 	call WriteDataBlocksToBGMap0
 	; draw the card symbol associated to its TYPE_* at 3,2
-	lb de, 3, 2
+	lb de, 19, 2
 	call DrawCardSymbol
+	; print pre-evolution's name (if any)
+	ld a, [wLoadedCard1Stage]
+	or a
+	jr z, .basic
+	ld hl, wLoadedCard1PreEvoName
+	lb de, 12, 6
+	call InitTextPrinting_ProcessTextFromPointerToID
+.basic
 	; print the Level and HP numbers at 12,2 and 16,2 respectively
-	lb bc, 12, 2
+	lb bc, 16, 5
 	ld a, [wLoadedCard1Level]
 	call WriteTwoDigitNumberInTxSymbolFormat
-	lb bc, 16, 2
+	lb bc, 15, 4
 	ld a, [wLoadedCard1HP]
 	call WriteTwoByteNumberInTxSymbolFormat
+	ld hl, CardPageNoTextTileData
+	call WriteDataBlocksToBGMap0
 	; print the Pokemon's category at 1,10 (just above the length and weight texts)
-	lb de, 1, 11
+	lb de, 5, 9
 	ld hl, wLoadedCard1Category
 	call InitTextPrinting_ProcessTextFromPointerToID
-	ld a, TX_KATAKANA
-	call ProcessSpecialTextCharacter
-	ldtx hl, PokemonText
-	call ProcessTextFromID
 	; print the card's description without line separation
 	call SetNoLineSeparation
 	ld hl, wLoadedCard1Description
@@ -4539,7 +4589,7 @@ DisplayCardPage_PokemonDescription:
 	ld h, [hl]
 	ld l, a
 	call CountLinesOfTextFromID
-	lb de, 1, 12
+	lb de, 2, 11
 	cp 4
 	jr nc, .print_description
 	inc e ; move a line down, as the description is short enough to fit in three lines
@@ -4572,15 +4622,15 @@ DrawCardPageSet2AndRarityIcons:
 	lb de, 15, 8
 	call FillRectangle
 .icon_done
-	lb de, 18, 9
+	lb de, 18, 16
 	ld hl, CardRarityTextIDs
 	ld a, [wLoadedCard1Rarity]
 	cp NO_RARITY
 	call nz, PrintCardPageRarityIcon
 	ret
 CardPageLvHPTextTileData:
-	db 11, 2, SYM_Lv, 0
-	db 15, 2, SYM_HP, 0
+	db 11, 5, SYM_Lv, 0
+	db 11, 4, SYM_HP, 0
 	db $ff
 
 CardRarityTextIDs:

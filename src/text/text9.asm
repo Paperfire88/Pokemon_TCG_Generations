@@ -1247,10 +1247,6 @@ ChikoritasLeechSeedDescription:
 	text "If this attack deals damage, Heal 30"
 	line "damage from this Pkmn."
 	done
-
-SeedName:
-	text "Leaf"
-	done
  
 BayleefName:
 	text "Bayleef"
@@ -1308,11 +1304,6 @@ MayInflictParalysisDescription:
 	text "Flip a coin. If heads, the Defending"
 	line "PKMN is now Paralyzed."
 	done
-
-WormName:
-	text "Catepillar"
-	done
-
 SilcoonName:
 	text "Silcoon"
 	done
@@ -1331,11 +1322,6 @@ MetapodsStiffenDescription:
 StunSporeName:
 	text "Stun Spore"
 	done
-
-CocoonName:
-	text "Chrysalis"
-	done
-
 BeautiflyName:
 	text "Beautifly"
 	done
@@ -1354,11 +1340,6 @@ ButterfreesMegaDrainDescription:
 	text "Heal damage from this PKMN equal to"
 	line "half the damage done (rounded up)."
 	done
-
-ButterflyName:
-	text "Butterfly"
-	done
-
 RowletName:
 	text "Rowlet"
 	done
@@ -1571,4 +1552,31 @@ MalamarName:
 
 ContraryBehaviorName:
 	text "Contrary Behavior"
+	done
+Gen1Text:
+	text "Gen 1 -Kanto Region-"
+	done
+Gen2Text:
+	text "Gen 2 -Johto Region-"
+	done
+Gen3Text:
+	text "Gen 3 -Hoenn Region-"
+	done
+Gen4Text:
+	text "Gen 4 -Sinnoh Region-"
+	done
+Gen5Text:
+	text "Gen 5 -Unova Region-"
+	done
+Gen6Text:
+	text "Gen 6 -Kalos Region-"
+	done
+Gen7Text:
+	text "Gen 7 -Alola Region-"
+	done
+Gen8Text:
+	text "Gen 8 -Galar Region-"
+	done
+Gen9Text:
+	text "Gen 9 -Paldea Region-"
 	done

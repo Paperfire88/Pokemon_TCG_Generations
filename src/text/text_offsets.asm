@@ -1967,7 +1967,6 @@ TextOffsets::
 	textpointer ChikoritaName
 	textpointer LeechSeedName
 	textpointer ChikoritasLeechSeedDescription
-	textpointer SeedName
 	textpointer ChikoritaDescription
 	textpointer BayleefName
 	textpointer PoisonPowderName
@@ -1984,19 +1983,16 @@ TextOffsets::
 	textpointer MeganiumDescription
 	textpointer WurmpleName
 	textpointer MayInflictParalysisDescription
-	textpointer WormName
 	textpointer WurmpleDescription
 	textpointer SilcoonName
 	textpointer StiffenName
 	textpointer MetapodsStiffenDescription
 	textpointer StunSporeName
-	textpointer CocoonName
 	textpointer SilcoonDescription
 	textpointer BeautiflyName
 	textpointer WhirlwindName
 	textpointer WhirlwindDescription
 	textpointer ButterfreesMegaDrainDescription
-	textpointer ButterflyName
 	textpointer BeautiflyDescription
 	textpointer RowletName
 	textpointer PoisonStingName
@@ -2070,7 +2066,6 @@ TextOffsets::
 	textpointer ShroomishName
 	textpointer SporeName
 	textpointer InflictSleepDescription
-	textpointer MushroomName
 	textpointer ShroomishDescription
 	textpointer BreloomName
 	textpointer SlashName
@@ -2124,13 +2119,11 @@ TextOffsets::
 	textpointer WeezingsSelfdestructDescription
 	textpointer FerrothornDescription
 	textpointer TangelaName
-	textpointer VineName
 	textpointer TangelaLv8Description
 	textpointer SkorupiDescription
 	textpointer ScytherName
 	textpointer SwordsDanceName
 	textpointer SwordsDanceDescription
-	textpointer MantisName
 	textpointer ScytherDescription
 	textpointer ScizorName
 	textpointer IronGripName
@@ -2144,7 +2137,6 @@ TextOffsets::
 	textpointer PigniteName
 	textpointer FlamethrowerName
 	textpointer PowerCycloneName
-	textpointer FlameName
 	textpointer PigniteDescription
 	textpointer EmboarName
 	textpointer EnergyBurnName
@@ -2174,7 +2166,6 @@ TextOffsets::
 	textpointer QuickAttackDescription
 	textpointer FlareblitzName
 	textpointer FlareblitzDescription
-	textpointer RadiatorName
 	textpointer CameruptDescription
 	textpointer TakeDownName
 	textpointer TakeDownDescription
@@ -2189,7 +2180,6 @@ TextOffsets::
 	textpointer MagmarName
 	textpointer FirePunchName
 	textpointer FirePunchDescription
-	textpointer SpitfireName
 	textpointer MagmarLv24Description
 	textpointer SmokescreenName
 	textpointer FlareonName
@@ -3113,47 +3103,12 @@ TextOffsets::
 	textpointer CelebiTradeCardName; 0x0cff
 	textpointer HoohTradeCardName; 0x0cff
 	textpointer KrookodileTradeCardName; 0x0cff
-	textpointer OrbeetleTradeCardName; 0x0cff
-	textpointer HerbName; 0x0cff
-	textpointer TimeTravelName; 0x0cff
-	textpointer GrassQuillName; 0x0cff
-	textpointer BladeQuillName; 0x0cff
-	textpointer ArrowQuillName; 0x0cff
-	textpointer SnailName; 0x0cff
-	textpointer ShellOutName; 0x0cff
-	textpointer FireflyName; 0x0cff
-	textpointer ClampingName; 0x0cff
-	textpointer CavalryName; 0x0cff
-	textpointer AppleCoreName; 0x0cff
-	textpointer AppleWingName; 0x0cff
-	textpointer AppleNectarName; 0x0cff
-	textpointer ThinWingName; 0x0cff
-	textpointer OgreDarnerName; 0x0cff
-	textpointer FruitName; 0x0cff
-	textpointer StumpName; 0x0cff
-	textpointer ElderTreeName; 0x0cff	
-	textpointer FrostTreeName; 0x0cff	
-	textpointer ThornPodName; 0x0cff	
-	textpointer ThornSeedName; 0x0cff	
-	textpointer ScorpionName; 0x0cff	
-	textpointer OgreScorpionName; 0x0cff	
-	textpointer LarvaName; 0x0cff	
-	textpointer FirePigName; 0x0cff	
-	textpointer MegaFirePigName; 0x0cff	
-	textpointer DarkName; 0x0cff		
-	textpointer ZenCharmName; 0x0cff	
-	textpointer BlazingName; 0x0cff		
-	textpointer LionCubName; 0x0cff	
-	textpointer RoyalName; 0x0cff		
+	textpointer OrbeetleTradeCardName; 0x0cff		
 	textpointer EruptionName; 0x0cff		
-	textpointer NumbName; 0x0cff		
 	textpointer BlastTurtleName; 0x0cff		
-	textpointer VolcanoName; 0x0cff		
 	textpointer BubbleFrogName; 0x0cff		
 	textpointer NinjaName; 0x0cff			
 	textpointer CaveName; 0x0cff	
-	textpointer	FireCrocName; 0x0cff
-	textpointer SingerName; 0x0cff		
 	textpointer SeaWeaselName; 0x0cff		
 	textpointer VibrationName; 0x0cff		
 	textpointer MockKelpName; 0x0cff			
@@ -3237,7 +3192,6 @@ TextOffsets::
 	textpointer WolfName; 0x0cff	
 	textpointer ElectronName; 0x0cff	
 	textpointer LiveCoalName; 0x0cff	
-	textpointer BlastName; 0x0cff	
 	textpointer RainbowName; 0x0cff			
 	textpointer DrowsingName; 0x0cff		
 	textpointer GrubbinName
@@ -3853,7 +3807,6 @@ TextOffsets::
 	textpointer RioluDescription
 	textpointer AuraName
 	textpointer LucarioDescription
-	textpointer VerdantName
 	textpointer LeafeonDescription
 	textpointer GlaceonDescription
 	textpointer SnowName
@@ -3870,9 +3823,7 @@ TextOffsets::
 	textpointer HitmontopDescription
 	textpointer ScuffleName
 	textpointer LitwickDescription
-	textpointer CandleName
 	textpointer LampentDescription
-	textpointer LampName
 	textpointer ChandelureDescription
 	textpointer DarkaiDescription
 	textpointer PitchBlackName
@@ -3964,7 +3915,6 @@ TextOffsets::
 	textpointer WimpodDescription
 	textpointer GolisopodName
 	textpointer GolisopodDescription
-	textpointer HardScaleName
 	textpointer HexNutName
 	textpointer MeltanName
 	textpointer MeltanDescription
@@ -4010,7 +3960,6 @@ TextOffsets::
 	textpointer ThwackeyDescription
 	textpointer RillaboomName
 	textpointer RillaboomDescription
-	textpointer DrummerName
 	textpointer SnoruntName
 	textpointer SnoruntDescription
 	textpointer GlalieName
@@ -4037,7 +3986,6 @@ TextOffsets::
 	textpointer RoseliaDescription
 	textpointer RoseradeName
 	textpointer RoseradeDescription
-	textpointer ThornName
 	textpointer GothitaName
 	textpointer GothitaDescription
 	textpointer GothoritaName
@@ -4354,7 +4302,6 @@ TextOffsets::
 	textpointer StrangeEvolutionRoseliaDescription
 	textpointer ItchyPollenName
 	textpointer ItchyPollenDescription
-	textpointer BudName
 	textpointer NotActivePKMNText
 	textpointer TooManyCardsInHandText
 	textpointer StormBoltName
@@ -4455,7 +4402,6 @@ TextOffsets::
 	textpointer	TextParkerVictory
 	textpointer ShayminName
 	textpointer ShayminDescription
-	textpointer GratitudeName
 	textpointer HeatranName
 	textpointer HeatranDescription
 	textpointer LavaDomeName
@@ -4535,3 +4481,12 @@ TextOffsets::
 	textpointer	WeaknessMinText
 	textpointer ResistanceMinText
 	textpointer AbilityText2
+	textpointer Gen1Text
+	textpointer Gen2Text
+	textpointer Gen3Text
+	textpointer Gen4Text
+	textpointer Gen5Text
+	textpointer Gen6Text
+	textpointer Gen7Text
+	textpointer Gen8Text
+	textpointer Gen9Text

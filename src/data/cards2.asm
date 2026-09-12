@@ -1092,7 +1092,7 @@ BlipbugCard:
 	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
 	dw -0 ; resistance value (+/-)
-	tx LarvaName ; category
+	tx Gen8Text ; category
 	db 43 ; Pokedex number
 	db 9 ; level
 	tx BlipbugDescription ; description
@@ -2241,7 +2241,7 @@ MurkrowCard:
 	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
 	dw -0 ; resistance value (+/-)
-	tx DarkName ; category
+	tx Gen2Text ; category
 	db 163 ; Pokedex number
 	db 25 ; level
 	tx MurkrowDescription ; description
@@ -2595,7 +2595,7 @@ SkorupiCard:
 	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
 	dw -0 ; resistance value (+/-)
-	tx ScorpionName ; category
+	tx Gen4Text ; category
 	db 38 ; Pokedex number
 	db 28 ; level
 	tx MimikyuDescription ; description
@@ -2645,7 +2645,7 @@ DrapionCard:
 	dw +20 ; weakness value (+/-)
 	db WR_PSYCHIC ; resistance
 	dw -20 ; resistance value (+/-)
-	tx OgreScorpionName ; category
+	tx Gen4Text ; category
 	db 39 ; Pokedex number
 	db 52 ; level
 	tx MimikyuDescription ; description
@@ -4470,7 +4470,7 @@ KarrablastCard:
 	dw +10 ; weakness value (+/-)
 	db NONE ; resistance
 	dw -0 ; resistance value (+/-)
-	tx ClampingName ; category
+	tx Gen5Text ; category
 	db 15 ; Pokedex number
 	db 20 ; level
 	tx KarrablastDescription ; description
@@ -4520,7 +4520,7 @@ EscavalierCard:
 	dw +20 ; weakness value (+/-)
 	db WR_GRASS ; resistance
 	dw -20 ; resistance value (+/-)
-	tx CavalryName ; category
+	tx Gen5Text ; category
 	db 16 ; Pokedex number
 	db 45 ; level
 	tx EscavalierDescription ; description
@@ -4570,7 +4570,7 @@ FerroseedCard:
 	dw +10 ; weakness value (+/-)
 	db WR_DARKNESS ; resistance
 	dw -10 ; resistance value (+/-)
-	tx ThornSeedName ; category
+	tx Gen5Text ; category
 	db 36 ; Pokedex number
 	db 23 ; level
 	tx FerroseedDescription ; description
@@ -4620,7 +4620,7 @@ FerrothornCard:
 	dw +20 ; weakness value (+/-)
 	db WR_DARKNESS ; resistance
 	dw -20 ; resistance value (+/-)
-	tx ThornPodName ; category
+	tx Gen5Text ; category
 	db 37 ; Pokedex number
 	db 57 ; level
 	tx FerrothornDescription ; description

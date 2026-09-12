@@ -196,10 +196,6 @@ InflictSleepDescription:
 	text "The Defending PKMN is now Asleep."
 	done
 
-MushroomName:
-	text "Mushroom"
-	done
-
 BreloomName:
 	text "Breloom"
 	done
@@ -392,11 +388,6 @@ WeezingsSelfdestructDescription:
 TangelaName:
 	text "Tangela"
 	done
-
-VineName:
-	text "Vine"
-	done
-
 ScytherName:
 	text "Scyther"
 	done
@@ -410,11 +401,6 @@ SwordsDanceDescription:
 	line "Slash attack's base damage is"
 	line "doubled."
 	done
-
-MantisName:
-	text "Mantis"
-	done
-
 ScizorName:
 	text "Scizor"
 	done
@@ -457,11 +443,6 @@ BounceEnergyDescription:
 	text "Bounce 1 <WATER> Energy card attached to"
 	line "this PKMN to your hand."
 	done
-
-FlameName:
-	text "Flame"
-	done
-
 EmboarName:
 	text "Emboar"
 	done
@@ -567,11 +548,6 @@ FlareblitzDescription:
 	line "damage for each <HP_NOK> damage counter"
 	line "on this PKMN."
 	done
-
-RadiatorName:
-	text "Radiator"
-	done
-
 TakeDownName:
 	text "Take Down"
 	done
@@ -614,10 +590,6 @@ FirePunchDescription:
 	text "Flip a coin. If heads, this attack"
 	line "does +10 damage; if tails, the"
 	line "Defending PKMN is now Burned."
-	done
-
-SpitfireName:
-	text "Spitfire"
 	done
 
 SmokescreenName:

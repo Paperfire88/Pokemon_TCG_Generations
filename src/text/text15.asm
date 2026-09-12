@@ -1,7 +1,7 @@
 ChikoritaDescription:
-	text "Booster Pack: (COLOSSEUM)"
-	line "Base on: (Mysterious Treasures 77)"
-	line "OG Artist: (Kagemaru Himeno)"
+	text "Booster Pack: COLOSSEUM"
+	line "OG Set: Mysterious Treasures 77"
+	line "OG Artist: Kagemaru Himeno"
 	done
 
 BayleefDescription:

@@ -95,9 +95,6 @@ BudewDescription:
 	line "OG Set: (Prismatic Evolutions 04)"
 	line "OG illustrator: (Yoriyuki Ikegami)"
 	done
-BudName:
-	text "Bud"
-	done
 StrangeEvolutionRoseliaDescription:
 	text "Search your deck for a [ROSELIA]"
 	line "and put it on this PKMN (This counts"
@@ -576,9 +573,6 @@ HeatranDescription:
 	done
 LavaDomeName:
 	text "Lava Dome"
-	done
-GratitudeName:
-	text "Gratitude"
 	done
 GroudonName:
 	text "Groudon"

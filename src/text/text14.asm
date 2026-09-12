@@ -368,9 +368,6 @@ LucarioDescription:
 	line "OG Set: (Japanese Promo)"
 	line "OG illustrator: (Mitsuhiro Arita)"
 	done		
-VerdantName:
-	text "Verdant"
-	done
 LeafeonDescription:
 	text "Booster Pack: (EVOLUTION)"
 	line "OG Set: (Sword & Shield Promos 191)"
@@ -440,9 +437,6 @@ LitwickDescription:
 	text "Booster Pack: (LABORATORY)"
 	line "OG Set: (Twilight Masquerade 36)"
 	line "OG illustrator: (Saya Tsuruta)"
-	done	
-CandleName:
-	text "Candle"
 	done	
 LampentDescription:
 	text "Booster Pack: (LABORATORY)"
@@ -835,10 +829,7 @@ GolisopodDescription:
 	text "Booster Pack: (LOST ISLE)"
 	line "OG Set: (Paradox Rift 50)"
 	line "OG illustrator: (N-DESIGN Inc.)"
-	done		
-HardScaleName:
-	text "Hard Scale"
-	done	
+	done			
 HexNutName:
 	text "Hex Nut"
 	done
@@ -1008,10 +999,7 @@ RillaboomDescription:
 	text "Booster Pack: (LOST ISLE)"
 	line "OG Set: (Twilight Masquerade 15)"
 	line "OG illustrator: (GOSSAN)"
-	done	
-DrummerName:
-	text "Drummer"
-	done	
+	done		
 SnoruntName:
 	text "Snorunt"
 	done
@@ -1117,10 +1105,7 @@ RoseradeDescription:
 	text "Booster Pack: (LOST ISLE)"
 	line "OG Set: (Supreme Victors 40)"
 	line "OG illustrator: (kawayoo)"
-	done			
-ThornName:
-	text "Thorn"
-	done	
+	done				
 GothitaName:
 	text "Gothita"
 	done

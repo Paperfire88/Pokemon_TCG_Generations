@@ -390,147 +390,15 @@ KrookodileTradeCardName:
 
 OrbeetleTradeCardName:
 	text "<Lv>60 Orbeetle"
-	done		
-
-HerbName:
-	text "Herb"
 	done
-
-TimeTravelName:
-	text "Time Travel"
-	done	
-
-GrassQuillName:
-	text "Grass Quill"
-	done
-
-BladeQuillName:
-	text "Blade Quill"
-	done
-
-ArrowQuillName:
-	text "Arrow Quill"
-	done
-
-SnailName:
-	text "Snail"
-	done
-
-ShellOutName:
-	text "Shell Out"
-	done
-
-FireflyName:
-	text "Firefly"
-	done	
-
-ClampingName:
-	text "Clamping"
-	done
-
-CavalryName:
-	text "Cavalry"
-	done	
-
-AppleCoreName:
-	text "Apple Core"
-	done		
-
-AppleWingName:
-	text "Apple Wing"
-	done		
-
-AppleNectarName:
-	text "Apple Nectar"
-	done		
-
-ThinWingName:
-	text "Thin Wing"
-	done
-
-OgreDarnerName:
-	text "Ogre Darner"
-	done	
-
-FruitName:
-	text "Fruit"
-	done		
-
-StumpName:
-	text "Stump"
-	done
-
-ElderTreeName:
-	text "Elder Tree"
-	done	
-
-FrostTreeName:
-	text "Frost Tree"
-	done		
-
-ThornSeedName:
-	text "Thorn Seed"
-	done
-
-ThornPodName:
-	text "Thorn Pod"
-	done
-
-ScorpionName:
-	text "Scorpion"
-	done
-
-OgreScorpionName:
-	text "Ogre Scorpion"
-	done	
-
-LarvaName:
-	text "Larva"
-	done		
-
-FirePigName:
-	text "Fire Pig"
-	done
-
-MegaFirePigName:
-	text "Mega Fire Pig"
-	done
-
-DarkName:
-	text "Dark"
-	done
-
-ZenCharmName:
-	text "Zen Charm"
-	done
-
-BlazingName:
-	text "Blazing"
-	done	
-
-LionCubName:
-	text "Lion Cub"
-	done
-
-RoyalName:
-	text "Royal"
-	done		
 
 EruptionName:
 	text "Eruption"
-	done			
-
-NumbName:
-	text "Numb"
-	done			
+	done				
 
 BlastTurtleName:
 	text "Blast Turtle"
-	done				
-
-VolcanoName:
-	text "Volcano"
-	done		
+	done					
 
 BubbleFrogName:
 	text "Bubble Frog"
@@ -542,14 +410,6 @@ NinjaName:
 
 CaveName:
 	text "Cave"
-	done
-
-FireCrocName:
-	text "Fire Croc"
-	done
-
-SingerName:
-	text "Singer"
 	done
 
 SeaWeaselName:
@@ -896,11 +756,7 @@ ElectronName:
 
 LiveCoalName:
 	text "Live Coal"
-	done		
-
-BlastName:
-	text "Blast"
-	done		
+	done			
 
 RainbowName:
 	text "Rainbow"
